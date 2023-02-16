@@ -72,6 +72,12 @@ class FormBuilderController extends ApiController
 //        try {
         //get selected form columns from forms table
         foreach ($input as $key => $value) {
+            if($key == 'form_id') {
+                continue;
+            }
+            if($key == 'marked') {
+                continue;
+            }
             $result = extract_values($key);
             $name = $result[0];
             $heading_id = $result[1];
