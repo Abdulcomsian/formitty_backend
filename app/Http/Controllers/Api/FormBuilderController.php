@@ -357,13 +357,15 @@ class FormBuilderController extends ApiController
                     $form_data[] = [
                         'heading_name' => $custom_heading->form_heading,
                         'order_id' => $ufh->order_id,
+                        'heading_type' => $ufh->heading_type,
                         'field_name' => $custom_heading->custom_field,
                     ];
                 } else {
                     $form_data[] = [
                         'heading_name' => $form_heading->form_heading,
                         'order_id' => $ufh->order_id,
-                        'field_data' => $field_data
+                        'heading_type' => $ufh->heading_type,
+                        'field_data' => $field_data,
                     ];
                 }
             }
@@ -381,10 +383,12 @@ class FormBuilderController extends ApiController
         }
     }
 
-    public function markComplete($user_form_id, $heading_id)
+    public function markComplete($user_heading_id)
     {
         try {
-            $user_form_id = UserForm::find($user_form_id);
+            $user_form_id = UserFormHeading::find($user_form_id);
+            $user_form_id->heading_status = 'completed';
+            $user_form_id->save();
             return $this->successResponse($user_form_id, 'Status marked as complete!.', 200);
         } catch (\Throwable $th) {
             return $this->errorResponse($th->getMessage(), 401);
