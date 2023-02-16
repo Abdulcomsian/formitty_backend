@@ -383,8 +383,22 @@ class FormBuilderController extends ApiController
         }
     }
 
-    public function markComplete($user_heading_id)
+    /*    public function markComplete()
+        {
+            dd("ttt");
+            try {
+                $user_form_id = UserFormHeading::find($user_form_id);
+                $user_form_id->heading_status = 'completed';
+                $user_form_id->save();
+                return $this->successResponse($user_form_id, 'Status marked as complete!.', 200);
+            } catch (\Throwable $th) {
+                return $this->errorResponse($th->getMessage(), 401);
+            }
+        }*/
+
+    public function markComplete($id)
     {
+        dd($id);
         try {
             $user_form_id = UserFormHeading::find($user_form_id);
             $user_form_id->heading_status = 'completed';
@@ -395,4 +409,26 @@ class FormBuilderController extends ApiController
         }
     }
 
+
+    public function changeStatus($user_form_id, $heading_id, $predifined)
+    {
+        if($predifined == 1){
+            $status = 'predefined';
+        } else {
+            $status = 'custom';
+        }
+        try {
+            $user_form_heading = UserFormHeading::where('user_form_id', $user_form_id)
+                ->where('heading_id', $heading_id)
+                ->where('heading_type', $status)
+                ->first();
+
+            $user_form_heading->heading_status = 'completed';
+            $user_form_heading->save();
+
+            return $this->successResponse($user_form_heading, "Heading retrieved successfully", 200);
+        } catch (\Throwable $th) {
+            return $this->errorResponse($th->getMessage(), 500);
+        }
+    }
 }
