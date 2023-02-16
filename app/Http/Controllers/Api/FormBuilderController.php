@@ -71,7 +71,7 @@ class FormBuilderController extends ApiController
         $user_form->save();
         try {
             foreach ($input as $key => $value) {
-                if($key == 'form_id' || $key == 'marked') {
+                if ($key == 'form_id' || $key == 'marked' || $key == 'form_heading_id') {
                     continue;
                 }
                 $result = extract_values($key);
@@ -115,7 +115,7 @@ class FormBuilderController extends ApiController
         $custom_heading->save();
     }
 
-    private function updateCustomField($user_form, $value, $order_id)
+    public function updateCustomField($user_form, $value, $order_id)
     {
         $custom_field = CustomHeading::findorfail($custom_heading->id);
         if ($custom_field) {
@@ -124,7 +124,7 @@ class FormBuilderController extends ApiController
         }
     }
 
-    private function storeFormData($value, $name, $order_id, $heading_id, &$array, $user_form)
+    public function storeFormData($value, $name, $order_id, $heading_id, &$array, $user_form)
     {
         if (!in_array($heading_id, $array)) {
             array_push($array, $heading_id);
@@ -321,6 +321,16 @@ class FormBuilderController extends ApiController
 
             return $this->successResponse($data, 'Form data retrieved successfully!.', 200);
 
+        } catch (\Throwable $th) {
+            return $this->errorResponse($th->getMessage(), 401);
+        }
+    }
+
+    public function markComplete($user_form_id, $heading_id)
+    {
+        try {
+            $user_form_id = UserForm::find($user_form_id);
+            return $this->successResponse($user_form_id, 'Status marked as complete!.', 200);
         } catch (\Throwable $th) {
             return $this->errorResponse($th->getMessage(), 401);
         }
