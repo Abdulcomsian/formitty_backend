@@ -410,19 +410,15 @@ class FormBuilderController extends ApiController
     }
 
 
-    public function changeStatus($user_form_id, $heading_id, $predifined)
+    public function changeStatus($user_form_heading_id)
     {
-        if($predifined == 1){
+        /*if($predifined == 1){
             $status = 'predefined';
         } else {
             $status = 'custom';
-        }
+        }*/
         try {
-            $user_form_heading = UserFormHeading::where('user_form_id', $user_form_id)
-                ->where('heading_id', $heading_id)
-                ->where('heading_type', $status)
-                ->first();
-
+            $user_form_heading = UserFormHeading::finorfail($user_form_heading_id);
             $user_form_heading->heading_status = 'completed';
             $user_form_heading->save();
 

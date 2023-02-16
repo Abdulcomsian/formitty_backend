@@ -33,7 +33,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 Route::post('get-user-forms', [FormBuilderController::class, 'getUserForm']);
 Route::post('get-user-forms-data', [FormBuilderController::class, 'getUserFormsData']);
 //Route::get('marked-completed/{user_form_id}', [FormBuilderController::class, 'markComplete']);
-Route::get('change-status/{user_form_id}/{heading_id}/{heading_status}', [FormBuilderController::class, 'changeStatus']);
+Route::get('change-status/{user_form_heading_id}', [FormBuilderController::class, 'changeStatus']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
