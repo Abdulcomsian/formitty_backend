@@ -356,6 +356,7 @@ class FormBuilderController extends ApiController
                     $custom_heading = CustomHeading::where('id', $ufh->heading_id)->first();
                     $form_data[] = [
                         'heading_name' => $custom_heading->form_heading,
+                        'user_form_heading_id' => $ufh->id,
                         'order_id' => $ufh->order_id,
                         'heading_type' => $ufh->heading_type,
                         'heading_status' => $ufh->heading_status,
@@ -364,6 +365,7 @@ class FormBuilderController extends ApiController
                 } else {
                     $form_data[] = [
                         'heading_name' => $form_heading->form_heading,
+                        'user_form_heading_id' => $ufh->id,
                         'order_id' => $ufh->order_id,
                         'heading_type' => $ufh->heading_type,
                         'heading_status' => $ufh->heading_status,
