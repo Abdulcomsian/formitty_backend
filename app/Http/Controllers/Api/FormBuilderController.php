@@ -358,6 +358,7 @@ class FormBuilderController extends ApiController
                         'heading_name' => $custom_heading->form_heading,
                         'order_id' => $ufh->order_id,
                         'heading_type' => $ufh->heading_type,
+                        'heading_status' => $ufh->heading_status,
                         'field_name' => $custom_heading->custom_field,
                     ];
                 } else {
@@ -365,6 +366,7 @@ class FormBuilderController extends ApiController
                         'heading_name' => $form_heading->form_heading,
                         'order_id' => $ufh->order_id,
                         'heading_type' => $ufh->heading_type,
+                        'heading_status' => $ufh->heading_status,
                         'field_data' => $field_data,
                     ];
                 }
@@ -418,7 +420,7 @@ class FormBuilderController extends ApiController
             $status = 'custom';
         }*/
         try {
-            $user_form_heading = UserFormHeading::finorfail($user_form_heading_id);
+            $user_form_heading = UserFormHeading::findorfail($user_form_heading_id);
             $user_form_heading->heading_status = 'completed';
             $user_form_heading->save();
 
