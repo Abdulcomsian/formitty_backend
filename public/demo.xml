@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<layout>
+    <header>
+        <logo filename="logo.png" />
+        <title>My Company</title>
+    </header>
+    <navigation>
+        <item href="home.html">Home</item>
+        <item href="services.html">Services</item>
+        <item href="about.html">About</item>
+        <item href="contact.html">Contact</item>
+    </navigation>
+    <main>
+        <section>
+            <h1>Welcome to My Company</h1>
+            <p>We are a leading provider of high-quality services and products. Our team of experts is dedicated to helping you achieve your goals and meet your needs.</p>
+        </section>
+        <aside>
+            <h2>Recent News</h2>
+            <ul>
+                <li>New product launch</li>
+                <li>Expansion into new markets</li>
+                <li>Partnership with industry leaders</li>
+            </ul>
+        </aside>
+    </main>
+    <footer>
+        <p>Copyright &copy; 2022 My Company</p>
+    </footer>
+</layout>

@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class UserForm extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'form_id', 'user_id', 'form_type',
+    ];
+
+    protected $table = 'user_form';
+
+    public function userFormHeadings()
+    {
+        return $this->hasMany(UserFormHeading::class);
+    }
+
+    public function customHeadings()
+    {
+        return $this->hasMany(CustomHeading::class);
+    }
+}
