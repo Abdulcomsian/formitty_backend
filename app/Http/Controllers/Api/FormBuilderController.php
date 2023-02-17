@@ -66,7 +66,7 @@ class FormBuilderController extends ApiController
         $input = $request->all();
         $array = [];
         $user_form = new UserForm();
-        $user_form->form_id = '1';
+        $user_form->form_id = $request->form_id;
         $user_form->user_id = Auth::user()->id ?? '2';
         $user_form->save();
 //        try {
@@ -151,17 +151,20 @@ class FormBuilderController extends ApiController
 //        }
     }
 
+
     public function updateFormField(Request $request, $user_form_id)
     {
         $input = $request->all();
+        $array = [];
+
         $user_form = UserForm::find($user_form_id);
 
         if (!$user_form) {
             return $this->errorResponse("User form not found", 404);
         }
 
-        // Update the fields of the user_form record
-/*        $user_form->form_id = $input['form_id'] ?? $user_form->form_id;
+        /*// Update the fields of the user_form record
+        $user_form->form_id = $input['form_id'] ?? $user_form->form_id;
         $user_form->user_id = Auth::user()->id ?? $user_form->user_id;
         $user_form->save();*/
 
@@ -178,10 +181,28 @@ class FormBuilderController extends ApiController
 
             if ($name == 'custom_heading') {
                 $custom_heading = CustomHeading::where('user_form_id', $user_form_id)
-                    ->where('user_heading_id', $order_id)
+                    ->where('user_heading_id', $heading_id)
                     ->first();
                 if ($custom_heading) {
                     $custom_heading->form_heading = $value;
+                    $custom_heading->save();
+                } else{
+                    $custom_heading = new CustomHeading();
+                    $custom_heading->user_form_id = $user_form_id;
+                    $custom_heading->user_heading_id = $order_id;
+                    $custom_heading->form_heading = $value;
+                    $custom_heading->save();
+
+                    $userFormHeading = new UserFormHeading;
+                    $userFormHeading->user_id = Auth::user()->id ?? '2';
+                    $userFormHeading->heading_id = $custom_heading->id;
+                    $userFormHeading->order_id = $order_id;
+                    $userFormHeading->user_form_id = $user_form_id;
+                    $userFormHeading->heading_type = 'custom';
+                    $userFormHeading->save();
+
+                    $custom_heading = CustomHeading::findorfail($custom_heading->id);
+                    $custom_heading->user_heading_id = $userFormHeading->id;
                     $custom_heading->save();
                 }
             } else if ($name == 'custom_field') {
@@ -201,6 +222,17 @@ class FormBuilderController extends ApiController
                     $form_data->save();
                 }
             }
+
+            // Update the user_form_headings
+            if (!in_array($heading_id, $array)) {
+                $form_heading = UserFormHeading::where('id', $heading_id)
+                    ->where('user_form_id', $user_form_id)
+                    ->first();
+                if ($form_heading) {
+                    $form_heading->heading = $name;
+                    $form_heading->save();
+                }
+            }
         }
 
         self::generateWordDocument($user_form_id);
@@ -209,6 +241,7 @@ class FormBuilderController extends ApiController
         $success['user_form_id'] = $user_form_id;
         return $this->successResponse($success, 'Document Generated Successfully.');
     }
+
 
 
     private function storeCustomHeading($user_form, $value, $order_id)

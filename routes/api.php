@@ -25,6 +25,7 @@ Route::post('/get-fields', [FormBuilderController::class, 'getFormFields']);
 //Route::post('/get-user-forms', [FormBuilderController::class, 'getUserForms']);
 Route::post('/get-forms', [FormBuilderController::class, 'getForms']);
 Route::post('/store-form-fields', [FormBuilderController::class, 'storeFormField']);
+Route::post('/update-form-fields/{id}', [FormBuilderController::class, 'updateFormField']);
 Route::post('/import', [AuthController::class, 'import']);
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/logout', [AuthController::class, 'logout']);
