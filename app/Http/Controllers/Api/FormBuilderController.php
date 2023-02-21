@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Form;
 use App\Models\FormHeading;
+use App\Models\AssessmentTool;
 use App\Models\FormData;
 use App\Models\FormField;
 use App\Models\UserForm;
@@ -536,7 +537,7 @@ class FormBuilderController extends ApiController
 
             $user_form = UserForm::where('user_id', $user_id)
                 ->where(function ($query) use ($request) {
-                    $query->where('user_form.id', 'like', '%' . $request->value . '%')
+                    $query->where('user_form.id', $request->value)
                         ->orWhere('forms.name', 'like', '%' . $request->value . '%');
                 })
                 ->join('forms', 'user_form.form_id', '=', 'forms.id')
@@ -557,6 +558,15 @@ class FormBuilderController extends ApiController
             return $this->successResponse($data, "Data retrieved successfully", 200);
         } catch (\Throwable $th) {
             return $this->errorResponse($th->getMessage(), 500);
+        }
+    }
+
+    public function assessmentTools(){
+        try {
+            $assessment_tools = AssessmentTool::latest()->get();
+            return $this->successResponse($assessment_tools, 'Assessment tools get successfully!.', 200);
+        } catch (\Throwable $th) {
+            return $this->errorResponse($th->getMessage(), 401);
         }
     }
 
