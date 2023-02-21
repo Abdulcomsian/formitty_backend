@@ -540,9 +540,9 @@ class FormBuilderController extends ApiController
                     $query->where('user_form.id', $request->value)
                         ->orWhere('forms.name', 'like', '%' . $request->value . '%');
                 })
-                ->join('forms', 'user_form.form_id', '=', 'forms.id')
+                ->leftjoin('forms', 'user_form.form_id', '=', 'forms.id')
+                ->select('user_form.*', 'forms.name')
                 ->get();
-
             $data = [];
 
             foreach ($user_form as $uf) {
