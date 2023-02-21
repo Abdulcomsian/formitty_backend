@@ -528,4 +528,37 @@ class FormBuilderController extends ApiController
             return $this->errorResponse($th->getMessage(), 500);
         }
     }
+
+    public function searchFilter(Request $request)
+    {
+        try {
+            $user_id = Auth::user()->id ?? '2';
+            $user_form = UserForm::where('user_id', $user_id)
+                ->where('id', 'like', '%' . $request->value . '%')
+                ->get();
+
+            $data = [];
+
+            foreach ($user_form as $uf) {
+                $form = Form::find($uf->form_id);
+
+                $data[] = [
+                    'id' => $uf->id,
+                    'form_id' => $uf->form_id,
+                    'form_status' => $uf->form_type,
+                    'form_name' => $form->name,
+                    'created_at' => $uf->created_at,
+                ];
+            }
+
+            /*$forms = UserForm::whereHas('form', function ($query) use ($request) {
+                $query->where('name', 'like', '%' . $request->value . '%')->where('user_id', $user_id));
+            })
+                ->orWhere('id', 'like', '%' . $request->value . '%')
+                ->get();*/
+            return $this->successResponse($data, "Data retrieved successfully", 200);
+        } catch (\Throwable $th) {
+            return $this->errorResponse($th->getMessage(), 500);
+        }
+    }
 }
