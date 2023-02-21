@@ -35,6 +35,7 @@ Route::post('get-user-forms', [FormBuilderController::class, 'getUserForm']);
 Route::post('get-user-forms-data', [FormBuilderController::class, 'getUserFormsData']);
 //Route::get('marked-completed/{user_form_id}', [FormBuilderController::class, 'markComplete']);
 Route::get('change-status/{user_form_heading_id}', [FormBuilderController::class, 'changeStatus']);
+Route::get('search-filter'}, [FormBuilderController::class, 'searchFilter']);
 Route::get('assessment-tools', [FormBuilderController::class, 'assessmentTools']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
