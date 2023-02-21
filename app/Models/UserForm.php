@@ -24,4 +24,9 @@ class UserForm extends Model
     {
         return $this->hasMany(CustomHeading::class);
     }
+
+    public function form()
+    {
+        return $this->belongsTo(Form::class);
+    }
 }
