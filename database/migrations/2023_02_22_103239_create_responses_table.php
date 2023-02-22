@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('assessment_tools', function (Blueprint $table) {
+        Schema::create('responses', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('slug')->unique()->nullable();
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('assessment_tool_id')->constrained('assessment_tools');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('assessment_tools');
+        Schema::dropIfExists('responses');
     }
 };

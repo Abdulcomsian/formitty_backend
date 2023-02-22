@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\MediaUploadController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\FormBuilderController;
+use App\Http\Controllers\Admin\AssessmentToolController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TestController;
 
@@ -81,6 +82,13 @@ Route::group([
     Route::post('get-form-builder/{id}', [FormBuilderController::class, 'formBuilderDetail'])->name('admin.getFormBuilder');
     Route::get('form-builder/delete/{id}',  [FormBuilderController::class, 'destroy'])->name('form-builder-delete');
     Route::post('delete-selected-form-builder',  [FormBuilderController::class, 'DeleteSelectedFormBuilder'])->name('delete-selected-form-builder');
+
+    //AssessmentTool Controller
+    Route::resource('assessment-tools', UsersController::class);
+//    Route::post('get-assessment-tools',  [UsersController::class, 'getAssessmentTools'])->name('admin.getUsers');
+    Route::post('get-assessment-tool', [UsersController::class, 'assessmentToolDetail'])->name('admin.getAssessment');
+    Route::get('assessment-tools/delete/{id}',  [UsersController::class, 'destroy'])->name('assessment_delete');
+    Route::post('delete-selected-assessment-tools',  [UsersController::class, 'DeleteSelectedUsers'])->name('delete_selected_tools');
 
 
     //Permission Controller

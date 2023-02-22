@@ -16,35 +16,13 @@ class AssessmentToolSeeder extends Seeder
     public function run()
     {
 
-        $assessment_tools = [
-            [
-                'name' => "Assessment Tool 1",
-                'slug' => "assessment-tool-1",
-            ],
-            [
-                'name' => "Assessment Tool 2",
-                'slug' => "assessment-tool-2",
-            ],
-            [
-                'name' => "Assessment Tool 3",
-                'slug' => "assessment-tool-3",
-            ],
-            [
-                'name' => "Assessment Tool 4",
-                'slug' => "assessment-tool-4",
-            ],
-            [
-                'name' => "Assessment Tool 5",
-                'slug' => "assessment-tool-5",
-            ],
-            [
-                'name' => "Assessment Tool 6",
-                'slug' => "assessment-tool-6",
-            ]
-        ];
+        $faker = \Faker\Factory::create();
 
-        foreach ($assessment_tools as $row) {
-            AssessmentTool::create($row);
+        for ($i = 0; $i < 20; $i++) {
+            AssessmentTool::create([
+                'title' => $faker->sentence,
+                'slug' => $faker->slug,
+            ]);
         }
     }
 }

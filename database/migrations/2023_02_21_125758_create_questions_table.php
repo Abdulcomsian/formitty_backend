@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('assessment_tools', function (Blueprint $table) {
+        Schema::create('questions', function (Blueprint $table) {
             $table->id();
+            $table->unsignedbiginteger('assessment_tool_id');
             $table->string('title');
-            $table->string('slug')->unique()->nullable();
+            $table->enum('type', ['multiple_choice', 'open_ended']);
+            $table->foreign('assessment_tool_id')->references('id')->on('assessment_tools')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('assessment_tools');
+        Schema::dropIfExists('questions');
     }
 };

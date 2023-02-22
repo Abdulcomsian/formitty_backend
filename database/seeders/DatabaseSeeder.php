@@ -21,5 +21,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UserFormHeadingsTableSeeder::class);
         $this->call(FormDataTableSeeder::class);
         $this->call(AssessmentToolSeeder::class);
+        $this->call(QuestionsTableSeeder::class);
     }
 }

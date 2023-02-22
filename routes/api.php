@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\FormBuilderController;
+use App\Http\Controllers\Api\AssessmentToolController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,7 @@ Route::post('get-user-forms-data', [FormBuilderController::class, 'getUserFormsD
 Route::get('change-status/{user_form_heading_id}', [FormBuilderController::class, 'changeStatus']);
 Route::post('search-filter', [FormBuilderController::class, 'searchFilter']);
 Route::get('assessment-tools', [FormBuilderController::class, 'assessmentTools']);
+Route::post('get-questions', [AssessmentToolController::class, 'getQuestions']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
