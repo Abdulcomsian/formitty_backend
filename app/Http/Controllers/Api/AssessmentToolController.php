@@ -137,13 +137,13 @@ class AssessmentToolController extends ApiController
                 ], 400);
             }
 
-            $store = new Store();
-            $store->user_id = Auth::user()->id ?? '2';
-            $store->user_form_id = $request->user_form_id;
-            $store->assessment_tool_id = $request->assessment_id;
-            $store->save();
+            $response = new Response();
+            $response->user_id = Auth::user()->id ?? '2';
+            $response->user_form_id = $request->user_form_id;
+            $response->assessment_tool_id = $request->assessment_id;
+            $response->save();
 
-            return $this->successResponse($store, 'Questions get successfully!.', 200);
+            return $this->successResponse($response, 'Assessment tools stored successfully!.', 200);
         } catch (\Throwable $th) {
             return $this->errorResponse($th->getMessage(), 401);
         }
