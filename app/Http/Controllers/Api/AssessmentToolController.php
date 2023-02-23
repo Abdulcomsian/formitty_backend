@@ -90,20 +90,20 @@ class AssessmentToolController extends ApiController
     }
 
     public function editAssessment(Request $request){
+
+        // Validate the request data
+        $validator = Validator::make($request->all(), [
+            'assessment_id' => 'required|integer',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'message' => 'Validation error',
+                'errors' => $validator->errors()
+            ], 400);
+        }
+
         try {
-
-            // Validate the request data
-            $validator = Validator::make($request->all(), [
-                'assessment_id' => 'required|integer',
-            ]);
-
-            if ($validator->fails()) {
-                return response()->json([
-                    'message' => 'Validation error',
-                    'errors' => $validator->errors()
-                ], 400);
-            }
-
             // Find the response with the given ID
             $response = Response::with('assessment_tool', 'assessment_tool.questions', 'assessment_tool.questions.options')->findOrFail($request->assessment_id);
 
