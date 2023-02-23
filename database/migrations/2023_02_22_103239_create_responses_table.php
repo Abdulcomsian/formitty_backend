@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('assessment_tool_id')->constrained('assessment_tools');
+            $table->foreignId('user_form_id')->constrained('user_form');
             $table->timestamps();
         });
     }

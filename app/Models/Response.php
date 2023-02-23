@@ -12,6 +12,7 @@ class Response extends Model
     protected $fillable = [
         'user_id',
         'assessment_tool_id',
+        'user_form_id',
     ];
 
     public function getAnswerForQuestion($questionId)

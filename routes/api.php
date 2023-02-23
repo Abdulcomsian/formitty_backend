@@ -41,6 +41,7 @@ Route::get('assessment-tools', [FormBuilderController::class, 'assessmentTools']
 Route::post('get-questions', [AssessmentToolController::class, 'getQuestions']);
 Route::post('store-questions', [AssessmentToolController::class, 'storeQuestions']);
 Route::post('edit-assessment', [AssessmentToolController::class, 'editAssessment']);
+Route::post('store-assessment', [AssessmentToolController::class, 'storeAssessmentTool']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

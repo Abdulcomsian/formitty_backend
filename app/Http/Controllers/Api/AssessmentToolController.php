@@ -37,7 +37,7 @@ class AssessmentToolController extends ApiController
 
     public function storeQuestions(Request $request)
     {
-        // Validate the request data
+       /* // Validate the request data
         $validator = Validator::make($request->all(), [
             'assessment_tool_id' => 'required|integer',
             'answers' => 'required|array',
@@ -51,7 +51,7 @@ class AssessmentToolController extends ApiController
                 'message' => 'Validation error',
                 'errors' => $validator->errors()
             ], 400);
-        }
+        }*/
 
         try {
 
@@ -59,6 +59,7 @@ class AssessmentToolController extends ApiController
         $response = new Response([
             'assessment_tool_id' => $request->input('assessment_tool_id'),
             'user_id' => Auth::user()->id ?? '2',
+            'user_form_id' => 4,
         ]);
 
         // Save the response object to the database
@@ -91,25 +92,58 @@ class AssessmentToolController extends ApiController
     public function editAssessment(Request $request){
         try {
 
+            // Validate the request data
+            $validator = Validator::make($request->all(), [
+                'assessment_id' => 'required|integer',
+            ]);
+
+            if ($validator->fails()) {
+                return response()->json([
+                    'message' => 'Validation error',
+                    'errors' => $validator->errors()
+                ], 400);
+            }
+
             // Find the response with the given ID
             $response = Response::with('assessment_tool', 'assessment_tool.questions', 'assessment_tool.questions.options')->findOrFail($request->assessment_id);
 
-           /* // Load the assessment tool and questions
-            $assessmentTool = $response->assessment_tool;
-
-            $questions = $assessmentTool->questions->options;
-
-            // Load the answer data for the response*/
             $answerData = [];
             foreach ($response->answers as $answer) {
                 $answerData[$answer->question_id] = $answer->option_id ?? $answer->answer;
             }
             $responseData = [
                 'response' => $response,
-//                'questions' => $questions,
                 'answers' => $answerData,
             ];
             return $this->successResponse($responseData, 'Questions get successfully!.', 200);
+        } catch (\Throwable $th) {
+            return $this->errorResponse($th->getMessage(), 401);
+        }
+    }
+
+    public function storeAssessmentTool(Request $request){
+        try {
+
+            // Validate the request data
+            $validator = Validator::make($request->all(), [
+                'assessment_id' => 'required|integer',
+                'user_form_id' => 'required|integer',
+            ]);
+
+            if ($validator->fails()) {
+                return response()->json([
+                    'message' => 'Validation error',
+                    'errors' => $validator->errors()
+                ], 400);
+            }
+
+            $store = new Store();
+            $store->user_id = Auth::user()->id ?? '2';
+            $store->user_form_id = $request->user_form_id;
+            $store->assessment_tool_id = $request->assessment_id;
+            $store->save();
+
+            return $this->successResponse($store, 'Questions get successfully!.', 200);
         } catch (\Throwable $th) {
             return $this->errorResponse($th->getMessage(), 401);
         }
