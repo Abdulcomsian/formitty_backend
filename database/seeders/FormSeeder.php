@@ -20,9 +20,6 @@ class FormSeeder extends Seeder
 
     public function run()
     {
-        $array = [
-
-        ];
 
         Form::create([
             'name' => 'Continence Related Assistive Technology Assessment Template'
