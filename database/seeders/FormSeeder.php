@@ -15,8 +15,48 @@ class FormSeeder extends Seeder
      *
      * @return void
      */
+
+
+
     public function run()
     {
+        $array = [
+
+        ];
+
+        Form::create([
+            'name' => 'Continence Related Assistive Technology Assessment Template'
+        ]);
+
+        Form::create([
+            'name' => 'Animal Assessment Report'
+        ]);
+
+        Form::create([
+            'name' => 'Dog Guide Report'
+        ]);
+
+        Form::create([
+            'name' => 'Home Modification Report'
+        ]);
+
+        Form::create([
+            'name' => 'Prosthetics & Orthotics Assistive Technology Assessment Template'
+        ]);
+
+        Form::create([
+            'name' => 'Vehicle Modification Assessment Template'
+        ]);
+
+        Form::create([
+            'name' => 'Hearing Devices and Hearing Technology Assessment Template'
+        ]);
+
+        Form::create([
+            'name' => 'Nutrition and Dysphagia Assistive Technology Supports Assessment Template'
+        ]);
+
+
         $section1 = '<table style="background-color:#6a2c75; border:none; width:100%; margin-top:20px">
     <tr>
         <td>
@@ -780,9 +820,9 @@ $section4 = '<table style="background-color:#6a2c75; border:none; width:100%; ma
     </tbody>
 </table>';
 
-        $form = Form::create([
+       /* $form = Form::create([
             'name' => 'Continence Related Assistive Technology Assessment Template'
-        ]);
+        ]);*/
 
         $form = FormHeading::create([
             'form_heading' => 'Participant and Plan Management Details',
