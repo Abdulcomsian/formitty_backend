@@ -122,20 +122,20 @@ class AssessmentToolController extends ApiController
     }
 
     public function storeAssessmentTool(Request $request){
+        // Validate the request data
+        $validator = Validator::make($request->all(), [
+            'assessment_id' => 'required|integer',
+            'user_form_id' => 'required|integer',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'message' => 'Validation error',
+                'errors' => $validator->errors()
+            ], 400);
+        }
+        
         try {
-
-            // Validate the request data
-            $validator = Validator::make($request->all(), [
-                'assessment_id' => 'required|integer',
-                'user_form_id' => 'required|integer',
-            ]);
-
-            if ($validator->fails()) {
-                return response()->json([
-                    'message' => 'Validation error',
-                    'errors' => $validator->errors()
-                ], 400);
-            }
 
             $response = new Response();
             $response->user_id = Auth::user()->id ?? '2';
