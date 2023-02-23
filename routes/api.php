@@ -39,6 +39,8 @@ Route::get('change-status/{user_form_heading_id}', [FormBuilderController::class
 Route::post('search-filter', [FormBuilderController::class, 'searchFilter']);
 Route::get('assessment-tools', [FormBuilderController::class, 'assessmentTools']);
 Route::post('get-questions', [AssessmentToolController::class, 'getQuestions']);
+Route::post('store-questions', [AssessmentToolController::class, 'storeQuestions']);
+Route::post('edit-assessment', [AssessmentToolController::class, 'editAssessment']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

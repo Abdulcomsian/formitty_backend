@@ -8,4 +8,29 @@ use Illuminate\Database\Eloquent\Model;
 class Response extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'user_id',
+        'assessment_tool_id',
+    ];
+
+    public function getAnswerForQuestion($questionId)
+    {
+        return $this->answers->firstWhere('question_id', $questionId) ?? new Answer;
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function assessment_tool()
+    {
+        return $this->belongsTo(AssessmentTool::class);
+    }
+
+    public function answers()
+    {
+        return $this->hasMany(Answer::class);
+    }
 }

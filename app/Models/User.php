@@ -42,4 +42,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function assessment_tools()
+    {
+        return $this->hasMany(AssessmentTool::class);
+    }
+
+    public function responses()
+    {
+        return $this->hasMany(Response::class);
+    }
 }
