@@ -14,6 +14,34 @@ use Illuminate\Support\Facades\Auth;
 
 class AssessmentToolController extends ApiController
 {
+    public function assessmentTools(){
+        try {
+            $assessment_tools = AssessmentTool::latest()->get();
+            return $this->successResponse($assessment_tools, 'Assessment tools get successfully!.', 200);
+        } catch (\Throwable $th) {
+            return $this->errorResponse($th->getMessage(), 401);
+        }
+    }
+
+    public function userAssessmentTools(Request $request){
+
+        $validator = Validator::make(request()->all(), [
+            'user_form_id' => 'required|integer',
+        ]);
+
+        ### On fail returns responses ###
+        if ($validator->fails()) {
+            return $this->errorResponse($validator->messages(), 422);
+        }
+
+        try{
+            $assessment_tools = Response::with('assessment_tool')->where([['user_id', Auth::user()->id ?? '2'],['user_form_id', $request->user_form_id]])->get();
+            return $this->successResponse($assessment_tools, 'Assessment tools get successfully!.', 200);
+        } catch(\Throwable $th){
+            return $this->errorResponse($th->getMessage(), 401);
+        }
+    }
+
     public function getQuestions(Request $request)
     {
         $validator = Validator::make(request()->all(), [

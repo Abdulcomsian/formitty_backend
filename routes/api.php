@@ -37,7 +37,8 @@ Route::post('get-user-forms-data', [FormBuilderController::class, 'getUserFormsD
 //Route::get('marked-completed/{user_form_id}', [FormBuilderController::class, 'markComplete']);
 Route::get('change-status/{user_form_heading_id}', [FormBuilderController::class, 'changeStatus']);
 Route::post('search-filter', [FormBuilderController::class, 'searchFilter']);
-Route::get('assessment-tools', [FormBuilderController::class, 'assessmentTools']);
+Route::get('assessment-tools', [AssessmentToolController::class, 'assessmentTools']);
+Route::post('user-assessment-tools', [AssessmentToolController::class, 'userAssessmentTools']);
 Route::post('get-questions', [AssessmentToolController::class, 'getQuestions']);
 Route::post('store-questions', [AssessmentToolController::class, 'storeQuestions']);
 Route::post('edit-assessment', [AssessmentToolController::class, 'editAssessment']);
