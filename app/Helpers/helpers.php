@@ -136,3 +136,12 @@ function extract_values($string) {
     $orderId = $parts[2];
     return array($name, $heading_id, $orderId);
 }
+
+
+function extract_values_assessment($string) {
+    $parts = explode("-", $string);
+    $name = $parts[0];
+    $question_id = $parts[1];
+    $option_id = $parts[2] ?? null;
+    return array($name, $question_id, $option_id);
+}

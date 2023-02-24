@@ -65,57 +65,52 @@ class AssessmentToolController extends ApiController
 
     public function storeQuestions(Request $request)
     {
-       /* // Validate the request data
-        $validator = Validator::make($request->all(), [
-            'assessment_tool_id' => 'required|integer',
-            'answers' => 'required|array',
-            'answers.*.question_id' => 'required|integer',
-            'answers.*.option_id' => 'required_without:answers.*.answer|integer',
-            'answers.*.answer' => 'required_without:answers.*.option_id|string',
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json([
-                'message' => 'Validation error',
-                'errors' => $validator->errors()
-            ], 400);
-        }*/
+        $input = $request->all();
 
         try {
+            // Create a new response object
+            $response = new Response([
+                'assessment_tool_id' => $request->input('assessment_id'),
+                'user_id' => Auth::user()->id ?? '2',
+                'user_form_id' => $request->user_form_id,
+            ]);
 
-        // Create a new response object
-        $response = new Response([
-            'assessment_tool_id' => $request->input('assessment_tool_id'),
-            'user_id' => Auth::user()->id ?? '2',
-            'user_form_id' => 4,
-        ]);
+            // Save the response object to the database
+            $response->save();
 
-        // Save the response object to the database
-        $response->save();
+            // Loop through the answers and create Answer objects for each
+            foreach ($input as $key=>$value) {
+                If($key == 'assessment_id' || $key == 'user_form_id'){
+                    continue;
+                }
+                $result = extract_values_assessment($key);
+                $name = $result[0];
+                $question_id = $result[1];
+                $option_id = $result[2] ?? null;
 
-        // Loop through the answers and create Answer objects for each
-        foreach ($request->input('answers') as $answerData) {
-            if (isset($answerData['option_id'])) {
-                $answer = new Answer([
-                    'question_id' => $answerData['question_id'],
-                    'option_id' => $answerData['option_id'],
-                    'response_id' => $response->id
-                ]);
+                if ($name == 'multiple_choice') {
+                    $answer = new Answer([
+                        'question_id' => $question_id,
+                        'option_id' => $option_id,
+                        'response_id' => $response->id
+                    ]);
+                } elseif ($name == 'open_ended') {
+                    $answer = new Answer([
+                        'question_id' => $question_id,
+                        'answer' => $value,
+                        'response_id' => $response->id
+                    ]);
+                }
 
-            } elseif (isset($answerData['answer'])) {
-                $answer = new Answer([
-                    'question_id' => $answerData['question_id'],
-                    'answer' => $answerData['answer'],
-                    'response_id' => $response->id
-                ]);
+                $answer->save();
             }
-            $answer->save();
-        }
-        return $this->successResponse($assessment_tools, 'Questions get successfully!.', 200);
+
+            return $this->successResponse($response, 'Questions get successfully!.', 200);
         } catch (\Throwable $th) {
             return $this->errorResponse($th->getMessage(), 401);
         }
     }
+
 
     public function editAssessment(Request $request){
 
