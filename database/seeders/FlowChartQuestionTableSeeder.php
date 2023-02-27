@@ -21,7 +21,7 @@ class FlowChartQuestionTableSeeder extends Seeder
         $flowChartToolIds = AssessmentTool::where('type', 'flow_chart')->pluck('id')->toArray();
 
         foreach ($flowChartToolIds as $assessmentToolId) {
-            for ($i = 0; $i < 200; $i++) {
+            for ($i = 0; $i < 3; $i++) {
                 $question = FlowchartQuestions::create([
                     'assessment_tool_id' => $assessmentToolId,
                     'title' => $faker->sentence,
@@ -39,7 +39,7 @@ class FlowChartQuestionTableSeeder extends Seeder
 
                     $parentQuestion = $childQuestion;
 
-                    for ($j = 0; $j < 3; $j++) {
+                    for ($k = 0; $k < 3; $k++) {
                         $childQuestion = FlowchartQuestions::create([
                             'assessment_tool_id' => $assessmentToolId,
                             'title' => $faker->sentence,
@@ -48,7 +48,7 @@ class FlowChartQuestionTableSeeder extends Seeder
 
                         $parentQuestion = $childQuestion;
 
-                        for ($j = 0; $j < 3; $j++) {
+                        for ($l = 0; $l < 3; $l++) {
                             $childQuestion = FlowchartQuestions::create([
                                 'assessment_tool_id' => $assessmentToolId,
                                 'title' => $faker->sentence,

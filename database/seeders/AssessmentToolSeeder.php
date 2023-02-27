@@ -18,7 +18,7 @@ class AssessmentToolSeeder extends Seeder
 
         $faker = \Faker\Factory::create();
 
-        for ($i = 0; $i < 40; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             AssessmentTool::create([
                 'title' => $faker->sentence,
                 'slug' => $faker->slug,
