@@ -26,7 +26,7 @@ class AssessmentToolController extends ApiController
     public function userAssessmentTools(Request $request){
 
         $validator = Validator::make(request()->all(), [
-            'user_form_id' => 'required|integer',
+            'user_assessment_id' => 'required|integer',
         ]);
 
         ### On fail returns responses ###
@@ -116,7 +116,7 @@ class AssessmentToolController extends ApiController
 
         // Validate the request data
         $validator = Validator::make($request->all(), [
-            'user_form_id' => 'required|integer',
+            'user_assessment_id' => 'required|integer',
         ]);
 
         if ($validator->fails()) {
@@ -128,7 +128,7 @@ class AssessmentToolController extends ApiController
 
         try {
             // Find the response with the given ID
-            $response = Response::with('assessment_tool', 'assessment_tool.questions', 'assessment_tool.questions.options')->findOrFail($request->user_form_id);
+            $response = Response::with('assessment_tool', 'assessment_tool.questions', 'assessment_tool.questions.options')->findOrFail($request->user_assessment_id);
 
             $answerData = [];
             foreach ($response->answers as $answer) {
