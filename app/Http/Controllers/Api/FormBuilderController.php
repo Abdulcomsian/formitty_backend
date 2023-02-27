@@ -62,7 +62,7 @@ class FormBuilderController extends ApiController
         }
     }
 
-    public function storeFormField(Request $request)
+    public function storeFormField(Request $request, $update = null)
     {
         $input = $request->all();
         $array = [];
@@ -76,11 +76,20 @@ class FormBuilderController extends ApiController
             if ($key == 'form_id' || $key == 'marked' || $key == 'form_heading_id') {
                 continue; // skip to the next iteration of the loop
             }
+            if($update){
+                $string = $key;
+                $heading_id = substr($string, strpos($string, "part_") + 5, 1);
+                $result = extract_values($key);
+                $name = $result[0];
+                $heading_id = $heading_id;
+                $order_id = $result[2];
+            } else{
+                $result = extract_values($key);
+                $name = $result[0];
+                $heading_id = $result[1];
+                $order_id = $result[2];
+            }
 
-            $result = extract_values($key);
-            $name = $result[0];
-            $heading_id = $result[1];
-            $order_id = $result[2];
 
             if ($name == 'custom_heading') {
                 $custom_heading = new CustomHeading();
@@ -159,15 +168,6 @@ class FormBuilderController extends ApiController
 
         if ($user_form) {
 
-           /* // Delete related rows from the UserFormHeading table
-            UserFormHeading::where('user_form_id', $user_form_id)->delete();
-            // Delete related rows from the FormData table
-            FormData::where('user_form_id', $user_form_id)->delete();
-            // Delete related rows from the CustomHeading table
-            CustomHeading::where('user_form_id', $user_form_id)->delete();
-            // Delete the row from the UserForm table
-            $user_form->delete();*/
-
             // find all the user form headings that correspond to the given $user_form_id
             $user_form_headings = UserFormHeading::where('user_form_id', $user_form_id)->get();
 
@@ -189,7 +189,7 @@ class FormBuilderController extends ApiController
             $user_form->delete();
 
 
-            self::storeFormField($request);
+            self::storeFormField($request, 1);
 
             return $this->successResponse([], 'User form deleted successfully.');
         } else {
