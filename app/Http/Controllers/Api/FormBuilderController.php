@@ -155,92 +155,46 @@ class FormBuilderController extends ApiController
 
     public function updateFormField(Request $request, $user_form_id)
     {
-        $input = $request->all();
-        $array = [];
-
         $user_form = UserForm::find($user_form_id);
 
-        if (!$user_form) {
-            return $this->errorResponse("User form not found", 404);
+        if ($user_form) {
+
+           /* // Delete related rows from the UserFormHeading table
+            UserFormHeading::where('user_form_id', $user_form_id)->delete();
+            // Delete related rows from the FormData table
+            FormData::where('user_form_id', $user_form_id)->delete();
+            // Delete related rows from the CustomHeading table
+            CustomHeading::where('user_form_id', $user_form_id)->delete();
+            // Delete the row from the UserForm table
+            $user_form->delete();*/
+
+            // find all the user form headings that correspond to the given $user_form_id
+            $user_form_headings = UserFormHeading::where('user_form_id', $user_form_id)->get();
+
+            foreach ($user_form_headings as $user_form_heading) {
+                // find all the form data that correspond to the user form heading
+                $form_data = FormData::where('user_form_heading_id', $user_form_heading->id)->get();
+
+                // delete all the form data
+                foreach ($form_data as $data) {
+                    $data->delete();
+                }
+
+                // delete the user form heading
+                $user_form_heading->delete();
+            }
+
+            // delete the user form
+            $user_form = UserForm::find($user_form_id);
+            $user_form->delete();
+
+
+            self::storeFormField($request);
+
+            return $this->successResponse([], 'User form deleted successfully.');
+        } else {
+            return $this->errorResponse('User form not found.', 404);
         }
-
-        /*// Update the fields of the user_form record
-        $user_form->form_id = $input['form_id'] ?? $user_form->form_id;
-        $user_form->user_id = Auth::user()->id ?? $user_form->user_id;
-        $user_form->save();*/
-
-        // Update the form data fields
-        foreach ($input as $key => $value) {
-            if ($key == 'form_id' || $key == 'marked' || $key == 'form_heading_id') {
-                continue;
-            }
-
-            $result = extract_values($key);
-            $name = $result[0];
-            $heading_id = $result[1];
-            $order_id = $result[2];
-
-            if ($name == 'custom_heading') {
-                $custom_heading = CustomHeading::where('user_form_id', $user_form_id)
-                    ->where('user_heading_id', $heading_id)
-                    ->first();
-                if ($custom_heading) {
-                    $custom_heading->form_heading = $value;
-                    $custom_heading->save();
-                } else{
-                    $custom_heading = new CustomHeading();
-                    $custom_heading->user_form_id = $user_form_id;
-                    $custom_heading->user_heading_id = $order_id;
-                    $custom_heading->form_heading = $value;
-                    $custom_heading->save();
-
-                    $userFormHeading = new UserFormHeading;
-                    $userFormHeading->user_id = Auth::user()->id ?? '2';
-                    $userFormHeading->heading_id = $custom_heading->id;
-                    $userFormHeading->order_id = $order_id;
-                    $userFormHeading->user_form_id = $user_form_id;
-                    $userFormHeading->heading_type = 'custom';
-                    $userFormHeading->save();
-
-                    $custom_heading = CustomHeading::findorfail($custom_heading->id);
-                    $custom_heading->user_heading_id = $userFormHeading->id;
-                    $custom_heading->save();
-                }
-            } else if ($name == 'custom_field') {
-                $custom_field = CustomHeading::where('user_form_id', $user_form_id)
-                    ->where('user_heading_id', $order_id)
-                    ->first();
-                if ($custom_field) {
-                    $custom_field->custom_field = $value;
-                    $custom_field->save();
-                }
-            } else {
-                $form_data = FormData::where('user_form_heading_id', $heading_id)
-                    ->where('order_id', $order_id)
-                    ->first();
-                if ($form_data) {
-                    $form_data->value = $value;
-                    $form_data->save();
-                }
-            }
-
-            // Update the user_form_headings
-            if (!in_array($heading_id, $array)) {
-                $form_heading = UserFormHeading::where('id', $heading_id)
-                    ->where('user_form_id', $user_form_id)
-                    ->first();
-                if ($form_heading) {
-                    $form_heading->heading = $name;
-                    $form_heading->save();
-                }
-            }
-        }
-
-        self::generateWordDocument($user_form_id);
-        $success['file_path'] = 'https://accrualdev.com/formity/public/download.docx';
-        $success['fields'] = $input;
-        $success['user_form_id'] = $user_form_id;
-        return $this->successResponse($success, 'Document Generated Successfully.');
     }
 
 
