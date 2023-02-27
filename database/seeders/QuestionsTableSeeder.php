@@ -53,7 +53,7 @@ class QuestionsTableSeeder extends Seeder
 
         for ($i = 0; $i < 4000; $i++) {
             Option::create([
-                'question_id' => $faker->numberBetween(1, 100),
+                'question_id' => $faker->numberBetween(1, 400),
                 'title' => $faker->sentence,
             ]);
         }
