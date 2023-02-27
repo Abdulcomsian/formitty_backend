@@ -26,7 +26,7 @@ class AssessmentToolController extends ApiController
     public function userAssessmentTools(Request $request){
 
         $validator = Validator::make(request()->all(), [
-            'user_assessment_id' => 'required|integer',
+            'user_form_id' => 'required|integer',
         ]);
 
         ### On fail returns responses ###
