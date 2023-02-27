@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\AssessmentTool;
+use App\Models\FlowchartQuestions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
@@ -165,6 +166,17 @@ class AssessmentToolController extends ApiController
             $response->user_form_id = $request->user_form_id;
             $response->assessment_tool_id = $request->assessment_id;
             $response->save();
+
+            return $this->successResponse($response, 'Assessment tools stored successfully!.', 200);
+        } catch (\Throwable $th) {
+            return $this->errorResponse($th->getMessage(), 401);
+        }
+    }
+
+    public function getFlowChartQuestions(Request $request){
+        try {
+
+            $response =AssessmentTool::with('flowchart_questions', 'flowchart_questions.child')->find($request->assessment_id);
 
             return $this->successResponse($response, 'Assessment tools stored successfully!.', 200);
         } catch (\Throwable $th) {
