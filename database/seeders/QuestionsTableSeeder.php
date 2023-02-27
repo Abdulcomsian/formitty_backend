@@ -43,7 +43,7 @@ class QuestionsTableSeeder extends Seeder
         }*/
         $faker = \Faker\Factory::create();
 
-        for ($i = 0; $i < 500; $i++) {
+        for ($i = 0; $i < 400; $i++) {
             Question::create([
                 'assessment_tool_id' => $faker->numberBetween(1, 40),
                 'title' => $faker->sentence,
@@ -51,7 +51,7 @@ class QuestionsTableSeeder extends Seeder
             ]);
         }
 
-        for ($i = 0; $i < 3000; $i++) {
+        for ($i = 0; $i < 4000; $i++) {
             Option::create([
                 'question_id' => $faker->numberBetween(1, 100),
                 'title' => $faker->sentence,
