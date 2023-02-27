@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug')->unique()->nullable();
+            $table->enum('type', ['flow_chart', 'questionnaire']);
             $table->timestamps();
         });
     }

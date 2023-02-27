@@ -18,10 +18,11 @@ class AssessmentToolSeeder extends Seeder
 
         $faker = \Faker\Factory::create();
 
-        for ($i = 0; $i < 20; $i++) {
+        for ($i = 0; $i < 40; $i++) {
             AssessmentTool::create([
                 'title' => $faker->sentence,
                 'slug' => $faker->slug,
+                'type' => $faker->randomElement(['flow_chart', 'questionnaire'])
             ]);
         }
     }
