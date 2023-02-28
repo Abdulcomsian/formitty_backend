@@ -173,22 +173,24 @@ class AssessmentToolController extends ApiController
         }
     }
 
-    public function getFlowChartQuestions(Request $request){
+    public function getFlowChartQuestions(Request $request)
+    {
         try {
-            $assessmentTool = AssessmentTool::with([
-                'flowchart_questions' => function ($query) {
-                    // Fetch questions where parent_id is null
-                    $query->whereNull('parent_id');
-                },
-                'flowchart_questions.child' => function ($query) {
-                    // Fetch child questions
-                    $query->whereNotNull('parent_id');
-                },
-            ])->find($request->assessment_id);
+            $response = AssessmentTool::with(['flowchart_questions' => function ($query) {
+                $query->whereNull('parent_id')->with('child');
+            }])->find($request->assessment_id);
 
-            return $this->successResponse($assessmentTool, 'Assessment tools stored successfully!', 200);
+            // Convert the id and parent_id values to strings
+            $response->flowchart_questions->transform(function ($question) {
+                $question->id = (string) $question->id;
+                $question->parent_id = (string) $question->parent_id;
+                return $question;
+            });
+
+            return $this->successResponse($response, 'Assessment tools stored successfully!.', 200);
         } catch (\Throwable $th) {
             return $this->errorResponse($th->getMessage(), 401);
         }
     }
+
 }
