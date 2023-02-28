@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('responses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('assessment_tool_id')->constrained('assessment_tools');
-            $table->foreignId('user_form_id')->constrained('user_form');
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('assessment_tool_id')->constrained('assessment_tools')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('user_form_id')->constrained('user_form')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }
