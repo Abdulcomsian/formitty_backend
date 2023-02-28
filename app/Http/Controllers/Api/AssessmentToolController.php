@@ -70,18 +70,27 @@ class AssessmentToolController extends ApiController
 
         try {
             // Create a new response object
-            $response = new Response([
-                'assessment_tool_id' => $request->input('assessment_id'),
-                'user_id' => Auth::user()->id ?? '2',
-                'user_form_id' => $request->user_form_id,
-            ]);
+            if($request->user_assessment_id) {
+                $response = Response::find($request->user_assessment_id);
+                $response->update([
+                    'assessment_tool_id' => $request->input('assessment_id'),
+                    'user_id' => Auth::user()->id ?? '2',
+                    'user_form_id' => $request->user_form_id,
+                ]);
+            } else {
+                $response = new Response([
+                    'assessment_tool_id' => $request->input('assessment_id'),
+                    'user_id' => Auth::user()->id ?? '2',
+                    'user_form_id' => $request->user_form_id,
+                ]);
+            }
 
             // Save the response object to the database
             $response->save();
 
             // Loop through the answers and create Answer objects for each
             foreach ($input as $key=>$value) {
-                If($key == 'assessment_id' || $key == 'user_form_id'){
+                if($key == 'assessment_id' || $key == 'user_form_id' || $key == 'user_assessment_id') {
                     continue;
                 }
                 $result = extract_values_assessment($key);
