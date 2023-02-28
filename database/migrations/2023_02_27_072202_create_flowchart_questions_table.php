@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('flowchart_questions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('assessment_tool_id')->constrained('assessment_tools')->onDelete('cascade');
+            $table->foreignId('assessment_tool_id')->nullable()->constrained('assessment_tools')->onDelete('cascade');
             $table->string('title');
             $table->unsignedBigInteger('parent_id')->nullable();
             $table->foreign('parent_id')->references('id')->on('flowchart_questions')->onDelete('cascade');

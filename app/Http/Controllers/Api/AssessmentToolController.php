@@ -175,10 +175,18 @@ class AssessmentToolController extends ApiController
 
     public function getFlowChartQuestions(Request $request){
         try {
+            $assessmentTool = AssessmentTool::with([
+                'flowchart_questions' => function ($query) {
+                    // Fetch questions where parent_id is null
+                    $query->whereNull('parent_id');
+                },
+                'flowchart_questions.child' => function ($query) {
+                    // Fetch child questions
+                    $query->whereNotNull('parent_id');
+                },
+            ])->find($request->assessment_id);
 
-            $response =AssessmentTool::with('flowchart_questions', 'flowchart_questions.child')->find($request->assessment_id);
-
-            return $this->successResponse($response, 'Assessment tools stored successfully!.', 200);
+            return $this->successResponse($assessmentTool, 'Assessment tools stored successfully!', 200);
         } catch (\Throwable $th) {
             return $this->errorResponse($th->getMessage(), 401);
         }
