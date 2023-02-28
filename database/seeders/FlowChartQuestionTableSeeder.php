@@ -52,7 +52,7 @@ class FlowChartQuestionTableSeeder extends Seeder
                                 'parent_id' => $parentQuestion->id,
                             ]);
 
-                            $parentQuestion = $childQuestion;
+//                            $parentQuestion = $childQuestion;
                         }
                     }
                 }

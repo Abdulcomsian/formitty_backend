@@ -12,6 +12,7 @@ use App\Models\FormField;
 use App\Models\UserForm;
 use App\Models\CustomHeading;
 use App\Models\UserFormHeading;
+use App\Models\Response;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 use Auth;
@@ -147,6 +148,15 @@ class FormBuilderController extends ApiController
                 }
             }
         }
+        if($update){
+            $user_forms = Response::where('user_form_id', $user_form->id)->get();
+            if(count($user_forms) > 0){
+                foreach ($user_forms as $user_form){
+                    $user_form->user_form_id = $user_form->id;
+                    $user_form->save();
+                }
+            }
+        }
 
         self::generateWordDocument($user_form->id);
 
@@ -189,9 +199,9 @@ class FormBuilderController extends ApiController
             $user_form->delete();
 
 
-            self::storeFormField($request, 1);
+            $response = self::storeFormField($request, $user_form_id);
 
-//            return $this->successResponse([], 'User form deleted successfully.');
+            return $this->successResponse($response, 'User form deleted successfully.');
         } else {
             return $this->errorResponse('User form not found.', 404);
         }
