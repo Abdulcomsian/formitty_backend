@@ -73,7 +73,7 @@ class AssessmentToolController extends ApiController
             if($request->user_assessment_id) {
                 $response = Response::find($request->user_assessment_id);
                 $response->update([
-                    'assessment_tool_id' => $request->input('assessment_id'),
+                    'assessment_tool_id' => $response->assessment_tool_id,
                     'user_id' => Auth::user()->id ?? '2',
                     'user_form_id' => $request->user_form_id,
                 ]);

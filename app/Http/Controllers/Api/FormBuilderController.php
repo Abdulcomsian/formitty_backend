@@ -149,7 +149,7 @@ class FormBuilderController extends ApiController
             }
         }
         if($update){
-            $user_forms = Response::where('user_form_id', $user_form->id)->get();
+            $user_forms = Response::where('user_form_id', $update)->get();
             if(count($user_forms) > 0){
                 foreach ($user_forms as $user_form){
                     $user_form->user_form_id = $user_form->id;
