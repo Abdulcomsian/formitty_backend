@@ -29,6 +29,15 @@ use App\Http\Controllers\TestController;
 |
 */
 
+//create route for running migrate:fresh --seede command in laravel 8
+Route::get('/seed', function () {
+    Artisan::call('migrate:fresh --seed');
+    dd("seeder completed");
+});
+
+//create route for running cache:clear command in laravel 8
+
+
 Route::get('/clear', function () {
     Artisan::call('config:clear');
     Artisan::call('cache:clear');
