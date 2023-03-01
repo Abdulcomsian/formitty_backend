@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedbiginteger('assessment_tool_id');
             $table->string('title');
             $table->enum('type', ['multiple_choice', 'open_ended']);
-            $table->foreign('assessment_tool_id')->references('id')->on('assessment_tools')->onDelete('cascade')->onUpdate('cascade')
+            $table->foreign('assessment_tool_id')->references('id')->on('assessment_tools')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
