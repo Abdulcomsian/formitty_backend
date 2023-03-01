@@ -74,7 +74,7 @@ class FormBuilderController extends ApiController
 //        try {
         //get selected form columns from forms table
         foreach ($input as $key => $value) {
-            if ($key == 'form_id' || $key == 'marked' || $key == 'form_heading_id' || $key == 'assessment_tool') {
+            if ($key == 'form_id' || $key == 'marked' || $key == 'form_heading_id') {
                 continue; // skip to the next iteration of the loop
             }
             if($update){
@@ -82,6 +82,9 @@ class FormBuilderController extends ApiController
                 $heading_id = substr($string, strpos($string, "part_") + 5, 1);
                 $result = extract_values($key);
                 $name = $result[0];
+                if($name == 'assessment_tool') {
+                    continue;
+                }
                 $heading_id = $heading_id;
                 $order_id = $result[2];
             } else{
