@@ -71,6 +71,7 @@ class FormBuilderController extends ApiController
         $user_form->form_id = 1;
         $user_form->user_id = Auth::user()->id ?? '2';
         $user_form->save();
+        $new_response = $user_form;
 //        try {
         //get selected form columns from forms table
         foreach ($input as $key => $value) {
@@ -82,6 +83,9 @@ class FormBuilderController extends ApiController
                 $heading_id = substr($string, strpos($string, "part_") + 5, 1);
                 $result = extract_values($key);
                 $name = $result[0];
+                if($name == 'assessment_tool') {
+                    continue;
+                }
                 $heading_id = $heading_id;
                 $order_id = $result[2];
             } else{
@@ -152,7 +156,7 @@ class FormBuilderController extends ApiController
             $user_forms = Response::where('user_form_id', $update)->get();
             if(count($user_forms) > 0){
                 foreach ($user_forms as $user_form){
-                    $user_form->user_form_id = $user_form->id;
+                    $user_form->user_form_id = $new_response->id;
                     $user_form->save();
                 }
             }
