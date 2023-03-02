@@ -821,7 +821,7 @@ $section4 = '<table style="background-color:#6a2c75; border:none; width:100%; ma
             'name' => 'Continence Related Assistive Technology Assessment Template'
         ]);*/
 
-        /*$form = FormHeading::create([
+        $form = FormHeading::create([
             'form_heading' => 'Participant and Plan Management Details',
             'form_id' => '1',
             'section_html' => $section1
@@ -849,7 +849,7 @@ $section4 = '<table style="background-color:#6a2c75; border:none; width:100%; ma
             'form_heading' => 'Details of Assistive Technology Assessor',
             'form_id' => '1',
             'section_html' => $section5
-        ]);*/
+        ]);
 
         $form_fields = '[
                         {
