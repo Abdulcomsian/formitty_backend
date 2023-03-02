@@ -67,11 +67,8 @@ class FormBuilderController extends ApiController
     {
         $input = $request->all();
         $array = [];
-        $user_form = new UserForm();
-        $user_form->form_id = 1;
-        $user_form->user_id = Auth::user()->id ?? '2';
-        $user_form->save();
-        $new_response = $user_form;
+
+        $user_form = $this->createUserForm($input);
 //        try {
         //get selected form columns from forms table
         foreach ($input as $key => $value) {
@@ -95,84 +92,99 @@ class FormBuilderController extends ApiController
                 $order_id = $result[2];
             }
 
-
             if ($name == 'custom_heading') {
-                $custom_heading = new CustomHeading();
-                $custom_heading->user_form_id = $user_form->id;
-                $custom_heading->user_heading_id = $order_id;
-                $custom_heading->form_heading = $value;
-                $custom_heading->save();
-
-                $userFormHeading = new UserFormHeading;
-                $userFormHeading->user_id = Auth::user()->id ?? '2';
-                $userFormHeading->heading_id = $custom_heading->id;
-                $userFormHeading->order_id = $order_id;
-                $userFormHeading->user_form_id = $user_form->id;
-                $userFormHeading->heading_type = 'custom';
-                $userFormHeading->save();
-
-                $custom_heading = CustomHeading::findorfail($custom_heading->id);
-                $custom_heading->user_heading_id = $userFormHeading->id;
-                $custom_heading->save();
-
+                $custom_heading = $this->createCustomHeading($name, $heading_id, $order_id, $value, $user_form);
             } else if ($name == 'custom_field') {
-                $custom_field = CustomHeading::findorfail($custom_heading->id);
-//                $custom_field = CustomHeading::where('user_form_id', $user_form->id)
-//                    ->where('user_heading_id', $order_id)
-//                    ->first();
-                if ($custom_field) {
-                    $custom_field->custom_field = $value;
-                    $custom_field->save();
-                }
+                $custom_field = $this->customField($value, $custom_heading);
             } else {
-
                 if ($name != 'custom_heading' && $name != 'custom_field') {
-                    $form_data = new FormData();
-                    $form_data->name = $name;
-                    $form_data->form_heading_id = $heading_id;
-                    $form_data->order_id = $order_id;
-                    $form_data->value = $value;
-                    $form_data->user_id = Auth::user()->id ?? '2';
-                    $form_data->save();
-
-                    if (!in_array($heading_id, $array)) {
-                        array_push($array, $heading_id);
-                        $user_form_heading = new UserFormHeading();
-                        $user_form_heading->user_id = Auth::user()->id ?? '2';
-                        $user_form_heading->order_id = $order_id;
-                        $user_form_heading->heading_id = $heading_id;
-                        $user_form_heading->user_form_id = $user_form->id;
-                        $user_form_heading->save();
-                    }
-
-                    $form_data = FormData::findorfail($form_data->id);
-                    $form_data->user_form_heading_id = $user_form_heading->id;
-                    $form_data->save();
-
+                    $custom_heading = $this->checkCustomHeadingOrCustomField($name, $heading_id, $order_id, $value, $array, $user_form);
                 }
             }
         }
         if($update){
-            $user_forms = Response::where('user_form_id', $update)->get();
-            if(count($user_forms) > 0){
-                foreach ($user_forms as $user_form){
-                    $user_form->user_form_id = $new_response->id;
-                    $user_form->save();
-                }
-            }
+            $this->updateResponse($update, $user_form);
         }
 
         self::generateWordDocument($user_form->id);
 
-//            $my_template->saveAs(public_path('download.docx'));
         $success['file_path'] = 'https://accrualdev.com/formity/public/download.docx';
         $success['fields'] = $input;
         $success['user_form_id'] = $user_form->id;
         return $this->successResponse($success, 'Document Generated Successfully.');
 
-//        } catch (\Throwable $th) {
-//            return $this->errorResponse($th->getMessage(), 401);
-//        }
+    }
+
+    private function createUserForm(){
+        $user_form = new UserForm();
+        $user_form->form_id = 1;
+        $user_form->user_id = Auth::user()->id ?? '2';
+        $user_form->save();
+
+        return $user_form;
+    }
+
+    private function createCustomHeading(){
+
+            $custom_heading = new CustomHeading();
+            $custom_heading->user_form_id = $user_form->id;
+            $custom_heading->user_heading_id = $order_id;
+            $custom_heading->form_heading = $value;
+            $custom_heading->save();
+
+            $userFormHeading = new UserFormHeading;
+            $userFormHeading->user_id = Auth::user()->id ?? '2';
+            $userFormHeading->heading_id = $custom_heading->id;
+            $userFormHeading->order_id = $order_id;
+            $userFormHeading->user_form_id = $user_form->id;
+            $userFormHeading->heading_type = 'custom';
+            $userFormHeading->save();
+
+            $custom_heading = CustomHeading::findorfail($custom_heading->id);
+            $custom_heading->user_heading_id = $userFormHeading->id;
+            $custom_heading->save();
+
+            return $custom_heading;
+    }
+
+    private function customField($value, $custom_heading_id){
+        $custom_field = CustomHeading::findorfail($custom_heading->id);
+        if ($custom_field) {
+            $custom_field->custom_field = $value;
+            $custom_field->save();
+        }
+    }
+
+    private function checkCustomHeadingOrCustomField($name, $heading_id, $order_id, $value, &$array, $user_form){
+            $form_data = new FormData();
+            $form_data->name = $name;
+            $form_data->form_heading_id = $heading_id;
+            $form_data->order_id = $order_id;
+            $form_data->value = $value;
+            $form_data->user_id = Auth::user()->id ?? '2';
+            $form_data->save();
+            if (!in_array($heading_id, $array)) {
+                array_push($array, $heading_id);
+                $user_form_heading = new UserFormHeading();
+                $user_form_heading->user_id = Auth::user()->id ?? '2';
+                $user_form_heading->order_id = $order_id;
+                $user_form_heading->heading_id = $heading_id;
+                $user_form_heading->user_form_id = $user_form->id;
+                $user_form_heading->save();
+            }
+            $form_data = FormData::findorfail($form_data->id);
+            $form_data->user_form_heading_id = $user_form_heading->id;
+            $form_data->save();
+    }
+
+    private function updateResponse($update, $user_form_data){
+        $user_forms = Response::where('user_form_id', $update)->get();
+        if(count($user_forms) > 0){
+            foreach ($user_forms as $user_form){
+                $user_form->user_form_id = $user_form_data->id;
+                $user_form->save();
+            }
+        }
     }
 
 
