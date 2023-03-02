@@ -507,6 +507,8 @@ class FormBuilderController extends ApiController
 
         $usr_forms->userFormHeadings = $usr_forms->userFormHeadings->sortBy('order_id');
 
+        $assessment_tool = AssessmentTool::with('questions', 'answers')->findOrFail($assessment_tool_id);
+
         $count = 1;
         $html = View::make('users.sections.header')->render();
         foreach ($usr_forms->userFormHeadings as $userFormHeading) {
@@ -518,16 +520,36 @@ class FormBuilderController extends ApiController
             }
             if ($userFormHeading->heading_type != 'custom') {
                 foreach ($userFormHeading->formData as $formData) {
-                    /*$data = $formData->toArray();
-                    foreach ($data as $key => $value) {
-                        if ($userFormHeading->formHeading->section_html) {
-                            dd($value);
-                        }
-                        $section_html = str_replace('{{' . $key . '}}', $value, $section_html);
-                    }*/
                     $field_name = $formData->name;
                     $field_value = $formData->value;
                     $section_html = str_replace("{{" . $field_name . "}}", $field_value, $section_html);
+                }
+            }
+            if($userFormHeading->heading_type == 'assessment_tool'){
+                $assessment_tool = AssessmentTool::with('questions', 'answers')->findOrFail($userFormHeading->heading_id);
+
+                // Add questions and answers to the HTML
+                foreach ($assessment_tool->questions as $question) {
+                    $html .= "<h2>{$question->title}</h2>";
+
+                    $answers = Response::where('assessment_tool_id', $assessment_tool_id)
+                        ->where('question_id', $question->id)
+                        ->get();
+
+                    if ($question->type === 'multiple_choice') {
+                        $html .= "<table>";
+                        foreach ($question->options as $option) {
+                            $option_count = $answers->where('option_id', $option->id)->count();
+                            $html .= "<tr><td>{$option->title}</td><td>{$option_count}</td></tr>";
+                        }
+                        $html .= "</table>";
+                    } else if ($question->type === 'open_ended') {
+                        $html .= "<ul>";
+                        foreach ($answers as $answer) {
+                            $html .= "<li>{$answer->answer}</li>";
+                        }
+                        $html .= "</ul>";
+                    }
                 }
             }
             $html .= $section_html;
