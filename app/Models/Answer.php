@@ -15,4 +15,19 @@ class Answer extends Model
         'option_id',
         'answer',
     ];
+
+    public function response()
+    {
+        return $this->belongsTo(Response::class);
+    }
+
+    public function question()
+    {
+        return $this->belongsTo(Question::class);
+    }
+
+    public function option()
+    {
+        return $this->belongsTo(Option::class);
+    }
 }

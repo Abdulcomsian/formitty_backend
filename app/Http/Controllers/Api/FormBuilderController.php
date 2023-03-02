@@ -13,6 +13,8 @@ use App\Models\UserForm;
 use App\Models\CustomHeading;
 use App\Models\UserFormHeading;
 use App\Models\Response;
+use App\Models\Answer;
+use App\Models\Option;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\DB;
@@ -511,6 +513,7 @@ class FormBuilderController extends ApiController
 
         $count = 1;
         $html = View::make('users.sections.header')->render();
+        $section_html = '';
         foreach ($usr_forms->userFormHeadings as $userFormHeading) {
             if ($userFormHeading->heading_type == 'custom') {
 //                dd($userFormHeading->customHeading->form_heading);
@@ -526,37 +529,63 @@ class FormBuilderController extends ApiController
                 }
             }
             if($userFormHeading->heading_type == 'assessment_tool'){
-                $assessment_tool = AssessmentTool::with('questions', 'answers')->findOrFail($userFormHeading->heading_id);
-
+                $response = Response::with('assessment_tool', 'assessment_tool.questions', 'assessment_tool.questions.answers')->find($userFormHeading->heading_id);
                 // Add questions and answers to the HTML
-                foreach ($assessment_tool->questions as $question) {
-                    $html .= "<h2>{$question->title}</h2>";
-
-                    $answers = Response::where('assessment_tool_id', $assessment_tool_id)
-                        ->where('question_id', $question->id)
-                        ->get();
-
+                $section_html .= "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
+                        <tr>
+                            <td>
+                                <p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'> Assessment Tool</p>
+                            </td>
+                        </tr>
+                        </table>";
+                $section_html .= "<table
+                        style='
+                            border-collapse: collapse;
+                            width: 100%;
+                            margin: auto;
+                            border: 1px solid lightslategray;
+                        '
+                        >
+                        <tbody>
+                            ";
+                foreach ($response->assessment_tool->questions as $question) {
+                    $answer = Answer::with('option')->where('question_id', $question->id)->first();
+                    $quest = $question->title ?? '';
                     if ($question->type === 'multiple_choice') {
-                        $html .= "<table>";
-                        foreach ($question->options as $option) {
-                            $option_count = $answers->where('option_id', $option->id)->count();
-                            $html .= "<tr><td>{$option->title}</td><td>{$option_count}</td></tr>";
-                        }
-                        $html .= "</table>";
-                    } else if ($question->type === 'open_ended') {
-                        $html .= "<ul>";
-                        foreach ($answers as $answer) {
-                            $html .= "<li>{$answer->answer}</li>";
-                        }
-                        $html .= "</ul>";
+                        $answer = $answer->option->title ?? '';
+                        $section_html .= "<tr>
+                                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
+                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$quest."</p>
+                                </td>
+                                <td style='border: 1px solid lightslategray; padding: 10px'>
+                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$answer."</p>
+                                </td>
+                            </tr>";
+                    } elseif($question->type === 'open_ended') {
+                        $answer = $answer->answer ?? '';
+                        $section_html .= "<tr>
+                                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
+                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$quest."</p>
+                                </td>
+                                <td style='border: 1px solid lightslategray; padding: 10px'>
+                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$answer."</p>
+                                </td>
+                            </tr>";
                     }
+                    /*if ($question->type === 'multiple_choice') {
+                        $html .= "<table>";
+                        $html .= "<tr><td>" . $question->title ?? '' . "</td><td>" . ($answer ? $answer->option->title : '')  . "</td></tr>";
+
+                    } elseif($question->type === 'open_ended') {
+                        $html .= "<h2>".$question->title ?? ''."</h2>";
+                        $html .= "<h2>".($question->answers ? $answer->option->title : '')."</h2>";
+                    }*/
                 }
+                $section_html .= "</tbody>
+                    </table>";
             }
             $html .= $section_html;
         }
-        /*foreach ($usr_forms->customHeadings as $customHeading) {
-            $html .= $customHeading->custom_heading . " : " . $customHeading->custom_field;
-        }*/
         // Save file
         $fileName = "download.docx";
         \PhpOffice\PhpWord\Shared\Html::addHtml($section, $html, false, false);
