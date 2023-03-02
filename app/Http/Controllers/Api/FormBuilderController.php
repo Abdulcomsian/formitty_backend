@@ -534,7 +534,7 @@ class FormBuilderController extends ApiController
                 $section_html .= "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
                         <tr>
                             <td>
-                                <p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'> Assessment Tool</p>
+                                <p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'>".$response->assessment_tool->title."</p>
                             </td>
                         </tr>
                         </table>";
