@@ -507,7 +507,7 @@ class FormBuilderController extends ApiController
 
         $usr_forms->userFormHeadings = $usr_forms->userFormHeadings->sortBy('order_id');
 
-        $assessment_tool = AssessmentTool::with('questions', 'answers')->findOrFail($assessment_tool_id);
+//        $assessment_tool = AssessmentTool::with('questions', 'answers')->findOrFail($assessment_tool_id);
 
         $count = 1;
         $html = View::make('users.sections.header')->render();
