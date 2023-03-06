@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\{Form, FormField, FormHeading};
 
 class HearingSeeder extends Seeder
 {
@@ -1636,69 +1637,7 @@ margin: auto;">
 <p style="font-size:12pt; margin-top:10pt;">1 Attach relevant audiograms (Indicate assessments completed within table).</p>
 <p style="font-size:12pt; margin-top:10pt;">2 Aided preference describes participant’s preferred daily wearing option on each ear.</p>
 ';
-    
-            $form = Form::create([
-                'name' => 'Continence Related Assistive Technology Assessment Template'
-            ]);
-    
-            $form = FormHeading::create([
-                'form_heading' => 'Participant and Plan Management Details',
-                'form_id' => '7',
-                'section_html' => $section1
-            ]);
-    
-            $form = FormHeading::create([
-                'form_heading' => 'Assessment',
-                'form_id' => '7',
-                'section_html' => $section2
-            ]);
-    
-            $form = FormHeading::create([
-                'form_heading' => 'Exploration of Continence Interventions and Options',
-                'form_id' => '7',
-                'section_html' => $section3
-            ]);
-    
-            $form = FormHeading::create([
-                'form_heading' => 'Continence Recommendations',
-                'form_id' => '7',
-                'section_html' => $section4
-            ]);
-    
-            $form = FormHeading::create([
-                'form_heading' => 'Details of Assistive Technology Assessor',
-                'form_id' => '7',
-                'section_html' => $section5
-            ]);
 
-            $form = FormHeading::create([
-                'form_heading' => 'Details of Assistive Technology Assessor',
-                'form_id' => '7',
-                'section_html' => $section5
-            ]);
-
-            $form = FormHeading::create([
-                'form_heading' => 'Details of Assistive Technology Assessor',
-                'form_id' => '7',
-                'section_html' => $section5
-            ]);
-
-            $form = FormHeading::create([
-                'form_heading' => 'Details of Assistive Technology Assessor',
-                'form_id' => '7',
-                'section_html' => $section5
-            ]);
-            $form = FormHeading::create([
-                'form_heading' => 'Details of Assistive Technology Assessor',
-                'form_id' => '7',
-                'section_html' => $section5
-            ]);
-            $form = FormHeading::create([
-                'form_heading' => 'Details of Assistive Technology Assessor',
-                'form_id' => '7',
-                'section_html' => $section5
-            ]);
-    
             $form_fields = '[
                             {
                             "type":"text",
@@ -2030,39 +1969,114 @@ margin: auto;">
             $form_fields5 = '[{"type":"checkbox-group","required":false,"label":"Meet the NDIA expectation","toggle":false,"inline":false,"name":"part_5_declaration_NDIA_expectation","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":true}]},{"type":"checkbox-group","required":false,"label":"Providing appropriate evidence to the NDIA","toggle":false,"inline":false,"name":"part_5_declaration_appropriate_evidence","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":true}]},{"type":"checkbox-group","required":false,"label":"I understand all about the NDIA","toggle":false,"inline":false,"name":"part_5_declaration_NDIA_understanding","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":false}]},{"type":"checkbox-group","required":false,"label":"Accessing by the treating multi-disciplinary team","toggle":false,"inline":false,"name":"part_5_declaration_accessing_team","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":false}]},{"type":"text","required":false,"label":"Name","placeholder":"Enter Assessor’s  Name","className":"form-control","name":"part_5_assessors_name","access":false,"subtype":"text"},{"type":"text","required":false,"label":"NDIS Provider Registration Number","placeholder":"Enter Registration Number","className":"form-control","name":"part_5_registration_number","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Phone Number","placeholder":"Enter Phone Number","className":"form-control","name":"part_5_assessorphone_number","access":false,"subtype":"text"},{"type":"text","subtype":"email","required":false,"label":"Email","placeholder":"Enter Email Address","className":"form-control","name":"part_5_email_address","access":false},{"type":"text","required":false,"label":"Qualification","placeholder":"Enter Qualification here.","className":"form-control","name":"part_5_qualification","access":false,"subtype":"text"},{"type":"date","required":false,"label":"Date of Assessment","placeholder":"Set Date of Assessment","className":"form-control","name":"part_5_date_assessment","access":false},{"type":"date","required":false,"label":"Date of Report","placeholder":"Set Date of Report","className":"form-control","name":"part_5_reportDate","access":false}]';
     
             $form_fields6 = '[{"type":"checkbox-group","required":false,"label":"Meet the NDIA expectation","toggle":false,"inline":false,"name":"part_5_declaration_NDIA_expectation","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":true}]},{"type":"checkbox-group","required":false,"label":"Providing appropriate evidence to the NDIA","toggle":false,"inline":false,"name":"part_5_declaration_appropriate_evidence","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":true}]},{"type":"checkbox-group","required":false,"label":"I understand all about the NDIA","toggle":false,"inline":false,"name":"part_5_declaration_NDIA_understanding","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":false}]},{"type":"checkbox-group","required":false,"label":"Accessing by the treating multi-disciplinary team","toggle":false,"inline":false,"name":"part_5_declaration_accessing_team","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":false}]},{"type":"text","required":false,"label":"Name","placeholder":"Enter Assessor’s  Name","className":"form-control","name":"part_5_assessors_name","access":false,"subtype":"text"},{"type":"text","required":false,"label":"NDIS Provider Registration Number","placeholder":"Enter Registration Number","className":"form-control","name":"part_5_registration_number","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Phone Number","placeholder":"Enter Phone Number","className":"form-control","name":"part_5_assessorphone_number","access":false,"subtype":"text"},{"type":"text","subtype":"email","required":false,"label":"Email","placeholder":"Enter Email Address","className":"form-control","name":"part_5_email_address","access":false},{"type":"text","required":false,"label":"Qualification","placeholder":"Enter Qualification here.","className":"form-control","name":"part_5_qualification","access":false,"subtype":"text"},{"type":"date","required":false,"label":"Date of Assessment","placeholder":"Set Date of Assessment","className":"form-control","name":"part_5_date_assessment","access":false},{"type":"date","required":false,"label":"Date of Report","placeholder":"Set Date of Report","className":"form-control","name":"part_5_reportDate","access":false}]';
-    
+
+        $form = Form::insertGetId([
+            'name' => 'Continence Related Assistive Technology Assessment Template'
+        ]);
+
+        $heading1 = FormHeading::insertGetId([
+            'form_heading' => 'Participant and Plan Management Details',
+            'form_id' => $form,
+            'section_html' => $section1
+        ]);
+
+        $heading2 = FormHeading::insertGetId([
+            'form_heading' => 'Assessment',
+            'form_id' => $form,
+            'section_html' => $section2
+        ]);
+
+        $heading3 = FormHeading::insertGetId([
+            'form_heading' => 'Exploration of Continence Interventions and Options',
+            'form_id' => $form,
+            'section_html' => $section3
+        ]);
+
+        $heading4 = FormHeading::insertGetId([
+            'form_heading' => 'Continence Recommendations',
+            'form_id' => $form,
+            'section_html' => $section4
+        ]);
+
+        $heading5 = FormHeading::insertGetId([
+            'form_heading' => 'Details of Assistive Technology Assessor',
+            'form_id' => $form,
+            'section_html' => $section5
+        ]);
+
+        $heading6 = FormHeading::insertGetId([
+            'form_heading' => 'Details of Assistive Technology Assessor',
+            'form_id' => $form,
+            'section_html' => $section6
+        ]);
+
+        $heading7 = FormHeading::insertGetId([
+            'form_heading' => 'Details of Assistive Technology Assessor',
+            'form_id' => $form,
+            'section_html' => $section7
+        ]);
+
+        $heading8 = FormHeading::insertGetId([
+            'form_heading' => 'Details of Assistive Technology Assessor',
+            'form_id' => $form,
+            'section_html' => $section8
+        ]);
+        $heading9 = FormHeading::insertGetId([
+            'form_heading' => 'Details of Assistive Technology Assessor',
+            'form_id' => $form,
+            'section_html' => $section9
+        ]);
+        $heading10 = FormHeading::insertGetId([
+            'form_heading' => 'Details of Assistive Technology Assessor',
+            'form_id' => $form,
+            'section_html' => $section10
+        ]);
+
+
             FormField::create([
-                'form_heading_id' => 1,
-                'form_field' => $form_fields
-            ]);
+                    'form_heading_id' => $heading1,
+                    'form_field' => $form_fields
+                ]);
             FormField::create([
-                'form_heading_id' => 2,
+                'form_heading_id' => $heading2,
                 'form_field' => $form_fields2
             ]);
             FormField::create([
-                'form_heading_id' => 3,
+                'form_heading_id' => $heading3,
                 'form_field' => $form_fields3
             ]);
             FormField::create([
-                'form_heading_id' => 4,
+                'form_heading_id' => $heading4,
                 'form_field' => $form_fields4
             ]);
             FormField::create([
-                'form_heading_id' => 5,
+                'form_heading_id' => $heading5,
                 'form_field' => $form_fields5
             ]);
-      /*      FormField::create([
-                'form_heading_id' => 6,
+            FormField::create([
+                'form_heading_id' => $heading6,
                 'form_field' => $form_fields6
             ]);
             FormField::create([
-                'form_heading_id' => 7,
-                'form_field' => $form_fields7
+                'form_heading_id' => $heading7,
+                'form_field' => $form_fields6
             ]);
             FormField::create([
-                'form_heading_id' => 8,
-                'form_field' => $form_fields8
-            ]);*/
+                'form_heading_id' => $heading8,
+                'form_field' => $form_fields6
+            ]);
+            FormField::create([
+                'form_heading_id' => $heading8,
+                'form_field' => $form_fields6
+            ]);
+            FormField::create([
+                'form_heading_id' => $heading9,
+                'form_field' => $form_fields6
+            ]);
+            FormField::create([
+                'form_heading_id' => $heading10,
+                'form_field' => $form_fields6
+            ]);
     
         
     }

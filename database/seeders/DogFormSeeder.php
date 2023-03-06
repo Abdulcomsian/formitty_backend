@@ -389,9 +389,13 @@ class DogFormSeeder extends Seeder
             </tr>
             </table>';
 
+        $form_title = Form::create([
+            'name' => 'Dog Guide Report'
+        ]);
+
         $form = FormHeading::create([
             'form_heading' => 'Participant and Plan Management Details',
-            'form_id' => '3',
+            'form_id' => $form_title->id,
             'section_html'=>$section1
         ]);
 
@@ -399,28 +403,29 @@ class DogFormSeeder extends Seeder
 
 
         FormField::create([
-                  'form_heading_id' => $form->id,
-                  'form_field' => $form_fields
-              ]);
+              'form_heading_id' => $form->id,
+              'form_field' => $form_fields
+          ]);
       
         //
         $form = FormHeading::create([
             'form_heading' => 'Evaluation and Assessment',
-            'form_id' => '3',
+            'form_id' => $form_title->id,
             'section_html'=>$section2
         ]);
 
         $form_fields2 = '[{"type":"text","required":false,"label":"Agency Managed","placeholder":"Enter Agency Managed","className":"form-control","name":"agency_managed","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Self Managed","placeholder":"Enter Self-Managed","className":"form-control","name":"self_managed","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Registered Plan Management Provider","placeholder":"Enter plan management provider","className":"form-control","name":"management_provider","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Contact Details","placeholder":"Enter contact details","className":"form-control","name":"contact_details","access":false,"subtype":"text"}]';
+
         FormField::create([
           'form_heading_id' => $form->id,
           'form_field' => $form_fields2
-      ]);
+        ]);
 
       //
 
         $form = FormHeading::create([
             'form_heading' => 'Recommended Option',
-            'form_id' => '3',
+            'form_id' => $form_title->id,
             'section_html'=>$section3
         ]);
 
@@ -434,7 +439,7 @@ class DogFormSeeder extends Seeder
 
         $form = FormHeading::create([
             'form_heading' => 'Attachments',
-            'form_id' => '3',
+            'form_id' => $form_title->id,
             'section_html'=>$section4
         ]);
 
@@ -448,7 +453,7 @@ class DogFormSeeder extends Seeder
       //
         $form = FormHeading::create([
             'form_heading' => 'Details of Assistive Technology Assessor',
-            'form_id' => '3',
+            'form_id' => $form_title->id,
             'section_html'=>$section5
         ]);
 
@@ -462,7 +467,7 @@ class DogFormSeeder extends Seeder
       //
         $form = FormHeading::create([
             'form_heading' => 'Consent to Collect and Share Your Information – Provider AT Assessment and Quotation(s)',
-            'form_id' => '3',
+            'form_id' => $form_title->id,
             'section_html'=>$section6
         ]);
 
