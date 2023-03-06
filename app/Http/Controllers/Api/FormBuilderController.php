@@ -254,7 +254,7 @@ class FormBuilderController extends ApiController
     private function createUserForm($request)
     {
         $user_form = new UserForm();
-        $user_form->form_id = $request->form_id;
+        $user_form->form_id = 1;
         $user_form->user_id = Auth::user()->id ?? '2';
         $user_form->save();
 
