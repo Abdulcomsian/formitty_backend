@@ -548,31 +548,33 @@ class FormBuilderController extends ApiController
                         >
                         <tbody>
                             ";
+                $total_points = 0;
                 foreach ($response->assessment_tool->questions as $question) {
                     $answer = Answer::with('option')->where('question_id', $question->id)->first();
                     $quest = $question->title ?? '';
                     if ($question->type === 'multiple_choice') {
-                        $answer = $answer->option->title ?? '';
-                        $point = $answer->option->point ?? '0';
+                        $answer1 = $answer->option->title ?? '';
+                        $point = $answer->option->point;
+                        $total_points = $total_points + $point;
                         $section_html .= "<tr>
                                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$quest."</p>
                                 </td>
                                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$answer."</p>
+                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$answer1."</p>
                                 </td>
                                 <td style='border: 1px solid lightslategray; padding: 10px; width: 20%;'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$point."</p>
                                 </td>
                             </tr>";
                     } elseif($question->type === 'open_ended') {
-                        $answer = $answer->answer ?? '';
+                        $answer1 = $answer->answer ?? '';
                         $section_html .= "<tr>
                                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$quest."</p>
                                 </td>
                                 <td style='border: 1px solid lightslategray; padding: 10px' width: 40%;'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$answer."</p>
+                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$answer1."</p>
                                 </td>
                                 <td style='border: 1px solid lightslategray; padding: 10px' width: 20%;'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>Nill</p>
@@ -580,7 +582,14 @@ class FormBuilderController extends ApiController
                             </tr>";
                     }
                 }
-                $section_html .= "</tbody>
+                $section_html .= "<tr>
+                                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
+                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>Total Points</p>
+                                </td>
+                                <td style='border: 1px solid lightslategray; padding: 10px' width: 20%;'>
+                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$total_points."</p>
+                                </td>
+                            </tr></tbody>
                     </table>";
             }
             $html .= $section_html;
