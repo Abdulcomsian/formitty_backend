@@ -24,5 +24,10 @@ class DatabaseSeeder extends Seeder
         $this->call(QuestionsTableSeeder::class);
         $this->call(FlowChartQuestionTableSeeder::class);
         $this->call(DogFormSeeder::class);
+        $this->call(AnimalSeeder::class);
+        $this->call(ContinenceSeeder::class);
+        $this->call(NutritionSeeder::class);
+        $this->call(VehicleSeeder::class);
+        $this->call(HomeModicationSeeder::class);
     }
 }
