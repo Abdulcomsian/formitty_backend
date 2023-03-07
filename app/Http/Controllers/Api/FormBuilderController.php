@@ -558,10 +558,10 @@ class FormBuilderController extends ApiController
                                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$quest."</p>
                                 </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
+                                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$answer."</p>
                                 </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
+                                <td style='border: 1px solid lightslategray; padding: 10px; width: 20%;'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$point."</p>
                                 </td>
                             </tr>";
@@ -571,10 +571,10 @@ class FormBuilderController extends ApiController
                                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$quest."</p>
                                 </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
+                                <td style='border: 1px solid lightslategray; padding: 10px' width: 40%;'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$answer."</p>
                                 </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
+                                <td style='border: 1px solid lightslategray; padding: 10px' width: 20%;'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>Nill</p>
                                 </td>
                             </tr>";
