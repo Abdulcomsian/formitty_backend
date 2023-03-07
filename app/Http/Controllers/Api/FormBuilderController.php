@@ -596,7 +596,7 @@ class FormBuilderController extends ApiController
                                 </td>
                                 <td style='border: 1px solid lightslategray; padding: 10px'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$total_points."</p>
-                                </td></tbody>
+                                </td></tr></tbody>
                     </table>";
             }
             $html .= $section_html;
