@@ -575,24 +575,17 @@ class FormBuilderController extends ApiController
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$answer."</p>
                                 </td>
                                 <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'></p>
+                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>Hello</p>
                                 </td>
                             </tr>";
                     }
-                    /*if ($question->type === 'multiple_choice') {
-                        $html .= "<table>";
-                        $html .= "<tr><td>" . $question->title ?? '' . "</td><td>" . ($answer ? $answer->option->title : '')  . "</td></tr>";
-
-                    } elseif($question->type === 'open_ended') {
-                        $html .= "<h2>".$question->title ?? ''."</h2>";
-                        $html .= "<h2>".($question->answers ? $answer->option->title : '')."</h2>";
-                    }*/
                 }
                 $section_html .= "</tbody>
                     </table>";
             }
             $html .= $section_html;
         }
+
         // Save file
         $fileName = "download.docx";
         \PhpOffice\PhpWord\Shared\Html::addHtml($section, $html, false, false);
