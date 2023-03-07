@@ -553,46 +553,43 @@ class FormBuilderController extends ApiController
                     $quest = $question->title ?? '';
                     if ($question->type === 'multiple_choice') {
                         $answer1 = $answer->option->title ?? '';
-                        $point = $answer->option->point;
+                        $point = $answer->option->point ?? '';
                         $section_html .= "<tr>
                                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$quest."</p>
                                 </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;'>
+                                <td style='border: 1px solid lightslategray; padding: 10px'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$answer1."</p>
                                 </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px; width: 20%;'>
+                                <td style='border: 1px solid lightslategray; padding: 10px'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$point."</p>
                                 </td>
                             </tr>";
                     } elseif($question->type === 'open_ended') {
-                        $answer1 = $answer->answer ?? '';
+                        $answer = $answer->answer ?? '';
                         $section_html .= "<tr>
                                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$quest."</p>
                                 </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px' width: 40%;'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$answer1."</p>
-                                </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px' width: 20%;'>
+                                <td style='border: 1px solid lightslategray; padding: 10px'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>Nill</p>
                                 </td>
                             </tr>";
                     }
+                    /*if ($question->type === 'multiple_choice') {
+                        $html .= "<table>";
+                        $html .= "<tr><td>" . $question->title ?? '' . "</td><td>" . ($answer ? $answer->option->title : '')  . "</td></tr>";
+
+                    } elseif($question->type === 'open_ended') {
+                        $html .= "<h2>".$question->title ?? ''."</h2>";
+                        $html .= "<h2>".($question->answers ? $answer->option->title : '')."</h2>";
+                    }*/
                 }
-                $section_html .= "<tr>
-                                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$quest."</p>
-                                </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px' width: 20%;'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>Nill</p>
-                                </td>
-                            </tr></tbody>
+                $section_html .= "</tbody>
                     </table>";
             }
             $html .= $section_html;
         }
-
         // Save file
         $fileName = "download.docx";
         \PhpOffice\PhpWord\Shared\Html::addHtml($section, $html, false, false);
