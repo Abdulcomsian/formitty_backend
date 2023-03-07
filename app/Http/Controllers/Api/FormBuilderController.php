@@ -548,14 +548,12 @@ class FormBuilderController extends ApiController
                         >
                         <tbody>
                             ";
-                $total_points = 0;
                 foreach ($response->assessment_tool->questions as $question) {
                     $answer = Answer::with('option')->where('question_id', $question->id)->first();
                     $quest = $question->title ?? '';
                     if ($question->type === 'multiple_choice') {
                         $answer1 = $answer->option->title ?? '';
                         $point = $answer->option->point;
-                        $total_points = $total_points + $point;
                         $section_html .= "<tr>
                                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$quest."</p>
@@ -573,7 +571,7 @@ class FormBuilderController extends ApiController
                                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$quest."</p>
                                 </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'; width: 40%;'>
+                                <td style='border: 1px solid lightslategray; padding: 10px' width: 40%;'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$answer1."</p>
                                 </td>
                                 <td style='border: 1px solid lightslategray; padding: 10px' width: 20%;'>
@@ -584,10 +582,10 @@ class FormBuilderController extends ApiController
                 }
                 $section_html .= "<tr>
                                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>Total Points</p>
+                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$quest."</p>
                                 </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px';'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$total_points."</p>
+                                <td style='border: 1px solid lightslategray; padding: 10px' width: 20%;'>
+                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>Nill</p>
                                 </td>
                             </tr></tbody>
                     </table>";
