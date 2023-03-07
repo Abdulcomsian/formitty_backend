@@ -29,17 +29,18 @@ class QuestionsTableSeeder extends Seeder
                     'title' => $faker->sentence,
                     'type' => $faker->randomElement(['multiple_choice', 'open_ended']),
                 ]);
+
+                if ($question->type == 'multiple_choice') {
+                    for ($j = 0; $j < 4; $j++) {
+                        Option::create([
+                            'question_id' => $question->id,
+                            'title' => $faker->sentence,
+                        ]);
+                    }
+                }
             }
 
             // Add options for multiple_choice questions
-            if ($question->type == 'multiple_choice') {
-                for ($j = 0; $j < 4; $j++) {
-                    Option::create([
-                        'question_id' => $question->id,
-                        'title' => $faker->sentence,
-                    ]);
-                }
-            }
         }
 /*        for ($i = 0; $i < 400; $i++) {
             Question::create([
