@@ -22,7 +22,7 @@ return new class extends Migration
             $table->unsignedBigInteger('order_id');
             $table->foreign('user_form_id')->references('id')->on('user_form')->onDelete('cascade');
             $table->unsignedBigInteger('user_form_id');
-            $table->enum('heading_type', ['predefined', 'custom'])->default('predefined');
+            $table->enum('heading_type', ['predefined', 'custom', 'assessment_tool'])->default('predefined');
             $table->enum('heading_status', ['saved', 'completed'])->default('saved');
             $table->timestamps();
         });
