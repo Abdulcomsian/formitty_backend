@@ -35,6 +35,7 @@ class QuestionsTableSeeder extends Seeder
                         Option::create([
                             'question_id' => $question->id,
                             'title' => $faker->sentence,
+                            'point' => $faker->numberBetween(-4, 4),
                         ]);
                     }
                 }

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('question_id')->constrained('questions')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('title');
+            $table->integer('point');
             $table->timestamps();
         });
     }
