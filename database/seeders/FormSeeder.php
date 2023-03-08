@@ -955,7 +955,7 @@ $section4 = '<table style="background-color:#6a2c75; border:none; width:100%; ma
                         {
                         "type":"text",
                         "required":false,
-                        "label":"Cotact Details",
+                        "label":"Contact Details",
                         "placeholder":"Enter Your Contact Details",
                         "className":"form-control",
                         "name":"part_1_ndis_participantcontact_details",

@@ -860,337 +860,65 @@ $section5 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                 </tr>
                 </table>";
 
-                $form_fields = '[
-                                {
-                                "type":"text",
-                                "required":false,
-                                "label":"Full Name",
-                                "placeholder":"Enter Your Full Name",
-                                "className":"form-control",
-                                "name":"part_1_ndis_name",
-                                "access":false,
-                                "subtype":"text"
-                                },
-                                {
-                                "type":"text",
-                                "required":false,
-                                "label":"Date of Birth",
-                                "placeholder":"Enter Your Date of Birth",
-                                "className":"form-control",
-                                "name":"part_1_ndis_date_of_birth",
-                                "access":false,
-                                "subtype":"text"
-                                },
-                                {
-                                "type":"text",
-                                "required":false,
-                                "label":"Age",
-                                "placeholder":"Enter Your Age",
-                                "className":"form-control",
-                                "name":"part_1_ndis_age",
-                                "access":false,
-                                "subtype":"text"
-                                },
-                                {
-                                "type":"text",
-                                "required":false,
-                                "label":"NDIS Number",
-                                "placeholder":"Enter Your NDIS Number",
-                                "className":"form-control",
-                                "name":"part_1_ndis_participantndis_number",
-                                "access":false,
-                                "subtype":"text"
-                                },
-                                {
-                                "type":"text",
-                                "required":false,
-                                "label":"Address",
-                                "placeholder":"Enter Your Address",
-                                "className":"form-control",
-                                "name":"part_1_ndis_participant_address",
-                                "access":false,
-                                "subtype":"text"
-                                },
-                                {
-                                "type":"text",
-                                "required":false,
-                                "label":"Phone Number",
-                                "placeholder":"Enter Your Phone Number",
-                                "className":"form-control",
-                                "name":"part_1_ndis_participantphone_number",
-                                "access":false,
-                                "subtype":"text"
-                                },
-                                {
-                                "type":"text",
-                                "required":false,
-                                "label":"Email",
-                                "placeholder":"Enter Your Email",
-                                "className":"form-control",
-                                "name":"part_1_ndis_participant_email",
-                                "access":false,
-                                "subtype":"text"
-                                },
-                                {
-                                "type":"text",
-                                "required":false,
-                                "label":"Preferred Contact Method",
-                                "placeholder":"Enter Your Preferred Contact Method",
-                                "className":"form-control",
-                                "name":"part_1_ndis_participant_preferredcontact",
-                                "access":false,
-                                "subtype":"text"
-                                },
-                                {
-                                "type":"text",
-                                "required":false,
-                                "label":"Nominee or Guardian Name",
-                                "placeholder":"Enter Your Nominee or Guardian Name",
-                                "className":"form-control",
-                                "name":"part_1_ndis_participantguardian_name",
-                                "access":false,
-                                "subtype":"text"
-                                },
-                                {
-                                "type":"text",
-                                "required":false,
-                                "label":"Nominee or Guardian Phone",
-                                "placeholder":"Enter Your Nominee or Guardian Phone",
-                                "className":"form-control",
-                                "name":"part_1_ndis_participantguardian_phone",
-                                "access":false,
-                                "subtype":"text"
-                                },
-                                {
-                                "type":"text",
-                                "required":false,
-                                "label":"Cotact Details",
-                                "placeholder":"Enter Your Contact Details",
-                                "className":"form-control",
-                                "name":"part_1_ndis_participantcontact_details",
-                                "access":false,
-                                "subtype":"text"
-                                },
-                                {
-                                "type":"text",
-                                "required":false,
-                                "label":"Full Name",
-                                "placeholder":"Enter Your Full Name",
-                                "className":"form-control",
-                                "name":"part_1_plan_management_fullname",
-                                "access":false,
-                                "subtype":"text"
-                                },
-                                {
-                                "type":"text",
-                                "required":false,
-                                "label":"Email",
-                                "placeholder":"Enter Your Email",
-                                "className":"form-control",
-                                "name":"part_1_plan_management_email",
-                                "access":false,
-                                "subtype":"text"
-                                },
-                                {
-                                "type":"text",
-                                "required":false,
-                                "label":"NDIS Coordinator",
-                                "placeholder":"Enter Your NDIS Coordinator",
-                                "className":"form-control",
-                                "name":"part_1_plan_management_ndis_coordinator",
-                                "access":false,
-                                "subtype":"text"
-                                },
-                                {
-                                "type":"text",
-                                "required":false,
-                                "label":"Guardian Name",
-                                "placeholder":"Enter Your Guardian Name",
-                                "className":"form-control",
-                                "name":"part_1_plan_managementguardian_name",
-                                "access":false,
-                                "subtype":"text"
-                                },
-                                {
-                                "type":"text",
-                                "required":false,
-                                "label":"Guardian Phone",
-                                "placeholder":"Enter Your Guardian Phone",
-                                "className":"form-control",
-                                "name":"part_1_plan_managementguardian_phone",
-                                "access":false,
-                                "subtype":"text"
-                                },
-                                {
-                                "type":"text",
-                                "required":false,
-                                "label":"Date of Assessment",
-                                "placeholder":"Enter Your Date of Assessment",
-                                "className":"form-control",
-                                "name":"part_1_plan_management_date_assessment",
-                                "access":false,
-                                "subtype":"text"
-                                },
-                                {
-                                "type":"text",
-                                "required":false,
-                                "label":"Phone Number",
-                                "placeholder":"Enter Your Phone Number",
-                                "className":"form-control",
-                                "name":"part_1_plan_managementphone_number",
-                                "access":false,
-                                "subtype":"text"
-                                },
-                                {
-                                "type":"text",
-                                "required":false,
-                                "label":"NDIS Number",
-                                "placeholder":"Enter Your NDIS Number",
-                                "className":"form-control",
-                                "name":"part_1_plan_managementndis_number",
-                                "access":false,
-                                "subtype":"text"
-                                }
-                                ]';
-                $form_fields2 = '[
-                                    {
-                                    "type":"text",
-                                    "required":false,
-                                    "label":"Background",
-                                    "placeholder":"Enter Your Background",
-                                    "className":"form-control",
-                                    "name":"part_2_assesment_background",
-                                    "access":false,
-                                    "subtype":"text"
-                                    },
-                                    {
-                                    "type":"text",
-                                    "required":false,
-                                    "label":"Participant Goals",
-                                    "placeholder":"Enter Your Participant Goals",
-                                    "className":"form-control",
-                                    "name":"part_2_assesment_participantgoals",
-                                    "access":false,
-                                    "subtype":"text"
-                                    },
-                                    {
-                                    "type":"text",
-                                    "required":false,
-                                    "label":"Functional Assessment",
-                                    "placeholder":"Enter Functional Assessment",
-                                    "className":"form-control",
-                                    "name":"part_2_assesment_functional_assessment",
-                                    "access":false,
-                                    "subtype":"text"
-                                    },
-                                    {
-                                    "type":"text",
-                                    "required":false,
-                                    "label":"Bladder",
-                                    "placeholder":"Enter Bladder",
-                                    "className":"form-control",
-                                    "name":"part_2_assesment_bladder",
-                                    "access":false,
-                                    "subtype":"text"
-                                    },
-                                    {
-                                    "type":"text",
-                                    "required":false,
-                                    "label":"Bowel",
-                                    "placeholder":"Enter Bowel",
-                                    "className":"form-control",
-                                    "name":"part_2_assesment_bowel",
-                                    "access":false,
-                                    "subtype":"text"
-                                    },
-                                    {
-                                    "type":"text",
-                                    "required":false,
-                                    "label":"Consideration of health and other issues",
-                                    "placeholder":"Consideration of health and other issues",
-                                    "className":"form-control",
-                                    "name":"part_2_assesment_consideration_health",
-                                    "access":false,
-                                    "subtype":"text"
-                                    },
-                                    {
-                                    "type":"text",
-                                    "required":false,
-                                    "label":"Physiotherapist",
-                                    "placeholder":"Enter Physiotherapist",
-                                    "className":"form-control",
-                                    "name":"part_2_assesment_physiotherapist",
-                                    "access":false,
-                                    "subtype":"text"
-                                    },
-                                    {
-                                    "type":"text",
-                                    "required":false,
-                                    "label":"Dietician",
-                                    "placeholder":"Enter Dietician",
-                                    "className":"form-control",
-                                    "name":"part_2_assesment_dietician",
-                                    "access":false,
-                                    "subtype":"text"
-                                    },
-                                    {
-                                    "type":"text",
-                                    "required":false,
-                                    "label":"Occupational Therapist",
-                                    "placeholder":"Occupational Therapist",
-                                    "className":"form-control",
-                                    "name":"part_2_assesment_occupational_therapist",
-                                    "access":false,
-                                    "subtype":"text"
-                                    },
-                                    {
-                                    "type":"text",
-                                    "required":false,
-                                    "label":"Psychologist",
-                                    "placeholder":"Enter Psychologist",
-                                    "className":"form-control",
-                                    "name":"part_2_assesment_psychologist",
-                                    "access":false,
-                                    "subtype":"text"
-                                    },
-                                    {
-                                    "type":"text",
-                                    "required":false,
-                                    "label":"General Practitioner",
-                                    "placeholder":"Enter General Practitioner",
-                                    "className":"form-control",
-                                    "name":"part_2_assesment_general_practitioner",
-                                    "access":false,
-                                    "subtype":"text"
-                                    },
-                                    {
-                                    "type":"text",
-                                    "required":false,
-                                    "label":"Medical Specialist",
-                                    "placeholder":"Enter Medical Specialist",
-                                    "className":"form-control",
-                                    "name":"part_2_assesment_medical_specialist",
-                                    "access":false,
-                                    "subtype":"text"
-                                    },
-                                    {
-                                    "type":"text",
-                                    "required":false,
-                                    "label":"Other",
-                                    "placeholder":"Enter Other",
-                                    "className":"form-control",
-                                    "name":"part_2_assessment_other",
-                                    "access":false,
-                                    "subtype":"text"
-                                    }
-                                    ]';
-                $form_fields3 = '[{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter option","className":"form-control","name":"part_3_con_option_evaluation_option1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter option","className":"form-control","name":"part_3_con_option_evaluation_option2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter option","className":"form-control","name":"part_3_con_option_evaluation_option3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter option","className":"form-control","name":"part_3_con_option_evaluation_option4","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Potential Option","className":"form-control","name":"part_3_con_option_potential_option1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Potential Option","className":"form-control","name":"part_3_con_option_potential_option2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Potential Option","className":"form-control","name":"part_3_con_option_potential_option3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Potential Option","className":"form-control","name":"part_3_con_option_potential_option4","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Trial Details","className":"form-control","name":"part_3_con_option_trial_option1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Trial Details","className":"form-control","name":"part_3_con_option_trial_option2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Trial Details","className":"form-control","name":"part_3_con_option_trial_option3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Trial Details","className":"form-control","name":"part_3_con_option_trial_option4","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Advantages","className":"form-control","name":"part_3_con_option_advantage1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Advantages","className":"form-control","name":"part_3_con_option_advantage2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Advantages","className":"form-control","name":"part_3_con_option_advantage3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Advantages","className":"form-control","name":"part_3_con_option_advantage4","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Disadvantage","className":"form-control","name":"part_3_con_option_disdvantage1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Disadvantage","className":"form-control","name":"part_3_con_option_disdvantage2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Disadvantage","className":"form-control","name":"part_3_con_option_disdvantage3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Disadvantage","className":"form-control","name":"part_3_con_option_disdvantage4","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Estimated Time","className":"form-control","name":"part_3_con_option_estimatedTime1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Estimated Time","className":"form-control","name":"part_3_con_option_estimatedTime2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Estimated Time","className":"form-control","name":"part_3_con_option_estimatedTime3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Estimated Time","className":"form-control","name":"part_3_con_option_estimatedTime4","access":false,"subtype":"text"}]';
+
+               $form_fields1 = '[
+                            {"type":"text","required":false,"label":"Name<br>","placeholder":"Enter Name","className":"form-control","name":"NIDS_name","access":false,"subtype":"text"},
+                            {"type":"text","required":false,"label":"Date of Birth","placeholder":"Enter Date of Birth","className":"form-control","name":"NDIA_DOB","access":false,"subtype":"text"},
+                            {"type":"text","required":false,"label":"Age","placeholder":"Enter Age","className":"form-control","name":"NDIA_age","access":false,"subtype":"text"},
+                            {"type":"text","required":false,"label":"NDIS Number","placeholder":"Enter NDIS Number","className":"form-control","name":"NDIS_number","access":false,"subtype":"text"},
+                            {"type":"text","required":false,"label":"Address","placeholder":"Enter Address","className":"form-control","name":"NDIA_address","access":false,"subtype":"text"},
+                            {"type":"text","required":false,"label":"Contact Telephone Number","placeholder":"Enter Contact Telephone Number","className":"form-control","name":"NDIA_Contact_telephone_number","access":false,"subtype":"text"},
+                            {"type":"text","required":false,"label":"Email","placeholder":"Enter Email","className":"form-control","name":"NDIS_email","access":false,"subtype":"text"},
+                            {"type":"text","required":false,"label":"Preferred Contact Method","placeholder":"Enter Preferred Contact Method","className":"form-control","name":"NDIS_contact_method","access":false,"subtype":"text"},
+                            {"type":"text","required":false,"label":"Nominee or Guardian Name","placeholder":"Enter Nominee or Guardian Name","className":"form-control","name":"NDIA_guardian_name","access":false,"subtype":"text"},
+                            {"type":"text","required":false,"label":"Nominee or Guardian Phone","placeholder":"Enter Nominee or Guardian Phone","className":"form-control","name":"NDIS_guardian_phone","access":false,"subtype":"text"},
+                            {"type":"text","required":false,"label":"NDIS Support Coordinator","placeholder":"Enter NDIS Support Coordinator","className":"form-control","name":"NDIS_support_coordinator","access":false,"subtype":"text"},
+                            {"type":"text","required":false,"label":"Contact Details","placeholder":"Enter Contact Details","className":"form-control","name":"NDIS_contact_details","access":false,"subtype":"text"},{"type":"checkbox-group","required":false,"label":"Plan Management Details","toggle":false,"inline":false,"name":"agency_managed","access":false,"other":false,"values":[{"label":"Agency Managed","value":"option-1","selected":true},{"label":"Self-Managed","value":"","selected":false},{"label":"Registered Plan Management Provider","value":"","selected":false}]},{"type":"textarea","required":false,"label":"Management Contact Details","placeholder":"Enter Management Contact Details","className":"form-control","name":"contact_details","access":false,"subtype":"textarea"}]
+                    ]';
+
+            $form_fields2 = '[
+                {"type":"text","required":false,"label":"<span lang=\"EN-AU\" style=\"font-size:12.0pt;mso-bidi-font-size:\n11.0pt;line-height:120%;font-family:&quot;Arial&quot;,sans-serif;mso-fareast-font-family:\nCalibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;\nmso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-AU;mso-fareast-language:\nEN-US;mso-bidi-language:AR-SA\">Background</span>","placeholder":"Enter background","className":"form-control","name":"ndis_evaluation_background","access":false,"subtype":"text"}
+                ]';
+
+            $form_fields3 = '[
+                [{"type":"text","required":false,"label":"Option1","placeholder":"Enter option","className":"form-control","name":"eor_option1","access":false,"subtype":"text"},
+                {"type":"text","required":false,"label":"Option2","placeholder":"Enter option","className":"form-control","name":"eor_option2","access":false,"subtype":"text"},
+                {"type":"text","required":false,"label":"Option3","placeholder":"Enter option","className":"form-control","name":"eor_option3","access":false,"subtype":"text"},
+                {"type":"text","required":false,"label":"Describe the features1","placeholder":"Enter feature","className":"form-control","name":"eor_feature1","access":false,"subtype":"text"},
+                {"type":"text","required":false,"label":"Describe the features2","placeholder":"Enter feature","className":"form-control","name":"eor_feature2","access":false,"subtype":"text"},
+                {"type":"text","required":false,"label":"Describe the features3","placeholder":"Enter feature","className":"form-control","name":"eor_feature3","access":false,"subtype":"text"},
+                {"type":"text","required":false,"label":"Trailled1","placeholder":"Enter trailled","className":"form-control","name":"eor_trailled1","access":false,"subtype":"text"},
+                {"type":"text","required":false,"label":"Trailled2","placeholder":"Enter trailled","className":"form-control","name":"eor_trailled2","access":false,"subtype":"text"},
+                {"type":"text","required":false,"label":"Trailled3","placeholder":"Enter trailled","className":"form-control","name":"eor_trailled3","access":false,"subtype":"text"},
+                {"type":"text","required":false,"label":"Describe suitability1","placeholder":"Enter suitability","className":"form-control","name":"eor_suitable1","access":false,"subtype":"text"},
+                {"type":"text","required":false,"label":"Describe suitability2","placeholder":"Enter suitability","className":"form-control","name":"eor_suitable2","access":false,"subtype":"text"},
+                {"type":"text","required":false,"label":"Describe suitability3","placeholder":"Enter suitability","className":"form-control","name":"eor_suitable3","access":false,"subtype":"text"},
+                {"type":"text","required":false,"label":"Estimated Cost1","placeholder":"Enter estimated cost","className":"form-control","name":"eor_estimated1","access":false,"subtype":"text"},
+                {"type":"text","required":false,"label":"Estimated Cost2","placeholder":"Enter estimated cost","className":"form-control","name":"eor_estimated2","access":false,"subtype":"text"},
+                {"type":"text","required":false,"label":"Estimated Cost3","placeholder":"Enter esitmated cost","className":"form-control","name":"eor_estimated3","access":false,"subtype":"text"}]    
+
+            ]';
+            $form_fields4 = '[]';
+            $form_fields5 = '[
+                                {"type":"text","required":false,"label":"Name","placeholder":"Enter Name","className":"form-control","name":"details_assessor_2_name","access":false,"subtype":"text"},
+                                {"type":"text","required":false,"label":"<span lang=\"EN-AU\" style=\"font-size:12.0pt;mso-bidi-font-size:\n11.0pt;line-height:120%;font-family:&quot;Arial&quot;,sans-serif;mso-fareast-font-family:\nCalibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;\nmso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-AU;mso-fareast-language:\nEN-US;mso-bidi-language:AR-SA\">NDIS provider Registration number (where\napplicable)</span>","placeholder":"Enter Registration Number","className":"form-control","name":"details_assessor_2_registration_number","access":false,"subtype":"text"},
+                                {"type":"text","required":false,"label":"<span lang=\"EN-AU\" style=\"font-size:12.0pt;mso-bidi-font-size:\n11.0pt;line-height:120%;font-family:&quot;Arial&quot;,sans-serif;mso-fareast-font-family:\nCalibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;\nmso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-AU;mso-fareast-language:\nEN-US;mso-bidi-language:AR-SA\">Phone</span><br>","placeholder":"Enter Phone","className":"form-control","name":"details_assessor_2_phone","access":false,"subtype":"text"},
+                                {"type":"text","required":false,"label":"<span lang=\"EN-AU\" style=\"font-size:12.0pt;mso-bidi-font-size:\n11.0pt;line-height:120%;font-family:&quot;Arial&quot;,sans-serif;mso-fareast-font-family:\nCalibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;\nmso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-AU;mso-fareast-language:\nEN-US;mso-bidi-language:AR-SA\">Email</span><br>","placeholder":"Enter Email","className":"form-control","name":"details_assessor_2_email","access":false,"subtype":"text"},
+                                {"type":"text","required":false,"label":"<span lang=\"EN-AU\" style=\"font-size:12.0pt;mso-bidi-font-size:\n11.0pt;line-height:120%;font-family:&quot;Arial&quot;,sans-serif;mso-fareast-font-family:\nCalibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;\nmso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-AU;mso-fareast-language:\nEN-US;mso-bidi-language:AR-SA\">Signature</span><br>","placeholder":"Enter Signature","className":"form-control","name":"details_assessor_2_signature","access":false,"subtype":"text"},
+                                {"type":"text","required":false,"label":"<font face=\"Arial, sans-serif\"><span style=\"font-size: 16px;\">Qualification</span></font>","placeholder":"Enter Qualification","className":"form-control","name":"details_assessor_2_qualification","access":false,"subtype":"text"},{"type":"text","required":false,"label":"<font face=\"Arial, sans-serif\"><span style=\"font-size: 16px;\">Date of Assessment</span></font>","placeholder":"Enter Date of Assessment","className":"form-control","name":"details_assessor_2_date_assessment","access":false,"subtype":"text"},
+                                {"type":"text","required":false,"label":"<font face=\"Arial, sans-serif\"><span style=\"font-size: 16px;\">Date of Report</span></font>","placeholder":"Enter Date of Report","className":"form-control","name":"details_assessor_2_date_report","access":false,"subtype":"text"}
+                            ]';
+            $form_fields6 = '[
+                            {"type":"radio-group","required":false,"label":"Are you consent","inline":false,"name":"consent_decision","access":false,"other":false,"values":[{"label":"Yes, I consent","value":"option-1","selected":false},{"label":"No, I do not consent","value":"option-2","selected":false}]},
+                            {"type":"checkbox-group","required":false,"label":"I understand that i am giving consent to the NDIA to do things with my information set out in this section","toggle":false,"inline":false,"name":"consent_declaration1","access":false,"other":false,"values":[{"label":"Yes","value":"option-1","selected":true},{"label":"No","value":"","selected":false}]},
+                            {"type":"checkbox-group","required":false,"label":"<span lang=\"EN-AU\" style=\"color: rgb(0, 0, 0); font-size: 11pt; line-height: 16.8667px; font-family: Arial, sans-serif;\">I understand that I can access the NDIA’s Privacy Notice and Privacy Policy</span><span style=\"color: rgb(0, 0, 0); font-size: medium;\"></span>","toggle":false,"inline":false,"name":"consent_declaration2","access":false,"other":false,"values":[{"label":"Option 1","value":"option-1","selected":true},{"label":"No","value":"","selected":true}]},
+                            {"type":"text","required":false,"label":"Date","placeholder":"Enter Date ","className":"form-control","name":"quotation_date","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Full name","placeholder":"Enter Full Name","className":"form-control","name":"quotation_fullname","access":false,"subtype":"text"},
+                            {"type":"text","required":false,"label":"Date","placeholder":"Enter Date of Form Signing","className":"form-control","name":"form_signning_date","access":false,"subtype":"text"},
+                            {"type":"text","required":false,"label":"Full Person Name","placeholder":"Enter full name of Person completing this form","className":"form-control","name":"fullname_formComplition","access":false,"subtype":"text"},
+                            {"type":"text","required":false,"label":"Relationship to participant","placeholder":"Enter relation to participant to become an NDIS participant","className":"form-control","name":"person_relationship","access":false,"subtype":"text"}
+                            ]';
+
         
-                $form_fields4 = '[{"type":"textarea","required":false,"label":"Continence Recommendations","placeholder":"Enter Specific Evidence","className":"form-control","name":"part_4_con_recomm_specific_evidence","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Continence Recommendations","placeholder":"Enter additional features, customisation or specification recommended","className":"form-control","name":"part_4_con_recomm_additional_feature","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Item 1","placeholder":"Enter Item","className":"form-control","name":"part_4_con_recomm_item1","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Item 2","placeholder":"Enter Item","className":"form-control","name":"part_4_con_recomm_item2","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Item 3","placeholder":"Enter Item","className":"form-control","name":"part_4_con_recomm_item3","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Quantity 1","placeholder":"Enter Quantity","className":"form-control","name":"part_4_con_recomm_quantity1","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Quantity 2","placeholder":"Enter Quantity","className":"form-control","name":"part_4_con_recomm_quantity2","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Quantity 3","placeholder":"Enter Quantity","className":"form-control","name":"part_4_con_recomm_quantity3","access":false,"subtype":"textarea"},{"type":"text","required":false,"label":"Frequency of Supply 1","placeholder":"Enter Frequency of Supply","className":"form-control","name":"part_4_con_recomm_frequency1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Frequency of Supply 2","placeholder":"Enter Frequency of Supply","className":"form-control","name":"part_4_con_recomm_frequency2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Frequency of Supply 3","placeholder":"Enter Frequency of Supply","className":"form-control","name":"part_4_con_recomm_frequency3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"State / Specification 1","placeholder":"Enter State/Specification","className":"form-control","name":"part_4_con_recomm_StateSpecification1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"State / Specification 2","placeholder":"Enter State/Specification","className":"form-control","name":"part_4_con_recomm_StateSpecification2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"State / Specification 3","placeholder":"Enter State/Specification","className":"form-control","name":"part_4_con_recomm_StateSpecification3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Preferred supplier (Optional)","placeholder":"Enter your Preferred Supplier","className":"form-control","name":"part_4_con_recomm_preferred_supplier1","access":false,"subtype":"text"},{"type":"checkbox-group","required":false,"label":"Supplier Product Use Guidence","toggle":false,"inline":false,"name":"part_4_con_recomm_SPUG1","access":false,"other":false,"values":[{"label":"Option 1","value":"option-1","selected":true}]},{"type":"textarea","required":false,"label":"Information and Instructions","placeholder":"Enter Information and Instructions for Usage.","className":"form-control","name":"part_4_con_recomm_information_instructions_field","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Urgent supply required?&nbsp;","placeholder":"Enter detail with YES/NO","className":"form-control","name":"part_4_con_recomm_urgentSupply","access":false,"subtype":"textarea"},{"type":"text","required":false,"label":"Scheme Specification (Optional)","placeholder":"Enter your scheme specification here.","className":"form-control","name":"part_4_con_recomm_schemeSpecification","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Other supplier specification (Optional)","placeholder":"Enter your supplier specification","className":"form-control","name":"part_4_con_recomm_supplier_specification","access":false,"subtype":"text"},{"type":"radio-group","required":true,"label":"Participant Agreement","inline":false,"name":"part_4_con_recomm_participant_agreement","access":false,"other":false,"values":[{"label":"Yes","value":"","selected":true},{"label":"No","value":"option-2","selected":false},{"label":"Please provide details","value":"option-3","selected":false}]}]';
-        
-                $form_fields5 = '[{"type":"checkbox-group","required":false,"label":"Meet the NDIA expectation","toggle":false,"inline":false,"name":"part_5_declaration_NDIA_expectation","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":true}]},{"type":"checkbox-group","required":false,"label":"Providing appropriate evidence to the NDIA","toggle":false,"inline":false,"name":"part_5_declaration_appropriate_evidence","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":true}]},{"type":"checkbox-group","required":false,"label":"I understand all about the NDIA","toggle":false,"inline":false,"name":"part_5_declaration_NDIA_understanding","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":false}]},{"type":"checkbox-group","required":false,"label":"Accessing by the treating multi-disciplinary team","toggle":false,"inline":false,"name":"part_5_declaration_accessing_team","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":false}]},{"type":"text","required":false,"label":"Name","placeholder":"Enter Assessor’s  Name","className":"form-control","name":"part_5_assessors_name","access":false,"subtype":"text"},{"type":"text","required":false,"label":"NDIS Provider Registration Number","placeholder":"Enter Registration Number","className":"form-control","name":"part_5_registration_number","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Phone Number","placeholder":"Enter Phone Number","className":"form-control","name":"part_5_assessorphone_number","access":false,"subtype":"text"},{"type":"text","subtype":"email","required":false,"label":"Email","placeholder":"Enter Email Address","className":"form-control","name":"part_5_email_address","access":false},{"type":"text","required":false,"label":"Qualification","placeholder":"Enter Qualification here.","className":"form-control","name":"part_5_qualification","access":false,"subtype":"text"},{"type":"date","required":false,"label":"Date of Assessment","placeholder":"Set Date of Assessment","className":"form-control","name":"part_5_date_assessment","access":false},{"type":"date","required":false,"label":"Date of Report","placeholder":"Set Date of Report","className":"form-control","name":"part_5_reportDate","access":false}]';
-        
-                $form_fields6 = '[{"type":"checkbox-group","required":false,"label":"Meet the NDIA expectation","toggle":false,"inline":false,"name":"part_5_declaration_NDIA_expectation","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":true}]},{"type":"checkbox-group","required":false,"label":"Providing appropriate evidence to the NDIA","toggle":false,"inline":false,"name":"part_5_declaration_appropriate_evidence","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":true}]},{"type":"checkbox-group","required":false,"label":"I understand all about the NDIA","toggle":false,"inline":false,"name":"part_5_declaration_NDIA_understanding","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":false}]},{"type":"checkbox-group","required":false,"label":"Accessing by the treating multi-disciplinary team","toggle":false,"inline":false,"name":"part_5_declaration_accessing_team","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":false}]},{"type":"text","required":false,"label":"Name","placeholder":"Enter Assessor’s  Name","className":"form-control","name":"part_5_assessors_name","access":false,"subtype":"text"},{"type":"text","required":false,"label":"NDIS Provider Registration Number","placeholder":"Enter Registration Number","className":"form-control","name":"part_5_registration_number","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Phone Number","placeholder":"Enter Phone Number","className":"form-control","name":"part_5_assessorphone_number","access":false,"subtype":"text"},{"type":"text","subtype":"email","required":false,"label":"Email","placeholder":"Enter Email Address","className":"form-control","name":"part_5_email_address","access":false},{"type":"text","required":false,"label":"Qualification","placeholder":"Enter Qualification here.","className":"form-control","name":"part_5_qualification","access":false,"subtype":"text"},{"type":"date","required":false,"label":"Date of Assessment","placeholder":"Set Date of Assessment","className":"form-control","name":"part_5_date_assessment","access":false},{"type":"date","required":false,"label":"Date of Report","placeholder":"Set Date of Report","className":"form-control","name":"part_5_reportDate","access":false}]';
 
         $form = Form::insertGetId([
             'name' => 'Notes for Assistive Technology (AT) Assessors of General AT Supports'
@@ -1234,7 +962,7 @@ $section5 = "<table style='background-color:#7209B7; border:none; width:100%;'>
 
         FormField::create([
             'form_heading_id' => $heading1,
-            'form_field' => $form_fields
+            'form_field' => $form_fields1
         ]);
         FormField::create([
             'form_heading_id' => $heading2,
@@ -1255,6 +983,10 @@ $section5 = "<table style='background-color:#7209B7; border:none; width:100%;'>
         FormField::create([
             'form_heading_id' => $heading6,
             'form_field' => $form_fields5
+        ]);
+        FormField::create([
+            'form_heading_id' => $heading6,
+            'form_field' => $form_fields6
         ]);
 
 
