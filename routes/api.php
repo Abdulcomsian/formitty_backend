@@ -41,6 +41,7 @@ Route::get('assessment-tools', [AssessmentToolController::class, 'assessmentTool
 Route::post('user-assessment-tools', [AssessmentToolController::class, 'userAssessmentTools']);
 Route::post('get-questions', [AssessmentToolController::class, 'getQuestions']);
 Route::post('store-questions', [AssessmentToolController::class, 'storeQuestions']);
+Route::post('store-flowchart', [AssessmentToolController::class, 'storeflowChart']);
 Route::post('edit-assessment', [AssessmentToolController::class, 'editAssessment']);
 Route::post('store-assessment', [AssessmentToolController::class, 'storeAssessmentTool']);
 Route::post('get-flowchart-questions', [AssessmentToolController::class, 'getFlowChartQuestions']);

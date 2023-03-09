@@ -202,4 +202,15 @@ class AssessmentToolController extends ApiController
         }
     }
 
+    public function storeflowChart(Request $request)
+    {
+        try {
+
+
+            return $this->successResponse(, 'Flowchart stored successfully!.', 200);
+        } catch (\Throwable $th) {
+            return $this->errorResponse($th->getMessage(), 401);
+        }
+    }
+
 }
