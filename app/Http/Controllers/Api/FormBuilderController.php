@@ -667,6 +667,7 @@ class FormBuilderController extends ApiController
                         'order_id' => $ufh->order_id,
                         'heading_type' => $ufh->heading_type,
                         'heading_status' => $ufh->heading_status,
+                        'form_id' => $form->id,
                         'field_name' => $custom_heading->custom_field,
                     ];
                 } elseif($ufh->heading_type === 'assessment_tool'){
