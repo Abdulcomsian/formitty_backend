@@ -297,7 +297,7 @@ class TestController extends Controller
         $groupedForms = $forms->groupBy('form_heading_id');
 
         $sortedForms = $groupedForms->sortBy(function ($formData, $formHeadingId) {
-            return UserFormHeading::where('user_id', 2)
+            return UserFormHeading::where('user_id', Auth::user()->id ?? '2')
                 ->where('heading_id', $formHeadingId)
                 ->value('order_id');
         });

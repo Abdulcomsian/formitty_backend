@@ -45,7 +45,7 @@ class Handler extends ExceptionHandler
     public function register()
     {
         $this->reportable(function (Throwable $e) {
-            /*$userId = 1;
+            $userId = 1;
             if (Auth::user()) {
                 $userId = Auth::user()->id ?? '1';
             }
@@ -58,7 +58,7 @@ class Handler extends ExceptionHandler
                 'trace' => $e->getTraceAsString(),
             );
 
-            Log::create($data);*/
+            Log::create($data);
         });
     }
 }

@@ -145,3 +145,11 @@ function extract_values_assessment($string) {
     $option_id = $parts[2] ?? null;
     return array($name, $question_id, $option_id);
 }
+
+function assessment_tool($type){
+    if($type == 'questionnaire'){
+        return '<span class="badge badge-primary">Questionnaire</span>';
+    }elseif($type == 'flow_chart'){
+        return '<span class="badge badge-success">Flow Chart</span>';
+    }
+}

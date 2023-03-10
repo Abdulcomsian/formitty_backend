@@ -538,14 +538,7 @@ class FormBuilderController extends ApiController
                             </td>
                         </tr>
                         </table>";
-                $section_html .= "<table
-                        style='
-                            border-collapse: collapse;
-                            width: 100%;
-                            margin: auto;
-                            border: 1px solid lightslategray;
-                        '
-                        >
+                $section_html .= "<table style='border-collapse: collapse; width: 100%; margin: auto; border: 1px solid lightslategray;'>
                         <tbody>
                             ";
                 $total_points = 0;
