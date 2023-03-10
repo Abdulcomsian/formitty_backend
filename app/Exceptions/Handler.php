@@ -44,7 +44,7 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
-        $this->reportable(function (Throwable $e) {
+        /*$this->reportable(function (Throwable $e) {
             $userId = 1;
             if (Auth::user()) {
                 $userId = Auth::user()->id ?? '1';
@@ -59,6 +59,6 @@ class Handler extends ExceptionHandler
             );
 
             Log::create($data);
-        });
+        });*/
     }
 }

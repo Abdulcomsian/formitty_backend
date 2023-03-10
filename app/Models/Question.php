@@ -29,4 +29,9 @@ class Question extends Model
     {
         return $this->hasOne(Answer::class, 'question_id');
     }
+
+    public function assessmentGroup()
+    {
+        return $this->belongsTo(AssessmentGroup::class);
+    }
 }

@@ -28,4 +28,9 @@ class AssessmentTool extends Model
     {
         return $this->hasMany(FlowchartQuestions::class);
     }
+
+    public function assessment_groups()
+    {
+        return $this->hasMany(AssessmentGroup::class);
+    }
 }

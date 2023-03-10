@@ -56,7 +56,7 @@ class AssessmentToolController extends ApiController
 
         try {
 
-            $assessment_tools = AssessmentTool::with('questions', 'questions.options')->find($request->assessment_id);
+            $assessment_tools = AssessmentTool::with('assessment_groups','questions', 'questions.options')->find($request->assessment_id);
             return $this->successResponse($assessment_tools, 'Questions get successfully!.', 200);
 
         } catch (\Throwable $th) {
