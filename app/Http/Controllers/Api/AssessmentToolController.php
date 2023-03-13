@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 use App\Models\Question;
+use App\Models\FlowchartResponse;
 use App\Models\Answer;
 use App\Models\Response;
 use Illuminate\Support\Facades\Auth;
@@ -205,7 +206,14 @@ class AssessmentToolController extends ApiController
     public function storeFlowChart(Request $request)
     {
         try {
-            dd($request);
+            foreach($request->data as $key=>$value){
+                $response = new FlowchartResponse();
+                $response->user_id = Auth::user()->id ?? '2';
+                $response->user_form_id = $request->user_form_id;
+                $response->flowchart_question_id = $value;
+                $response->assessment_id = $request->user_assessment_id;
+                $response->save();
+            }
             return $this->successResponse($response, 'Flowchart stored successfully!.', 200);
         } catch (\Throwable $th) {
             return $this->errorResponse($th->getMessage(), 401);
