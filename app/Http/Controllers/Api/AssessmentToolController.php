@@ -228,6 +228,7 @@ class AssessmentToolController extends ApiController
             'user_form_id' => 'required|integer',
         ]);
 
+        
         if ($validator->fails()) {
             return response()->json([
                 'message' => 'Validation error',
