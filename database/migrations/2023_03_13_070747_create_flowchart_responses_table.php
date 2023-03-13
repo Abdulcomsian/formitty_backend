@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('assessment_tool_id')->constrained('assessment_tools')->cascadeOnDelete()->cascadeOnUpdate();
             $table->unsignedBigInteger('user_form_id');
-            $table->foreignId('flowchart_response_id')->constrained('flowchart_responses')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('flowchart_question_id')->constrained('flowchart_responses')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }
