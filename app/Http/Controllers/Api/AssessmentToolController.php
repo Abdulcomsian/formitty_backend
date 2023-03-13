@@ -211,7 +211,7 @@ class AssessmentToolController extends ApiController
                 $response->user_id = Auth::user()->id ?? '2';
                 $response->user_form_id = $request->user_form_id;
                 $response->flowchart_question_id = $value;
-                $response->assessment_id = $request->user_assessment_id;
+                $response->assessment_tool_id = $request->user_assessment_id;
                 $response->save();
             }
             return $this->successResponse($response, 'Flowchart stored successfully!.', 200);
