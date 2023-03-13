@@ -220,4 +220,27 @@ class AssessmentToolController extends ApiController
         }
     }
 
+    public function editFlowChart(Request $request){
+
+        // Validate the request data
+        $validator = Validator::make($request->all(), [
+            'assessment_tool_id' => 'required|integer',
+            'user_form_id' => 'required|integer',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'message' => 'Validation error',
+                'errors' => $validator->errors()
+            ], 400);
+        }
+
+        try{
+            $response = FlowchartResponse::where('user_form_id', $request->user_form_id)->where('assessment_tool_id', $request->assessment_tool_id)->get();
+            return $this->successResponse($response, 'Flowchart fetched successfully!.', 200);
+        } catch (\Throwable $th) {
+            return $this->errorResponse($th->getMessage(), 401);
+        }
+    }
+
 }
