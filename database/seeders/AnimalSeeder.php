@@ -35,73 +35,73 @@ class AnimalSeeder extends Seeder
                             <tr>
                             <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Name</td>
                             <td style='border: 1px solid lightslategray; padding: 10px'>
-                                {{part_1_ndis_name}}
+                                Field Data
                             </td>
                             </tr>
                             <tr>
                             <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Date of Birth</td>
                             <td style='border: 1px solid lightslategray; padding: 10px'>
-                                {{part_1_ndis_date_of_birth}}
+                                Field Data
                             </td>
                             </tr>
                             <tr>
                             <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Age</td>
                             <td style='border: 1px solid lightslategray; padding: 10px'>
-                                {{part_1_ndis_age}}
+                                Field Data
                             </td>
                             </tr>
                             <tr>
                             <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>NDIS Number</td>
                             <td style='border: 1px solid lightslategray; padding: 10px'>
-                                {{part_1_ndis_participantndis_number}}
-                            </td>
-                            </tr>
-                            <tr>
-                            <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Address</td>
-                            <td style='border: 1px solid lightslategray; padding: 10px'>
-                                {{part_1_ndis_participant_address}}
+                                Field Data
                             </td>
                             </tr>
                             <tr>
                             <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Contact Telephone Number</td>
                             <td style='border: 1px solid lightslategray; padding: 10px'>
-                                {{part_1_ndis_participantphone_number}}
+                                Field Data
+                            </td>
+                            </tr>
+                            <tr>
+                            <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Address</td>
+                            <td style='border: 1px solid lightslategray; padding: 10px'>
+                                Field Data
                             </td>
                             </tr>
                             <tr>
                             <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Email</td>
                             <td style='border: 1px solid lightslategray; padding: 10px'>
-                                {{part_1_ndis_participant_email}}
+                                Field Data
                             </td>
                             </tr>
                             <tr>
                             <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Preferred Contact Method </td>
                             <td style='border: 1px solid lightslategray; padding: 10px'>
-                                {{part_1_ndis_participant_preferredcontact}}
+                                Field Data
                             </td>
                             </tr>
                             <tr>
                             <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Nominee or Guardian Name</td>
                             <td style='border: 1px solid lightslategray; padding: 10px'>
-                                {{part_1_ndis_participantguardian_name}}
+                                Field Data
                             </td>
                             </tr>
                             <tr>
                             <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Nominee or Guardian Phone</td>
                             <td style='border: 1px solid lightslategray; padding: 10px'>
-                                {{part_1_ndis_participantguardian_phone}}
+                                Field Data
                             </td>
                             </tr>
                             <tr>
                             <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>NDIS Support Coordinator</td>
                             <td style='border: 1px solid lightslategray; padding: 10px'>
-                                {{part_1_plan_management_ndis_coordinator}}
+                                Field Data
                             </td>
                             </tr>
                             <tr>
                             <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Contact Details</td>
                             <td style='border: 1px solid lightslategray; padding: 10px'>
-                                {{part_1_ndis_participantcontact_details}}
+                                Field Data
                             </td>
                             </tr>
                             
@@ -209,7 +209,7 @@ class AnimalSeeder extends Seeder
 
 
 
-    $section3 = "<table style='background-color:#7209B7; border:none; width:100%;'>
+        $section3 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                     <tr>
                         <td>
                             <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'> PART 3 – Exploration of Optionst</p>
@@ -311,7 +311,7 @@ class AnimalSeeder extends Seeder
 
 
 
-    $section4 =  "<p style='margin-top:10px'></p>
+        $section4 =  "<p style='margin-top:10px'></p>
                 <table style='background-color:#7209B7; border:none; width:100%;'>
                     <tr>
                         <td>
@@ -361,7 +361,7 @@ class AnimalSeeder extends Seeder
 
 
 
-    $section5 =  "<table style='background-color:#7209B7; border:none; width:100%;'>
+        $section5 =  "<table style='background-color:#7209B7; border:none; width:100%;'>
                     <tr>
                         <td>
                             <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'>  PART 5 – Recommended Nutrition Support AT specification</p>
@@ -470,7 +470,7 @@ class AnimalSeeder extends Seeder
 
 
 
-$section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
+        $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
             <tr>
                 <td>
                     <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'>  PART 6 – Details of Assistive Technology Assessor</p>
@@ -577,7 +577,7 @@ $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
 
 
 
-  $section7 = "<table style='background-color:#7209B7; border:none; width:100%;'>
+        $section7 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                 <tr>
                     <td>
                         <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'>  PART 7 – Consent to Collect and Share Your Information - Provider AT Assessment and Quotation(s)</p>
@@ -640,58 +640,58 @@ $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                 </table>";
 
 
-                $form = Form::create([
-                    'name' => 'Notes for Assistive Technology (AT) Assessors of Assistance Animal Supports'
-                ]);
+        $form = Form::create([
+            'name' => 'Notes for Assistive Technology (AT) Assessors of Assistance Animal Supports'
+        ]);
 
 
-                $heading1 = FormHeading::insertGetId([
-                    'form_heading' => 'Part 1 – Participant and Plan Management Details',
-                    'form_id' => '2',
-                    'section_html' => $section1
-                ]);
+        $heading1 = FormHeading::insertGetId([
+            'form_heading' => 'Part 1 – Participant and Plan Management Details',
+            'form_id' => '2',
+            'section_html' => $section1
+        ]);
 
-                $heading2 = FormHeading::insertGetId([
-                    'form_heading' => 'Part 2 – Assessment',
-                    'form_id' => '2',
-                    'section_html' => $section2
-                ]);
+        $heading2 = FormHeading::insertGetId([
+            'form_heading' => 'Part 2 – Assessment',
+            'form_id' => '2',
+            'section_html' => $section2
+        ]);
 
-                $heading3 = FormHeading::insertGetId([
-                    'form_heading' => 'Part 3 – Assistance Animal Assessment',
-                    'form_id' => '2',
-                    'section_html' => $section3
-                ]);
+        $heading3 = FormHeading::insertGetId([
+            'form_heading' => 'Part 3 – Assistance Animal Assessment',
+            'form_id' => '2',
+            'section_html' => $section3
+        ]);
 
-                $heading4 = FormHeading::insertGetId([
-                    'form_heading' => 'Part 4 – Attachments',
-                    'form_id' => '2',
-                    'section_html' => $section4
-                ]);
+        $heading4 = FormHeading::insertGetId([
+            'form_heading' => 'Part 4 – Attachments',
+            'form_id' => '2',
+            'section_html' => $section4
+        ]);
 
-                $heading5 = FormHeading::insertGetId([
-                    'form_heading' => 'Part 5 - Participant feedback and notifications',
-                    'form_id' => '2',
-                    'section_html' => $section5
-                ]);
-
-
-                $heading6 = FormHeading::insertGetId([
-                    'form_heading' => 'Part 6 – Details of Assistive Technology Assessor',
-                    'form_id' => '2',
-                    'section_html' => $section6
-                ]);
+        $heading5 = FormHeading::insertGetId([
+            'form_heading' => 'Part 5 - Participant feedback and notifications',
+            'form_id' => '2',
+            'section_html' => $section5
+        ]);
 
 
-                $heading7 = FormHeading::insertGetId([
-                    'form_heading' => 'Part 7 – Consent to collect and share your information',
-                    'form_id' => '2',
-                    'section_html' => $section7
-                ]);
-        
+        $heading6 = FormHeading::insertGetId([
+            'form_heading' => 'Part 6 – Details of Assistive Technology Assessor',
+            'form_id' => '2',
+            'section_html' => $section6
+        ]);
 
 
-                $form_fields = '[
+        $heading7 = FormHeading::insertGetId([
+            'form_heading' => 'Part 7 – Consent to collect and share your information',
+            'form_id' => '2',
+            'section_html' => $section7
+        ]);
+
+
+
+        $form_fields = '[
                     {
                     "type":"text",
                     "required":false,
@@ -703,7 +703,7 @@ $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                     "subtype":"text"
                     },
                     {
-                    "type":"date",
+                    "type":"text",
                     "required":false,
                     "label":"Date of Birth",
                     "placeholder":"Enter Your Date of Birth",
@@ -713,7 +713,7 @@ $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                     "subtype":"text"
                     },
                     {
-                    "type":"number",
+                    "type":"text",
                     "required":false,
                     "label":"Age",
                     "placeholder":"Enter Your Age",
@@ -753,7 +753,7 @@ $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                     "subtype":"text"
                     },
                     {
-                    "type":"email",
+                    "type":"text",
                     "required":false,
                     "label":"Email",
                     "placeholder":"Enter Your Email",
@@ -795,8 +795,38 @@ $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                     {
                     "type":"text",
                     "required":false,
-                    "label":"NDIS Support Coordinator",
-                    "placeholder":"Enter NDIS Coordinator",
+                    "label":"Cotact Details",
+                    "placeholder":"Enter Your Contact Details",
+                    "className":"form-control",
+                    "name":"part_1_ndis_participantcontact_details",
+                    "access":false,
+                    "subtype":"text"
+                    },
+                    {
+                    "type":"text",
+                    "required":false,
+                    "label":"Full Name",
+                    "placeholder":"Enter Your Full Name",
+                    "className":"form-control",
+                    "name":"part_1_plan_management_fullname",
+                    "access":false,
+                    "subtype":"text"
+                    },
+                    {
+                    "type":"text",
+                    "required":false,
+                    "label":"Email",
+                    "placeholder":"Enter Your Email",
+                    "className":"form-control",
+                    "name":"part_1_plan_management_email",
+                    "access":false,
+                    "subtype":"text"
+                    },
+                    {
+                    "type":"text",
+                    "required":false,
+                    "label":"NDIS Coordinator",
+                    "placeholder":"Enter Your NDIS Coordinator",
                     "className":"form-control",
                     "name":"part_1_plan_management_ndis_coordinator",
                     "access":false,
@@ -805,16 +835,55 @@ $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                     {
                     "type":"text",
                     "required":false,
-                    "label":"Contact Details",
-                    "placeholder":"Enter Your Contact Details",
+                    "label":"Guardian Name",
+                    "placeholder":"Enter Your Guardian Name",
                     "className":"form-control",
-                    "name":"part_1_ndis_participantcontact_details",
+                    "name":"part_1_plan_managementguardian_name",
+                    "access":false,
+                    "subtype":"text"
+                    },
+                    {
+                    "type":"text",
+                    "required":false,
+                    "label":"Guardian Phone",
+                    "placeholder":"Enter Your Guardian Phone",
+                    "className":"form-control",
+                    "name":"part_1_plan_managementguardian_phone",
+                    "access":false,
+                    "subtype":"text"
+                    },
+                    {
+                    "type":"text",
+                    "required":false,
+                    "label":"Date of Assessment",
+                    "placeholder":"Enter Your Date of Assessment",
+                    "className":"form-control",
+                    "name":"part_1_plan_management_date_assessment",
+                    "access":false,
+                    "subtype":"text"
+                    },
+                    {
+                    "type":"text",
+                    "required":false,
+                    "label":"Phone Number",
+                    "placeholder":"Enter Your Phone Number",
+                    "className":"form-control",
+                    "name":"part_1_plan_managementphone_number",
+                    "access":false,
+                    "subtype":"text"
+                    },
+                    {
+                    "type":"text",
+                    "required":false,
+                    "label":"NDIS Number",
+                    "placeholder":"Enter Your NDIS Number",
+                    "className":"form-control",
+                    "name":"part_1_plan_managementndis_number",
                     "access":false,
                     "subtype":"text"
                     }
-                    
                     ]';
-    $form_fields2 = '[
+        $form_fields2 = '[
                         {
                         "type":"text",
                         "required":false,
@@ -946,42 +1015,42 @@ $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                         "subtype":"text"
                         }
                         ]';
-    $form_fields3 = '[{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter option","className":"form-control","name":"part_3_con_option_evaluation_option1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter option","className":"form-control","name":"part_3_con_option_evaluation_option2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter option","className":"form-control","name":"part_3_con_option_evaluation_option3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter option","className":"form-control","name":"part_3_con_option_evaluation_option4","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Potential Option","className":"form-control","name":"part_3_con_option_potential_option1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Potential Option","className":"form-control","name":"part_3_con_option_potential_option2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Potential Option","className":"form-control","name":"part_3_con_option_potential_option3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Potential Option","className":"form-control","name":"part_3_con_option_potential_option4","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Trial Details","className":"form-control","name":"part_3_con_option_trial_option1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Trial Details","className":"form-control","name":"part_3_con_option_trial_option2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Trial Details","className":"form-control","name":"part_3_con_option_trial_option3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Trial Details","className":"form-control","name":"part_3_con_option_trial_option4","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Advantages","className":"form-control","name":"part_3_con_option_advantage1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Advantages","className":"form-control","name":"part_3_con_option_advantage2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Advantages","className":"form-control","name":"part_3_con_option_advantage3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Advantages","className":"form-control","name":"part_3_con_option_advantage4","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Disadvantage","className":"form-control","name":"part_3_con_option_disdvantage1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Disadvantage","className":"form-control","name":"part_3_con_option_disdvantage2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Disadvantage","className":"form-control","name":"part_3_con_option_disdvantage3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Disadvantage","className":"form-control","name":"part_3_con_option_disdvantage4","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Estimated Time","className":"form-control","name":"part_3_con_option_estimatedTime1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Estimated Time","className":"form-control","name":"part_3_con_option_estimatedTime2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Estimated Time","className":"form-control","name":"part_3_con_option_estimatedTime3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Estimated Time","className":"form-control","name":"part_3_con_option_estimatedTime4","access":false,"subtype":"text"}]';
+        $form_fields3 = '[{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter option","className":"form-control","name":"part_3_con_option_evaluation_option1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter option","className":"form-control","name":"part_3_con_option_evaluation_option2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter option","className":"form-control","name":"part_3_con_option_evaluation_option3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter option","className":"form-control","name":"part_3_con_option_evaluation_option4","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Potential Option","className":"form-control","name":"part_3_con_option_potential_option1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Potential Option","className":"form-control","name":"part_3_con_option_potential_option2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Potential Option","className":"form-control","name":"part_3_con_option_potential_option3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Potential Option","className":"form-control","name":"part_3_con_option_potential_option4","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Trial Details","className":"form-control","name":"part_3_con_option_trial_option1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Trial Details","className":"form-control","name":"part_3_con_option_trial_option2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Trial Details","className":"form-control","name":"part_3_con_option_trial_option3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Trial Details","className":"form-control","name":"part_3_con_option_trial_option4","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Advantages","className":"form-control","name":"part_3_con_option_advantage1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Advantages","className":"form-control","name":"part_3_con_option_advantage2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Advantages","className":"form-control","name":"part_3_con_option_advantage3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Advantages","className":"form-control","name":"part_3_con_option_advantage4","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Disadvantage","className":"form-control","name":"part_3_con_option_disdvantage1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Disadvantage","className":"form-control","name":"part_3_con_option_disdvantage2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Disadvantage","className":"form-control","name":"part_3_con_option_disdvantage3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Disadvantage","className":"form-control","name":"part_3_con_option_disdvantage4","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Estimated Time","className":"form-control","name":"part_3_con_option_estimatedTime1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Estimated Time","className":"form-control","name":"part_3_con_option_estimatedTime2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Estimated Time","className":"form-control","name":"part_3_con_option_estimatedTime3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Estimated Time","className":"form-control","name":"part_3_con_option_estimatedTime4","access":false,"subtype":"text"}]';
 
-    $form_fields4 = '[{"type":"textarea","required":false,"label":"Continence Recommendations","placeholder":"Enter Specific Evidence","className":"form-control","name":"part_4_con_recomm_specific_evidence","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Continence Recommendations","placeholder":"Enter additional features, customisation or specification recommended","className":"form-control","name":"part_4_con_recomm_additional_feature","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Item 1","placeholder":"Enter Item","className":"form-control","name":"part_4_con_recomm_item1","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Item 2","placeholder":"Enter Item","className":"form-control","name":"part_4_con_recomm_item2","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Item 3","placeholder":"Enter Item","className":"form-control","name":"part_4_con_recomm_item3","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Quantity 1","placeholder":"Enter Quantity","className":"form-control","name":"part_4_con_recomm_quantity1","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Quantity 2","placeholder":"Enter Quantity","className":"form-control","name":"part_4_con_recomm_quantity2","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Quantity 3","placeholder":"Enter Quantity","className":"form-control","name":"part_4_con_recomm_quantity3","access":false,"subtype":"textarea"},{"type":"text","required":false,"label":"Frequency of Supply 1","placeholder":"Enter Frequency of Supply","className":"form-control","name":"part_4_con_recomm_frequency1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Frequency of Supply 2","placeholder":"Enter Frequency of Supply","className":"form-control","name":"part_4_con_recomm_frequency2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Frequency of Supply 3","placeholder":"Enter Frequency of Supply","className":"form-control","name":"part_4_con_recomm_frequency3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"State / Specification 1","placeholder":"Enter State/Specification","className":"form-control","name":"part_4_con_recomm_StateSpecification1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"State / Specification 2","placeholder":"Enter State/Specification","className":"form-control","name":"part_4_con_recomm_StateSpecification2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"State / Specification 3","placeholder":"Enter State/Specification","className":"form-control","name":"part_4_con_recomm_StateSpecification3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Preferred supplier (Optional)","placeholder":"Enter your Preferred Supplier","className":"form-control","name":"part_4_con_recomm_preferred_supplier1","access":false,"subtype":"text"},{"type":"checkbox-group","required":false,"label":"Supplier Product Use Guidence","toggle":false,"inline":false,"name":"part_4_con_recomm_SPUG1","access":false,"other":false,"values":[{"label":"Option 1","value":"option-1","selected":true}]},{"type":"textarea","required":false,"label":"Information and Instructions","placeholder":"Enter Information and Instructions for Usage.","className":"form-control","name":"part_4_con_recomm_information_instructions_field","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Urgent supply required?&nbsp;","placeholder":"Enter detail with YES/NO","className":"form-control","name":"part_4_con_recomm_urgentSupply","access":false,"subtype":"textarea"},{"type":"text","required":false,"label":"Scheme Specification (Optional)","placeholder":"Enter your scheme specification here.","className":"form-control","name":"part_4_con_recomm_schemeSpecification","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Other supplier specification (Optional)","placeholder":"Enter your supplier specification","className":"form-control","name":"part_4_con_recomm_supplier_specification","access":false,"subtype":"text"},{"type":"radio-group","required":true,"label":"Participant Agreement","inline":false,"name":"part_4_con_recomm_participant_agreement","access":false,"other":false,"values":[{"label":"Yes","value":"","selected":true},{"label":"No","value":"option-2","selected":false},{"label":"Please provide details","value":"option-3","selected":false}]}]';
+        $form_fields4 = '[{"type":"textarea","required":false,"label":"Continence Recommendations","placeholder":"Enter Specific Evidence","className":"form-control","name":"part_4_con_recomm_specific_evidence","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Continence Recommendations","placeholder":"Enter additional features, customisation or specification recommended","className":"form-control","name":"part_4_con_recomm_additional_feature","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Item 1","placeholder":"Enter Item","className":"form-control","name":"part_4_con_recomm_item1","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Item 2","placeholder":"Enter Item","className":"form-control","name":"part_4_con_recomm_item2","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Item 3","placeholder":"Enter Item","className":"form-control","name":"part_4_con_recomm_item3","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Quantity 1","placeholder":"Enter Quantity","className":"form-control","name":"part_4_con_recomm_quantity1","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Quantity 2","placeholder":"Enter Quantity","className":"form-control","name":"part_4_con_recomm_quantity2","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Quantity 3","placeholder":"Enter Quantity","className":"form-control","name":"part_4_con_recomm_quantity3","access":false,"subtype":"textarea"},{"type":"text","required":false,"label":"Frequency of Supply 1","placeholder":"Enter Frequency of Supply","className":"form-control","name":"part_4_con_recomm_frequency1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Frequency of Supply 2","placeholder":"Enter Frequency of Supply","className":"form-control","name":"part_4_con_recomm_frequency2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Frequency of Supply 3","placeholder":"Enter Frequency of Supply","className":"form-control","name":"part_4_con_recomm_frequency3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"State / Specification 1","placeholder":"Enter State/Specification","className":"form-control","name":"part_4_con_recomm_StateSpecification1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"State / Specification 2","placeholder":"Enter State/Specification","className":"form-control","name":"part_4_con_recomm_StateSpecification2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"State / Specification 3","placeholder":"Enter State/Specification","className":"form-control","name":"part_4_con_recomm_StateSpecification3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Preferred supplier (Optional)","placeholder":"Enter your Preferred Supplier","className":"form-control","name":"part_4_con_recomm_preferred_supplier1","access":false,"subtype":"text"},{"type":"checkbox-group","required":false,"label":"Supplier Product Use Guidence","toggle":false,"inline":false,"name":"part_4_con_recomm_SPUG1","access":false,"other":false,"values":[{"label":"Option 1","value":"option-1","selected":true}]},{"type":"textarea","required":false,"label":"Information and Instructions","placeholder":"Enter Information and Instructions for Usage.","className":"form-control","name":"part_4_con_recomm_information_instructions_field","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Urgent supply required?&nbsp;","placeholder":"Enter detail with YES/NO","className":"form-control","name":"part_4_con_recomm_urgentSupply","access":false,"subtype":"textarea"},{"type":"text","required":false,"label":"Scheme Specification (Optional)","placeholder":"Enter your scheme specification here.","className":"form-control","name":"part_4_con_recomm_schemeSpecification","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Other supplier specification (Optional)","placeholder":"Enter your supplier specification","className":"form-control","name":"part_4_con_recomm_supplier_specification","access":false,"subtype":"text"},{"type":"radio-group","required":true,"label":"Participant Agreement","inline":false,"name":"part_4_con_recomm_participant_agreement","access":false,"other":false,"values":[{"label":"Yes","value":"","selected":true},{"label":"No","value":"option-2","selected":false},{"label":"Please provide details","value":"option-3","selected":false}]}]';
 
-    $form_fields5 = '[{"type":"checkbox-group","required":false,"label":"Meet the NDIA expectation","toggle":false,"inline":false,"name":"part_5_declaration_NDIA_expectation","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":true}]},{"type":"checkbox-group","required":false,"label":"Providing appropriate evidence to the NDIA","toggle":false,"inline":false,"name":"part_5_declaration_appropriate_evidence","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":true}]},{"type":"checkbox-group","required":false,"label":"I understand all about the NDIA","toggle":false,"inline":false,"name":"part_5_declaration_NDIA_understanding","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":false}]},{"type":"checkbox-group","required":false,"label":"Accessing by the treating multi-disciplinary team","toggle":false,"inline":false,"name":"part_5_declaration_accessing_team","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":false}]},{"type":"text","required":false,"label":"Name","placeholder":"Enter Assessor’s  Name","className":"form-control","name":"part_5_assessors_name","access":false,"subtype":"text"},{"type":"text","required":false,"label":"NDIS Provider Registration Number","placeholder":"Enter Registration Number","className":"form-control","name":"part_5_registration_number","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Phone Number","placeholder":"Enter Phone Number","className":"form-control","name":"part_5_assessorphone_number","access":false,"subtype":"text"},{"type":"text","subtype":"email","required":false,"label":"Email","placeholder":"Enter Email Address","className":"form-control","name":"part_5_email_address","access":false},{"type":"text","required":false,"label":"Qualification","placeholder":"Enter Qualification here.","className":"form-control","name":"part_5_qualification","access":false,"subtype":"text"},{"type":"date","required":false,"label":"Date of Assessment","placeholder":"Set Date of Assessment","className":"form-control","name":"part_5_date_assessment","access":false},{"type":"date","required":false,"label":"Date of Report","placeholder":"Set Date of Report","className":"form-control","name":"part_5_reportDate","access":false}]';
+        $form_fields5 = '[{"type":"checkbox-group","required":false,"label":"Meet the NDIA expectation","toggle":false,"inline":false,"name":"part_5_declaration_NDIA_expectation","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":true}]},{"type":"checkbox-group","required":false,"label":"Providing appropriate evidence to the NDIA","toggle":false,"inline":false,"name":"part_5_declaration_appropriate_evidence","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":true}]},{"type":"checkbox-group","required":false,"label":"I understand all about the NDIA","toggle":false,"inline":false,"name":"part_5_declaration_NDIA_understanding","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":false}]},{"type":"checkbox-group","required":false,"label":"Accessing by the treating multi-disciplinary team","toggle":false,"inline":false,"name":"part_5_declaration_accessing_team","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":false}]},{"type":"text","required":false,"label":"Name","placeholder":"Enter Assessor’s  Name","className":"form-control","name":"part_5_assessors_name","access":false,"subtype":"text"},{"type":"text","required":false,"label":"NDIS Provider Registration Number","placeholder":"Enter Registration Number","className":"form-control","name":"part_5_registration_number","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Phone Number","placeholder":"Enter Phone Number","className":"form-control","name":"part_5_assessorphone_number","access":false,"subtype":"text"},{"type":"text","subtype":"email","required":false,"label":"Email","placeholder":"Enter Email Address","className":"form-control","name":"part_5_email_address","access":false},{"type":"text","required":false,"label":"Qualification","placeholder":"Enter Qualification here.","className":"form-control","name":"part_5_qualification","access":false,"subtype":"text"},{"type":"date","required":false,"label":"Date of Assessment","placeholder":"Set Date of Assessment","className":"form-control","name":"part_5_date_assessment","access":false},{"type":"date","required":false,"label":"Date of Report","placeholder":"Set Date of Report","className":"form-control","name":"part_5_reportDate","access":false}]';
 
-    $form_fields6 = '[{"type":"checkbox-group","required":false,"label":"Meet the NDIA expectation","toggle":false,"inline":false,"name":"part_6_declaration_NDIA_expectation","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":true}]},{"type":"checkbox-group","required":false,"label":"Providing appropriate evidence to the NDIA","toggle":false,"inline":false,"name":"part_6_declaration_appropriate_evidence","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":true}]},{"type":"checkbox-group","required":false,"label":"I understand all about the NDIA","toggle":false,"inline":false,"name":"part_6_declaration_NDIA_understanding","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":false}]},{"type":"checkbox-group","required":false,"label":"Accessing by the treating multi-disciplinary team","toggle":false,"inline":false,"name":"part_6_declaration_accessing_team","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":false}]},{"type":"text","required":false,"label":"Name","placeholder":"Enter Assessor’s  Name","className":"form-control","name":"part_6_assessors_name","access":false,"subtype":"text"},{"type":"text","required":false,"label":"NDIS Provider Registration Number","placeholder":"Enter Registration Number","className":"form-control","name":"part_6_registration_number","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Phone Number","placeholder":"Enter Phone Number","className":"form-control","name":"part_6_assessorphone_number","access":false,"subtype":"text"},{"type":"text","subtype":"email","required":false,"label":"Email","placeholder":"Enter Email Address","className":"form-control","name":"part_6_email_address","access":false},{"type":"text","required":false,"label":"Qualification","placeholder":"Enter Qualification here.","className":"form-control","name":"part_6_qualification","access":false,"subtype":"text"},{"type":"date","required":false,"label":"Date of Assessment","placeholder":"Set Date of Assessment","className":"form-control","name":"part_6_date_assessment","access":false},{"type":"date","required":false,"label":"Date of Report","placeholder":"Set Date of Report","className":"form-control","name":"part_6_reportDate","access":false}]';
+        $form_fields6 = '[{"type":"checkbox-group","required":false,"label":"Meet the NDIA expectation","toggle":false,"inline":false,"name":"part_5_declaration_NDIA_expectation","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":true}]},{"type":"checkbox-group","required":false,"label":"Providing appropriate evidence to the NDIA","toggle":false,"inline":false,"name":"part_5_declaration_appropriate_evidence","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":true}]},{"type":"checkbox-group","required":false,"label":"I understand all about the NDIA","toggle":false,"inline":false,"name":"part_5_declaration_NDIA_understanding","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":false}]},{"type":"checkbox-group","required":false,"label":"Accessing by the treating multi-disciplinary team","toggle":false,"inline":false,"name":"part_5_declaration_accessing_team","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":false}]},{"type":"text","required":false,"label":"Name","placeholder":"Enter Assessor’s  Name","className":"form-control","name":"part_5_assessors_name","access":false,"subtype":"text"},{"type":"text","required":false,"label":"NDIS Provider Registration Number","placeholder":"Enter Registration Number","className":"form-control","name":"part_5_registration_number","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Phone Number","placeholder":"Enter Phone Number","className":"form-control","name":"part_5_assessorphone_number","access":false,"subtype":"text"},{"type":"text","subtype":"email","required":false,"label":"Email","placeholder":"Enter Email Address","className":"form-control","name":"part_5_email_address","access":false},{"type":"text","required":false,"label":"Qualification","placeholder":"Enter Qualification here.","className":"form-control","name":"part_5_qualification","access":false,"subtype":"text"},{"type":"date","required":false,"label":"Date of Assessment","placeholder":"Set Date of Assessment","className":"form-control","name":"part_5_date_assessment","access":false},{"type":"date","required":false,"label":"Date of Report","placeholder":"Set Date of Report","className":"form-control","name":"part_5_reportDate","access":false}]';
 
-    FormField::create([
-        'form_heading_id' => $heading1,
-        'form_field' => $form_fields
-    ]);
-    FormField::create([
-        'form_heading_id' => $heading2,
-        'form_field' => $form_fields2
-    ]);
-    FormField::create([
-        'form_heading_id' => $heading3,
-        'form_field' => $form_fields3
-    ]);
-    FormField::create([
-        'form_heading_id' => $heading4,
-        'form_field' => $form_fields4
-    ]);
-    FormField::create([
-        'form_heading_id' => $heading5,
-        'form_field' => $form_fields5
-    ]);
-    FormField::create([
-        'form_heading_id' => $heading6,
-        'form_field' => $form_fields6
-    ]);
-    FormField::create([
-        'form_heading_id' => $heading7,
-        'form_field' => $form_fields6
-    ]);
+        FormField::create([
+            'form_heading_id' => $heading1,
+            'form_field' => $form_fields
+        ]);
+        FormField::create([
+            'form_heading_id' => $heading2,
+            'form_field' => $form_fields2
+        ]);
+        FormField::create([
+            'form_heading_id' => $heading3,
+            'form_field' => $form_fields3
+        ]);
+        FormField::create([
+            'form_heading_id' => $heading4,
+            'form_field' => $form_fields4
+        ]);
+        FormField::create([
+            'form_heading_id' => $heading5,
+            'form_field' => $form_fields5
+        ]);
+        FormField::create([
+            'form_heading_id' => $heading6,
+            'form_field' => $form_fields6
+        ]);
+        FormField::create([
+            'form_heading_id' => $heading7,
+            'form_field' => $form_fields6
+        ]);
 
 
     }
