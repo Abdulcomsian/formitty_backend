@@ -35,73 +35,73 @@ class AnimalSeeder extends Seeder
                             <tr>
                             <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Name</td>
                             <td style='border: 1px solid lightslategray; padding: 10px'>
-                                Field Data
+                                {{part_1_ndis_name}}
                             </td>
                             </tr>
                             <tr>
                             <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Date of Birth</td>
                             <td style='border: 1px solid lightslategray; padding: 10px'>
-                                Field Data
+                                {{part_1_ndis_date_of_birth}}
                             </td>
                             </tr>
                             <tr>
                             <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Age</td>
                             <td style='border: 1px solid lightslategray; padding: 10px'>
-                                Field Data
+                                {{part_1_ndis_age}}
                             </td>
                             </tr>
                             <tr>
                             <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>NDIS Number</td>
                             <td style='border: 1px solid lightslategray; padding: 10px'>
-                                Field Data
-                            </td>
-                            </tr>
-                            <tr>
-                            <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Contact Telephone Number</td>
-                            <td style='border: 1px solid lightslategray; padding: 10px'>
-                                Field Data
+                                {{part_1_ndis_participantndis_number}}
                             </td>
                             </tr>
                             <tr>
                             <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Address</td>
                             <td style='border: 1px solid lightslategray; padding: 10px'>
-                                Field Data
+                                {{part_1_ndis_participant_address}}
+                            </td>
+                            </tr>
+                            <tr>
+                            <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Contact Telephone Number</td>
+                            <td style='border: 1px solid lightslategray; padding: 10px'>
+                                {{part_1_ndis_participantphone_number}}
                             </td>
                             </tr>
                             <tr>
                             <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Email</td>
                             <td style='border: 1px solid lightslategray; padding: 10px'>
-                                Field Data
+                                {{part_1_ndis_participant_email}}
                             </td>
                             </tr>
                             <tr>
                             <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Preferred Contact Method </td>
                             <td style='border: 1px solid lightslategray; padding: 10px'>
-                                Field Data
+                                {{part_1_ndis_participant_preferredcontact}}
                             </td>
                             </tr>
                             <tr>
                             <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Nominee or Guardian Name</td>
                             <td style='border: 1px solid lightslategray; padding: 10px'>
-                                Field Data
+                                {{part_1_ndis_participantguardian_name}}
                             </td>
                             </tr>
                             <tr>
                             <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Nominee or Guardian Phone</td>
                             <td style='border: 1px solid lightslategray; padding: 10px'>
-                                Field Data
+                                {{part_1_ndis_participantguardian_phone}}
                             </td>
                             </tr>
                             <tr>
                             <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>NDIS Support Coordinator</td>
                             <td style='border: 1px solid lightslategray; padding: 10px'>
-                                Field Data
+                                {{part_1_plan_management_ndis_coordinator}}
                             </td>
                             </tr>
                             <tr>
                             <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Contact Details</td>
                             <td style='border: 1px solid lightslategray; padding: 10px'>
-                                Field Data
+                                {{part_1_ndis_participantcontact_details}}
                             </td>
                             </tr>
                             
@@ -795,38 +795,8 @@ $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                     {
                     "type":"text",
                     "required":false,
-                    "label":"Cotact Details",
-                    "placeholder":"Enter Your Contact Details",
-                    "className":"form-control",
-                    "name":"part_1_ndis_participantcontact_details",
-                    "access":false,
-                    "subtype":"text"
-                    },
-                    {
-                    "type":"text",
-                    "required":false,
-                    "label":"Full Name",
-                    "placeholder":"Enter Your Full Name",
-                    "className":"form-control",
-                    "name":"part_1_plan_management_fullname",
-                    "access":false,
-                    "subtype":"text"
-                    },
-                    {
-                    "type":"text",
-                    "required":false,
-                    "label":"Email",
-                    "placeholder":"Enter Your Email",
-                    "className":"form-control",
-                    "name":"part_1_plan_management_email",
-                    "access":false,
-                    "subtype":"text"
-                    },
-                    {
-                    "type":"text",
-                    "required":false,
-                    "label":"NDIS Coordinator",
-                    "placeholder":"Enter Your NDIS Coordinator",
+                    "label":"NDIS Support Coordinator",
+                    "placeholder":"Enter NDIS Coordinator",
                     "className":"form-control",
                     "name":"part_1_plan_management_ndis_coordinator",
                     "access":false,
@@ -835,53 +805,14 @@ $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                     {
                     "type":"text",
                     "required":false,
-                    "label":"Guardian Name",
-                    "placeholder":"Enter Your Guardian Name",
+                    "label":"Contact Details",
+                    "placeholder":"Enter Your Contact Details",
                     "className":"form-control",
-                    "name":"part_1_plan_managementguardian_name",
-                    "access":false,
-                    "subtype":"text"
-                    },
-                    {
-                    "type":"text",
-                    "required":false,
-                    "label":"Guardian Phone",
-                    "placeholder":"Enter Your Guardian Phone",
-                    "className":"form-control",
-                    "name":"part_1_plan_managementguardian_phone",
-                    "access":false,
-                    "subtype":"text"
-                    },
-                    {
-                    "type":"text",
-                    "required":false,
-                    "label":"Date of Assessment",
-                    "placeholder":"Enter Your Date of Assessment",
-                    "className":"form-control",
-                    "name":"part_1_plan_management_date_assessment",
-                    "access":false,
-                    "subtype":"text"
-                    },
-                    {
-                    "type":"text",
-                    "required":false,
-                    "label":"Phone Number",
-                    "placeholder":"Enter Your Phone Number",
-                    "className":"form-control",
-                    "name":"part_1_plan_managementphone_number",
-                    "access":false,
-                    "subtype":"text"
-                    },
-                    {
-                    "type":"text",
-                    "required":false,
-                    "label":"NDIS Number",
-                    "placeholder":"Enter Your NDIS Number",
-                    "className":"form-control",
-                    "name":"part_1_plan_managementndis_number",
+                    "name":"part_1_ndis_participantcontact_details",
                     "access":false,
                     "subtype":"text"
                     }
+                    
                     ]';
     $form_fields2 = '[
                         {
