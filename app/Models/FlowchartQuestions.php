@@ -11,7 +11,7 @@ class FlowchartQuestions extends Model
 
     protected $fillable = ['assessment_tool_id', 'title', 'parent_id'];
 
-    public function child()
+    public function children()
     {
         return $this->hasMany(FlowchartQuestions::class, 'parent_id')->with('child');
     }

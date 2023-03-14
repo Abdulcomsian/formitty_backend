@@ -191,7 +191,7 @@ class AssessmentToolController extends ApiController
     {
         try {
             $response = AssessmentTool::with(['flowchart_questions' => function ($query) {
-                $query->whereNull('parent_id')->with('child');
+                $query->whereNull('parent_id')->with('children');
             }])->find($request->assessment_id);
 
             // Convert the id and parent_id values to strings
