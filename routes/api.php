@@ -46,6 +46,7 @@ Route::post('edit-assessment', [AssessmentToolController::class, 'editAssessment
 Route::post('store-assessment', [AssessmentToolController::class, 'storeAssessmentTool']);
 Route::post('get-flowchart-questions', [AssessmentToolController::class, 'getFlowChartQuestions']);
 Route::post('edit-flowchart', [AssessmentToolController::class, 'editFlowChart']);
+Route::post('update-flowchart', [AssessmentToolController::class, 'updateFlowChart']);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

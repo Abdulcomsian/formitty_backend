@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('flow_chart_responses');
+        Schema::dropIfExists('flowchart_responses');
     }
 };

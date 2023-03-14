@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Auth;
 
 class AssessmentToolController extends ApiController
 {
-    public function assessmentTools(){
+    public function assessmentTools()
+    {
         try {
             $assessment_tools = AssessmentTool::latest()->get();
             return $this->successResponse($assessment_tools, 'Assessment tools get successfully!.', 200);
@@ -25,7 +26,8 @@ class AssessmentToolController extends ApiController
         }
     }
 
-    public function userAssessmentTools(Request $request){
+    public function userAssessmentTools(Request $request)
+    {
 
         $validator = Validator::make(request()->all(), [
             'user_form_id' => 'required|integer',
@@ -36,10 +38,10 @@ class AssessmentToolController extends ApiController
             return $this->errorResponse($validator->messages(), 422);
         }
 
-        try{
-            $assessment_tools = Response::with('assessment_tool')->where([['user_id', Auth::user()->id ?? '2'],['user_form_id', $request->user_form_id]])->get();
+        try {
+            $assessment_tools = Response::with('assessment_tool')->where([['user_id', Auth::user()->id ?? '2'], ['user_form_id', $request->user_form_id]])->get();
             return $this->successResponse($assessment_tools, 'Assessment tools get successfully!.', 200);
-        } catch(\Throwable $th){
+        } catch (\Throwable $th) {
             return $this->errorResponse($th->getMessage(), 401);
         }
     }
@@ -57,7 +59,7 @@ class AssessmentToolController extends ApiController
 
         try {
 
-            $assessment_tools = AssessmentTool::with('assessment_groups','assessment_groups.questions', 'questions.options')->find($request->assessment_id);
+            $assessment_tools = AssessmentTool::with('assessment_groups', 'assessment_groups.questions', 'questions.options')->find($request->assessment_id);
             return $this->successResponse($assessment_tools, 'Questions get successfully!.', 200);
 
         } catch (\Throwable $th) {
@@ -71,7 +73,7 @@ class AssessmentToolController extends ApiController
 
         try {
             // Create a new response object
-            if($request->user_assessment_id) {
+            if ($request->user_assessment_id) {
                 $response = Response::find($request->user_assessment_id);
                 $response->update([
                     'assessment_tool_id' => $response->assessment_tool_id,
@@ -90,8 +92,8 @@ class AssessmentToolController extends ApiController
             $response->save();
 
             // Loop through the answers and create Answer objects for each
-            foreach ($input as $key=>$value) {
-                if($key == 'assessment_id' || $key == 'user_form_id' || $key == 'user_assessment_id') {
+            foreach ($input as $key => $value) {
+                if ($key == 'assessment_id' || $key == 'user_form_id' || $key == 'user_assessment_id') {
                     continue;
                 }
                 $result = extract_values_assessment($key);
@@ -123,7 +125,8 @@ class AssessmentToolController extends ApiController
     }
 
 
-    public function editAssessment(Request $request){
+    public function editAssessment(Request $request)
+    {
 
         // Validate the request data
         $validator = Validator::make($request->all(), [
@@ -155,7 +158,8 @@ class AssessmentToolController extends ApiController
         }
     }
 
-    public function storeAssessmentTool(Request $request){
+    public function storeAssessmentTool(Request $request)
+    {
         // Validate the request data
         $validator = Validator::make($request->all(), [
             'assessment_id' => 'required|integer',
@@ -168,7 +172,7 @@ class AssessmentToolController extends ApiController
                 'errors' => $validator->errors()
             ], 400);
         }
-        
+
         try {
 
             $response = new Response();
@@ -192,8 +196,8 @@ class AssessmentToolController extends ApiController
 
             // Convert the id and parent_id values to strings
             $response->flowchart_questions->transform(function ($question) {
-                $question->id = (string) $question->id;
-                $question->parent_id = (string) $question->parent_id;
+                $question->id = (string)$question->id;
+                $question->parent_id = (string)$question->parent_id;
                 return $question;
             });
 
@@ -206,7 +210,7 @@ class AssessmentToolController extends ApiController
     public function storeFlowChart(Request $request)
     {
         try {
-            foreach($request->data as $key=>$value){
+            foreach ($request->data as $key => $value) {
                 $response = new FlowchartResponse();
                 $response->user_id = Auth::user()->id ?? '2';
                 $response->user_form_id = $request->user_form_id;
@@ -220,15 +224,14 @@ class AssessmentToolController extends ApiController
         }
     }
 
-    public function editFlowChart(Request $request){
-
+    public function editFlowChart(Request $request)
+    {
         // Validate the request data
         $validator = Validator::make($request->all(), [
             'assessment_tool_id' => 'required|integer',
             'user_form_id' => 'required|integer',
         ]);
 
-        
         if ($validator->fails()) {
             return response()->json([
                 'message' => 'Validation error',
@@ -236,9 +239,41 @@ class AssessmentToolController extends ApiController
             ], 400);
         }
 
-        try{
+        try {
             $response = FlowchartResponse::where('user_form_id', $request->user_form_id)->where('assessment_tool_id', $request->assessment_tool_id)->get();
             return $this->successResponse($response, 'Flowchart fetched successfully!.', 200);
+        } catch (\Throwable $th) {
+            return $this->errorResponse($th->getMessage(), 401);
+        }
+    }
+
+    public function updateFlowChart(Request $request)
+    {
+        try {
+
+            // Validate the request data
+            $validator = Validator::make($request->all(), [
+                'assessment_tool_id' => 'required|integer',
+                'user_form_id' => 'required|integer',
+            ]);
+
+            if ($validator->fails()) {
+                return response()->json([
+                    'message' => 'Validation error',
+                    'errors' => $validator->errors()
+                ], 400);
+            }
+
+            $response = FlowchartResponse::where('user_form_id', $request->user_form_id)->where('assessment_tool_id', $request->assessment_tool_id)->delete();
+            foreach ($request->data as $key => $value) {
+                $response = new FlowchartResponse();
+                $response->user_id = Auth::user()->id ?? '2';
+                $response->user_form_id = $request->user_form_id;
+                $response->flowchart_question_id = $value;
+                $response->assessment_tool_id = $request->assessment_tool_id;
+                $response->save();
+            }
+            return $this->successResponse($response, 'Flowchart updated successfully!.', 200);
         } catch (\Throwable $th) {
             return $this->errorResponse($th->getMessage(), 401);
         }
