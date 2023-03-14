@@ -657,11 +657,11 @@ $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                     'section_html' => $section2
                 ]);
 
-                $heading3 = FormHeading::insertGetId([
-                    'form_heading' => 'Part 3 – Assistance Animal Assessment',
-                    'form_id' => '2',
-                    'section_html' => $section3
-                ]);
+//                $heading3 = FormHeading::insertGetId([
+//                    'form_heading' => 'Part 3 – Assistance Animal Assessment',
+//                    'form_id' => '2',
+//                    'section_html' => $section3
+//                ]);
 
                 $heading4 = FormHeading::insertGetId([
                     'form_heading' => 'Part 4 – Attachments',
@@ -962,10 +962,10 @@ $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
         'form_heading_id' => $heading2,
         'form_field' => $form_fields2
     ]);
-    FormField::create([
-        'form_heading_id' => $heading3,
-        'form_field' => $form_fields3
-    ]);
+//    FormField::create([
+//        'form_heading_id' => $heading3,
+//        'form_field' => $form_fields3
+//    ]);
     FormField::create([
         'form_heading_id' => $heading4,
         'form_field' => $form_fields4
