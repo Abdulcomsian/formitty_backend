@@ -13,7 +13,7 @@ class FlowchartQuestions extends Model
 
     public function children()
     {
-        return $this->hasMany(FlowchartQuestions::class, 'parent_id')->with('child');
+        return $this->hasMany(FlowchartQuestions::class, 'parent_id')->with('children');
     }
 
     public function parent()
