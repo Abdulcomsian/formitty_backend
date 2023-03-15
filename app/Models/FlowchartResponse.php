@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class FlowchartResponse extends Model
 {
     use HasFactory;
+
+    public function assessment_tool()
+    {
+        return $this->belongsTo(AssessmentTool::class);
+    }
+
 }
