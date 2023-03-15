@@ -119,49 +119,40 @@ class AnimalSeeder extends Seeder
                         </tr>
                     </table>
                     <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'>2.1   Background </p>
-                    <p style='font-size:12pt;'>Note participant’s circumstances, including:</p>
-                    <ul style='font-size:12pt;'>
-                        <li><p style='margin-top:10px; margin-bottom:10px;'>Disability;</p></li>
-                        <li><p style='margin-top:10px; margin-bottom:10px;'>current living situation;</p></li>
-                        <li><p style='margin-top:10px; margin-bottom:10px;'>social supports and environment in general and with regard to use of AT;</p></li>
-                        <li><p style='margin-top:10px; margin-bottom:10px;'>if moving through life transition;</p></li>
-                        <li><p style='margin-top:10px; margin-bottom:10px;'>coexisting medical and health conditions including behavioural status (note that NDIS can only fund AT related to participant’s disability);</p></li>
-                    </ul>
-                    <p style='font-size:12pt;'>Please include information regarding the participant’s current mealtime regime and nutritional supports and how well these meet participant’s nutritional needs</p>
+                    <p style='font-size:12pt;'>General: Describe participant’s current status which may include diagnosis, prognosis, co-existing conditions, disability, personal and instrumental activities of daily living, formal and informal support arrangements and life transitions.</p>
                     <table style='width:100%; border: 1px solid black'>
                         <tr>
-                            <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'> Text goes here</p></td>
+                            <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'> {{part_2_assesment_background}}</p></td>
                         </tr>
                     </table>
-                    <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'>2.2	Functional Assessment findings</p>
-                    <p style='font-size:12pt;'> Please clearly outline the specific functional limitation/s related to the participant’s disability and impact on life roles:</p>
-                    <ul style='font-size:12pt;'>
-                        <li><p style='margin-top:10px; margin-bottom:10px;'>postural deformity of complex postural needs;</p></li>
-                        <li><p style='margin-top:10px; margin-bottom:10px;'>skin integrity issues;</p></li>
-                        <li><p style='margin-top:10px; margin-bottom:10px;'>rapidly changing condition-including growth or weight change;</p></li>
-                        <li><p style='margin-top:10px; margin-bottom:10px;'>cognitive issues;</p></li>
-                        <li><p style='margin-top:10px; margin-bottom:10px;'>behaviours of concern;</p></li>
-                        <li><p style='margin-top:10px; margin-bottom:10px;'>dysphagia;</p></li>
-                        <li><p style='margin-top:10px; margin-bottom:10px;'>bowel habits;</p></li>    
-                    </ul>
-                    <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'>*NDIS expects relevant assessments are conducted where required and records held by AT assessor for NDIS audit purposes.</p>
+                    <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'>2.2 Participant Goals</p>
+                    <p style='font-size:12pt;'>If the participant’s NDIS plan has been made available, you can refer to the statement of participant’s goals and outline those relevant to provision of an Assistance Animal.</p>
                     <table style='width:100%; border: 1px solid black'>
                         <tr>
-                            <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'> Text goes here</p></td>
+                            <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'> {{part_2_assesment_participantgoals}}</p></td>
                         </tr>
                     </table>
-                    <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'>2.3 Participant’s measurements details</p>
+                    <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'>2.3 Functional Assessment</p>
+                    <p style='font-size:12pt;'>Outline the specific functional limitation/s related to the participant’s disability that indicate the need for the Assistance Animal. Summarise relevant assessments that have been undertaken such as sensory profiling, cognitive assessments, current capacity to access the community, positive behaviour support assessments. Please only comment on the below points where applicable.</p>
                     <table style=' width:100%; border: 1px solid black;'>
                     <tr>
-                    <td style='width:40%;'>Date of measurement</td>
+                    <td style='width:40%;'>Physical</td>
                     <td style='width:60%; border: 1px solid black;'></td>
                     </tr>
                     <tr>
-                    <td style='width:40%;'>Height in centimetres (cm)</td>
+                    <td style='width:40%;'>Sensory</td>
                     <td style='width:60%; border: 1px solid black;'></td>
                     </tr>
                     <tr>
-                    <td style='width:40%;'>Weight in kilograms (kg)</td>
+                    <td style='width:40%;'>Communication</td>
+                    <td style='width:60%; border: 1px solid black;'></td>
+                    </tr>
+                    <tr>
+                    <td style='width:40%;'>Cognitive</td>
+                    <td style='width:60%; border: 1px solid black;'></td>
+                    </tr>
+                    <tr>
+                    <td style='width:40%;'>Behavioural</td>
                     <td style='width:60%; border: 1px solid black;'></td>
                     </tr>
                     </table>
@@ -805,7 +796,7 @@ $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                         "label":"Functional Assessment",
                         "placeholder":"Enter Functional Assessment",
                         "className":"form-control",
-                        "name":"part_2_assesment_functional_assessment",
+                        "name":"part_2_physical_functional_assessment",
                         "access":false,
                         "subtype":"text"
                         },
@@ -815,7 +806,7 @@ $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                         "label":"Bladder",
                         "placeholder":"Enter Bladder",
                         "className":"form-control",
-                        "name":"part_2_assesment_bladder",
+                        "name":"part_2_sensory_functional_assessment",
                         "access":false,
                         "subtype":"text"
                         },
@@ -825,7 +816,7 @@ $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                         "label":"Bowel",
                         "placeholder":"Enter Bowel",
                         "className":"form-control",
-                        "name":"part_2_assesment_bowel",
+                        "name":"part_2_communication_functional_assessment",
                         "access":false,
                         "subtype":"text"
                         },
@@ -835,7 +826,7 @@ $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                         "label":"Consideration of health and other issues",
                         "placeholder":"Consideration of health and other issues",
                         "className":"form-control",
-                        "name":"part_2_assesment_consideration_health",
+                        "name":"part_2_cognitive_functional_assessment",
                         "access":false,
                         "subtype":"text"
                         },
@@ -845,67 +836,7 @@ $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                         "label":"Physiotherapist",
                         "placeholder":"Enter Physiotherapist",
                         "className":"form-control",
-                        "name":"part_2_assesment_physiotherapist",
-                        "access":false,
-                        "subtype":"text"
-                        },
-                        {
-                        "type":"text",
-                        "required":false,
-                        "label":"Dietician",
-                        "placeholder":"Enter Dietician",
-                        "className":"form-control",
-                        "name":"part_2_assesment_dietician",
-                        "access":false,
-                        "subtype":"text"
-                        },
-                        {
-                        "type":"text",
-                        "required":false,
-                        "label":"Occupational Therapist",
-                        "placeholder":"Occupational Therapist",
-                        "className":"form-control",
-                        "name":"part_2_assesment_occupational_therapist",
-                        "access":false,
-                        "subtype":"text"
-                        },
-                        {
-                        "type":"text",
-                        "required":false,
-                        "label":"Psychologist",
-                        "placeholder":"Enter Psychologist",
-                        "className":"form-control",
-                        "name":"part_2_assesment_psychologist",
-                        "access":false,
-                        "subtype":"text"
-                        },
-                        {
-                        "type":"text",
-                        "required":false,
-                        "label":"General Practitioner",
-                        "placeholder":"Enter General Practitioner",
-                        "className":"form-control",
-                        "name":"part_2_assesment_general_practitioner",
-                        "access":false,
-                        "subtype":"text"
-                        },
-                        {
-                        "type":"text",
-                        "required":false,
-                        "label":"Medical Specialist",
-                        "placeholder":"Enter Medical Specialist",
-                        "className":"form-control",
-                        "name":"part_2_assesment_medical_specialist",
-                        "access":false,
-                        "subtype":"text"
-                        },
-                        {
-                        "type":"text",
-                        "required":false,
-                        "label":"Other",
-                        "placeholder":"Enter Other",
-                        "className":"form-control",
-                        "name":"part_2_assessment_other",
+                        "name":"part_2_behavioural_functional_assessment",
                         "access":false,
                         "subtype":"text"
                         }
