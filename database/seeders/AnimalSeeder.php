@@ -137,23 +137,23 @@ class AnimalSeeder extends Seeder
                     <table style=' width:100%; border: 1px solid black;'>
                     <tr>
                     <td style='width:40%;'>Physical</td>
-                    <td style='width:60%; border: 1px solid black;'></td>
+                    <td style='width:60%; border: 1px solid black;'>{{part_2_physical_functional_assessment}}</td>
                     </tr>
                     <tr>
                     <td style='width:40%;'>Sensory</td>
-                    <td style='width:60%; border: 1px solid black;'></td>
+                    <td style='width:60%; border: 1px solid black;'>{{part_2_sensory_functional_assessment}}</td>
                     </tr>
                     <tr>
                     <td style='width:40%;'>Communication</td>
-                    <td style='width:60%; border: 1px solid black;'></td>
+                    <td style='width:60%; border: 1px solid black;'>{{part_2_communication_functional_assessment}}</td>
                     </tr>
                     <tr>
                     <td style='width:40%;'>Cognitive</td>
-                    <td style='width:60%; border: 1px solid black;'></td>
+                    <td style='width:60%; border: 1px solid black;'>{{part_2_cognitive_functional_assessment}}</td>
                     </tr>
                     <tr>
                     <td style='width:40%;'>Behavioural</td>
-                    <td style='width:60%; border: 1px solid black;'></td>
+                    <td style='width:60%; border: 1px solid black;'>{{part_2_behavioural_functional_assessment}}</td>
                     </tr>
                     </table>
                     <p style='margin-top:10px'></p>";
@@ -827,16 +827,6 @@ $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                         "placeholder":"Enter Behavioural Assessment",
                         "className":"form-control",
                         "name":"part_2_cognitive_functional_assessment",
-                        "access":false,
-                        "subtype":"text"
-                        },
-                        {
-                        "type":"text",
-                        "required":false,
-                        "label":"Physiotherapist",
-                        "placeholder":"Enter Physiotherapist",
-                        "className":"form-control",
-                        "name":"part_2_behavioural_functional_assessment",
                         "access":false,
                         "subtype":"text"
                         }
