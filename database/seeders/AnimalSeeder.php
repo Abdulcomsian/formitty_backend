@@ -831,7 +831,260 @@ $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                         "subtype":"text"
                         }
                         ]';
-    $form_fields3 = '[{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter option","className":"form-control","name":"part_3_con_option_evaluation_option1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter option","className":"form-control","name":"part_3_con_option_evaluation_option2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter option","className":"form-control","name":"part_3_con_option_evaluation_option3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter option","className":"form-control","name":"part_3_con_option_evaluation_option4","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Potential Option","className":"form-control","name":"part_3_con_option_potential_option1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Potential Option","className":"form-control","name":"part_3_con_option_potential_option2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Potential Option","className":"form-control","name":"part_3_con_option_potential_option3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Potential Option","className":"form-control","name":"part_3_con_option_potential_option4","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Trial Details","className":"form-control","name":"part_3_con_option_trial_option1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Trial Details","className":"form-control","name":"part_3_con_option_trial_option2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Trial Details","className":"form-control","name":"part_3_con_option_trial_option3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Trial Details","className":"form-control","name":"part_3_con_option_trial_option4","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Advantages","className":"form-control","name":"part_3_con_option_advantage1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Advantages","className":"form-control","name":"part_3_con_option_advantage2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Advantages","className":"form-control","name":"part_3_con_option_advantage3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Advantages","className":"form-control","name":"part_3_con_option_advantage4","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Disadvantage","className":"form-control","name":"part_3_con_option_disdvantage1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Disadvantage","className":"form-control","name":"part_3_con_option_disdvantage2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Disadvantage","className":"form-control","name":"part_3_con_option_disdvantage3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Disadvantage","className":"form-control","name":"part_3_con_option_disdvantage4","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Estimated Time","className":"form-control","name":"part_3_con_option_estimatedTime1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Estimated Time","className":"form-control","name":"part_3_con_option_estimatedTime2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Estimated Time","className":"form-control","name":"part_3_con_option_estimatedTime3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Evaluation_optionTextField","placeholder":"Enter Estimated Time","className":"form-control","name":"part_3_con_option_estimatedTime4","access":false,"subtype":"text"}]';
+    $form_fields3 = '[
+        {
+            "type":"text",
+            "required":false,
+            "label":"Evidence",
+            "placeholder":"Enter Evidence",
+            "className":"form-control",
+            "name":"part_3_evidence",
+            "access":false,
+            "subtype":"text"
+        },
+            {
+                "type":"text",
+                "required":false,
+                "label":"Functional limitation",
+                "placeholder":"Enter Functional Limitation",
+                "className":"form-control",
+                "name":"part_3_functional_limitation",
+                "access":false,
+                "subtype":"text"
+            },
+            {
+                "type":"text",
+                "required":false,
+                "label":"How the Assistance Animal will assist",
+                "placeholder":"How Assistance Animal will Assist",
+                "className":"form-control",
+                "name":"part_3_assistanceanimation_assist",
+                "access":false,
+                "subtype":"text"
+            },
+            {
+                "type":"text",
+                "required":false,
+                "label":"Equipment / methods and access to allied health",
+                "placeholder":"Enter current equipment / methods / access to allied health interventions",
+                "className":"form-control",
+                "name":"part_3_current_equipment",
+                "access":false,
+                "subtype":"text"
+            },
+            {
+                "type":"text",
+                "required":false,
+                "label":"Alternative options",
+                "placeholder":"Enter Alternative Options",
+                "className":"form-control",
+                "name":"part_3_alternative_options",
+                "access":false,
+                "subtype":"text"
+            },
+            {
+                "type":"text",
+                "required":false,
+                "label":"Benefits",
+                "placeholder":"Enter Benefits",
+                "className":"form-control",
+                "name":"part_3_assistanceanimal_benefits",
+                "access":false,
+                "subtype":"text"
+            },
+            {
+                "type":"text",
+                "required":false,
+                "label":"Participant Activities",
+                "placeholder":"Provide Comprehensive Details",
+                "className":"form-control",
+                "name":"part_3_comprehensive_detail",
+                "access":false,
+                "subtype":"text"
+            },
+            {
+                "type":"text",
+                "required":false,
+                "label":"Assistance Animal working life",
+                "placeholder":"What is the anticipated working life of the Assistance Animal?",
+                "className":"form-control",
+                "name":"part_3_working_life",
+                "access":false,
+                "subtype":"text"
+            },
+            {
+                "type":"text",
+                "required":false,
+                "label":"Participant supports",
+                "placeholder":"Enter Current Supports",
+                "className":"form-control",
+                "name":"part_3_participant_supports",
+                "access":false,
+                "subtype":"text"
+            },
+            {
+                "type":"text",
+                "required":false,
+                "label":"Plan Of Use",
+                "placeholder":"Please provide a detailed plan",
+                "className":"form-control",
+                "name":"part_3_planof_use",
+                "access":false,
+                "subtype":"text"
+            },
+            {
+                "type":"text",
+                "required":false,
+                "label":"Evidence of effectiveness",
+                "placeholder":"Enter Benefit Evidence for participant",
+                "className":"form-control",
+                "name":"part_3_evidence",
+                "access":false,
+                "subtype":"text"
+            },
+            {
+                "type":"text",
+                "required":false,
+                "label":"Objective outcomes",
+                "placeholder":"Enter Outcome Objectives",
+                "className":"form-control",
+                "name":"part_3_objective_outcomes",
+                "access":false,
+                "subtype":"text"
+            },
+
+            {
+                "type":"text",
+                "required":false,
+                "label":"Participant experience with previous animals",
+                "placeholder":"Participant experience with previous animals",
+                "className":"form-control",
+                "name":"part_3_participant_experience",
+                "access":false,
+                "subtype":"text"
+            },
+            {
+                "type":"text",
+                "required":false,
+                "label":"Medical impacts",
+                "placeholder":"Enter Any Medical impacts",
+                "className":"form-control",
+                "name":"part_3_medical_impact",
+                "access":false,
+                "subtype":"text"
+            },
+            {
+                "type":"text",
+                "required":false,
+                "label":"Alternate funding",
+                "placeholder":"Enter Alternate funding",
+                "className":"form-control",
+                "name":"part_3_alternate_funding",
+                "access":false,
+                "subtype":"text"
+            },
+            {
+                "type":"text",
+                "required":false,
+                "label":"Reasonable expectations of care",
+                "placeholder":"Enter Reasonable expectations of care",
+                "className":"form-control",
+                "name":"part_3_expectation_care",
+                "access":false,
+                "subtype":"text"
+            },
+            {
+                "type":"text",
+                "required":false,
+                "label":"Mitigation of Risk",
+                "placeholder":"Enter Mitigation of Risk",
+                "className":"form-control",
+                "name":"part_3_mitigation_risk",
+                "access":false,
+                "subtype":"text"
+            },
+            {
+                "type":"text",
+                "required":false,
+                "label":"Primary handler",
+                "placeholder":"Enter Primary handler",
+                "className":"form-control",
+                "name":"part_3_primary_handler",
+                "access":false,
+                "subtype":"text"
+            },
+            {
+                "type":"text",
+                "required":false,
+                "label":"Home environment",
+                "placeholder":"Enter Home environment",
+                "className":"form-control",
+                "name":"part_3_home_enviroment",
+                "access":false,
+                "subtype":"text"
+            },
+            {
+                "type":"text",
+                "required":false,
+                "label":"Attendance at school",
+                "placeholder":"Will Assisted Animal Attend School",
+                "className":"form-control",
+                "name":"part_3_schoold_attendance",
+                "access":false,
+                "subtype":"text"
+            },
+            {
+                "type":"text",
+                "required":false,
+                "label":"Permission to attend school",
+                "placeholder":"Do you have Permission For Animal to attend school",
+                "className":"form-control",
+                "name":"part_3_objective_outcomes",
+                "access":false,
+                "subtype":"text"
+            },
+            {
+                "type":"text",
+                "required":false,
+                "label":"School environment",
+                "placeholder":"Enter School environment",
+                "className":"form-control",
+                "name":"part_3_schoolenviroment",
+                "access":false,
+                "subtype":"text"
+            },
+
+            {
+                "type":"text",
+                "required":false,
+                "label":"Public access test",
+                "placeholder":"Provide Evidence of Public access test",
+                "className":"form-control",
+                "name":"part_3_publicaccess_test",
+                "access":false,
+                "subtype":"text"
+            },
+            {
+                "type":"text",
+                "required":false,
+                "label":"Enter Legal responsibility",
+                "placeholder":"Enter Name of Person",
+                "className":"form-control",
+                "name":"part_3_legal_responsibility",
+                "access":false,
+                "subtype":"text"
+            },
+            {
+                "type":"text",
+                "required":false,
+                "label":"Standards",
+                "placeholder":"Provide the Standards the Assistance Animal provider adheres to.",
+                "className":"form-control",
+                "name":"part_3_standards",
+                "access":false,
+                "subtype":"text"
+            }
+        ]';
 
     $form_fields4 = '[{"type":"textarea","required":false,"label":"Continence Recommendations","placeholder":"Enter Specific Evidence","className":"form-control","name":"part_4_con_recomm_specific_evidence","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Continence Recommendations","placeholder":"Enter additional features, customisation or specification recommended","className":"form-control","name":"part_4_con_recomm_additional_feature","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Item 1","placeholder":"Enter Item","className":"form-control","name":"part_4_con_recomm_item1","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Item 2","placeholder":"Enter Item","className":"form-control","name":"part_4_con_recomm_item2","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Item 3","placeholder":"Enter Item","className":"form-control","name":"part_4_con_recomm_item3","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Quantity 1","placeholder":"Enter Quantity","className":"form-control","name":"part_4_con_recomm_quantity1","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Quantity 2","placeholder":"Enter Quantity","className":"form-control","name":"part_4_con_recomm_quantity2","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Quantity 3","placeholder":"Enter Quantity","className":"form-control","name":"part_4_con_recomm_quantity3","access":false,"subtype":"textarea"},{"type":"text","required":false,"label":"Frequency of Supply 1","placeholder":"Enter Frequency of Supply","className":"form-control","name":"part_4_con_recomm_frequency1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Frequency of Supply 2","placeholder":"Enter Frequency of Supply","className":"form-control","name":"part_4_con_recomm_frequency2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Frequency of Supply 3","placeholder":"Enter Frequency of Supply","className":"form-control","name":"part_4_con_recomm_frequency3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"State / Specification 1","placeholder":"Enter State/Specification","className":"form-control","name":"part_4_con_recomm_StateSpecification1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"State / Specification 2","placeholder":"Enter State/Specification","className":"form-control","name":"part_4_con_recomm_StateSpecification2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"State / Specification 3","placeholder":"Enter State/Specification","className":"form-control","name":"part_4_con_recomm_StateSpecification3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Preferred supplier (Optional)","placeholder":"Enter your Preferred Supplier","className":"form-control","name":"part_4_con_recomm_preferred_supplier1","access":false,"subtype":"text"},{"type":"checkbox-group","required":false,"label":"Supplier Product Use Guidence","toggle":false,"inline":false,"name":"part_4_con_recomm_SPUG1","access":false,"other":false,"values":[{"label":"Option 1","value":"option-1","selected":true}]},{"type":"textarea","required":false,"label":"Information and Instructions","placeholder":"Enter Information and Instructions for Usage.","className":"form-control","name":"part_4_con_recomm_information_instructions_field","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Urgent supply required?&nbsp;","placeholder":"Enter detail with YES/NO","className":"form-control","name":"part_4_con_recomm_urgentSupply","access":false,"subtype":"textarea"},{"type":"text","required":false,"label":"Scheme Specification (Optional)","placeholder":"Enter your scheme specification here.","className":"form-control","name":"part_4_con_recomm_schemeSpecification","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Other supplier specification (Optional)","placeholder":"Enter your supplier specification","className":"form-control","name":"part_4_con_recomm_supplier_specification","access":false,"subtype":"text"},{"type":"radio-group","required":true,"label":"Participant Agreement","inline":false,"name":"part_4_con_recomm_participant_agreement","access":false,"other":false,"values":[{"label":"Yes","value":"","selected":true},{"label":"No","value":"option-2","selected":false},{"label":"Please provide details","value":"option-3","selected":false}]}]';
 
@@ -847,10 +1100,10 @@ $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
         'form_heading_id' => $heading2,
         'form_field' => $form_fields2
     ]);
-//    FormField::create([
-//        'form_heading_id' => $heading3,
-//        'form_field' => $form_fields3
-//    ]);
+   FormField::create([
+       'form_heading_id' => $heading3,
+       'form_field' => $form_fields3
+   ]);
     FormField::create([
         'form_heading_id' => $heading4,
         'form_field' => $form_fields4
