@@ -12,6 +12,7 @@ use App\Models\Question;
 use App\Models\FlowchartResponse;
 use App\Models\Answer;
 use App\Models\Response;
+use App\Models\FlowchartAnswer;
 use Illuminate\Support\Facades\Auth;
 
 class AssessmentToolController extends ApiController
@@ -41,7 +42,7 @@ class AssessmentToolController extends ApiController
         try {
             $assessment_tools = [];
             $assessment_tools[] = Response::with('assessment_tool')->where([['user_id', Auth::user()->id ?? '2'], ['user_form_id', $request->user_form_id]])->get();
-            $assessment_tools[] = FlowchartResponse::with('assessment_tool')->where([['user_id', Auth::user()->id ?? '2'], ['user_form_id', $request->user_form_id]])->get();
+            $assessment_tools[] = FlowchartResponse::with('assessment_tool')->where([['user_id', Auth::user()->id ?? '2'], ['user_form_id', $request->user_form_id]])->get()->groupBy('assessment_tool_id');
             return $this->successResponse($assessment_tools, 'Assessment tools get successfully!.', 200);
         } catch (\Throwable $th) {
             return $this->errorResponse($th->getMessage(), 401);
@@ -212,13 +213,16 @@ class AssessmentToolController extends ApiController
     public function storeFlowChart(Request $request)
     {
         try {
+            $response = new FlowchartResponse();
+            $response->user_id = Auth::user()->id ?? '2';
+            $response->assessment_tool_id = $request->user_assessment_id;
+            $response->user_form_id = $request->user_form_id;
+            $response->save();
             foreach ($request->data as $key => $value) {
-                $response = new FlowchartResponse();
-                $response->user_id = Auth::user()->id ?? '2';
-                $response->user_form_id = $request->user_form_id;
-                $response->flowchart_question_id = $value;
-                $response->assessment_tool_id = $request->user_assessment_id;
-                $response->save();
+                $flow_chart = new FlowchartAnswer();
+                $flow_chart->flowchart_response_id = $response->id;
+                $flow_chart->flowchart_question_id = $value;
+                $flow_chart->save();
             }
             return $this->successResponse($response, 'Flowchart stored successfully!.', 200);
         } catch (\Throwable $th) {
@@ -241,8 +245,31 @@ class AssessmentToolController extends ApiController
             ], 400);
         }
 
+        $response = Response::with('assessment_tool', 'assessment_tool.assessment_groups', 'assessment_tool.assessment_groups.questions', 'assessment_tool.assessment_groups.questions.options')->findOrFail($request->user_assessment_id);
+
+        $answerData = [];
+        foreach ($response->answers as $answer) {
+            $answerData[$answer->question_id] = $answer->option_id ?? $answer->answer;
+        }
+        $responseData = [
+            'response' => $response,
+            'answers' => $answerData,
+        ];
+
         try {
-            $response = FlowchartResponse::where('user_form_id', $request->user_form_id)->where('assessment_tool_id', $request->assessment_tool_id)->get();
+            // Find the response with the given ID
+            $flowchart_response = FlowchartResponse::with('assessment_tool', 'flowchart_answers')->where([['user_form_id', $request->user_form_id],['assessment_tool_id', $request->assessment_tool_id]])->get();
+
+            $answerData = [];
+          /*  foreach ($flowchart_response->flowchart_answers as $answer) {
+                $answerData[$answer->question_id] = $answer->option_id ?? $answer->answer;
+            }*/
+            $responseData = [
+                'response' => $flowchart_response,
+                'answers' => $answerData,
+            ];
+            return $this->successResponse($responseData, 'Questions get successfully!.', 200);
+
             return $this->successResponse($response, 'Flowchart fetched successfully!.', 200);
         } catch (\Throwable $th) {
             return $this->errorResponse($th->getMessage(), 401);

@@ -26,4 +26,9 @@ class FlowchartQuestions extends Model
         return $this->belongsTo(AssessmentTool::class);
     }
 
+    public function flowchart_response()
+    {
+        return $this->hasOne(FlowchartResponse::class);
+    }
+
 }
