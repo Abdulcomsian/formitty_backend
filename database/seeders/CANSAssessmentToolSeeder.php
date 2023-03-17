@@ -183,7 +183,7 @@ class CANSAssessmentToolSeeder extends Seeder
                     'assessment_tool_id' => $assessment_tool->id,
                     'title' => $faker->sentence,
                     'type' => 'multiple_choice',
-                    'point' => '4.3',
+                    'point' => $faker->numberBetween(2, 4),
                 ]);
 
                 Option::create([
