@@ -106,7 +106,7 @@ class AssessmentToolController extends ApiController
                 $question_id = $result[1];
                 $option_id = $result[2] ?? null;
 
-                if ($name == 'multiple_choice' || name == 'comment') {
+                if ($name == 'multiple_choice' || $name == 'comment') {
                     $answer = new Answer([
                         'question_id' => $question_id,
                         'option_id' => $option_id,
