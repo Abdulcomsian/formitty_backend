@@ -21,7 +21,7 @@ class QuestionsTableSeeder extends Seeder
         $faker = \Faker\Factory::create();
 
         // Create questions for questionnaire assessment_tool_idss
-        $questionnaireToolIds = AssessmentTool::where('type', 'questionnaire')->pluck('id')->toArray();
+        $questionnaireToolIds = AssessmentTool::where([['type', 'questionnaire'],['id' !== 1]])->pluck('id')->toArray();
 
         foreach ($questionnaireToolIds as $assessmentToolId) {
 
