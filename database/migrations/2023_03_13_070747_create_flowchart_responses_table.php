@@ -15,10 +15,6 @@ return new class extends Migration
     {
         Schema::create('flowchart_responses', function (Blueprint $table) {
             $table->id();
-            /*$table->foreignId('user_id')->constrained('users')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId('assessment_tool_id')->constrained('assessment_tools')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->unsignedBigInteger('user_form_id');
-            $table->foreignId('flowchart_question_id')->constrained('flowchart_questions')->cascadeOnDelete()->cascadeOnUpdate();*/
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('assessment_tool_id')->constrained('assessment_tools')->cascadeOnDelete()->cascadeOnUpdate();
             $table->unsignedBigInteger('user_form_id');

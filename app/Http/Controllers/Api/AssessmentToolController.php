@@ -106,13 +106,20 @@ class AssessmentToolController extends ApiController
                 $question_id = $result[1];
                 $option_id = $result[2] ?? null;
 
-                if ($name == 'multiple_choice' || $name == 'comment') {
+                if ($name == 'multiple_choice') {
                     $answer = new Answer([
                         'question_id' => $question_id,
                         'option_id' => $option_id,
                         'response_id' => $response->id,
                         'answer' => $value,
                     ]);
+                } elseif($name == 'comment'){
+                    $question = Answer::where([['question_id', $question_id], ['response_id', $response->id]])->first();
+                    if($question){
+                        $question->update([
+                            'answer' => $value,
+                        ]);
+
                 } elseif ($name == 'open_ended') {
                     $answer = new Answer([
                         'question_id' => $question_id,
