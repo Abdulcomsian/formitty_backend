@@ -544,7 +544,7 @@ class FormBuilderController extends ApiController
                     $quest = $question->title ?? '';
                     if ($question->type === 'multiple_choice') {
                         $answer1 = $answer->option->title ?? '';
-                        $point = $answer->option->point ?? '';
+                        $point = $question->point ?? 0;
                         $total_points += $point;
                         $section_html .= "<tr>
                                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
