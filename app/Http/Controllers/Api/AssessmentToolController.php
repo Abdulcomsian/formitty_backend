@@ -245,17 +245,6 @@ class AssessmentToolController extends ApiController
             ], 400);
         }
 
-        $response = Response::with('assessment_tool', 'assessment_tool.assessment_groups', 'assessment_tool.assessment_groups.questions', 'assessment_tool.assessment_groups.questions.options')->findOrFail($request->user_assessment_id);
-
-        $answerData = [];
-        foreach ($response->answers as $answer) {
-            $answerData[$answer->question_id] = $answer->option_id ?? $answer->answer;
-        }
-        $responseData = [
-            'response' => $response,
-            'answers' => $answerData,
-        ];
-
         try {
             // Find the response with the given ID
             $flowchart_response = FlowchartResponse::with('assessment_tool', 'flowchart_answers')->where([['user_form_id', $request->user_form_id],['assessment_tool_id', $request->assessment_tool_id]])->get();
