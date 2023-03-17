@@ -589,7 +589,7 @@ class FormBuilderController extends ApiController
         $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
 
         $objWriter->save($fileName);
-    }*/
+    }
 
     /*public function generateWordDocument($id)
     {
