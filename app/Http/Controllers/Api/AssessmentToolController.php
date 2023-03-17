@@ -115,11 +115,11 @@ class AssessmentToolController extends ApiController
                     ]);
                 } elseif($name == 'comment'){
                     $question = Answer::where([['question_id', $question_id], ['response_id', $response->id]])->first();
-                    if($question){
+                    if($question) {
                         $question->update([
                             'answer' => $value,
                         ]);
-
+                    }
                 } elseif ($name == 'open_ended') {
                     $answer = new Answer([
                         'question_id' => $question_id,
