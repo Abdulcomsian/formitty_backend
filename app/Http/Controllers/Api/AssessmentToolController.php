@@ -108,7 +108,8 @@ class AssessmentToolController extends ApiController
                     $answer = new Answer([
                         'question_id' => $question_id,
                         'option_id' => $option_id,
-                        'response_id' => $response->id
+                        'response_id' => $response->id,
+                        'answer' => $value,
                     ]);
                 } elseif ($name == 'open_ended') {
                     $answer = new Answer([
