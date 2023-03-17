@@ -83,6 +83,8 @@ class AssessmentToolController extends ApiController
                     'user_id' => Auth::user()->id ?? '2',
                     'user_form_id' => $request->user_form_id,
                 ]);
+
+                $answer = Answer::where('response_id', $request->user_assessment_id)->delete();
             } else {
                 $response = new Response([
                     'assessment_tool_id' => $request->input('assessment_id'),
