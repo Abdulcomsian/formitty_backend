@@ -24,7 +24,7 @@ class CANSAssessmentToolSeeder extends Seeder
         $assessment_tool = AssessmentTool::create([
             'title' => 'Care and Needs Scale (CANS)',
             'slug' => 'care-and-needs-scale',
-            'type' => 'flow_chart'
+            'type' => 'multiple_choice'
         ]);
 
         $group1 = AssessmentGroup::create([
