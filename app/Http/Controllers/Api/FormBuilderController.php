@@ -499,7 +499,7 @@ class FormBuilderController extends ApiController
         }
     }
 
-    public function generateWordDocument($id)
+   public function generateWordDocument($id)
     {
         $phpWord = new \PhpOffice\PhpWord\PhpWord();
 
@@ -508,8 +508,6 @@ class FormBuilderController extends ApiController
         $usr_forms = UserForm::with(['userFormHeadings', 'userFormHeadings.formData', 'userFormHeadings.formHeading'])->findorfail($id);
 
         $usr_forms->userFormHeadings = $usr_forms->userFormHeadings->sortBy('order_id');
-
-//        $assessment_tool = AssessmentTool::with('questions', 'answers')->findOrFail($assessment_tool_id);
 
         $count = 1;
         $html = View::make('users.sections.header')->render();
@@ -539,8 +537,7 @@ class FormBuilderController extends ApiController
                         </tr>
                         </table>";
                 $section_html .= "<table style='border-collapse: collapse; width: 100%; margin: auto; border: 1px solid lightslategray;'>
-                        <tbody>
-                            ";
+                        <tbody>";
                 $total_points = 0;
                 foreach ($response->assessment_tool->questions as $question) {
                     $answer = Answer::with('option')->where('question_id', $question->id)->first();
@@ -574,14 +571,6 @@ class FormBuilderController extends ApiController
                                 </td>
                             </tr>";
                     }
-                    /*if ($question->type === 'multiple_choice') {
-                        $html .= "<table>";
-                        $html .= "<tr><td>" . $question->title ?? '' . "</td><td>" . ($answer ? $answer->option->title : '')  . "</td></tr>";
-
-                    } elseif($question->type === 'open_ended') {
-                        $html .= "<h2>".$question->title ?? ''."</h2>";
-                        $html .= "<h2>".($question->answers ? $answer->option->title : '')."</h2>";
-                    }*/
                 }
                 $section_html .= "<tr>
                                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
@@ -600,7 +589,106 @@ class FormBuilderController extends ApiController
         $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
 
         $objWriter->save($fileName);
+    }*/
+
+    /*public function generateWordDocument($id)
+    {
+        $phpWord = new \PhpOffice\PhpWord\PhpWord();
+
+        $section = $phpWord->addSection();
+
+        $usr_forms = UserForm::with(['userFormHeadings', 'userFormHeadings.formData', 'userFormHeadings.formHeading'])->findorfail($id);
+
+        $usr_forms->userFormHeadings = $usr_forms->userFormHeadings->sortBy('order_id');
+
+        $html = View::make('users.sections.header')->render();
+
+        foreach ($usr_forms->userFormHeadings as $userFormHeading) {
+            $section_html = getSectionHtml($userFormHeading);
+
+            if($userFormHeading->heading_type == 'assessment_tool') {
+                $section_html .= getAssessmentToolHtml($userFormHeading->heading_id);
+            }
+
+            $html .= $section_html;
+        }
+
+        saveWordFile($section, $html);
+    }*/
+
+    public function getSectionHtml($userFormHeading) {
+        $section_html = '';
+
+        if ($userFormHeading->heading_type == 'custom') {
+            $section_html = $userFormHeading->customHeading->form_heading;
+        } else {
+            $section_html = $userFormHeading->formHeading->section_html;
+        }
+
+        if ($userFormHeading->heading_type != 'custom') {
+            foreach ($userFormHeading->formData as $formData) {
+                $field_name = $formData->name;
+                $field_value = $formData->value;
+                $section_html = str_replace("{{" . $field_name . "}}", $field_value, $section_html);
+            }
+        }
+
+        return $section_html;
     }
+
+    public function getAssessmentToolHtml($heading_id)
+    {
+        $section_html = '';
+
+        $response = Response::with('assessment_tool', 'assessment_tool.questions', 'assessment_tool.questions.answers')->find($heading_id);
+
+        $section_html .= "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
+                        <tr>
+                            <td>
+                                <p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'>" . $response->assessment_tool->title . "</p>
+                            </td>
+                        </tr>
+                        </table>";
+
+        $section_html .= "<table style='border-collapse: collapse; width: 100%; margin: auto; border: 1px solid lightslategray;'>
+                        <tbody>";
+
+        $total_points = 0;
+        foreach ($response->assessment_tool->questions as $question) {
+            $answer = Answer::with('option')->where('question_id', $question->id)->first();
+            $quest = $question->title ?? '';
+
+            if ($question->type === 'multiple_choice') {
+                $answer1 = $answer->option->title ?? '';
+                $point = $answer->option->point ?? '';
+                $total_points += $point;
+
+                $section_html .= "<tr>
+                                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
+                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $quest . "</p>
+                                </td>
+                                <td style='border: 1px solid lightslategray; padding: 10px'>
+                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $answer1 . "</p>
+                                </td>
+                                <td style='border: 1px solid lightslategray; padding: 10px'>
+                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $answer2 . "</p>
+                                </td>
+                                <td style='border: 1px solid lightslategray; padding: 10px'>
+                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $answer3 . "</p>
+                                </td>
+                                <td style='border: 1px solid lightslategray; padding: 10px'>
+                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $answer4 . "</p>
+                                </td>
+                                <td style='border: 1px solid lightslategray; padding: 10px; width: 10%'>
+                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $correct_answer . "</p>
+                                </td>
+                            </tr>";
+            }
+
+        }
+
+    }
+
 
     public function getUserForm(Request $request)
     {
