@@ -529,47 +529,47 @@ class FormBuilderController extends ApiController
             if($userFormHeading->heading_type == 'assessment_tool'){
                 $response = Response::with('assessment_tool', 'assessment_tool.questions', 'assessment_tool.questions.answers')->find($userFormHeading->heading_id);
                 // Add questions and answers to the HTML
-                $section_html .= "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
-                        <tr>
-                            <td>
-                                <p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'>".$response->assessment_tool->title."</p>
-                            </td>
-                        </tr>
-                        </table>";
-                $section_html .= "<table style='border-collapse: collapse; width: 100%; margin: auto; border: 1px solid lightslategray;'>
-                        <tbody>";
+                $section_html .= "<table style='width: 100%; border-collapse: collapse'>
+                                    <tbody><tr><td colspan='3' style='border: 1px solid black; text-align: center'>
+                              <p style='font-weight: bold'>Care And Needs Scale (CANS)</p><p style='padding: 0px'>Date: Today</p>
+                            </td></tr><tr><td colspan='3' style='border: 1px solid black; border-top: none'>Needs Checklist</td></tr>";
+                $section_html .= "<tr><td style='width: 40%; text-align: end; border: 1px solid black'>Tick yes or no</td>
+                  <td style='width: 10%; text-align: center; border: 1px solid black'>CANS LEVELS</td>
+                  <td style='width: 45%; text-align: left; border: 1px solid black'>Comments</td>
+                </tr>";
+                $section_html .= "";
                 $total_points = 0;
-                foreach ($response->assessment_tool->questions as $question) {
-                    $answer = Answer::with('option')->where('question_id', $question->id)->first();
-                    $quest = $question->title ?? '';
-                    if ($question->type === 'multiple_choice') {
-                        $answer1 = $answer->option->title ?? '';
-                        $point = $question->point ?? 0;
-                        $total_points += $point;
-                        $section_html .= "<tr>
-                                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$quest."</p>
+                foreach ($response->assessment_tool->assessment_groups as $assessment_group) {
+                    $assessment_group_title = $assessment_group->title ?? '';
+                    $section_html .= "<tr><td colspan='3' style='border: 1px solid black'>".$assessment_group_title."</td></tr>";
+                    foreach ($response->assessment_tool->questions as $question) {
+                        $answer = Answer::with('option')->where('question_id', $question->id)->first();
+                        $quest = $question->title ?? '';
+                        if ($question->type === 'multiple_choice') {
+                            $answer1 = $answer->option->title ?? '';
+                            $point = $question->point ?? 0;
+                            $total_points += $point;
+                            $section_html .= "<tr>
+                                <td style='width: 45%; border: 1px solid black'>
+                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $quest . "</p>
                                 </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$answer1."</p>
-                                </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$point."</p>
-                                </td>
+                                 <td style='width: 10%; text-align: center'>2</td>
+                               <td style='width: 45%; border: 1px solid black; border-right: none'>3</td>
                             </tr>";
-                    } elseif($question->type === 'open_ended') {
-                        $answer1 = $answer->answer ?? '';
-                        $section_html .= "<tr>
+                        } elseif ($question->type === 'open_ended') {
+                            $answer1 = $answer->answer ?? '';
+                            $section_html .= "<tr>
                                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$quest."</p>
+                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $quest . "</p>
                                 </td>
                                 <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$answer1."</p>
+                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $answer1 . "</p>
                                 </td>
                                 <td style='border: 1px solid lightslategray; padding: 10px'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>Nill</p>
                                 </td>
                             </tr>";
+                        }
                     }
                 }
                 $section_html .= "<tr>
