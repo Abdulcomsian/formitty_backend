@@ -198,7 +198,6 @@ class CANSAssessmentToolSeeder extends Seeder
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Transfers/mobility (incl. stairs and indoor surfaces)',
             'type' => 'multiple_choice',
-            'point' => '4.3',
         ]);
 
         Option::create([
@@ -216,7 +215,6 @@ class CANSAssessmentToolSeeder extends Seeder
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Other (specify):',
             'type' => 'multiple_choice',
-            'point' => '4.3',
         ]);
 
         Option::create([
@@ -234,7 +232,6 @@ class CANSAssessmentToolSeeder extends Seeder
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Personal hygiene/toileting',
             'type' => 'multiple_choice',
-            'point' => '4.3',
         ]);
 
         Option::create([
@@ -252,7 +249,7 @@ class CANSAssessmentToolSeeder extends Seeder
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Bathing/dressing ',
             'type' => 'multiple_choice',
-            'point' => '4.3',
+            'point' => '4.2',
         ]);
 
         Option::create([
@@ -270,7 +267,6 @@ class CANSAssessmentToolSeeder extends Seeder
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Preparation of light meal/snack',
             'type' => 'multiple_choice',
-            'point' => '4.3',
         ]);
 
         Option::create([
@@ -288,7 +284,6 @@ class CANSAssessmentToolSeeder extends Seeder
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Other (specify):',
             'type' => 'multiple_choice',
-            'point' => '4.3',
         ]);
 
         Option::create([
@@ -306,7 +301,6 @@ class CANSAssessmentToolSeeder extends Seeder
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Shopping',
             'type' => 'multiple_choice',
-            'point' => '4.3',
         ]);
 
         Option::create([
@@ -324,7 +318,6 @@ class CANSAssessmentToolSeeder extends Seeder
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Domestic incl. preparation of main meal',
             'type' => 'multiple_choice',
-            'point' => '4.3',
         ]);
 
         Option::create([
@@ -342,7 +335,6 @@ class CANSAssessmentToolSeeder extends Seeder
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Medication use',
             'type' => 'multiple_choice',
-            'point' => '4.3',
         ]);
 
         Option::create([
@@ -360,7 +352,7 @@ class CANSAssessmentToolSeeder extends Seeder
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Money management',
             'type' => 'multiple_choice',
-            'point' => '4.3',
+            'point' => '4.1',
         ]);
 
         Option::create([
@@ -378,7 +370,7 @@ class CANSAssessmentToolSeeder extends Seeder
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Everyday devices (e.g., telephone, television)',
             'type' => 'multiple_choice',
-            'point' => '4.3',
+            'point' => '3',
         ]);
 
         Option::create([
@@ -396,7 +388,7 @@ class CANSAssessmentToolSeeder extends Seeder
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Transport and outdoor surfaces',
             'type' => 'multiple_choice',
-            'point' => '4.3',
+            'point' => '2',
         ]);
 
         Option::create([
@@ -414,7 +406,7 @@ class CANSAssessmentToolSeeder extends Seeder
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Parenting skills',
             'type' => 'multiple_choice',
-            'point' => '4.3',
+            'point' => '1',
         ]);
 
         Option::create([
@@ -432,7 +424,6 @@ class CANSAssessmentToolSeeder extends Seeder
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Interpersonal relationships',
             'type' => 'multiple_choice',
-            'point' => '4.3',
         ]);
 
         Option::create([
@@ -450,7 +441,6 @@ class CANSAssessmentToolSeeder extends Seeder
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Leisure and recreation',
             'type' => 'multiple_choice',
-            'point' => '4.3',
         ]);
 
         Option::create([
@@ -468,7 +458,6 @@ class CANSAssessmentToolSeeder extends Seeder
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Employment/study',
             'type' => 'multiple_choice',
-            'point' => '4.3',
         ]);
 
         Option::create([
@@ -486,7 +475,6 @@ class CANSAssessmentToolSeeder extends Seeder
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Other (specify): ',
             'type' => 'multiple_choice',
-            'point' => '4.3',
         ]);
 
         Option::create([
@@ -504,7 +492,7 @@ class CANSAssessmentToolSeeder extends Seeder
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Informational supports (e.g., advice)',
             'type' => 'multiple_choice',
-            'point' => '4.3',
+            'point' => '3',
         ]);
 
         Option::create([
@@ -522,7 +510,7 @@ class CANSAssessmentToolSeeder extends Seeder
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Emotional supports ',
             'type' => 'multiple_choice',
-            'point' => '4.3',
+            'point' => '2',
         ]);
 
         Option::create([
@@ -540,7 +528,7 @@ class CANSAssessmentToolSeeder extends Seeder
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Other (specify):',
             'type' => 'multiple_choice',
-            'point' => '4.3',
+            'point' => '1',
         ]);
 
         Option::create([

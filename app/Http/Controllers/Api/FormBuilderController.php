@@ -538,8 +538,8 @@ class FormBuilderController extends ApiController
                   <td style='width: 45%; text-align: left; border: 1px solid black'>Comments</td>
                 </tr>";
                 $section_html .= "";
-                $total_points = 0;
                 foreach ($response->assessment_tool->assessment_groups as $assessment_group) {
+                    $total_points = 0;
                     $assessment_group_title = $assessment_group->title ?? '';
                     $section_html .= "<tr><td colspan='3' style='border: 1px solid black'>".$assessment_group_title."</td></tr>";
                     foreach ($response->assessment_tool->questions as $question) {
