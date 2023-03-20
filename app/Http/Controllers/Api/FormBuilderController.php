@@ -614,7 +614,7 @@ class FormBuilderController extends ApiController
                             <table style='width: 100%'>
                               <tr>
                                 <td style='width: 40%'></td>
-                                <td style='width: 60%; text-align: center'><span style='font-weight: bold;'>Group A subtotal </span><span style='text-decoration: underline'>00</span> /10</td>
+                                <td style='width: 60%; text-align: center'><span style='font-weight: bold;'>Group A subtotal </span><span style='text-decoration: underline'>".$grand_achieved_points."</span> /".$grand_total_points."</td>
                               </tr>
                             </table>
                           </td><td style='width: 10%; text-align: center'></td><td style='width: 45%'></td>
