@@ -580,13 +580,25 @@ class FormBuilderController extends ApiController
                         }
                     }
                 }
-                $section_html .= "<tr>
+                /*$section_html .= "<tr>
                                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>Total pointds</p>
                                 </td>
                                 <td style='border: 1px solid lightslategray; padding: 10px'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$total_points."</p>
                                 </td></tr></tbody>
+                    </table>";*/
+
+                $section_html .= "<tr>
+                          <td style='width: 45%; border-left: 1px solid black'>
+                            <table style='width: 100%'>
+                              <tr>
+                                <td style='width: 40%'></td>
+                                <td style='width: 60%; text-align: center'><span style='font-weight: bold;'>Group A subtotal </span><span style='text-decoration: underline'>00</span> /10</td>
+                              </tr>
+                            </table>
+                          </td><td style='width: 10%; text-align: center'></td><td style='width: 45%'></td>
+                        </tr></tbody>
                     </table>";
             }
             $html .= $section_html;
