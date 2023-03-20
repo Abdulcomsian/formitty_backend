@@ -540,6 +540,7 @@ class FormBuilderController extends ApiController
                 $section_html .= "";
                 foreach ($response->assessment_tool->assessment_groups as $assessment_group) {
                     $total_points = 0;
+                    $achieved_points = 0;
                     $assessment_group_title = $assessment_group->title ?? '';
                     $section_html .= "<tr><td colspan='3' style='border: 1px solid black'>".$assessment_group_title."</td></tr>";
                     foreach ($response->assessment_tool->questions as $question) {
@@ -547,7 +548,11 @@ class FormBuilderController extends ApiController
                         $quest = $question->title ?? '';
                         if ($question->type === 'multiple_choice') {
                             $answer1 = $answer->option->title ?? '';
+
                             $point = $question->point ?? 0;
+                            if($answer1 == "Yes"){
+                                $achieved_points += $point;
+                            }
                             $answer = $answer->answer ?? '';
                             $total_points += $point;
                             $section_html .= "<tr>
@@ -560,7 +565,7 @@ class FormBuilderController extends ApiController
                                           </tr>
                                         </table>
                                       </td>
-                                      <td style='width: 10%; text-align: center'>".$point."</td>
+                                      <td style='width: 10%; text-align: center'>".($point==0)? '' : $point;."</td>
                                       <td
                                         style='width: 45%; border: 1px solid black; border-right: none'></td>
                                     </tr>";
@@ -585,7 +590,7 @@ class FormBuilderController extends ApiController
                             <table style='width: 100%'>
                               <tr>
                                 <td style='width: 40%'></td>
-                                <td style='width: 60%; text-align: center'><span style='font-weight: bold;'>Group A subtotal </span><span style='text-decoration: underline'>00</span>13/".$total_points."</td>
+                                <td style='width: 60%; text-align: center'><span style='font-weight: bold;'>Group A subtotal </span><span style='text-decoration: underline'>00</span>".$achieved_points."/".$total_points."</td>
                               </tr>
                             </table>
                           </td><td style='width: 10%; text-align: center'></td><td style='width: 45%'></td>
