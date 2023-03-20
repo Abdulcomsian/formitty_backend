@@ -548,14 +548,22 @@ class FormBuilderController extends ApiController
                         if ($question->type === 'multiple_choice') {
                             $answer1 = $answer->option->title ?? '';
                             $point = $question->point ?? 0;
+                            $answer = $answer->answer ?? '';
                             $total_points += $point;
                             $section_html .= "<tr>
-                                <td style='width: 45%; border: 1px solid black'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $quest . "</p>
-                                </td>
-                                 <td style='width: 10%; text-align: center'>2</td>
-                               <td style='width: 45%; border: 1px solid black; border-right: none'>3</td>
-                            </tr>";
+                                      <td style='width: 45%; border: 1px solid black'>
+                                        <table style='width: 100%'>
+                                          <tr>
+                                            <td style='width: 80%'>".$quest."</td>
+                                            <td style='width: 10%; text-align: center'>Yes</td>
+                                            <td style='width: 10%; text-align: center'>No</td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td style='width: 10%; text-align: center'>".$point."</td>
+                                      <td
+                                        style='width: 45%; border: 1px solid black; border-right: none'></td>
+                                    </tr>";
                         } elseif ($question->type === 'open_ended') {
                             $answer1 = $answer->answer ?? '';
                             $section_html .= "<tr>
