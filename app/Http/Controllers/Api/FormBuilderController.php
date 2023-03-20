@@ -541,6 +541,8 @@ class FormBuilderController extends ApiController
                 foreach ($response->assessment_tool->assessment_groups as $assessment_group) {
                     $total_points = 0;
                     $achieved_points = 0;
+                    $grand_total_points = 0;
+                    $grand_achieved_points = 0;
                     $assessment_group_title = $assessment_group->title ?? '';
                     $section_html .= "<tr><td colspan='3' style='border: 1px solid black'>".$assessment_group_title."</td></tr>";
                     foreach ($response->assessment_tool->questions as $question) {
@@ -552,9 +554,11 @@ class FormBuilderController extends ApiController
                             $point = $question->point ?? 0;
                             if($answer1 == "Yes"){
                                 $achieved_points += $point;
+                                $grand_achieved_points += $achieved_points;
                             }
                             $answer = $answer->answer ?? '';
                             $total_points += $point;
+                            $grand_total_points += $total_points;
                             $section_html .= "<tr>
                                       <td style='width: 45%; border: 1px solid black'>
                                         <table style='width: 100%'>
