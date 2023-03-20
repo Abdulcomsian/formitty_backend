@@ -589,8 +589,7 @@ class FormBuilderController extends ApiController
                               </tr>
                             </table>
                           </td><td style='width: 10%; text-align: center'></td><td style='width: 45%'></td>
-                        </tr></tbody>
-                    </table>";
+                        </tr>";
                 }
                 /*$section_html .= "<tr>
                                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
