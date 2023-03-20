@@ -507,7 +507,7 @@ class CANSAssessmentToolSeeder extends Seeder
             'point' => '4.3',
         ]);
 
-        Option::create(
+        Option::create([
             'question_id' => $question26->id,
             'title' => 'Yes',
         ]);
