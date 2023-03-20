@@ -345,7 +345,7 @@ class CANSAssessmentToolSeeder extends Seeder
             'point' => '4.3',
         ]);
 
-        Option::create($question17
+        Option::create([
             'question_id' => $question8->id,
             'title' => 'Yes',
         ]);
@@ -363,7 +363,7 @@ class CANSAssessmentToolSeeder extends Seeder
             'point' => '4.3',
         ]);
 
-        Option::create(
+        Option::create([
             'question_id' => $question18->id,
             'title' => 'Yes',
         ]);
@@ -381,7 +381,7 @@ class CANSAssessmentToolSeeder extends Seeder
             'point' => '4.3',
         ]);
 
-        Option::create(
+        Option::create([
             'question_id' => $question19->id,
             'title' => 'Yes',
         ]);
@@ -399,7 +399,7 @@ class CANSAssessmentToolSeeder extends Seeder
             'point' => '4.3',
         ]);
 
-        Option::create(
+        Option::create([
             'question_id' => $question20->id,
             'title' => 'Yes',
         ]);
@@ -417,7 +417,7 @@ class CANSAssessmentToolSeeder extends Seeder
             'point' => '4.3',
         ]);
 
-        Option::create(
+        Option::create([
             'question_id' => $question21->id,
             'title' => 'Yes',
         ]);
@@ -435,7 +435,7 @@ class CANSAssessmentToolSeeder extends Seeder
             'point' => '4.3',
         ]);
 
-        Option::create(
+        Option::create([
             'question_id' => $question22->id,
             'title' => 'Yes',
         ]);
@@ -453,7 +453,7 @@ class CANSAssessmentToolSeeder extends Seeder
             'point' => '4.3',
         ]);
 
-        Option::create(
+        Option::create([
             'question_id' => $question23->id,
             'title' => 'Yes',
         ]);
@@ -471,7 +471,7 @@ class CANSAssessmentToolSeeder extends Seeder
             'point' => '4.3',
         ]);
 
-        Option::create(
+        Option::create([
             'question_id' => $question24->id,
             'title' => 'Yes',
         ]);
@@ -489,7 +489,7 @@ class CANSAssessmentToolSeeder extends Seeder
             'point' => '4.3',
         ]);
 
-        Option::create(
+        Option::create([
             'question_id' => $question25->id,
             'title' => 'Yes',
         ]);
@@ -525,7 +525,7 @@ class CANSAssessmentToolSeeder extends Seeder
             'point' => '4.3',
         ]);
 
-        Option::create(
+        Option::create([
             'question_id' => $question27->id,
             'title' => 'Yes',
         ]);
@@ -543,7 +543,7 @@ class CANSAssessmentToolSeeder extends Seeder
             'point' => '4.3',
         ]);
 
-        Option::create(
+        Option::create([
             'question_id' => $question28->id,
             'title' => 'Yes',
         ]);
