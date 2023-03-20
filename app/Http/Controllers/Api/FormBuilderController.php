@@ -579,6 +579,18 @@ class FormBuilderController extends ApiController
                             </tr>";
                         }
                     }
+
+                    $section_html .= "<tr>
+                          <td style='width: 45%; border-left: 1px solid black'>
+                            <table style='width: 100%'>
+                              <tr>
+                                <td style='width: 40%'></td>
+                                <td style='width: 60%; text-align: center'><span style='font-weight: bold;'>Group A subtotal </span><span style='text-decoration: underline'>00</span>13/".$total_points."</td>
+                              </tr>
+                            </table>
+                          </td><td style='width: 10%; text-align: center'></td><td style='width: 45%'></td>
+                        </tr></tbody>
+                    </table>";
                 }
                 /*$section_html .= "<tr>
                                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
