@@ -499,7 +499,7 @@ class FormBuilderController extends ApiController
         }
     }
 
-   public function generateWordDocument($id)
+    public function generateWordDocument($id)
     {
         $phpWord = new \PhpOffice\PhpWord\PhpWord();
 
@@ -528,7 +528,7 @@ class FormBuilderController extends ApiController
             }
             if($userFormHeading->heading_type == 'assessment_tool'){
                 $response = Response::with('assessment_tool', 'assessment_tool.questions', 'assessment_tool.questions.answers')->find($userFormHeading->heading_id);
-                $section_html = $this->generateAssessmentToolHtml($response);
+                $section_html = $this->generateAssessmentToolHtml($response, $section_html);
             }
             $html .= $section_html;
         }
@@ -540,7 +540,7 @@ class FormBuilderController extends ApiController
         $objWriter->save($fileName);
     }
 
-    public function generateAssessmentToolHtml($response){
+    public function generateAssessmentToolHtml($response, $section_html){
         // Add questions and answers to the HTML
         $section_html .= "<table style='width: 100%; border-collapse: collapse'>
                                     <tbody><tr><td colspan='3' style='border: 1px solid black; text-align: center'>
