@@ -403,7 +403,6 @@ class FormBuilderController extends ApiController
         $section_html = '';
         foreach ($usr_forms->userFormHeadings as $userFormHeading) {
             if ($userFormHeading->heading_type == 'custom') {
-//                dd($userFormHeading->customHeading->form_heading);
                 $section_html = $userFormHeading->customHeading->form_heading;
             } else {
                 $section_html = $userFormHeading->formHeading->section_html;
@@ -462,6 +461,7 @@ class FormBuilderController extends ApiController
                     $answer = $answer->answer ?? '';
                     $total_points += $point;
                     $grand_total_points += $total_points;
+
                     $section_html .= "<tr>
                                       <td style='width: 45%; border: 1px solid black'>
                                         <table style='width: 100%'>
@@ -473,8 +473,7 @@ class FormBuilderController extends ApiController
                                         </table>
                                       </td>
                                       <td style='width: 10%; text-align: center'>".($point==0 ? '' : $point)."</td>
-                                      <td
-                                        style='width: 45%; border: 1px solid black; border-right: none'></td>
+                                      <td style='width: 45%; border: 1px solid black; border-right: none'>".$answer."</td>
                                     </tr>";
                 } elseif ($question->type === 'open_ended') {
                     $answer1 = $answer->answer ?? '';
