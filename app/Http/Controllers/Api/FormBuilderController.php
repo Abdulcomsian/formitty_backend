@@ -607,7 +607,7 @@ class FormBuilderController extends ApiController
                                         <table style='width: 100%'>
                                           <tr>
                                             <td style='width: 40%'></td>
-                                            <td style='width: 60%; text-align: center'><span style='font-weight: bold;'>Group A subtotal </span><span style='text-decoration: underline'>".$achieved_points."</span>/".$total_points."</td>
+                                            <td style='width: 60%; text-align: center'><span style='font-weight: bold;'>Group subtotal </span><span style='text-decoration: underline'>".$achieved_points."</span>/".$total_points."</td>
                                           </tr>
                                         </table>
                                       </td><td style='width: 10%; text-align: center'></td><td style='width: 45%'></td>
@@ -615,16 +615,16 @@ class FormBuilderController extends ApiController
         }
 
                         $section_html .= "<tr>
-                                              <td style='width: 45%; border-left: 1px solid black'>
+                                              <td colspan='2' style='width: 45%; border-left: 1px solid black'>
                                                 <table style='width: 100%'>
                                                   <tr>
-                                                    <td style='width: 40%'></td>
-                                                    <td style='width: 60%; text-align: center'><span style='font-weight: bold;'>Group A subtotal </span><span style='text-decoration: underline'>".$grand_achieved_points."</span> /".$grand_total_points."</td>
+                                                    <td style='width: 100%; text-align: center'><span style='font-weight: bold;'>Group A + Group B + Group C + Group D = ".$grand_achieved_points." / 28 = </span><span style='text-decoration: underline'>".$grand_achieved_points."</span></td>
                                                   </tr>
                                                 </table>
-                                              </td><td style='width: 10%; text-align: center'></td><td style='width: 45%'></td>
+                                              </td>
                                             </tr></tbody>
                                         </table>";
+
 
         return $section_html;
     }
