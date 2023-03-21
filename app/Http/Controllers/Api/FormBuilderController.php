@@ -457,6 +457,7 @@ class FormBuilderController extends ApiController
                     if($answer1 == "Yes"){
                         $achieved_points += $point;
                         $grand_achieved_points += $achieved_points;
+                        $grand_achieved_points_s = $grand_achieved_points/28;
                     }
                     $answer = $answer->answer ?? '';
                     $total_points += $point;
@@ -507,7 +508,7 @@ class FormBuilderController extends ApiController
                                               <td colspan='2' style='width: 45%; border-left: 1px solid black'>
                                                 <table style='width: 100%'>
                                                   <tr>
-                                                    <td style='width: 100%; text-align: center'><span style='font-weight: bold;'>Group A + Group B + Group C + Group D = ".$grand_achieved_points." / 28 = </span><span style='text-decoration: underline'>".$grand_achieved_points."</span></td>
+                                                    <td style='width: 100%; text-align: center'><span style='font-weight: bold;'>Group A + Group B + Group C + Group D = ".$grand_achieved_points." / 28 = </span><span style='text-decoration: underline'>".$grand_achieved_points_s."</span></td>
                                                   </tr>
                                                 </table>
                                               </td>
