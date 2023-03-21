@@ -284,7 +284,7 @@ class TestController extends Controller
     {
         $answer = Answer::with('option')->where('question_id', $question->id)->first();
         $point = $answer->option->point ?? '';
-        dd($point)
+        dd($point);
     }
 
     public function test5()
