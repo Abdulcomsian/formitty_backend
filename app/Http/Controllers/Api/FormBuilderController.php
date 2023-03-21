@@ -508,7 +508,7 @@ class FormBuilderController extends ApiController
                                               <td colspan='2' style='width: 45%; border-left: 1px solid black'>
                                                 <table style='width: 100%'>
                                                   <tr>
-                                                    <td style='width: 100%; text-align: center'><span style='font-weight: bold;'>Group A + Group B + Group C + Group D = ".$grand_achieved_points." / 28 = </span><span style='text-decoration: underline'>".$grand_achieved_points_s."</span></td>
+                                                    <td style='width: 100%; text-align: center'><span style='font-weight: bold;'>Group A + Group B + Group C + Group D = ".$grand_achieved_points." / 28 = </span><span style='text-decoration: underline'>". number_format($grand_achieved_points_s, 2)."</span></td>
                                                   </tr>
                                                 </table>
                                               </td>
