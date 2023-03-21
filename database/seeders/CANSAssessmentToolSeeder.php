@@ -338,7 +338,7 @@ class CANSAssessmentToolSeeder extends Seeder
         ]);
 
         Option::create([
-            'question_id' => $question8->id,
+            'question_id' => $question17->id,
             'title' => 'Yes',
         ]);
 
