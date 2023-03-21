@@ -528,38 +528,51 @@ class FormBuilderController extends ApiController
             }
             if($userFormHeading->heading_type == 'assessment_tool'){
                 $response = Response::with('assessment_tool', 'assessment_tool.questions', 'assessment_tool.questions.answers')->find($userFormHeading->heading_id);
-                // Add questions and answers to the HTML
-                $section_html .= "<table style='width: 100%; border-collapse: collapse'>
+                $section_html = $this->generateAssessmentToolHtml($response);
+            }
+            $html .= $section_html;
+        }
+        // Save file
+        $fileName = "download.docx";
+        \PhpOffice\PhpWord\Shared\Html::addHtml($section, $html, false, false);
+        $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
+
+        $objWriter->save($fileName);
+    }
+
+    public function generateAssessmentToolHtml($response){
+        // Add questions and answers to the HTML
+        $section_html .= "<table style='width: 100%; border-collapse: collapse'>
                                     <tbody><tr><td colspan='3' style='border: 1px solid black; text-align: center'>
                               <p style='font-weight: bold'>Care And Needs Scale (CANS)</p><p style='padding: 0px'>Date: Today</p>
                             </td></tr><tr><td colspan='3' style='border: 1px solid black; border-top: none'>Needs Checklist</td></tr>";
-                $section_html .= "<tr><td style='width: 40%; text-align: end; border: 1px solid black'>Tick yes or no</td>
+        $section_html .= "<tr><td style='width: 40%; text-align: end; border: 1px solid black'>Tick yes or no</td>
                   <td style='width: 10%; text-align: center; border: 1px solid black'>CANS LEVELS</td>
                   <td style='width: 45%; text-align: left; border: 1px solid black'>Comments</td>
                 </tr>";
-                $section_html .= "";
-                foreach ($response->assessment_tool->assessment_groups as $assessment_group) {
-                    $total_points = 0;
-                    $achieved_points = 0;
-                    $grand_total_points = 0;
-                    $grand_achieved_points = 0;
-                    $assessment_group_title = $assessment_group->title ?? '';
-                    $section_html .= "<tr><td colspan='3' style='border: 1px solid black'>".$assessment_group_title."</td></tr>";
-                    foreach ($response->assessment_tool->questions as $question) {
-                        $answer = Answer::with('option')->where('question_id', $question->id)->first();
-                        $quest = $question->title ?? '';
-                        if ($question->type === 'multiple_choice') {
-                            $answer1 = $answer->option->title ?? '';
+        $section_html .= "";
+        foreach ($response->assessment_tool->assessment_groups as $assessment_group) {
+            $total_points = 0;
+            $achieved_points = 0;
+            $grand_total_points = 0;
+            $grand_achieved_points = 0;
+            $assessment_group_title = $assessment_group->title ?? '';
+            $section_html .= "<tr><td colspan='3' style='border: 1px solid black'>".$assessment_group_title."</td></tr>";
+            foreach ($response->assessment_tool->questions as $question) {
+                $answer = Answer::with('option')->where('question_id', $question->id)->first();
+                $quest = $question->title ?? '';
+                if ($question->type === 'multiple_choice') {
+                    $answer1 = $answer->option->title ?? '';
 
-                            $point = $question->point ?? 0;
-                            if($answer1 == "Yes"){
-                                $achieved_points += $point;
-                                $grand_achieved_points += $achieved_points;
-                            }
-                            $answer = $answer->answer ?? '';
-                            $total_points += $point;
-                            $grand_total_points += $total_points;
-                            $section_html .= "<tr>
+                    $point = $question->point ?? 0;
+                    if($answer1 == "Yes"){
+                        $achieved_points += $point;
+                        $grand_achieved_points += $achieved_points;
+                    }
+                    $answer = $answer->answer ?? '';
+                    $total_points += $point;
+                    $grand_total_points += $total_points;
+                    $section_html .= "<tr>
                                       <td style='width: 45%; border: 1px solid black'>
                                         <table style='width: 100%'>
                                           <tr>
@@ -573,9 +586,9 @@ class FormBuilderController extends ApiController
                                       <td
                                         style='width: 45%; border: 1px solid black; border-right: none'></td>
                                     </tr>";
-                        } elseif ($question->type === 'open_ended') {
-                            $answer1 = $answer->answer ?? '';
-                            $section_html .= "<tr>
+                } elseif ($question->type === 'open_ended') {
+                    $answer1 = $answer->answer ?? '';
+                    $section_html .= "<tr>
                                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $quest . "</p>
                                 </td>
@@ -586,147 +599,34 @@ class FormBuilderController extends ApiController
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>Nill</p>
                                 </td>
                             </tr>";
-                        }
-                    }
-
-                    $section_html .= "<tr>
-                          <td style='width: 45%; border-left: 1px solid black'>
-                            <table style='width: 100%'>
-                              <tr>
-                                <td style='width: 40%'></td>
-                                <td style='width: 60%; text-align: center'><span style='font-weight: bold;'>Group A subtotal </span><span style='text-decoration: underline'>".$achieved_points."</span>/".$total_points."</td>
-                              </tr>
-                            </table>
-                          </td><td style='width: 10%; text-align: center'></td><td style='width: 45%'></td>
-                        </tr>";
                 }
-                /*$section_html .= "<tr>
-                                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>Total pointds</p>
-                                </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>".$total_points."</p>
-                                </td></tr></tbody>
-                    </table>";*/
-
-                $section_html .= "<tr>
-                          <td style='width: 45%; border-left: 1px solid black'>
-                            <table style='width: 100%'>
-                              <tr>
-                                <td style='width: 40%'></td>
-                                <td style='width: 60%; text-align: center'><span style='font-weight: bold;'>Group A subtotal </span><span style='text-decoration: underline'>".$grand_achieved_points."</span> /".$grand_total_points."</td>
-                              </tr>
-                            </table>
-                          </td><td style='width: 10%; text-align: center'></td><td style='width: 45%'></td>
-                        </tr></tbody>
-                    </table>";
-            }
-            $html .= $section_html;
-        }
-        // Save file
-        $fileName = "download.docx";
-        \PhpOffice\PhpWord\Shared\Html::addHtml($section, $html, false, false);
-        $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
-
-        $objWriter->save($fileName);
-    }
-
-    /*public function generateWordDocument($id)
-    {
-        $phpWord = new \PhpOffice\PhpWord\PhpWord();
-
-        $section = $phpWord->addSection();
-
-        $usr_forms = UserForm::with(['userFormHeadings', 'userFormHeadings.formData', 'userFormHeadings.formHeading'])->findorfail($id);
-
-        $usr_forms->userFormHeadings = $usr_forms->userFormHeadings->sortBy('order_id');
-
-        $html = View::make('users.sections.header')->render();
-
-        foreach ($usr_forms->userFormHeadings as $userFormHeading) {
-            $section_html = getSectionHtml($userFormHeading);
-
-            if($userFormHeading->heading_type == 'assessment_tool') {
-                $section_html .= getAssessmentToolHtml($userFormHeading->heading_id);
             }
 
-            $html .= $section_html;
+                        $section_html .= "<tr>
+                                      <td style='width: 45%; border-left: 1px solid black'>
+                                        <table style='width: 100%'>
+                                          <tr>
+                                            <td style='width: 40%'></td>
+                                            <td style='width: 60%; text-align: center'><span style='font-weight: bold;'>Group A subtotal </span><span style='text-decoration: underline'>".$achieved_points."</span>/".$total_points."</td>
+                                          </tr>
+                                        </table>
+                                      </td><td style='width: 10%; text-align: center'></td><td style='width: 45%'></td>
+                                    </tr>";
         }
 
-        saveWordFile($section, $html);
-    }*/
-
-    public function getSectionHtml($userFormHeading) {
-        $section_html = '';
-
-        if ($userFormHeading->heading_type == 'custom') {
-            $section_html = $userFormHeading->customHeading->form_heading;
-        } else {
-            $section_html = $userFormHeading->formHeading->section_html;
-        }
-
-        if ($userFormHeading->heading_type != 'custom') {
-            foreach ($userFormHeading->formData as $formData) {
-                $field_name = $formData->name;
-                $field_value = $formData->value;
-                $section_html = str_replace("{{" . $field_name . "}}", $field_value, $section_html);
-            }
-        }
+                        $section_html .= "<tr>
+                                              <td style='width: 45%; border-left: 1px solid black'>
+                                                <table style='width: 100%'>
+                                                  <tr>
+                                                    <td style='width: 40%'></td>
+                                                    <td style='width: 60%; text-align: center'><span style='font-weight: bold;'>Group A subtotal </span><span style='text-decoration: underline'>".$grand_achieved_points."</span> /".$grand_total_points."</td>
+                                                  </tr>
+                                                </table>
+                                              </td><td style='width: 10%; text-align: center'></td><td style='width: 45%'></td>
+                                            </tr></tbody>
+                                        </table>";
 
         return $section_html;
-    }
-
-    public function getAssessmentToolHtml($heading_id)
-    {
-        $section_html = '';
-
-        $response = Response::with('assessment_tool', 'assessment_tool.questions', 'assessment_tool.questions.answers')->find($heading_id);
-
-        $section_html .= "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
-                        <tr>
-                            <td>
-                                <p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'>" . $response->assessment_tool->title . "</p>
-                            </td>
-                        </tr>
-                        </table>";
-
-        $section_html .= "<table style='border-collapse: collapse; width: 100%; margin: auto; border: 1px solid lightslategray;'>
-                        <tbody>";
-
-        $total_points = 0;
-        foreach ($response->assessment_tool->questions as $question) {
-            $answer = Answer::with('option')->where('question_id', $question->id)->first();
-            $quest = $question->title ?? '';
-
-            if ($question->type === 'multiple_choice') {
-                $answer1 = $answer->option->title ?? '';
-                $point = $answer->option->point ?? '';
-                $total_points += $point;
-
-                $section_html .= "<tr>
-                                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $quest . "</p>
-                                </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $answer1 . "</p>
-                                </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $answer2 . "</p>
-                                </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $answer3 . "</p>
-                                </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $answer4 . "</p>
-                                </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px; width: 10%'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $correct_answer . "</p>
-                                </td>
-                            </tr>";
-            }
-
-        }
-
     }
 
 
