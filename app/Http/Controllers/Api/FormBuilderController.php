@@ -459,7 +459,8 @@ class FormBuilderController extends ApiController
                         $total_achieved_points++;
                         $total_group_questions_achieved++;
                     }
-                    $answer = $answer->answer ?? '';
+                    $answer2 = $answer->answer ?? '';
+                    $level = $answer->level ?? 0;
 
                     $section_html .= "<tr>
                                       <td style='width: 45%; border: 1px solid black'>
@@ -470,8 +471,8 @@ class FormBuilderController extends ApiController
                                           </tr>
                                         </table>
                                       </td>
-                                      <td style='width: 10%; text-align: center'>".($point==0 ? '' : $point)."</td>
-                                      <td style='width: 45%; border: 1px solid black; border-right: none'>".$answer."</td>
+                                      <td style='width: 10%; text-align: center'>".($level==0 ? '' : $level)."</td>
+                                      <td style='width: 45%; border: 1px solid black; border-right: none'>".$answer2."</td>
                                     </tr>";
                 } elseif ($question->type === 'open_ended') {
                     $answer1 = $answer->answer ?? '';
