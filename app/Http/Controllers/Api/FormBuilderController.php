@@ -446,7 +446,7 @@ class FormBuilderController extends ApiController
             $total_group_questions_achieved = 0;
             $assessment_group_title = $assessment_group->title ?? '';
             $section_html .= "<tr><td colspan='3' style='border: 1px solid black'>".$assessment_group_title."</td></tr>";
-            foreach ($response->assessment_tool->questions as $question) {
+            foreach ($assessment_group->questions as $question) {
                 $total_questions++;
                 $total_group_questions++;
                 $answer = Answer::with('option')->where('question_id', $question->id)->first();
@@ -466,8 +466,7 @@ class FormBuilderController extends ApiController
                                         <table style='width: 100%'>
                                           <tr>
                                             <td style='width: 80%'>".$quest."</td>
-                                            <td style='width: 10%; text-align: center'>Yes</td>
-                                            <td style='width: 10%; text-align: center'>No</td>
+                                            <td style='width: 10%; text-align: center'>".($answer1 == "Yes" ? 'Yes' : "No")."</td>
                                           </tr>
                                         </table>
                                       </td>
