@@ -120,6 +120,13 @@ class AssessmentToolController extends ApiController
                             'answer' => $value,
                         ]);
                     }
+                } elseif ($name == 'level') {
+                    $question = Answer::where([['question_id', $question_id], ['response_id', $response->id]])->first();
+                    if($question) {
+                        $question->update([
+                            'level' => $value,
+                        ]);
+                    }
                 } elseif ($name == 'open_ended') {
                     $answer = new Answer([
                         'question_id' => $question_id,
