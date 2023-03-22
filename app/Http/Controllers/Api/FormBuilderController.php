@@ -439,7 +439,11 @@ class FormBuilderController extends ApiController
                   <td style='width: 45%; text-align: left; border: 1px solid black'>Comments</td>
                 </tr>";
         $section_html .= "";
+        $total_questions = 0;
+        $total_achieved_points = 0;
         foreach ($response->assessment_tool->assessment_groups as $assessment_group) {
+            $total_group_questions = 0;
+            $total_group_questions_achieved = 0;
             $total_points = 0;
             $achieved_points = 0;
             $grand_total_points = 0;
@@ -447,6 +451,8 @@ class FormBuilderController extends ApiController
             $assessment_group_title = $assessment_group->title ?? '';
             $section_html .= "<tr><td colspan='3' style='border: 1px solid black'>".$assessment_group_title."</td></tr>";
             foreach ($response->assessment_tool->questions as $question) {
+                $total_questions++;
+                $total_group_questions++;
                 $answer = Answer::with('option')->where('question_id', $question->id)->first();
                 $quest = $question->title ?? '';
                 if ($question->type === 'multiple_choice') {
@@ -454,9 +460,8 @@ class FormBuilderController extends ApiController
 
                     $point = $question->point ?? 0;
                     if($answer1 == "Yes"){
-                        $achieved_points += $point;
-                        $grand_achieved_points += $achieved_points;
-                        $grand_achieved_points_s = $grand_achieved_points/28;
+                        $total_achieved_points++;
+                        $total_group_questions_achieved++;
                     }
                     $answer = $answer->answer ?? '';
                     $total_points += $point;
@@ -496,7 +501,7 @@ class FormBuilderController extends ApiController
                                         <table style='width: 100%'>
                                           <tr>
                                             <td style='width: 40%'></td>
-                                            <td style='width: 60%; text-align: center'><span style='font-weight: bold;'>Group subtotal </span><span style='text-decoration: underline'>".$achieved_points."</span>/".$total_points."</td>
+                                            <td style='width: 60%; text-align: center'><span style='font-weight: bold;'>Group subtotal </span><span style='text-decoration: underline'>".$total_group_questions_achieved."</span>/".$total_group_questions."</td>
                                           </tr>
                                         </table>
                                       </td><td style='width: 10%; text-align: center'></td><td style='width: 45%'></td>
@@ -507,7 +512,7 @@ class FormBuilderController extends ApiController
                                               <td colspan='2' style='width: 45%; border-left: 1px solid black'>
                                                 <table style='width: 100%'>
                                                   <tr>
-                                                    <td style='width: 100%; text-align: center'><span style='font-weight: bold;'>Group A + Group B + Group C + Group D = ".$grand_achieved_points." / 28 = </span><span style='text-decoration: underline'>". number_format($grand_achieved_points_s, 2)."</span></td>
+                                                    <td style='width: 100%; text-align: center'><span style='font-weight: bold;'>Group A + Group B + Group C + Group D = ".$total_achieved_points." / ".$total_questions." = </span><span style='text-decoration: underline'></span></td>
                                                   </tr>
                                                 </table>
                                               </td>
