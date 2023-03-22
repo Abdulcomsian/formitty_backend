@@ -166,14 +166,17 @@ class AssessmentToolController extends ApiController
 
             $answerData = [];
             $commentData = [];
+            $level = [];
             foreach ($response->answers as $answer) {
                 $answerData[$answer->question_id] = $answer->option_id ?? null;
                 $commentData[$answer->question_id] = $answer->answer;
+                $level[$answer->question_id] = $answer->level;
             }
             $responseData = [
                 'response' => $response,
                 'answers' => $answerData,
                 'commentData' => $commentData,
+                'level' => $level,
             ];
             return $this->successResponse($responseData, 'Questions get successfully!.', 200);
         } catch (\Throwable $th) {
