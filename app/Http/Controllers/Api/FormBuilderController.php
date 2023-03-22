@@ -542,7 +542,7 @@ class FormBuilderController extends ApiController
                       </table>
                     </td>
                     <td style='width: 10%; text-align: center; border: 1px solid black'>".($level==0 ? '' : $level)."</td>
-                    <td style='width: 45%; border: 1px solid black; border-right: none'><table  style='width: 100%;'><tr><td style='width: 1%'></td><td style='width: 99%'>".$answer."</td></tr></table></td>
+                    <td style='width: 45%; border: 1px solid black; border-right: none'><table  style='width: 100%;'><tr><td style='width: 1%'></td><td style='width: 99%'>".$answer2."</td></tr></table></td>
                   </tr>";
                     /*$section_html .= "<tr>
                                       <td style='width: 45%; border: 1px solid black'>
