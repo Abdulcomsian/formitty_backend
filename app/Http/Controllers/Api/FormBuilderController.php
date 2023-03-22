@@ -431,13 +431,73 @@ class FormBuilderController extends ApiController
     public function generateAssessmentToolHtml($response, $section_html){
         // Add questions and answers to the HTML
         $section_html .= "<table style='width: 100%; border-collapse: collapse'>
-                                    <tbody><tr><td colspan='3' style='border: 1px solid black; text-align: center'>
-                              <p style='font-weight: bold'>Care And Needs Scale (CANS)</p><p style='padding: 0px'>Date: Today</p>
-                            </td></tr><tr><td colspan='3' style='border: 1px solid black; border-top: none'>Needs Checklist</td></tr>";
-        $section_html .= "<tr><td style='width: 40%; text-align: end; border: 1px solid black'>Tick yes or no</td>
-                  <td style='width: 10%; text-align: center; border: 1px solid black'>CANS LEVELS</td>
-                  <td style='width: 45%; text-align: left; border: 1px solid black'>Comments</td>
-                </tr>";
+        <tbody>
+          <tr>
+            <td
+              colspan='3'
+              style='
+                border: 1px solid black;
+                text-align: center;
+                background-color: #505D30;
+                color: white;
+              '
+            ><span style='font-weight: bold; font-size: x-large'>Care And Needs Scale (CANS)</span><br /><span style='padding: 0px; font-size: large'>Date: Today</span></td>
+          </tr>
+          <tr>
+            <td colspan='3' style='border: 1px solid black'>
+              <table style='width: 100%'>
+                <tr><td style='width: 5%;'>Date:</td><td style='width: 20%;'>Client Name:</td><td style='width: 5%;'>Age:</td><td style='width: 5%;'>MRN:</td><td style='width: 15%;'>Assessed By:</td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td
+              colspan='3'
+              style='
+                border: 1px solid black;
+                border-top: none;
+                background-color: #C3D59B;
+              '
+            >
+              <table style='width: 100%'>
+                <tr><td style='width: 1%'></td><td style='width: 99%; font-size: 16px; font-weight: bold'>Needs Checklist</td></tr>
+              </table>
+            </td>
+          </tr>";
+        $section_html .= "<tr>
+        <td
+          style='
+            width: 40%;
+            text-align: end;
+            border: 1px solid black;
+            background-color: #EBF1DD;
+          '
+        >
+          <table style='width: 100%'>
+            <tr><td style='width: 50%'></td><td style='width: 49%'>Tick yes or no</td><td style='width: 1%'></td></tr>
+          </table>
+        </td>
+        <td
+          style='
+            width: 10%;
+            text-align: center;
+            border: 1px solid black;
+            background-color: #EBF1DD;
+          '
+        >CANS LEVELS</td>
+        <td
+          style='
+            width: 45%;
+            text-align: left;
+            border: 1px solid black;
+            background-color: #EBF1DD;
+          '
+        >
+          <table style='width: 100%'>
+            <tr><td style='width: 1%'></td><td style='width: 99%'>Comments</td></tr>
+          </table>
+        </td>
+      </tr>";
         $section_html .= "";
         $total_questions = 0;
         $total_achieved_points = 0;
@@ -445,7 +505,21 @@ class FormBuilderController extends ApiController
             $total_group_questions = 0;
             $total_group_questions_achieved = 0;
             $assessment_group_title = $assessment_group->title ?? '';
-            $section_html .= "<tr><td colspan='3' style='border: 1px solid black'>".$assessment_group_title."</td></tr>";
+            $section_html .= "<tr>
+            <td
+              colspan='3'
+              style='
+                border: 1px solid black;
+                border-right: none;
+                background-color: #EBF1DD;
+              '
+            >
+              <table style='width: 100%'>
+                <tr><td style='width: 1%'></td><td style='width: 99%'>".$assessment_group_title."</td></tr>
+              </table>
+            </td>
+          </tr>";
+//            $section_html .= "<tr><td colspan='3' style='border: 1px solid black'>".$assessment_group_title."</td></tr>";
             foreach ($assessment_group->questions as $question) {
                 $total_questions++;
                 $total_group_questions++;
@@ -461,8 +535,16 @@ class FormBuilderController extends ApiController
                     }
                     $answer2 = $answer->answer ?? '';
                     $level = $answer->level ?? 0;
-
                     $section_html .= "<tr>
+                    <td style='width: 45%; border: 1px solid black'>
+                      <table style='width: 100%'>
+                        <tr><td style='width: 1%'></td><td style='width: 85%'>".$quest."</td><td style='width: 14%; text-align: center'>".($answer1 == 'Yes' ? 'Yes' : 'No')."</td></tr>
+                      </table>
+                    </td>
+                    <td style='width: 10%; text-align: center; border: 1px solid black'>".($level==0 ? '' : $level)."</td>
+                    <td style='width: 45%; border: 1px solid black; border-right: none'><table  style='width: 100%;'><tr><td style='width: 1%'></td><td style='width: 99%'>".$answer."</td></tr></table></td>
+                  </tr>";
+                    /*$section_html .= "<tr>
                                       <td style='width: 45%; border: 1px solid black'>
                                         <table style='width: 100%'>
                                           <tr>
@@ -473,7 +555,7 @@ class FormBuilderController extends ApiController
                                       </td>
                                       <td style='width: 10%; text-align: center'>".($level==0 ? '' : $level)."</td>
                                       <td style='width: 45%; border: 1px solid black; border-right: none'>".$answer2."</td>
-                                    </tr>";
+                                    </tr>";*/
                 } elseif ($question->type === 'open_ended') {
                     $answer1 = $answer->answer ?? '';
                     $section_html .= "<tr>
@@ -489,8 +571,12 @@ class FormBuilderController extends ApiController
                             </tr>";
                 }
             }
-
-                        $section_html .= "<tr>
+            $section_html .= "<tr>
+                        <td colspan='3' style='border: 1px solid black; border-right: none'>
+                          <table style='width: 100%'><tr><td style='width: 20%'></td><td style='width: 60%'><span style='font-weight: bold'>Group A subtotal </span><span style='text-decoration: underline'>".$total_group_questions_achieved."</span> /".$total_group_questions."</td><td style='width: 20%'></td></tr></table>
+                        </td>
+                      </tr>";
+                        /*$section_html .= "<tr>
                                       <td style='width: 45%; border-left: 1px solid black'>
                                         <table style='width: 100%'>
                                           <tr>
@@ -499,10 +585,21 @@ class FormBuilderController extends ApiController
                                           </tr>
                                         </table>
                                       </td><td style='width: 10%; text-align: center'></td><td style='width: 45%'></td>
-                                    </tr>";
+                                    </tr>";*/
         }
 
-                        $section_html .= "<tr>
+        $section_html .= "<tr>
+                        <td colspan='3' style='width: 45%; border-left: 1px solid black'>
+                          <table style='width: 100%'>
+                            <tr>
+                              <td style='width: 20%;'></td><td style='width: 60%; text-align: start'><span style='font-weight: bold;'>Group A + Group B + Group C + Group D = ".$total_achieved_points." / ".$total_questions." = </span><span style='text-decoration: underline'></span></td><td style='width: 20%;'></td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr></tbody>
+                    </table>";
+
+        /*$section_html .= "<tr>
                                               <td colspan='2' style='width: 45%; border-left: 1px solid black'>
                                                 <table style='width: 100%'>
                                                   <tr>
@@ -511,7 +608,7 @@ class FormBuilderController extends ApiController
                                                 </table>
                                               </td>
                                             </tr></tbody>
-                                        </table>";
+                                        </table>";*/
 
 
         return $section_html;
