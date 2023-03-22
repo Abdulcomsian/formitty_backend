@@ -466,7 +466,7 @@ class FormBuilderController extends ApiController
                                         <table style='width: 100%'>
                                           <tr>
                                             <td style='width: 80%'>".$quest."</td>
-                                            <td style='width: 10%; text-align: center'>".($answer1 == "Yes" ? 'Yes' : "No")."</td>
+                                            <td style='width: 10%; text-align: center'>".($answer1 == 'Yes' ? 'Yes' : 'No')."</td>
                                           </tr>
                                         </table>
                                       </td>
