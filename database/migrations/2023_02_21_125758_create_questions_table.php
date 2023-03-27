@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->enum('type', ['multiple_choice', 'open_ended']);
             $table->foreignId('assessment_tool_id')->constrained('assessment_tools')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId('assessment_group_id')->constrained('assessment_groups')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('assessment_group_id')->nullable()->constrained('assessment_groups')->cascadeOnDelete()->cascadeOnUpdate();
             $table->float('point')->nullable();
             $table->timestamps();
         });
