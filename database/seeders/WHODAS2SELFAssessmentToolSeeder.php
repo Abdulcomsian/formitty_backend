@@ -155,5 +155,111 @@ class WHODAS2SELFAssessmentToolSeeder extends Seeder
             'title' => 'Doing most important household tasks well?',
             'type' => 'multiple_choice',
         ]);
+
+        $question23 = Question::create([
+            'assessment_tool_id' => $assessment_tool->id,
+            'title' => 'Getting all the household work done that you needed to do?',
+            'type' => 'multiple_choice',
+        ]);
+
+        $question24 = Question::create([
+            'assessment_tool_id' => $assessment_tool->id,
+            'title' => 'Getting all the household work done that you needed to do?',
+            'type' => 'multiple_choice',
+        ]);
+
+        $question25 = Question::create([
+            'assessment_tool_id' => $assessment_tool->id,
+            'title' => 'If you work (paid, non-paid, self-employed) or go to school, complete questions 25-28 below. Otherwise, skip to question29.
+                        Because of your health condition, in the past 30 days, how much difficulty did you have in:
+                        Your day-to-day work/school?',
+            'type' => 'multiple_choice',
+        ]);
+
+        $question26 = Question::create([
+            'assessment_tool_id' => $assessment_tool->id,
+            'title' => 'Doing your most important work/school tasks well?',
+            'type' => 'multiple_choice',
+        ]);
+
+        $question27 = Question::create([
+            'assessment_tool_id' => $assessment_tool->id,
+            'title' => 'Getting all the work done that you need to do?',
+            'type' => 'multiple_choice',
+        ]);
+
+        $question28 = Question::create([
+            'assessment_tool_id' => $assessment_tool->id,
+            'title' => 'Getting your work done as quickly as needed?',
+            'type' => 'multiple_choice',
+        ]);
+
+        $question29 = Question::create([
+            'assessment_tool_id' => $assessment_tool->id,
+            'title' => 'In the past 30 days: How much of a problem did you have in joining in community activities (for example,
+                        festivities, religious or other activities) in the same way as anyone else can?',
+            'type' => 'multiple_choice',
+        ]);
+
+        $question30 = Question::create([
+            'assessment_tool_id' => $assessment_tool->id,
+            'title' => 'How much of a problem did you have because of barriers or hindrances in the world around you?',
+            'type' => 'multiple_choice',
+        ]);
+
+        $question31 = Question::create([
+            'assessment_tool_id' => $assessment_tool->id,
+            'title' => 'How much of a problem did you have living with dignity because of the attitudes and actions of others? ',
+            'type' => 'multiple_choice',
+        ]);
+
+        $question32 = Question::create([
+            'assessment_tool_id' => $assessment_tool->id,
+            'title' => 'How much time did you spend on your health condition, or its consequences?',
+            'type' => 'multiple_choice',
+        ]);
+
+        $question33 = Question::create([
+            'assessment_tool_id' => $assessment_tool->id,
+            'title' => 'How much have you been emotionally affected by your health condition?',
+            'type' => 'multiple_choice',
+        ]);
+
+        $question34 = Question::create([
+            'assessment_tool_id' => $assessment_tool->id,
+            'title' => 'How much has your health condition been a drain on the financial resources of you or your family? ',
+            'type' => 'multiple_choice',
+        ]);
+
+        $question35 = Question::create([
+            'assessment_tool_id' => $assessment_tool->id,
+            'title' => 'How much of a problem did your family have because of your health problems?',
+            'type' => 'multiple_choice',
+        ]);
+
+        $question36 = Question::create([
+            'assessment_tool_id' => $assessment_tool->id,
+            'title' => 'How much of a problem did you have in doing things by yourself for relaxation or pleasure?',
+            'type' => 'multiple_choice',
+        ]);
+
+        $question37 = Question::create([
+            'assessment_tool_id' => $assessment_tool->id,
+            'title' => 'Overall, in the past 30 days, how many days were these difficulties present?',
+            'type' => 'open_ended',
+        ]);
+
+        $question38 = Question::create([
+            'assessment_tool_id' => $assessment_tool->id,
+            'title' => 'In the past 30 days, for how many days were you totally unable to carry out your usual activities or work because of any health condition?',
+            'type' => 'open_ended',
+        ]);
+
+        $question39 = Question::create([
+            'assessment_tool_id' => $assessment_tool->id,
+            'title' => 'In the past 30 days, not counting the days that you were totally unable, for how many days did you cut back or reduce your usual
+activities or work because of any health condition?',
+            'type' => 'open_ended',
+        ]);
     }
 }

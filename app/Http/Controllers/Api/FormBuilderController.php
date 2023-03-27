@@ -429,6 +429,18 @@ class FormBuilderController extends ApiController
     }
 
     public function generateAssessmentToolHtml($response, $section_html){
+
+        if($response->assessment_tool->id == '1'){
+            $section_html = $this->createECANSTool($response, $section_html);
+        }
+        if($response->assessment_tool->id == '2'){
+            $section_html = $this->createWHODASTool($response, $section_html);
+        }
+        return $section_html;
+    }
+
+    public function createECANSTool($response, $section_html)
+    {
         // Add questions and answers to the HTML
         $section_html .= "<table style='width: 100%; border-collapse: collapse'>
         <tbody>
@@ -544,18 +556,6 @@ class FormBuilderController extends ApiController
                     <td style='width: 10%; text-align: center; border: 1px solid black'>".($level==0 ? '' : $level)."</td>
                     <td style='width: 45%; border: 1px solid black; border-right: none'><table  style='width: 100%;'><tr><td style='width: 1%'></td><td style='width: 99%'>".$answer2."</td></tr></table></td>
                   </tr>";
-                    /*$section_html .= "<tr>
-                                      <td style='width: 45%; border: 1px solid black'>
-                                        <table style='width: 100%'>
-                                          <tr>
-                                            <td style='width: 80%'>".$quest."</td>
-                                            <td style='width: 10%; text-align: center'>".($answer1 == 'Yes' ? 'Yes' : 'No')."</td>
-                                          </tr>
-                                        </table>
-                                      </td>
-                                      <td style='width: 10%; text-align: center'>".($level==0 ? '' : $level)."</td>
-                                      <td style='width: 45%; border: 1px solid black; border-right: none'>".$answer2."</td>
-                                    </tr>";*/
                 } elseif ($question->type === 'open_ended') {
                     $answer1 = $answer->answer ?? '';
                     $section_html .= "<tr>
@@ -576,16 +576,6 @@ class FormBuilderController extends ApiController
                           <table style='width: 100%'><tr><td style='width: 20%'></td><td style='width: 60%'><span style='font-weight: bold'>Group A subtotal </span><span style='text-decoration: underline'>".$total_group_questions_achieved."</span> /".$total_group_questions."</td><td style='width: 20%'></td></tr></table>
                         </td>
                       </tr>";
-                        /*$section_html .= "<tr>
-                                      <td style='width: 45%; border-left: 1px solid black'>
-                                        <table style='width: 100%'>
-                                          <tr>
-                                            <td style='width: 40%'></td>
-                                            <td style='width: 60%; text-align: center'><span style='font-weight: bold;'>Group subtotal </span><span style='text-decoration: underline'>".$total_group_questions_achieved."</span>/".$total_group_questions."</td>
-                                          </tr>
-                                        </table>
-                                      </td><td style='width: 10%; text-align: center'></td><td style='width: 45%'></td>
-                                    </tr>";*/
         }
 
         $section_html .= "<tr>
@@ -599,16 +589,36 @@ class FormBuilderController extends ApiController
                       </tr></tbody>
                     </table>";
 
-        /*$section_html .= "<tr>
-                                              <td colspan='2' style='width: 45%; border-left: 1px solid black'>
-                                                <table style='width: 100%'>
-                                                  <tr>
-                                                    <td style='width: 100%; text-align: center'><span style='font-weight: bold;'>Group A + Group B + Group C + Group D = ".$total_achieved_points." / ".$total_questions." = </span><span style='text-decoration: underline'></span></td>
-                                                  </tr>
-                                                </table>
-                                              </td>
-                                            </tr></tbody>
-                                        </table>";*/
+        return $section_html;
+    }
+
+    public function createWHODASTool($response, $section_html){
+        // Add questions and answers to the HTML
+        $section_html .= "<table style='width: 100%; border-collapse: collapse'>
+        <tbody>
+          <tr style='background-color: #F0F9FF'>
+            <th style='width: 5%'></th>
+            <th style='width: 53%'></th>
+            <th style='width: 8%; border: 1px solid black'>None</th>
+            <th style='width: 8%; border: 1px solid black'>Mild</th>
+            <th style='width: 8%; border: 1px solid black'>Moderate</th>
+            <th style='width: 8%; border: 1px solid black'>Severe</th>
+            <th style='width: 10%; border: 1px solid black'>Extreme or cannot do</th>
+          </tr>";
+        $count = 0;
+        foreach($response->assessment_tool->questions as $question){
+            $section_html .= "
+            <tr>
+                <td style='width: 5%; text-align: center; background-color: #F0F9FF'>".$count++."</td>
+                <td style='width: 53%; border: 1px solid black; background-color: #F0F9FF'>".$question->title."</td>
+                <td style='width: 8%; border: 1px solid black; text-align: center'>0</td>
+                <td style='width: 8%; border: 1px solid black; text-align: center'>1</td>
+                <td style='width: 8%; border: 1px solid black; text-align: center'>2</td>
+                <td style='width: 8%; border: 1px solid black; text-align: center'>3</td>
+                <td style='width: 10%; border: 1px solid black; text-align: center'>4</td>
+            </tr>";
+        }
+
 
 
         return $section_html;
@@ -720,19 +730,6 @@ class FormBuilderController extends ApiController
         }
     }
 
-    /*    public function markComplete()
-        {
-            dd("ttt");
-            try {
-                $user_form_id = UserFormHeading::find($user_form_id);
-                $user_form_id->heading_status = 'completed';
-                $user_form_id->save();
-                return $this->successResponse($user_form_id, 'Status marked as complete!.', 200);
-            } catch (\Throwable $th) {
-                return $this->errorResponse($th->getMessage(), 401);
-            }
-        }*/
-
     public function markComplete($id)
     {
         try {
@@ -748,11 +745,6 @@ class FormBuilderController extends ApiController
 
     public function changeStatus($user_form_heading_id)
     {
-        /*if($predifined == 1){
-            $status = 'predefined';
-        } else {
-            $status = 'custom';
-        }*/
         try {
             $user_form_heading = UserFormHeading::findorfail($user_form_heading_id);
             $user_form_heading->heading_status = 'completed';
