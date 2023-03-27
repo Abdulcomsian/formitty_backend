@@ -607,16 +607,55 @@ class FormBuilderController extends ApiController
           </tr>";
         $count = 0;
         foreach($response->assessment_tool->questions as $question){
-            $section_html .= "
-            <tr>
-                <td style='width: 5%; text-align: center; background-color: #F0F9FF'>".$count++."</td>
-                <td style='width: 53%; border: 1px solid black; background-color: #F0F9FF'>".$question->title."</td>
-                <td style='width: 8%; border: 1px solid black; text-align: center'>0</td>
-                <td style='width: 8%; border: 1px solid black; text-align: center'>1</td>
-                <td style='width: 8%; border: 1px solid black; text-align: center'>2</td>
-                <td style='width: 8%; border: 1px solid black; text-align: center'>3</td>
-                <td style='width: 10%; border: 1px solid black; text-align: center'>4</td>
-            </tr>";
+            if($questions->type == 'multiple_choice'){
+                if($question->answers->answer == 0){
+                    $answer = 0 ?? '';
+                }
+
+                if($question->answers->answer == 1){
+                    $answer = 1 ?? '';
+                }
+
+                if($question->answers->answer == 2){
+                    $answer = 2 ?? '';
+                }
+
+                if($question->answers->answer == 3){
+                    $answer = 3 ?? '';
+                }
+
+                if($question->answers->answer == 4){
+                    $answer = 4 ?? '';
+                }
+
+            }
+
+            if($questions->type == 'multiple_choice'){
+                $section_html .= "
+                    <tr>
+                        <td style='width: 5%; text-align: center; background-color: #F0F9FF'>".$count++."</td>
+                        <td style='width: 53%; border: 1px solid black; background-color: #F0F9FF'>".$question->title."</td>
+                        <td style='width: 8%; border: 1px solid black; text-align: center'>".$answer."</td>
+                        <td style='width: 8%; border: 1px solid black; text-align: center'>".$answer."</td>
+                        <td style='width: 8%; border: 1px solid black; text-align: center'>".$answer."</td>
+                        <td style='width: 8%; border: 1px solid black; text-align: center'>".$answer."</td>
+                        <td style='width: 10%; border: 1px solid black; text-align: center'>".$answer."</td>
+                    </tr>";
+            }
+
+            if($questions->type == 'open_ended'){
+                $quest = $question->title ?? '';
+                $answer = $question->answers->answer ?? '';
+                $section_html .= "
+                      <tr>
+                        <td style='width: 5%; text-align: center; background-color: #F0F9FF'>1</td>
+                        <td colspan='6' style='width: 5%; border: 1px solid black; background-color: #F0F9FF'>".$quest."</td>
+                      </tr>
+                      <tr>
+                        <td style='width: 5%; text-align: center; background-color: #F0F9FF'><br /></td><td colspan='6' style='width: 5%; border: 1px solid black'>".$answer."</td>
+                      </tr>;"
+            }
+
         }
 
 
