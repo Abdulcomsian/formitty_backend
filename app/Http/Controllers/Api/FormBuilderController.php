@@ -133,7 +133,7 @@ class FormBuilderController extends ApiController
 
         self::generateWordDocument($user_form->id);
 
-        $success['file_path'] = 'https://accrualdev.com/formity/public/download.docx';
+        $success['file_path'] = 'https://formity.accrualdev.com/public/download.docx';
         $success['fields'] = $input;
         $success['user_form_id'] = $user_form->id;
         return $this->successResponse($success, 'Document Generated Successfully.');
@@ -607,48 +607,49 @@ class FormBuilderController extends ApiController
           </tr>";
         $count = 0;
         foreach($response->assessment_tool->questions as $question){
-            if($questions->type == 'multiple_choice'){
-                if($question->answers->answer == 0){
-                    $answer = 0 ?? '';
+            if($question->type == 'multiple_choice'){
+                $answer = $question->answers->answer ?? '';
+                if($answer == '0'){
+                    $answer0 = 0 ?? '';
                 }
 
-                if($question->answers->answer == 1){
-                    $answer = 1 ?? '';
+                if($answer == '1'){
+                    $answer1 = 1 ?? '';
                 }
 
-                if($question->answers->answer == 2){
-                    $answer = 2 ?? '';
+                if($answer == '2'){
+                    $answer2 = 2 ?? '';
                 }
 
-                if($question->answers->answer == 3){
-                    $answer = 3 ?? '';
+                if($answer == '3'){
+                    $answer3 = 3 ?? '';
                 }
 
-                if($question->answers->answer == 4){
-                    $answer = 4 ?? '';
+                if($answer == '4'){
+                    $answer4 = 4 ?? '';
                 }
 
             }
 
-            if($questions->type == 'multiple_choice'){
+            if($question->type == 'multiple_choice'){
                 $section_html .= "
                     <tr>
                         <td style='width: 5%; text-align: center; background-color: #F0F9FF'>".$count++."</td>
                         <td style='width: 53%; border: 1px solid black; background-color: #F0F9FF'>".$question->title."</td>
-                        <td style='width: 8%; border: 1px solid black; text-align: center'>".$answer."</td>
-                        <td style='width: 8%; border: 1px solid black; text-align: center'>".$answer."</td>
-                        <td style='width: 8%; border: 1px solid black; text-align: center'>".$answer."</td>
-                        <td style='width: 8%; border: 1px solid black; text-align: center'>".$answer."</td>
-                        <td style='width: 10%; border: 1px solid black; text-align: center'>".$answer."</td>
+                        <td style='width: 8%; border: 1px solid black; text-align: center'>".$answer0."</td>
+                        <td style='width: 8%; border: 1px solid black; text-align: center'>".$answer1."</td>
+                        <td style='width: 8%; border: 1px solid black; text-align: center'>".$answer2."</td>
+                        <td style='width: 8%; border: 1px solid black; text-align: center'>".$answer3."</td>
+                        <td style='width: 10%; border: 1px solid black; text-align: center'>".$answer4."</td>
                     </tr>";
             }
 
-            if($questions->type == 'open_ended'){
+            if($question->type == 'open_ended'){
                 $quest = $question->title ?? '';
                 $answer = $question->answers->answer ?? '';
                 $section_html .= "
                       <tr>
-                        <td style='width: 5%; text-align: center; background-color: #F0F9FF'>1</td>
+                        <td style='width: 5%; text-align: center; background-color: #F0F9FF'>".$count."</td>
                         <td colspan='6' style='width: 5%; border: 1px solid black; background-color: #F0F9FF'>".$quest."</td>
                       </tr>
                       <tr>
@@ -658,7 +659,10 @@ class FormBuilderController extends ApiController
 
         }
 
-
+        $section_html.= "
+        </tbody>
+        </table>
+        ";
 
         return $section_html;
     }
