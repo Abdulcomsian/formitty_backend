@@ -166,7 +166,9 @@ class AssessmentToolController extends ApiController
         try {
             // Find the response with the given ID
             $response = Response::with('assessment_tool', 'assessment_tool.assessment_groups', 'assessment_tool.assessment_groups.questions', 'assessment_tool.assessment_groups.questions.options')->findOrFail($request->user_assessment_id);
-
+            if ($response->assessment_tool->assessment_groups->isEmpty()) {
+                $response = Response::with('assessment_tool', 'assessment_tool.questions')->findOrFail($request->user_assessment_id);
+            }
             $answerData = [];
             $commentData = [];
             $level = [];
