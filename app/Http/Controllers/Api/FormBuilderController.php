@@ -653,7 +653,7 @@ class FormBuilderController extends ApiController
                       </tr>
                       <tr>
                         <td style='width: 5%; text-align: center; background-color: #F0F9FF'><br /></td><td colspan='6' style='width: 5%; border: 1px solid black'>".$answer."</td>
-                      </tr>;"
+                      </tr>";
             }
 
         }
