@@ -20,7 +20,7 @@ class DSMAssessmentToolSeeder extends Seeder
 
         $assessment_tool = AssessmentTool::create([
             'title' => 'DSM-5-TR Self-Rated Level 1 Cross-Cutting Symptom Measure—Adu',
-            'slug' => 'whodas2self',
+            'slug' => 'DSM-5-self',
             'type' => 'questionnaire'
         ]);
 
