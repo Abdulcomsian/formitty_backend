@@ -609,25 +609,12 @@ class FormBuilderController extends ApiController
         foreach($response->assessment_tool->questions as $question){
             if($question->type == 'multiple_choice'){
                 $answer = $question->answers->answer ?? '';
-                if($answer == '0'){
-                    $answer0 = 0 ?? '';
-                }
 
-                if($answer == '1'){
-                    $answer1 = 1 ?? '';
-                }
-
-                if($answer == '2'){
-                    $answer2 = 2 ?? '';
-                }
-
-                if($answer == '3'){
-                    $answer3 = 3 ?? '';
-                }
-
-                if($answer == '4'){
-                    $answer4 = 4 ?? '';
-                }
+                $answer0 = $answer == '0' ? $answer : '';
+                $answer1 = $answer == '1' ? $answer : '';
+                $answer2 = $answer == '2' ? $answer : '';
+                $answer3 = $answer == '3' ? $answer : '';
+                $answer4 = $answer == '4' ? $answer : '';
 
             }
 
