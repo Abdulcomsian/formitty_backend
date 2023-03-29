@@ -436,6 +436,9 @@ class FormBuilderController extends ApiController
         if($response->assessment_tool->id == '2'){
             $section_html = $this->createWHODASTool($response, $section_html);
         }
+        if($response->assessment_tool->id == '3'){
+            $section_html = $this->createDSMSELFTool($response, $section_html);
+        }
         return $section_html;
     }
 
