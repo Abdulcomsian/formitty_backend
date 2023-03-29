@@ -610,11 +610,11 @@ class FormBuilderController extends ApiController
             if($question->type == 'multiple_choice'){
                 $answer = $question->answers->answer ?? '';
 
-                $answer0 = $answer == '0' ? $answer : '';
-                $answer1 = $answer == '1' ? $answer : '';
-                $answer2 = $answer == '2' ? $answer : '';
-                $answer3 = $answer == '3' ? $answer : '';
-                $answer4 = $answer == '4' ? $answer : '';
+                $answer0 = ($answer == '0' ? $answer : '');
+                $answer1 = ($answer == '1' ? $answer : '');
+                $answer2 = ($answer == '2' ? $answer : '');
+                $answer3 = ($answer == '3' ? $answer : '');
+                $answer4 = ($answer == '4' ? $answer : '');
 
             }
 
