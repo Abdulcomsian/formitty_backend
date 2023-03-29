@@ -355,215 +355,49 @@ class AnimalSeeder extends Seeder
 
 
 
-    $section4 = '';
-
-
-
-    $section5 =  "<table style='background-color:#7209B7; border:none; width:100%;'>
+    $section4 = "<p style='margin-top:10px'></p>
+                <table style='background-color:#7209B7; border:none; width:100%;'>
                     <tr>
                         <td>
-                            <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'>  PART 5 – Recommended Nutrition Support AT specification</p>
+                            <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'>Part 4 – Attachments</p>
                         </td>
                     </tr>
                 </table>
-                <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'>5.1 Description of nutrition support AT including recommended product(s).</p>
-                <p style='margin-bottom: 10px'>Detail all necessary specifications required to meet client’s goal. This must be detailed enough to ensure that the item can be accurately quoted and supplied.</p>
-                <table style='width:100%; border: 1px solid black'>
-                    <tr>
-                        <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'> Text goes here</p></td>
-                    </tr>
-                </table>
-                <p style='margin-botton: 10px'>Recommended supplier</p>
-                <table style='width:100%; border: 1px solid black'>
-                    <tr>
-                        <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'> Text goes here</p></td>
-                    </tr>
-                </table>
-                <p style='margin-botton: 10px'>Nutrition support AT equipment delivery costs</p>
-                <table style='width:100%; border: 1px solid black'>
-                    <tr>
-                        <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'> Text goes here</p></td>
-                    </tr>
-                </table>
-                <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'>5.2 Extra Features.</p>
-                <p style='margin-bottom: 10px;'>List below and estimate cost of any other nutrition support supplies (including additional cost of food when necessary) that are desired by the participant but are not due to the functional limitation/s related to the participant’s disability and the achievement of their stated goals.</p>
-                <table>
-                <tbody>
+                <p style='margin-bottom: 10px'>Please attach:</p>
+                <p style='margin-bottom: 10px;margin-left:10px'>1.	A detailed quote outlining the full cost of any assessment, training of the participant with the dog, matching, and follow-up associated with the cost of the Assistance Animal purchase.</p>
+                <p style='margin-bottom: 10px;margin-left:10px'><b>Noting</b>, as outlined in the Assistance Animal Operational Guideline that NDIS funding is provided for a fully qualified Assistance Animal and not for the training of an animal to become an Assistance Animal.</p>
+                <p style='margin-bottom: 10px;margin-left:10px'>2.	Behaviour Support Plan (as outlined in section 3.3 if relevant).</p>
+                <p style='margin-bottom: 10px;'><b>Please Note:</b> For an approved Assistance Animal the NDIS will provide an appropriate annual maintenance cost which the participant can use to pay for reasonable and necessary Assistance Animal maintenance costs (including food, grooming, flea and worm treatments, medication, vaccinations, and veterinary costs).</p>";
+
+
+
+    $section5 =  "<p style='margin-top:10px'></p>
+            <table style='background-color:#7209B7; border:none; width:100%;'>
                 <tr>
-                    <td
-                        style='border: 1px solid lightslategray; padding: 10px; width: 33%; background-color: lightgrey; font-size: 17px'>
-                        Item(s)</td>
-                    <td
-                        style='border: 1px solid lightslategray; padding: 10px; width: 33%; background-color: lightgrey; font-size: 17px'>
-                        Quantity/frequency of supply required:
-                    </td>
-                    <td
-                        style='border: 1px solid lightslategray; padding: 10px; width: 33%; background-color: lightgrey; font-size: 17px'>
-                        Cost estimate including delivery:
+                    <td>
+                        <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'>	Part 5 - Participant feedback and notifications</p>
                     </td>
                 </tr>
-                <tr>
-                    <td style='border: 1px solid lightslategray; padding: 10px'>
-                        Field Data
-                    </td>
-                    <td style='border: 1px solid lightslategray; padding: 10px'>
-                        Field Data
-                    </td>
-                    <td style='border: 1px solid lightslategray; padding: 10px'>
-                        Field Data
-                    </td>
-                </tr>
-                <tr>
-
-                    <td style='border: 1px solid lightslategray; padding: 10px'>
-                        Field Data
-                    </td>
-                    <td style='border: 1px solid lightslategray; padding: 10px'>
-                        Field Data
-                    </td>
-                    <td style='border: 1px solid lightslategray; padding: 10px'>
-                        Field Data
-                    </td>
-                </tr>
-                <tr>
-
-                    <td style='border: 1px solid lightslategray; padding: 10px'>
-                        Field Data
-                    </td>
-                    <td style='border: 1px solid lightslategray; padding: 10px'>
-                        Field Data
-                    </td>
-                    <td style='border: 1px solid lightslategray; padding: 10px'>
-                        Field Data
-                    </td>
-                </tr>
-                </tbody>
-                </table>
-                <p style='margin-top:10px'>   </p>
-                <table style='width:100%; border: 1px solid black;'>
-                    <tr>
-                        <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'>Does the participant agree to pay for these from their own (not NDIS) funds? Yes/No</p></td>
-                    </tr>
-
-                    <tr>
-                        <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'> Text goes here</p></td>
-                    </tr>
-
-                    <tr>
-                        <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'>Other supplier’s specification (optional)</p></td>
-                    </tr>
-
-                    <tr>
-                        <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'> Text goes here</p></td>
-                    </tr>
-                </table>
-                <p style='margin-top:10px'></p>";
-
-
-
-
-
-
-
-
-
-
-$section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
-            <tr>
-                <td>
-                    <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'>  PART 6 – Details of Assistive Technology Assessor</p>
-                </td>
-            </tr>
             </table>
-            <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'>DECLARATION</p>
-            <p style='margin-bottom: 10px'>(indicate all relevant sections that apply).</p>
-
-            <table style=' width:100%; border: 1px solid black;'>
-            <tr>
-            <td style='width:80%; background-color: lightgrey; font-size: 17px;'>I certify that I meet the NDIA expectations of AT assessor provider suitability (including understanding of the current NDIS Act, Rules and Operational Guidelines) to assess the type of assistive technology and associated supports, at the level of complexity required by this participant.</td>
-            <td style='width:20%; border: 1px solid black;'></td>
-            </tr>
-            <tr>
-            <td style='width:80%; background-color: lightgrey; font-size: 17px;'>I will provide appropriate evidence to the NDIA and/or NDIS Quality and Safeguards Commission if and as requested.</td>
-            <td style='width:20%; border: 1px solid black;'></td>
-            </tr>
-            <tr>
-            <td style='width:80%; background-color: lightgrey; font-size: 17px;'>I understand and acknowledge that the NDIA and participant will rely on my professional advice to select, source and implement this assistive technology.</td>
-            <td style='width:20%; border: 1px solid black;'></td>
-            </tr>
-            <tr>
-            <td style='width:80%; background-color: lightgrey; font-size: 17px;'>This assistive technology has been assessed by the treating multi-disciplinary team and I have completed the AT assessment on behalf of that team.</td>
-            <td style='width:20%; border: 1px solid black;'></td>
-            </tr>
-            </table>
-            <p style='margin-top:10px'></p>
-
+            <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'>5.1	Agreement with AT request</p>
+            <p style='margin-bottom: 10px'>Is the Participant / Nominee in agreement with this AT request? Please describe any issues?</p>
             <table
-            style='
-                border-collapse: collapse;
-                width: 100%;
-                margin: auto;
-                border: 1px solid lightslategray;
-            '
-            >
-            <tbody>
+            style='border-collapse: collapse;width: 100%;margin: auto;border: 1px solid lightslategray;'>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Name</td>
                 <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
+                    {{part_5_agreement}}
                 </td>
                 </tr>
-                <tr>
-                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Position</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
-                </tr>
-                <tr>
-                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Qualification</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
-                </tr>
-                <tr>
-                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Business Name</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
-                </tr>
-                <tr>
-                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Contact Telephone Number</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
-                </tr>
-                <tr>
-                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Email</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
-                </tr>
-                <tr>
-                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Preferred Contact Method </td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
-                </tr>
-                <tr>
-                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Date of Assessment</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
-                </tr>
-                <tr>
-                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Date of Report</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
-                </tr>
-            </tbody>
             </table>
-            <p style='margin-top:10px'></p>";
+            <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'>5.1.1	Copy of assessment</p>
+            <p style='margin-bottom: 10px'>Has a copy of the assessment been given to the participant? If not please explain.</p>
+            <table style='width:100%; border: 1px solid black'>
+                <tr>
+                    <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'>{{part_5_copyassessment}}</p></td>
+                </tr>
+            </table>
+           ";
 
 
 
@@ -574,68 +408,127 @@ $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
 
 
 
-
-  $section7 = "<table style='background-color:#7209B7; border:none; width:100%;'>
+$section6 = "<p style='margin-top:10px'></p>
+            <table style='background-color:#7209B7; border:none; width:100%;'>
                 <tr>
                     <td>
-                        <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'>  PART 7 – Consent to Collect and Share Your Information - Provider AT Assessment and Quotation(s)</p>
+                        <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'>	6.	Part 6 – Details of Assistive Technology Assessor</p>
                     </td>
                 </tr>
-                </table>
-                <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'>For the participant to complete</p>
-                <p style='margin-bottom: 10px'>As a participant who requires assistive technology supports, the National Disability Insurance Agency (NDIA) may need to contact your service providers, health and medical practitioners to discuss information within your assistive technology assessment and quotation(s). This will assist the NDIA with determining whether your request for assistive technology funded support(s) can be provided to you under the NDIS.</p>
-                <p style='margin-bottom: 10px'>(indicate all relevant sections that apply)If you choose not to provide this consent, this may extend the time required in considering this request for assistive technology supports to be included in your NDIS plan.</p>
-                <p style='margin-bottom: 10px'>(indicate all relevant sections that apply)Do you consent to the NDIA collecting and disclosing your information, including from these third parties mentioned above, in relation to your assistive technology assessment and quotation? (Please tick either the yes or no answer below.)</p>
+            </table>
+            <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'><b>Declaration</b> (indicate all relevant section that apply)</p>
+            <p style='margin-bottom: 10px'>I/we certify that I/we meet the NDIA expectations of AT assessor provider suitability (including understanding of the current NDIS Act, Rules and Operational Guidelines) to assess the type of assistive technology and associated supports, at the level of complexity required by this participant.</p>
+            <p style='margin-bottom: 10px'>I/we will provide appropriate evidence to the NDIA and/or Quality and Safe Guards Commission if and as requested.</p>
+            <p style='margin-bottom: 10px'>I/we understand and acknowledge that the NDIA and participant will rely on my professional advice to select, source and implement this assistive technology.</p>
+            <p style='margin-bottom: 10px'>This assistive technology has been assessed by the treating multi-disciplinary team and I have completed the AT assessment on behalf of that team.</p>
+            <p style='margin-bottom: 10px;font-weight:bold;'>Assessor 1 Details</p>
+            <table
+            style='border-collapse: collapse;width: 100%;margin: auto;border: 1px solid lightslategray;'>
+                <tr>
+                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Name</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>
+                        {{part_5_agreement}}
+                    </td>
+                </tr>
+                <tr>
+                    <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>NDIS provider Registration number (where applicable)</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>
+                        {{part_5_agreement}}
+                    </td>
+                </tr>
+                <tr>
+                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Phone</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>
+                        {{part_5_agreement}}
+                    </td>
+                </tr>
+                <tr>
+                    <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Email</td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>
+                            {{part_5_agreement}}
+                        </td>
+                </tr>
+                <tr>
+                     <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Signature</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>
+                        {{part_5_agreement}}
+                    </td>
+                </tr>
+                <tr>
+                     <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Qualification</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>
+                        {{part_5_agreement}}
+                    </td>
+                </tr>
+                <tr>
+                     <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Date of Assessment</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>
+                        {{part_5_agreement}}
+                    </td>
+                </tr>
+                <tr>
+                     <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Date of Report</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>
+                        {{part_5_agreement}}
+                    </td>
+                </tr>
+            </table>
+            <p style='margin-bottom: 10px;font-weight:bold;'>Assessor 2 Details</p>
+            <table
+            style='border-collapse: collapse;width: 100%;margin: auto;border: 1px solid lightslategray;'>
+                <tr>
+                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Name</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>
+                        {{part_5_agreement}}
+                    </td>
+                </tr>
+                <tr>
+                    <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>NDIS provider Registration number (where applicable)</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>
+                        {{part_5_agreement}}
+                    </td>
+                </tr>
+                <tr>
+                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Phone</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>
+                        {{part_5_agreement}}
+                    </td>
+                </tr>
+                <tr>
+                    <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Email</td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>
+                            {{part_5_agreement}}
+                        </td>
+                </tr>
+                <tr>
+                     <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Signature</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>
+                        {{part_5_agreement}}
+                    </td>
+                </tr>
+                <tr>
+                     <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Qualification</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>
+                        {{part_5_agreement}}
+                    </td>
+                </tr>
+                <tr>
+                     <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Date of Assessment</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>
+                        {{part_5_agreement}}
+                    </td>
+                </tr>
+                <tr>
+                     <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Date of Report</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>
+                        {{part_5_agreement}}
+                    </td>
+                </tr>
+            </table>
+            ";
+            
 
-                <table style=' width:100%; border: 1px solid black;'>
-                <tr>
-                <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Yes, I consent</td>
-                <td style='width:60%; border: 1px solid black;'></td>
-                </tr>
-                <tr>
-                <td style='width:40%; background-color: lightgrey; font-size: 17px;'>No, I do not consent</td>
-                <td style='width:60%; border: 1px solid black;'></td>
-                </tr>
-                </table>
-                <p style='margin-bottom: 10px'>When i sign this form:</p>
-                <p style='margin-bottom: 10px'>I understand that I am giving consent to the NDIA to do the things with my information set out in Part 5. I understand that I can withdraw my consent for the NDIS to do things with my information at any time by letting the NDIA know.</p>
-                <p style='margin-bottom: 10px'>I understand that I can access the NDIA’s Privacy Notice and Privacy Policy on the NDIA website or by contacting the NDIA.</p>
-                <table style=' width:100%; border: 1px solid black;'>
-                <tr>
-                <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Signature</td>
-                <td style='width:60%; border: 1px solid black;'></td>
-                </tr>
-                <tr>
-                <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Full name</td>
-                <td style='width:60%; border: 1px solid black;'></td>
-                </tr>
-                <tr>
-                <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Date</td>
-                <td style='width:60%; border: 1px solid black;'></td>
-                </tr>
-                </table>
 
-                <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'>If you have signed this form on behalf of the NDIS participant,</p>
-                <p style='margin-bottom: 10px'>please complete the details below. It is an offence to provide false or misleading information.</p>
-                <p style='margin-bottom: 10px'>We may require you to provide evidence of your authority to sign on behalf of the person</p>
-                <table style=' width:100%; border: 1px solid black;'>
-                <tr>
-                <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Signature</td>
-                <td style='width:60%; border: 1px solid black;'></td>
-                </tr>
-                <tr>
-                <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Date</td>
-                <td style='width:60%; border: 1px solid black;'></td>
-                </tr>
-                <tr>
-                <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Full Name of person completing this form (please print):</td>
-                <td style='width:60%; border: 1px solid black;'></td>
-                </tr>
-                <tr>
-                <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Relationship to participant</td>
-                <td style='width:60%; border: 1px solid black;'></td>
-                </tr>
-                </table>";
 
 
                 $form = Form::create([
@@ -681,11 +574,11 @@ $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                 ]);
 
 
-                $heading7 = FormHeading::insertGetId([
-                    'form_heading' => 'Part 7 – Consent to collect and share your information',
-                    'form_id' => '2',
-                    'section_html' => $section7
-                ]);
+                // $heading7 = FormHeading::insertGetId([
+                //     'form_heading' => 'Part 7 – Consent to collect and share your information',
+                //     'form_id' => '2',
+                //     'section_html' => $section7
+                // ]);
         
 
 
@@ -1129,11 +1022,34 @@ $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
             }
         ]';
 
-    $form_fields4 = '[{"type":"textarea","required":false,"label":"Continence Recommendations","placeholder":"Enter Specific Evidence","className":"form-control","name":"part_4_con_recomm_specific_evidence","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Continence Recommendations","placeholder":"Enter additional features, customisation or specification recommended","className":"form-control","name":"part_4_con_recomm_additional_feature","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Item 1","placeholder":"Enter Item","className":"form-control","name":"part_4_con_recomm_item1","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Item 2","placeholder":"Enter Item","className":"form-control","name":"part_4_con_recomm_item2","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Item 3","placeholder":"Enter Item","className":"form-control","name":"part_4_con_recomm_item3","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Quantity 1","placeholder":"Enter Quantity","className":"form-control","name":"part_4_con_recomm_quantity1","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Quantity 2","placeholder":"Enter Quantity","className":"form-control","name":"part_4_con_recomm_quantity2","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Quantity 3","placeholder":"Enter Quantity","className":"form-control","name":"part_4_con_recomm_quantity3","access":false,"subtype":"textarea"},{"type":"text","required":false,"label":"Frequency of Supply 1","placeholder":"Enter Frequency of Supply","className":"form-control","name":"part_4_con_recomm_frequency1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Frequency of Supply 2","placeholder":"Enter Frequency of Supply","className":"form-control","name":"part_4_con_recomm_frequency2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Frequency of Supply 3","placeholder":"Enter Frequency of Supply","className":"form-control","name":"part_4_con_recomm_frequency3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"State / Specification 1","placeholder":"Enter State/Specification","className":"form-control","name":"part_4_con_recomm_StateSpecification1","access":false,"subtype":"text"},{"type":"text","required":false,"label":"State / Specification 2","placeholder":"Enter State/Specification","className":"form-control","name":"part_4_con_recomm_StateSpecification2","access":false,"subtype":"text"},{"type":"text","required":false,"label":"State / Specification 3","placeholder":"Enter State/Specification","className":"form-control","name":"part_4_con_recomm_StateSpecification3","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Preferred supplier (Optional)","placeholder":"Enter your Preferred Supplier","className":"form-control","name":"part_4_con_recomm_preferred_supplier1","access":false,"subtype":"text"},{"type":"checkbox-group","required":false,"label":"Supplier Product Use Guidence","toggle":false,"inline":false,"name":"part_4_con_recomm_SPUG1","access":false,"other":false,"values":[{"label":"Option 1","value":"option-1","selected":true}]},{"type":"textarea","required":false,"label":"Information and Instructions","placeholder":"Enter Information and Instructions for Usage.","className":"form-control","name":"part_4_con_recomm_information_instructions_field","access":false,"subtype":"textarea"},{"type":"textarea","required":false,"label":"Urgent supply required?&nbsp;","placeholder":"Enter detail with YES/NO","className":"form-control","name":"part_4_con_recomm_urgentSupply","access":false,"subtype":"textarea"},{"type":"text","required":false,"label":"Scheme Specification (Optional)","placeholder":"Enter your scheme specification here.","className":"form-control","name":"part_4_con_recomm_schemeSpecification","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Other supplier specification (Optional)","placeholder":"Enter your supplier specification","className":"form-control","name":"part_4_con_recomm_supplier_specification","access":false,"subtype":"text"},{"type":"radio-group","required":true,"label":"Participant Agreement","inline":false,"name":"part_4_con_recomm_participant_agreement","access":false,"other":false,"values":[{"label":"Yes","value":"","selected":true},{"label":"No","value":"option-2","selected":false},{"label":"Please provide details","value":"option-3","selected":false}]}]';
+    $form_fields4 = '[]';
 
-    $form_fields5 = '[{"type":"checkbox-group","required":false,"label":"Meet the NDIA expectation","toggle":false,"inline":false,"name":"part_5_declaration_NDIA_expectation","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":true}]},{"type":"checkbox-group","required":false,"label":"Providing appropriate evidence to the NDIA","toggle":false,"inline":false,"name":"part_5_declaration_appropriate_evidence","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":true}]},{"type":"checkbox-group","required":false,"label":"I understand all about the NDIA","toggle":false,"inline":false,"name":"part_5_declaration_NDIA_understanding","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":false}]},{"type":"checkbox-group","required":false,"label":"Accessing by the treating multi-disciplinary team","toggle":false,"inline":false,"name":"part_5_declaration_accessing_team","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":false}]},{"type":"text","required":false,"label":"Name","placeholder":"Enter Assessor’s  Name","className":"form-control","name":"part_5_assessors_name","access":false,"subtype":"text"},{"type":"text","required":false,"label":"NDIS Provider Registration Number","placeholder":"Enter Registration Number","className":"form-control","name":"part_5_registration_number","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Phone Number","placeholder":"Enter Phone Number","className":"form-control","name":"part_5_assessorphone_number","access":false,"subtype":"text"},{"type":"text","subtype":"email","required":false,"label":"Email","placeholder":"Enter Email Address","className":"form-control","name":"part_5_email_address","access":false},{"type":"text","required":false,"label":"Qualification","placeholder":"Enter Qualification here.","className":"form-control","name":"part_5_qualification","access":false,"subtype":"text"},{"type":"date","required":false,"label":"Date of Assessment","placeholder":"Set Date of Assessment","className":"form-control","name":"part_5_date_assessment","access":false},{"type":"date","required":false,"label":"Date of Report","placeholder":"Set Date of Report","className":"form-control","name":"part_5_reportDate","access":false}]';
+    $form_fields5 = '[
+        {
+            "type":"text",
+            "required":false,
+            "label":"Participant Nominee Agreement",
+            "placeholder":"Is the Participant / Nominee in agreement with this AT request? Please describe any issues?",
+            "className":"form-control",
+            "name":"part_5_agreement",
+            "access":false,
+            "subtype":"text"
+        },
+        {
+            "type":"text",
+            "required":false,
+            "label":"Copy of Assessment",
+            "placeholder":"Has a copy of the assessment been given to the participant? If not please explain.",
+            "className":"form-control",
+            "name":"part_5_copyassessment",
+            "access":false,
+            "subtype":"text"
+        }
+    ]';
 
-    $form_fields6 = '[{"type":"checkbox-group","required":false,"label":"Meet the NDIA expectation","toggle":false,"inline":false,"name":"part_6_declaration_NDIA_expectation","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":true}]},{"type":"checkbox-group","required":false,"label":"Providing appropriate evidence to the NDIA","toggle":false,"inline":false,"name":"part_6_declaration_appropriate_evidence","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":true}]},{"type":"checkbox-group","required":false,"label":"I understand all about the NDIA","toggle":false,"inline":false,"name":"part_6_declaration_NDIA_understanding","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":false}]},{"type":"checkbox-group","required":false,"label":"Accessing by the treating multi-disciplinary team","toggle":false,"inline":false,"name":"part_6_declaration_accessing_team","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":false}]},{"type":"text","required":false,"label":"Name","placeholder":"Enter Assessor’s  Name","className":"form-control","name":"part_6_assessors_name","access":false,"subtype":"text"},{"type":"text","required":false,"label":"NDIS Provider Registration Number","placeholder":"Enter Registration Number","className":"form-control","name":"part_6_registration_number","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Phone Number","placeholder":"Enter Phone Number","className":"form-control","name":"part_6_assessorphone_number","access":false,"subtype":"text"},{"type":"text","subtype":"email","required":false,"label":"Email","placeholder":"Enter Email Address","className":"form-control","name":"part_6_email_address","access":false},{"type":"text","required":false,"label":"Qualification","placeholder":"Enter Qualification here.","className":"form-control","name":"part_6_qualification","access":false,"subtype":"text"},{"type":"date","required":false,"label":"Date of Assessment","placeholder":"Set Date of Assessment","className":"form-control","name":"part_6_date_assessment","access":false},{"type":"date","required":false,"label":"Date of Report","placeholder":"Set Date of Report","className":"form-control","name":"part_6_reportDate","access":false}]';
+    $form_fields6 = '[
+        
+    ]';
 
     FormField::create([
         'form_heading_id' => $heading1,
@@ -1159,10 +1075,10 @@ $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
         'form_heading_id' => $heading6,
         'form_field' => $form_fields6
     ]);
-    FormField::create([
-        'form_heading_id' => $heading7,
-        'form_field' => $form_fields6
-    ]);
+    // FormField::create([
+    //     'form_heading_id' => $heading7,
+    //     'form_field' => $form_fields6
+    // ]);
 
 
     }
