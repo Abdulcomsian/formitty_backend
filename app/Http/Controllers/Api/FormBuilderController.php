@@ -654,6 +654,114 @@ class FormBuilderController extends ApiController
         return $section_html;
     }
 
+    public function createDSMSELFTool($response, $section_html){
+        // Add questions and answers to the HTML
+        $section_html .= "<table style='width: 100%; border-collapse: collapse; border: 1px solid black'>
+        <tbody>
+          <tr>
+            <td colspan='7' style='width: 90%; border: 1px solid black'></td>
+            <td style='width: 10%;
+                border: 1px solid black;
+                background-color: #DBE4F0;
+                font-weight: bold;
+                text-align: center;'
+            >Clinician Use</td>
+          </tr>
+          <tr style='border: 1px solid black'>
+            <td colspan='7' style='width: 93%; border: 1px solid black'>In the past SEVEN (7) DAYS....</td>
+            <td
+              style='
+                width: 7%;
+                background-color: #DBE4F0;
+                font-weight: bold;
+                text-align: center;
+                border-bottom: 1px solid #DBE4F0;
+              '
+            >Item</td>
+          </tr>
+          <tr style='background-color: #DBE4F0'>
+            <td colspan='2' style='width: 58%'></td>
+            <td
+              style='
+                width: 7%;
+                border: 1px solid black;
+                font-weight: bold;
+                text-align: center;
+              '
+            >Never</td>
+            <td
+              style='
+                width: 7%;
+                border: 1px solid black;
+                font-weight: bold;
+                text-align: center;
+              '
+            >Rarely</td>
+            <td
+              style='
+                width: 7%;
+                border: 1px solid black;
+                font-weight: bold;
+                text-align: center;
+              '
+            >Sometimes</td>
+            <td
+              style='
+                width: 7%;
+                border: 1px solid black;
+                font-weight: bold;
+                text-align: center;
+              '
+            >Often</td>
+            <td
+              style='
+                width: 7%;
+                border: 1px solid black;
+                font-weight: bold;
+                text-align: center;
+              '
+            >Always</td>
+            <td
+              style='
+                width: 7%;
+                background-color: #DBE4F0;
+                font-weight: bold;
+                text-align: center;
+                border-top: 1px solid #DBE4F0;
+                border: 1px solid black;
+              '
+            >Score</td>
+          </tr>";
+        $count = 0;
+        foreach($response->assessment_tool->questions as $question) {
+            $answer = $question->answers->answer ?? '';
+
+            $answer0 = ($answer == '0' ? $answer : '');
+            $answer1 = ($answer == '1' ? $answer : '');
+            $answer2 = ($answer == '2' ? $answer : '');
+            $answer3 = ($answer == '3' ? $answer : '');
+            $answer4 = ($answer == '4' ? $answer : '');
+
+            $section_html .= "
+            <tr>
+                <td style='width: 4%; border: 1px solid black; text-align: center;'>1</td>
+                <td style='width: 54%; border: 1px solid black'>I felt worthless.</td>
+                <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer0</td>
+                <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer1</td>
+                <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer2</td>
+                <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer3</td>
+                <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer4</td>
+                <td style=' width: 7%; background-color: #DBE4F0; border: 1px solid black; text-align: center;'>6</td>
+            </tr>";
+        }
+        $section_html .= "
+        </tbody>
+        </table>
+        ";
+
+        return $section_html;
+    }
+
 
     public function getUserForm(Request $request)
     {
