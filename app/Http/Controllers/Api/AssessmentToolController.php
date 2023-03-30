@@ -13,6 +13,7 @@ use App\Models\FlowchartResponse;
 use App\Models\Answer;
 use App\Models\Response;
 use App\Models\FlowchartAnswer;
+use App\Models\AssessmentGroup;
 use Illuminate\Support\Facades\Auth;
 
 class AssessmentToolController extends ApiController
@@ -116,16 +117,16 @@ class AssessmentToolController extends ApiController
                         'response_id' => $response->id,
                         'answer' => $value,
                     ]);
-                } elseif($name == 'comment'){
+                } elseif ($name == 'comment') {
                     $question = Answer::where([['question_id', $question_id], ['response_id', $response->id]])->first();
-                    if($question) {
+                    if ($question) {
                         $question->update([
                             'answer' => $value,
                         ]);
                     }
                 } elseif ($name == 'level') {
                     $question = Answer::where([['question_id', $question_id], ['response_id', $response->id]])->first();
-                    if($question) {
+                    if ($question) {
                         $question->update([
                             'level' => $value,
                         ]);
@@ -136,10 +137,15 @@ class AssessmentToolController extends ApiController
                         'answer' => $value,
                         'response_id' => $response->id
                     ]);
+                }  elseif($name == 'group_point'){
+                    $group = AssessmentGroup::findorfail($question_id);
+                    if ($group) {
+                        $group->update([
+                            'point' => $value,
+                        ]);
+                    }
                 }
-
-                $answer->save();
-            }
+        }
 
             return $this->successResponse($response, 'Questions get successfully!.', 200);
         } catch (\Throwable $th) {

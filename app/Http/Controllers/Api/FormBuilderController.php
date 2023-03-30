@@ -439,7 +439,7 @@ class FormBuilderController extends ApiController
         if($response->assessment_tool->id == '3'){
             $section_html = $this->createDSMSELFTool($response, $section_html);
         }
-        if($response->assessment_tool->id == '4' || $response->assessment_tool->id == '5' ){
+        if($response->assessment_tool->id == '4' $response->assessment_tool->id == '5' ){
             $section_html = $this->createDSMPARENTTool($response, $section_html);
         }
         return $section_html;
@@ -860,17 +860,36 @@ class FormBuilderController extends ApiController
             $answer3 = ($answer == '3' ? $answer : '');
             $answer4 = ($answer == '4' ? $answer : '');
 
-            $section_html .= "
-            <tr>
-                <td rowspan='2' style='width: 4%; border: 1px solid black; text-align: center;'>".$count."</td>
-                <td style='width: 54%; border: 1px solid black'>".$count."  ".$quest."</td>
-                <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer0</td>
-                <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer1</td>
-                <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer2</td>
-                <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer3</td>
-                <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer4</td>
-                <td style=' width: 7%; background-color: #DBE4F0; border: 1px solid black; text-align: center;'>6</td>
-            </tr>";
+            $yes = ($answer == 'Yes' ? $answer : '');
+            $no = ($answer == 'No' ? $answer : '');
+            $none = ($answer == 'None' ? $answer : '');
+
+            if($question->type == 'multiple_choice'){
+                $section_html .= "
+                <tr>
+                    <td rowspan='2' style='width: 4%; border: 1px solid black; text-align: center;'>".$count."</td>
+                    <td style='width: 54%; border: 1px solid black'>".$count."  ".$quest."</td>
+                    <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer0</td>
+                    <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer1</td>
+                    <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer2</td>
+                    <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer3</td>
+                    <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer4</td>
+                    <td style=' width: 7%; background-color: #DBE4F0; border: 1px solid black; text-align: center;'>6</td>
+                </tr>";
+            }
+
+            if($question->type == 'open_ended'){
+                $section_html .= "
+                <tr>
+                    <td rowspan='2' style='width: 4%; border: 1px solid black; text-align: center;'>".$count."</td>
+                    <td style='width: 54%; border: 1px solid black'>".$count."  ".$quest."</td>
+                    <td style='width: 7%; border: 1px solid black; text-align: center;'>".$yes."</td>
+                    <td colspan='2' style='width: 7%; border: 1px solid black; text-align: center;'>".$no."</td>
+                    <td colspan='2' style='width: 7%; border: 1px solid black; text-align: center;'>".$none."</td>
+                    <td style=' width: 7%; background-color: #DBE4F0; border: 1px solid black; text-align: center;'>6</td>
+                </tr>";
+            }
+
         }
         $section_html .= "
         </tbody>
