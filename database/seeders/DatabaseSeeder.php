@@ -32,6 +32,8 @@ class DatabaseSeeder extends Seeder
         $this->call(DSMPARENTAssessmentToolSeeder::class);
         $this->call(DSMSELFCHILDAssessmentToolSeeder::class);
         $this->call(PROMISAssessmentToolSeeder::class);
+        $this->call(LEVEL2ANGERADULTAssessmentToolSeeder::class);
+        $this->call(MRS9QAssessmentToolSeeder::class);
 //        $this->call(AssessmentToolSeeder::class);
 //        $this->call(QuestionsTableSeeder::class);
 //        $this->call(FlowChartQuestionTableSeeder::class);
