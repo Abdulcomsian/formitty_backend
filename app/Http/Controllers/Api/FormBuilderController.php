@@ -439,7 +439,7 @@ class FormBuilderController extends ApiController
         if($response->assessment_tool->id == '3'){
             $section_html = $this->createDSMSELFTool($response, $section_html);
         }
-        if($response->assessment_tool->id == '4' $response->assessment_tool->id == '5' ){
+        if($response->assessment_tool->id == '4' || $response->assessment_tool->id == '5' ){
             $section_html = $this->createDSMPARENTTool($response, $section_html);
         }
         return $section_html;
