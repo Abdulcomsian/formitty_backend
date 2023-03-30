@@ -20,7 +20,7 @@ class MRS9QAssessmentToolSeeder extends Seeder
 
         $assessment_tool = AssessmentTool::create([
             'title' => 'Level of Function Survey - mRS-9Q',
-            'slug' => 'anger-adult',
+            'slug' => 'mrs-9q',
             'type' => 'questionnaire'
         ]);
 
