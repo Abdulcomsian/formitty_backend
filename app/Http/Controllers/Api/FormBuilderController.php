@@ -859,6 +859,7 @@ class FormBuilderController extends ApiController
             $answer2 = ($answer == '2' ? $answer : '');
             $answer3 = ($answer == '3' ? $answer : '');
             $answer4 = ($answer == '4' ? $answer : '');
+            $group_point = $question->assessmentGroup->point ?? '';
 
             $yes = ($answer == 'Yes' ? $answer : '');
             $no = ($answer == 'No' ? $answer : '');
@@ -874,7 +875,7 @@ class FormBuilderController extends ApiController
                     <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer2</td>
                     <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer3</td>
                     <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer4</td>
-                    <td style=' width: 7%; background-color: #DBE4F0; border: 1px solid black; text-align: center;'>6</td>
+                    <td style=' width: 7%; background-color: #DBE4F0; border: 1px solid black; text-align: center;'>".$group_point."</td>
                 </tr>";
             }
 
@@ -886,7 +887,7 @@ class FormBuilderController extends ApiController
                     <td style='width: 7%; border: 1px solid black; text-align: center;'>".$yes."</td>
                     <td colspan='2' style='width: 7%; border: 1px solid black; text-align: center;'>".$no."</td>
                     <td colspan='2' style='width: 7%; border: 1px solid black; text-align: center;'>".$none."</td>
-                    <td style=' width: 7%; background-color: #DBE4F0; border: 1px solid black; text-align: center;'>6</td>
+                    <td style=' width: 7%; background-color: #DBE4F0; border: 1px solid black; text-align: center;'>".$group_point."</td>
                 </tr>";
             }
 
