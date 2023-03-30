@@ -737,6 +737,7 @@ class FormBuilderController extends ApiController
           </tr>";
         $count = 0;
         foreach($response->assessment_tool->questions as $question) {
+            $count++;
             $quest = $question->title ?? '';
             $answer = $question->answers->answer ?? '';
 
@@ -748,8 +749,8 @@ class FormBuilderController extends ApiController
 
             $section_html .= "
             <tr>
-                <td style='width: 4%; border: 1px solid black; text-align: center;'>1</td>
-                <td style='width: 54%; border: 1px solid black'>".$quest."</td>
+                <td rowspan='2' style='width: 4%; border: 1px solid black; text-align: center;'>".$count."</td>
+                <td style='width: 54%; border: 1px solid black'>".$count."  ".$quest."</td>
                 <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer0</td>
                 <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer1</td>
                 <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer2</td>
