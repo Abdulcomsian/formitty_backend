@@ -231,14 +231,14 @@ class DSMPARENTAssessmentToolSeeder extends Seeder
             'assessment_group_id' => $group11->id,
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Had an alcoholic beverage (beer, wine, liquor, etc.)?',
-            'type' => 'multiple_choice',
+            'type' => 'open_ended',
         ]);
 
         $question21 = Question::create([
             'assessment_group_id' => $group11->id,
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Smoked a cigarette, a cigar, or pipe, or used snuff or chewing tobacco?',
-            'type' => 'multiple_choice',
+            'type' => 'open_ended',
         ]);
 
         $question22 = Question::create([
@@ -247,7 +247,7 @@ class DSMPARENTAssessmentToolSeeder extends Seeder
             'title' => 'Used drugs like marijuana, cocaine or crack, club drugs (like ecstasy),
             hallucinogens (like LSD), heroin, inhalants or solvents (like glue), or
             methamphetamine (like speed)?',
-            'type' => 'multiple_choice',
+            'type' => 'open_ended',
         ]);
 
         $question23 = Question::create([
@@ -256,7 +256,7 @@ class DSMPARENTAssessmentToolSeeder extends Seeder
             'title' => 'Used any medicine without a doctor’s prescription (e.g., painkillers [like
             Vicodin], stimulants [like Ritalin or Adderall], sedatives or tranquilizers [like
             sleeping pills or Valium], or steroids)?',
-            'type' => 'multiple_choice',
+            'type' => 'open_ended',
         ]);
 
         $question24 = Question::create([
@@ -264,14 +264,14 @@ class DSMPARENTAssessmentToolSeeder extends Seeder
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'In the past TWO (2) WEEKS, has he/she talked about wanting to kill
             himself/herself or about wanting to commit suicide?',
-            'type' => 'multiple_choice',
+            'type' => 'open_ended',
         ]);
 
         $question25 = Question::create([
             'assessment_group_id' => $group12->id,
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Has he/she EVER tried to kill himself/herself?',
-            'type' => 'multiple_choice',
+            'type' => 'open_ended',
         ]);
     }
 }
