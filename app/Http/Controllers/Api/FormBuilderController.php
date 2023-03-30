@@ -905,7 +905,7 @@ class FormBuilderController extends ApiController
 
     public function createLEVEL2TTool($response, $section_html){
         // Add questions and answers to the HTML
-        $section_html .= "table style='width: 100%; border-collapse: collapse; border: 1px solid black'>
+        $section_html .= "<table style='width: 100%; border-collapse: collapse; border: 1px solid black'>
                         <tbody>
                           <tr>
                             <td colspan='7' style='width: 90%; border: 1px solid black'></td>
