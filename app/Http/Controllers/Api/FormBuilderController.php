@@ -610,6 +610,7 @@ class FormBuilderController extends ApiController
           </tr>";
         $count = 0;
         foreach($response->assessment_tool->questions as $question){
+            $quest = $question->title ?? '';
             if($question->type == 'multiple_choice'){
                 $answer = $question->answers->answer ?? '';
 
@@ -625,7 +626,7 @@ class FormBuilderController extends ApiController
                 $section_html .= "
                     <tr>
                         <td style='width: 5%; text-align: center; background-color: #F0F9FF'>".$count++."</td>
-                        <td style='width: 53%; border: 1px solid black; background-color: #F0F9FF'>".$question->title."</td>
+                        <td style='width: 53%; border: 1px solid black; background-color: #F0F9FF'>".$quest."</td>
                         <td style='width: 8%; border: 1px solid black; text-align: center'>".$answer0."</td>
                         <td style='width: 8%; border: 1px solid black; text-align: center'>".$answer1."</td>
                         <td style='width: 8%; border: 1px solid black; text-align: center'>".$answer2."</td>
@@ -635,7 +636,6 @@ class FormBuilderController extends ApiController
             }
 
             if($question->type == 'open_ended'){
-                $quest = $question->title ?? '';
                 $answer = $question->answers->answer ?? '';
                 $section_html .= "
                       <tr>
@@ -737,6 +737,7 @@ class FormBuilderController extends ApiController
           </tr>";
         $count = 0;
         foreach($response->assessment_tool->questions as $question) {
+            $quest = $question->title ?? '';
             $answer = $question->answers->answer ?? '';
 
             $answer0 = ($answer == '0' ? $answer : '');
@@ -748,7 +749,7 @@ class FormBuilderController extends ApiController
             $section_html .= "
             <tr>
                 <td style='width: 4%; border: 1px solid black; text-align: center;'>1</td>
-                <td style='width: 54%; border: 1px solid black'>I felt worthless.</td>
+                <td style='width: 54%; border: 1px solid black'>".$quest."</td>
                 <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer0</td>
                 <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer1</td>
                 <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer2</td>
