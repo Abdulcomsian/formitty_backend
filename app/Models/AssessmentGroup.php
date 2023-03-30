@@ -12,6 +12,7 @@ class AssessmentGroup extends Model
     protected $fillable = [
         'assessment_tool_id',
         'title',
+        'point',
     ];
 
     public function questions()
