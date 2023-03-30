@@ -879,9 +879,7 @@ class FormBuilderController extends ApiController
 
         return $section_html;
     }
-
-    public function create
-
+    
     public function getUserForm(Request $request)
     {
         try {
