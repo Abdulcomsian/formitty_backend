@@ -442,6 +442,9 @@ class FormBuilderController extends ApiController
         if($response->assessment_tool->id == '4' || $response->assessment_tool->id == '5' ){
             $section_html = $this->createDSMPARENTTool($response, $section_html);
         }
+        if($response->assessment_tool->id == '6' || $response->assessment_tool->id == '7' ){
+            $section_html = $this->createLEVEL2TTool($response, $section_html);
+        }
         return $section_html;
     }
 
@@ -892,6 +895,133 @@ class FormBuilderController extends ApiController
             }
 
         }
+        $section_html .= "
+        </tbody>
+        </table>
+        ";
+
+        return $section_html;
+    }
+
+    public function createLEVEL2TTool($response, $section_html){
+        // Add questions and answers to the HTML
+        $section_html .= "table style='width: 100%; border-collapse: collapse; border: 1px solid black'>
+                        <tbody>
+                          <tr>
+                            <td colspan='7' style='width: 90%; border: 1px solid black'></td>
+                            <td
+                              style='
+                                width: 10%;
+                                border: 1px solid black;
+                                background-color: #DBE4F0;
+                                font-weight: bold;
+                                text-align: center;
+                              '
+                            >Clinician Use</td>
+                          </tr>
+                          <tr style='border: 1px solid black'>
+                            <td colspan='7' style='width: 93%; font-weight: bold; border: 1px solid black'>In the past SEVEN (7) DAYS....</td>
+                            <td
+                              style='
+                                width: 7%;
+                                background-color: #DBE4F0;
+                                font-weight: bold;
+                                text-align: center;
+                                border-bottom: 1px solid #DBE4F0;
+                              '
+                            >Item</td>
+                          </tr>
+                          <tr style='background-color: #DBE4F0'>
+                            <td colspan='2' style='width: 58%'></td>
+                            <td
+                              style='
+                                width: 7%;
+                                border: 1px solid black;
+                                font-weight: bold;
+                                text-align: center;
+                              '
+                            >Never</td>
+                            <td
+                              style='
+                                width: 7%;
+                                border: 1px solid black;
+                                font-weight: bold;
+                                text-align: center;
+                              '
+                            >Rarely</td>
+                            <td
+                              style='
+                                width: 7%;
+                                border: 1px solid black;
+                                font-weight: bold;
+                                text-align: center;
+                              '
+                            >Sometimes</td>
+                            <td
+                              style='
+                                width: 7%;
+                                border: 1px solid black;
+                                font-weight: bold;
+                                text-align: center;
+                              '
+                            >Often</td>
+                            <td
+                              style='
+                                width: 7%;
+                                border: 1px solid black;
+                                font-weight: bold;
+                                text-align: center;
+                              '
+                            >Always</td>
+                            <td
+                              style='
+                                width: 7%;
+                                background-color: #DBE4F0;
+                                font-weight: bold;
+                                text-align: center;
+                                border-top: 1px solid #DBE4F0;
+                                border: 1px solid black;
+                              '
+                            >Score</td>
+                          </tr>";
+        $count = 0;
+        foreach($response->assessment_tool->questions as $question) {
+            $count++;
+            $quest = $question->title ?? '';
+            $answer = $question->answers->answer ?? '';
+            $answer1 = ($answer == '0' ? $answer : '');
+            $answer2 = ($answer == '1' ? $answer : '');
+            $answer3 = ($answer == '2' ? $answer : '');
+            $answer4 = ($answer == '3' ? $answer : '');
+            $answer5 = ($answer == '4' ? $answer : '');
+            $section_html .= "
+             <tr>
+                <td style='width: 7%; border: 1px solid black; text-align: center;'>1</td>
+                <td style='width: 51%; border: 1px solid black'><table><tr><td></td><td>I felt worthless.</td></tr></table></td>
+                <td style='width: 7%; border: 1px solid black; text-align: center;'>".$answer1."</td>
+                <td style='width: 7%; border: 1px solid black; text-align: center;'>".$answer2."</td>
+                <td style='width: 7%; border: 1px solid black; text-align: center;'>".$answer3."</td>
+                <td style='width: 7%; border: 1px solid black; text-align: center;'>".$answer4."</td>
+                <td style='width: 7%; border: 1px solid black; text-align: center;'>".$answer5."</td>
+                <td style=' width: 7%; background-color: #DBE4F0; border: 1px solid black; text-align: center;'>6</td>
+              </tr>";
+        }
+        $section_html .= "
+          <tr>
+            <td colspan='7' style='font-weight: bold; text-align: right; background-color: #DBE4F0; border: 1px solid black'>Total/Partial Raw Score:</td>
+            <td style='width: 7%; border: 1px solid black; text-align: center; background-color: #DBE4F0'></td>
+          </tr>
+          <tr>
+            <td colspan='7' style='font-weight: bold; text-align: right; background-color: #DBE4F0; border: 1px solid black'>Prorated Total Raw Score:</td>
+            <td style='width: 7%; border: 1px solid black; text-align: center; background-color: #DBE4F0'></td>
+          </tr>
+          <tr>
+            <td colspan='7' style='font-weight: bold; text-align: right; background-color: #DBE4F0; border: 1px solid black'>T-Score:</td>
+            <td style='width: 7%; border: 1px solid black; text-align: center; background-color: #DBE4F0'></td>
+          </tr>
+        </tbody>
+        </table>";
+
         $section_html .= "
         </tbody>
         </table>
