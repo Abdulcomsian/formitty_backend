@@ -1018,9 +1018,7 @@ class FormBuilderController extends ApiController
           <tr>
             <td colspan='7' style='font-weight: bold; text-align: right; background-color: #DBE4F0; border: 1px solid black'>T-Score:</td>
             <td style='width: 7%; border: 1px solid black; text-align: center; background-color: #DBE4F0'></td>
-          </tr>
-        </tbody>
-        </table>";
+          </tr>";
 
         $section_html .= "
         </tbody>
