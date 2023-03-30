@@ -19,7 +19,7 @@ class MRS9QAssessmentToolSeeder extends Seeder
         $faker = \Faker\Factory::create();
 
         $assessment_tool = AssessmentTool::create([
-            'title' => 'LEVEL 2—ANGER—Adult',
+            'title' => 'Level of Function Survey - mRS-9Q',
             'slug' => 'anger-adult',
             'type' => 'questionnaire'
         ]);
