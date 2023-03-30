@@ -145,7 +145,9 @@ class AssessmentToolController extends ApiController
                         ]);
                     }
                 }
-        }
+                $answer->save();
+
+            }
 
             return $this->successResponse($response, 'Questions get successfully!.', 200);
         } catch (\Throwable $th) {
