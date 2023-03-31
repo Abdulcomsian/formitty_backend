@@ -606,7 +606,18 @@ class FormBuilderController extends ApiController
 
     public function createWHODASTool($response, $section_html){
         // Add questions and answers to the HTML
+        $title = $response->assessment_tool->title ?? '';
         $section_html .= "<table style='width: 100%; border-collapse: collapse'>
+                            <thead>
+                              <tr style='background-color: #6A2C75'>
+                                <td colspan='8'>
+                                  <p style=' font-size: 14pt; font-weight: bold; margin-top: 8px;
+                                      margin-bottom: 8px;
+                                      color: white; '>".$title."
+                                    </p>
+                                </td>
+                              </tr>
+                            </thead>
         <tbody>
           <tr style='background-color: #F0F9FF'>
             <th style='width: 5%'></th>
@@ -668,7 +679,18 @@ class FormBuilderController extends ApiController
 
     public function createDSMSELFTool($response, $section_html){
         // Add questions and answers to the HTML
+        $title = $response->assessment_tool->title ?? '';
         $section_html .= "<table style='width: 100%; border-collapse: collapse; border: 1px solid black'>
+                            <thead>
+                              <tr style='background-color: #6A2C75'>
+                                <td colspan='8'>
+                                  <p style=' font-size: 14pt; font-weight: bold; margin-top: 8px;
+                                      margin-bottom: 8px;
+                                      color: white; '>".$title."
+                                    </p>
+                                </td>
+                              </tr>
+                            </thead>
         <tbody>
           <tr>
             <td colspan='7' style='width: 90%; border: 1px solid black'></td>
@@ -778,7 +800,18 @@ class FormBuilderController extends ApiController
 
     public function createDSMPARENTTool($response, $section_html){
         // Add questions and answers to the HTML
+        $title = $response->assessment_tool->title ?? '';
         $section_html .= "<table style='width: 100%; border-collapse: collapse; border: 1px solid black'>
+                            <thead>
+                              <tr style='background-color: #6A2C75'>
+                                <td colspan='8'>
+                                  <p style=' font-size: 14pt; font-weight: bold; margin-top: 8px;
+                                      margin-bottom: 8px;
+                                      color: white; '>".$title."
+                                    </p>
+                                </td>
+                              </tr>
+                            </thead>
         <tbody>
           <tr>
             <td colspan='7' style='width: 90%; border: 1px solid black'></td>
@@ -908,7 +941,18 @@ class FormBuilderController extends ApiController
 
     public function createLEVEL2TTool($response, $section_html){
         // Add questions and answers to the HTML
+        $title = $response->assessment_tool->title ?? '';
         $section_html .= "<table style='width: 100%; border-collapse: collapse; border: 1px solid black'>
+                            <thead>
+                              <tr style='background-color: #6A2C75'>
+                                <td colspan='8'>
+                                  <p style=' font-size: 14pt; font-weight: bold; margin-top: 8px;
+                                      margin-bottom: 8px;
+                                      color: white; '>".$title."
+                                    </p>
+                                </td>
+                              </tr>
+                            </thead>
                         <tbody>
                           <tr>
                             <td colspan='7' style='width: 90%; border: 1px solid black'></td>
@@ -1034,13 +1078,13 @@ class FormBuilderController extends ApiController
 
     public function createMRS9QTool($response, $section_html){
         // Add questions and answers to the HTML
+        $title = $response->assessment_tool->title ?? '';
         $section_html .= "<table style='width: 100%; border-collapse: collapse; border: 1px solid black; margin-top: 8px;'>
                             <thead>
                                       <tr style='background-color: #6A2C75'>
                                         <td colspan='2'>
                                           <p style=' font-size: 14pt; font-weight: bold; margin-top: 8px;
-                                              margin-bottom: 8px;
-                                              color: white; '>".$response->assessment_tool->title."
+                                              margin-bottom: 8px; color: white; '>".$title."
                                             </p>
                                         </td>
                                       </tr>
