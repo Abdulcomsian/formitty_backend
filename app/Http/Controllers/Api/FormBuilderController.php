@@ -445,6 +445,9 @@ class FormBuilderController extends ApiController
         if($response->assessment_tool->id == '6' || $response->assessment_tool->id == '7' ){
             $section_html = $this->createLEVEL2TTool($response, $section_html);
         }
+        if($response->assessment_tool->id == '8' ){
+            $section_html = $this->createMRS9QTool($response, $section_html);
+        }
         return $section_html;
     }
 
@@ -1020,6 +1023,30 @@ class FormBuilderController extends ApiController
             <td colspan='7' style='font-weight: bold; text-align: right; background-color: #DBE4F0; border: 1px solid black'>T-Score:</td>
             <td style='width: 7%; border: 1px solid black; text-align: center; background-color: #DBE4F0'></td>
           </tr>";
+
+        $section_html .= "
+        </tbody>
+        </table>
+        ";
+
+        return $section_html;
+    }
+
+    public function createMRS9QTool($response, $section_html){
+        // Add questions and answers to the HTML
+        $section_html .= "<table style='width: 100%; border-collapse: collapse; border: 1px solid black'>
+                            <tbody>";
+        $count = 0;
+        foreach($response->assessment_tool->questions as $question) {
+            $count++;
+            $quest = $question->title ?? '';
+            $answer = $question->answers->answer ?? '';
+            $section_html .= "
+             <tr style='border: 1px solid black;'>
+                <td style='width: 85%; border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black; border-right: none'><table><tr><td></td><td>".$quest."</td></tr></table></td>
+                <td style='width: 15%; text-align: center; border-top: 1px solid black; border-left: none; border-bottom: 1px solid black; border-right: 1px solid black'>".$answer."</td>
+              </tr>";
+        }
 
         $section_html .= "
         </tbody>
