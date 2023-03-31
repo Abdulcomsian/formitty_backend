@@ -989,22 +989,22 @@ class FormBuilderController extends ApiController
             $count++;
             $quest = $question->title ?? '';
             $answer = $question->answers->answer ?? '';
-            $answer1 = ($answer == '0' ? $answer : '');
-            $answer2 = ($answer == '1' ? $answer : '');
-            $answer3 = ($answer == '2' ? $answer : '');
-            $answer4 = ($answer == '3' ? $answer : '');
-            $answer5 = ($answer == '4' ? $answer : '');
-            $group_point = $question->assessmentGroup->point ?? '';
+            $answer1 = ($answer == '1' ? $answer : '');
+            $answer2 = ($answer == '2' ? $answer : '');
+            $answer3 = ($answer == '3' ? $answer : '');
+            $answer4 = ($answer == '4' ? $answer : '');
+            $answer5 = ($answer == '5' ? $answer : '');
+            $point = $question->point ?? '';
             $section_html .= "
              <tr>
                 <td style='width: 7%; border: 1px solid black; text-align: center;'>1</td>
-                <td style='width: 51%; border: 1px solid black'><table><tr><td></td><td>I felt worthless.</td></tr></table></td>
+                <td style='width: 51%; border: 1px solid black'><table><tr><td></td><td>".$quest."</td></tr></table></td>
                 <td style='width: 7%; border: 1px solid black; text-align: center;'>".$answer1."</td>
                 <td style='width: 7%; border: 1px solid black; text-align: center;'>".$answer2."</td>
                 <td style='width: 7%; border: 1px solid black; text-align: center;'>".$answer3."</td>
                 <td style='width: 7%; border: 1px solid black; text-align: center;'>".$answer4."</td>
                 <td style='width: 7%; border: 1px solid black; text-align: center;'>".$answer5."</td>
-                <td style=' width: 7%; background-color: #DBE4F0; border: 1px solid black; text-align: center;'>".$group_point."</td>
+                <td style=' width: 7%; background-color: #DBE4F0; border: 1px solid black; text-align: center;'>".$point."</td>
               </tr>";
         }
         $section_html .= "

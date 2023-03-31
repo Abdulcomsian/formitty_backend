@@ -65,7 +65,7 @@ class AssessmentToolController extends ApiController
 
             $assessment_tools = AssessmentTool::with('assessment_groups', 'assessment_groups.questions', 'assessment_groups.questions.options')->find($request->assessment_id);
             if ($assessment_tools->assessment_groups->isEmpty()) {
-                $assessment_tools = AssessmentTool::with('questions','questions.options')->find($request->assessment_id);
+                $assessment_tools = AssessmentTool::with('questions', 'questions.options')->find($request->assessment_id);
             }
             return $this->successResponse($assessment_tools, 'Questions get successfully!.', 200);
 
@@ -137,17 +137,24 @@ class AssessmentToolController extends ApiController
                         'answer' => $value,
                         'response_id' => $response->id
                     ]);
-                }  elseif($name == 'group_point'){
+                } elseif ($name == 'group_point') {
                     $group = AssessmentGroup::findorfail($question_id);
                     if ($group) {
                         $group->update([
                             'point' => $value,
                         ]);
                     }
+                } elseif ($name == 'point') {
+                    $question = Question::findorfail($question_id);
+                    if ($question) {
+                        $question->update([
+                            'point' => $value,
+                        ]);
+                    }
                 }
-                $answer->save();
-
             }
+
+            $answer->save();
 
             return $this->successResponse($response, 'Questions get successfully!.', 200);
         } catch (\Throwable $th) {
@@ -283,12 +290,12 @@ class AssessmentToolController extends ApiController
 
         try {
             // Find the response with the given ID
-            $flowchart_response = FlowchartResponse::with('assessment_tool', 'flowchart_answers')->where([['user_form_id', $request->user_form_id],['assessment_tool_id', $request->assessment_tool_id]])->get();
+            $flowchart_response = FlowchartResponse::with('assessment_tool', 'flowchart_answers')->where([['user_form_id', $request->user_form_id], ['assessment_tool_id', $request->assessment_tool_id]])->get();
 
             $answerData = [];
-          /*  foreach ($flowchart_response->flowchart_answers as $answer) {
-                $answerData[$answer->question_id] = $answer->option_id ?? $answer->answer;
-            }*/
+            /*  foreach ($flowchart_response->flowchart_answers as $answer) {
+                  $answerData[$answer->question_id] = $answer->option_id ?? $answer->answer;
+              }*/
             $responseData = [
                 'response' => $flowchart_response,
                 'answers' => $answerData,
