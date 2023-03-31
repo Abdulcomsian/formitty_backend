@@ -445,7 +445,7 @@ class FormBuilderController extends ApiController
         if($response->assessment_tool->id == '6' || $response->assessment_tool->id == '7' ){
             $section_html = $this->createLEVEL2TTool($response, $section_html);
         }
-        if($response->assessment_tool->id == '8' || $response->assessment_tool->id == '9'){
+        if($response->assessment_tool->id == '8' || $response->assessment_tool->id == '9' || $response->assessment_tool->id == '10'){
             $section_html = $this->createMRS9QTool($response, $section_html);
         }
         return $section_html;
