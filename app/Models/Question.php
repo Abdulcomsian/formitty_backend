@@ -13,6 +13,7 @@ class Question extends Model
         'assessment_tool_id',
         'title',
         'type',
+        'point',
     ];
 
     public function assessmentTool()

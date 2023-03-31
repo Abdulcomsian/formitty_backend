@@ -445,7 +445,7 @@ class FormBuilderController extends ApiController
         if($response->assessment_tool->id == '6' || $response->assessment_tool->id == '7' ){
             $section_html = $this->createLEVEL2TTool($response, $section_html);
         }
-        if($response->assessment_tool->id == '8' ){
+        if($response->assessment_tool->id == '8' || $response->assessment_tool->id == '9'){
             $section_html = $this->createMRS9QTool($response, $section_html);
         }
         return $section_html;
@@ -1000,7 +1000,7 @@ class FormBuilderController extends ApiController
             $point = $question->point ?? '';
             $section_html .= "
              <tr>
-                <td style='width: 7%; border: 1px solid black; text-align: center;'>1</td>
+                <td style='width: 7%; border: 1px solid black; text-align: center;'>".$count."</td>
                 <td style='width: 51%; border: 1px solid black'><table><tr><td></td><td>".$quest."</td></tr></table></td>
                 <td style='width: 7%; border: 1px solid black; text-align: center;'>".$answer1."</td>
                 <td style='width: 7%; border: 1px solid black; text-align: center;'>".$answer2."</td>
@@ -1043,7 +1043,7 @@ class FormBuilderController extends ApiController
             $answer = $question->answers->answer ?? '';
             $section_html .= "
              <tr style='border: 1px solid black;'>
-                <td style='width: 85%; border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black; border-right: none'><table><tr><td></td><td>".$quest."</td></tr></table></td>
+                <td style='width: 85%; border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black; border-right: none'><table><tr><td>".$quest."</td></tr></table></td>
                 <td style='width: 15%; text-align: center; border-top: 1px solid black; border-left: none; border-bottom: 1px solid black; border-right: 1px solid black'>".$answer."</td>
               </tr>";
         }
