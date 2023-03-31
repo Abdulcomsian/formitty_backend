@@ -102,12 +102,12 @@ class AssessmentToolController extends ApiController
 
             // Loop through the answers and create Answer objects for each
             foreach ($input as $key => $value) {
-                if ($key == 'assessment_id' || $key == 'user_form_id' || $key == 'user_assessment_id') {
+                if ($key == 'assessment_id' || $key == 'user_form_id' || $key == 'user_assessment_id' || $key == 'prorated_raw' || $key == 'total_raw' || $key == 't_score') {
                     continue;
                 }
                 $result = extract_values_assessment($key);
                 $name = $result[0];
-                $question_id = $result[1];
+                $question_id = $result[1] ?? null;
                 $option_id = $result[2] ?? null;
 
                 if ($name == 'multiple_choice') {
@@ -152,6 +152,7 @@ class AssessmentToolController extends ApiController
                         ]);
                     }
                 }
+
 
                 $answer->save();
 

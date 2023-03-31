@@ -1034,13 +1034,30 @@ class FormBuilderController extends ApiController
 
     public function createMRS9QTool($response, $section_html){
         // Add questions and answers to the HTML
-        $section_html .= "<table style='width: 100%; border-collapse: collapse; border: 1px solid black'>
+        $section_html .= "<table style='width: 100%; border-collapse: collapse; border: 1px solid black; margin-top: 8px;'>
+                            <thead>
+                                      <tr style='background-color: #6A2C75'>
+                                        <td colspan='2'>
+                                          <p style=' font-size: 14pt; font-weight: bold; margin-top: 8px;
+                                              margin-bottom: 8px;
+                                              color: white; '>".$response->assessment_tool->title."
+                                            </p>
+                                        </td>
+                                      </tr>
+                            </thead>
                             <tbody>";
         $count = 0;
         foreach($response->assessment_tool->questions as $question) {
             $count++;
             $quest = $question->title ?? '';
             $answer = $question->answers->answer ?? '';
+            if($response->assessment_tool->id == 10){
+                $answer = ($answer == '1' ?? 'never');
+                $answer = ($answer == '2' ?? 'rarely');
+                $answer = ($answer == '3' ?? 'sometimes');
+                $answer = ($answer == '4' ?? 'often');
+                $answer = ($answer == '5' ?? 'always');
+            }
             $section_html .= "
              <tr style='border: 1px solid black;'>
                 <td style='width: 85%; border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black; border-right: none'><table><tr><td>".$quest."</td></tr></table></td>
