@@ -60,22 +60,22 @@ class ISNCSCIAssessmentToolSeeder extends Seeder
         ]);
 
         Option::create([
-            'question_id' => $question1->id,
+            'question_id' => $question2->id,
             'title' => 'Does not withdraw at all',
         ]);
 
         Option::create([
-            'question_id' => $question1->id,
+            'question_id' => $question2->id,
             'title' => 'Withdraws slightly',
         ]);
 
         Option::create([
-            'question_id' => $question1->id,
+            'question_id' => $question2->id,
             'title' => 'Withdraws moderately',
         ]);
 
         Option::create([
-            'question_id' => $question1->id,
+            'question_id' => $question2->id,
             'title' => 'Withdraws totally or near totally',
         ]);
 
