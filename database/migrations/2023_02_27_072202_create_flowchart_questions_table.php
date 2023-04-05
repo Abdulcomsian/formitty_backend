@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('assessment_tool_id')->nullable()->constrained('assessment_tools')->onDelete('cascade');
             $table->string('title');
+            $table->string('image')->nullable();
             $table->unsignedBigInteger('parent_id')->nullable();
             $table->foreign('parent_id')->references('id')->on('flowchart_questions')->onDelete('cascade');
             $table->timestamps();

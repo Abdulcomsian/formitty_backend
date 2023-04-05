@@ -152,8 +152,6 @@ class AssessmentToolController extends ApiController
                         ]);
                     }
                 }
-
-
                 $answer->save();
 
             }
@@ -164,7 +162,6 @@ class AssessmentToolController extends ApiController
             return $this->errorResponse($th->getMessage(), 401);
         }
     }
-
 
     public function editAssessment(Request $request)
     {
