@@ -260,6 +260,7 @@ class AssessmentToolController extends ApiController
             $response->user_id = Auth::user()->id ?? '2';
             $response->assessment_tool_id = $request->user_assessment_id;
             $response->user_form_id = $request->user_form_id;
+            $response->image = $request->imageData;
             $response->save();
             foreach ($request->data as $key => $value) {
                 $flow_chart = new FlowchartAnswer();
