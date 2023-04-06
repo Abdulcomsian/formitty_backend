@@ -401,12 +401,12 @@ class FormBuilderController extends ApiController
         $count = 1;
         $html = View::make('users.sections.header')->render();
         $section_html = '';
-        $image_path = asset('image.jpg');
+        /*$image_path = asset('image.jpg');
         $image = $section->addImage(
             'data:image/jpeg;base4,' . $image_path, // Use the base 4 notation as the image source
             ['width' => 300, 'height' => 200] // Set the image size
         );
-        $section_html = "<h1>".$image."</h1>";
+        $section_html = "<h1>".$image."</h1>";*/
         foreach ($usr_forms->userFormHeadings as $userFormHeading) {
             if ($userFormHeading->heading_type == 'custom') {
                 $section_html = $userFormHeading->customHeading->form_heading;
