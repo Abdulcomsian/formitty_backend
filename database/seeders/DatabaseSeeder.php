@@ -38,6 +38,15 @@ class DatabaseSeeder extends Seeder
         $this->call(VisualActivitiesAssessmentToolSeeder::class);
         $this->call(ISNCSCIAssessmentToolSeeder::class);
         $this->call(AssessmentToolSeeder::class);
+
+        $this->call(BarthalIndexAssessmentToolSeeder::class);
+        $this->call(CaregiverBurdenScaleAssessmentTool::class);
+        $this->call(CIQRAssessmentToolSeeder::class);
+        $this->call(DASSAssessmentToolSeeder::class);
+        $this->call(KettleTestAssessmentToolSeeder::class);
+        $this->call(LawtonBrodyIADLAssessmentToolSeeder::class);
+        $this->call(FAMAssessmentToolSeeder::class);
+
 //        $this->call(QuestionsTableSeeder::class);
         $this->call(FlowChartQuestionTableSeeder::class);
     }
