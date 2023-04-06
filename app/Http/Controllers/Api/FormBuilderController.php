@@ -401,6 +401,12 @@ class FormBuilderController extends ApiController
         $count = 1;
         $html = View::make('users.sections.header')->render();
         $section_html = '';
+        $image_path = asset('image.jpg');
+        $image = $section->addImage(
+            'data:image/jpeg;base4,' . $image_path, // Use the base 4 notation as the image source
+            ['width' => 300, 'height' => 200] // Set the image size
+        );
+        $section_html = "<h1>".$image."</h1>";
         foreach ($usr_forms->userFormHeadings as $userFormHeading) {
             if ($userFormHeading->heading_type == 'custom') {
                 $section_html = $userFormHeading->customHeading->form_heading;
@@ -445,7 +451,11 @@ class FormBuilderController extends ApiController
         if($response->assessment_tool->id == '6' || $response->assessment_tool->id == '7' ){
             $section_html = $this->createLEVEL2TTool($response, $section_html);
         }
-        if($response->assessment_tool->id == '8' || $response->assessment_tool->id == '9' || $response->assessment_tool->id == '10'){
+        if($response->assessment_tool->id == '8'
+            || $response->assessment_tool->id == '9'
+            || $response->assessment_tool->id == '10'
+            || $response->assessment_tool->id == '15'
+            || $response->assessment_tool->id == '16'){
             $section_html = $this->createMRS9QTool($response, $section_html);
         }
         return $section_html;
