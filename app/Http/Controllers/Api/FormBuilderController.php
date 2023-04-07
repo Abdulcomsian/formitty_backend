@@ -465,7 +465,7 @@ class FormBuilderController extends ApiController
             $section_html = $this->createBarthalTool($response, $section_html);
         }
         if($response->assessment_tool->id == '13'){
-            $section_html = $this->createCIQRTool($response, $section_html);
+            $section_html = $this->createCaregiverBurdenTool($response, $section_html);
         }
         return $section_html;
     }
@@ -1227,7 +1227,7 @@ class FormBuilderController extends ApiController
         return $section_html;
     }
 
-    public function createCIQRTool($response, $section_html)
+    public function createCaregiverBurdenTool($response, $section_html)
     {
         // Add questions and answers to the HTML
         $title = $response->assessment_tool->title ?? '';
