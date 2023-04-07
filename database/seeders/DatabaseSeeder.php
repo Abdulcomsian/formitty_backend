@@ -37,7 +37,6 @@ class DatabaseSeeder extends Seeder
         $this->call(HearingAssessmentToolSeeder::class);
         $this->call(VisualActivitiesAssessmentToolSeeder::class);
         $this->call(ISNCSCIAssessmentToolSeeder::class);
-
         $this->call(BarthalIndexAssessmentToolSeeder::class);
         $this->call(CaregiverBurdenScaleAssessmentTool::class);
         $this->call(CIQRAssessmentToolSeeder::class);

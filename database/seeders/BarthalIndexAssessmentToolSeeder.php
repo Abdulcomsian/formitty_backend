@@ -33,17 +33,17 @@ class BarthalIndexAssessmentToolSeeder extends Seeder
 
         Option::create([
             'question_id' => $question1->id,
-            'title' => '0 = unable',
+            'title' => 'unable',
         ]);
 
         Option::create([
             'question_id' => $question1->id,
-            'title' => '5 = needs help cutting, spreading butter, etc., or requires modified diet',
+            'title' => 'needs help cutting, spreading butter, etc., or requires modified diet',
         ]);
 
         Option::create([
             'question_id' => $question1->id,
-            'title' => '10 = independent',
+            'title' => 'independent',
         ]);
 
         $question2 = Question::create([
@@ -54,12 +54,12 @@ class BarthalIndexAssessmentToolSeeder extends Seeder
 
         Option::create([
             'question_id' => $question2->id,
-            'title' => '0 = dependent',
+            'title' => 'dependent',
         ]);
 
         Option::create([
             'question_id' => $question2->id,
-            'title' => '5 = independent (or in shower)',
+            'title' => 'independent (or in shower)',
         ]);
 
         $question3 = Question::create([
@@ -70,12 +70,12 @@ class BarthalIndexAssessmentToolSeeder extends Seeder
 
         Option::create([
             'question_id' => $question3->id,
-            'title' => '0 = needs to help with personal care',
+            'title' => 'needs to help with personal care',
         ]);
 
         Option::create([
             'question_id' => $question3->id,
-            'title' => '5 = independent face/hair/teeth/shaving (implements provided)',
+            'title' => 'independent face/hair/teeth/shaving (implements provided)',
         ]);
 
         $question4 = Question::create([
@@ -86,17 +86,17 @@ class BarthalIndexAssessmentToolSeeder extends Seeder
 
         Option::create([
             'question_id' => $question4->id,
-            'title' => '0 = dependent',
+            'title' => 'dependent',
         ]);
 
         Option::create([
             'question_id' => $question4->id,
-            'title' => '5 = needs help but can do about half unaided',
+            'title' => 'needs help but can do about half unaided',
         ]);
 
         Option::create([
             'question_id' => $question4->id,
-            'title' => '10 = independent (including buttons, zips, laces, etc.)',
+            'title' => 'independent (including buttons, zips, laces, etc.)',
         ]);
 
         $question5 = Question::create([
@@ -107,17 +107,17 @@ class BarthalIndexAssessmentToolSeeder extends Seeder
 
         Option::create([
             'question_id' => $question5->id,
-            'title' => '0 = incontinent (or needs to be given enemas)',
+            'title' => 'incontinent (or needs to be given enemas)',
         ]);
 
         Option::create([
             'question_id' => $question5->id,
-            'title' => '5 = occasional accident',
+            'title' => 'occasional accident',
         ]);
 
         Option::create([
             'question_id' => $question5->id,
-            'title' => '10 = continent',
+            'title' => 'continent',
         ]);
 
         $question6 = Question::create([
@@ -128,17 +128,17 @@ class BarthalIndexAssessmentToolSeeder extends Seeder
 
         Option::create([
             'question_id' => $question6->id,
-            'title' => '0 = incontinent, or catheterized and unable to manage alone',
+            'title' => 'incontinent, or catheterized and unable to manage alone',
         ]);
 
         Option::create([
             'question_id' => $question6->id,
-            'title' => '5 = occasional accident',
+            'title' => 'occasional accident',
         ]);
 
         Option::create([
             'question_id' => $question6->id,
-            'title' => '10 = continent',
+            'title' => 'continent',
         ]);
 
         $question7 = Question::create([
@@ -149,17 +149,17 @@ class BarthalIndexAssessmentToolSeeder extends Seeder
 
         Option::create([
             'question_id' => $question7->id,
-            'title' => '0 = dependent',
+            'title' => 'dependent',
         ]);
 
         Option::create([
             'question_id' => $question7->id,
-            'title' => '5 = needs some help, but can do something alone',
+            'title' => 'needs some help, but can do something alone',
         ]);
 
         Option::create([
             'question_id' => $question7->id,
-            'title' => '10 = independent (on and off, dressing, wiping)',
+            'title' => 'independent (on and off, dressing, wiping)',
         ]);
 
         $question8 = Question::create([
@@ -170,22 +170,22 @@ class BarthalIndexAssessmentToolSeeder extends Seeder
 
         Option::create([
             'question_id' => $question8->id,
-            'title' => '0 = unable, no sitting balance',
+            'title' => 'unable, no sitting balance',
         ]);
 
         Option::create([
             'question_id' => $question8->id,
-            'title' => '5 = major help (one or two people, physical), can sit',
+            'title' => 'major help (one or two people, physical), can sit',
         ]);
 
         Option::create([
             'question_id' => $question8->id,
-            'title' => '10 = minor help (verbal or physical)',
+            'title' => 'minor help (verbal or physical)',
         ]);
 
         Option::create([
             'question_id' => $question8->id,
-            'title' => '15 = independent',
+            'title' => 'independent',
         ]);
 
         $question9 = Question::create([
@@ -196,22 +196,22 @@ class BarthalIndexAssessmentToolSeeder extends Seeder
 
         Option::create([
             'question_id' => $question9->id,
-            'title' => '0 = immobile or < 50 yards',
+            'title' => 'immobile or < 50 yards',
         ]);
 
         Option::create([
             'question_id' => $question9->id,
-            'title' => '5 = wheelchair independent, including corners, > 50 yards',
+            'title' => 'wheelchair independent, including corners, > 50 yards',
         ]);
 
         Option::create([
             'question_id' => $question9->id,
-            'title' => '10 = walks with help of one person (verbal or physical) > 50 yards',
+            'title' => 'walks with help of one person (verbal or physical) > 50 yards',
         ]);
 
         Option::create([
             'question_id' => $question9->id,
-            'title' => '15= independent (but may use any aid; for example, stick) > 50 yards',
+            'title' => 'independent (but may use any aid; for example, stick) > 50 yards',
         ]);
 
         $question10 = Question::create([
@@ -222,17 +222,17 @@ class BarthalIndexAssessmentToolSeeder extends Seeder
 
         Option::create([
             'question_id' => $question10->id,
-            'title' => '0 = unable',
+            'title' => 'unable',
         ]);
 
         Option::create([
             'question_id' => $question10->id,
-            'title' => '5 = needs help (verbal, physical, carrying aid)',
+            'title' => 'needs help (verbal, physical, carrying aid)',
         ]);
 
         Option::create([
             'question_id' => $question10->id,
-            'title' => '10 = independent',
+            'title' => 'independent',
         ]);
     }
 }
