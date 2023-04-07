@@ -1210,17 +1210,15 @@ class FormBuilderController extends ApiController
         foreach ($response->assessment_tool->questions as $question) {
             $answer = Answer::with('option')->where('question_id', $question->id)->first();
             $quest = $question->title ?? '';
-            if ($question->type === 'multiple_choice') {
-                $answer1 = $answer->option->title ?? '';
-                $section_html .= "<tr>
-                                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $quest . "</p>
-                                </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $answer1 . "</p>
-                                </td>
-                            </tr>";
-            }
+            $answer1 = $answer->option->title ?? '';
+            $section_html .= "<tr>
+                            <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
+                                <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $quest . "</p>
+                            </td>
+                            <td style='border: 1px solid lightslategray; padding: 10px'>
+                                <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $answer1 . "</p>
+                            </td>
+                        </tr>";
         }
 
         $section_html .= "</tbody>
