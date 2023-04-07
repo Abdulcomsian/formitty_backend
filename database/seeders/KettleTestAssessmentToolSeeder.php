@@ -63,31 +63,31 @@ class KettleTestAssessmentToolSeeder extends Seeder
         $question7 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Opening the water Faucet',
-            'type' => 'open_ended',
+            'type' => 'multiple_choice',
         ]);
 
         $question8 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Filling the kettle with about 2 Cups of water',
-            'type' => 'open_ended',
+            'type' => 'multiple_choice',
         ]);
 
         $question9 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Turning of the Faucet',
-            'type' => 'open_ended',
+            'type' => 'multiple_choice',
         ]);
 
         $question10 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Assembling the Kettle',
-            'type' => 'open_ended',
+            'type' => 'multiple_choice',
         ]);
 
         $question11 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Attaching the Electric Cord to the Kettle',
-            'type' => 'open_ended',
+            'type' => 'multiple_choice',
         ]);
 
         $question12 = Question::create([
@@ -99,25 +99,25 @@ class KettleTestAssessmentToolSeeder extends Seeder
         $question13 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Turning on the kettle',
-            'type' => 'open_ended',
+            'type' => 'multiple_choice',
         ]);
 
         $question14 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Assembling the ingredients',
-            'type' => 'open_ended',
+            'type' => 'multiple_choice',
         ]);
 
         $question15 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Putting the ingredients into the Cup',
-            'type' => 'open_ended',
+            'type' => 'multiple_choice',
         ]);
 
         $question16 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Picking up the kettle when water boils',
-            'type' => 'open_ended',
+            'type' => 'multiple_choice',
         ]);
 
         $question17 = Question::create([
@@ -129,13 +129,13 @@ class KettleTestAssessmentToolSeeder extends Seeder
         $question18 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Adding the Milk',
-            'type' => 'open_ended',
+            'type' => 'multiple_choice',
         ]);
 
         $question19 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Indication of the task Completion(e.g. verbal,gesture,serving)',
-            'type' => 'open_ended',
+            'type' => 'multiple_choice',
         ]);
 
     }
