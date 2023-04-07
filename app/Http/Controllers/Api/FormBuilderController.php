@@ -1190,7 +1190,7 @@ class FormBuilderController extends ApiController
         $section_html .= "<table style='width: 100%; border-collapse: collapse; border: 1px solid black; margin-top: 8px;'>
                             <thead>
                                       <tr style='background-color: #6A2C75'>
-                                        <td colspan='3'>
+                                        <td colspan='2'>
                                           <p style=' font-size: 14pt; font-weight: bold; margin-top: 8px;
                                               margin-bottom: 8px; color: white; '>".$title."
                                             </p>
@@ -1205,16 +1205,13 @@ class FormBuilderController extends ApiController
                                 <td style='border: 1px solid lightslategray; padding: 10px'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>Answer</p>
                                 </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>Score</p>
-                                </td>
                             </tr>";
+        $section_html .= "";
         foreach ($response->assessment_tool->questions as $question) {
             $answer = Answer::with('option')->where('question_id', $question->id)->first();
             $quest = $question->title ?? '';
-            $answer1 = $answer->option->title ?? '';
-            $score = $answer->option->point ?? '';
-
+            if ($question->type === 'multiple_choice') {
+                $answer1 = $answer->option->title ?? '';
                 $section_html .= "<tr>
                                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $quest . "</p>
@@ -1222,10 +1219,8 @@ class FormBuilderController extends ApiController
                                 <td style='border: 1px solid lightslategray; padding: 10px'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $answer1 . "</p>
                                 </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $score . "</p>
-                                </td>
                             </tr>";
+            }
         }
 
         $section_html .= "</tbody>
