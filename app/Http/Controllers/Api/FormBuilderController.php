@@ -458,7 +458,7 @@ class FormBuilderController extends ApiController
             || $response->assessment_tool->id == '16'){
             $section_html = $this->createMRS9QTool($response, $section_html);
         }
-        if($response->assessment_tool->id == '11'){
+        if($response->assessment_tool->id == '11' || $response->assessment_tool->id == '13'){
             $section_html = $this->createLSPTool($response, $section_html);
         }
         if($response->assessment_tool->id == '12'){
@@ -1280,6 +1280,45 @@ class FormBuilderController extends ApiController
                         </td>
                       </tr>";
         }
+
+        $section_html .= "</tbody>
+                    </table>";
+
+        return $section_html;
+    }
+
+    public function createCIQRTool($response, $section_html)
+    {
+        // Add questions and answers to the HTML
+        $title = $response->assessment_tool->title ?? '';
+        $section_html .= "<table style='width: 100%; border-collapse: collapse; border: 1px solid black; margin-top: 8px;'>
+                            <thead>
+                                      <tr style='background-color: #6A2C75'>
+                                        <td colspan='2'>
+                                          <p style=' font-size: 14pt; font-weight: bold; margin-top: 8px;
+                                              margin-bottom: 8px; color: white; '>".$title."
+                                            </p>
+                                        </td>
+                                      </tr>
+                            </thead>
+                            <tbody>";
+        $section_html .= "<tr>
+                            <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
+                                <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>Question</p>
+                            </td>
+                            <td style='border: 1px solid lightslategray; padding: 10px'>
+                                <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>Answer</p>
+                            </td>
+                        </tr>";
+            foreach ($assessment_group->questions as $question) {
+                $answer = Answer::with('option')->where('question_id', $question->id)->first();
+                $quest = $question->title ?? '';
+                $answer1 = $answer->option->title ?? '';
+                $section_html .= "<tr>
+                    <td style='width: 10%; text-align: center; border: 1px solid black'>".$quest."</td>
+                    <td style='width: 45%; border: 1px solid black; border-right: none'>".$answer1."</td>
+                  </tr>";
+            }
 
         $section_html .= "</tbody>
                     </table>";
