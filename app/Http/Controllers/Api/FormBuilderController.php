@@ -1234,7 +1234,7 @@ class FormBuilderController extends ApiController
         $section_html .= "<table style='width: 100%; border-collapse: collapse; border: 1px solid black; margin-top: 8px;'>
                             <thead>
                                       <tr style='background-color: #6A2C75'>
-                                        <td colspan='3'>
+                                        <td colspan='2'>
                                           <p style=' font-size: 14pt; font-weight: bold; margin-top: 8px;
                                               margin-bottom: 8px; color: white; '>".$title."
                                             </p>
@@ -1248,9 +1248,6 @@ class FormBuilderController extends ApiController
                                 </td>
                                 <td style='border: 1px solid lightslategray; padding: 10px'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>Answer</p>
-                                </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>Score</p>
                                 </td>
                             </tr>";
         $section_html .= "";
@@ -1271,14 +1268,15 @@ class FormBuilderController extends ApiController
             foreach ($assessment_group->questions as $question) {
                 $answer = Answer::with('option')->where('question_id', $question->id)->first();
                 $quest = $question->title ?? '';
+                $answer1 = $answer->answer ?? '';
                     $section_html .= "<tr>
                     <td style='width: 10%; text-align: center; border: 1px solid black'>".$quest."</td>
-                    <td style='width: 45%; border: 1px solid black; border-right: none'></td>
+                    <td style='width: 45%; border: 1px solid black; border-right: none'>".$answer1."</td>
                   </tr>";
             }
             $section_html .= "<tr>
                         <td colspan='3' style='border: 1px solid black; border-right: none'>
-                          <table style='width: 100%'><tr><td style='width: 20%'></td><td style='width: 60%'><span style='font-weight: bold'>Group A subtotal </span><span style='text-decoration: underline'>".$total_group_questions_achieved."</span> /".$total_group_questions."</td><td style='width: 20%'></td></tr></table>
+                          <table style='width: 100%'><tr><td style='width: 20%'></td><td style='width: 60%'><span style='font-weight: bold'>Group A subtotal </span><span style='text-decoration: underline'></span> /</td><td style='width: 20%'></td></tr></table>
                         </td>
                       </tr>";
         }
