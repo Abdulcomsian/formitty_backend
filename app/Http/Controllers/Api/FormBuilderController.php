@@ -464,7 +464,7 @@ class FormBuilderController extends ApiController
 //        if($response->assessment_tool->id == '12'){
 //            $section_html = $this->createBarthalTool($response, $section_html);
 //        }
-        if($response->assessment_tool->id == '13'){
+        if($response->assessment_tool->id == '13' || $response->assessment_tool->id == '18'){
             $section_html = $this->createCaregiverBurdenTool($response, $section_html);
         }
         if($response->assessment_tool->id == '17' || $response->assessment_tool->id == '12'){
@@ -1272,16 +1272,19 @@ class FormBuilderController extends ApiController
                 $answer = Answer::with('option')->where('question_id', $question->id)->first();
                 $quest = $question->title ?? '';
                 $answer1 = $answer->answer ?? '';
+                if($response->assessment_tool->id == '18'){
+                    $answer1 = $answer->option->title ?? '';
+                }
                     $section_html .= "<tr>
                     <td style='width: 10%; text-align: center; border: 1px solid black'>".$quest."</td>
                     <td style='width: 45%; border: 1px solid black; border-right: none'>".$answer1."</td>
                   </tr>";
             }
-            $section_html .= "<tr>
+            /*$section_html .= "<tr>
                         <td colspan='3' style='border: 1px solid black; border-right: none'>
                           <table style='width: 100%'><tr><td style='width: 20%'></td><td style='width: 60%'><span style='font-weight: bold'>Group A subtotal </span><span style='text-decoration: underline'></span> /</td><td style='width: 20%'></td></tr></table>
                         </td>
-                      </tr>";
+                      </tr>";*/
         }
 
         $section_html .= "</tbody>
