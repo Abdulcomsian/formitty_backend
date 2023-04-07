@@ -93,7 +93,7 @@ class KettleTestAssessmentToolSeeder extends Seeder
         $question12 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Plugging the electric cord in an electric Socket',
-            'type' => 'open_ended',
+            'type' => 'multiple_choice',
         ]);
 
         $question13 = Question::create([
@@ -123,7 +123,7 @@ class KettleTestAssessmentToolSeeder extends Seeder
         $question17 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Pouring the water into the Cup',
-            'type' => 'open_ended',
+            'type' => 'multiple_choice',
         ]);
 
         $question18 = Question::create([
