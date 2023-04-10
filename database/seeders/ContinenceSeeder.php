@@ -35,13 +35,13 @@ class ContinenceSeeder extends Seeder
                             <tr>
                             <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'><p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>   Name</p></td>
                             <td style='border: 1px solid lightslategray; padding: 10px'>
-                                <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>   Field Data</p>
+                                <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>   {{part_1_ndis_name}}</p>
                             </td>
                             </tr>
                             <tr>
                             <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 15px'><p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>   Date of Birth</p></td>
                             <td style='border: 1px solid lightslategray; padding: 10px'>
-                                <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>   Field Data</p>
+                                <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>   {{part_1_ndis_date_of_birth}}</p>
                             </td>
                             </tr>
                             <tr>
@@ -1066,7 +1066,7 @@ class ContinenceSeeder extends Seeder
                         "subtype":"text"
                         },
                         {
-                        "type":"text",
+                        "type":"date",
                         "required":false,
                         "label":"Date of Birth",
                         "placeholder":"Enter Your Date of Birth",
