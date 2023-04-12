@@ -1456,7 +1456,7 @@ class FormBuilderController extends ApiController
                         'heading_type' => $ufh->heading_type,
                         'heading_status' => $ufh->heading_status,
                         'assessment_tool_id' => $response->assessment_tool_id,
-                        'saved_assessment_tool_id' => $ufh->id,
+                        'saved_assessment_tool_id' => $response->id,
                     ];
                 } else {
                     $form_data[] = [
