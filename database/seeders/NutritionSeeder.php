@@ -615,59 +615,6 @@ class NutritionSeeder extends Seeder
                     </tr>
                     </table>";
 
-        $form = Form::create([
-            'name' => 'Notes for Assessors of Nutrition and Dysphagia AT Supports'
-        ]);
-
-        $heading1 = FormHeading::insertGetId([
-            'form_heading' => 'Part 1 - Details',
-            'form_id' => '8',
-            'section_html' => $section1
-        ]);
-
-        $heading2 = FormHeading::insertGetId([
-            'form_heading' => 'PART 2 - Evaluation / Assessment',
-            'form_id' => '8',
-            'section_html' => $section2
-        ]);
-
-        $heading3 = FormHeading::insertGetId([
-            'form_heading' => 'PART 3 - Exploration of Options',
-            'form_id' => ' 8',
-            'section_html' => $section3
-        ]);
-
-        $heading4 = FormHeading::insertGetId([
-            'form_heading' => 'PART 4 - Recommended Option',
-            'form_id' => '8',
-            'section_html' => $section4
-        ]);
-
-        $heading5 = FormHeading::insertGetId([
-            'form_heading' => 'PART 5 – Recommended Nutrition Support AT specification',
-            'form_id' => '8',
-            'section_html' => $section5
-        ]);
-
-        $heading6 = FormHeading::insertGetId([
-            'form_heading' => 'PART 6 – Details of Assistive Technology Assessor',
-            'form_id' => '8',
-            'section_html' => $section6
-        ]);
-
-        $heading7 = FormHeading::insertGetId([
-            'form_heading' => 'PART 7 – Consent to Collect and Share Your Information - Provider AT Assessment and Quotation(s)',
-            'form_id' => '8',
-            'section_html' => $section7
-        ]);
-
-        // $form = FormHeading::create([
-        //     'form_heading' => 'Participant and Plan Management Details',
-        //     'form_id' => '8',
-        //     'section_html' => $section7
-        // ]);
-
-
 
         $form_fields = '[
             {
@@ -1002,34 +949,87 @@ $form_fields2 = '[
 
             $form_fields6 = '[{"type":"checkbox-group","required":false,"label":"Meet the NDIA expectation","toggle":false,"inline":false,"name":"part_5_declaration_NDIA_expectation","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":true}]},{"type":"checkbox-group","required":false,"label":"Providing appropriate evidence to the NDIA","toggle":false,"inline":false,"name":"part_5_declaration_appropriate_evidence","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":true}]},{"type":"checkbox-group","required":false,"label":"I understand all about the NDIA","toggle":false,"inline":false,"name":"part_5_declaration_NDIA_understanding","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":false}]},{"type":"checkbox-group","required":false,"label":"Accessing by the treating multi-disciplinary team","toggle":false,"inline":false,"name":"part_5_declaration_accessing_team","access":false,"other":false,"values":[{"label":"YES/NO","value":"option-1","selected":false}]},{"type":"text","required":false,"label":"Name","placeholder":"Enter Assessor’s  Name","className":"form-control","name":"part_5_assessors_name","access":false,"subtype":"text"},{"type":"text","required":false,"label":"NDIS Provider Registration Number","placeholder":"Enter Registration Number","className":"form-control","name":"part_5_registration_number","access":false,"subtype":"text"},{"type":"text","required":false,"label":"Phone Number","placeholder":"Enter Phone Number","className":"form-control","name":"part_5_assessorphone_number","access":false,"subtype":"text"},{"type":"text","subtype":"email","required":false,"label":"Email","placeholder":"Enter Email Address","className":"form-control","name":"part_5_email_address","access":false},{"type":"text","required":false,"label":"Qualification","placeholder":"Enter Qualification here.","className":"form-control","name":"part_5_qualification","access":false,"subtype":"text"},{"type":"date","required":false,"label":"Date of Assessment","placeholder":"Set Date of Assessment","className":"form-control","name":"part_5_date_assessment","access":false},{"type":"date","required":false,"label":"Date of Report","placeholder":"Set Date of Report","className":"form-control","name":"part_5_reportDate","access":false}]';
 
-            FormField::create([
-            'form_heading_id' => $heading1,
-            'form_field' => $form_fields
-            ]);
-            FormField::create([
-            'form_heading_id' => $heading2,
-            'form_field' => $form_fields2
-            ]);
-            FormField::create([
-            'form_heading_id' => $heading3,
-            'form_field' => $form_fields3
-            ]);
-            FormField::create([
-            'form_heading_id' => $heading4,
-            'form_field' => $form_fields4
-            ]);
-            FormField::create([
-            'form_heading_id' => $heading5,
-            'form_field' => $form_fields5
-            ]);
-            FormField::create([
-            'form_heading_id' => $heading6,
-            'form_field' => $form_fields6
-            ]);
-            FormField::create([
-            'form_heading_id' => $heading7,
-            'form_field' => $form_fields6
-            ]);
+        $form = Form::insertGetId([
+            'name' => 'Nutrition and Dysphagia Assistive Technology Supports Assessment Template'
+        ]);
+
+        $heading1 = FormHeading::insertGetId([
+            'form_heading' => 'Part 1 - Details',
+            'form_id' => $form,
+            'section_html' => $section1
+        ]);
+
+        $heading2 = FormHeading::insertGetId([
+            'form_heading' => 'PART 2 - Evaluation / Assessment',
+            'form_id' => $form,
+            'section_html' => $section2
+        ]);
+
+        $heading3 = FormHeading::insertGetId([
+            'form_heading' => 'PART 3 - Exploration of Options',
+            'form_id' => $form,
+            'section_html' => $section3
+        ]);
+
+        $heading4 = FormHeading::insertGetId([
+            'form_heading' => 'PART 4 - Recommended Option',
+            'form_id' => $form,
+            'section_html' => $section4
+        ]);
+
+        $heading5 = FormHeading::insertGetId([
+            'form_heading' => 'PART 5 – Recommended Nutrition Support AT specification',
+            'form_id' => $form,
+            'section_html' => $section5
+        ]);
+
+        $heading6 = FormHeading::insertGetId([
+            'form_heading' => 'PART 6 – Details of Assistive Technology Assessor',
+            'form_id' => $form,
+            'section_html' => $section6
+        ]);
+
+        $heading7 = FormHeading::insertGetId([
+            'form_heading' => 'PART 7 – Consent to Collect and Share Your Information - Provider AT Assessment and Quotation(s)',
+            'form_id' => $form,
+            'section_html' => $section7
+        ]);
+
+        // $form = FormHeading::create([
+        //     'form_heading' => 'Participant and Plan Management Details',
+        //     'form_id' => '8',
+        //     'section_html' => $section7
+        // ]);
+
+
+        FormField::create([
+        'form_heading_id' => $heading1,
+        'form_field' => $form_fields
+        ]);
+        FormField::create([
+        'form_heading_id' => $heading2,
+        'form_field' => $form_fields2
+        ]);
+        FormField::create([
+        'form_heading_id' => $heading3,
+        'form_field' => $form_fields3
+        ]);
+        FormField::create([
+        'form_heading_id' => $heading4,
+        'form_field' => $form_fields4
+        ]);
+        FormField::create([
+        'form_heading_id' => $heading5,
+        'form_field' => $form_fields5
+        ]);
+        FormField::create([
+        'form_heading_id' => $heading6,
+        'form_field' => $form_fields6
+        ]);
+        FormField::create([
+        'form_heading_id' => $heading7,
+        'form_field' => $form_fields6
+        ]);
 
 
     }

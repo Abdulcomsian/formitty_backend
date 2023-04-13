@@ -155,12 +155,20 @@
                             Logs
                         </p>
                     </a>
-                </li>
+                  </li>
                   <li class="nav-item">
                       <a href="{{ route('form-builder.index') }}" class="nav-link {{ request()->is('admin/form-builder') ? 'active' : '' }}">
                           <i class="nav-icon fas fa-list-alt"></i>
                           <p>
                               Form Builder
+                          </p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="{{ route('assessment-tools.index') }}" class="nav-link {{ request()->is('admin/assessment-tools') ? 'active' : '' }}">
+                          <i class="nav-icon fas fa-list-alt"></i>
+                          <p>
+                              Assessment Tool
                           </p>
                       </a>
                   </li>

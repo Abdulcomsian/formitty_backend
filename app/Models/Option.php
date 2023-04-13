@@ -12,6 +12,7 @@ class Option extends Model
     protected $fillable = [
         'question_id',
         'title',
+        'point',
     ];
 
     public function question()

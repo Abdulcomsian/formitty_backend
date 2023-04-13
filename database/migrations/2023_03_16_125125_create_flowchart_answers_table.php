@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('options', function (Blueprint $table) {
+        Schema::create('flowchart_answers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('question_id')->constrained('questions')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->string('title');
-            $table->float('point')->nullable();
+            $table->foreignId('flowchart_response_id')->constrained('flowchart_responses')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('flowchart_question_id')->constrained('flowchart_questions')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('options');
+        Schema::dropIfExists('flowchart_answers');
     }
 };

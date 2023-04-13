@@ -27,7 +27,39 @@
                             <h4 class="float-left">Create Assessment Tool</h4>
                         </div>
                         <div class="card-body">
+                            <form method="POST" action="{{ route('assessment-tools.store') }}" id="submit-form">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="title">Assessment Tool Title</label>
+                                            <input type="text"
+                                                   name="title"
+                                                   class="form-control
+                                       {{ $errors->has('title') ? 'is-invalid' : '' }}"
+                                                   id="name"
+                                                   placeholder="Enter title">
+                                            @error('title')
+                                            <span id="title-error" class="error invalid-feedback">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="description">Assessment Tool Type</label>
 
+                                            <select  name="type" class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}">
+                                                <option value="questionnaire">Questionnaire</option>
+                                                <option value="flow_chart">Flow Chart</option>
+                                            </select>
+                                            @error('title')
+                                            <span id="title-error" class="error invalid-feedback">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -71,6 +103,7 @@
                                                     <label for="checkbox3"></label>
                                                 </div>
                                             <th>Title</th>
+                                            <th>Type</th>
                                             <th>Created at</th>
                                             <th>Action</th>
                                         </tr>
@@ -85,7 +118,8 @@
                                                         <label for="checkbox{{ $assessment_tool->id }}"></label>
                                                     </div>
                                                 </td>
-                                                <td>{{ $assessment_tool->name }}</td>
+                                                <td>{{ $assessment_tool->title }}</td>
+                                                <td>{!! assessment_tool($assessment_tool->type) !!}</td>
                                                 <td>{{ $assessment_tool->created_at }}</td>
                                                 <td>
                                                     <a class="btn btn-info btn-sm"88
