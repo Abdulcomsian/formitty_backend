@@ -137,6 +137,14 @@ function extract_values($string) {
     return array($name, $heading_id, $orderId);
 }
 
+function update_extract_values($string) {
+    $parts = explode("-", $string);
+    $headingid = $parts[0];
+    $name = $parts[1];
+    $heading_id = $parts[2];
+    $orderId = $parts[3];
+    return array($headingid, $name, $heading_id, $orderId);
+}
 
 function extract_values_assessment($string) {
     $parts = explode("-", $string);
