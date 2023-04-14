@@ -83,7 +83,7 @@ class FormBuilderController extends ApiController
                 $heading_id = substr($string, strpos($string, "part_") + 5, 1);
                 $result = extract_values($key);
                 $name = $result[0];
-                $heading_id = $heading_id;
+                $heading_id = $result[2];
                 $order_id = $result[2];
                 if ($name == 'assessment_tool') {
                     $this->storeAssessmentToolOrder($name, $heading_id, $order_id, $value, $user_form, $update);
