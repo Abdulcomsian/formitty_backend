@@ -18,8 +18,7 @@ use App\Models\Option;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\DB;
-use Auth;
-
+use Illuminate\Support\Facades\Auth;
 //create complete crud operation using ajax
 class FormBuilderController extends ApiController
 {
@@ -79,16 +78,16 @@ class FormBuilderController extends ApiController
                 continue; // skip to the next iteration of the loop
             }
             if ($update) {
-                $string = $key;
-                $heading_id = substr($string, strpos($string, "part_") + 5, 1);
-                $result = extract_values($key);
-                $name = $result[0];
-                $heading_id = $result[2];
-                $order_id = $result[2];
-                if ($name == 'assessment_tool') {
-                    $this->storeAssessmentToolOrder($name, $heading_id, $order_id, $value, $user_form, $update);
-                    continue;
-                }
+              $string = $key;
+              $heading_id = substr($string, strpos($string, "part_") + 5, 1);
+              $result = update_extract_values($key);
+              $heading_id = $result[0];
+              $name = $result[1];
+              $order_id = $result[3];
+              if ($name == 'assessment_tool') {
+                  $this->storeAssessmentToolOrder($name, $heading_id, $order_id, $value, $user_form, $update);
+                  continue;
+              }
             } else {
                 $result = extract_values($key);
                 $name = $result[0];
