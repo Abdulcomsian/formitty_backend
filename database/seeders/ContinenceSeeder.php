@@ -1937,9 +1937,9 @@ class ContinenceSeeder extends Seeder
              "type":"date",
              "required":false,
              "label":"Relationship to participant ",
-             "placeholder":"Relationship to participant ",
+             "placeholder":"Relationship to participant",
              "className":"form-control",
-             "name":"part_6_relationship_participant ",
+             "name":"part_6_relationship_participant",
              "access":false
           }
        ]';
