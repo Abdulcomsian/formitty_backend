@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
 //        $this->call(FormSeeder::class);
         $this->call(ContinenceSeeder::class);
         $this->call(AnimalSeeder::class);
+        $this->call(HomeSeeder::class);
         $this->call(HearingSeeder::class);
         $this->call(VehicleSeeder::class);
         $this->call(NutritionSeeder::class);
