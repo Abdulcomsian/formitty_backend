@@ -156,7 +156,6 @@ class HomeSeeder extends Seeder
                         </tbody>
                     </table>";
 
-
         $section2 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
                         <tr>
                             <td>
@@ -355,7 +354,6 @@ class HomeSeeder extends Seeder
                     </tr>
                     </table>";
 
-
         $section3 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
                         <tr>
                         <td>
@@ -441,7 +439,6 @@ class HomeSeeder extends Seeder
                         </tr>
                         </table>";
 
-
         $section4 = "<p style='font-size:12pt; margin-top:10px; margin-bottom:10px; '></p>
                 <table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
                 <tr>
@@ -483,7 +480,6 @@ class HomeSeeder extends Seeder
                 </tr>
                 </table>
                 <p style='font-size:12pt; margin-top:10px; margin-bottom:10px; font-weight: bold'></p>";
-
 
         $section5 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
                     <tr>
@@ -830,7 +826,6 @@ class HomeSeeder extends Seeder
                     </tr>
                     </table>";
 
-
         $section6 = "<p style='font-size:12pt; margin-top:10px; margin-bottom:10px; '></p>
                     <table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
                     <tr>
@@ -845,7 +840,6 @@ class HomeSeeder extends Seeder
                     <td style='background-color: #efefef; width: 100%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>{{part_6_complex_home_modification_quotes}}</p></td>
                     </tr>
                     </table>";
-
 
         $section7 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
                     <tr>
@@ -947,17 +941,6 @@ class HomeSeeder extends Seeder
                    </tr>
                    </table>";
 
-
-
-
-
-
-
-
-
-
-
-
         $section8 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
                     <tr>
                     <td>
@@ -979,7 +962,10 @@ class HomeSeeder extends Seeder
                     <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_02}}</p></td>
                     </tr>
 
-                    <p style='font-size:12pt; margin-top:10px; margin-bottom:10px;'>Participant’s Signature When I sign this form:</p>
+                    <tr>
+                    <td><p style='font-size:12pt; margin-top:10px; margin-bottom:10px;'>Participant’s Signature When I sign this form:</p></td>
+                    <td></td>
+                    </tr>
 
                     <tr>
                     <td style='background-color: #efefef; width: 70%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  I understand that I am giving consent to the NDIA to do the things with my information set out in this section. I understand that I can withdraw my consent for the NDIS to do things with my information at any time by letting the NDIA know.</p></td>
@@ -1003,7 +989,6 @@ class HomeSeeder extends Seeder
                     <td style='background-color: #efefef; width: 70%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Full name </p></td>
                     <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_07}}</p></td>
                     </tr>
-                   
                     </table>
                     <p style='font-size:12pt; margin-top: 10px; margin-bottom: 10px'><strong>If you have signed this Form on behalf of the NDIS participant,</strong>, please complete the details below. It is an offence to provide false or misleading information.</p>
                     <p style='font-size: 12pt; margin-bottom: 10px'>We may require you to provide evidence of your authority to sign on behalf of the person.</p>
@@ -2941,16 +2926,14 @@ class HomeSeeder extends Seeder
             'form_heading_id' => $heading6,
             'form_field' => $form_fields6
         ]);
-        // FormField::create([
-        //     'form_heading_id' => $heading7,
-        //     'form_field' => $form_fields7
-        // ]);
-
-        // FormField::create([
-        //     'form_heading_id' => $heading8,
-        //     'form_field' => $form_fields8
-        // ]);
-
+        FormField::create([
+            'form_heading_id' => $heading7,
+            'form_field' => $form_fields7
+        ]);
+        FormField::create([
+            'form_heading_id' => $heading8,
+            'form_field' => $form_fields8
+        ]);
     }
 
 }
