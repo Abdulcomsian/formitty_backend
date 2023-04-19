@@ -132,7 +132,7 @@ class FormBuilderController extends ApiController
 
         self::generateWordDocument($user_form->id);
 
-        $success['file_path'] = 'https://formity.accrualdev.com/public/download.docx';
+        $success['file_path'] = 'http://127.0.0.1:8000/download.docx';
         $success['fields'] = $input;
         $success['user_form_id'] = $user_form->id;
         return $this->successResponse($success, 'Document Generated Successfully.');
@@ -475,7 +475,7 @@ class FormBuilderController extends ApiController
     public function createECANSTool($response, $section_html)
     {
         // Add questions and answers to the HTML
-        $section_html .= "<table style='width: 100%; border-collapse: collapse'>
+        $section_html .= "<br /> <table style='width: 100%; border-collapse: collapse'>
         <tbody>
           <tr>
             <td
@@ -612,7 +612,7 @@ class FormBuilderController extends ApiController
         }
 
         $section_html .= "<tr>
-                        <td colspan='3' style='width: 45%; border-left: 1px solid black'>
+                        <td colspan='3' style='width: 45%; border: 1px solid black'>
                           <table style='width: 100%'>
                             <tr>
                               <td style='width: 20%;'></td><td style='width: 60%; text-align: start'><span style='font-weight: bold;'>Group A + Group B + Group C + Group D = ".$total_achieved_points." / ".$total_questions." = </span><span style='text-decoration: underline'></span></td><td style='width: 20%;'></td>
@@ -628,7 +628,7 @@ class FormBuilderController extends ApiController
     public function createWHODASTool($response, $section_html){
         // Add questions and answers to the HTML
         $title = $response->assessment_tool->title ?? '';
-        $section_html .= "<table style='width: 100%; border-collapse: collapse'>
+        $section_html .= "<br /> <table style='width: 100%; border-collapse: collapse'>
                             <thead>
                               <tr style='background-color: #6A2C75'>
                                 <td colspan='8'>
@@ -692,8 +692,7 @@ class FormBuilderController extends ApiController
 
         $section_html.= "
         </tbody>
-        </table>
-        ";
+        </table>";
 
         return $section_html;
     }
@@ -701,7 +700,7 @@ class FormBuilderController extends ApiController
     public function createDSMSELFTool($response, $section_html){
         // Add questions and answers to the HTML
         $title = $response->assessment_tool->title ?? '';
-        $section_html .= "<table style='width: 100%; border-collapse: collapse; border: 1px solid black'>
+        $section_html .= "<br /> <table style='width: 100%; border-collapse: collapse; border: 1px solid black'>
                             <thead>
                               <tr style='background-color: #6A2C75'>
                                 <td colspan='8'>
@@ -814,8 +813,7 @@ class FormBuilderController extends ApiController
         }
         $section_html .= "
         </tbody>
-        </table>
-        ";
+        </table>";
 
         return $section_html;
     }
@@ -823,7 +821,7 @@ class FormBuilderController extends ApiController
     public function createDSMPARENTTool($response, $section_html){
         // Add questions and answers to the HTML
         $title = $response->assessment_tool->title ?? '';
-        $section_html .= "<table style='width: 100%; border-collapse: collapse; border: 1px solid black'>
+        $section_html .= "<br /> <table style='width: 100%; border-collapse: collapse; border: 1px solid black'>
                             <thead>
                               <tr style='background-color: #6A2C75'>
                                 <td colspan='8'>
@@ -955,8 +953,7 @@ class FormBuilderController extends ApiController
         }
         $section_html .= "
         </tbody>
-        </table>
-        ";
+        </table>";
 
         return $section_html;
     }
@@ -964,7 +961,7 @@ class FormBuilderController extends ApiController
     public function createLEVEL2TTool($response, $section_html){
         // Add questions and answers to the HTML
         $title = $response->assessment_tool->title ?? '';
-        $section_html .= "<table style='width: 100%; border-collapse: collapse; border: 1px solid black'>
+        $section_html .= "<br /> <table style='width: 100%; border-collapse: collapse; border: 1px solid black'>
                             <thead>
                               <tr style='background-color: #6A2C75'>
                                 <td colspan='8'>
@@ -1092,8 +1089,7 @@ class FormBuilderController extends ApiController
 
         $section_html .= "
         </tbody>
-        </table>
-        ";
+        </table>";
 
         return $section_html;
     }
@@ -1101,7 +1097,7 @@ class FormBuilderController extends ApiController
     public function createMRS9QTool($response, $section_html){
         // Add questions and answers to the HTML
         $title = $response->assessment_tool->title ?? '';
-        $section_html .= "<table style='width: 100%; border-collapse: collapse; border: 1px solid black; margin-top: 8px;'>
+        $section_html .= "<br /> <table style='width: 100%; border-collapse: collapse; border: 1px solid black; margin-top: 8px;'>
                             <thead>
                                       <tr style='background-color: #6A2C75'>
                                         <td colspan='2'>
@@ -1133,8 +1129,7 @@ class FormBuilderController extends ApiController
 
         $section_html .= "
         </tbody>
-        </table>
-        ";
+        </table>";
 
         return $section_html;
     }
@@ -1143,7 +1138,7 @@ class FormBuilderController extends ApiController
     {
         // Add questions and answers to the HTML
         $title = $response->assessment_tool->title ?? '';
-        $section_html .= "<table style='width: 100%; border-collapse: collapse; border: 1px solid black; margin-top: 8px;'>
+        $section_html .= "<br /> <table style='width: 100%; border-collapse: collapse; border: 1px solid black; margin-top: 8px;'>
                             <thead>
                                       <tr style='background-color: #6A2C75'>
                                         <td colspan='2'>
@@ -1189,7 +1184,7 @@ class FormBuilderController extends ApiController
     {
         // Add questions and answers to the HTML
         $title = $response->assessment_tool->title ?? '';
-        $section_html .= "<table style='width: 100%; border-collapse: collapse; border: 1px solid black; margin-top: 8px;'>
+        $section_html .= "<br /> <table style='width: 100%; border-collapse: collapse; border: 1px solid black; margin-top: 8px;'>
                             <thead>
                                       <tr style='background-color: #6A2C75'>
                                         <td colspan='2'>
@@ -1233,7 +1228,7 @@ class FormBuilderController extends ApiController
     {
         // Add questions and answers to the HTML
         $title = $response->assessment_tool->title ?? '';
-        $section_html .= "<table style='width: 100%; border-collapse: collapse; border: 1px solid black; margin-top: 8px;'>
+        $section_html .= "<br /> <table style='width: 100%; border-collapse: collapse; border: 1px solid black; margin-top: 8px;'>
                             <thead>
                                       <tr style='background-color: #6A2C75'>
                                         <td colspan='2'>
@@ -1296,7 +1291,7 @@ class FormBuilderController extends ApiController
     {
         // Add questions and answers to the HTML
         $title = $response->assessment_tool->title ?? '';
-        $section_html .= "<table style='width: 100%; border-collapse: collapse; border: 1px solid black; margin-top: 8px;'>
+        $section_html .= "<br /> <table style='width: 100%; border-collapse: collapse; border: 1px solid black; margin-top: 8px;'>
                             <thead>
                                       <tr style='background-color: #6A2C75'>
                                         <td colspan='2'>
@@ -1335,7 +1330,7 @@ class FormBuilderController extends ApiController
     {
         // Add questions and answers to the HTML
         $title = $response->assessment_tool->title ?? '';
-        $section_html .= "<table style='width: 100%; border-collapse: collapse; border: 1px solid black; margin-top: 8px;'>
+        $section_html .= "<br /> <table style='width: 100%; border-collapse: collapse; border: 1px solid black; margin-top: 8px;'>
                             <thead>
                                       <tr style='background-color: #6A2C75'>
                                         <td colspan='3'>
