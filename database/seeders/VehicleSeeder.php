@@ -742,7 +742,7 @@ class VehicleSeeder extends Seeder
                                 "subtype":"text"
                                 },
                                 {
-                                "type":"text",
+                                "type":"date",
                                 "required":false,
                                 "label":"Date of Birth",
                                 "placeholder":"Enter Your Date of Birth",

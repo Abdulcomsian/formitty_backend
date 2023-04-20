@@ -636,7 +636,7 @@ class NutritionSeeder extends Seeder
                         "subtype":"text"
                         },
                         {
-                        "type":"text",
+                        "type":"date",
                         "required":false,
                         "label":"Date of Birth",
                         "placeholder":"Enter Your Date of Birth",
@@ -816,7 +816,7 @@ class NutritionSeeder extends Seeder
 
 
                 {
-                "type":"text",
+                "type":"date",
                 "required":false,
                 "label":"Date of measurement",
                 "placeholder":"Enter Date of measurement",
@@ -1336,7 +1336,7 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
-            "type":"textarea",
+            "type":"date",
             "required":false,
             "label":"Date of assessment",
             "placeholder":"Date of assessment",
@@ -1346,7 +1346,7 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
-            "type":"textarea",
+            "type":"date",
             "required":false,
             "label":"Date of report",
             "placeholder":"Date of report",
@@ -1392,7 +1392,7 @@ class NutritionSeeder extends Seeder
         },
 
         {
-            "type":"textarea",
+            "type":"date",
             "required":false,
             "label":"Date",
             "placeholder":"Date",
@@ -1426,7 +1426,7 @@ class NutritionSeeder extends Seeder
         },
 
         {
-            "type":"textarea",
+            "type":"date",
             "required":false,
             "label":"Date",
             "placeholder":"Date",

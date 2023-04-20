@@ -604,7 +604,7 @@ $section6 = "<p style='margin-top:10px'></p>
                     "subtype":"text"
                     },
                     {
-                    "type":"number",
+                    "type":"text",
                     "required":false,
                     "label":"Age",
                     "placeholder":"Enter Your Age",
@@ -759,10 +759,20 @@ $section6 = "<p style='margin-top:10px'></p>
                         {
                         "type":"text",
                         "required":false,
+                        "label":"Functional",
+                        "placeholder":"Enter Functional Assessment",
+                        "className":"form-control",
+                        "name":"part_2_cognitive_functional_assessment",
+                        "access":false,
+                        "subtype":"text"
+                        },
+                        {
+                        "type":"text",
+                        "required":false,
                         "label":"Behavioural",
                         "placeholder":"Enter Behavioural Assessment",
                         "className":"form-control",
-                        "name":"part_2_cognitive_functional_assessment",
+                        "name":"part_2_behavioural_functional_assessment",
                         "access":false,
                         "subtype":"text"
                         }
