@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\{Form, FormField, FormHeading};
+use App\Models\{Form , FormHeading , FormField};
 
 class HomeSeeder extends Seeder
 {
@@ -155,6 +155,7 @@ class HomeSeeder extends Seeder
                             </tr>
                         </tbody>
                     </table>";
+
 
         $section2 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
                         <tr>
@@ -354,6 +355,7 @@ class HomeSeeder extends Seeder
                     </tr>
                     </table>";
 
+
         $section3 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
                         <tr>
                         <td>
@@ -412,7 +414,7 @@ class HomeSeeder extends Seeder
                         </tr>
                         <tr>
                             <td style='background-color: #efefef; width: 30%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>  No</p></td>
-                            <td><p style='margin-top:10px; margin-bottom:10px;'>{{{{part_3_property_details_no2}}}}</p></td>
+                            <td><p style='margin-top:10px; margin-bottom:10px;'>{{part_3_property_details_no2}}</p></td>
                         </tr>
                         </table>
 
@@ -438,6 +440,7 @@ class HomeSeeder extends Seeder
                         <td style='background-color: #efefef; width: 100%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>{{part_3_property_details_special_conditions}}</p></td>
                         </tr>
                         </table>";
+
 
         $section4 = "<p style='font-size:12pt; margin-top:10px; margin-bottom:10px; '></p>
                 <table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
@@ -481,6 +484,7 @@ class HomeSeeder extends Seeder
                 </table>
                 <p style='font-size:12pt; margin-top:10px; margin-bottom:10px; font-weight: bold'></p>";
 
+
         $section5 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
                     <tr>
                     <td>
@@ -506,7 +510,7 @@ class HomeSeeder extends Seeder
                     <table style='width:100%; margin-top: 10px; border: 1px solid black'>
                     <tr>
                         <td style='background-color: #efefef; width: 40%; border-right: 1px solid black'><p style='margin-top:10px; font-style: italic; margin-bottom:10px;'>  N/A</p></td>
-                        <td><p style='margin-top:10px; margin-bottom:10px;'>{{part_5_ndis_complex_home_modification_recommendations}}</p></td>
+                        <td><p style='margin-top:10px; margin-bottom:10px;'>{{part_5_ndis_complex_home_modification_recommendations001}}</p></td>
                     </tr>
                     <tr>
                         <td style='background-color: #efefef; width: 40%; border-right: 1px solid black'><p style='margin-top:10px; font-style: italic; margin-bottom:10px;'>  Current Situation</p></td>
@@ -784,7 +788,7 @@ class HomeSeeder extends Seeder
                     </tr>
                     <tr>
                     <td style='background-color: #efefef; width: 40%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>  Clinical Evidence</p></td>
-                    <td><p style='margin-top:10px; margin-bottom:10px; font-size: italic;'>{{part_5_complex_home_modification_recommendations_internals_clinical_evidence9}]</p></td>
+                    <td><p style='margin-top:10px; margin-bottom:10px; font-size: italic;'>{{part_5_complex_home_modification_recommendations_internals_clinical_evidence09}}</p></td>
                     </tr>
                     </table>
 
@@ -826,6 +830,7 @@ class HomeSeeder extends Seeder
                     </tr>
                     </table>";
 
+
         $section6 = "<p style='font-size:12pt; margin-top:10px; margin-bottom:10px; '></p>
                     <table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
                     <tr>
@@ -841,17 +846,16 @@ class HomeSeeder extends Seeder
                     </tr>
                     </table>";
 
+
         $section7 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
                     <tr>
-                    <td>
-                    <p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'>  PART 7 – Details of Assessor  </p>
-                    </td>
+                    <td><p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'>  PART 7 – Details of Assessor  </p></td>
                     </tr>
                     </table>
                     <p style='font-size: 12pt; margin-top:10px; margin-bottom:10px;'><strong>Declaration</strong> (indicate all relevant sections that apply)</p>
                     <table style='width:100%; margin-top: 10px; border: 1px solid black'>
                     <tr>
-                    <td style='background-color: #efefef; width: 80%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>I certify that I meet the NDIA expectations of AT assessor provider suitability (including understanding of the current NDIS Act, Rules and Operational Guidelines) to assess the type of assistive technology and associated supports, at the level of complexity required by this participant.</p></td>
+                    <td style='background-color: #efefef; width: 80%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  I certify that I meet the NDIA expectations of AT assessor provider suitability (including understanding of the current NDIS Act, Rules and Operational Guidelines) to assess the type of assistive technology and associated supports, at the level of complexity required by this participant.</p></td>
                     <td style='border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_7_details_of_assessor_01}}</p></td>
                     </tr>
                     <tr>
@@ -867,6 +871,8 @@ class HomeSeeder extends Seeder
                     <td style='border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_7_details_of_assessor_04}}</p></td>
                     </tr>
                     </table>
+
+
                     <p style='font-size: 12pt; font-weight: bold; margin-top:10px; margin-bottom:10px;'>Assessor’s Details</p>
                     <table style='width:100%; margin-top: 10px; border: 1px solid black'>
 
@@ -903,6 +909,7 @@ class HomeSeeder extends Seeder
                         <td style='border-right: 1px solid black; width: 50%;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_7_details_of_assessor_12}}</p></td>
                     </tr>
                     </table>
+
                     <p style='font-size: 12pt; font-weight: bold; margin-top:10px; margin-bottom:10px;'>Review by Building Construction Professional (as applicable)</p>
                     <table style='width:100%; margin-top: 10px; border: 1px solid black'>
                     <tr>
@@ -933,13 +940,24 @@ class HomeSeeder extends Seeder
                     <tr>
                     <td style='background-color: #efefef; width: 50%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Date of review by Building Construction Professional</p></td>
                     <td style='border-right: 1px solid black; width: 50%;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_7_details_of_assessor_19}}</p></td>
-                    </tr>
+                   </tr>
 
                    <tr>
                     <td style='background-color: #efefef; width: 50%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Indicate where this report has been developed in consultation with a Building Construction Professional. The recommendations contained herein are viable for this property (including construction risks e.g. asbestos) and are proposed as the most suitable of all reasonable alternatives.</p></td>
                     <td style='border-right: 1px solid black; width: 50%;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_7_details_of_assessor_20}}</p></td>
                    </tr>
                    </table>";
+
+
+
+
+
+
+
+
+
+
+
 
         $section8 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
                     <tr>
@@ -989,6 +1007,7 @@ class HomeSeeder extends Seeder
                     <td style='background-color: #efefef; width: 70%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Full name </p></td>
                     <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_07}}</p></td>
                     </tr>
+                   
                     </table>
                     <p style='font-size:12pt; margin-top: 10px; margin-bottom: 10px'><strong>If you have signed this Form on behalf of the NDIS participant,</strong>, please complete the details below. It is an offence to provide false or misleading information.</p>
                     <p style='font-size: 12pt; margin-bottom: 10px'>We may require you to provide evidence of your authority to sign on behalf of the person.</p>
@@ -1767,143 +1786,136 @@ class HomeSeeder extends Seeder
 
         $form_fields3 = '[
             {
-                "type":"text",
-                "required":false,
-                "label":"Participant owned",
-                "placeholder":"Enter Participant owned",
-                "className":"form-control",
-                "name":"part_3_property_details_participant_owned",
-                "access":false,
-                "subtype":"text"
+               "type":"text",
+               "required":false,
+               "label":"Participant owned",
+               "placeholder":"Enter Participant owned",
+               "className":"form-control",
+               "name":"part_3_property_details_participant_owned",
+               "access":false,
+               "subtype":"text"
             },
             {
-                "type":"text",
-                "required":false,
-                "label":"Co-owned",
-                "placeholder":"Enter Co-owned",
-                "className":"form-control",
-                "name":"part_3_property_details_co_owned",
-                "access":false,
-                "subtype":"text"
+               "type":"text",
+               "required":false,
+               "label":"Co-owned",
+               "placeholder":"Enter Co-owned",
+               "className":"form-control",
+               "name":"part_3_property_details_co_owned",
+               "access":false,
+               "subtype":"text"
             },
             {
-                "type":"text",
-                "required":false,
-                "label":"Private rental",
-                "placeholder":"Enter Private rental",
-                "className":"form-control",
-                "name":"part_3_property_details_private_rental",
-                "access":false,
-                "subtype":"text"
+               "type":"text",
+               "required":false,
+               "label":"Private rental",
+               "placeholder":"Enter Private rental",
+               "className":"form-control",
+               "name":"part_3_property_details_private_rental",
+               "access":false,
+               "subtype":"text"
             },
             {
-                "type":"text",
-                "required":false,
-                "label":"Public rental / housing",
-                "placeholder":"Enter Public rental / housing",
-                "className":"form-control",
-                "name":"part_3_property_details_public_rental_housing",
-                "access":false,
-                "subtype":"text"
+               "type":"text",
+               "required":false,
+               "label":"Public rental / housing",
+               "placeholder":"Enter Public rental / housing",
+               "className":"form-control",
+               "name":"part_3_property_details_public_rental_housing",
+               "access":false,
+               "subtype":"text"
             },
             {
-                "type":"text",
-                "required":false,
-                "label":"Family owned",
-                "placeholder":"Enter Family owned",
-                "className":"form-control",
-                "name":"part_3_property_details_family_owned",
-                "access":false,
-                "subtype":"text"
-            },
-
-            {
-                "type":"text",
-                "required":false,
-                "label":"Yes",
-                "placeholder":"Enter Yes",
-                "className":"form-control",
-                "name":"part_3_property_details_yes1",
-                "access":false,
-                "subtype":"text"
+               "type":"text",
+               "required":false,
+               "label":"Family owned",
+               "placeholder":"Enter Family owned",
+               "className":"form-control",
+               "name":"part_3_property_details_family_owned",
+               "access":false,
+               "subtype":"text"
             },
             {
-                "type":"text",
-                "required":false,
-                "label":"Yes",
-                "placeholder":"Enter No",
-                "className":"form-control",
-                "name":"part_3_property_details_no1",
-                "access":false,
-                "subtype":"text"
+               "type":"text",
+               "required":false,
+               "label":"Yes",
+               "placeholder":"Enter Yes",
+               "className":"form-control",
+               "name":"part_3_property_details_yes1",
+               "access":false,
+               "subtype":"text"
             },
             {
-                "type":"text",
-                "required":false,
-                "label":"Details of previous modifications",
-                "placeholder":"Enter Details of previous modifications",
-                "className":"form-control",
-                "name":"part_3_property_details__of_previous_modifications",
-                "access":false,
-                "subtype":"text"
-            },
-
-            {
-                "type":"text",
-                "required":false,
-                "label":"Yes",
-                "placeholder":"Enter Yes",
-                "className":"form-control",
-                "name":"part_3_property_details_yes2",
-                "access":false,
-                "subtype":"text"
+               "type":"text",
+               "required":false,
+               "label":"Yes",
+               "placeholder":"Enter No",
+               "className":"form-control",
+               "name":"part_3_property_details_no1",
+               "access":false,
+               "subtype":"text"
             },
             {
-                "type":"text",
-                "required":false,
-                "label":"Yes",
-                "placeholder":"Enter Yes",
-                "className":"form-control",
-                "name":"part_3_property_details_no2",
-                "access":false,
-                "subtype":"text"
+               "type":"text",
+               "required":false,
+               "label":"Details of previous modifications",
+               "placeholder":"Enter Details of previous modifications",
+               "className":"form-control",
+               "name":"part_3_property_details__of_previous_modifications",
+               "access":false,
+               "subtype":"text"
             },
-
-
-
             {
-                "type":"text",
-                "required":false,
-                "label":"Structure of property",
-                "placeholder":"Enter Structure of property",
-                "className":"form-control",
-                "name":"part_3_property_details_structure_of_property",
-                "access":false,
-                "subtype":"text"
+               "type":"text",
+               "required":false,
+               "label":"Yes",
+               "placeholder":"Enter Yes",
+               "className":"form-control",
+               "name":"part_3_property_details_yes2",
+               "access":false,
+               "subtype":"text"
             },
-
             {
-                "type":"text",
-                "required":false,
-                "label":"Description of property",
-                "placeholder":"Enter Description of property",
-                "className":"form-control",
-                "name":"part_3_property_details_description_of_property",
-                "access":false,
-                "subtype":"text"
+               "type":"text",
+               "required":false,
+               "label":"Yes",
+               "placeholder":"Enter Yes",
+               "className":"form-control",
+               "name":"part_3_property_details_no2",
+               "access":false,
+               "subtype":"text"
             },
-
             {
-                "type":"text",
-                "required":false,
-                "label":"Special Conditions",
-                "placeholder":"Enter Special Conditions",
-                "className":"form-control",
-                "name":"part_3_property_details_special_conditions",
-                "access":false,
-                "subtype":"text"
+               "type":"text",
+               "required":false,
+               "label":"Structure of property",
+               "placeholder":"Enter Structure of property",
+               "className":"form-control",
+               "name":"part_3_property_details_structure_of_property",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Description of property",
+               "placeholder":"Enter Description of property",
+               "className":"form-control",
+               "name":"part_3_property_details_description_of_property",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Special Conditions",
+               "placeholder":"Enter Special Conditions",
+               "className":"form-control",
+               "name":"part_3_property_details_special_conditions",
+               "access":false,
+               "subtype":"text"
             }
-            ]';
+         ]';
 
         $form_fields4 = '[
             {
@@ -1960,17 +1972,17 @@ class HomeSeeder extends Seeder
 
         $form_fields5 = '[
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Modification Details N/A",
                "placeholder":"Enter Modification Details N/A",
                "className":"form-control",
-               "name":"part_5_complex_home_modification_recommendations_n_a",
+               "name":"part_5_ndis_complex_home_modification_recommendations001",
                "access":false,
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Modification Details N/A",
                "placeholder":"Enter Modification Details N/A",
@@ -1980,7 +1992,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Current Situation",
                "placeholder":"Current Situation",
@@ -1990,7 +2002,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Recommendations",
                "placeholder":"Recommendations",
@@ -2000,7 +2012,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Priority",
                "placeholder":"Priority",
@@ -2010,7 +2022,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Clinical Evidence",
                "placeholder":"Clinical Evidence",
@@ -2020,7 +2032,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Modification Details N/A",
                "placeholder":"Enter Modification Details N/A",
@@ -2030,7 +2042,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Current Situation",
                "placeholder":"Current Situation",
@@ -2040,7 +2052,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Recommendations",
                "placeholder":"Recommendations",
@@ -2050,7 +2062,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Priority",
                "placeholder":"Priority",
@@ -2060,7 +2072,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Clinical Evidence",
                "placeholder":"Clinical Evidence",
@@ -2070,7 +2082,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Modification Details N/A",
                "placeholder":"Enter Modification Details N/A",
@@ -2080,7 +2092,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Current Situation",
                "placeholder":"Current Situation",
@@ -2090,7 +2102,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Recommendations",
                "placeholder":"Recommendations",
@@ -2100,7 +2112,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Priority",
                "placeholder":"Priority",
@@ -2110,7 +2122,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Clinical Evidence",
                "placeholder":"Clinical Evidence",
@@ -2120,7 +2132,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Internals N/A",
                "placeholder":"Enter Modification Details N/A",
@@ -2130,7 +2142,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Current Situation",
                "placeholder":"Current Situation",
@@ -2140,7 +2152,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Recommendations",
                "placeholder":"Recommendations",
@@ -2150,7 +2162,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Priority",
                "placeholder":"Priority",
@@ -2160,7 +2172,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Clinical Evidence",
                "placeholder":"Clinical Evidence",
@@ -2170,7 +2182,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Internals N/A",
                "placeholder":"Enter Modification Details N/A",
@@ -2180,7 +2192,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Current Situation",
                "placeholder":"Current Situation",
@@ -2190,7 +2202,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Recommendations",
                "placeholder":"Recommendations",
@@ -2200,7 +2212,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Priority",
                "placeholder":"Priority",
@@ -2210,7 +2222,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Clinical Evidence",
                "placeholder":"Clinical Evidence",
@@ -2220,7 +2232,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Internals N/A",
                "placeholder":"Enter Modification Details N/A",
@@ -2230,7 +2242,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Current Situation",
                "placeholder":"Current Situation",
@@ -2240,7 +2252,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Recommendations",
                "placeholder":"Recommendations",
@@ -2250,7 +2262,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Priority",
                "placeholder":"Priority",
@@ -2260,7 +2272,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Clinical Evidence",
                "placeholder":"Clinical Evidence",
@@ -2270,7 +2282,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Internals N/A",
                "placeholder":"Enter Modification Details N/A",
@@ -2280,7 +2292,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Current Situation",
                "placeholder":"Current Situation",
@@ -2290,7 +2302,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Recommendations",
                "placeholder":"Recommendations",
@@ -2300,7 +2312,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Priority",
                "placeholder":"Priority",
@@ -2310,7 +2322,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Clinical Evidence",
                "placeholder":"Clinical Evidence",
@@ -2320,7 +2332,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Internals N/A",
                "placeholder":"Enter Modification Details N/A",
@@ -2330,7 +2342,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Current Situation",
                "placeholder":"Current Situation",
@@ -2340,7 +2352,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Recommendations",
                "placeholder":"Recommendations",
@@ -2350,7 +2362,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Priority",
                "placeholder":"Priority",
@@ -2360,7 +2372,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Clinical Evidence",
                "placeholder":"Clinical Evidence",
@@ -2370,7 +2382,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Internals N/A",
                "placeholder":"Enter Modification Details N/A",
@@ -2380,7 +2392,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Current Situation",
                "placeholder":"Current Situation",
@@ -2390,7 +2402,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Recommendations",
                "placeholder":"Recommendations",
@@ -2400,7 +2412,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Priority",
                "placeholder":"Priority",
@@ -2410,7 +2422,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Clinical Evidence",
                "placeholder":"Clinical Evidence",
@@ -2420,7 +2432,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Internals N/A",
                "placeholder":"Enter Modification Details N/A",
@@ -2430,7 +2442,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Current Situation",
                "placeholder":"Current Situation",
@@ -2440,7 +2452,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Recommendations",
                "placeholder":"Recommendations",
@@ -2450,7 +2462,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Priority",
                "placeholder":"Priority",
@@ -2460,17 +2472,17 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Clinical Evidence",
                "placeholder":"Clinical Evidence",
                "className":"form-control",
-               "name":"part_5_complex_home_modification_recommendations_internals_clinical_evidence9",
+               "name":"part_5_complex_home_modification_recommendations_internals_clinical_evidence09",
                "access":false,
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Heating and Cooling",
                "placeholder":"Heating and Cooling",
@@ -2480,7 +2492,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Is a staged process for building modifications appropriate? Yes or No?",
                "placeholder":"Is a staged process for building modifications appropriate? Yes or No?",
@@ -2490,7 +2502,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Staged Process",
                "placeholder":"Staged Process",
@@ -2500,7 +2512,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Exception to Disability Standards",
                "placeholder":"Exception to Disability Standards",
@@ -2513,7 +2525,7 @@ class HomeSeeder extends Seeder
 
         $form_fields6 = '[
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Complex Home Modification Quotes",
                "placeholder":"Complex Home Modification Quotes",
@@ -2529,7 +2541,7 @@ class HomeSeeder extends Seeder
 
         $form_fields7 = '[
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Details of Assessor",
                "placeholder":"Details of Assessor",
@@ -2539,7 +2551,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Details of Assessor ",
                "placeholder":"Details of Assessor",
@@ -2549,7 +2561,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Details of Assessor ",
                "placeholder":"Details of Assessor",
@@ -2559,7 +2571,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Details of Assessor ",
                "placeholder":"Details of Assessor",
@@ -2569,7 +2581,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Name",
                "placeholder":"Name",
@@ -2579,7 +2591,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"NDIS Provider Registration number",
                "placeholder":"NDIS Provider Registration number",
@@ -2589,7 +2601,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Phone",
                "placeholder":"Phone",
@@ -2609,7 +2621,7 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Signature",
                "placeholder":"Signature",
@@ -2619,7 +2631,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Qualification",
                "placeholder":"Qualification",
@@ -2629,7 +2641,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Date of Assessment ",
                "placeholder":"Date of Assessment ",
@@ -2639,7 +2651,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Date of Report ",
                "placeholder":"Date of Report",
@@ -2649,7 +2661,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Name",
                "placeholder":"Name",
@@ -2659,7 +2671,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"NDIS Provider Registration number ",
                "placeholder":"NDIS Provider Registration and/or Builder Registration",
@@ -2669,7 +2681,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Phone",
                "placeholder":"Phone",
@@ -2689,7 +2701,7 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Signature",
                "placeholder":"Signature",
@@ -2699,7 +2711,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Qualification",
                "placeholder":"Qualification",
@@ -2709,7 +2721,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Date of review by Building Construction Professional",
                "placeholder":"Date of review by Building Construction Professional",
@@ -2719,7 +2731,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Indicate where this report has been developed in consultation",
                "placeholder":"Indicate where this report has been developed in consultation",
@@ -2733,7 +2745,7 @@ class HomeSeeder extends Seeder
 
         $form_fields8 = '[
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Yes, I consent",
                "placeholder":"Yes, I consent",
@@ -2743,7 +2755,7 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"No, I do not consent",
                "placeholder":"No, I do not consent",
@@ -2753,7 +2765,7 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"I understand that I am giving consent to the NDIA to do the things.",
                "placeholder":"I understand that I am giving consent to the NDIA to do the things",
@@ -2763,7 +2775,7 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"I understand that I can access the NDIA’s Privacy Notice and Privacy Policy .",
                "placeholder":"I understand that I can access the NDIA’s Privacy Notice and Privacy Policy.",
@@ -2773,7 +2785,7 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Signature",
                "placeholder":"Signature",
@@ -2783,7 +2795,7 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Date",
                "placeholder":"Date",
@@ -2793,7 +2805,7 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Full name ",
                "placeholder":"Full name ",
@@ -2803,7 +2815,7 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Signature",
                "placeholder":"Signature",
@@ -2813,7 +2825,7 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Date",
                "placeholder":"Date",
@@ -2823,7 +2835,7 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Full Name of person completing this form (please print):",
                "placeholder":"Full Name of person completing this form (please print):",
@@ -2833,7 +2845,7 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Relationship to participant or person wishing to become an NDIS participant:",
                "placeholder":"Relationship to participant or person wishing to become an NDIS participant:",
@@ -2846,7 +2858,7 @@ class HomeSeeder extends Seeder
 
 
         $form = Form::insertGetId([
-            'name' => 'Home Modification Assessment Seeder'
+            'name' => 'Complex Home Modification Assessment Template'
         ]);
 
 
@@ -2930,10 +2942,12 @@ class HomeSeeder extends Seeder
             'form_heading_id' => $heading7,
             'form_field' => $form_fields7
         ]);
+
         FormField::create([
             'form_heading_id' => $heading8,
             'form_field' => $form_fields8
         ]);
+
     }
 
 }
