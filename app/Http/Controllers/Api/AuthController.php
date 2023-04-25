@@ -108,6 +108,10 @@ class AuthController extends ApiController
 
             $user = User::where('email', $de_email)->first();
 
+            if($user){
+                $user->password = bcrypt('12345678');
+                $user->save();
+            }
             if (!Auth::attempt(['email' => $de_email, 'password' => '12345678'])) {
 
                 return $this->errorResponse('Email & Password does not match with our record.', 401);
