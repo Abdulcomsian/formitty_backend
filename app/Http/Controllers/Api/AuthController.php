@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Api\ApiController;
+use Illuminate\Support\Facades\Http;
 
 class AuthController extends ApiController
 {
@@ -55,6 +56,47 @@ class AuthController extends ApiController
                 [
                     'email' => 'required|email',
                     'password' => 'required'
+                ]);
+
+            if ($validateUser->fails()) {
+                return $this->errorResponse($validateUser->messages(), 401);
+            }
+
+            if (!Auth::attempt($request->only(['email', 'password']))) {
+
+                return $this->errorResponse('Email & Password does not match with our record.', 401);
+
+            }
+
+            $user = User::where('email', $request->email)->first();
+
+            $success['token'] = $user->createToken('API TOKEN')->plainTextToken;
+            $success['name'] = $user->first_name . ' ' . $user->last_name;
+            $success['user_id'] = $user->id;
+            if($user->hasRole('admin') == 'admin')
+            {
+                $role = "admin";
+            }
+            if($user->hasRole('user') == 'user')
+            {
+                $role = "user";
+            }
+
+            $success['role'] = $role;
+
+            return $this->successResponse($success, 'User Logged In Successfully.');
+
+        } catch (\Throwable $th) {
+            return $this->errorResponse($th->getMessage(), 401);
+        }
+    }
+
+    public function userLogin(Request $request)
+    {
+        try {
+            $validateUser = Validator::make($request->all(),
+                [
+                    'email' => 'required|email',
                 ]);
 
             if ($validateUser->fails()) {

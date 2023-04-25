@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\FormBuilderController;
 use App\Http\Controllers\Api\AssessmentToolController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,8 @@ use App\Http\Controllers\Api\AssessmentToolController;
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'loginUser']);
+Route::post('/user-login', [AuthController::class, 'userLogin']);
+
 //Route::get('/test', [AuthController::class, 'test']);
 Route::post('/import', [AuthController::class, 'import']);
 Route::get('/download/{id}', [AuthController::class, 'download']);
