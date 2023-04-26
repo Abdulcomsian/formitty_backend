@@ -338,11 +338,82 @@ class ProstheticsSeeder extends Seeder
             </td>
         </tr>
     </table>
-    ";
+    <p> </p>";
 
         $section4 = "";
 
-        $section5 = "";
+        $section5 = "<table style='background-color:#7209B7; border:none; width:100%;'>
+        <tr>
+            <td>
+                <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'>PART 5 – Details of Assistive Technology Assessor</p>
+            </td>
+        </tr>
+        </table>
+        <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'>DECLARATION</p> <p style='margin-bottom: 10px'>(indicate all relevant sections that apply)</p>
+        <table style=' width:100%; border: 1px solid black;'>
+        <tr>
+        <td style='width:80%; background-color: lightgrey; font-size: 17px;'>I certify that I meet the NDIA expectations of AT assessor provider suitability (including understanding of the current NDIS Act, Rules and Operational Guidelines) to assess the type of assistive technology and associated supports, at the level of complexity required by this participant.</td>
+        <td style='width:20%; border: 1px solid black;'>{{part_5_declaration_NDIA_expectation}}</td>
+        </tr>
+        <tr>
+        <td style='width:80%; background-color: lightgrey; font-size: 17px;'>I will provide appropriate evidence to the NDIA and/or NDIS Quality and Safeguards Commission if and as requested.</td>
+        <td style='width:20%; border: 1px solid black;'>{{part_5_declaration_appropriate_evidence}}</td>
+        </tr>
+        <tr>
+        <td style='width:80%; background-color: lightgrey; font-size: 17px;'>I understand and acknowledge that the NDIA and participant will rely on my professional advice to select, source and implement this assistive technology.</td>
+        <td style='width:20%; border: 1px solid black;'>{{part_5_declaration_NDIA_understanding}}</td>
+        </tr>
+        <tr>
+        <td style='width:80%; background-color: lightgrey; font-size: 17px;'>This assistive technology has been assessed by the treating multi-disciplinary team and I have completed the AT assessment on behalf of that team.</td>
+        <td style='width:20%; border: 1px solid black;'>{{part_5_declaration_accessing_team}}</td>
+        </tr>
+        </table>
+        <p style='margin-top:10px'></p>
+        <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'>Assessor’s Details </p>
+        <p style='margin-bottom: 10px'>You must be able to provide evidence of competence in assessing AT needs at this level on request from NDIS Auditor</p>
+        <table
+        style='
+            border-collapse: collapse;
+            width: 100%;
+            margin: auto;
+            border: 1px solid lightslategray;
+        '
+        >
+        <tbody>
+            <tr>
+            <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Name</td>
+            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_assessors_name}}</td>
+            </tr>
+            <tr>
+            <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>NDIS Provider Registration number (where applicable)</td>
+            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_provider_registration_number}}</td>
+            </tr>
+            <tr>
+            <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Phone</td>
+            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_assessorphone_number}}</td>
+            </tr>
+            <tr>
+            <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Email</td>
+            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_email_address}}</td>
+            </tr>
+            <tr>
+            <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Signature</td>
+            <td style='border: 1px solid lightslategray; padding: 10px'></td>
+            </tr>
+            <tr>
+            <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Qualification</td>
+            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_qualification}}</td>
+            </tr>
+            <tr>
+            <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Date of Assessment(s)</td>
+            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_date_assessment}}</td>
+            </tr>
+            <tr>
+            <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Date of Report</td>
+            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_reportDate}}</td>
+            </tr>
+        </tbody>
+        </table>";
 
         $section6 = "<p style='margin-top:10px'></p>
                     <table style='background-color:#7209B7; border:none; width:100%;'>
@@ -1105,7 +1176,144 @@ class ProstheticsSeeder extends Seeder
 
         $form_fields4 = '[]';
 
-        $form_fields5 = '[]';
+        $form_fields5 = '[
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"Meet the NDIA expectation",
+               "toggle":false,
+               "inline":false,
+               "name":"part_5_declaration_NDIA_expectation",
+               "access":false,
+               "other":false,
+               "values":[
+                  {
+                     "label":"YES/NO",
+                     "value":"option-1",
+                     "selected":true
+                  }
+               ]
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"Providing appropriate evidence to the NDIA",
+               "toggle":false,
+               "inline":false,
+               "name":"part_5_declaration_appropriate_evidence",
+               "access":false,
+               "other":false,
+               "values":[
+                  {
+                     "label":"YES/NO",
+                     "value":"option-1",
+                     "selected":true
+                  }
+               ]
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"I understand all about the NDIA",
+               "toggle":false,
+               "inline":false,
+               "name":"part_5_declaration_NDIA_understanding",
+               "access":false,
+               "other":false,
+               "values":[
+                  {
+                     "label":"YES/NO",
+                     "value":"option-1",
+                     "selected":false
+                  }
+               ]
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"Accessing by the treating multi-disciplinary team",
+               "toggle":false,
+               "inline":false,
+               "name":"part_5_declaration_accessing_team",
+               "access":false,
+               "other":false,
+               "values":[
+                  {
+                     "label":"YES/NO",
+                     "value":"option-1",
+                     "selected":false
+                  }
+               ]
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Assessor’s Name",
+               "placeholder":"Enter Assessor’s Name",
+               "className":"form-control",
+               "name":"part_5_assessors_name",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Assessor’s NDIS Provider Registration Number",
+               "placeholder":"Enter Assessor’s NDIS Provider Registration Number",
+               "className":"form-control",
+               "name":"part_5_provider_registration_number",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Assessor’s Phone Number",
+               "placeholder":"Enter Assessor’s Phone Number",
+               "className":"form-control",
+               "name":"part_5_assessorphone_number",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "subtype":"email",
+               "required":false,
+               "label":"Assessor’s Email",
+               "placeholder":"Enter Assessor’s Email Address",
+               "className":"form-control",
+               "name":"part_5_email_address",
+               "access":false
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Assessor’s Qualification",
+               "placeholder":"Enter Assessor’s Qualification",
+               "className":"form-control",
+               "name":"part_5_qualification",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"date",
+               "required":false,
+               "label":"Assessor’s Date of Assessment",
+               "placeholder":"Set Assessor’s Date of Assessment",
+               "className":"form-control",
+               "name":"part_5_date_assessment",
+               "access":false
+            },
+            {
+               "type":"date",
+               "required":false,
+               "label":"Assessor’s Date of Report",
+               "placeholder":"Set Assessor’s Date of Report",
+               "className":"form-control",
+               "name":"part_5_reportDate",
+               "access":false
+            }
+         ]';
 
         $form_fields6 = '[
             {
