@@ -340,7 +340,304 @@ class ProstheticsSeeder extends Seeder
     </table>
     <p> </p>";
 
-        $section4 = "";
+        $section4 = "<table style='background-color:#7209B7; border:none; width:100%;'>
+        <tr>
+            <td>
+                <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'>PART 4 – Specification of Recommended P and O solution/device</p>
+            </td>
+        </tr>
+        </table>
+        <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'>4.1	Specification/Description of P and O AT solution/device</p>
+        <p style='font-size:12pt;'>Detail all necessary components required to meet participant’s goal. This must be detailed enough to ensure that reasonable and necessary can be accurately assessed in relation to the information supplied above (the fully completed  Activity, Detail and quantity  columns only of an AOPA  compliant example quotation form can be attached to this form as an alternative) Reference: AOPA  Quotation Development Guidance Quotation Development Tool</p>
+        <table style='width:100%; border: 1px solid black'>
+            <tr>
+                <td style='width: 100%; border: 1px solid black;'>
+                    <p style='margin-top:10px; margin-bottom:10px;'>{{part_3_description_of_P&O_AT_solution}}</p>
+                </td>
+            </tr>
+        </table>
+        <p> </p>
+        <p style='font-size:12pt;'>4.1.1 (Capacity building) Professional assessment, specification, fitting and training</p>
+        <table style='border-collapse: collapse; width: 100%;'>
+            <tr>
+                <th style='border-top: 1px solid black; border-right: 1px solid black; width: 40%;'>Activity</th>
+                <th style='border-top: 1px solid black; border-right: 1px solid black; width: 30%;'>Detail</th>
+                <th style='border-top: 1px solid black; width: 30%;'>Quantity (hrs)</th>
+            </tr>
+            <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>e.g. Clinical Assessment</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>e.g. Clinical assessment; Goal setting</td>
+                <td style='border-top: 1px solid black'>eg 2 hrs</td>
+            </tr>
+            <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>e.g. Device specification or measurement</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>e.g. Casting/measuring for bilateral articulated AFO</td>
+                <td style='border-top: 1px solid black'>eg 3 hrs</td>
+            </tr>
+            <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>Clinical Assessment</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_detail1}}</td>
+                <td style='border-top: 1px solid black'>{{part_3_quantity1}}</td>
+            </tr>
+            <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>Liaise with other health professionals</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_detail2}}</td>
+                <td style='border-top: 1px solid black'>{{part_3_quantity2}}</td>
+            </tr>
+            <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>Device specification/measurement</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_detail3}}</td>
+                <td style='border-top: 1px solid black'>{{part_3_quantity3}}</td>
+            </tr>
+            <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>Fitting and adjustment</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_detail4}}</td>
+                <td style='border-top: 1px solid black'>{{part_3_quantity4}}</td>
+            </tr>
+             <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>Client education</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_detail5}}</td>
+                <td style='border-top: 1px solid black'>{{part_3_quantity5}}</td>
+            </tr>
+            <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>Ongoing review/s (Identify intervals for first two years)</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{part_3_detail6}</td>
+                <td style='border-top: 1px solid black'>{{part_3_quantity6}}</td>
+            </tr>
+            <tr>
+                <td colspan='2' style='border-top: 1px solid black; border-right: 1px solid black; text-align: end;'>Capital Building Hours Sub Total (hrs)</td>
+                <td style='border-top: 1px solid black'>{{capital_building_hours_sub_total}}</td>
+            </tr>
+            <tr>
+                <td colspan='2' style=' border-top: 1px solid black; border-right: 1px solid black; text-align: end;'>Capital Building Hours x Hourly Rate Sub Total ($) (A)</td>
+                <td style='border-top: 1px solid black'>{{capital_building_hours_hour_rate_sub__total}}</td>
+            </tr>
+        </table>  
+        <p> </p>
+        <p style='font-size:12pt;'>4.1.2 (Capital) Labour</p>
+        <table style='border-collapse: collapse; width: 100%;'>
+            <tr>
+                <th style='border-top: 1px solid black; border-right: 1px solid black; width: 40%;'>Activity</th>
+                <th style='border-top: 1px solid black; border-right: 1px solid black; width: 30%;'>Detail</th>
+                <th style='border-top: 1px solid black; width: 30%;'>Value ($)</th>
+            </tr>
+            <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>Fabrication/modification</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_detail7}}</td>
+                <td style='border-top: 1px solid black'>{{part_3_quantity7}}</td>
+            </tr>
+            <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>Fitting/s</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_detail8}}</td>
+                <td style='border-top: 1px solid black'>{{part_3_quantity8}}</td>
+            </tr>
+            <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>Administration</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_detail9}}</td>
+                <td style='border-top: 1px solid black'>{{part_3_quantity9}}</td>
+            </tr>
+            <tr>
+                <td colspan='2' style='border-top: 1px solid black; border-right: 1px solid black; text-align: end;'>Capital Labour Sub Total ($) (B)</td>
+                <td style='border-top: 1px solid black'>{{part_3_capital_labour_sub_total}}</td>
+            </tr>
+        </table>
+        <p> </p>
+        <p style='font-size:12pt;'>4.1.3 Componentry included in specification (Prosthetic) List details using ISO codes.</p>
+        <table style='border-collapse: collapse; width: 100%;'>
+            <tr>
+                <th style='border-top: 1px solid black; border-right: 1px solid black; width: 40%;'>Component</th>
+                <th style='border-top: 1px solid black; border-right: 1px solid black; width: 30%;'>Detail</th>
+                <th style='border-top: 1px solid black; width: 30%;'>Value ($)</th>
+            </tr>
+            <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>Connective componentry</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_detail10}}</td>
+                <td style='border-top: 1px solid black'>{{part_3_quantity10}}</td>
+            </tr>
+            <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>Knee/Elbow</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_detail11}}</td>
+                <td style='border-top: 1px solid black'>{{part_3_quantity11}}</td>
+            </tr>
+            <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>Foot/Wrist</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_detail12}}</td>
+                <td style='border-top: 1px solid black'>{{part_3_quantity12}}</td>
+            </tr>
+            <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>Socket/suspension</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_detail13}}</td>
+                <td style='border-top: 1px solid black'>{{part_3_quantity13}}</td>
+            </tr>
+            <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>Consumables</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_detail14}}</td>
+                <td style='border-top: 1px solid black'>{{part_3_quantity14}}</td>
+            </tr>
+            <tr>
+                <td colspan='2' style='border-top: 1px solid black; border-right: 1px solid black; text-align: end;'>Prosthetic Componentry Sub Total ($) (C)</td>
+                <td style='border-top: 1px solid black'>{{part_3_Prosthetic_Componentry_Sub_Total}}</td>
+            </tr>
+        </table>
+        <p> </p>
+        <p style='font-size:12pt;'>4.1.4 Componentry included in specification (Orthotic) List details using ISO codes.</p>
+        <table style='border-collapse: collapse; width: 100%;'>
+            <tr>
+                <th style='border-top: 1px solid black; border-right: 1px solid black; width: 40%;'>Component</th>
+                <th style='border-top: 1px solid black; border-right: 1px solid black; width: 30%;'>Detail</th>
+                <th style='border-top: 1px solid black; width: 30%;'>Value ($)</th>
+            </tr>
+            <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>Fabrication materials</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_detail15}}</td>
+                <td style='border-top: 1px solid black'>{{part_3_quantity15}}</td>
+            </tr>
+            <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>Ankle Joints  (Size; batch number)</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_detail16}}</td>
+                <td style='border-top: 1px solid black'>{{part_3_quantity16}}</td>
+            </tr>
+            <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>Knee Joints</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_detail17}}</td>
+                <td style='border-top: 1px solid black'>{{part_3_quantity17}}</td>
+            </tr>
+            <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>Other Joints</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_detail18}}</td>
+                <td style='border-top: 1px solid black'>{{part_3_quantity18}}</td>
+            </tr>
+            <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>Prefabricated componentry</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_detail19}}</td>
+                <td style='border-top: 1px solid black'>{{part_3_quantity19}}</td>
+            </tr>
+            <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>Custom made componentry</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_detail20}}</td>
+                <td style='border-top: 1px solid black'>{{part_3_quantity20}}</td>
+            </tr>
+            <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>Consumables</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_detail21}}</td>
+                <td style='border-top: 1px solid black'>{{part_3_quantity21}}</td>
+            </tr>
+            <tr>
+                <td colspan='2' style='border-top: 1px solid black; border-right: 1px solid black; text-align: end;'>Orthotic Componentry Sub Total ($) (D)</td>
+                <td style='border-top: 1px solid black'>{{part_3_Orthotic_Componentry_Sub_Total}}</td>
+            </tr>
+            <tr>
+                <td colspan='2' style='border-top: 1px solid black; border-right: 1px solid black; text-align: end;'>Quoted Capital Cost of Total Solution/Device ($) (A + B + C + D) </td>
+                <td style='border-top: 1px solid black'>{{part_3_Quoted_Capital_Cost_of_Total_Solution}}</td>
+            </tr>
+        </table>
+        <p> </p>
+        <p style='font-size:12pt;'>4.1.5 Extra Features. List and Estimate cost of components/accessories (if any) that are desired by the participant but are unlikely to be assessed reasonable and necessary. Does the participant agree to pay for these from their own (not NDIS) funds?</p>
+        <table style='border-collapse: collapse; width: 100%; margin: auto; border: 1px solid lightslategray;'>
+            <tbody>
+                <tr>
+                    <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Yes</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_features_if_yes}}</td>
+                </tr>
+                <tr>
+                    <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>No</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_features_if_no}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table style='border-collapse: collapse; width: 100%;'>
+            <tr>
+                <th style='border-top: 1px solid black; border-right: 1px solid black; width: 40%;'>Item(s)</th>
+                <th style='border-top: 1px solid black; border-right: 1px solid black; width: 30%;'>Detail</th>
+                <th style='border-top: 1px solid black; width: 30%;'>Cost Estimate($)</th>
+            </tr>
+            <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_item22}}</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_detail22}}</td>
+                <td style='border-top: 1px solid black'>{{part_3_quantity22}}</td>
+            </tr>
+            <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_item23}}</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_detail23}}</td>
+                <td style='border-top: 1px solid black'>{{part_3_quantity23}}</td>
+            </tr>
+            <tr>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_item24}}</td>
+                <td style='border-top: 1px solid black; border-right: 1px solid black'>{{part_3_detail24}}</td>
+                <td style='border-top: 1px solid black'>{{part_3_quantity24}}</td>
+            </tr>
+        </table>
+        <p></p>
+        <p style='font-size:12pt;'>4.1.6 The participant must be provided with maintenance and servicing information for their prosthetic/orthotic to remain in good working order. When will this be done? What are the warranty periods applying?</p>
+        <table style='width:100%; border: 1px solid black'>
+            <tr>
+                <td style='width: 100%; border: 1px solid black;'>
+                    <p style='margin-top:10px; margin-bottom:10px;'>{{part_3_The_participant_must_be_provided}}</p>
+                </td>
+            </tr>
+        </table>
+        <p></p>
+        <table style='border-collapse: collapse; width: 100%; margin: auto; border: 1px solid lightslategray;'>
+            <tbody>
+                <tr>
+                    <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Time from funding approval to expected  orthosis/prosthesis provision (weeks):  </td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_Time_from_funding_approval}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p style='font-size:12pt;'>4.1.7 Is the participant at safety or other risk while waiting for the orthosis/prosthesis? Yes or no, give details</p>
+        <table style='border-collapse: collapse; width: 100%; margin: auto; border: 1px solid lightslategray;'>
+            <tbody>
+                <tr>
+                    <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Yes</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_Yes_the_participant_at_safety}}</td>
+                </tr>
+                <tr>
+                    <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>No</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_No_the_participant_at_safety}}</td>
+                </tr>
+                <tr>
+                    <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Details</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_detail25}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p style='font-size:12pt;'>4.1.8 Is a short term option necessary? E.g. immediate repair on current or prefabricated item to trial or rent to ensure safety prior to final orthosis/prosthesis provision. Yes or no, give details.</p>
+        <table style='border-collapse: collapse; width: 100%; margin: auto; border: 1px solid lightslategray;'>
+            <tbody>
+                <tr>
+                    <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Yes</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_yes_short_term_option_is_necessary}}</td>
+                </tr>
+                <tr>
+                    <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>No</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_No_short_term_option_is_not_necessary}}</td>
+                </tr>
+                <tr>
+                    <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Details</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_detail26}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'>4.2	Participant Agreement</p>
+        <p style='font-size:12pt;'>Do AT Assessor and Participant agree on the recommended option?</p>
+        <table style='border-collapse: collapse; width: 100%; margin: auto; border: 1px solid lightslategray;'>
+            <tbody>
+                <tr>
+                    <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Yes</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_Yes_AT_Assessor_and_Participant_agree}}</td>
+                </tr>
+                <tr>
+                    <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>No</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_No_AT_Assessor_and_Participant_does_not_agree}}</td>
+                </tr>
+                <tr>
+                    <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Details</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_detail27}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p></p>";
 
         $section5 = "<table style='background-color:#7209B7; border:none; width:100%;'>
         <tr>
@@ -379,40 +676,40 @@ class ProstheticsSeeder extends Seeder
             border: 1px solid lightslategray;
         '
         >
-        <tbody>
-            <tr>
-            <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Name</td>
-            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_assessors_name}}</td>
-            </tr>
-            <tr>
-            <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>NDIS Provider Registration number (where applicable)</td>
-            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_provider_registration_number}}</td>
-            </tr>
-            <tr>
-            <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Phone</td>
-            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_assessorphone_number}}</td>
-            </tr>
-            <tr>
-            <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Email</td>
-            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_email_address}}</td>
-            </tr>
-            <tr>
-            <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Signature</td>
-            <td style='border: 1px solid lightslategray; padding: 10px'></td>
-            </tr>
-            <tr>
-            <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Qualification</td>
-            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_qualification}}</td>
-            </tr>
-            <tr>
-            <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Date of Assessment(s)</td>
-            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_date_assessment}}</td>
-            </tr>
-            <tr>
-            <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Date of Report</td>
-            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_reportDate}}</td>
-            </tr>
-        </tbody>
+            <tbody>
+                <tr>
+                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Name</td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_assessors_name}}</td>
+                </tr>
+                <tr>
+                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>NDIS Provider Registration number (where applicable)</td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_provider_registration_number}}</td>
+                </tr>
+                <tr>
+                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Phone</td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_assessorphone_number}}</td>
+                </tr>
+                <tr>
+                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Email</td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_email_address}}</td>
+                </tr>
+                <tr>
+                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Signature</td>
+                <td style='border: 1px solid lightslategray; padding: 10px'></td>
+                </tr>
+                <tr>
+                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Qualification</td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_qualification}}</td>
+                </tr>
+                <tr>
+                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Date of Assessment(s)</td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_date_assessment}}</td>
+                </tr>
+                <tr>
+                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Date of Report</td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_reportDate}}</td>
+                </tr>
+            </tbody>
         </table>";
 
         $section6 = "<p style='margin-top:10px'></p>
@@ -1174,7 +1471,774 @@ class ProstheticsSeeder extends Seeder
             }
          ]';
 
-        $form_fields4 = '[]';
+        $form_fields4 = '[
+            {
+                "type":"textarea",
+                "required":false,
+                "label":"Description of P&O AT solution",
+                "placeholder":"Description of P&O AT solution",
+                "className":"form-control",
+                "name":"part_3_description_of_P&O_AT_solution",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Clinical Assessment",
+                "placeholder":"Enter Clinical Assessment Detail",
+                "className":"form-control",
+                "name":"part_3_detail1",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Clinical Assessment",
+                "placeholder":"Enter Clinical Assessment Quantity",
+                "className":"form-control",
+                "name":"part_3_quantity1",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Liaise with other health professionals",
+                "placeholder":"Enter Liaise with other health professionals Detail",
+                "className":"form-control",
+                "name":"part_3_detail2",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Liaise with other health professionals",
+                "placeholder":"Enter Liaise with other health professionals Quantity",
+                "className":"form-control",
+                "name":"part_3_quantity2",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Device specification/measurement",
+                "placeholder":"Enter Device specification/measurement Detail",
+                "className":"form-control",
+                "name":"part_3_detail3",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Device specification/measurement",
+                "placeholder":"Enter Device specification/measurement Quantity",
+                "className":"form-control",
+                "name":"part_3_quantity3",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Fitting and adjustment",
+                "placeholder":"Enter Fitting and adjustment Detail",
+                "className":"form-control",
+                "name":"part_3_detail4",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Fitting and adjustment",
+                "placeholder":"Enter Fitting and adjustment Quantity",
+                "className":"form-control",
+                "name":"part_3_quantity4",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Client education",
+                "placeholder":"Enter Client education Detail",
+                "className":"form-control",
+                "name":"part_3_detail5",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Client education",
+                "placeholder":"Enter Client education Quantity",
+                "className":"form-control",
+                "name":"part_3_quantity5",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Ongoing review/s (Identify intervals for first two years)",
+                "placeholder":"Enter Ongoing review/s (Identify intervals for first two years) Detail",
+                "className":"form-control",
+                "name":"part_3_detail6",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Ongoing review/s (Identify intervals for first two years)",
+                "placeholder":"Enter Ongoing review/s (Identify intervals for first two years) Quantity",
+                "className":"form-control",
+                "name":"part_3_quantity6",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Capital Building Hours Sub Total",
+                "placeholder":"Capital Building Hours Sub Total",
+                "className":"form-control",
+                "name":"capital_building_hours_sub_total",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Capital Building Hours x Hourly Rate",
+                "placeholder":"Capital Building Hours x Hourly Rate",
+                "className":"form-control",
+                "name":"capital_building_hours_hour_rate_sub__total",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Fabrication/modification",
+                "placeholder":"Fabrication/modification Detail",
+                "className":"form-control",
+                "name":"part_3_detail7",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Client education",
+                "placeholder":"Fabrication/modification Value",
+                "className":"form-control",
+                "name":"part_3_quantity7",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Fitting/s",
+                "placeholder":"Fitting/s Detail",
+                "className":"form-control",
+                "name":"part_3_detail8",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Fitting/s",
+                "placeholder":"Fitting/s Value",
+                "className":"form-control",
+                "name":"part_3_quantity8",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Administration",
+                "placeholder":"Administration Detail",
+                "className":"form-control",
+                "name":"part_3_detail9",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Administration",
+                "placeholder":"Administration Value",
+                "className":"form-control",
+                "name":"part_3_quantity9",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Capital Labour Sub Total",
+                "placeholder":"Capital Labour Sub Total",
+                "className":"form-control",
+                "name":"part_3_capital_labour_sub_total",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Connective componentry",
+                "placeholder":"Connective componentry Detail",
+                "className":"form-control",
+                "name":"part_3_detail10",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Connective componentry",
+                "placeholder":"Connective componentry Value",
+                "className":"form-control",
+                "name":"part_3_quantity10",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Knee/Elbow",
+                "placeholder":"Knee/Elbow Detail",
+                "className":"form-control",
+                "name":"part_3_detail11",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Knee/Elbow",
+                "placeholder":"Knee/Elbow Value",
+                "className":"form-control",
+                "name":"part_3_quantity11",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Foot/Wrist",
+                "placeholder":"Foot/Wrist Detail",
+                "className":"form-control",
+                "name":"part_3_detail12",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Foot/Wrist",
+                "placeholder":"Foot/Wrist Value",
+                "className":"form-control",
+                "name":"part_3_quantity12",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Socket/suspension",
+                "placeholder":"Socket/suspension Detail",
+                "className":"form-control",
+                "name":"part_3_detail13",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Socket/suspension",
+                "placeholder":"Socket/suspension Value",
+                "className":"form-control",
+                "name":"part_3_quantity13",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Consumables",
+                "placeholder":"Consumables Detail",
+                "className":"form-control",
+                "name":"part_3_detail14",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Consumables",
+                "placeholder":"Consumables Value",
+                "className":"form-control",
+                "name":"part_3_quantity14",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Prosthetic Componentry Sub Total ($) (C)",
+                "placeholder":"Prosthetic Componentry Sub Total ($) (C)",
+                "className":"form-control",
+                "name":"part_3_Prosthetic_Componentry_Sub_Total",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Fabrication materials",
+                "placeholder":"Fabrication materials Detail",
+                "className":"form-control",
+                "name":"part_3_detail15",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Fabrication materials",
+                "placeholder":"Fabrication materials Value",
+                "className":"form-control",
+                "name":"part_3_quantity15",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Fankle Joints  (Size; batch number)",
+                "placeholder":"Fankle Joints  (Size; batch number) Detail",
+                "className":"form-control",
+                "name":"part_3_detail16",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Fankle Joints  (Size; batch number)",
+                "placeholder":"Fankle Joints  (Size; batch number) Value",
+                "className":"form-control",
+                "name":"part_3_quantity16",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Knee Joints",
+                "placeholder":"Knee Joints Detail",
+                "className":"form-control",
+                "name":"part_3_detail17",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Knee Joints",
+                "placeholder":"Knee Joints Value",
+                "className":"form-control",
+                "name":"part_3_quantity17",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Other Joints",
+                "placeholder":"Other Joints Detail",
+                "className":"form-control",
+                "name":"part_3_detail18",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Other Joints",
+                "placeholder":"Other Joints Value",
+                "className":"form-control",
+                "name":"part_3_quantity18",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Prefabricated componentry",
+                "placeholder":"Prefabricated componentry Detail",
+                "className":"form-control",
+                "name":"part_3_detail19",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Prefabricated componentry",
+                "placeholder":"Prefabricated componentry Value",
+                "className":"form-control",
+                "name":"part_3_quantity19",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Custom made componentry",
+                "placeholder":"Custom made componentry Detail",
+                "className":"form-control",
+                "name":"part_3_detail20",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Custom made componentry",
+                "placeholder":"Custom made componentry Value",
+                "className":"form-control",
+                "name":"part_3_quantity20",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Consumables",
+                "placeholder":"Consumables Detail",
+                "className":"form-control",
+                "name":"part_3_detail21",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Consumables",
+                "placeholder":"Consumables Value",
+                "className":"form-control",
+                "name":"part_3_quantity21",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Orthotic Componentry Sub Total",
+                "placeholder":"Orthotic Componentry Sub Total",
+                "className":"form-control",
+                "name":"part_3_Orthotic_Componentry_Sub_Total",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Quoted Capital Cost of Total Solution",
+                "placeholder":"Quoted Capital Cost of Total Solution",
+                "className":"form-control",
+                "name":"part_3_Quoted_Capital_Cost_of_Total_Solution",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"checkbox-group",
+                "required":false,
+                "label":"Extra Features (If any)",
+                "toggle":false,
+                "inline":false,
+                "name":"part_5_features_if_yes",
+                "access":false,
+                "other":false,
+                "values":[
+                   {
+                      "label":"YES/NO",
+                      "value":"option-1",
+                      "selected":true
+                   }
+                ]
+             },
+             {
+                "type":"checkbox-group",
+                "required":false,
+                "label":"Extra Features (If none)",
+                "toggle":false,
+                "inline":false,
+                "name":"part_5_features_if_no",
+                "access":false,
+                "other":false,
+                "values":[
+                   {
+                      "label":"YES/NO",
+                      "value":"option-1",
+                      "selected":true
+                   }
+                ]
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Item 1",
+                "placeholder":"Enter Item 1",
+                "className":"form-control",
+                "name":"part_3_item22",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Details 1",
+                "placeholder":"Enter Details 1",
+                "className":"form-control",
+                "name":"part_3_detail22",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Details 1",
+                "placeholder":"Enter Cost 1",
+                "className":"form-control",
+                "name":"part_3_quantity22",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Item 2",
+                "placeholder":"Enter Item 2",
+                "className":"form-control",
+                "name":"part_3_item23",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Details 2",
+                "placeholder":"Enter Details 2",
+                "className":"form-control",
+                "name":"part_3_detail23",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Details 2",
+                "placeholder":"Enter Cost 2",
+                "className":"form-control",
+                "name":"part_3_quantity23",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Item 3",
+                "placeholder":"Enter Item 3",
+                "className":"form-control",
+                "name":"part_3_item24",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Details 3",
+                "placeholder":"Enter Details 3",
+                "className":"form-control",
+                "name":"part_3_detail24",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Details 3",
+                "placeholder":"Enter Cost 3",
+                "className":"form-control",
+                "name":"part_3_quantity24",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"textarea",
+                "required":false,
+                "label":"The participant must be provided with maintenance and servicing information",
+                "placeholder":"The participant must be provided with maintenance and servicing information",
+                "className":"form-control",
+                "name":"part_3_The_participant_must_be_provided",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Time from funding approval to expected  orthosis/prosthesis provision",
+                "placeholder":"Time from funding approval to expected  orthosis/prosthesis provision",
+                "className":"form-control",
+                "name":"part_3_Time_from_funding_approval",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"checkbox-group",
+                "required":false,
+                "label":"Yes, the participant at safety or other risk while waiting for the orthosis/prosthesis.",
+                "toggle":false,
+                "inline":false,
+                "name":"part_5_Yes_the_participant_at_safety",
+                "access":false,
+                "other":false,
+                "values":[
+                   {
+                      "label":"YES/NO",
+                      "value":"option-1",
+                      "selected":true
+                   }
+                ]
+             },
+             {
+                "type":"checkbox-group",
+                "required":false,
+                "label":"No, the participant at safety or other risk while waiting for the orthosis/prosthesis.",
+                "toggle":false,
+                "inline":false,
+                "name":"part_5_No_the_participant_at_safety",
+                "access":false,
+                "other":false,
+                "values":[
+                   {
+                      "label":"YES/NO",
+                      "value":"option-1",
+                      "selected":true
+                   }
+                ]
+             },
+             {
+                "type":"textarea",
+                "required":false,
+                "label":"Is the participant at safety or other risk while waiting for the orthosis/prosthesis? Yes or no, give details",
+                "placeholder":"Is the participant at safety or other risk while waiting for the orthosis/prosthesis? Yes or no, give details",
+                "className":"form-control",
+                "name":"part_3_detail25",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"checkbox-group",
+                "required":false,
+                "label":"Yes short term option is necessary",
+                "toggle":false,
+                "inline":false,
+                "name":"part_5_yes_short_term_option_is_necessary",
+                "access":false,
+                "other":false,
+                "values":[
+                   {
+                      "label":"YES/NO",
+                      "value":"option-1",
+                      "selected":true
+                   }
+                ]
+             },
+             {
+                "type":"checkbox-group",
+                "required":false,
+                "label":"No short term option is not necessary",
+                "toggle":false,
+                "inline":false,
+                "name":"part_5_No_short_term_option_is_not_necessary",
+                "access":false,
+                "other":false,
+                "values":[
+                   {
+                      "label":"YES/NO",
+                      "value":"option-1",
+                      "selected":true
+                   }
+                ]
+             },
+             {
+                "type":"textarea",
+                "required":false,
+                "label":"Is a short term option necessary?  Yes or no, give details",
+                "placeholder":"Is a short term option necessary?  Yes or no, give details",
+                "className":"form-control",
+                "name":"part_3_detail26",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"checkbox-group",
+                "required":false,
+                "label":"Yes, AT Assessor and Participant agree",
+                "toggle":false,
+                "inline":false,
+                "name":"part_5_Yes_AT_Assessor_and_Participant_agree",
+                "access":false,
+                "other":false,
+                "values":[
+                   {
+                      "label":"YES/NO",
+                      "value":"option-1",
+                      "selected":true
+                   }
+                ]
+             },
+             {
+                "type":"checkbox-group",
+                "required":false,
+                "label":"No, AT Assessor and Participant does not agree",
+                "toggle":false,
+                "inline":false,
+                "name":"part_5_No_AT_Assessor_and_Participant_does_not_agree",
+                "access":false,
+                "other":false,
+                "values":[
+                   {
+                      "label":"YES/NO",
+                      "value":"option-1",
+                      "selected":true
+                   }
+                ]
+             },
+             {
+                "type":"textarea",
+                "required":false,
+                "label":"Do AT Assessor and Participant agree on the recommended option? Yes or no, give details",
+                "placeholder":"Do AT Assessor and Participant agree on the recommended option? Yes or no, give details",
+                "className":"form-control",
+                "name":"part_3_detail27",
+                "access":false,
+                "subtype":"text"
+             }
+        ]';
 
         $form_fields5 = '[
             {
