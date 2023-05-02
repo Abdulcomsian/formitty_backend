@@ -154,7 +154,8 @@ class HomeSeeder extends Seeder
                             </td>
                             </tr>
                         </tbody>
-                    </table>";
+                    </table>
+                    <p></p>";
 
 
         $section2 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
@@ -167,25 +168,14 @@ class HomeSeeder extends Seeder
                     <p style='font-weight:bold; font-size:13pt;margin-top:10px; margin-bottom:10px;'>2.1 Background</p>
                     <p style='font-size:11pt; margin-bottom:10px'>General: Describe participant’s current status which may include diagnosis, prognosis, co-existing conditions, disability, personal and instrumental activities of daily living, formal and informal support arrangements and life transitions.</p>
                     <table style='width:100%; border: 1px solid black'>
-                    <tr>
-                        <td style='background-color: #efefef; width: 100%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>
-
-                        {{part_2_assesment_background}}
-
-                        </p>
-                         </td>
+                    <tr><td style='width: 100%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>{{part_2_assesment_background}}</p></td>
                     </tr>
                     </table>
                     <p style='font-weight:bold; font-size:13pt;margin-top:10px; margin-bottom:10px;'>2.2	Participant Goals </p>
                     <p style='font-size:11pt; margin-bottom:10px'>If the participant’s NDIS plan has been made available, you can refer to the statement of participant’s goals and outline those relevant to the AT solution.</p>
                     <table style='width:100%; border: 1px solid black'>
                     <tr>
-                    <td style='background-color: #efefef; width: 100%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>
-                    
-                    {{part_2_assesment_participantgoals}}
-                    
-                    </p>
-                     </td>
+                    <td style='width: 100%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>{{part_2_assesment_participantgoals}}</p></td>
                     </tr>
                     </table>
                     <p style='font-weight:bold; font-size:13pt;margin-top:10px; margin-bottom:10px;'>2.3	Functional Assessment </p>
@@ -216,19 +206,19 @@ class HomeSeeder extends Seeder
                     <p style='font-size:11pt; margin-top:10px; margin-bottom:10px'><strong>2.3.2</strong>	Is the Participant / Nominee in agreement with this AT request? Please describe.</p>
                     <table style='width:100%; border: 1px solid black'>
                     <tr>
-                    <td style='background-color: #efefef; width: 30%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold; '>  Yes</p></td>
+                    <td style='background-color: #efefef; width: 30%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold; '>Yes</p></td>
                     <td style='border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px; '>{{part_2_assesment_functional_assessment4}}</p></td>
                     </tr>
                     <tr>
-                    <td style='background-color: #efefef; width: 30%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>  No</p></td>
+                    <td style='background-color: #efefef; width: 30%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>No</p></td>
                     <td style=' border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>{{part_2_assesment_functional_assessment5}}</p></td>
                     </tr>
                     <tr>
-                    <td style=' background-color: #efefef;width: 30%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>  Comment </p></td>
+                    <td style=' background-color: #efefef;width: 30%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>Comment</p></td>
                     <td style=' border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>{{part_2_assesment_functional_assessment6}}</p></td>
                     </tr>
                     </table>
-                    <p style='font-size:11pt; margin-top:10px; margin-bottom:10px'><strong>2.3.3</strong>	Findings from functional assessment</p>
+                    <p style='font-size:11pt; margin-top:10px; margin-bottom:10px'><strong>2.3.3</strong>Findings from functional assessment</p>
                     <table style='width:100%; border: 1px solid black'>
                     <tr>
                     <td style='background-color: #efefef; width: 33%; font-weight: bold; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>  Assessment Area</p></td>
@@ -353,7 +343,8 @@ class HomeSeeder extends Seeder
                     <td style='width: 33%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>{{part_2_functional_assessment37}}</p></td>
                     <td style='width: 33%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>{{part_2_functional_assessment38}}</p></td>
                     </tr>
-                    </table>";
+                    </table>
+                    <p></p>";
 
 
         $section3 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
@@ -819,9 +810,6 @@ class HomeSeeder extends Seeder
                     <td style='background-color: #efefef; width: 100%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>{{part_5_complex_home_modification_recommendations_staged_process2}}</p></td>
                     </tr>
                     </table>
-
-
-
                     <p style='font-size:12pt; margin-top:10px; margin-bottom:10px; font-weight: bold '>5.6	Exception to Disability Standards</p>
                     <p style='font-size:12pt; margin-top:10px; margin-bottom:10px; '>Please note in most cases compliance with Australian Standard 1428 Design for Access and Mobility Part 1 (General) (AS 1428.1) is not required but are examples of best practice.  Users of this template need to ensure they understand the relevant building codes, standards and regulations that relate to the state and location where the modification is planned.</p>
                     <table style='width:100%; margin-top: 10px; border: 1px solid black'>
@@ -844,7 +832,8 @@ class HomeSeeder extends Seeder
                     <tr>
                     <td style='background-color: #efefef; width: 100%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>{{part_6_complex_home_modification_quotes}}</p></td>
                     </tr>
-                    </table>";
+                    </table>
+                    <p></p>";
 
 
         $section7 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
@@ -1029,7 +1018,8 @@ class HomeSeeder extends Seeder
                     <td style='background-color: #efefef; width: 70%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Relationship to participant or person wishing to become an NDIS participant:</p></td>
                     <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_11}}</p></td>
                     </tr>
-                    </table>";
+                    </table>
+                    <p></p>";
 
 
 
@@ -1197,7 +1187,7 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"text",
+               "type":"email",
                "required":false,
                "label":"Email",
                "placeholder":"Enter Your Email",
@@ -1322,7 +1312,7 @@ class HomeSeeder extends Seeder
 
         $form_fields2 = '[
             {
-               "type":"text",
+               "type":"textarea",
                "required":false,
                "label":"Background",
                "placeholder":"Enter Your Background",
@@ -1332,7 +1322,7 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"text",
+               "type":"textarea",
                "required":false,
                "label":"Participant Goals",
                "placeholder":"Enter Your Participant Goals",
@@ -1886,7 +1876,7 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"text",
+               "type":"textarea",
                "required":false,
                "label":"Structure of property",
                "placeholder":"Enter Structure of property",
@@ -1896,7 +1886,7 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"text",
+               "type":"textarea",
                "required":false,
                "label":"Description of property",
                "placeholder":"Enter Description of property",
@@ -1906,7 +1896,7 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"text",
+               "type":"textarea",
                "required":false,
                "label":"Special Conditions",
                "placeholder":"Enter Special Conditions",
@@ -1939,7 +1929,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"text",
                "required":false,
                "label":"Anticipated discharge date",
                "placeholder":"Enter Anticipated discharge date",
@@ -2482,7 +2472,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"text",
+               "type":"textarea",
                "required":false,
                "label":"Heating and Cooling",
                "placeholder":"Heating and Cooling",
@@ -2502,7 +2492,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"text",
+               "type":"textarea",
                "required":false,
                "label":"Staged Process",
                "placeholder":"Staged Process",
@@ -2512,7 +2502,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"text",
+               "type":"textarea",
                "required":false,
                "label":"Exception to Disability Standards",
                "placeholder":"Exception to Disability Standards",
@@ -2525,7 +2515,7 @@ class HomeSeeder extends Seeder
 
         $form_fields6 = '[
             {
-               "type":"text",
+               "type":"textarea",
                "required":false,
                "label":"Complex Home Modification Quotes",
                "placeholder":"Complex Home Modification Quotes",
@@ -2611,7 +2601,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"text",
+               "type":"email",
                "required":false,
                "label":"Email",
                "placeholder":"Enter Your Email",
@@ -2691,7 +2681,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"text",
+               "type":"email",
                "required":false,
                "label":"Email",
                "placeholder":"Enter Your Email",
