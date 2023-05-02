@@ -18,7 +18,7 @@ class HearingSeeder extends Seeder
         // $form = Form::create([
         //     'name' => 'Animal Assessment Report'
         // ]);
-$section1 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
+        $section1 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
         <tr>
             <td>
                 <p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'>  PART 1 – Participant and Plan Management Details</p>
@@ -145,10 +145,11 @@ $section1 = "<table style='background-color:#6a2c75; border:none; width:100%; ma
             </td>
             </tr>
         </tbody>
-    </table>";
+    </table>
+    <p></p>";
 
 
-$section2 = '<table style="background-color:#7209B7; border:none; width:100%;">
+        $section2 = '<table style="background-color:#7209B7; border:none; width:100%;">
             <tr>
                 <td>
                     <p style="font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white"> 2 – Background Information</p>
@@ -184,7 +185,7 @@ $section2 = '<table style="background-color:#7209B7; border:none; width:100%;">
                 <tr>
                   <td style="font-weight:bold; border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px">A replacement device?</td>
                   <td style="border: 1px solid lightslategray; padding: 10px">
-                    {{part_2_background_information3}]
+                    {{part_2_background_information3}}
                   </td>
                 </tr>
                 <tr>
@@ -196,7 +197,7 @@ $section2 = '<table style="background-color:#7209B7; border:none; width:100%;">
                 <tr>
                   <td style="font-weight:bold; border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px">A refitted / upgraded device?</td>
                   <td style="border: 1px solid lightslategray; padding: 10px">
-                    {{part_2_background_information5}]
+                    {{part_2_background_information5}}
                   </td>
                 </tr>
                 <tr>
@@ -244,7 +245,7 @@ $section2 = '<table style="background-color:#7209B7; border:none; width:100%;">
 
 
 
-$section3 = '<table style="background-color:#7209B7; border:none; width:100%;">
+        $section3 = '<table style="background-color:#7209B7; border:none; width:100%;">
         <tr>
             <td>
                     <p style="font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white"> 3 – Recommended Option</p>
@@ -253,222 +254,116 @@ $section3 = '<table style="background-color:#7209B7; border:none; width:100%;">
             </table>
             <p style="margin-top:10px"></p>
             <p style="font-size:12pt;">Note: Complete Section 3a OR 3b. Delete the section that is not required.</p>
-                <p style="font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;">3.1   Section 3a: Request for Cochlear Implant Sound Processor</p>
-                <table style="
-                border-collapse: collapse;
-                width: 100%;
-                margin: auto;
-                border: 1px solid lightslategray;
-            ">
+            <p style="font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;">3.1   Section 3a: Request for Cochlear Implant Sound Processor</p>
+            <table style="border-collapse: collapse;width: 100%;margin: auto;border: 1px solid lightslategray;">
                 <tbody>
                     <tr>
-                        <td
-                            style="border: 1px solid lightslategray; padding: 10px; width: 30%; background-color: lightgrey; font-size: 17px">
-                            Current Sound Processor(s) and / or hearing aid
-                        </td>
-
-                        <td
-                            style="border: 1px solid lightslategray; padding: 10px; width: 35%; background-color: lightgrey; font-size: 17px">
-                            Left eart
-                        </td>
-
-                        <td
-                            style="border: 1px solid lightslategray; padding: 10px; width: 35%; background-color: lightgrey; font-size: 17px">
-                            Right ear
-                        </td>
-                    
-                    </tr>
-
-                    <tr>
-                        <td style="border: 1px solid lightslategray; padding: 10px; width:30px;">
-                        Manufacturer
-                        </td>
-                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                            {{part_3_recommended_option_01}}
-                        </td>
-                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                            {{part_3_recommended_option_02}}
-                        </td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 30%; background-color: lightgrey; font-size: 17px">Current Sound Processor(s) and / or hearing aid</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%; background-color: lightgrey; font-size: 17px">Left ear</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%; background-color: lightgrey; font-size: 17px">Right ear</td>
                     </tr>
                     <tr>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width:30px;">
-                    Model and style
-                    </td>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                        {{part_3_recommended_option_03}}
-                    </td>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                        {{part_3_recommended_option_04}}
-                    </td>
-                </tr>
-
-                <tr>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width:30px;">
-                    Date of a last fitting
-                    </td>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                        {{part_3_recommended_option_05}}
-                    </td>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                        {{part_3_recommended_option_06}}
-                    </td>
-                    
-                </tr>
-
-                <tr>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width:30px;">
-                    Hours worn per day / week. Provide evidence of use, including data logging where possible
-                    </td>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                        {{part_3_recommended_option_07}}
-                    </td>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                        {{part_3_recommended_option_08}}
-                    </td>
-                    
-                </tr>
-
-                <tr>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width:30px;">
-                    Service and repair history (where relevant). Attach documentation to application. Yes/No
-                    </td>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                        {{part_3_recommended_option_09}}
-                    </td>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                        {{part_3_recommended_option_10}}
-                    </td>
-                
-                </tr>
-                
-                <tr>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 30%;">
-                    List other assistive devices available to the participant. For example, remote microphones, phone clips, television streamers etc.
-                    </td>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                        {{part_3_recommended_option_11}}
-                    </td>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                    {{part_3_recommended_option_12}}
-                    </td>
-                
-                </tr>
-            </tbody>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width:30px;">Manufacturer</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_01}}</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_02}}</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width:30px;">Model and style</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_03}}</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_04}}</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width:30px;">Date of a last fitting</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_05}}</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_06}}</td> 
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width:30px;">Hours worn per day / week. Provide evidence of use, including data logging where possible</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_07}}</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_08}}</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width:30px;">Service and repair history (where relevant). Attach documentation to application. Yes/No</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_09}}</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_10}}</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 30%;">List other assistive devices available to the participant. For example, remote microphones, phone clips, television streamers etc.</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_11}}</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_12}}</td>
+                    </tr>
+                </tbody>
             </table>
-
-
 
             <p style="margin-top:12tp;"></p>
 
             <table style="width:100%; border: 1px solid black">
-            <tr>
-                <td style="width: 100%; border: 1px solid black; width:20%;background-color: lightgrey;"><p style="margin-top:10px; margin-bottom:10px;"> Comment</p></td>
-                <td style="width: 100%; border: 1px solid black; width:80%;"><p style="margin-top:10px; margin-bottom:10px;">{{part_3_recommended_option_13}}</p></td>
-            
-            </tr>
-                    </table>
-                <p style="font-size:12pt;">What is the participant’s current preferred daily listening condition? Delete the response not required</p>
-                <table style="
-                border-collapse: collapse;
-                width: 100%;
-                margin: auto;
-                border: 1px solid lightslategray;
-                    ">
-                <tbody>
                 <tr>
-                <td
-                    style="font-weight:bold; border: 1px solid lightslategray; padding: 10px; width: 30%; background-color: lightgrey; font-size: 17px">
-                    Left
-                </td>
-
-                <td
-                    style="font-weight:bold; border: 1px solid lightslategray; padding: 10px; width: 70%; background-color: lightgrey; font-size: 17px">
-                    Right
-                </td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid lightslategray; padding: 10px; width: 30%">
-                No amplification
-                </td>
-                <td style="border: 1px solid lightslategray; padding: 10px; width: 70%">
-                No amplification
-                </td>
-            </tr>
-            </tbody>
+                    <td style="width: 100%; border: 1px solid black; width:20%;background-color: lightgrey;"><p style="margin-top:10px; margin-bottom:10px;"> Comment</p></td>
+                    <td style="width: 100%; border: 1px solid black; width:80%;"><p style="margin-top:10px; margin-bottom:10px;">{{part_3_recommended_option_13}}</p></td>
+                
+                </tr>
             </table>
+                <p style="font-size:12pt;">What is the participant’s current preferred daily listening condition? Delete the response not required</p>
+                <table style="border-collapse: collapse;width: 100%;margin: auto;border: 1px solid lightslategray;">
+                    <tbody>
+                        <tr>
+                            <td style="font-weight:bold; border: 1px solid lightslategray; padding: 10px; width: 30%; background-color: lightgrey; font-size: 17px">Left</td>
+                            <td style="font-weight:bold; border: 1px solid lightslategray; padding: 10px; width: 70%; background-color: lightgrey; font-size: 17px">Right</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid lightslategray; padding: 10px; width: 30%">No amplification</td>
+                            <td style="border: 1px solid lightslategray; padding: 10px; width: 70%">No amplification</td>
+                        </tr>
+                    </tbody>
+                </table>
             <p style="margin-top:12pt; margin-botton:12px;">If the devices are not used on a daily basis, describe when the devices are used.</p>
 
             <p style="margin-top:12tp;"></p>
             <table style="width:100%; border: 1px solid black">
-            <tr>
-                <td style="width: 100%; border: 1px solid black; width:20%;background-color: lightgrey;"><p style="margin-top:10px; margin-bottom:10px;"> Comment</p></td>
-                <td style="width: 100%; border: 1px solid black; width:80%;"><p style="margin-top:10px; margin-bottom:10px;">{{part_3_recommended_option_14}}</p></td>
-                
-            </tr>
+                <tr>
+                    <td style="width: 100%; border: 1px solid black; width:20%;background-color: lightgrey;"><p style="margin-top:10px; margin-bottom:10px;"> Comment</p></td>
+                    <td style="width: 100%; border: 1px solid black; width:80%;"><p style="margin-top:10px; margin-bottom:10px;">{{part_3_recommended_option_14}}</p></td>
+                </tr>
             </table>
 
             <p style="margin-top:12pt; margin-botton:12px;">Recommended replacement sound processor(s):</p>
             <table style="width:100%; border: 1px solid black">
-            <tr>
-            <td style="width: 100%; border: 1px solid black; width:20%;background-color: lightgrey;"><p style="margin-top:10px; margin-bottom:10px;"> Make and Model</p></td>
-            <td style="width: 100%; border: 1px solid black; width:80%;"><p style="margin-top:10px; margin-bottom:10px;">{{part_3_recommended_option_15}}</p></td>
-            
-            </tr>
+                <tr>
+                    <td style="width: 100%; border: 1px solid black; width:20%;background-color: lightgrey;"><p style="margin-top:10px; margin-bottom:10px;"> Make and Model</p></td>
+                    <td style="width: 100%; border: 1px solid black; width:80%;"><p style="margin-top:10px; margin-bottom:10px;">{{part_3_recommended_option_15}}</p></td>
+                </tr>
             </table>
             <p style="font-size:12pt;">Evidence of functional outcomes with the recommended sound processor(s)</p>
             <p style="font-size:12pt;">Evidence is attached:</p>
         
         
-            <table style="
-            border-collapse: collapse;
-            width: 100%;
-            margin: auto;
-            border: 1px solid lightslategray;
-            ">
-            <tbody>
-            <tr>
-                <td
-                    style="border: 1px solid lightslategray; padding: 10px; width: 30%; background-color: lightgrey; font-size: 17px">
-                    Yes
-                </td>
-
-                <td
-                    style="border: 1px solid lightslategray; padding: 10px; width: 70%;; font-size: 17px">
-                    {{part_3_recommended_option_16}}
-                </td>
-            </tr>
-            <tr>
-                <td
-                    style="border: 1px solid lightslategray; padding: 10px; width: 30%; background-color: lightgrey; font-size: 17px">
-                    No
-                </td>
-
-                <td
-                    style="border: 1px solid lightslategray; padding: 10px; width: 70%;; font-size: 17px">
-                    {{part_3_recommended_option_17}}
-                </td>
-            </tr>
-            </tbody>
+            <table style="border-collapse: collapse;width: 100%;margin: auto;border: 1px solid lightslategray;">
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 30%; background-color: lightgrey; font-size: 17px">Yes</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 70%;; font-size: 17px">{{part_3_recommended_option_16}}</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 30%; background-color: lightgrey; font-size: 17px">No</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 70%;; font-size: 17px">{{part_3_recommended_option_16}}</td>
+                    </tr>
+                </tbody>
             </table>
-            <p style="margin-top:12tp;">Description of evidence if not attached</p>
-            
+            <p style="margin-top:12tp;">Description of evidence if not attached</p>   
             <p style="margin-top:12tp;">Description of evidence</p>
             <p style="margin-top:12tp;"></p>
             <table style="width:100%; border: 1px solid black">
-            <tr>
-            <td style="width: 100%; border: 1px solid black; width:20%;background-color: lightgrey;"><p style="margin-top:10px; margin-bottom:10px;"> Description</p></td>
-            <td style="width: 100%; border: 1px solid black; width:80%;"><p style="margin-top:10px; margin-bottom:10px;">{{part_3_recommended_option_18}}</p></td>
-            </tr>
+                <tr>
+                    <td style="width: 100%; border: 1px solid black; width:20%;background-color: lightgrey;"><p style="margin-top:10px; margin-bottom:10px;"> Description</p></td>
+                    <td style="width: 100%; border: 1px solid black; width:80%;"><p style="margin-top:10px; margin-bottom:10px;">{{part_3_recommended_option_18}}</p></td>
+                </tr>
            </table>
-
-
-
+           <p></p>
             <table style="background-color:#7209B7; border:none; width:100%;">
-            <tr>
-                <td>
-                    <p style="font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white"> 3.2 – Section 3b: Request for hearing aid</p>
-                </td>
-            </tr>
+                <tr>
+                    <td><p style="font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white"> 3.2 – Section 3b: Request for hearing aid</p></td>
+                </tr>
             </table>
 
             <p style="margin-top:10px"></p>
@@ -483,112 +378,47 @@ $section3 = '<table style="background-color:#7209B7; border:none; width:100%;">
             ">
                 <tbody>
                     <tr>
-                        <td
-                            style="border: 1px solid lightslategray; padding: 10px; width: 30%; background-color: lightgrey; font-size: 17px">
-                            Current Sound Processor(s) and / or hearing aid
-                        </td>
-
-                        <td
-                            style="border: 1px solid lightslategray; padding: 10px; width: 35%; background-color: lightgrey; font-size: 17px">
-                            Left eart
-                        </td>
-
-                        <td
-                            style="border: 1px solid lightslategray; padding: 10px; width: 35%; background-color: lightgrey; font-size: 17px">
-                            Right ear
-                        </td>
-                    
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 30%; background-color: lightgrey; font-size: 17px">Current Sound Processor(s) and / or hearing aid</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%; background-color: lightgrey; font-size: 17px">Left ear</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%; background-color: lightgrey; font-size: 17px">Right ear</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 30%;">Manufacturer</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_19}}</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_20}}</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 30%;">Model and style</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_21}}</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_22}}</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 30%;">Date of a last fitting</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_23}}</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_24}}</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 30%;">Hours worn per day / week. Provide evidence of use, including data logging where possible.</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_25}}</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_26}}</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 30%;">Is the device fitted optimally? For example when doing real ear insertion gain measurements</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">Yes / No</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">Yes / No</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 30%;">Service and repair history is attached (where relevant).</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">Yes / No</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">Yes / No</td>
                     </tr>
 
                     <tr>
-                        <td style="border: 1px solid lightslategray; padding: 10px; width: 30%;">
-                        Manufacturer
-                        </td>
-                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                            {{part_3_recommended_option_19}}
-                        </td>
-                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                            {{part_3_recommended_option_20}}
-                        </td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 30%;">List other assistive devices available to the participant. For example, remote microphones, phone clips, television streamers etc.</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_27}}</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_28}}</td>
                     </tr>
-                    <tr>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 30%;">
-                    Model and style
-                    </td>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                        {{part_3_recommended_option_21}}
-                    </td>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                        {{part_3_recommended_option_22}}
-                    </td>
-                    
-                </tr>
-
-                <tr>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 30%;">
-                    Date of a last fitting
-                    </td>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                        {{part_3_recommended_option_23}}
-                    </td>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                        {{part_3_recommended_option_24}}
-                    </td>
-                    
-                </tr>
-
-                <tr>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 30%;">
-                    Hours worn per day / week. Provide evidence of use, including data logging where possible.
-                    </td>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                        {{part_3_recommended_option_25}}
-                    </td>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                        {{part_3_recommended_option_26}}
-                    </td>
-                    
-                </tr>
-
-                <tr>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 30%;">
-                    Is the device fitted optimally? For example when doing real ear insertion gain measurements
-                    </td>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                    Yes / No
-                    </td>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                    Yes / No
-                    </td>
-                
-                </tr>
-                
-                <tr>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 30%;">
-                    Service and repair history is attached (where relevant).
-                    </td>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                    Yes / No
-                    </td>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                    Yes / No
-                    </td>
-                
-                </tr>
-
-                <tr>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 30%;">
-                    List other assistive devices available to the participant. For example, remote microphones, phone clips, television streamers etc.
-                    </td>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                      {{part_3_recommended_option_27}}
-                    </td>
-                    <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">
-                      {{part_3_recommended_option_28}}
-                    </td>
-                
-                </tr>
-            </tbody>
+                </tbody>
             </table>
 
 
@@ -721,7 +551,7 @@ $section3 = '<table style="background-color:#7209B7; border:none; width:100%;">
             </table>
 
 
-            <p style="font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;"><strong style="font-weight:bold; font-size:12pt;">Option 1:</strong>Hearing aid recommendation for basic or essential level hearing aids:</p>  
+            <p style="font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;"><strong style="font-weight:bold; font-size:12pt;">Option 1: </strong>Hearing aid recommendation for basic or essential level hearing aids:</p>  
             <p style="font-size:12pt; margin-top:10px; margin-bottom:10px;">Recommended device name, model number and style:</p>
                 <p style="margin-top:12pt;"></p>
             <table style="width:100%; border: 1px solid black;">
@@ -983,8 +813,8 @@ $section3 = '<table style="background-color:#7209B7; border:none; width:100%;">
             </tr>
             </table>
             <p style="margin-top:12pt:"></p>';
-    
-$section4 = '<table style="background-color:#7209B7; border:none; width:100%;">
+
+        $section4 = '<table style="background-color:#7209B7; border:none; width:100%;">
     <tr>
         <td>
             <p style="font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white"> 4.	Additional Technology / Supports</p>
@@ -1002,8 +832,8 @@ $section4 = '<table style="background-color:#7209B7; border:none; width:100%;">
     </tr>
     </table>
     <p style="margin-top:12pt:"></p>';
-        
-$section5 = '<table style="background-color:#7209B7; border:none; width:100%;">
+
+        $section5 = '<table style="background-color:#7209B7; border:none; width:100%;">
                 <tr>
                     <td>
                         <p style="font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white"> 5.	Participant Agreement / Supports</p>
@@ -1030,7 +860,7 @@ $section5 = '<table style="background-color:#7209B7; border:none; width:100%;">
             </table>
             <p style="margin-top:12pt:"></p>';
 
-$section6='<table style="background-color:#7209B7; border:none; width:100%;">
+        $section6 = '<table style="background-color:#7209B7; border:none; width:100%;">
         <tr>
             <td>
                 <p style="font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white">6.	Attachments</p>
@@ -1048,7 +878,7 @@ $section6='<table style="background-color:#7209B7; border:none; width:100%;">
     <li> Evidence required for device replacement or refitting as per Appendix A and Appendix B</li>
     </ol>
     <p style="margin-top:12pt:"></p>';
-$section7='<table style="background-color:#7209B7; border:none; width:100%;">
+        $section7 = '<table style="background-color:#7209B7; border:none; width:100%;">
         <tr>
             <td>
                 <p style="font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white">7. Details Assessor</p>
@@ -1136,7 +966,7 @@ $section7='<table style="background-color:#7209B7; border:none; width:100%;">
     
     <p style="margin-top:12pt:"></p>';
 
-$section8='<table style="background-color:#7209B7; border:none; width:100%;">
+        $section8 = '<table style="background-color:#7209B7; border:none; width:100%;">
     <tr>
         <td>
             <p style="font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white">8.	Participant Consent and Acknowledgement of Interest</p>
@@ -1243,7 +1073,7 @@ $section8='<table style="background-color:#7209B7; border:none; width:100%;">
         </tr>
         <tr>
             <td style="width:30%; background-color: lightgrey; font-size: 17px;">Full name (please print)</td>
-            <td style="width:70%; border: 1px solid black;">{{part_8_participant_consent_and_acknowledgement_of_iinterest15}</td>
+            <td style="width:70%; border: 1px solid black;">{{part_8_participant_consent_and_acknowledgement_of_iinterest15}}</td>
         </tr>
         <tr>
         <td style="width:30%; background-color: lightgrey; font-size: 17px;">Relationship to participant or person wishing to become an NDIS participant</td>
@@ -1252,7 +1082,7 @@ $section8='<table style="background-color:#7209B7; border:none; width:100%;">
         </table>
         <p style="margin-top:12pt:"></p>';
 
-$section9='  <table style="background-color:#7209B7; border:none; width:100%;">
+        $section9 = '  <table style="background-color:#7209B7; border:none; width:100%;">
         <tr>
             <td>
                 <p style="font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white">  9.	Appendix A: Replacement Device Request</p>
@@ -1298,7 +1128,7 @@ $section9='  <table style="background-color:#7209B7; border:none; width:100%;">
 
         <p style="margin-top:12pt:"></p>';
 
-$section10='<table style="width:100%; border: 1px solid black;">
+        $section10 = '<table style="width:100%; border: 1px solid black;">
         <tr>
             <td style="width: 100%; border: 1px solid black; width:50%;background-color: lightgrey; font-weight:bold;"><p style="margin-top:10px; margin-bottom:10px;">Participant’s signature</p></td>
             <td style="width: 100%; border: 1px solid black; width:50%;"><p style="margin-top:10px; margin-bottom:10px;"> </p></td>   
@@ -1429,7 +1259,7 @@ $section10='<table style="width:100%; border: 1px solid black;">
         <p style="margin-top:12pt:"></p>';
 
 
-$section11='<table style="background-color:#7209B7; border:none; width:100%;">
+        $section11 = '<table style="background-color:#7209B7; border:none; width:100%;">
         <tr>
             <td>
                 <p style="font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white">11.	Appendix C: Examples of functional measures for hearing device refitting requests</p>
@@ -1493,7 +1323,7 @@ $section11='<table style="background-color:#7209B7; border:none; width:100%;">
         <td style="width:10%;font-size: 17px; border: 1px solid black;">{{part_11_appendix_C_examples_of_functional_measures12}}</td>
         <td style="width:20%;font-size: 17px; border: 1px solid black;">{{part_11_appendix_C_examples_of_functional_measures13}}</td>
         <td style="width:20%;font-size: 17px; border: 1px solid black;">{{part_11_appendix_C_examples_of_functional_measures14}}</td>
-        <td style="width:15%;font-size: 17px; border: 1px solid black;">{{part_11_appendix_C_examples_of_functional_measures15}]</td>
+        <td style="width:15%;font-size: 17px; border: 1px solid black;">{{part_11_appendix_C_examples_of_functional_measures15}}</td>
         <td style="width:15%;font-size: 17px; border: 1px solid black;">{{part_11_appendix_C_examples_of_functional_measures16}}</td>
         </tr>
         </table>
@@ -1701,7 +1531,7 @@ $section11='<table style="background-color:#7209B7; border:none; width:100%;">
 
 
 
-$form_fields = '[
+        $form_fields = '[
             {
             "type":"text",
             "required":false,
@@ -1864,113 +1694,153 @@ $form_fields = '[
                 "subtype":"text"
             }
             ]';
-$form_fields2 = '[
-                {
-                "type":"text",
-                "required":false,
-                "label":"A new device for a first time user?",
-                "placeholder":"Enter A new device for a first time user?",
-                "className":"form-control",
-                "name":"part_2_background_information1",
-                "access":false,
-                "subtype":"text"
-                },
-                {
-                    "type":"text",
-                    "required":false,
-                    "label":"The first device for this ear?",
-                    "placeholder":"Enter The first device for this ear?",
-                    "className":"form-control",
-                    "name":"part_2_background_information2",
-                    "access":false,
-                    "subtype":"text"
-                },
-                {
-                    "type":"text",
-                    "required":false,
-                    "label":"A replacement device?",
-                    "placeholder":"Enter A replacement device?",
-                    "className":"form-control",
-                    "name":"part_2_background_information3",
-                    "access":false,
-                    "subtype":"text"
-                },
-                {
-                    "type":"text",
-                    "required":false,
-                    "label":"The previous device is lost / damaged beyond repair (DBR) / has reached the end of its service life?",
-                    "placeholder":"Enter The previous device is lost / damaged beyond repair (DBR) / has reached the end of its service life?",
-                    "className":"form-control",
-                    "name":"part_2_background_information4",
-                    "access":false,
-                    "subtype":"text"
-                },
-                {
-                    "type":"text",
-                    "required":false,
-                    "label":"A refitted / upgraded device?",
-                    "placeholder":"Enter A refitted / upgraded device?",
-                    "className":"form-control",
-                    "name":"part_2_background_information5",
-                    "access":false,
-                    "subtype":"text"
-                },
-                {
-                    "type":"text",
-                    "required":false,
-                    "label":"A new device with higher specifications",
-                    "placeholder":"Enter A new device with higher specifications or different style is required because of the participants functional capacity has changed?",
-                    "className":"form-control",
-                    "name":"part_2_background_information6",
-                    "access":false,
-                    "subtype":"text"
-                },
+        $form_fields2 = '[
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"A new device for a first time user?",
+               "toggle":false,
+               "inline":false,
+               "name":"part_2_background_information1",
+               "access":false,
+               "other":false,
+               "values":[
+                  {
+                     "label":"Option 1",
+                     "value":"option-1",
+                     "selected":true
+                  }
+               ]
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"The first device for this ear?",
+               "toggle":false,
+               "inline":false,
+               "name":"part_2_background_information2",
+               "access":false,
+               "other":false,
+               "values":[
+                  {
+                     "label":"Option 1",
+                     "value":"option-1",
+                     "selected":true
+                  }
+               ]
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"A replacement device?",
+               "toggle":false,
+               "inline":false,
+               "name":"part_2_background_information3",
+               "access":false,
+               "other":false,
+               "values":[
+                  {
+                     "label":"Option 1",
+                     "value":"option-1",
+                     "selected":true
+                  }
+               ]
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"The previous device is lost / damaged beyond repair (DBR) / has reached the end of its service life?",
+               "toggle":false,
+               "inline":false,
+               "name":"part_2_background_information4",
+               "access":false,
+               "other":false,
+               "values":[
+                  {
+                     "label":"Option 1",
+                     "value":"option-1",
+                     "selected":true
+                  }
+               ]
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"A refitted / upgraded device?",
+               "toggle":false,
+               "inline":false,
+               "name":"part_2_background_information5",
+               "access":false,
+               "other":false,
+               "values":[
+                  {
+                     "label":"Option 1",
+                     "value":"option-1",
+                     "selected":true
+                  }
+               ]
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"A new device with higher specifications",
+               "toggle":false,
+               "inline":false,
+               "name":"part_2_background_information6",
+               "access":false,
+               "other":false,
+               "values":[
+                  {
+                     "label":"Option 1",
+                     "value":"option-1",
+                     "selected":true
+                  }
+               ]
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Hearing background",
+               "placeholder":"Enter Hearing background",
+               "className":"form-control",
+               "name":"part_2_background_information7",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Communication background",
+               "placeholder":"Enter Communication background",
+               "className":"form-control",
+               "name":"part_2_background_information8",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Medical / Health background",
+               "placeholder":"Enter Medical / Health background",
+               "className":"form-control",
+               "name":"part_2_background_information9",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Participant Goals",
+               "placeholder":"Enter Participant Goals",
+               "className":"form-control",
+               "name":"part_2_background_information10",
+               "access":false,
+               "subtype":"text"
+            }
+         ]';
 
 
-                {
-                    "type":"text",
-                    "required":false,
-                    "label":"Hearing background",
-                    "placeholder":"Enter Details",
-                    "className":"form-control",
-                    "name":"part_2_background_information7",
-                    "access":false,
-                    "subtype":"text"
-                },
-                {
-                    "type":"text",
-                    "required":false,
-                    "label":"Communication background",
-                    "placeholder":"Enter Details",
-                    "className":"form-control",
-                    "name":"part_2_background_information8",
-                    "access":false,
-                    "subtype":"text"
-                },
-                {
-                    "type":"text",
-                    "required":false,
-                    "label":"Medical / Health background",
-                    "placeholder":"Enter Details",
-                    "className":"form-control",
-                    "name":"part_2_background_information9",
-                    "access":false,
-                    "subtype":"text"
-                },
-                {
-                    "type":"text",
-                    "required":false,
-                    "label":"Participant Goals",
-                    "placeholder":"Enter Details",
-                    "className":"form-control",
-                    "name":"part_2_background_information10",
-                    "access":false,
-                    "subtype":"text"
-                }
-                ]';
-
-
-$form_fields3 = '[
+        $form_fields3 = '[
     {
         "type":"text",
         "required":false,
@@ -2132,26 +2002,22 @@ $form_fields3 = '[
         "subtype":"text"
     },
     {
-        "type":"text",
-        "required":false,
-        "label":"Evidence is attached: Yes",
-        "placeholder":"Yes",
-        "className":"form-control",
-        "name":"part_3_recommended_option_16",
-        "access":false,
-        "subtype":"text"
+       "type":"checkbox-group",
+       "required":false,
+       "label":"Yes, Evidence is attached",
+       "toggle":false,
+       "inline":false,
+       "name":"part_3_recommended_option_16",
+       "access":false,
+       "other":false,
+       "values":[
+          {
+             "label":"Option 1",
+             "value":"option-1",
+             "selected":true
+          }
+       ]
     },
-    {
-        "type":"text",
-        "required":false,
-        "label":"Evidence is attached: No",
-        "placeholder":"No",
-        "className":"form-control",
-        "name":"part_3_recommended_option_17",
-        "access":false,
-        "subtype":"text"
-    },
-
     {
         "type":"text",
         "required":false,
@@ -2383,18 +2249,16 @@ $form_fields3 = '[
         "access":false,
         "subtype":"text"
     },
-
     {
         "type":"text",
         "required":false,
         "label":"Recommendation",
         "placeholder":"Enter Recommendation of hearing aid",
         "className":"form-control",
-        "name":"part_3_recommended_option_49",
+        "name":"part_3_recommended_option_39",
         "access":false,
         "subtype":"text"
     },
-
     {
         "type":"text",
         "required":false,
@@ -2405,7 +2269,6 @@ $form_fields3 = '[
         "access":false,
         "subtype":"text"
     },
-
     {
         "type":"text",
         "required":false,
@@ -2466,7 +2329,6 @@ $form_fields3 = '[
         "access":false,
         "subtype":"text"
     },
-
     {
         "type":"text",
         "required":false,
@@ -2497,7 +2359,6 @@ $form_fields3 = '[
         "access":false,
         "subtype":"text"
     },
-
     {
         "type":"text",
         "required":false,
@@ -2618,11 +2479,6 @@ $form_fields3 = '[
         "access":false,
         "subtype":"text"
     },
-
-
-
-
-
     {
         "type":"text",
         "required":false,
@@ -2633,9 +2489,6 @@ $form_fields3 = '[
         "access":false,
         "subtype":"text"
     },
-
-
-
     {
         "type":"text",
         "required":false,
@@ -2666,10 +2519,6 @@ $form_fields3 = '[
         "access":false,
         "subtype":"text"
     },
-
-
-
-
     {
         "type":"text",
         "required":false,
@@ -2735,10 +2584,7 @@ $form_fields3 = '[
     }
     ]';
 
-
-
-    
-$form_fields4 = '[
+        $form_fields4 = '[
     {
         "type":"text",
         "required":false,
@@ -2750,8 +2596,8 @@ $form_fields4 = '[
         "subtype":"text"
     }
  ]';
-    
-$form_fields5 = '[
+
+        $form_fields5 = '[
     {
         "type":"text",
         "required":false,
@@ -2783,9 +2629,9 @@ $form_fields5 = '[
         "subtype":"text"
     }
     ]';
-    
-$form_fields6 = '[]';
-$form_fields7 = '[
+
+        $form_fields6 = '[]';
+        $form_fields7 = '[
         {
             "type":"text",
             "required":false,
@@ -2959,7 +2805,7 @@ $form_fields7 = '[
         }
         ]';
 
-$form_fields8 = '[
+        $form_fields8 = '[
             {
                 "type":"text",
                 "required":false,
@@ -3163,9 +3009,9 @@ $form_fields8 = '[
 
 
 
-$form_fields9 = '[]';
-$form_fields10 = '[]';
-$form_fields11 = '[
+        $form_fields9 = '[]';
+        $form_fields10 = '[]';
+        $form_fields11 = '[
     {
         "type":"text",
         "required":false,
@@ -3914,58 +3760,56 @@ $form_fields11 = '[
             'form_id' => $form,
             'section_html' => $section10
         ]);
-        $heading11= FormHeading::insertGetId([
+        $heading11 = FormHeading::insertGetId([
             'form_heading' => 'Appendix C: Examples of functional measures for hearing device refitting requests',
             'form_id' => $form,
             'section_html' => $section11
         ]);
 
 
-            FormField::create([
-                    'form_heading_id' => $heading1,
-                    'form_field' => $form_fields
-                ]);
-            FormField::create([
-                'form_heading_id' => $heading2,
-                'form_field' => $form_fields2
-            ]);
-            FormField::create([
-                'form_heading_id' => $heading3,
-                'form_field' => $form_fields3
-            ]);
-            FormField::create([
-                'form_heading_id' => $heading4,
-                'form_field' => $form_fields4
-            ]);
-            FormField::create([
-                'form_heading_id' => $heading5,
-                'form_field' => $form_fields5
-            ]);
-            FormField::create([
-                'form_heading_id' => $heading6,
-                'form_field' => $form_fields6
-            ]);
-            FormField::create([
-                'form_heading_id' => $heading7,
-                'form_field' => $form_fields7
-            ]);
-            FormField::create([
-                'form_heading_id' => $heading8,
-                'form_field' => $form_fields8
-            ]);
-            FormField::create([
-                'form_heading_id' => $heading9,
-                'form_field' => $form_fields9
-            ]);
-            FormField::create([
-                'form_heading_id' => $heading10,
-                'form_field' => $form_fields10
-            ]);
-            FormField::create([
-                'form_heading_id' => $heading11,
-                'form_field' => $form_fields11
-            ]);
-    
-        
+        FormField::create([
+            'form_heading_id' => $heading1,
+            'form_field' => $form_fields
+        ]);
+        FormField::create([
+            'form_heading_id' => $heading2,
+            'form_field' => $form_fields2
+        ]);
+        FormField::create([
+            'form_heading_id' => $heading3,
+            'form_field' => $form_fields3
+        ]);
+        FormField::create([
+            'form_heading_id' => $heading4,
+            'form_field' => $form_fields4
+        ]);
+        FormField::create([
+            'form_heading_id' => $heading5,
+            'form_field' => $form_fields5
+        ]);
+        FormField::create([
+            'form_heading_id' => $heading6,
+            'form_field' => $form_fields6
+        ]);
+        FormField::create([
+            'form_heading_id' => $heading7,
+            'form_field' => $form_fields7
+        ]);
+        FormField::create([
+            'form_heading_id' => $heading8,
+            'form_field' => $form_fields8
+        ]);
+        FormField::create([
+            'form_heading_id' => $heading9,
+            'form_field' => $form_fields9
+        ]);
+        FormField::create([
+            'form_heading_id' => $heading10,
+            'form_field' => $form_fields10
+        ]);
+        FormField::create([
+            'form_heading_id' => $heading11,
+            'form_field' => $form_fields11
+        ]);
     }
 }
