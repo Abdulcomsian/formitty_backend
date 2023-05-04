@@ -344,21 +344,25 @@ class AssessmentToolController extends ApiController
     public function generatePdf(){
 
         try {
-        $employee = array(
-            'name' => 'John',
-            'age' => 30,
-            'gender' => 'Male',
-            'email' => 'john@example.com',
-            'phone' => '+1-555-555-1234'
-        );
+            $employee = array(
+                'name' => 'John',
+                'age' => 30,
+                'gender' => 'Male',
+                'email' => 'john@example.com',
+                'phone' => '+1-555-555-1234'
+            );
         
-        view()->share('employee',$employee);
-        $pdf = PDF::loadView('pdf', $employee);
-        // download PDF file with download method
-        $pdf = response($pdf->output(), 200)
-            ->header('Content-Type', 'application/pdf')
-            ->header('Content-Disposition', 'attachment; filename="pdf_file.pdf"');
-            return $this->successResponse($pdf, 'Flowchart updated successfully!.', 200);
+            view()->share('employee',$employee);
+            $pdf = PDF::loadView('pdf', $employee);
+            // download PDF file with download method
+            $pdf = response($pdf->output(), 200)
+                ->header('Content-Type', 'application/pdf')
+                ->header('Content-Disposition', 'attachment; filename="pdf_file.pdf"');
+                return $pdf;
+                // $responseData = [
+                //     'pdf' => $pdf,
+                // ];
+                return $this->successResponse($pdf, 'Flowchart updated successfully!.', 200);
         } catch (\Throwable $th) {
             return $this->errorResponse($th->getMessage(), 401);
         }
