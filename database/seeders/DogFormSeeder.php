@@ -156,7 +156,8 @@ $section1 = "<table style='background-color:#6a2c75; border:none; width:100%; ma
           </td>
           </tr>
       </tbody>
-  </table>";
+  </table>
+  <p></p>";
     
 $section2 = '<table style="background-color:#7209B7; border:none; width:100%;">
             <tr>
@@ -219,7 +220,8 @@ $section2 = '<table style="background-color:#7209B7; border:none; width:100%;">
             <tr>
                 <td style="width: 100%; border: 1px solid black;"><p style="margin-top:10px; margin-bottom:10px;">{{part_2_evaluation_and_assessment_06}}</p></td>
             </tr>
-        </table>';
+        </table>
+        <p></p>';
 
 
     
@@ -261,7 +263,8 @@ $section3 = '<table style="background-color:#7209B7; border:none; width:100%;">
       <td style="width:30%;">Please provide details</td>
       <td style="width: 70%; border: 1px solid black;">{{part_3_recommended_option_05}}</td>
     </tr>
-    </table>';
+    </table>
+    <p></p>';
     
 
 
@@ -279,7 +282,7 @@ $section4 = '<table style="background-color:#7209B7; border:none; width:100%;">
         <li><p style="margin-top:10px; margin-bottom:10px;">Medical Report (as outlined in section 2.6 if relevant).</p></li>
     </ul>
     <p style="font-size:12pt;">Please Note: for an approved dog guide, funding for the extra in maintenance costs would be considered to reflect the higher costs of a dog guide over those of an equivalent companion animal/pet. The NDIS will provide an appropriate annual maintenance cost which the participant can use to pay for reasonable and necessary dog guide maintenance costs (including food, grooming, flea and worm treatments, medication, vaccinations, veterinary costs and/or insurance).</p>
-    ';
+  <p></p>';
     
 $section5 = '<table style="background-color:#7209B7; border:none; width:100%;">
             <tr>
@@ -343,7 +346,8 @@ $section5 = '<table style="background-color:#7209B7; border:none; width:100%;">
               <td style="width:40%;">Date of Report</td>
               <td style="width: 60%; border: 1px solid black;">{{part_5_details_of_assistive_technology_assessor_12}}</td>
             </tr>
-            </table>';
+            </table>
+            <p></p>';
 
 
 $section6='<table style="background-color:#7209B7; border:none; width:100%;">
@@ -411,7 +415,8 @@ $section6='<table style="background-color:#7209B7; border:none; width:100%;">
               <td style="width:40%;">Relationship to participant or person wishing to become an NDIS participant:</td>
               <td style="width: 60%; border: 1px solid black;">{{part_6_consent_to_collect_and_share_your_information_12}}</td>
             </tr>
-            </table>';
+            </table>
+            <p></p>';
 
 
 
