@@ -146,7 +146,7 @@ class HearingSeeder extends Seeder
             </tr>
         </tbody>
     </table>
-    <p></p>";
+    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'></p>";
 
 
         $section2 = '<table style="background-color:#7209B7; border:none; width:100%;">
@@ -172,39 +172,27 @@ class HearingSeeder extends Seeder
               <tbody>
                 <tr>
                   <td style="font-weight:bold; border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px">A new device for a first time user?</td>
-                  <td style="border: 1px solid lightslategray; padding: 10px">
-                    {{part_2_background_information1}}
-                  </td>
+                  <td style="border: 1px solid lightslategray; padding: 10px">{{part_2_background_information1}}</td>
                 </tr>
                 <tr>
                   <td style="font-weight:bold; border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px">The first device for this ear?</td>
-                  <td style="border: 1px solid lightslategray; padding: 10px">
-                    {{part_2_background_information2}}
-                  </td>
+                  <td style="border: 1px solid lightslategray; padding: 10px">{{part_2_background_information2}}</td>
                 </tr>
                 <tr>
                   <td style="font-weight:bold; border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px">A replacement device?</td>
-                  <td style="border: 1px solid lightslategray; padding: 10px">
-                    {{part_2_background_information3}}
-                  </td>
+                  <td style="border: 1px solid lightslategray; padding: 10px">{{part_2_background_information3}}</td>
                 </tr>
                 <tr>
                   <td style="font-weight:bold; border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px">The previous device is lost / damaged beyond repair (DBR) / has reached the end of its service life?</td>
-                  <td style="border: 1px solid lightslategray; padding: 10px">
-                    {{part_2_background_information4}}
-                  </td>
+                  <td style="border: 1px solid lightslategray; padding: 10px">{{part_2_background_information4}}</td>
                 </tr>
                 <tr>
                   <td style="font-weight:bold; border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px">A refitted / upgraded device?</td>
-                  <td style="border: 1px solid lightslategray; padding: 10px">
-                    {{part_2_background_information5}}
-                  </td>
+                  <td style="border: 1px solid lightslategray; padding: 10px">{{part_2_background_information5}}</td>
                 </tr>
                 <tr>
                   <td style="font-weight:bold; border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px">A new device with higher specifications or different style is required because of the participants functional capacity has changed?</td>
-                  <td style="border: 1px solid lightslategray; padding: 10px">
-                    {{part_2_background_information6}}
-                  </td>
+                  <td style="border: 1px solid lightslategray; padding: 10px">{{part_2_background_information6}}</td>
                 </tr>
               </tbody>
               </table>
