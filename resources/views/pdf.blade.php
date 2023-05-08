@@ -1,41 +1,42 @@
-{{-- @dd($product['data']['name']) --}}
-<table class="table table-bordered mb-5">
-    <thead>
-        <tr class="table-danger">
-            <th scope="col">Title</th>
-            <th scope="col">Detail</th>
-        </tr>
-    </thead>
+<table style="width: 100%; padding: 1rem">
     <tbody>
-        <tr>
-            <th scope="row">Name</th>
-            <td>{{ $product['data']['name']}}</td>
+        <tr style="margin-top: 1rem">
+            <th style="font-size: x-large">Title</th>
+            <td style="font-size: large">{{ $product['data']['name'] }}</td>
+        </tr>
+        <tr style="margin-top: 1rem">
+            <th style="font-size: x-large">Detail</th>
+            <td style="font-size: large">{{ $product['data']['name'] }}</td>
+        </tr>
+        <tr style="margin-top: 1rem">
+            <th style="font-size: x-large">Availability</th>
+            <td style="font-size: large">{{ $product['data']['in_stock'] }}</td>
+        </tr>
+        <tr style="margin-top: ;">
+            <th style="font-size: x-large">Price</th>
+            <td style="font-size: large">{{ $product['data']['formated_price'] }}</td>
         </tr>
         <tr>
-            <th scope="row">Price</th>
-            <td>{{ $product['data']['formated_price']}}</td>
+            <th style="font-size: x-large">Short Description</th>
+            <td style="font-size: large">{!! $product['data']['short_description'] !!}</td>
         </tr>
         <tr>
-            <th scope="row">Short Description</th>
-            <td>{!! $product['data']['short_description'] !!}</td>
+            <th style="font-size: x-large">Description</th>
+            <td style="font-size: large">{{ strip_tags($product['data']['description']) }}</td>
         </tr>
         <tr>
-            <th scope="row">Description</th>
-            <td>{!! $product['data']['description'] !!}</td>
-        </tr>
-        <tr>
-            <th scope="row">Image</th>
+            <th style="font-size: x-large">Image</th>
             <td>
-                @foreach($product['data']['images'] as $image)
-                <img src="{{ $image['original_image_url'] }}" alt="{{ $image['id'] }}" width="100px">
+                @foreach ($product['data']['images'] as $image)
+                    <img src="{{ $image['original_image_url'] }}" alt="{{ $image['id'] }}" width="100px">
                 @endforeach
             </td>
         </tr>
         <tr>
-            <th scope="row">Image</th>
+            <th style="font-size: x-large">Image</th>
             <td>
-                @foreach($product['data']['images'] as $image)
-                <img src="{{ $image['original_image_url'] }}" alt="{{ $image['id'] }}" width="100px">
+                @foreach ($product['data']['images'] as $image)
+                    <img src="{{ $image['original_image_url'] }}" alt="{{ $image['id'] }}" width="100px">
                 @endforeach
             </td>
         </tr>
