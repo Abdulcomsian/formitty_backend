@@ -35,63 +35,43 @@ class VehicleSeeder extends Seeder
                     <tbody>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Name</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_name}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_name}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Date of Birth</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_date_of_birth}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_date_of_birth}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Age</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_age}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_age}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>NDIS Number</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_participantndis_number}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_participantndis_number}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Address</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_participant_address}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_participant_address}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Contact Telephone Number</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_participantphone_number}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_participantphone_number}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Email</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_participant_email}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_participant_email}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Preferred Contact Method </td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_participant_preferredcontact}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_participant_preferredcontact}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Nominee or Guardian Name</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_participantguardian_name}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_participantguardian_name}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Nominee or Guardian Phone</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_participantguardian_phone}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_participantguardian_phone}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>NDIS Support Coordinator</td>
@@ -99,11 +79,8 @@ class VehicleSeeder extends Seeder
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Contact Details</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_participantcontact_details}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_participantcontact_details}}</td>
                         </tr>
-                        
                     </tbody>
                 </table>
                 <p style='font-weight: bold; margin-bottom: 10px; margin-top: 10px'>1.2 Plan Management Details</p>
@@ -118,31 +95,24 @@ class VehicleSeeder extends Seeder
                     <tbody>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Agency Managed</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_agency_managed}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_agency_managed}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Self-Managed</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_self_managed}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_self_managed}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Registered Plan Management Provider</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_registeredplanmanagement_provider}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_registeredplanmanagement_provider}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Contact Details </td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_registeredplanmanagementcontact_details}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_registeredplanmanagementcontact_details}}</td>
                         </tr>
                     </tbody>
                 </table>
                 <p style='margin-top:10px'></p>";
+
       $section2 = "<table style='background-color:#7209B7; border:none; width:100%;'>
             <tr>
                 <td>
