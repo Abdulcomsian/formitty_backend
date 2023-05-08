@@ -15,6 +15,7 @@ use App\Models\Response;
 use App\Models\FlowchartAnswer;
 use App\Models\AssessmentGroup;
 use Illuminate\Support\Facades\Auth;
+use GuzzleHttp\Client;
 use PDF;
 class AssessmentToolController extends ApiController
 {
@@ -341,27 +342,23 @@ class AssessmentToolController extends ApiController
         }
     }
 
-    public function generatePdf(){
+    public function generatePdf(Request $request){
 
         try {
-            $employee = array(
-                'name' => 'John',
-                'age' => 30,
-                'gender' => 'Male',
-                'email' => 'john@example.com',
-                'phone' => '+1-555-555-1234'
-            );
-        
-            view()->share('employee',$employee);
-            $pdf = PDF::loadView('pdf', $employee);
+                       
+            $client = new Client();
+
+            $response = $client->get('https://formitydev.com/bagisto/public/api/products/'.$request->product_id);
+
+            $product_response = json_decode($response->getBody(), true);
+
+            view()->share('product',$product_response);
+            $pdf = PDF::loadView('pdf', $product_response);
             // download PDF file with download method
-            $pdf = response($pdf->output(), 200)
-                ->header('Content-Type', 'application/pdf')
-                ->header('Content-Disposition', 'attachment; filename="pdf_file.pdf"');
-                return $pdf;
-                // $responseData = [
-                //     'pdf' => $pdf,
-                // ];
+            return response($pdf->output(), 200)
+            ->header('Content-Type', 'application/pdf')
+            ->header('Content-Disposition', 'attachment; filename="pdf_file.pdf"');
+            return $pdf;
                 return $this->successResponse($pdf, 'Flowchart updated successfully!.', 200);
         } catch (\Throwable $th) {
             return $this->errorResponse($th->getMessage(), 401);
