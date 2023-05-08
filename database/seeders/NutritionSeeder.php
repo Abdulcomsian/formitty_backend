@@ -248,59 +248,29 @@ class NutritionSeeder extends Seeder
 
                             </tr>
                             <tr>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    {{part_3_con_option_evaluation_option1}}
-                                </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    {{part_3_con_option_evaluation_option_potential1}}
-                                </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    {{part_3_con_option_trial_option1}}
-                                </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    {{part_3_considered_suitable1}}
-                                </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    {{part_3_estimated_cost1}}
-                                </td>
+                                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_evaluation_option1}}</td>
+                                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_evaluation_option_potential1}}</td>
+                                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_trial_option1}}</td>
+                                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_considered_suitable1}}</td>
+                                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_estimated_cost1}}</td>
                             </tr>
 
                             <tr>
 
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    {{part_3_con_option_evaluation_option2}}
-                                </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    {{part_3_con_option_evaluation_option_potential2}}
-                                </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    {{part_3_con_option_trial_option2}}
-                                </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    {{part_3_considered_suitable2}}
-                                </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    {{part_3_estimated_cost2}}
-                                </td>
+                                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_evaluation_option2}}</td>
+                                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_evaluation_option_potential2}}</td>
+                                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_trial_option2}}</td>
+                                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_considered_suitable2}}</td>
+                                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_estimated_cost2}}</td>
                             </tr>
 
                             <tr>
 
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    {{part_3_con_option_evaluation_option3}}
-                                </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    {{part_3_con_option_evaluation_option_potential3}}
-                                </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    {{part_3_con_option_trial_option3}}
-                                </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    {{part_3_considered_suitable3}}
-                                </td>
-                                <td style='border: 1px solid lightslategray; padding: 10px'>
-                                    {{part_3_estimated_cost3}}
-                                </td>
+                                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_evaluation_option3}}</td>
+                                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_evaluation_option_potential3}}</td>
+                                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_trial_option3}}</td>
+                                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_considered_suitable3}}</td>
+                                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_estimated_cost3}}</td>
                             </tr>
 
                         </tbody>
@@ -401,39 +371,21 @@ class NutritionSeeder extends Seeder
                     </td>
                 </tr>
                 <tr>
-                    <td style='border: 1px solid lightslategray; padding: 10px'>
-                        {{part_5_extra_features_item1}}
-                    </td>
-                    <td style='border: 1px solid lightslategray; padding: 10px'>
-                        {{part_5_extra_features_Quantity_frequency_supply_required1}}
-                    </td>
-                    <td style='border: 1px solid lightslategray; padding: 10px'>
-                        {{part_5_extra_features_cost_estimate1}}
-                    </td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_extra_features_item1}}</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_extra_features_Quantity_frequency_supply_required1}}</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_extra_features_cost_estimate1}}</td>
                 </tr>
                 <tr>
 
-                    <td style='border: 1px solid lightslategray; padding: 10px'>
-                        {{part_5_extra_features_item2}}
-                    </td>
-                    <td style='border: 1px solid lightslategray; padding: 10px'>
-                        {{part_5_extra_features_Quantity_frequency_supply_required2}}
-                    </td>
-                    <td style='border: 1px solid lightslategray; padding: 10px'>
-                        {{part_5_extra_features_cost_estimate2}}
-                    </td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_extra_features_item2}}</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_extra_features_Quantity_frequency_supply_required2}}</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_extra_features_cost_estimate2}}</td>
                 </tr>
                 <tr>
 
-                    <td style='border: 1px solid lightslategray; padding: 10px'>
-                        {{part_5_extra_features_item3}}
-                    </td>
-                    <td style='border: 1px solid lightslategray; padding: 10px'>
-                        {{part_5_extra_features_Quantity_frequency_supply_required3}}
-                    </td>
-                    <td style='border: 1px solid lightslategray; padding: 10px'>
-                        {{part_5_extra_features_cost_estimate3}}
-                    </td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_extra_features_item3}}</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_extra_features_Quantity_frequency_supply_required3}}</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_extra_features_cost_estimate3}}</td>
                 </tr>
                 </tbody>
                 </table>
@@ -502,57 +454,39 @@ class NutritionSeeder extends Seeder
                     <tbody>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Name</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_6_details_of_assistive_technology_assessor5}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_6_details_of_assistive_technology_assessor5}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Position</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_6_details_of_assistive_technology_assessor6}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_6_details_of_assistive_technology_assessor6}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Qualification</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_6_details_of_assistive_technology_assessor7}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_6_details_of_assistive_technology_assessor7}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Business Name</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_6_details_of_assistive_technology_assessor8}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_6_details_of_assistive_technology_assessor8}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Contact Telephone Number</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                        {{part_6_details_of_assistive_technology_assessor9}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_6_details_of_assistive_technology_assessor9}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Email</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_6_details_of_assistive_technology_assessor10}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_6_details_of_assistive_technology_assessor10}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Preferred Contact Method </td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_6_details_of_assistive_technology_assessor11}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_6_details_of_assistive_technology_assessor11}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Date of Assessment</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_6_details_of_assistive_technology_assessor12}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_6_details_of_assistive_technology_assessor12}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Date of Report</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_6_details_of_assistive_technology_assessor13}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_6_details_of_assistive_technology_assessor13}}</td>
                         </tr>
                     </tbody>
                     </table>
@@ -745,9 +679,6 @@ class NutritionSeeder extends Seeder
                         "access":false,
                         "subtype":"text"
                         },
-
-
-
                         {
                         "type":"text",
                         "required":false,
@@ -793,7 +724,7 @@ class NutritionSeeder extends Seeder
 
     $form_fields2 = '[
                 {
-                "type":"text",
+                "type":"textarea",
                 "required":false,
                 "label":"Background",
                 "placeholder":"Enter Your Background",
@@ -802,9 +733,8 @@ class NutritionSeeder extends Seeder
                 "access":false,
                 "subtype":"text"
                 },
-
                 {
-                "type":"text",
+                "type":"textarea",
                 "required":false,
                 "label":"Functional Assessment findings",
                 "placeholder":"Enter Functional Assessment findings",
@@ -813,8 +743,6 @@ class NutritionSeeder extends Seeder
                 "access":false,
                 "subtype":"text"
                 },
-
-
                 {
                 "type":"date",
                 "required":false,
@@ -825,7 +753,6 @@ class NutritionSeeder extends Seeder
                 "access":false,
                 "subtype":"text"
                 },
-
                 {
                 "type":"text",
                 "required":false,
@@ -836,8 +763,6 @@ class NutritionSeeder extends Seeder
                 "access":false,
                 "subtype":"text"
                 },
-
-
                 {
                 "type":"text",
                 "required":false,
@@ -865,32 +790,50 @@ class NutritionSeeder extends Seeder
         {
             "type":"text",
             "required":false,
-            "label":"Option",
-            "placeholder":"Enter Option",
-            "className":"form-control",
-            "name":"part_3_con_option_evaluation_option2",
-            "access":false,
-            "subtype":"text"
-        },
-        {
-            "type":"text",
-            "required":false,
-            "label":"Option",
-            "placeholder":"Enter Option",
-            "className":"form-control",
-            "name":"part_3_con_option_evaluation_option3",
-            "access":false,
-            "subtype":"text"
-        },
-
-
-        {
-            "type":"text",
-            "required":false,
             "label":"Describe potential options in relation to goal achievement",
             "placeholder":"Enter Describe potential options in relation to goal achievement",
             "className":"form-control",
             "name":"part_3_con_option_evaluation_option_potential1",
+            "access":false,
+            "subtype":"text"
+        },
+        {
+            "type":"text",
+            "required":false,
+            "label":"Trialled (T) or Considered (C)? Trial details (date, length, location)",
+            "placeholder":"Enter Trial Details",
+            "className":"form-control",
+            "name":"part_3_con_option_trial_option1",
+            "access":false,
+            "subtype":"text"
+        },
+        {
+            "type":"text",
+            "required":false,
+            "label":"Why was it considered suitable/not suitable?",
+            "placeholder":"Enter Why was it considered suitable/not suitable?",
+            "className":"form-control",
+            "name":"part_3_considered_suitable1",
+            "access":false,
+            "subtype":"text"
+        },
+        {
+            "type":"text",
+            "required":false,
+            "label":"Estimated cost (include training)",
+            "placeholder":"Enter Estimated cost (include training)",
+            "className":"form-control",
+            "name":"part_3_estimated_cost1",
+            "access":false,
+            "subtype":"text"
+        },
+        {
+            "type":"text",
+            "required":false,
+            "label":"Option",
+            "placeholder":"Enter Option",
+            "className":"form-control",
+            "name":"part_3_con_option_evaluation_option2",
             "access":false,
             "subtype":"text"
         },
@@ -906,55 +849,10 @@ class NutritionSeeder extends Seeder
         {
             "type":"text",
             "required":false,
-            "label":"Describe potential options in relation to goal achievement",
-            "placeholder":"Enter Describe potential options in relation to goal achievement",
-            "className":"form-control",
-            "name":"part_3_con_option_evaluation_option_potential3",
-            "access":false,
-            "subtype":"text"
-        },
-
-
-        {
-            "type":"text",
-            "required":false,
-            "label":"Trialled (T) or Considered (C)? Trial details (date, length, location)",
-            "placeholder":"Enter Trial Details",
-            "className":"form-control",
-            "name":"part_3_con_option_trial_option1",
-            "access":false,
-            "subtype":"text"
-        },
-        {
-            "type":"text",
-            "required":false,
             "label":"Evaluation_optionTextField",
             "placeholder":"Enter Trial Details",
             "className":"form-control",
             "name":"part_3_con_option_trial_option2",
-            "access":false,
-            "subtype":"text"
-        },
-        {
-            "type":"text",
-            "required":false,
-            "label":"Evaluation_optionTextField",
-            "placeholder":"Enter Trial Details",
-            "className":"form-control",
-            "name":"part_3_con_option_trial_option3",
-            "access":false,
-            "subtype":"text"
-        },
-
-
-    
-        {
-            "type":"text",
-            "required":false,
-            "label":"Why was it considered suitable/not suitable?",
-            "placeholder":"Enter Why was it considered suitable/not suitable?",
-            "className":"form-control",
-            "name":"part_3_considered_suitable1",
             "access":false,
             "subtype":"text"
         },
@@ -968,35 +866,51 @@ class NutritionSeeder extends Seeder
             "subtype":"text"
         },
         {
-            "type":"text","required":false,
-            "label":"Why was it considered suitable/not suitable?",
-            "placeholder":"Enter Why was it considered suitable/not suitable?",
-            "className":"form-control",
-            "name":"part_3_considered_suitable3",
-            "access":false,
-            "subtype":"text"
-        },
-
-
-
-
-        {
-            "type":"text",
-            "required":false,
-            "label":"Estimated cost (include training)",
-            "placeholder":"Enter Estimated cost (include training)",
-            "className":"form-control",
-            "name":"part_3_estimated_cost1",
-            "access":false,
-            "subtype":"text"
-        },
-        {
             "type":"text",
             "required":false,
             "label":"Estimated cost (include training)",
             "placeholder":"Enter Estimated cost (include training)",
             "className":"form-control",
             "name":"part_3_estimated_cost2",
+            "access":false,
+            "subtype":"text"
+        },
+        {
+            "type":"text",
+            "required":false,
+            "label":"Option",
+            "placeholder":"Enter Option",
+            "className":"form-control",
+            "name":"part_3_con_option_evaluation_option3",
+            "access":false,
+            "subtype":"text"
+        },
+        {
+            "type":"text",
+            "required":false,
+            "label":"Describe potential options in relation to goal achievement",
+            "placeholder":"Enter Describe potential options in relation to goal achievement",
+            "className":"form-control",
+            "name":"part_3_con_option_evaluation_option_potential3",
+            "access":false,
+            "subtype":"text"
+        },
+        {
+            "type":"text",
+            "required":false,
+            "label":"Evaluation_optionTextField",
+            "placeholder":"Enter Trial Details",
+            "className":"form-control",
+            "name":"part_3_con_option_trial_option3",
+            "access":false,
+            "subtype":"text"
+        },
+        {
+            "type":"text","required":false,
+            "label":"Why was it considered suitable/not suitable?",
+            "placeholder":"Enter Why was it considered suitable/not suitable?",
+            "className":"form-control",
+            "name":"part_3_considered_suitable3",
             "access":false,
             "subtype":"text"
         },
@@ -1024,7 +938,6 @@ class NutritionSeeder extends Seeder
             "access":false,
             "subtype":"textarea"
         },
-
         {
             "type":"textarea",
             "required":false,
@@ -1035,7 +948,6 @@ class NutritionSeeder extends Seeder
             "access":false,
             "subtype":"textarea"
         },
-
         {
             "type":"textarea",
             "required":false,
@@ -1046,7 +958,6 @@ class NutritionSeeder extends Seeder
             "access":false,
             "subtype":"textarea"
         },
-
         {
             "type":"textarea",
             "required":false,
@@ -1057,7 +968,6 @@ class NutritionSeeder extends Seeder
             "access":false,
             "subtype":"textarea"
         },
-
         {
             "type":"textarea",
             "required":false,
@@ -1101,9 +1011,6 @@ class NutritionSeeder extends Seeder
             "access":false,
             "subtype":"textarea"
         },
-
-
-
         {
             "type":"textarea",
             "required":false,
@@ -1111,6 +1018,26 @@ class NutritionSeeder extends Seeder
             "placeholder":"Enter Item(s):",
             "className":"form-control",
             "name":"part_5_extra_features_item1",
+            "access":false,
+            "subtype":"textarea"
+        },
+        {
+            "type":"textarea",
+            "required":false,
+            "label":"Quantity/frequency of supply required:",
+            "placeholder":"Enter Quantity/frequency of supply required:",
+            "className":"form-control",
+            "name":"part_5_extra_features_Quantity_frequency_supply_required1",
+            "access":false,
+            "subtype":"textarea"
+        },
+        {
+            "type":"textarea",
+            "required":false,
+            "label":"Cost estimate (including delivery):",
+            "placeholder":"Enter Cost estimate (including delivery):",
+            "className":"form-control",
+            "name":"part_5_extra_features_cost_estimate1",
             "access":false,
             "subtype":"textarea"
         },
@@ -1127,28 +1054,6 @@ class NutritionSeeder extends Seeder
         {
             "type":"textarea",
             "required":false,
-            "label":"Item(s):",
-            "placeholder":"Enter Item(s):",
-            "className":"form-control",
-            "name":"part_5_extra_features_item3",
-            "access":false,
-            "subtype":"textarea"
-        },
-
-
-        {
-            "type":"textarea",
-            "required":false,
-            "label":"Quantity/frequency of supply required:",
-            "placeholder":"Enter Quantity/frequency of supply required:",
-            "className":"form-control",
-            "name":"part_5_extra_features_Quantity_frequency_supply_required1",
-            "access":false,
-            "subtype":"textarea"
-        },
-        {
-            "type":"textarea",
-            "required":false,
             "label":"Quantity/frequency of supply required:",
             "placeholder":"Enter Quantity/frequency of supply required:",
             "className":"form-control",
@@ -1159,32 +1064,30 @@ class NutritionSeeder extends Seeder
         {
             "type":"textarea",
             "required":false,
-            "label":"Quantity/frequency of supply required:",
-            "placeholder":"Enter Quantity/frequency of supply required:",
-            "className":"form-control",
-            "name":"part_5_extra_features_Quantity_frequency_supply_required3",
-            "access":false,
-            "subtype":"textarea"
-        },
-
-
-        {
-            "type":"textarea",
-            "required":false,
-            "label":"Cost estimate (including delivery):",
-            "placeholder":"Enter Cost estimate (including delivery):",
-            "className":"form-control",
-            "name":"part_5_extra_features_cost_estimate1",
-            "access":false,
-            "subtype":"textarea"
-        },
-        {
-            "type":"textarea",
-            "required":false,
             "label":"Cost estimate (including delivery):",
             "placeholder":"Enter Cost estimate (including delivery):",
             "className":"form-control",
             "name":"part_5_extra_features_cost_estimate2",
+            "access":false,
+            "subtype":"textarea"
+        },
+        {
+            "type":"textarea",
+            "required":false,
+            "label":"Item(s):",
+            "placeholder":"Enter Item(s):",
+            "className":"form-control",
+            "name":"part_5_extra_features_item3",
+            "access":false,
+            "subtype":"textarea"
+        },
+        {
+            "type":"textarea",
+            "required":false,
+            "label":"Quantity/frequency of supply required:",
+            "placeholder":"Enter Quantity/frequency of supply required:",
+            "className":"form-control",
+            "name":"part_5_extra_features_Quantity_frequency_supply_required3",
             "access":false,
             "subtype":"textarea"
         }, 
@@ -1198,8 +1101,6 @@ class NutritionSeeder extends Seeder
             "access":false,
             "subtype":"textarea"
         },
-
-
         {
             "type":"textarea",
             "required":false,
@@ -1210,7 +1111,6 @@ class NutritionSeeder extends Seeder
             "access":false,
             "subtype":"textarea"
         },
-
         {
             "type":"textarea",
             "required":false,
@@ -1225,9 +1125,9 @@ class NutritionSeeder extends Seeder
 
     $form_fields6 = '[
         {
-            "type":"textarea",
+            "type":"checkbox-group",
             "required":false,
-            "label":"I certify that I meet the NDIA expectations of AT assessor provider suitability ",
+            "label":"I certify that I meet the NDIA expectations of AT assessor provider suitability",
             "placeholder":"Enter I certify that I meet the NDIA expectations of AT assessor provider suitability",
             "className":"form-control",
             "name":"part_6_details_of_assistive_technology_assessor1",
@@ -1235,7 +1135,7 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
-            "type":"textarea",
+            "type":"checkbox-group",
             "required":false,
             "label":"I will provide appropriate evidence to the NDIA and/or NDIS Quality",
             "placeholder":"Enter I will provide appropriate evidence to the NDIA and/or NDIS Quality ",
@@ -1245,7 +1145,7 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
-            "type":"textarea",
+            "type":"checkbox-group",
             "required":false,
             "label":"I understand and acknowledge that the NDIA and participant",
             "placeholder":"I understand and acknowledge that the NDIA and participant",
@@ -1255,7 +1155,7 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
-            "type":"textarea",
+            "type":"checkbox-group",
             "required":false,
             "label":"This assistive technology has been assessed by the treating multi-disciplinary team",
             "placeholder":"This assistive technology has been assessed by the treating multi-disciplinary team",
@@ -1264,9 +1164,8 @@ class NutritionSeeder extends Seeder
             "access":false,
             "subtype":"textarea"
         },
-
         {
-            "type":"textarea",
+            "type":"text",
             "required":false,
             "label":"Name",
             "placeholder":"Name",
@@ -1276,7 +1175,7 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
-            "type":"textarea",
+            "type":"text",
             "required":false,
             "label":"Position",
             "placeholder":"Position",
@@ -1286,7 +1185,7 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
-            "type":"textarea",
+            "type":"text",
             "required":false,
             "label":"Qualification",
             "placeholder":"Qualification",
@@ -1296,7 +1195,7 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
-            "type":"textarea",
+            "type":"text",
             "required":false,
             "label":"Business Name",
             "placeholder":"Business Name",
@@ -1306,7 +1205,7 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
-            "type":"textarea",
+            "type":"text",
             "required":false,
             "label":"Contact Telephone Number",
             "placeholder":"Contact Telephone Number",
@@ -1316,7 +1215,7 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
-            "type":"textarea",
+            "type":"text",
             "required":false,
             "label":"Email ",
             "placeholder":"Email",
@@ -1326,7 +1225,7 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
-            "type":"textarea",
+            "type":"text",
             "required":false,
             "label":"Preferred Contact Method  ",
             "placeholder":"Preferred Contact Method ",
@@ -1359,7 +1258,7 @@ class NutritionSeeder extends Seeder
 
     $form_fields7 = '[
         {
-            "type":"textarea",
+            "type":"checkbox-group",
             "required":false,
             "label":"Yes, I consent",
             "placeholder":"Yes, I consent",
@@ -1368,9 +1267,8 @@ class NutritionSeeder extends Seeder
             "access":false,
             "subtype":"textarea"
         },
-
         {
-            "type":"textarea",
+            "type":"checkbox-group",
             "required":false,
             "label":"No, I do not consent",
             "placeholder":"No, I do not consent",
@@ -1379,9 +1277,8 @@ class NutritionSeeder extends Seeder
             "access":false,
             "subtype":"textarea"
         },
-
         {
-            "type":"textarea",
+            "type":"text",
             "required":false,
             "label":"Signature",
             "placeholder":"Signature",
@@ -1390,7 +1287,6 @@ class NutritionSeeder extends Seeder
             "access":false,
             "subtype":"textarea"
         },
-
         {
             "type":"date",
             "required":false,
@@ -1401,9 +1297,8 @@ class NutritionSeeder extends Seeder
             "access":false,
             "subtype":"textarea"
         },
-
         {
-            "type":"textarea",
+            "type":"text",
             "required":false,
             "label":"Full name",
             "placeholder":"Full name",
@@ -1412,10 +1307,8 @@ class NutritionSeeder extends Seeder
             "access":false,
             "subtype":"textarea"
         },
-
-
         {
-            "type":"textarea",
+            "type":"text",
             "required":false,
             "label":"Signature",
             "placeholder":"Signature",
@@ -1424,7 +1317,6 @@ class NutritionSeeder extends Seeder
             "access":false,
             "subtype":"textarea"
         },
-
         {
             "type":"date",
             "required":false,
@@ -1435,9 +1327,8 @@ class NutritionSeeder extends Seeder
             "access":false,
             "subtype":"textarea"
         },
-
         {
-            "type":"textarea",
+            "type":"text",
             "required":false,
             "label":"Full Name of person completing this form (please print):",
             "placeholder":"Full Name of person completing this form (please print):",
@@ -1447,7 +1338,7 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
-            "type":"textarea",
+            "type":"text",
             "required":false,
             "label":"Relationship to participant",
             "placeholder":"Relationship to participant",
