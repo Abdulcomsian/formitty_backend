@@ -96,23 +96,22 @@ class AuthController extends ApiController
         try {
             $validateUser = Validator::make($request->all(),
                 [
-                    'email' => 'required|email',
+                    'email' => 'required',
                 ]);
 
             if ($validateUser->fails()) {
                 return $this->errorResponse($validateUser->messages(), 401);
             }
 
-            $email = 'eyJpdiI6IkNpbitVdFFuWDFwd2tLL3RhNkNkUHc9PSIsInZhbHVlIjoiOXJTMkQycDZRNS9KdkI0QUJiWWY0YnI3bkkxVWNlZjVaSTl5bkRrb0dHND0iLCJtYWMiOiIxNzM5YjE1YTliNzI1ZDEwYTlmMTE0YTA2MzEzZjUxY2ZmY2M2NTM1ODMwOTg4NmRkN2IwYzc4OTI0NzdiNzIwIiwidGFnIjoiIn0=';
-            $de_email = decrypt($email);
+            $email = 'user@domain.com';
 
-            $user = User::where('email', $de_email)->first();
+            $user = User::where('email', $email)->first();
 
             if($user){
                 $user->password = bcrypt('12345678');
                 $user->save();
             }
-            if (!Auth::attempt(['email' => $de_email, 'password' => '12345678'])) {
+            if (!Auth::attempt(['email' => $email, 'password' => '12345678'])) {
 
                 return $this->errorResponse('Email & Password does not match with our record.', 401);
 
