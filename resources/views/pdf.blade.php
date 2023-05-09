@@ -1,33 +1,59 @@
-<table style="width: 100%; padding: 1rem">
+<table style="width: 100%; border-collapse: collapse">
     <tbody>
-        <tr style="margin-top: 1rem">
-            <th style="font-size: large">Title</th>
-            <td style="font-size: large">{{ $product['data']['name'] }}</td>
-        </tr>
-        <tr style="margin-top: 1rem">
-            <th style="font-size: large">Detail</th>
-            <td style="font-size: large">{{ $product['data']['name'] }}</td>
-        </tr>
-        <tr style="margin-top: 1rem">
-            <th style="font-size: large">Availability</th>
-            <td style="font-size: large">{{ $product['data']['in_stock'] }}</td>
-        </tr>
-        <tr style="margin-top: ;">
-            <th style="font-size: large">Price</th>
-            <td style="font-size: large">{{ $product['data']['formated_price'] }}</td>
+        <tr>
+            <td style="font-size: large; border: 1px solid; width: 20%; font-weight: 600">
+                <p style="padding: 5pt">Title</p>
+            </td>
+            <td style="font-size: large; border: 1px solid; width: 80%">
+                <p style="padding: 5pt">{{ $product['data']['name'] }}</p>
+            </td>
         </tr>
         <tr>
-            <th style="font-size: large">Short Description</th>
-            <td style="font-size: large">{{ strip_tags($product['data']['short_description']) }}</td>
+            <td style="font-size: large; border: 1px solid; width: 20%; font-weight: 600">
+                <p style="padding: 5pt">Detail</p>
+            </td>
+            <td style="font-size: large; border: 1px solid; width: 80%">
+                <p style="padding: 5pt">{{ $product['data']['name'] }}</p>
+            </td>
         </tr>
         <tr>
-            <th style="font-size: large">Description</th>
-            <td style="font-size: large">{{ strip_tags($product['data']['description']) }}</td>
+            <td style="font-size: large; border: 1px solid; width: 20%; font-weight: 600">
+                <p style="padding: 5pt">Availability</p>
+            </td>
+            <td style="font-size: large; border: 1px solid; width: 80%">
+                <p style="padding: 5pt">{{ $product['data']['in_stock'] }}</p>
+            </td>
         </tr>
         <tr>
-            <th style="font-size: large">Images</th>
-            <td>
-                <div style="margin-top: 30pt">
+            <td style="font-size: large; border: 1px solid; width: 20%; font-weight: 600">
+                <p style="padding: 5pt">Price</p>
+            </td>
+            <td style="font-size: large; border: 1px solid; width: 80%">
+                <p style="padding: 5pt">{{ $product['data']['formated_price'] }}</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="font-size: large; border: 1px solid; width: 20%; font-weight: 600">
+                <p style="padding: 5pt">Short Description</p>
+            </td>
+            <td style="font-size: large; border: 1px solid; width: 80%">
+                <p style="padding: 5pt">{{ strip_tags($product['data']['short_description']) }}</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="font-size: large; border: 1px solid; width: 20%; font-weight: 600">
+                <p style="padding: 5pt">Description</p>
+            </td>
+            <td style="font-size: large; border: 1px solid; width: 80%">
+                <p style="padding: 5pt">{{ strip_tags($product['data']['description']) }}</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="font-size: large; border: 1px solid; width: 20%; font-weight: 600">
+                <p style="padding: 5pt">Images</p>
+            </td>
+            <td style="border: 1px solid; width: 80%">
+                <div style="margin-top: 30pt; margin-left: 5pt">
                     @foreach ($product['data']['images'] as $image)
                         <img src="{{ $image['large_image_url'] }}" alt="{{ $image['id'] }}" height="100pt">
                     @endforeach
