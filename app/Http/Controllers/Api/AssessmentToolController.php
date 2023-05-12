@@ -17,6 +17,7 @@ use App\Models\AssessmentGroup;
 use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Client;
 use PDF;
+
 class AssessmentToolController extends ApiController
 {
     public function assessmentTools()
@@ -69,7 +70,6 @@ class AssessmentToolController extends ApiController
                 $assessment_tools = AssessmentTool::with('questions', 'questions.options')->find($request->assessment_id);
             }
             return $this->successResponse($assessment_tools, 'Questions get successfully!.', 200);
-
         } catch (\Throwable $th) {
             return $this->errorResponse($th->getMessage(), 401);
         }
@@ -154,7 +154,6 @@ class AssessmentToolController extends ApiController
                     }
                 }
                 $answer->save();
-
             }
 
 
@@ -342,27 +341,30 @@ class AssessmentToolController extends ApiController
         }
     }
 
-    public function generatePdf(Request $request){
+    public function generatePdf(Request $request)
+    {
 
         try {
-                       
+
             $client = new Client();
 
-            $response = $client->get('https://formitydev.com/bagisto/public/api/products/'.$request->product_id);
-
-            $product_response = json_decode($response->getBody(), true);
-
-            view()->share('product',$product_response);
+            $product_response = $client->get('https://formitydev.com/bagisto/public/api/products/' . $request->product_id);
+            // @dd($product_response);
+            $review_response = $client->get('https://formitydev.com/bagisto/public/api/reviews?product_id=' . $request->product_id);
+            // @dd($review_response);
+            $product_response = json_decode($product_response->getBody(), true);
+            $review_response = json_decode($review_response->getBody(), true);
+            view()->share('product', $product_response);
+            view()->share('reviews', $review_response);
             $pdf = PDF::loadView('pdf', $product_response);
             // download PDF file with download method
             return response($pdf->output(), 200)
-            ->header('Content-Type', 'application/pdf')
-            ->header('Content-Disposition', 'attachment; filename="pdf_file.pdf"');
+                ->header('Content-Type', 'application/pdf')
+                ->header('Content-Disposition', 'attachment; filename="pdf_file.pdf"');
             return $pdf;
-                return $this->successResponse($pdf, 'Flowchart updated successfully!.', 200);
+            return $this->successResponse($pdf, 'Flowchart updated successfully!.', 200);
         } catch (\Throwable $th) {
             return $this->errorResponse($th->getMessage(), 401);
         }
     }
-
 }
