@@ -8,15 +8,15 @@ use App\Models\{Form, FormHeading, FormField};
 
 class VehicleSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
+   /**
+    * Run the database seeds.
+    *
+    * @return void
+    */
+   public function run()
+   {
 
-        $section1 = "<table style='background-color:#7209B7; border:none; width:100%;'>
+      $section1 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                     <tr>
                         <td>
                             <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'>  PART 1 – Participant and Plan Management Details</p>
@@ -35,63 +35,43 @@ class VehicleSeeder extends Seeder
                     <tbody>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Name</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_name}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_name}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Date of Birth</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_date_of_birth}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_date_of_birth}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Age</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_age}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_age}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>NDIS Number</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_participantndis_number}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_participantndis_number}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Address</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_participant_address}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_participant_address}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Contact Telephone Number</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_participantphone_number}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_participantphone_number}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Email</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_participant_email}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_participant_email}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Preferred Contact Method </td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_participant_preferredcontact}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_participant_preferredcontact}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Nominee or Guardian Name</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_participantguardian_name}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_participantguardian_name}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Nominee or Guardian Phone</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_participantguardian_phone}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_participantguardian_phone}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>NDIS Support Coordinator</td>
@@ -99,11 +79,8 @@ class VehicleSeeder extends Seeder
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Contact Details</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_participantcontact_details}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_participantcontact_details}}</td>
                         </tr>
-                        
                     </tbody>
                 </table>
                 <p style='font-weight: bold; margin-bottom: 10px; margin-top: 10px'>1.2 Plan Management Details</p>
@@ -118,32 +95,25 @@ class VehicleSeeder extends Seeder
                     <tbody>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Agency Managed</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_agency_managed}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_agency_managed}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Self-Managed</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_self_managed}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_self_managed}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Registered Plan Management Provider</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_registeredplanmanagement_provider}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_registeredplanmanagement_provider}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Contact Details </td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            {{part_1_ndis_registeredplanmanagementcontact_details}}
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_registeredplanmanagementcontact_details}}</td>
                         </tr>
                     </tbody>
                 </table>
                 <p style='margin-top:10px'></p>";
-        $section2 = "<table style='background-color:#7209B7; border:none; width:100%;'>
+
+      $section2 = "<table style='background-color:#7209B7; border:none; width:100%;'>
             <tr>
                 <td>
                     <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'> PART 2 – Evaluation and Assessment</p>
@@ -284,7 +254,7 @@ class VehicleSeeder extends Seeder
             <p style='font-size:12pt; margin-top:10px; margin-bottom:10px;'>1   Note if the participant does not already own the vehicle and the NDIS finds that in principle the proposed modification meets the NDIS reasonable and necessary criteria, funding may be approved in the participant’s NDIS plan for this support pending evidence of vehicle purchase and AT Assessor recommendations.</p>
             <p style='margin-top:10px'></p>";
 
-        $section3 = "<table style='background-color:#7209B7; border:none; width:100%;'>
+      $section3 = "<table style='background-color:#7209B7; border:none; width:100%;'>
 <tr>
     <td>
         <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'> PART 3 – Exploration of Options</p>
@@ -357,7 +327,7 @@ class VehicleSeeder extends Seeder
 
     </tbody>
 </table>";
-        $section4 = "<p style='margin-top:10px'></p>
+      $section4 = "<p style='margin-top:10px'></p>
 <table style='background-color:#7209B7; border:none; width:100%;'>
 <tr>
     <td>
@@ -529,7 +499,7 @@ class VehicleSeeder extends Seeder
                 </table>
                 <p style='margin-top:10px'></p>";
 
-        $section5 = "<table style='background-color:#7209B7; border:none; width:100%;'>
+      $section5 = "<table style='background-color:#7209B7; border:none; width:100%;'>
             <tr>
                 <td>
                     <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'>PART 5 – Details of Assistive Technology Assessor</p>
@@ -661,7 +631,7 @@ class VehicleSeeder extends Seeder
 
 
 
-        $section6 = "<p style='margin-top:10px'></p>
+      $section6 = "<p style='margin-top:10px'></p>
                 <table style='background-color:#7209B7; border:none; width:100%;'>
                 <tr>
                     <td>
@@ -691,7 +661,7 @@ class VehicleSeeder extends Seeder
                 </tr>
                 <tr>
                 <td style='width:80%; background-color: lightgrey; font-size: 17px;'>I understand that I can access the NDIA’s Privacy Notice and Privacy Policy on the NDIA website or by contacting the NDIA.</td>
-                <td style='width:20%; border: 1px solid black;'>{{part_6_iunderstandthatiamgivingconsenttothe_NDIA}}</td>
+                <td style='width:20%; border: 1px solid black;'>{{part_6_iunderstandthaticanaccesstheNDIAsprivacy_notice}}</td>
                 </tr>
                 </table>
                 <table style=' width:100%; border: 1px solid black;'>
@@ -730,7 +700,7 @@ class VehicleSeeder extends Seeder
                 </tr>
                 </table>";
 
-        $form_fields = '[
+      $form_fields = '[
                                 {
                                 "type":"text",
                                 "required":false,
@@ -892,7 +862,7 @@ class VehicleSeeder extends Seeder
                                 "subtype":"text"
                                 }
                                 ]';
-        $form_fields2 = '[
+      $form_fields2 = '[
                                     {
                                     "type":"text",
                                     "required":false,
@@ -1141,7 +1111,7 @@ class VehicleSeeder extends Seeder
                                     "subtype":"text"
                                     }
                                     ]';
-        $form_fields3 = '[
+      $form_fields3 = '[
             {
                "type":"text",
                "required":false,
@@ -1344,7 +1314,7 @@ class VehicleSeeder extends Seeder
             }
          ]';
 
-        $form_fields4 = '[
+      $form_fields4 = '[
             {
                "type":"textarea",
                "required":false,
@@ -1645,7 +1615,7 @@ class VehicleSeeder extends Seeder
             }
          ]';
 
-        $form_fields5 = '[
+      $form_fields5 = '[
             {
                "type":"checkbox-group",
                "required":false,
@@ -1868,7 +1838,7 @@ class VehicleSeeder extends Seeder
              }
          ]';
 
-        $form_fields6 = '[
+      $form_fields6 = '[
             {
                "type":"checkbox-group",
                "required":false,
@@ -1989,69 +1959,69 @@ class VehicleSeeder extends Seeder
             }
          ]';
 
-        $form = Form::insertGetId([
-            'name' => 'Vehicle Modification Assessment Template'
-        ]);
+      $form = Form::insertGetId([
+         'name' => 'Vehicle Modification Assessment Template'
+      ]);
 
-        $heading1 = FormHeading::insertGetId([
-            'form_heading' => 'PART 1 – Participant and Plan Management Details',
-            'form_id' => $form,
-            'section_html' => $section1
-        ]);
+      $heading1 = FormHeading::insertGetId([
+         'form_heading' => 'PART 1 – Participant and Plan Management Details',
+         'form_id' => $form,
+         'section_html' => $section1
+      ]);
 
-        $heading2 = FormHeading::insertGetId([
-            'form_heading' => ' PART 2 – Evaluation and Assessment',
-            'form_id' => $form,
-            'section_html' => $section2
-        ]);
+      $heading2 = FormHeading::insertGetId([
+         'form_heading' => ' PART 2 – Evaluation and Assessment',
+         'form_id' => $form,
+         'section_html' => $section2
+      ]);
 
-        $heading3 = FormHeading::insertGetId([
-            'form_heading' => 'PART 3 – Exploration of Options',
-            'form_id' => $form,
-            'section_html' => $section3
-        ]);
+      $heading3 = FormHeading::insertGetId([
+         'form_heading' => 'PART 3 – Exploration of Options',
+         'form_id' => $form,
+         'section_html' => $section3
+      ]);
 
-        $heading4 = FormHeading::insertGetId([
-            'form_heading' => 'PART 4 – Recommendation',
-            'form_id' => $form,
-            'section_html' => $section4
-        ]);
+      $heading4 = FormHeading::insertGetId([
+         'form_heading' => 'PART 4 – Recommendation',
+         'form_id' => $form,
+         'section_html' => $section4
+      ]);
 
-        $heading5 = FormHeading::insertGetId([
-            'form_heading' => 'PART 5 – Details of Assistive Technology Assessor',
-            'form_id' => $form,
-            'section_html' => $section5
-        ]);
+      $heading5 = FormHeading::insertGetId([
+         'form_heading' => 'PART 5 – Details of Assistive Technology Assessor',
+         'form_id' => $form,
+         'section_html' => $section5
+      ]);
 
-        $heading6 = FormHeading::insertGetId([
-            'form_heading' => 'PART 6 – Consent to Collect and Share Your Information –                 Provider AT Assessment and Quotation(s)',
-            'form_id' => $form,
-            'section_html' => $section6
-        ]);
+      $heading6 = FormHeading::insertGetId([
+         'form_heading' => 'PART 6 – Consent to Collect and Share Your Information –                 Provider AT Assessment and Quotation(s)',
+         'form_id' => $form,
+         'section_html' => $section6
+      ]);
 
-        FormField::create([
-            'form_heading_id' => $heading1,
-            'form_field' => $form_fields
-        ]);
-        FormField::create([
-            'form_heading_id' => $heading2,
-            'form_field' => $form_fields2
-        ]);
-        FormField::create([
-            'form_heading_id' => $heading3,
-            'form_field' => $form_fields3
-        ]);
-        FormField::create([
-            'form_heading_id' => $heading4,
-            'form_field' => $form_fields4
-        ]);
-        FormField::create([
-            'form_heading_id' => $heading5,
-            'form_field' => $form_fields5
-        ]);
-        FormField::create([
-            'form_heading_id' => $heading6,
-            'form_field' => $form_fields6
-        ]);
-    }
+      FormField::create([
+         'form_heading_id' => $heading1,
+         'form_field' => $form_fields
+      ]);
+      FormField::create([
+         'form_heading_id' => $heading2,
+         'form_field' => $form_fields2
+      ]);
+      FormField::create([
+         'form_heading_id' => $heading3,
+         'form_field' => $form_fields3
+      ]);
+      FormField::create([
+         'form_heading_id' => $heading4,
+         'form_field' => $form_fields4
+      ]);
+      FormField::create([
+         'form_heading_id' => $heading5,
+         'form_field' => $form_fields5
+      ]);
+      FormField::create([
+         'form_heading_id' => $heading6,
+         'form_field' => $form_fields6
+      ]);
+   }
 }

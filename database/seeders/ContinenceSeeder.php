@@ -8,14 +8,14 @@ use App\Models\{Form, FormField, FormHeading};
 
 class ContinenceSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
-        $section1 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
+  /**
+   * Run the database seeds.
+   *
+   * @return void
+   */
+  public function run()
+  {
+    $section1 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
         <tr>
             <td>
                 <p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'>  PART 1 – Participant and Plan Management Details</p>
@@ -142,12 +142,13 @@ class ContinenceSeeder extends Seeder
               </td>
             </tr>
           </tbody>
-    </table>";
+    </table>
+    <p></p>";
 
 
 
 
-        $section2 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
+    $section2 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
         <tr>
             <td>
                 <p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'>  PART 2 – Assessment</p>
@@ -286,14 +287,15 @@ class ContinenceSeeder extends Seeder
         >
           <tbody>
             <tr>
-              <td style='border: 1px solid lightslategray; padding: 10px; width: 100%; background-color: lightgrey; font-size: 17px'><p style='margin-top:10px; margin-bottom:10px;'>Field-Data</p></td>
+              <td style='border: 1px solid lightslategray; padding: 10px; width: 100%; background-color: lightgrey; font-size: 17px'><p style='margin-top:10px; margin-bottom:10px;'>{{part_2_additional_information}}</p></td>
             </tr>
           </tbody>
-    </table>";
+    </table>
+    <p></p>";
 
 
 
-        $section3 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
+    $section3 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
     <tr>
         <td>
             <p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'>PART 3 - Exploration of Continence Interventions and Options</p>
@@ -410,12 +412,13 @@ class ContinenceSeeder extends Seeder
         </tr>
 
       </tbody>
-</table>";
+</table>
+<p></p>";
 
 
 
 
-        $section4 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
+    $section4 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
             <tr>
                 <td>
                     <p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'>  PART 4 – Continence Recommendations</p>
@@ -640,14 +643,15 @@ class ContinenceSeeder extends Seeder
                 <tr>
                   <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Please provide detail</td>
                   <td style='border: 1px solid lightslategray; padding: 10px'>
-                    {{part_4_con_recomm_participant_agreement}}
+                    {{part_4_detail_about_Participant_Agreement}}
                   </td>
                 </tr>
               </tbody>
-        </table>";
+        </table>
+        <p></p>";
 
 
-        $section5 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
+    $section5 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
         <tr>
             <td>
                 <p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'>  PART 5 – Details of Assistive Technology Assessor</p>
@@ -736,10 +740,11 @@ class ContinenceSeeder extends Seeder
             </tr>
             
           </tbody>
-    </table>";
+    </table>
+    <p></p>";
 
 
-        $section6 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
+    $section6 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
         <tr>
             <td>
                 <p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'>  PART 6 – Consent to Collect and Share Your Information – Provider AT Assessment and Quotation(s)</p>
@@ -825,7 +830,7 @@ class ContinenceSeeder extends Seeder
     </table>";
 
 
-        $form_fields = '[
+    $form_fields = '[
           {
              "type":"text",
              "required":false,
@@ -990,9 +995,9 @@ class ContinenceSeeder extends Seeder
 
 
 
-        $form_fields2 = '[
+    $form_fields2 = '[
           {
-             "type":"text",
+             "type":"textarea",
              "required":false,
              "label":"Background",
              "placeholder":"Enter Your Background",
@@ -1002,7 +1007,7 @@ class ContinenceSeeder extends Seeder
              "subtype":"text"
           },
           {
-             "type":"text",
+             "type":"textarea",
              "required":false,
              "label":"Participant Goals",
              "placeholder":"Enter Your Participant Goals",
@@ -1012,7 +1017,7 @@ class ContinenceSeeder extends Seeder
              "subtype":"text"
           },
           {
-             "type":"text",
+             "type":"textarea",
              "required":false,
              "label":"Functional Assessment",
              "placeholder":"Enter Functional Assessment",
@@ -1082,7 +1087,7 @@ class ContinenceSeeder extends Seeder
              "subtype":"text"
           },
           {
-             "type":"text",
+             "type":"textarea",
              "required":false,
              "label":"Summarise recommendations from allied health and/or medical assessments",
              "placeholder":"Summarise recommendations from allied health and/or medical assessments",
@@ -1160,11 +1165,21 @@ class ContinenceSeeder extends Seeder
              "name":"part_2_assessment_other",
              "access":false,
              "subtype":"text"
+          },
+          {
+             "type":"textarea",
+             "required":false,
+             "label":"Other",
+             "placeholder":"If yes, please provide the following information",
+             "className":"form-control",
+             "name":"part_2_additional_information",
+             "access":false,
+             "subtype":"text"
           }
        ]';
 
 
-        $form_fields3 = '
+    $form_fields3 = '
         [
           {
              "type":"text",
@@ -1409,7 +1424,7 @@ class ContinenceSeeder extends Seeder
        ]';
 
 
-        $form_fields4 = '
+    $form_fields4 = '
         [
           {
              "type":"textarea",
@@ -1432,7 +1447,7 @@ class ContinenceSeeder extends Seeder
              "subtype":"textarea"
           },
           {
-             "type":"textarea",
+             "type":"text",
              "required":false,
              "label":"Item 1",
              "placeholder":"Enter Item",
@@ -1442,7 +1457,7 @@ class ContinenceSeeder extends Seeder
              "subtype":"textarea"
           },
           {
-             "type":"textarea",
+             "type":"text",
              "required":false,
              "label":"Item 2",
              "placeholder":"Enter Item",
@@ -1452,7 +1467,7 @@ class ContinenceSeeder extends Seeder
              "subtype":"textarea"
           },
           {
-             "type":"textarea",
+             "type":"text",
              "required":false,
              "label":"Item 3",
              "placeholder":"Enter Item",
@@ -1462,7 +1477,7 @@ class ContinenceSeeder extends Seeder
              "subtype":"textarea"
           },
           {
-             "type":"textarea",
+             "type":"text",
              "required":false,
              "label":"Quantity 1",
              "placeholder":"Enter Quantity",
@@ -1472,7 +1487,7 @@ class ContinenceSeeder extends Seeder
              "subtype":"textarea"
           },
           {
-             "type":"textarea",
+             "type":"text",
              "required":false,
              "label":"Quantity 2",
              "placeholder":"Enter Quantity",
@@ -1482,7 +1497,7 @@ class ContinenceSeeder extends Seeder
              "subtype":"textarea"
           },
           {
-             "type":"textarea",
+             "type":"text",
              "required":false,
              "label":"Quantity 3",
              "placeholder":"Enter Quantity",
@@ -1643,11 +1658,21 @@ class ContinenceSeeder extends Seeder
                    "selected":false
                 }
              ]
+          },
+          {
+             "type":"textarea",
+             "required":false,
+             "label":"Other supplier specification (Optional)",
+             "placeholder":"Please provide detail about Participant Agreement",
+             "className":"form-control",
+             "name":"part_4_detail_about_Participant_Agreement",
+             "access":false,
+             "subtype":"text"
           }
        ]';
 
 
-        $form_fields5 = '
+    $form_fields5 = '
         [
           {
              "type":"checkbox-group",
@@ -1796,7 +1821,7 @@ class ContinenceSeeder extends Seeder
           }
        ]';
 
-        $form_fields6 = '
+    $form_fields6 = '
         [
           {
              "type":"checkbox-group",
@@ -1944,84 +1969,83 @@ class ContinenceSeeder extends Seeder
           }
        ]';
 
-        $form = Form::insertGetId([
-            'name' => 'Notes for AT Assessors of Continence AT Supports'
-        ]);
+    $form = Form::insertGetId([
+      'name' => 'Notes for AT Assessors of Continence AT Supports'
+    ]);
 
 
-        $heading1 = FormHeading::insertGetId([
-            'form_heading' => 'PART 1 – Participant and Plan Management Details',
-            'form_id' => $form,
-            'section_html' => $section1
-        ]);
+    $heading1 = FormHeading::insertGetId([
+      'form_heading' => 'PART 1 – Participant and Plan Management Details',
+      'form_id' => $form,
+      'section_html' => $section1
+    ]);
 
-        $heading2 = FormHeading::insertGetId([
-            'form_heading' => 'PART 2 – Assessment',
-            'form_id' => $form,
-            'section_html' => $section2
-        ]);
+    $heading2 = FormHeading::insertGetId([
+      'form_heading' => 'PART 2 – Assessment',
+      'form_id' => $form,
+      'section_html' => $section2
+    ]);
 
-        $heading3 = FormHeading::insertGetId([
-            'form_heading' => 'PART 3 – Property Details',
-            'form_id' => $form,
-            'section_html' => $section3
-        ]);
+    $heading3 = FormHeading::insertGetId([
+      'form_heading' => 'PART 3 – Property Details',
+      'form_id' => $form,
+      'section_html' => $section3
+    ]);
 
-        $heading4 = FormHeading::insertGetId([
-            'form_heading' => 'PART 4 – Social Situation',
-            'form_id' => $form,
-            'section_html' => $section4
-        ]);
+    $heading4 = FormHeading::insertGetId([
+      'form_heading' => 'PART 4 – Social Situation',
+      'form_id' => $form,
+      'section_html' => $section4
+    ]);
 
-        $heading5 = FormHeading::insertGetId([
-            'form_heading' => 'PART 5 – Complex Home Modification Recommendations',
-            'form_id' => $form,
-            'section_html' => $section5
-        ]);
-
-
-        $heading6 = FormHeading::insertGetId([
-            'form_heading' => 'PART 6 – Complex Home Modification Quotes',
-            'form_id' => $form,
-            'section_html' => $section6
-        ]);
+    $heading5 = FormHeading::insertGetId([
+      'form_heading' => 'PART 5 – Complex Home Modification Recommendations',
+      'form_id' => $form,
+      'section_html' => $section5
+    ]);
 
 
-       /* $heading7 = FormHeading::insertGetId([
+    $heading6 = FormHeading::insertGetId([
+      'form_heading' => 'PART 6 – Complex Home Modification Quotes',
+      'form_id' => $form,
+      'section_html' => $section6
+    ]);
+
+
+    /* $heading7 = FormHeading::insertGetId([
             'form_heading' => 'PART 7 – Details of Assessor',
             'form_id' => $form,
             'section_html' => $section7
         ]);*/
 
 
-        FormField::create([
-            'form_heading_id' => $heading1,
-            'form_field' => $form_fields
-        ]);
-        FormField::create([
-            'form_heading_id' => $heading2,
-            'form_field' => $form_fields2
-        ]);
-        FormField::create([
-            'form_heading_id' => $heading3,
-            'form_field' => $form_fields3
-        ]);
-        FormField::create([
-            'form_heading_id' => $heading4,
-            'form_field' => $form_fields4
-        ]);
-        FormField::create([
-            'form_heading_id' => $heading5,
-            'form_field' => $form_fields5
-        ]);
-        FormField::create([
-            'form_heading_id' => $heading6,
-            'form_field' => $form_fields6
-        ]);
-        /*FormField::create([
+    FormField::create([
+      'form_heading_id' => $heading1,
+      'form_field' => $form_fields
+    ]);
+    FormField::create([
+      'form_heading_id' => $heading2,
+      'form_field' => $form_fields2
+    ]);
+    FormField::create([
+      'form_heading_id' => $heading3,
+      'form_field' => $form_fields3
+    ]);
+    FormField::create([
+      'form_heading_id' => $heading4,
+      'form_field' => $form_fields4
+    ]);
+    FormField::create([
+      'form_heading_id' => $heading5,
+      'form_field' => $form_fields5
+    ]);
+    FormField::create([
+      'form_heading_id' => $heading6,
+      'form_field' => $form_fields6
+    ]);
+    /*FormField::create([
             'form_heading_id' => $heading7,
             'form_field' => $form_fields6
         ]);*/
-
-    }
+  }
 }
