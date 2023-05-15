@@ -892,7 +892,7 @@ class ContinenceSeeder extends Seeder
              "subtype":"text"
           },
           {
-             "type":"text",
+             "type":"email",
              "required":false,
              "label":"Email",
              "placeholder":"Enter Your Email",
@@ -1773,7 +1773,7 @@ class ContinenceSeeder extends Seeder
              "subtype":"text"
           },
           {
-             "type":"text",
+             "type":"email",
              "subtype":"email",
              "required":false,
              "label":"Email",

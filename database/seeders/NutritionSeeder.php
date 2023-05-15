@@ -620,7 +620,7 @@ class NutritionSeeder extends Seeder
                         "subtype":"text"
                         },
                         {
-                        "type":"text",
+                        "type":"email",
                         "required":false,
                         "label":"Email",
                         "placeholder":"Enter Your Email",
@@ -1215,7 +1215,7 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
-            "type":"text",
+            "type":"email",
             "required":false,
             "label":"Email ",
             "placeholder":"Email",
