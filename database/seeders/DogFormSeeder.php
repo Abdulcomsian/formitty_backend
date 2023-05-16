@@ -442,7 +442,7 @@ $form_fields = '[
           "subtype":"text"
           },
           {
-          "type":"text",
+          "type":"date",
           "required":false,
           "label":"Date of Birth",
           "placeholder":"Enter Your Date of Birth",
@@ -492,7 +492,7 @@ $form_fields = '[
           "subtype":"text"
           },
           {
-          "type":"text",
+          "type":"email",
           "required":false,
           "label":"Email",
           "placeholder":"Enter Your Email",
@@ -552,7 +552,7 @@ $form_fields = '[
           "subtype":"text"
           },
           {
-              "type":"text",
+              "type":"date",
               "required":false,
               "label":"Date of Assessment",
               "placeholder":"Enter Date of Assessment",
@@ -562,7 +562,7 @@ $form_fields = '[
               "subtype":"text"
           },
           {
-              "type":"text",
+              "type":"date",
               "required":false,
               "label":"Date of Report",
               "placeholder":"Enter Your Date of Report",
@@ -852,7 +852,7 @@ $form_fields5 = '[
             "subtype":"textarea"
           },
           {
-            "type":"textarea",
+            "type":"email",
             "required":false,
             "label":"Email",
             "placeholder":"Assessor_Email",
@@ -882,7 +882,7 @@ $form_fields5 = '[
             "subtype":"textarea"
           },
           {
-            "type":"textarea",
+            "type":"date",
             "required":false,
             "label":"Date of Assessment ",
             "placeholder":"Assessor_Date of Assessment ",
@@ -892,7 +892,7 @@ $form_fields5 = '[
             "subtype":"textarea"
           },
           {
-            "type":"textarea",
+            "type":"date",
             "required":false,
             "label":"Date of Report",
             "placeholder":"Assessor_Date of Report",
@@ -983,7 +983,7 @@ $form_fields6 = '[
           },
 
           {
-            "type":"textarea",
+            "type":"date",
             "required":false,
             "label":"Date",
             "placeholder":"Date",
@@ -1016,7 +1016,7 @@ $form_fields6 = '[
           },
 
           {
-            "type":"textarea",
+            "type":"date",
             "required":false,
             "label":"Date",
             "placeholder":"Date",

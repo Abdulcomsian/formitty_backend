@@ -1310,7 +1310,7 @@ class AnimalSeeder extends Seeder
        "subtype":"text"
     },
     {
-       "type":"text",
+       "type":"date",
        "required":false,
        "label":"Date of Assessment",
        "placeholder":"Assessor_1_Date of Assessment",
@@ -1320,7 +1320,7 @@ class AnimalSeeder extends Seeder
        "subtype":"text"
     },
     {
-       "type":"text",
+       "type":"date",
        "required":false,
        "label":"Date of Report",
        "placeholder":"Assessor_1_Date of Report",
@@ -1390,7 +1390,7 @@ class AnimalSeeder extends Seeder
        "subtype":"text"
     },
     {
-       "type":"text",
+       "type":"date",
        "required":false,
        "label":"Date of Assessment",
        "placeholder":"Assessor_2_Date of Assessment",
@@ -1400,7 +1400,7 @@ class AnimalSeeder extends Seeder
        "subtype":"text"
     },
     {
-       "type":"text",
+       "type":"date",
        "required":false,
        "label":"Date of Report",
        "placeholder":"Assessor_2_Date of Report",

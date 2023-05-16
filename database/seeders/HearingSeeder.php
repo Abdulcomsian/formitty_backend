@@ -1531,7 +1531,7 @@ class HearingSeeder extends Seeder
             "subtype":"text"
             },
             {
-            "type":"text",
+            "type":"date",
             "required":false,
             "label":"Date of Birth",
             "placeholder":"Enter Your Date of Birth",
@@ -1581,7 +1581,7 @@ class HearingSeeder extends Seeder
             "subtype":"text"
             },
             {
-            "type":"text",
+            "type":"email",
             "required":false,
             "label":"Email",
             "placeholder":"Enter Your Email",
@@ -1873,7 +1873,7 @@ class HearingSeeder extends Seeder
 
 
     {
-        "type":"text",
+        "type":"date",
         "required":false,
         "label":"Date of a last fitting",
         "placeholder":"Enter Date of a last fitting",
@@ -1883,7 +1883,7 @@ class HearingSeeder extends Seeder
         "subtype":"text"
     },
     {
-        "type":"text",
+        "type":"date",
         "required":false,
         "label":"Date of a last fitting",
         "placeholder":"Enter Date of a last fitting",
@@ -2062,7 +2062,7 @@ class HearingSeeder extends Seeder
 
 
     {
-        "type":"text",
+        "type":"date",
         "required":false,
         "label":"Date of a last fitting",
         "placeholder":"Enter Date of a last fitting",
@@ -2072,7 +2072,7 @@ class HearingSeeder extends Seeder
         "subtype":"text"
     },
     {
-        "type":"text",
+        "type":"date",
         "required":false,
         "label":"Date of a last fitting",
         "placeholder":"Enter Date of a last fitting",
@@ -2749,7 +2749,7 @@ class HearingSeeder extends Seeder
         },
 
         {
-            "type":"text",
+            "type":"email",
             "required":false,
             "label":"Email",
             "placeholder":"Email",
@@ -2771,7 +2771,7 @@ class HearingSeeder extends Seeder
         },
 
         {
-            "type":"text",
+            "type":"date",
             "required":false,
             "label":"Date of Assessment",
             "placeholder":"Date of Assessment",
@@ -2929,7 +2929,7 @@ class HearingSeeder extends Seeder
             },
             
             {
-                "type":"text",
+                "type":"date",
                 "required":false,
                 "label":"Date",
                 "placeholder":"Date",
@@ -2962,7 +2962,7 @@ class HearingSeeder extends Seeder
             },
 
             {
-                "type":"text",
+                "type":"date",
                 "required":false,
                 "label":"Date",
                 "placeholder":"Date",

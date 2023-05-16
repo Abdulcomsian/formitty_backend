@@ -762,7 +762,7 @@ class VehicleSeeder extends Seeder
                                 "subtype":"text"
                                 },
                                 {
-                                "type":"text",
+                                "type":"email",
                                 "required":false,
                                 "label":"Email",
                                 "placeholder":"Enter Your Email",
@@ -1028,7 +1028,7 @@ class VehicleSeeder extends Seeder
                                     "subtype":"text"
                                     },
                                     {
-                                    "type":"text",
+                                    "type":"date",
                                     "required":false,
                                     "label":"Ownership and date of purchase",
                                     "placeholder":"Enter Ownership  of the vehicle and date of purchase",
@@ -1715,7 +1715,7 @@ class VehicleSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"text",
+               "type":"email",
                "subtype":"email",
                "required":false,
                "label":"Assessor’s Email",
@@ -1790,7 +1790,7 @@ class VehicleSeeder extends Seeder
                 "subtype":"text"
              },
              {
-                "type":"text",
+                "type":"email",
                 "subtype":"email",
                 "required":false,
                 "label":"Vehicle Modifiers Email",
