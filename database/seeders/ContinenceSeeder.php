@@ -842,7 +842,7 @@ class ContinenceSeeder extends Seeder
              "subtype":"text"
           },
           {
-             "type":"text",
+             "type":"date",
              "required":false,
              "label":"Date of Birth",
              "placeholder":"Enter Your Date of Birth",
@@ -1912,7 +1912,7 @@ class ContinenceSeeder extends Seeder
              "subtype":"text"
           },
           {
-             "type":"text",
+             "type":"date",
              "required":false,
              "label":"Date",
              "placeholder":"Enter Date",
@@ -1959,7 +1959,7 @@ class ContinenceSeeder extends Seeder
              "access":false
           },
           {
-             "type":"date",
+             "type":"text",
              "required":false,
              "label":"Relationship to participant ",
              "placeholder":"Relationship to participant",

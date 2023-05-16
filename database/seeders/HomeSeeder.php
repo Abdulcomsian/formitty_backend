@@ -1137,7 +1137,7 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"text",
+               "type":"date",
                "required":false,
                "label":"Date of Birth",
                "placeholder":"Enter Your Date of Birth",
@@ -1247,7 +1247,7 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"text",
+               "type":"date",
                "required":false,
                "label":"Date of Assessment",
                "placeholder":"Enter Date of Assessment",
@@ -1257,7 +1257,7 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"text",
+               "type":"date",
                "required":false,
                "label":"Date of Report",
                "placeholder":"Enter Your Date of Report",
@@ -1929,7 +1929,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"text",
+               "type":"date",
                "required":false,
                "label":"Anticipated discharge date",
                "placeholder":"Enter Anticipated discharge date",
@@ -2631,7 +2631,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"text",
+               "type":"date",
                "required":false,
                "label":"Date of Assessment ",
                "placeholder":"Date of Assessment ",
@@ -2641,7 +2641,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"text",
+               "type":"date",
                "required":false,
                "label":"Date of Report ",
                "placeholder":"Date of Report",
@@ -2711,7 +2711,7 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"text",
+               "type":"date",
                "required":false,
                "label":"Date of review by Building Construction Professional",
                "placeholder":"Date of review by Building Construction Professional",
@@ -2785,7 +2785,7 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"text",
+               "type":"date",
                "required":false,
                "label":"Date",
                "placeholder":"Date",
@@ -2815,7 +2815,7 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"text",
+               "type":"date",
                "required":false,
                "label":"Date",
                "placeholder":"Date",
