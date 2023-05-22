@@ -70,6 +70,12 @@ class FormBuilderController extends ApiController
         $input = $request->all();
         $array = [];
 
+        if(!auth('sanctum')->user()){
+          return $this->errorResponse("User is not authenticated", 404);
+        }
+      
+        $user_id = auth('sanctum')->user()->id;
+
         $user_form = $this->createUserForm($request);
 //        try {
         //get selected form columns from forms table
@@ -106,13 +112,13 @@ class FormBuilderController extends ApiController
                     $form_data->form_heading_id = $heading_id;
                     $form_data->order_id = $order_id;
                     $form_data->value = $value;
-                    $form_data->user_id = Auth::user()->id ?? '2';
+                    $form_data->user_id = $user_id;
                     $form_data->save();
 
                     if (!in_array($heading_id, $array)) {
                         array_push($array, $heading_id);
                         $user_form_heading = new UserFormHeading();
-                        $user_form_heading->user_id = Auth::user()->id ?? '2';
+                        $user_form_heading->user_id = $user_id;
                         $user_form_heading->order_id = $order_id;
                         $user_form_heading->heading_id = $heading_id;
                         $user_form_heading->user_form_id = $user_form->id;
@@ -141,9 +147,16 @@ class FormBuilderController extends ApiController
 
     private function createUserForm($request)
     {
+
+        if(!auth('sanctum')->user()){
+          return $this->errorResponse("User is not authenticated", 404);
+        }
+      
+        $user_id = auth('sanctum')->user()->id;
+
         $user_form = new UserForm();
         $user_form->form_id = $request->form_id ?? '1';
-        $user_form->user_id = Auth::user()->id ?? '2';
+        $user_form->user_id = $user_id;
         $user_form->save();
 
         return $user_form;
@@ -158,7 +171,7 @@ class FormBuilderController extends ApiController
             $user_form->save();
 
             $userFormHeading = new UserFormHeading;
-            $userFormHeading->user_id = Auth::user()->id ?? '2';
+            $userFormHeading->user_id = auth('sanctum')->user()->id;
             $userFormHeading->heading_id = $user_form->id;
             $userFormHeading->order_id = $order_id;
             $userFormHeading->user_form_id = $user_form_data->id;
@@ -178,7 +191,7 @@ class FormBuilderController extends ApiController
         $custom_heading->save();
 
         $userFormHeading = new UserFormHeading;
-        $userFormHeading->user_id = Auth::user()->id ?? '2';
+        $userFormHeading->user_id = auth('sanctum')->user()->id;
         $userFormHeading->heading_id = $custom_heading->id;
         $userFormHeading->order_id = $order_id;
         $userFormHeading->user_form_id = $user_form->id;
@@ -208,13 +221,13 @@ class FormBuilderController extends ApiController
         $form_data->form_heading_id = $heading_id;
         $form_data->order_id = $order_id;
         $form_data->value = $value;
-        $form_data->user_id = Auth::user()->id ?? '2';
+        $form_data->user_id = auth('sanctum')->user()->id;
         $form_data->save();
         $user_form_heading = null;
         if (!in_array($heading_id, $array)) {
             array_push($array, $heading_id);
             $user_form_heading = new UserFormHeading();
-            $user_form_heading->user_id = Auth::user()->id ?? '2';
+            $user_form_heading->user_id = auth('sanctum')->user()->id;
             $user_form_heading->order_id = $order_id;
             $user_form_heading->heading_id = $heading_id;
             $user_form_heading->user_form_id = $user_form->id;
@@ -287,7 +300,7 @@ class FormBuilderController extends ApiController
         $custom_heading->form_heading = $value;
         $custom_heading->save();
         $userFormHeading = new UserFormHeading;
-        $userFormHeading->user_id = Auth::user()->id ?? '2';
+        $userFormHeading->user_id = auth('sanctum')->user()->id;
         $userFormHeading->heading_id = $custom_heading->id;
         $userFormHeading->order_id = $order_id;
         $userFormHeading->user_form_id = $user_form->id;
@@ -312,7 +325,7 @@ class FormBuilderController extends ApiController
         if (!in_array($heading_id, $array)) {
             array_push($array, $heading_id);
             $user_form_heading = new UserFormHeading();
-            $user_form_heading->user_id = Auth::user()->id ?? '2';
+            $user_form_heading->user_id = auth('sanctum')->user()->id;
             $user_form_heading->order_id = $order_id;
             $user_form_heading->heading_id = $heading_id;
             $user_form_heading->user_form_id = $user_form->id;
@@ -324,13 +337,13 @@ class FormBuilderController extends ApiController
         $form_data->form_heading_id = $heading_id;
         $form_data->order_id = $order_id;
         $form_data->value = $value;
-        $form_data->user_id = Auth::user()->id ?? '2';
+        $form_data->user_id = auth('sanctum')->user()->id;
         $form_data->save();
 
         if (!in_array($heading_id, $array)) {
             array_push($array, $heading_id);
             $user_form_heading = new UserFormHeading();
-            $user_form_heading->user_id = Auth::user()->id ?? '2';
+            $user_form_heading->user_id = auth('sanctum')->user()->id;
             $user_form_heading->order_id = $order_id;
             $user_form_heading->heading_id = $heading_id;
             $user_form_heading->user_form_id = $user_form->id;
@@ -1382,7 +1395,10 @@ class FormBuilderController extends ApiController
     public function getUserForm(Request $request)
     {
         try {
-            $user_id = Auth::user()->id ?? '2';
+            if(!auth('sanctum')->user()){
+              return $this->errorResponse("User is not authenticated", 404);
+            }
+            $user_id = auth('sanctum')->user()->id;
             $user_form = UserForm::where('user_id', $user_id)->get();
             $data = [];
 
@@ -1513,7 +1529,7 @@ class FormBuilderController extends ApiController
     public function searchFilter(Request $request)
     {
         try {
-            $user_id = Auth::user()->id ?? '2';
+            $user_id = auth('sanctum')->user()->id;
 
             $user_form = UserForm::where('user_id', $user_id)
                 ->where(function ($query) use ($request) {

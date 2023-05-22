@@ -42,10 +42,16 @@ class AssessmentToolController extends ApiController
             return $this->errorResponse($validator->messages(), 422);
         }
 
+        if(!auth('sanctum')->user()){
+            return $this->errorResponse("User is not authenticated", 404);
+          }
+        
+        $user_id = auth('sanctum')->user()->id;
+
         try {
             $assessment_tools = [];
-            $assessment_tools[] = Response::with('assessment_tool')->where([['user_id', Auth::user()->id ?? '2'], ['user_form_id', $request->user_form_id]])->get();
-            $assessment_tools[] = FlowchartResponse::with('assessment_tool')->where([['user_id', Auth::user()->id ?? '2'], ['user_form_id', $request->user_form_id]])->get();
+            $assessment_tools[] = Response::with('assessment_tool')->where([['user_id', $user_id], ['user_form_id', $request->user_form_id]])->get();
+            $assessment_tools[] = FlowchartResponse::with('assessment_tool')->where([['user_id', $user_id], ['user_form_id', $request->user_form_id]])->get();
             return $this->successResponse($assessment_tools, 'Assessment tools get successfully!.', 200);
         } catch (\Throwable $th) {
             return $this->errorResponse($th->getMessage(), 401);
@@ -80,12 +86,17 @@ class AssessmentToolController extends ApiController
         $input = $request->all();
 
         try {
+
+            if(!auth('sanctum')->user()){
+                return $this->errorResponse("User is not authenticated", 404);
+              }
+              $user_id = auth('sanctum')->user()->id;
             // Create a new response object
             if ($request->user_assessment_id) {
                 $response = Response::find($request->user_assessment_id);
                 $response->update([
                     'assessment_tool_id' => $response->assessment_tool_id,
-                    'user_id' => Auth::user()->id ?? '2',
+                    'user_id' => $user_id,
                     'user_form_id' => $request->user_form_id,
                 ]);
 
@@ -93,7 +104,7 @@ class AssessmentToolController extends ApiController
             } else {
                 $response = new Response([
                     'assessment_tool_id' => $request->input('assessment_id'),
-                    'user_id' => Auth::user()->id ?? '2',
+                    'user_id' => $user_id,
                     'user_form_id' => $request->user_form_id,
                 ]);
             }
@@ -221,8 +232,14 @@ class AssessmentToolController extends ApiController
 
         try {
 
+            if(!auth('sanctum')->user()){
+                return $this->errorResponse("User is not authenticated", 404);
+            }
+            
+            $user_id = auth('sanctum')->user()->id;
+
             $response = new Response();
-            $response->user_id = Auth::user()->id ?? '2';
+            $response->user_id = $user_id;
             $response->user_form_id = $request->user_form_id;
             $response->assessment_tool_id = $request->assessment_id;
             $response->save();
@@ -256,8 +273,13 @@ class AssessmentToolController extends ApiController
     public function storeFlowChart(Request $request)
     {
         try {
+            if(!auth('sanctum')->user()){
+                return $this->errorResponse("User is not authenticated", 404);
+            }
+            
+            $user_id = auth('sanctum')->user()->id;
             $response = new FlowchartResponse();
-            $response->user_id = Auth::user()->id ?? '2';
+            $response->user_id = $user_id;
             $response->assessment_tool_id = $request->user_assessment_id;
             $response->user_form_id = $request->user_form_id;
             $response->image = $request->imageData;
@@ -325,11 +347,16 @@ class AssessmentToolController extends ApiController
                     'errors' => $validator->errors()
                 ], 400);
             }
+            if(!auth('sanctum')->user()){
+                return $this->errorResponse("User is not authenticated", 404);
+            }
+            
+            $user_id = auth('sanctum')->user()->id;
 
             $response = FlowchartResponse::where('user_form_id', $request->user_form_id)->where('assessment_tool_id', $request->assessment_tool_id)->delete();
             foreach ($request->data as $key => $value) {
                 $response = new FlowchartResponse();
-                $response->user_id = Auth::user()->id ?? '2';
+                $response->user_id = $user_id;
                 $response->user_form_id = $request->user_form_id;
                 $response->flowchart_question_id = $value;
                 $response->assessment_tool_id = $request->assessment_tool_id;

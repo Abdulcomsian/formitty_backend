@@ -45,7 +45,7 @@ class AuthController extends ApiController
             return $this->successResponse($success, 'User register successfully.', 200);
 
         } catch (\Throwable $th) {
-            return $this->errorResponse($validateUser->messages(), 401);
+            return $this->errorResponse($th->getMessage(), 401);
         }
     }
 
@@ -159,7 +159,11 @@ class AuthController extends ApiController
     public function getLoggedInUser(Request $request)
     {
         try {
-            $user = Auth::user();
+            if(!auth('sanctum')->user()){
+                return $this->errorResponse("User is not authenticated", 404);
+            }
+            
+            $user = auth('sanctum')->user();
             return $this->successResponse($user, "", 200);
         } catch (\Throwable $th) {
             return $this->errorResponse($th->getMessage(), 401);

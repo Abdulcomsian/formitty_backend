@@ -94,7 +94,6 @@ Route::group([
 
     //AssessmentTool Controller
     Route::resource('assessment-tools', AssessmentToolController::class);
-//    Route::post('get-assessment-tools',  [UsersController::class, 'getAssessmentTools'])->name('admin.getUsers');
     Route::post('get-assessment-tool', [AssessmentToolController::class, 'assessmentToolDetail'])->name('admin.getAssessment');
     Route::get('assessment-tools/delete/{id}',  [AssessmentToolController::class, 'destroy'])->name('assessment_delete');
     Route::post('delete-selected-assessment-tools',  [AssessmentToolController::class, 'DeleteSelectedUsers'])->name('delete_selected_tools');
