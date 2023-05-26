@@ -713,7 +713,7 @@ class CASPYouthAssessmentToolSeeder extends Seeder
             'assessment_tool_id' => $assessment_tool->id,
             'assessment_group_id' => $group5->id,
             'title' => 'Do you currently use any assistive devices or equipment to help you participate (e.g., adapted eating utensils, shower chair, note-taker for school, daily planner, computer)?',
-            'type' => 'open_ended',
+            'type' => 'multiple_choice',
         ]);
 
         Option::create([
