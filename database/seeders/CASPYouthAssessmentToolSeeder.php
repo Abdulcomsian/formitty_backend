@@ -535,11 +535,61 @@ class CASPYouthAssessmentToolSeeder extends Seeder
             'type' => 'multiple_choice',
         ]);
 
+        Option::create([
+            'question_id' => $question16->id,
+            'title' => 'Full participation',
+        ]);
+
+        Option::create([
+            'question_id' => $question16->id,
+            'title' => 'Somewhat Limited',
+        ]);
+
+        Option::create([
+            'question_id' => $question16->id,
+            'title' => 'Very limited',
+        ]);
+
+        Option::create([
+            'question_id' => $question16->id,
+            'title' => 'Unable',
+        ]);
+
+        Option::create([
+            'question_id' => $question16->id,
+            'title' => 'Not applicable',
+        ]);
+
         $question17 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
             'assessment_group_id' => $group4->id,
             'title' => 'Shopping and managing money (e.g., shopping at stores, figuring out correct change)',
             'type' => 'multiple_choice',
+        ]);
+
+        Option::create([
+            'question_id' => $question17->id,
+            'title' => 'Full participation',
+        ]);
+
+        Option::create([
+            'question_id' => $question17->id,
+            'title' => 'Somewhat Limited',
+        ]);
+
+        Option::create([
+            'question_id' => $question17->id,
+            'title' => 'Very limited',
+        ]);
+
+        Option::create([
+            'question_id' => $question17->id,
+            'title' => 'Unable',
+        ]);
+
+        Option::create([
+            'question_id' => $question17->id,
+            'title' => 'Not applicable',
         ]);
 
         $question18 = Question::create([
@@ -549,11 +599,62 @@ class CASPYouthAssessmentToolSeeder extends Seeder
             'type' => 'multiple_choice',
         ]);
 
+        Option::create([
+            'question_id' => $question18->id,
+            'title' => 'Full participation',
+        ]);
+
+        Option::create([
+            'question_id' => $question18->id,
+            'title' => 'Somewhat Limited',
+        ]);
+
+        Option::create([
+            'question_id' => $question18->id,
+            'title' => 'Very limited',
+        ]);
+
+        Option::create([
+            'question_id' => $question18->id,
+            'title' => 'Unable',
+        ]);
+
+        Option::create([
+            'question_id' => $question18->id,
+            'title' => 'Not applicable',
+        ]);
+
+
         $question19 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
             'assessment_group_id' => $group4->id,
             'title' => 'Using transportation to get around in the community (e.g., to and from school, work, social or leisure activities) [Driving vehicle or using public transportation]',
             'type' => 'multiple_choice',
+        ]);
+
+        Option::create([
+            'question_id' => $question19->id,
+            'title' => 'Full participation',
+        ]);
+
+        Option::create([
+            'question_id' => $question19->id,
+            'title' => 'Somewhat Limited',
+        ]);
+
+        Option::create([
+            'question_id' => $question19->id,
+            'title' => 'Very limited',
+        ]);
+
+        Option::create([
+            'question_id' => $question19->id,
+            'title' => 'Unable',
+        ]);
+
+        Option::create([
+            'question_id' => $question19->id,
+            'title' => 'Not applicable',
         ]);
 
         $question20 = Question::create([
@@ -562,6 +663,78 @@ class CASPYouthAssessmentToolSeeder extends Seeder
             'title' => 'Work activities and responsibilities (e.g., completion of work tasks, punctuality, attendance and getting along with supervisors and co-workers)',
             'type' => 'multiple_choice',
         ]);
+
+        Option::create([
+            'question_id' => $question20->id,
+            'title' => 'Full participation',
+        ]);
+
+        Option::create([
+            'question_id' => $question20->id,
+            'title' => 'Somewhat Limited',
+        ]);
+
+        Option::create([
+            'question_id' => $question20->id,
+            'title' => 'Very limited',
+        ]);
+
+        Option::create([
+            'question_id' => $question20->id,
+            'title' => 'Unable',
+        ]);
+
+        Option::create([
+            'question_id' => $question20->id,
+            'title' => 'Not applicable',
+        ]);
+
+
+        $question21 = Question::create([
+            'assessment_tool_id' => $assessment_tool->id,
+            'title' => 'Please describe the type of things that interfere with your participation in the above-mentioned activities (e.g., things that you or others do; or things about your home, school or community) [Please write clearly]:',
+            'type' => 'open_ended',
+        ]);
+
+        $question22 = Question::create([
+            'assessment_tool_id' => $assessment_tool->id,
+            'title' => 'Please describe the type of things that help with your participation in the above-mentioned activities (e.g., things that you or others do; or things about your home, school or community) [Please write clearly]:',
+            'type' => 'open_ended',
+        ]);
+
+
+        $question23 = Question::create([
+            'assessment_tool_id' => $assessment_tool->id,
+            'title' => 'Do you currently use any assistive devices or equipment to help you participate (e.g., adapted eating utensils, shower chair, note-taker for school, daily planner, computer)?',
+            'type' => 'open_ended',
+        ]);
+
+        Option::create([
+            'question_id' => $question23->id,
+            'title' => 'Yes',
+        ]);
+
+        Option::create([
+            'question_id' => $question23->id,
+            'title' => 'No',
+        ]);
+
+        $question24 = Question::create([
+            'assessment_tool_id' => $assessment_tool->id,
+            'title' => 'Have any changes been made to your home, community or the school (or work) setting to help you participate (e.g., rearranging furniture and materials, adjusting lighting or noise levels, building a ramp or other physical structures)?',
+            'type' => 'multiple_choice',
+        ]);
+
+        Option::create([
+            'question_id' => $question24->id,
+            'title' => 'Yes',
+        ]);
+
+        Option::create([
+            'question_id' => $question24->id,
+            'title' => 'No',
+        ]);
+        
 
     }
 }
