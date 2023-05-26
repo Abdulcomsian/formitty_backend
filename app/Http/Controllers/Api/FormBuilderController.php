@@ -467,7 +467,8 @@ class FormBuilderController extends ApiController
             || $response->assessment_tool->id == '9'
             || $response->assessment_tool->id == '10'
             || $response->assessment_tool->id == '15'
-            || $response->assessment_tool->id == '16'){
+            || $response->assessment_tool->id == '16'
+            || $response->assessment_tool->id == '19'){
             $section_html = $this->createMRS9QTool($response, $section_html);
         }
         if($response->assessment_tool->id == '11' || $response->assessment_tool->id == '14'){
