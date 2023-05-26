@@ -689,15 +689,21 @@ class CASPYouthAssessmentToolSeeder extends Seeder
             'title' => 'Not applicable',
         ]);
 
+        $group5 = AssessmentGroup::create([
+            'assessment_tool_id' => $assessment_tool->id,
+            'title' => '',
+        ]);
 
         $question21 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
+            'assessment_group_id' => $group5->id,
             'title' => 'Please describe the type of things that interfere with your participation in the above-mentioned activities (e.g., things that you or others do; or things about your home, school or community) [Please write clearly]:',
             'type' => 'open_ended',
         ]);
 
         $question22 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
+            'assessment_group_id' => $group5->id,
             'title' => 'Please describe the type of things that help with your participation in the above-mentioned activities (e.g., things that you or others do; or things about your home, school or community) [Please write clearly]:',
             'type' => 'open_ended',
         ]);
@@ -705,6 +711,7 @@ class CASPYouthAssessmentToolSeeder extends Seeder
 
         $question23 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
+            'assessment_group_id' => $group5->id,
             'title' => 'Do you currently use any assistive devices or equipment to help you participate (e.g., adapted eating utensils, shower chair, note-taker for school, daily planner, computer)?',
             'type' => 'open_ended',
         ]);
@@ -720,6 +727,7 @@ class CASPYouthAssessmentToolSeeder extends Seeder
         ]);
 
         $question24 = Question::create([
+            'assessment_group_id' => $group5->id,
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Have any changes been made to your home, community or the school (or work) setting to help you participate (e.g., rearranging furniture and materials, adjusting lighting or noise levels, building a ramp or other physical structures)?',
             'type' => 'multiple_choice',
