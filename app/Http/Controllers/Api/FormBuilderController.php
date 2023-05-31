@@ -1657,17 +1657,17 @@ class FormBuilderController extends ApiController
         public function deleteCreateNote(Request $request)
         {
             $validator = Validator::make($request->all(), [
-                'report_id' => 'required',
+                'id' => 'required',
             ]);
 
             if ($validator->fails()) {
                 return $this->errorResponse($validator->messages(), 422);
             }
 
-            $reportId = $validator->validated()['report_id'];
+            $Id = $validator->validated()['id'];
 
             // Find the interaction based on the report_id
-            $interaction = Interaction::where('report_id', $reportId)->first();
+            $interaction = Interaction::where('id', $Id)->first();
 
             if (!$interaction) {
                 return $this->errorResponse('Create Note not found', 404);
