@@ -52,7 +52,15 @@ Route::post('edit-flowchart', [AssessmentToolController::class, 'editFlowChart']
 Route::post('update-flowchart', [AssessmentToolController::class, 'updateFlowChart']);
 Route::post('generate-pdf', [AssessmentToolController::class, 'generatePdf']);
 
+// created notes api
+Route::post('/get-create-note', [FormBuilderController::class, 'getCreateNote']);
+Route::post('/create-note', [FormBuilderController::class, 'create_note']);
+// Route::delete('/delete-note/{reportId}', [FormBuilderController::class, 'deleteCreateNote']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::post('/delete-create-note', [FormBuilderController::class, 'deleteCreateNote']);
+Route::post('/update-create-note', [FormBuilderController::class, 'updateCreateNote']);
+
+Route::middleware('auth:sanctum')->get('/user', function (Request $request)
+{
     return $request->user();
 });
