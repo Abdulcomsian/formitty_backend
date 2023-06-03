@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Interaction;
+use App\Models\Report;
 use App\Models\Form;
 use App\Models\FormHeading;
 use App\Models\AssessmentTool;
@@ -1527,35 +1529,155 @@ class FormBuilderController extends ApiController
         }
     }
 
-    public function searchFilter(Request $request)
-    {
-        try {
-            $user_id = auth('sanctum')->user()->id;
+          public function searchFilter(Request $request)
+          {
+              try {
+                  $user_id = auth('sanctum')->user()->id;
 
-            $user_form = UserForm::where('user_id', $user_id)
-                ->where(function ($query) use ($request) {
-                    $query->where('user_form.id', $request->value)
-                        ->orWhere('forms.name', 'like', '%' . $request->value . '%');
-                })
-                ->leftjoin('forms', 'user_form.form_id', '=', 'forms.id')
-                ->select('user_form.*', 'forms.name')
-                ->get();
-            $data = [];
+                  $user_form = UserForm::where('user_id', $user_id)
+                      ->where(function ($query) use ($request) {
+                          $query->where('user_form.id', $request->value)
+                              ->orWhere('forms.name', 'like', '%' . $request->value . '%');
+                      })
+                      ->leftjoin('forms', 'user_form.form_id', '=', 'forms.id')
+                      ->select('user_form.*', 'forms.name')
+                      ->get();
+                  $data = [];
 
-            foreach ($user_form as $uf) {
-                $data[] = [
-                    'id' => $uf->id,
-                    'form_id' => $uf->form_id,
-                    'form_status' => $uf->form_type,
-                    'form_name' => $uf->form->name,
-                    'created_at' => $uf->created_at,
-                ];
+                  foreach ($user_form as $uf) {
+                      $data[] = [
+                          'id' => $uf->id,
+                          'form_id' => $uf->form_id,
+                          'form_status' => $uf->form_type,
+                          'form_name' => $uf->form->name,
+                          'created_at' => $uf->created_at,
+                      ];
+                  }
+
+                  return $this->successResponse($data, "Data retrieved successfully", 200);
+              } catch (\Throwable $th) {
+                  return $this->errorResponse($th->getMessage(), 500);
+              }
+          }
+
+
+
+
+       // Create Note API
+        public function create_note(Request $request)
+        {
+          $validator = Validator::make($request->all(), [
+              'date' => 'required|date',
+              'related_goal' => 'required|string',
+              'interaction_type' => 'required|string',
+              'participants' => 'required|string',
+              'activity' => 'required|string',
+              'impact' => 'required|string',
+              'next_steps' => 'required|string',
+              'report_id' => 'required',
+          ]);
+
+          if ($validator->fails()) {
+              return $this->errorResponse($validator->messages(), 422);
+          }
+
+          $validatedData = $validator->validated(); // Retrieve the validated data
+
+          $interaction = Interaction::create($validatedData);
+
+          return $this->successResponse($interaction, 'Create Note created successfully', 201);
+        }
+
+        // Update Note API
+        public function updateCreateNote(Request $request)
+        {
+
+            $validator = Validator::make($request->all(), [
+                'report_id' => 'required',
+                'date' => 'required|date',
+                'related_goal' => 'required|string',
+                'interaction_type' => 'required|string',
+                'participants' => 'required|string',
+                'activity' => 'required|string',
+                'impact' => 'required|string',
+                'next_steps' => 'required|string',
+            ]);
+            // dd($request);
+
+            if ($validator->fails()) {
+                return $this->errorResponse($validator->messages(), 422);
             }
 
-            return $this->successResponse($data, "Data retrieved successfully", 200);
-        } catch (\Throwable $th) {
-            return $this->errorResponse($th->getMessage(), 500);
+            $reportId = $validator->validated()['report_id'];
+
+            // Find the interaction based on the report_id
+            $interaction = Interaction::where('report_id', $reportId)->first();
+
+            if (!$interaction) {
+                return $this->errorResponse('Create Note not found', 404);
+            }
+
+            // Update the interaction fields
+            $interaction->date = $request->input('date');
+            $interaction->related_goal = $request->input('related_goal');
+            $interaction->interaction_type = $request->input('interaction_type');
+            $interaction->participants = $request->input('participants');
+            $interaction->activity = $request->input('activity');
+            $interaction->impact = $request->input('impact');
+            $interaction->next_steps = $request->input('next_steps');
+
+            $interaction->save();
+
+            return $this->successResponse($interaction, 'Create Note updated successfully', 200);
         }
-    }
+
+
+         // get Created note by report_id 
+
+         public function getCreateNote(Request $request)
+         {
+             $validator = Validator::make($request->all(), [
+                 'report_id' => 'required',
+             ]);
+         
+             if ($validator->fails()) {
+                 return $this->errorResponse($validator->messages(), 422);
+             }
+         
+             $reportId = $validator->validated()['report_id'];
+         
+             // Get the interactions based on the report_id
+             $interactions = Interaction::where('report_id', $reportId)->get();
+         
+             return $this->successResponse($interactions, 'Create Note retrieved successfully', 200);
+         }   
+
+        //  Delete Create Note API
+
+        public function deleteCreateNote(Request $request)
+        {
+            $validator = Validator::make($request->all(), [
+                'id' => 'required',
+            ]);
+
+            if ($validator->fails()) {
+                return $this->errorResponse($validator->messages(), 422);
+            }
+
+            $Id = $validator->validated()['id'];
+
+            // Find the interaction based on the report_id
+            $interaction = Interaction::where('id', $Id)->first();
+
+            if (!$interaction) {
+                return $this->errorResponse('Create Note not found', 404);
+            }
+
+            // Delete the interaction
+            $interaction->delete();
+
+            return $this->successResponse(null, 'Create Note deleted successfully', 200);
+        }
+
 
 }
