@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\FormBuilderController;
 use App\Http\Controllers\Api\AssessmentToolController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SpeechToTextController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ Route::post('/user-login', [AuthController::class, 'userLogin']);
 Route::post('/import', [AuthController::class, 'import']);
 Route::get('/download/{id}', [AuthController::class, 'download']);
 Route::post('/get-fields', [FormBuilderController::class, 'getFormFields']);
+
 //Route::post('/get-user-forms', [FormBuilderController::class, 'getUserForms']);
 Route::post('/get-forms', [FormBuilderController::class, 'getForms']);
 Route::post('/store-form-fields', [FormBuilderController::class, 'storeFormField']);
@@ -55,10 +57,11 @@ Route::post('generate-pdf', [AssessmentToolController::class, 'generatePdf']);
 // created notes api
 Route::post('/get-create-note', [FormBuilderController::class, 'getCreateNote']);
 Route::post('/create-note', [FormBuilderController::class, 'create_note']);
-// Route::delete('/delete-note/{reportId}', [FormBuilderController::class, 'deleteCreateNote']);
-
 Route::post('/delete-create-note', [FormBuilderController::class, 'deleteCreateNote']);
 Route::post('/update-create-note', [FormBuilderController::class, 'updateCreateNote']);
+
+// google speech to text API
+Route::post('/speech-to-text', [SpeechToTextController::class, 'convert']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request)
 {
