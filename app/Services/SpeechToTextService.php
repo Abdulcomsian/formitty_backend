@@ -12,7 +12,7 @@ class SpeechToTextService
 
     public function __construct()
     {
-        $credentialsPath = public_path('credentials-file.json');
+        $credentialsPath = public_path('test.json');
         $this->speechClient = new SpeechClient([
             'credentials' => $credentialsPath,
             'key' => env('GOOGLE_API_KEY'),
@@ -32,8 +32,7 @@ class SpeechToTextService
         $response = $this->speechClient->recognize($config, $audio);
 
         $transcriptions = [];
-        foreach ($response->getResults() as $result) 
-        {
+        foreach ($response->getResults() as $result) {
             $transcriptions[] = $result->getAlternatives()[0]->getTranscript();
         }
 

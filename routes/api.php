@@ -6,8 +6,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\FormBuilderController;
 use App\Http\Controllers\Api\AssessmentToolController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\SpeechToTextController;
-
+use App\Http\Controllers\Api\SpeechToTextController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
