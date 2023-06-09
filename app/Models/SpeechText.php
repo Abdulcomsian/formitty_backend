@@ -11,5 +11,5 @@ class SpeechText extends Model
 
     protected $table = "speech_text";
     protected $primaryKey= "id";
-    protected $fillable = ["user_id" , "report_id" , "speech"];
+    protected $fillable = ["user_id" , "report_id" , "file_name" , "speech"];
 }

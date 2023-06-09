@@ -15,7 +15,7 @@ class SpeechController extends Controller
     {
         try {
             $validator = Validator::make($request->all() , [
-                'audioFile' => "required",
+                'audioFile' => "required|file|mimes:mp3",
                 'report_id' => "required|numeric"
             ]);
 
@@ -46,6 +46,7 @@ class SpeechController extends Controller
             
                 
                 $file = $request->file("audioFile");
+                $fileName = $file->getClientOriginalName();
             
                 
             
@@ -72,7 +73,8 @@ class SpeechController extends Controller
                     SpeechText::create([
                         "user_id" => auth()->user()->id,
                         "report_id" => $request->report_id,
-                        "speech" => $transcript
+                        "speech" => $transcript,
+                        "file_name" => $fileName
                     ]);
 
             
