@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\FormBuilderController;
 use App\Http\Controllers\Api\AssessmentToolController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\{ HomeController , SpeechController};
 
 /*
 |--------------------------------------------------------------------------
@@ -59,6 +59,8 @@ Route::post('/create-note', [FormBuilderController::class, 'create_note']);
 
 Route::post('/delete-create-note', [FormBuilderController::class, 'deleteCreateNote']);
 Route::post('/update-create-note', [FormBuilderController::class, 'updateCreateNote']);
+
+Route::post('convert-speech-to-text' , [SpeechController::class , 'convertSpeech']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request)
 {
