@@ -13,6 +13,7 @@ class Question extends Model
         'assessment_tool_id',
         'title',
         'type',
+        'point',
     ];
 
     public function assessmentTool()
@@ -28,5 +29,10 @@ class Question extends Model
     public function answers()
     {
         return $this->hasOne(Answer::class, 'question_id');
+    }
+
+    public function assessmentGroup()
+    {
+        return $this->belongsTo(AssessmentGroup::class);
     }
 }

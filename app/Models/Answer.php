@@ -14,6 +14,7 @@ class Answer extends Model
         'question_id',
         'option_id',
         'answer',
+        'level',
     ];
 
     public function response()

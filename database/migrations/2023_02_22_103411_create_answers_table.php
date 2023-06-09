@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('question_id')->constrained('questions')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('option_id')->nullable()->constrained('options')->cascadeOnDelete()->cascadeOnUpdate();
             $table->text('answer')->nullable();
+            $table->float('level')->nullable();
             $table->timestamps();
         });
     }

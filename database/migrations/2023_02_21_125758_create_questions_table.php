@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedbiginteger('assessment_tool_id');
-            $table->string('title');
+            $table->text('title');
             $table->enum('type', ['multiple_choice', 'open_ended']);
-            $table->foreign('assessment_tool_id')->references('id')->on('assessment_tools')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('assessment_tool_id')->constrained('assessment_tools')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('assessment_group_id')->nullable()->constrained('assessment_groups')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->float('point')->nullable();
             $table->timestamps();
         });
     }

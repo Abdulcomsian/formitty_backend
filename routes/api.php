@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\FormBuilderController;
 use App\Http\Controllers\Api\AssessmentToolController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,8 @@ use App\Http\Controllers\Api\AssessmentToolController;
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'loginUser']);
+Route::post('/user-login', [AuthController::class, 'userLogin']);
+
 //Route::get('/test', [AuthController::class, 'test']);
 Route::post('/import', [AuthController::class, 'import']);
 Route::get('/download/{id}', [AuthController::class, 'download']);
@@ -41,11 +44,23 @@ Route::get('assessment-tools', [AssessmentToolController::class, 'assessmentTool
 Route::post('user-assessment-tools', [AssessmentToolController::class, 'userAssessmentTools']);
 Route::post('get-questions', [AssessmentToolController::class, 'getQuestions']);
 Route::post('store-questions', [AssessmentToolController::class, 'storeQuestions']);
+Route::post('store-flowchart', [AssessmentToolController::class, 'storeFlowChart']);
 Route::post('edit-assessment', [AssessmentToolController::class, 'editAssessment']);
 Route::post('store-assessment', [AssessmentToolController::class, 'storeAssessmentTool']);
 Route::post('get-flowchart-questions', [AssessmentToolController::class, 'getFlowChartQuestions']);
+Route::post('edit-flowchart', [AssessmentToolController::class, 'editFlowChart']);
+Route::post('update-flowchart', [AssessmentToolController::class, 'updateFlowChart']);
+Route::post('generate-pdf', [AssessmentToolController::class, 'generatePdf']);
 
+// created notes api
+Route::post('/get-create-note', [FormBuilderController::class, 'getCreateNote']);
+Route::post('/create-note', [FormBuilderController::class, 'create_note']);
+// Route::delete('/delete-note/{reportId}', [FormBuilderController::class, 'deleteCreateNote']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::post('/delete-create-note', [FormBuilderController::class, 'deleteCreateNote']);
+Route::post('/update-create-note', [FormBuilderController::class, 'updateCreateNote']);
+
+Route::middleware('auth:sanctum')->get('/user', function (Request $request)
+{
     return $request->user();
 });

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Answer;
 use App\Models\FormData;
 use App\Models\UserFormHeading;
 use Illuminate\Http\Request;
@@ -281,17 +282,9 @@ class TestController extends Controller
 
     public function test4()
     {
-
-        $phpWord = new PhpWord();
-
-        $section = $phpWord->addSection();
-        $table = $section->addTable();
-        $table->addRow();
-        $table->addCell(4000, ['borderSize' => 6, 'borderColor' => '000000', 'bgColor' => 'blue'])->addText('Name', array('bold' => true, 'size' => 14, 'valign' => 'center', 'align' => 'center'));
-        $table->addCell(1750, ['borderSize' => 6, 'borderColor' => '000000', 'bgColor' => 'blue'])->addText('Value');
-
-        $fileName = "table.docx";
-        $phpWord->save($fileName, "Word2007");
+        $answer = Answer::with('option')->where('question_id', $question->id)->first();
+        $point = $answer->option->point ?? '';
+        dd($point);
     }
 
     public function test5()
@@ -304,8 +297,8 @@ class TestController extends Controller
         $groupedForms = $forms->groupBy('form_heading_id');
 
         $sortedForms = $groupedForms->sortBy(function ($formData, $formHeadingId) {
-            return UserFormHeading::where('user_id', 2)
-                ->where('form_heading_id', $formHeadingId)
+            return UserFormHeading::where('user_id', Auth::user()->id ?? '2')
+                ->where('heading_id', $formHeadingId)
                 ->value('order_id');
         });
 

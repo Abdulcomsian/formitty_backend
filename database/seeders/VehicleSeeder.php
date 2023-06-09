@@ -4,19 +4,19 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\{Form , FormHeading , FormField};
+use App\Models\{Form, FormHeading, FormField};
 
 class VehicleSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
-    
-    $section1 = "<table style='background-color:#7209B7; border:none; width:100%;'>
+   /**
+    * Run the database seeds.
+    *
+    * @return void
+    */
+   public function run()
+   {
+
+      $section1 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                     <tr>
                         <td>
                             <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'>  PART 1 – Participant and Plan Management Details</p>
@@ -35,77 +35,52 @@ class VehicleSeeder extends Seeder
                     <tbody>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Name</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            Field Data
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_name}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Date of Birth</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            Field Data
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_date_of_birth}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Age</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            Field Data
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_age}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>NDIS Number</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            Field Data
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_participantndis_number}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Address</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            Field Data
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_participant_address}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Contact Telephone Number</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            Field Data
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_participantphone_number}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Email</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            Field Data
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_participant_email}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Preferred Contact Method </td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            Field Data
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_participant_preferredcontact}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Nominee or Guardian Name</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            Field Data
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_participantguardian_name}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Nominee or Guardian Phone</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            Field Data
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_participantguardian_phone}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>NDIS Support Coordinator</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            Field Data
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_plan_management_ndis_coordinator}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Contact Details</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            Field Data
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_participantcontact_details}}</td>
                         </tr>
-                        
                     </tbody>
                 </table>
                 <p style='font-weight: bold; margin-bottom: 10px; margin-top: 10px'>1.2 Plan Management Details</p>
@@ -120,41 +95,25 @@ class VehicleSeeder extends Seeder
                     <tbody>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Agency Managed</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            Field Data
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_agency_managed}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Self-Managed</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            Field Data
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_self_managed}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Registered Plan Management Provider</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            Field Data
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_registeredplanmanagement_provider}}</td>
                         </tr>
                         <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Contact Details </td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>
-                            Field Data
-                        </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_registeredplanmanagementcontact_details}}</td>
                         </tr>
                     </tbody>
                 </table>
                 <p style='margin-top:10px'></p>";
 
-
-
-
-
-
-
-
-
-$section2 = "<table style='background-color:#7209B7; border:none; width:100%;'>
+      $section2 = "<table style='background-color:#7209B7; border:none; width:100%;'>
             <tr>
                 <td>
                     <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'> PART 2 – Evaluation and Assessment</p>
@@ -166,7 +125,7 @@ $section2 = "<table style='background-color:#7209B7; border:none; width:100%;'>
             <p style='font-size:12pt;'>Describe the participant’s current status which may include diagnosis, prognosis, co-existing conditions, disability , personal and instrumental activities of daily living, formal and informal support arrangements and life transitions.</p>
             <table style='width:100%; border: 1px solid black'>
             <tr>
-                <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'> Text goes here</p></td>
+                <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'>{{part_2_assesment_background}}</p></td>
             </tr>
             </table>
 
@@ -174,7 +133,7 @@ $section2 = "<table style='background-color:#7209B7; border:none; width:100%;'>
             <p style='font-size:12pt;'>If the participant’s NDIS plan has been made available, you can refer to the statement of participant’s goals and outline those relevant to the vehicle modification assessment. Consider the benefits for the participant in pursuing their goals through the recommended vehicle modification, as either a driver and/ or passenger.</p>
             <table style='width:100%; border: 1px solid black'>
             <tr>
-                <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'> Text goes here</p></td>
+                <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'>{{part_2_assesment_participantgoals}}</p></td>
             </tr>
             </table>
 
@@ -182,7 +141,7 @@ $section2 = "<table style='background-color:#7209B7; border:none; width:100%;'>
             <p style='font-size:12pt;'>2.3.1	Outline the specific functional limitation/s related to the participant’s disability that indicate the need for the vehicle modification. Consider indoor/outdoor mobility, transfer function, balance, upper and lower limb function. Summarise or attach relevant assessments that have been undertaken such as cognitive and mobility assessments.</p>
             <table style='width:100%; border: 1px solid black'>
             <tr>
-                <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'> Text goes here</p></td>
+                <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'>{{part_2_assesment_functional_assessment}}</p></td>
             </tr>
             </table>
             <p style='font-size:12pt; margin-top:10px; margin-bottom:10px;'>2.3.2 What are the spplicant's measurements?</p>
@@ -190,54 +149,54 @@ $section2 = "<table style='background-color:#7209B7; border:none; width:100%;'>
             <table style=' width:100%; border: 1px solid black;'>
             <tr>
             <td style='width:40%; background-color: lightgrey;'>Height in cm</td>
-            <td style='width:60%; border: 1px solid black;'></td>
+            <td style='width:60%; border: 1px solid black;'>{{part_2_height_in_cm}}</td>
             </tr>
             <tr>
             <td style='width:40%; background-color: lightgrey;'>Weight in kg</td>
-            <td style='width:60%; border: 1px solid black;'></td>
+            <td style='width:60%; border: 1px solid black;'>{{part_2_weight_in_kg}}</td>
             </tr>
             </table>
             <p style='font-size:12pt; margin-top:10px; margin-bottom:10px;'>2.3.3	Outline any assistive technology in relation to the vehicle modification such as hoists, orthotics/prosthetics and manual or power wheelchairs. Describe the wheelchair specifications the participant will be seated in when travelling or transferring from/into vehicle and any relevant restraints.</p>
             <table style='width:100%; border: 1px solid black'>
             <tr>
-                <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'> Text goes here</p></td>
+                <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'>{{part_2_wheelchair_specifications}}</p></td>
             </tr>
             </table>
             <p style='font-size:12pt; margin-top:10px; margin-bottom:10px;'>1 To be eligible for vehicle modifications a participant must have physical, sensory and/or cognitive disability that prevents safe driving, accessing or travelling as a passenger in an unmodified vehicle.</p>
             <p style='font-size:12pt; margin-top:10px; margin-bottom:10px;'>2.3.4	Describe the participant’s participation in work/study or community activities. Consider the location of activities and the availability and accessibility of transport options. Consider all options to access the community and the anticipated benefit of vehicle modifications. Are there any comparable support options and / or solutions that would achieve the same outcome, such as hire/ leasing AT?</p>
             <table style='width:100%; border: 1px solid black'>
             <tr>
-                <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'> Text goes here</p></td>
+                <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'>{{part_2_support_options}}</p></td>
             </tr>
             </table>
 
             <p style='font-size:12pt; margin-top:10px; margin-bottom:10px;'>2.3.5 Describe the participant’s current driving status and proposed use of the vehicle. i.e. a driver and/or passenger or potential to drive in the future. Provide specific details about seating arrangements and the frequency the participant is the driver and/or the passenger in an average week (e.g. percentage or number of times). Describe any license restrictions if relevant.</p>
             <table style='width:100%; border: 1px solid black'>
             <tr>
-                <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'> Text goes here</p></td>
+                <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'>{{part_2_participant’scurrentdriving_status}}</p></td>
             </tr>
             </table>
             <p style='font-size:12pt; margin-top:10px; margin-bottom:10px;'>Evidence: If the participant will be driving you must attach the driving assessment report, relevant State medical report forms and a copy of a current licence.</p>
             <table style=' width:100%; border: 1px solid black;'>
             <tr>
             <td style='width:70%; background-color: lightgrey;'>Evidence is required and has been attached. Yes/no</td>
-            <td style='width:30%; border: 1px solid black;'></td>
+            <td style='width:30%; border: 1px solid black;'>{{part_4_evidence_is_required_and_has_been_attached}}</td>
             </tr>
             <tr>
             <td style='width:70%; background-color: lightgrey;'>Participant is the vehicle passenger only – no evidence required</td>
-            <td style='width:30%; border: 1px solid black;'></td>
+            <td style='width:30%; border: 1px solid black;'>{{part_4_participant_is_the_vehicle_passenger_only}}</td>
             </tr>
             </table>
             <p style='font-size:12pt; margin-top:10px; margin-bottom:10px;'>2.3.7 Confirm that assistive technology will fit in the proposed vehicle and outline if the predicted needs of the participant are expected to change. Consider dimensions of the vehicle interior and ensure appropriate clearances for circulation and safe use of assistive technology (ie head room clearance), growth and foreseeable changes in function.</p>
             <table style='width:100%; border: 1px solid black'>
             <tr>
-                <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'> Text goes here</p></td>
+                <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'>{{part_2_dimensionsofthevehicle_interior}}</p></td>
             </tr>
             </table>
             <p style='font-size:12pt; margin-top:10px; margin-bottom:10px;'>2.3.8 Describe any other considerations that have been assessed in relation to vehicle access and transport such as height clearance and circulation space in garage, safe location for transfers, friends/family to assist with transport, use i.e. remote/ metropolitan areas.</p>
             <table style='width:100%; border: 1px solid black'>
             <tr>
-                <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'> Text goes here</p></td>
+                <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'>{{part_2_relationtovehicleaccessandtransport}}</p></td>
             </tr>
             </table>
             <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'>2.4  Information about the vehicle</p>
@@ -245,35 +204,35 @@ $section2 = "<table style='background-color:#7209B7; border:none; width:100%;'>
             <table style=' width:100%; border: 1px solid black;'>
             <tr>
             <td style='width:80%; background-color: lightgrey; font-size: 17px;'>Make  Model.</td>
-            <td style='width:20%; border: 1px solid black;'></td>
+            <td style='width:20%; border: 1px solid black;'>{{part_2_make_model}}</td>
             </tr>
             <tr>
             <td style='width:80%; background-color: lightgrey; font-size: 17px;'>Year of Manufacture.</td>
-            <td style='width:20%; border: 1px solid black;'></td>
+            <td style='width:20%; border: 1px solid black;'>{{part_2_yearofmanufacture}}</td>
             </tr>
             <tr>
             <td style='width:80%; background-color: lightgrey; font-size: 17px;'>Current kilometres travelled (including date of reading).</td>
-            <td style='width:20%; border: 1px solid black;'></td>
+            <td style='width:20%; border: 1px solid black;'>{{part_2_currentkilometres_travelled}}</td>
             </tr>
             <tr>
             <td style='width:80%; background-color: lightgrey; font-size: 17px;'>Ownership  of the vehicle and date of purchase.</td>
-            <td style='width:20%; border: 1px solid black;'></td>
+            <td style='width:20%; border: 1px solid black;'>{{part_2_ownershipanddateof_purchase}}</td>
             </tr>
             <tr>
             <td style='width:80%; background-color: lightgrey; font-size: 17px;'>Permission of the owner of the vehicle for proposed modifications. Evidence: Attach a signed letter from the owner or the person to whom the vehicle is registered, or to be registered, giving permission for the disability access modifications.</td>
-            <td style='width:20%; border: 1px solid black;'></td>
+            <td style='width:20%; border: 1px solid black;'>{{part_2_permissionoftheownerforproposed_modifications}}</td>
             </tr>
             <tr>
             <td style='width:80%; background-color: lightgrey; font-size: 17px;'>How frequently does the participant have access to this vehicle? Is it used by others? For how many years/other time period is it expected that the participant have access to the vehicle?  Evidence: Attach a signed letter from the owner or the person to whom the vehicle is registered, or to be registered, confirming the participant’s access to the vehicle.</td>
-            <td style='width:20%; border: 1px solid black;'></td>
+            <td style='width:20%; border: 1px solid black;'>{{part_2_participanthaveaccesstothis_vehicle}}</td>
             </tr>
             <tr>
             <td style='width:80%; background-color: lightgrey; font-size: 17px;'>Condition of the vehicle (if required), evidence of road worthiness and the expected lifespan of the vehicle (e.g. via inspection report by the state Automobile Club) is required if the vehicle is over the age and kilometres generally considered suitable for the NDIS to fund vehicle modifications per the NDIS Vehicle Modification Operational Guideline</td>
-            <td style='width:20%; border: 1px solid black;'></td>
+            <td style='width:20%; border: 1px solid black;'>{{part_2_evidenceofroad_worthiness}}</td>
             </tr>
             <tr>
             <td style='width:80%; background-color: lightgrey; font-size: 17px;'>Vehicle is second-hand and/or already modified – Age and condition of the modification.</td>
-            <td style='width:20%; border: 1px solid black;'></td>
+            <td style='width:20%; border: 1px solid black;'>{{part_2_ageandconditionofthe_modification}}</td>
             </tr>
             <tr>
             <td style='width:80%; background-color: lightgrey; font-size: 17px;'>Year of Manufacture.</td>
@@ -281,31 +240,21 @@ $section2 = "<table style='background-color:#7209B7; border:none; width:100%;'>
             </tr>
             <tr>
             <td style='width:80%; background-color: lightgrey; font-size: 17px;'>Evidence of the age and condition of the modification.</td>
-            <td style='width:20%; border: 1px solid black;'></td>
+            <td style='width:20%; border: 1px solid black;'>{{part_2_evidenceoftheageandconditionofthe_modification}}</td>
             </tr>
             <tr>
             <td style='width:80%; background-color: lightgrey; font-size: 17px;'>Vehicle is imported.</td>
-            <td style='width:20%; border: 1px solid black;'></td>
+            <td style='width:20%; border: 1px solid black;'>{{part_2_vehicleis_imported}}</td>
             </tr>
             <tr>
             <td style='width:80%; background-color: lightgrey; font-size: 17px;'>Evidence that the vehicle (as modified) meets the requirements for registration in the state or territory of use. Describe:</td>
-            <td style='width:20%; border: 1px solid black;'></td>
+            <td style='width:20%; border: 1px solid black;'>{{part_2_vehiclemeetsthe_requirements}}</td>
             </tr>
             </table>
             <p style='font-size:12pt; margin-top:10px; margin-bottom:10px;'>1   Note if the participant does not already own the vehicle and the NDIS finds that in principle the proposed modification meets the NDIS reasonable and necessary criteria, funding may be approved in the participant’s NDIS plan for this support pending evidence of vehicle purchase and AT Assessor recommendations.</p>
             <p style='margin-top:10px'></p>";
 
-
-
-
-
-
-
-
-
-
-
-$section3 = "<table style='background-color:#7209B7; border:none; width:100%;'>
+      $section3 = "<table style='background-color:#7209B7; border:none; width:100%;'>
 <tr>
     <td>
         <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'> PART 3 – Exploration of Options</p>
@@ -315,7 +264,6 @@ $section3 = "<table style='background-color:#7209B7; border:none; width:100%;'>
 <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'>3.1   Evaluation of modification options for achievement of participant’s goals</p>
 <p style='font-size:12pt; margin-top:10px; margin-bottom:10px;'>Outline information on alternatives considered to achieve goal/s including use of other supports and approaches and reasons why they were not considered suitable. Where trials have been conducted please give details of where the trials took place and for how long.</p>
 <p style='font-size:12pt; margin-top:10px; margin-bottom:10px;'>Note- that where a participant is able to transfer in and out of a wheelchair, it is expected that options that allow this transfer are considered first. Where a participant is exploring a vehicle to purchase, it is expected that the vehicle requiring the lowest cost modification, and second hand already modified vehicles which meet the guidelines set out in the NDIS Vehicle Modifications Operational Guideline, are considered first.</p>
-<body>
 <table style='
     border-collapse: collapse;
     width: 100%;
@@ -346,81 +294,40 @@ $section3 = "<table style='background-color:#7209B7; border:none; width:100%;'>
 
         </tr>
         <tr>
-            <td style='border: 1px solid lightslategray; padding: 10px'>
-                1
-            </td>
-            <td style='border: 1px solid lightslategray; padding: 10px'>
-                Field Data
-            </td>
-            <td style='border: 1px solid lightslategray; padding: 10px'>
-                Field Data
-            </td>
-            <td style='border: 1px solid lightslategray; padding: 10px'>
-                Field Data
-            </td>
-            <td style='border: 1px solid lightslategray; padding: 10px'>
-                Field Data
-            </td>
+            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_evaluation_option1}}</td>
+            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_potential_option1}}</td>
+            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_trial_option1}}</td>
+            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_disdvantage1}}</td>
+            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_cost1}}</td>
         </tr>
         <tr>
 
-            <td style='border: 1px solid lightslategray; padding: 10px'>
-                1
-            </td>
-            <td style='border: 1px solid lightslategray; padding: 10px'>
-                Field Data
-            </td>
-            <td style='border: 1px solid lightslategray; padding: 10px'>
-                Field Data
-            </td>
-            <td style='border: 1px solid lightslategray; padding: 10px'>
-                Field Data
-            </td>
-            <td style='border: 1px solid lightslategray; padding: 10px'>
-                Field Data
-            </td>
+            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_evaluation_option2}}</td>
+            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_potential_option2}}</td>
+            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_trial_option2}}</td>
+            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_disdvantage2}}</td>
+            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_cost2}}</td>
         </tr>
         <tr>
 
-            <td style='border: 1px solid lightslategray; padding: 10px'>
-                3
-            </td>
-            <td style='border: 1px solid lightslategray; padding: 10px'>
-                Field Data
-            </td>
-            <td style='border: 1px solid lightslategray; padding: 10px'>
-                Field Data
-            </td>
-            <td style='border: 1px solid lightslategray; padding: 10px'>
-                Field Data
-            </td>
-            <td style='border: 1px solid lightslategray; padding: 10px'>
-                Field Data
-            </td>
+            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_evaluation_option3}}</td>
+            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_potential_option3}}</td>
+            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_trial_option3}}</td>
+            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_disdvantage3}}</td>
+            <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_cost3}}</td>
         </tr>
         <tr>
 
-        <td style='border: 1px solid lightslategray; padding: 10px'>
-            4
-        </td>
-        <td style='border: 1px solid lightslategray; padding: 10px'>
-            Field Data
-        </td>
-        <td style='border: 1px solid lightslategray; padding: 10px'>
-            Field Data
-        </td>
-        <td style='border: 1px solid lightslategray; padding: 10px'>
-            Field Data
-        </td>
-        <td style='border: 1px solid lightslategray; padding: 10px'>
-            Field Data
-        </td>
+        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_evaluation_option4}}</td>
+        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_potential_option4}}</td>
+        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_trial_option4}}</td>
+        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_disdvantage4}}</td>
+        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_con_option_cost4}}</td>
     </tr>
 
     </tbody>
-</table>
-</body>
-<p style='margin-top:10px'></p>
+</table>";
+      $section4 = "<p style='margin-top:10px'></p>
 <table style='background-color:#7209B7; border:none; width:100%;'>
 <tr>
     <td>
@@ -432,28 +339,28 @@ $section3 = "<table style='background-color:#7209B7; border:none; width:100%;'>
 <p style='margin-bottom: 10px'>Description of proposed modification/s including reason for each modification component recommended, and evidence supporting the recommended options as the most suitable/appropriate to assist the participant pursue their goals. Consider long term benefit and future needs, change/adjustment to personal care support need etc).</p>
 <table style='width:100%; border: 1px solid black'>
 <tr>
-    <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'> Text goes here</p></td>
+    <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'>{{part_4_desc_of_eadh_modificaion}}</p></td>
 </tr>
 </table>
 <p style='margin-bottom: 10px;'>All quotes must be itemised to show the cost of the individual components of the recommended modification. The following are attached to this assessment:</p>
 <table style=' width:100%; border: 1px solid black;'>
 <tr>
 <td style='width:80%; background-color: lightgrey;'>At least one quotation for modifications up to $15 000 value. Yes or No</td>
-<td style='width:20%; border: 1px solid black;'></td>
+<td style='width:20%; border: 1px solid black;'>{{part_4_atleat_one_quotation}}</td>
 </tr>
 <tr>
 <td style='width:80%; background-color: lightgrey;'>Two quotations $15 000 value. Yes or No</td>
-<td style='width:20%; border: 1px solid black;'></td>
+<td style='width:20%; border: 1px solid black;'>{{part_4_two_quotations}}</td>
 </tr>
 <tr>
 <td style='width:80%; background-color: lightgrey;'>The above specification is consistent with the preferred option agreed between the participant and the AT assessor. Yes or No</td>
-<td style='width:20%; border: 1px solid black;'></td>
+<td style='width:20%; border: 1px solid black;'>{{part_4_preferred_option_agreed_between_participant_and_at}}</td>
 </tr>
 </table>
 <p style='font-size: 12pt; margin-top:10px: margin-bottom:20px'>(if no, provide details of points of difference) </p>
 <table style='width:100%; border: 1px solid black'>
 <tr>
-    <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'> Text goes here</p></td>
+    <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'>{{part_4_provide_details_of_point_of_difference}}</p></td>
 </tr>
 </table>
 <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'>4.2	Participant seating in vehicle.</p>
@@ -461,42 +368,42 @@ $section3 = "<table style='background-color:#7209B7; border:none; width:100%;'>
 <table style=' width:100%; border: 1px solid black;'>
 <tr>
 <td style='width:80%; background-color: lightgrey; font-size: 17px;'>Participant will be travelling in a car seat: Yes/No  </td>
-<td style='width:20%; border: 1px solid black;'></td>
+<td style='width:20%; border: 1px solid black;'>{{part_4_participant_travelling_in_car_seat}}</td>
 </tr>
 </table>
 <p style='font-size:12pt; margin-top:10px; margin-bottom:10px;'>If yes, give details (e.g. standard or modified, and what Australian Standards you, as the Assessor of the vehicle modification, have adhered to when assessing the car seat (describe the features of the modified car seat and relevant standard)</p>
 <table style=' width:100%; border: 1px solid black;'>
 <tr>
 <td style='width:80%; background-color: lightgrey; font-size: 17px;'>Is the wheelchair to be stowed?</td>
-<td style='width:20%; border: 1px solid black;'></td>
+<td style='width:20%; border: 1px solid black;'>{{part_4_wheelchair_to_be_stowed}}</td>
 </tr>
 <tr>
 <td style='width:80%; background-color: lightgrey; font-size: 17px;'>Will it be stowed by the participant? Yes/No</td>
-<td style='width:20%; border: 1px solid black;'></td>
+<td style='width:20%; border: 1px solid black;'>{{part_4_will_stowed_by_participant}}</td>
 </tr>
 <tr>
 <td style='width:80%; background-color: lightgrey; font-size: 17px;'>Is it able to be appropriately secured? Yes/No</td>
-<td style='width:20%; border: 1px solid black;'></td>
+<td style='width:20%; border: 1px solid black;'>{{part_4_able_to_appropriately_secured}}</td>
 </tr>
 <tr>
 <td style='width:80%; background-color: lightgrey; font-size: 17px;'>Participant will be travelling in a wheelchair: Yes/No</td>
-<td style='width:20%; border: 1px solid black;'></td>
+<td style='width:20%; border: 1px solid black;'>{{part_4_participant_will_be_travelling_in_wheelchair}}</td>
 </tr>
 <tr>
 <td style='width:80%; background-color: lightgrey; font-size: 17px;'>Does this wheelchair meet safety requirements for use in a vehicle in the jurisdiction where the participant lives? Yes/No</td>
-<td style='width:20%; border: 1px solid black;'></td>
+<td style='width:20%; border: 1px solid black;'>{{part_4_wheelchair_meet_safety_requirements}}</td>
 </tr>
 </table>
 <p style='margin-bottom: 10px'>Give details (e.g. headrest; technical details of crash testing of this model; compliant tie- down points/brackets; compliant use of current /proposed vehicle occupant restraint system).</p>
 <table style='width:100%; border: 1px solid black'>
 <tr>
-    <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'> Text goes here</p></td>
+    <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'>{{part_4_give_details_eg_headrest}}</p></td>
 </tr>
 </table>
 <table style=' width:100%; border: 1px solid black;'>
 <tr>
 <td style='width:80%; background-color: lightgrey; font-size: 17px;'>Has the participant been advised of the requirements, relevant information and risks? Yes/No</td>
-<td style='width:20%; border: 1px solid black;'></td>
+<td style='width:20%; border: 1px solid black;'>{{part_4_participant_been_advised_of_requirements}}</td>
 </tr>
 </table>
 <p style='margin-bottom: 10px'>3  A single quote for work above $15 000 may be authorised where other appropriate procurement processes assure the NDIA of value for money</p>
@@ -514,32 +421,20 @@ $section3 = "<table style='background-color:#7209B7; border:none; width:100%;'>
 
 </tr>
 <tr>
-<td style='border: 1px solid lightslategray; padding: 10px; width:50%;'>
-    Field Data
-</td>
-<td style='border: 1px solid lightslategray; padding: 10px; width:50%;'>
-    Field Data
-</td>
+<td style='border: 1px solid lightslategray; padding: 10px; width:50%;'>{{part_4_factor_issue1}}</td>
+<td style='border: 1px solid lightslategray; padding: 10px; width:50%;'>{{part_4_mitigation_option1}}</td>
 
 </tr>
 <tr>
 
-<td style='border: 1px solid lightslategray; padding: 10px; width:50%;'>
-    Field Data
-</td>
-<td style='border: 1px solid lightslategray; padding: 10px; width:50%;'>
-    Field Data
-</td>
+<td style='border: 1px solid lightslategray; padding: 10px; width:50%;'>{{part_4_factor_issue2}}</td>
+<td style='border: 1px solid lightslategray; padding: 10px; width:50%;'>{{part_4_mitigation_option2}}</td>
 
 </tr>
 <tr>
 
-<td style='border: 1px solid lightslategray; padding: 10px; width:50%;'>
-    Field Data
-</td>
-<td style='border: 1px solid lightslategray; padding: 10px; width:50%;'>
-    Field Data
-</td>
+<td style='border: 1px solid lightslategray; padding: 10px; width:50%;'>{{part_4_factor_issue3}}</td>
+<td style='border: 1px solid lightslategray; padding: 10px; width:50%;'>{{part_4_mitigation_option3}}</td>
 
 </tr>
 </tbody>
@@ -547,17 +442,14 @@ $section3 = "<table style='background-color:#7209B7; border:none; width:100%;'>
 <table style=' width:100%; border: 1px solid black;'>
 <tr>
 <td style='width:80%; background-color: lightgrey; font-size: 17px;'>Is the participant at immediate safety or other risk? Yes or No</td>
-<td style='width:20%; border: 1px solid black;'></td>
+<td style='width:20%; border: 1px solid black;'>{{part_4_participant_at_immediate_risk_or_safety}}</td>
 </tr>
-</table>";
+</table>
 
-
-
-
-$section4 = "<p style='margin-top:10px; font-size:12pt;'>If yes, describe any identified short-term recommendations</p>
+       <p style='margin-top:10px; font-size:12pt;'>If yes, describe any identified short-term recommendations</p>
                 <table style='width:100%; border: 1px solid black'>
                     <tr>
-                        <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'> Text goes here</p></td>
+                        <td style='width: 100%; border: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px;'>{{part_4_if_yes_describe_any_identified_short_term_recommendations}}</p></td>
                     </tr>
                 </table>
                 <p style='font-weight:bold; font-size:13pt; margin-top:20px; margin-bottom:20px;'>4.4	Describe any additional features requested by the participant unlikely to meet Sect 34. criteria and be assessed as reasonable and necessary?</p>
@@ -574,22 +466,14 @@ $section4 = "<p style='margin-top:10px; font-size:12pt;'>If yes, describe any id
                 
                 </tr>
                 <tr>
-                    <td style='border: 1px solid lightslategray; padding: 10px; width:50%;'>
-                        Field Data
-                    </td>
-                    <td style='border: 1px solid lightslategray; padding: 10px; width:50%;'>
-                        Field Data
-                    </td>
+                    <td style='border: 1px solid lightslategray; padding: 10px; width:50%;'>{{part_4_item1}}</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px; width:50%;'>{{part_4_cost1}}</td>
                 
                 </tr>
                 <tr>
 
-                    <td style='border: 1px solid lightslategray; padding: 10px; width:50%;'>
-                        Field Data
-                    </td>
-                    <td style='border: 1px solid lightslategray; padding: 10px; width:50%;'>
-                        Field Data
-                    </td>
+                    <td style='border: 1px solid lightslategray; padding: 10px; width:50%;'>{{part_4_item2}}</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px; width:50%;'>{{part_4_cost2}}</td>
                 
                 </tr>
                 <tr>
@@ -597,9 +481,7 @@ $section4 = "<p style='margin-top:10px; font-size:12pt;'>If yes, describe any id
                     <td style='background-color: lightgrey; border: 1px solid lightslategray; padding: 10px; width:50%;'>
                     Does the participant agree to self-fund these items? Yes or No
                     </td>
-                    <td style='border: 1px solid lightslategray; padding: 10px; width:50%;'>
-                        Field Data
-                    </td>
+                    <td style='border: 1px solid lightslategray; padding: 10px; width:50%;'>{{part_4_participant_to_self_fund_these_items}}</td>
                 </tr>
                 </tbody>
                 </table>
@@ -608,22 +490,16 @@ $section4 = "<p style='margin-top:10px; font-size:12pt;'>If yes, describe any id
                 <table style=' width:100%; border: 1px solid black;'>
                 <tr>
                 <td style='width:80%; background-color: lightgrey; font-size: 17px;'>Will the participant have comprehensive vehicle insurance to cover repairs or replacement of the vehicle and vehicle modifications in the event of accidents or theft? Yes or No</td>
-                <td style='width:20%; border: 1px solid black;'></td>
+                <td style='width:20%; border: 1px solid black;'>{{part_4_participant__has_comprehensive_vehicle_insurance}}</td>
                 </tr>
                 <tr>
                 <td style='width:80%; background-color: lightgrey; font-size: 17px;'>Is the participant aware that maintenance of the vehicle, including vehicle features not related to the disability modification, are not the responsibility of the NDIS to fund as they are an everyday living cost e.g. engine, exterior and non-disability specific interior features are considered an everyday cost under Section 34(1)(e)?  Yes or No</td>
-                <td style='width:20%; border: 1px solid black;'></td>
+                <td style='width:20%; border: 1px solid black;'>{{part_4_participant_aware_that_maintenance_of_the_vehicle}}</td>
                 </tr>
                 </table>
                 <p style='margin-top:10px'></p>";
 
-
-
-
-
-
-
-$section5 = "<table style='background-color:#7209B7; border:none; width:100%;'>
+      $section5 = "<table style='background-color:#7209B7; border:none; width:100%;'>
             <tr>
                 <td>
                     <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'>PART 5 – Details of Assistive Technology Assessor</p>
@@ -635,19 +511,19 @@ $section5 = "<table style='background-color:#7209B7; border:none; width:100%;'>
             <table style=' width:100%; border: 1px solid black;'>
             <tr>
             <td style='width:80%; background-color: lightgrey; font-size: 17px;'>I certify that I meet the NDIA expectations of AT assessor provider suitability (including understanding of the current NDIS Act, Rules and Operational Guidelines) to assess the type of assistive technology and associated supports, at the level of complexity required by this participant.</td>
-            <td style='width:20%; border: 1px solid black;'></td>
+            <td style='width:20%; border: 1px solid black;'>{{part_5_declaration_NDIA_expectation}}</td>
             </tr>
             <tr>
             <td style='width:80%; background-color: lightgrey; font-size: 17px;'>I will provide appropriate evidence to the NDIA and/or NDIS Quality and Safeguards Commission if and as requested.</td>
-            <td style='width:20%; border: 1px solid black;'></td>
+            <td style='width:20%; border: 1px solid black;'>{{part_5_declaration_appropriate_evidence}}</td>
             </tr>
             <tr>
             <td style='width:80%; background-color: lightgrey; font-size: 17px;'>I understand and acknowledge that the NDIA and participant will rely on my professional advice to select, source and implement this assistive technology.</td>
-            <td style='width:20%; border: 1px solid black;'></td>
+            <td style='width:20%; border: 1px solid black;'>{{part_5_declaration_NDIA_understanding}}</td>
             </tr>
             <tr>
             <td style='width:80%; background-color: lightgrey; font-size: 17px;'>This assistive technology has been assessed by the treating multi-disciplinary team and I have completed the AT assessment on behalf of that team.</td>
-            <td style='width:20%; border: 1px solid black;'></td>
+            <td style='width:20%; border: 1px solid black;'>{{part_5_declaration_accessing_team}}</td>
             </tr>
             </table>
             <p style='margin-top:10px'></p>
@@ -664,57 +540,39 @@ $section5 = "<table style='background-color:#7209B7; border:none; width:100%;'>
             <tbody>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Name</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_assessors_name}}</td>
                 </tr>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>NDIS Provider Registration number (where applicable)</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_provider_registration_number}}</td>
                 </tr>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Phone</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_assessorphone_number}}</td>
                 </tr>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Email</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_email_address}}</td>
                 </tr>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Signature</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
+                <td style='border: 1px solid lightslategray; padding: 10px'></td>
                 </tr>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Qualification</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_qualification}}</td>
                 </tr>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Date of Assessment(s)</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_date_assessment}}</td>
                 </tr>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Date of Report</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_reportDate}}</td>
                 </tr>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>State/territory where accredited.t</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_statewhere_accredited}}</td>
                 </tr>
             </tbody>
             </table>
@@ -731,57 +589,39 @@ $section5 = "<table style='background-color:#7209B7; border:none; width:100%;'>
             <tbody>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Name</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_vehiclemodifiers_name}}</td>
                 </tr>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>NDIS Provider Registration number (where applicable)</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_vehiclemodifiersndisproviderregistration_number}}</td>
                 </tr>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Phone</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_vehiclemodifiersphone_number}}</td>
                 </tr>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Email</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_vehiclemodifiersemail_address}}</td>
                 </tr>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Signature</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
+                <td style='border: 1px solid lightslategray; padding: 10px'></td>
                 </tr>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Qualification</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_vehiclemodifiersqualification}}</td>
                 </tr>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Date of Assessment(s)</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_vehiclemodifiersdate_assessment}}</td>
                 </tr>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Date of Report</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_vehiclemodifiersreportDate}}</td>
                 </tr>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>State/territory where accredited.t</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>
-                    Field Data
-                </td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_vehiclemodifiersstatewhere_accredited}}</td>
                 </tr>
             </tbody>
             </table>";
@@ -791,7 +631,7 @@ $section5 = "<table style='background-color:#7209B7; border:none; width:100%;'>
 
 
 
-  $section6 = "<p style='margin-top:10px'></p>
+      $section6 = "<p style='margin-top:10px'></p>
                 <table style='background-color:#7209B7; border:none; width:100%;'>
                 <tr>
                     <td>
@@ -806,22 +646,22 @@ $section5 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                 <table style=' width:100%; border: 1px solid black;'>
                 <tr>
                 <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Yes, I consent</td>
-                <td style='width:60%; border: 1px solid black;'></td>
+                <td style='width:60%; border: 1px solid black;'>{{part_6_yes_consent}}</td>
                 </tr>
                 <tr>
                 <td style='width:40%; background-color: lightgrey; font-size: 17px;'>No, I do not consent</td>
-                <td style='width:60%; border: 1px solid black;'></td>
+                <td style='width:60%; border: 1px solid black;'>{{part_6_noidonot_consent}}</td>
                 </tr>
                 </table>
                 <p style='margin-bottom: 10px'>Participant’s Signature</p>
                 <table style=' width:100%; border: 1px solid black;'>
                 <tr>
                 <td style='width:80%; background-color: lightgrey; font-size: 17px;'>I understand that I am giving consent to the NDIA to do the things with my information set out in this section. I understand that I can withdraw my consent for the NDIS to do things with my information at any time by letting the NDIA know.</td>
-                <td style='width:20%; border: 1px solid black;'></td>
+                <td style='width:20%; border: 1px solid black;'>{{part_6_iunderstandthatiamgivingconsenttothe_NDIA}}</td>
                 </tr>
                 <tr>
                 <td style='width:80%; background-color: lightgrey; font-size: 17px;'>I understand that I can access the NDIA’s Privacy Notice and Privacy Policy on the NDIA website or by contacting the NDIA.</td>
-                <td style='width:20%; border: 1px solid black;'></td>
+                <td style='width:20%; border: 1px solid black;'>{{part_6_iunderstandthaticanaccesstheNDIAsprivacy_notice}}</td>
                 </tr>
                 </table>
                 <table style=' width:100%; border: 1px solid black;'>
@@ -831,11 +671,11 @@ $section5 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                 </tr>
                 <tr>
                 <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Full name</td>
-                <td style='width:60%; border: 1px solid black;'></td>
+                <td style='width:60%; border: 1px solid black;'>{{part_6_signaturersfull_name}}</td>
                 </tr>
                 <tr>
                 <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Date</td>
-                <td style='width:60%; border: 1px solid black;'></td>
+                <td style='width:60%; border: 1px solid black;'>{{part_6_signaturers_date}}</td>
                 </tr>
                 </table>
                 <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'>If you have signed this Form on behalf of the NDIS participant,</p>
@@ -848,18 +688,19 @@ $section5 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                 </tr>
                 <tr>
                 <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Date</td>
-                <td style='width:60%; border: 1px solid black;'></td>
+                <td style='width:60%; border: 1px solid black;'>{{part_6_signaturersonbefalfofparticipant_date}}</td>
                 </tr>
                 <tr>
                 <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Full Name of person completing this form (please print):</td>
-                <td style='width:60%; border: 1px solid black;'></td>
+                <td style='width:60%; border: 1px solid black;'>{{part_6_fullnameofpersoncompletingthis_form}}</td>
                 </tr>
                 <tr>
                 <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Relationship to participant</td>
-                <td style='width:60%; border: 1px solid black;'></td>
+                <td style='width:60%; border: 1px solid black;'>{{part_6_relationshiptoparticipant}}</td>
                 </tr>
                 </table>";
 
+<<<<<<< HEAD
 
                $form_fields1 = '[
                             {"type":"text","required":false,"label":"Name<br>","placeholder":"Enter Name","className":"form-control","name":"NIDS_name","access":false,"subtype":"text"},
@@ -1018,4 +859,1330 @@ $section5 = "<table style='background-color:#7209B7; border:none; width:100%;'>
 
 
     }
+=======
+      $form_fields = '[
+                                {
+                                "type":"text",
+                                "required":false,
+                                "label":"Full Name",
+                                "placeholder":"Enter Your Full Name",
+                                "className":"form-control",
+                                "name":"part_1_ndis_name",
+                                "access":false,
+                                "subtype":"text"
+                                },
+                                {
+                                "type":"date",
+                                "required":false,
+                                "label":"Date of Birth",
+                                "placeholder":"Enter Your Date of Birth",
+                                "className":"form-control",
+                                "name":"part_1_ndis_date_of_birth",
+                                "access":false,
+                                "subtype":"text"
+                                },
+                                {
+                                "type":"text",
+                                "required":false,
+                                "label":"Age",
+                                "placeholder":"Enter Your Age",
+                                "className":"form-control",
+                                "name":"part_1_ndis_age",
+                                "access":false,
+                                "subtype":"text"
+                                },
+                                {
+                                "type":"text",
+                                "required":false,
+                                "label":"NDIS Number",
+                                "placeholder":"Enter Your NDIS Number",
+                                "className":"form-control",
+                                "name":"part_1_ndis_participantndis_number",
+                                "access":false,
+                                "subtype":"text"
+                                },
+                                {
+                                "type":"text",
+                                "required":false,
+                                "label":"Address",
+                                "placeholder":"Enter Your Address",
+                                "className":"form-control",
+                                "name":"part_1_ndis_participant_address",
+                                "access":false,
+                                "subtype":"text"
+                                },
+                                {
+                                "type":"text",
+                                "required":false,
+                                "label":"Phone Number",
+                                "placeholder":"Enter Your Phone Number",
+                                "className":"form-control",
+                                "name":"part_1_ndis_participantphone_number",
+                                "access":false,
+                                "subtype":"text"
+                                },
+                                {
+                                "type":"email",
+                                "required":false,
+                                "label":"Email",
+                                "placeholder":"Enter Your Email",
+                                "className":"form-control",
+                                "name":"part_1_ndis_participant_email",
+                                "access":false,
+                                "subtype":"text"
+                                },
+                                {
+                                "type":"text",
+                                "required":false,
+                                "label":"Preferred Contact Method",
+                                "placeholder":"Enter Your Preferred Contact Method",
+                                "className":"form-control",
+                                "name":"part_1_ndis_participant_preferredcontact",
+                                "access":false,
+                                "subtype":"text"
+                                },
+                                {
+                                "type":"text",
+                                "required":false,
+                                "label":"Nominee or Guardian Name",
+                                "placeholder":"Enter Your Nominee or Guardian Name",
+                                "className":"form-control",
+                                "name":"part_1_ndis_participantguardian_name",
+                                "access":false,
+                                "subtype":"text"
+                                },
+                                {
+                                "type":"text",
+                                "required":false,
+                                "label":"Nominee or Guardian Phone",
+                                "placeholder":"Enter Your Nominee or Guardian Phone",
+                                "className":"form-control",
+                                "name":"part_1_ndis_participantguardian_phone",
+                                "access":false,
+                                "subtype":"text"
+                                },
+                                {
+                                "type":"text",
+                                "required":false,
+                                "label":"NDIS Coordinator",
+                                "placeholder":"Enter Your NDIS Coordinator",
+                                "className":"form-control",
+                                "name":"part_1_plan_management_ndis_coordinator",
+                                "access":false,
+                                "subtype":"text"
+                                },
+                                {
+                                "type":"text",
+                                "required":false,
+                                "label":"Contact Details",
+                                "placeholder":"Enter Contact Details",
+                                "className":"form-control",
+                                "name":"part_1_ndis_participantcontact_details",
+                                "access":false,
+                                "subtype":"text"
+                                },
+                                {
+                                "type":"text",
+                                "required":false,
+                                "label":"Agency Managed",
+                                "placeholder":"Enter Agency Managed",
+                                "className":"form-control",
+                                "name":"part_1_ndis_agency_managed",
+                                "access":false,
+                                "subtype":"text"
+                                },
+                                {
+                                "type":"text",
+                                "required":false,
+                                "label":"Self-Managed",
+                                "placeholder":"Enter Self Managed",
+                                "className":"form-control",
+                                "name":"part_1_ndis_self_managed",
+                                "access":false,
+                                "subtype":"text"
+                                },
+                                {
+                                "type":"text",
+                                "required":false,
+                                "label":"Registered Plan Management Provider",
+                                "placeholder":"Enter Registered Plan Management Provider",
+                                "className":"form-control",
+                                "name":"part_1_ndis_registeredplanmanagement_provider",
+                                "access":false,
+                                "subtype":"text"
+                                },
+                                {
+                                "type":"text",
+                                "required":false,
+                                "label":"Contact Details",
+                                "placeholder":"Enter Registered Plan Management Provider Contact Details",
+                                "className":"form-control",
+                                "name":"part_1_ndis_registeredplanmanagementcontact_details",
+                                "access":false,
+                                "subtype":"text"
+                                }
+                                ]';
+      $form_fields2 = '[
+                                    {
+                                    "type":"text",
+                                    "required":false,
+                                    "label":"Background",
+                                    "placeholder":"Enter Your Background",
+                                    "className":"form-control",
+                                    "name":"part_2_assesment_background",
+                                    "access":false,
+                                    "subtype":"text"
+                                    },
+                                    {
+                                    "type":"text",
+                                    "required":false,
+                                    "label":"Participant Goals",
+                                    "placeholder":"Enter Your Participant Goals",
+                                    "className":"form-control",
+                                    "name":"part_2_assesment_participantgoals",
+                                    "access":false,
+                                    "subtype":"text"
+                                    },
+                                    {
+                                    "type":"text",
+                                    "required":false,
+                                    "label":"Functional Assessment",
+                                    "placeholder":"Enter Functional Assessment",
+                                    "className":"form-control",
+                                    "name":"part_2_assesment_functional_assessment",
+                                    "access":false,
+                                    "subtype":"text"
+                                    },
+                                    {
+                                    "type":"text",
+                                    "required":false,
+                                    "label":"Height in cm",
+                                    "placeholder":"Enter Height in cm",
+                                    "className":"form-control",
+                                    "name":"part_2_height_in_cm",
+                                    "access":false,
+                                    "subtype":"text"
+                                    },
+                                    {
+                                    "type":"text",
+                                    "required":false,
+                                    "label":"Weight in KG",
+                                    "placeholder":"Enter Weight in KG",
+                                    "className":"form-control",
+                                    "name":"part_2_weight_in_kg",
+                                    "access":false,
+                                    "subtype":"text"
+                                    },
+                                    {
+                                    "type":"textarea",
+                                    "required":false,
+                                    "label":"Wheelchair Specifications",
+                                    "placeholder":"Enter Wheelchair Specifications",
+                                    "className":"form-control",
+                                    "name":"part_2_wheelchair_specifications",
+                                    "access":false,
+                                    "subtype":"text"
+                                    },
+                                    {
+                                    "type":"textarea",
+                                    "required":false,
+                                    "label":"Support Options",
+                                    "placeholder":"Enter Support Options",
+                                    "className":"form-control",
+                                    "name":"part_2_support_options",
+                                    "access":false,
+                                    "subtype":"text"
+                                    },
+                                    {
+                                    "type":"textarea",
+                                    "required":false,
+                                    "label":"Participant’s Current Driving Status",
+                                    "placeholder":"Enter Participant’s Current driving status",
+                                    "className":"form-control",
+                                    "name":"part_2_participant’scurrentdriving_status",
+                                    "access":false,
+                                    "subtype":"text"
+                                    },
+                                    {
+                                       "type":"checkbox-group",
+                                       "required":false,
+                                       "label":"Evidence is required and has been attached",
+                                       "toggle":false,
+                                       "inline":false,
+                                       "name":"part_4_evidence_is_required_and_has_been_attached",
+                                       "access":false,
+                                       "other":false,
+                                       "values":[
+                                          {
+                                             "label":"Option 1",
+                                             "value":"option-1",
+                                             "selected":true
+                                          }
+                                       ]
+                                    },
+                                    {
+                                       "type":"checkbox-group",
+                                       "required":false,
+                                       "label":"Participant is the vehicle passenger only",
+                                       "toggle":false,
+                                       "inline":false,
+                                       "name":"part_4_participant_is_the_vehicle_passenger_only",
+                                       "access":false,
+                                       "other":false,
+                                       "values":[
+                                          {
+                                             "label":"Option 1",
+                                             "value":"option-1",
+                                             "selected":true
+                                          }
+                                       ]
+                                    },
+                                    {
+                                    "type":"textarea",
+                                    "required":false,
+                                    "label":"Dimensions of the Vehicle Interior",
+                                    "placeholder":"Enter Dimensions of the Vehicle Interior",
+                                    "className":"form-control",
+                                    "name":"part_2_dimensionsofthevehicle_interior",
+                                    "access":false,
+                                    "subtype":"text"
+                                    },
+                                    {
+                                    "type":"textarea",
+                                    "required":false,
+                                    "label":"Relation To Vehicle Access and Transport",
+                                    "placeholder":"Enter Relation To Vehicle Access and Transport",
+                                    "className":"form-control",
+                                    "name":"part_2_relationtovehicleaccessandtransport",
+                                    "access":false,
+                                    "subtype":"text"
+                                    },
+                                    {
+                                    "type":"text",
+                                    "required":false,
+                                    "label":"Make/Model",
+                                    "placeholder":"Enter Make/Model",
+                                    "className":"form-control",
+                                    "name":"part_2_make_model",
+                                    "access":false,
+                                    "subtype":"text"
+                                    },
+                                    {
+                                    "type":"text",
+                                    "required":false,
+                                    "label":"Year of Manufacture",
+                                    "placeholder":"Enter Year of Manufacture",
+                                    "className":"form-control",
+                                    "name":"part_2_yearofmanufacture",
+                                    "access":false,
+                                    "subtype":"text"
+                                    },
+                                    {
+                                    "type":"text",
+                                    "required":false,
+                                    "label":"Current kilometres travelled",
+                                    "placeholder":"Enter Current kilometres travelled",
+                                    "className":"form-control",
+                                    "name":"part_2_currentkilometres_travelled",
+                                    "access":false,
+                                    "subtype":"text"
+                                    },
+                                    {
+                                    "type":"date",
+                                    "required":false,
+                                    "label":"Ownership and date of purchase",
+                                    "placeholder":"Enter Ownership  of the vehicle and date of purchase",
+                                    "className":"form-control",
+                                    "name":"part_2_ownershipanddateof_purchase",
+                                    "access":false,
+                                    "subtype":"text"
+                                    },
+                                    {
+                                    "type":"text",
+                                    "required":false,
+                                    "label":"Permission of the owner of the vehicle for proposed modifications",
+                                    "placeholder":"Permission of the owner of the vehicle for proposed modifications",
+                                    "className":"form-control",
+                                    "name":"part_2_permissionoftheownerforproposed_modifications",
+                                    "access":false,
+                                    "subtype":"text"
+                                    }
+                                    ,
+                                    {
+                                    "type":"text",
+                                    "required":false,
+                                    "label":"How frequently does the participant have access to this vehicle",
+                                    "placeholder":"How frequently does the participant have access to this vehicle?",
+                                    "className":"form-control",
+                                    "name":"part_2_participanthaveaccesstothis_vehicle",
+                                    "access":false,
+                                    "subtype":"text"
+                                    }
+                                    ,
+                                    {
+                                    "type":"checkbox-group",
+                                    "required":false,
+                                    "label":"Evidence of road worthiness",
+                                    "className":"form-control",
+                                    "name":"part_2_evidenceofroad_worthiness",
+                                    "access":false,
+                                    "subtype":"text"
+                                    }
+                                    ,
+                                    {
+                                    "type":"text",
+                                    "required":false,
+                                    "label":"Age and condition of the modification",
+                                    "placeholder":"Enter Age and condition of the modification",
+                                    "className":"form-control",
+                                    "name":"part_2_ageandconditionofthe_modification",
+                                    "access":false,
+                                    "subtype":"text"
+                                    }
+                                    ,
+                                    {
+                                    "type":"checkbox-group",
+                                    "required":false,
+                                    "label":"Evidence of the age and condition of the modification",
+                                    "className":"form-control",
+                                    "name":"part_2_evidenceoftheageandconditionofthe_modification",
+                                    "access":false,
+                                    "subtype":"text"
+                                    }
+                                    ,
+                                    {
+                                    "type":"text",
+                                    "required":false,
+                                    "label":"Vehicle is imported",
+                                    "placeholder":"Enter vehicle is imported",
+                                    "className":"form-control",
+                                    "name":"part_2_vehicleis_imported",
+                                    "access":false,
+                                    "subtype":"text"
+                                    }
+                                    ,
+                                    {
+                                    "type":"checkbox-group",
+                                    "required":false,
+                                    "label":"Evidence that the vehicle (as modified) meets the requirements for registration",
+                                    "className":"form-control",
+                                    "name":"part_2_vehiclemeetsthe_requirements",
+                                    "access":false,
+                                    "subtype":"text"
+                                    }
+                                    ]';
+      $form_fields3 = '[
+            {
+               "type":"text",
+               "required":false,
+               "label":"Evaluation_optionTextField",
+               "placeholder":"Enter option",
+               "className":"form-control",
+               "name":"part_3_con_option_evaluation_option1",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Evaluation_optionTextField",
+               "placeholder":"Enter option",
+               "className":"form-control",
+               "name":"part_3_con_option_evaluation_option2",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Evaluation_optionTextField",
+               "placeholder":"Enter option",
+               "className":"form-control",
+               "name":"part_3_con_option_evaluation_option3",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Evaluation_optionTextField",
+               "placeholder":"Enter option",
+               "className":"form-control",
+               "name":"part_3_con_option_evaluation_option4",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Evaluation_optionTextField",
+               "placeholder":"Enter Potential Option",
+               "className":"form-control",
+               "name":"part_3_con_option_potential_option1",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Evaluation_optionTextField",
+               "placeholder":"Enter Potential Option",
+               "className":"form-control",
+               "name":"part_3_con_option_potential_option2",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Evaluation_optionTextField",
+               "placeholder":"Enter Potential Option",
+               "className":"form-control",
+               "name":"part_3_con_option_potential_option3",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Evaluation_optionTextField",
+               "placeholder":"Enter Potential Option",
+               "className":"form-control",
+               "name":"part_3_con_option_potential_option4",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Evaluation_optionTextField",
+               "placeholder":"Enter Trial Details",
+               "className":"form-control",
+               "name":"part_3_con_option_trial_option1",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Evaluation_optionTextField",
+               "placeholder":"Enter Trial Details",
+               "className":"form-control",
+               "name":"part_3_con_option_trial_option2",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Evaluation_optionTextField",
+               "placeholder":"Enter Trial Details",
+               "className":"form-control",
+               "name":"part_3_con_option_trial_option3",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Evaluation_optionTextField",
+               "placeholder":"Enter Trial Details",
+               "className":"form-control",
+               "name":"part_3_con_option_trial_option4",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Evaluation_optionTextField",
+               "placeholder":"Enter Disadvantage",
+               "className":"form-control",
+               "name":"part_3_con_option_disdvantage1",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Evaluation_optionTextField",
+               "placeholder":"Enter Disadvantage",
+               "className":"form-control",
+               "name":"part_3_con_option_disdvantage2",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Evaluation_optionTextField",
+               "placeholder":"Enter Disadvantage",
+               "className":"form-control",
+               "name":"part_3_con_option_disdvantage3",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Evaluation_optionTextField",
+               "placeholder":"Enter Disadvantage",
+               "className":"form-control",
+               "name":"part_3_con_option_disdvantage4",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Cost (include training)",
+               "placeholder":"Enter Cost (include training)",
+               "className":"form-control",
+               "name":"part_3_con_option_cost1",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Cost (include training)",
+               "placeholder":"Enter Cost (include training)",
+               "className":"form-control",
+               "name":"part_3_con_option_cost2",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Cost (include training)",
+               "placeholder":"Enter Cost (include training)",
+               "className":"form-control",
+               "name":"part_3_con_option_cost3",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Cost (include training)",
+               "placeholder":"Enter Cost (include training)",
+               "className":"form-control",
+               "name":"part_3_con_option_cost4",
+               "access":false,
+               "subtype":"text"
+            }
+         ]';
+
+      $form_fields4 = '[
+            {
+               "type":"textarea",
+               "required":false,
+               "label":"Description of proposed modification/s including reason for each modification",
+               "placeholder":"Description of proposed modification/s including reason for each modification",
+               "className":"form-control",
+               "name":"part_4_desc_of_eadh_modificaion",
+               "access":false,
+               "subtype":"textarea"
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"At least one quotation for modifications up to $15 000 value",
+               "className":"form-control",
+               "name":"part_4_atleat_one_quotation",
+               "access":false,
+               "subtype":"textarea"
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"Two quotations $15 000 value",
+               "className":"form-control",
+               "name":"part_4_two_quotations",
+               "access":false,
+               "subtype":"textarea"
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"The above specification is consistent with the preferred option agreed between the participant and the AT assessor",
+               "className":"form-control",
+               "name":"part_4_preferred_option_agreed_between_participant_and_at",
+               "access":false,
+               "subtype":"textarea"
+            },
+            {
+               "type":"textarea",
+               "required":false,
+               "label":"if no, provide details of points of difference",
+               "placeholder":"if no, provide details of points of difference",
+               "className":"form-control",
+               "name":"part_4_provide_details_of_point_of_difference",
+               "access":false,
+               "subtype":"textarea"
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"Participant will be travelling in a car seat",
+               "className":"form-control",
+               "name":"part_4_participant_travelling_in_car_seat",
+               "access":false,
+               "subtype":"textarea"
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"Is the wheelchair to be stowed",
+               "className":"form-control",
+               "name":"part_4_wheelchair_to_be_stowed",
+               "access":false,
+               "subtype":"textarea"
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"Will it be stowed by the participant?",
+               "className":"form-control",
+               "name":"part_4_will_stowed_by_participant",
+               "access":false,
+               "subtype":"textarea"
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"Is it able to be appropriately secured",
+               "className":"form-control",
+               "name":"part_4_able_to_appropriately_secured",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"Participant will be travelling in a wheelchair",
+               "className":"form-control",
+               "name":"part_4_participant_will_be_travelling_in_wheelchair",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"Does this wheelchair meet safety requirements",
+               "className":"form-control",
+               "name":"part_4_wheelchair_meet_safety_requirements",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"textarea",
+               "required":false,
+               "label":"Give details (e.g. headrest; technical details of crash testing of this model; compliant tie- down points/brackets; compliant use of current /proposed vehicle occupant restraint system)",
+               "placeholder":"Give details (e.g. headrest; technical details of crash testing of this model; compliant tie- down points/brackets; compliant use of current /proposed vehicle occupant restraint system)",
+               "className":"form-control",
+               "name":"part_4_give_details_eg_headrest",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"Has the participant been advised of the requirements, relevant information and risks",
+               "className":"form-control",
+               "name":"part_4_participant_been_advised_of_requirements",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Factor Issues 1",
+               "placeholder":"Factor Issues 1",
+               "className":"form-control",
+               "name":"part_4_factor_issue1",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Factor Issues 2",
+               "placeholder":"Factor Issues 2",
+               "className":"form-control",
+               "name":"part_4_factor_issue2",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Factor Issues 3",
+               "placeholder":"Factor Issues 3",
+               "className":"form-control",
+               "name":"part_4_factor_issue3",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Mitigation / Option 1",
+               "placeholder":"Mitigation / Option 1",
+               "className":"form-control",
+               "name":"part_4_mitigation_option1",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Mitigation / Option 2",
+               "placeholder":"Mitigation / Option 2",
+               "className":"form-control",
+               "name":"part_4_mitigation_option2",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Mitigation / Option 3",
+               "placeholder":"Mitigation / Option 3",
+               "className":"form-control",
+               "name":"part_4_mitigation_option3",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"Is the participant at immediate safety or other risk",
+               "toggle":false,
+               "inline":false,
+               "name":"part_4_participant_at_immediate_risk_or_safety",
+               "access":false,
+               "other":false,
+               "values":[
+                  {
+                     "label":"Option 1",
+                     "value":"option-1",
+                     "selected":true
+                  }
+               ]
+            },
+            {
+               "type":"textarea",
+               "required":false,
+               "label":"If yes, describe any identified short-term recommendations",
+               "placeholder":"If yes, describe any identified short-term recommendations",
+               "className":"form-control",
+               "name":"part_4_if_yes_describe_any_identified_short_term_recommendations",
+               "access":false,
+               "subtype":"textarea"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Item 1",
+               "placeholder":"Enter Item 1",
+               "className":"form-control",
+               "name":"part_4_item1",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Item 2",
+               "placeholder":"Enter Item 2",
+               "className":"form-control",
+               "name":"part_4_item2",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Cost 1",
+               "placeholder":"Enter Cost 1",
+               "className":"form-control",
+               "name":"part_4_cost1",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Cost 2",
+               "placeholder":"Enter Cost 2",
+               "className":"form-control",
+               "name":"part_4_cost2",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"Does the participant agree to self-fund these items",
+               "toggle":false,
+               "inline":false,
+               "name":"part_4_participant_to_self_fund_these_items",
+               "access":false,
+               "other":false,
+               "values":[
+                  {
+                     "label":"Option 1",
+                     "value":"option-1",
+                     "selected":true
+                  }
+               ]
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"Will the participant have comprehensive vehicle insurance to cover repairs or replacement",
+               "toggle":false,
+               "inline":false,
+               "name":"part_4_participant__has_comprehensive_vehicle_insurance",
+               "access":false,
+               "other":false,
+               "values":[
+                  {
+                     "label":"Option 1",
+                     "value":"option-1",
+                     "selected":true
+                  }
+               ]
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"Is the participant aware that maintenance of the vehicle",
+               "toggle":false,
+               "inline":false,
+               "name":"part_4_participant_aware_that_maintenance_of_the_vehicle",
+               "access":false,
+               "other":false,
+               "values":[
+                  {
+                     "label":"Option 1",
+                     "value":"option-1",
+                     "selected":true
+                  }
+               ]
+            }
+         ]';
+
+      $form_fields5 = '[
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"Meet the NDIA expectation",
+               "toggle":false,
+               "inline":false,
+               "name":"part_5_declaration_NDIA_expectation",
+               "access":false,
+               "other":false,
+               "values":[
+                  {
+                     "label":"YES/NO",
+                     "value":"option-1",
+                     "selected":true
+                  }
+               ]
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"Providing appropriate evidence to the NDIA",
+               "toggle":false,
+               "inline":false,
+               "name":"part_5_declaration_appropriate_evidence",
+               "access":false,
+               "other":false,
+               "values":[
+                  {
+                     "label":"YES/NO",
+                     "value":"option-1",
+                     "selected":true
+                  }
+               ]
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"I understand all about the NDIA",
+               "toggle":false,
+               "inline":false,
+               "name":"part_5_declaration_NDIA_understanding",
+               "access":false,
+               "other":false,
+               "values":[
+                  {
+                     "label":"YES/NO",
+                     "value":"option-1",
+                     "selected":false
+                  }
+               ]
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"Accessing by the treating multi-disciplinary team",
+               "toggle":false,
+               "inline":false,
+               "name":"part_5_declaration_accessing_team",
+               "access":false,
+               "other":false,
+               "values":[
+                  {
+                     "label":"YES/NO",
+                     "value":"option-1",
+                     "selected":false
+                  }
+               ]
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Assessor’s Name",
+               "placeholder":"Enter Assessor’s Name",
+               "className":"form-control",
+               "name":"part_5_assessors_name",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Assessor’s NDIS Provider Registration Number",
+               "placeholder":"Enter Assessor’s NDIS Provider Registration Number",
+               "className":"form-control",
+               "name":"part_5_provider_registration_number",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Assessor’s Phone Number",
+               "placeholder":"Enter Assessor’s Phone Number",
+               "className":"form-control",
+               "name":"part_5_assessorphone_number",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"email",
+               "subtype":"email",
+               "required":false,
+               "label":"Assessor’s Email",
+               "placeholder":"Enter Assessor’s Email Address",
+               "className":"form-control",
+               "name":"part_5_email_address",
+               "access":false
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Assessor’s Qualification",
+               "placeholder":"Enter Assessor’s Qualification",
+               "className":"form-control",
+               "name":"part_5_qualification",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"date",
+               "required":false,
+               "label":"Assessor’s Date of Assessment",
+               "placeholder":"Set Assessor’s Date of Assessment",
+               "className":"form-control",
+               "name":"part_5_date_assessment",
+               "access":false
+            },
+            {
+               "type":"date",
+               "required":false,
+               "label":"Assessor’s Date of Report",
+               "placeholder":"Set Assessor’s Date of Report",
+               "className":"form-control",
+               "name":"part_5_reportDate",
+               "access":false
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Assessor’s State/territory where accredited",
+               "placeholder":"Enter State/territory where accredited",
+               "className":"form-control",
+               "name":"part_5_statewhere_accredited",
+               "access":false
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Vehicle Modifiers Name",
+               "placeholder":"Enter Vehicle Modifiers Name",
+               "className":"form-control",
+               "name":"part_5_vehiclemodifiers_name",
+               "access":false
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Vehicle Modifiers NDIS Provider Registration number",
+               "placeholder":"Enter Vehicle Modifiers NDIS Provider Registration number",
+               "className":"form-control",
+               "name":"part_5_vehiclemodifiersndisproviderregistration_number",
+               "access":false
+            },
+            {
+                "type":"text",
+                "required":false,
+                "label":"Vehicle Modifiers Phone Number",
+                "placeholder":"Enter Vehicle Modifiers Phone Number",
+                "className":"form-control",
+                "name":"part_5_vehiclemodifiersphone_number",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"email",
+                "subtype":"email",
+                "required":false,
+                "label":"Vehicle Modifiers Email",
+                "placeholder":"Enter Vehicle Modifiers Email Address",
+                "className":"form-control",
+                "name":"part_5_vehiclemodifiersemail_address",
+                "access":false
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Vehicle Modifiers Qualification",
+                "placeholder":"Enter Vehicle Modifiers Qualification",
+                "className":"form-control",
+                "name":"part_5_vehiclemodifiersqualification",
+                "access":false,
+                "subtype":"text"
+             },
+             {
+                "type":"date",
+                "required":false,
+                "label":"Vehicle Modifiers Date of Assessment",
+                "placeholder":"Set Vehicle Modifiers Date of Assessment",
+                "className":"form-control",
+                "name":"part_5_vehiclemodifiersdate_assessment",
+                "access":false
+             },
+             {
+                "type":"date",
+                "required":false,
+                "label":"Vehicle Modifiers Date of Report",
+                "placeholder":"Set Vehicle Modifiers Date of Report",
+                "className":"form-control",
+                "name":"part_5_vehiclemodifiersreportDate",
+                "access":false
+             },
+             {
+                "type":"text",
+                "required":false,
+                "label":"Vehicle Modifiers State/territory where accredited",
+                "placeholder":"Enter Vehicle Modifiers State/territory where accredited",
+                "className":"form-control",
+                "name":"part_5_vehiclemodifiersstatewhere_accredited",
+                "access":false
+             }
+         ]';
+
+      $form_fields6 = '[
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"Yes, I consent",
+               "toggle":false,
+               "inline":false,
+               "name":"part_6_yes_consent",
+               "access":false,
+               "other":false,
+               "values":[
+                  {
+                     "label":"YES/NO",
+                     "value":"option-1",
+                     "selected":true
+                  }
+               ]
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"No, I do not consent",
+               "toggle":false,
+               "inline":false,
+               "name":"part_6_noidonot_consent",
+               "access":false,
+               "other":false,
+               "values":[
+                  {
+                     "label":"YES/NO",
+                     "value":"option-1",
+                     "selected":true
+                  }
+               ]
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"I understand that I am giving consent to the NDIA",
+               "toggle":false,
+               "inline":false,
+               "name":"part_6_iunderstandthatiamgivingconsenttothe_NDIA",
+               "access":false,
+               "other":false,
+               "values":[
+                  {
+                     "label":"YES/NO",
+                     "value":"option-1",
+                     "selected":false
+                  }
+               ]
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"I understand that I can access the NDIA’s Privacy Notice",
+               "toggle":false,
+               "inline":false,
+               "name":"part_6_iunderstandthaticanaccesstheNDIAsprivacy_notice",
+               "access":false,
+               "other":false,
+               "values":[
+                  {
+                     "label":"YES/NO",
+                     "value":"option-1",
+                     "selected":false
+                  }
+               ]
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Full Name",
+               "placeholder":"Enter Full  Name",
+               "className":"form-control",
+               "name":"part_6_signaturersfull_name",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"date",
+               "required":false,
+               "label":"Date",
+               "placeholder":"Enter Date",
+               "className":"form-control",
+               "name":"part_6_signaturers_date",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Full Name of person completing this form",
+               "placeholder":"Enter Full Name of person completing this form",
+               "className":"form-control",
+               "name":"part_6_fullnameofpersoncompletingthis_form",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+                "type":"date",
+                "required":false,
+                "label":"Date",
+                "placeholder":"Enter Date",
+                "className":"form-control",
+                "name":"part_6_signaturersonbefalfofparticipant_date",
+                "access":false,
+                "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Relationship to participant",
+               "placeholder":"Enter Relationship to participant",
+               "className":"form-control",
+               "name":"part_6_relationshiptoparticipant",
+               "access":false,
+               "subtype":"text"
+            }
+         ]';
+
+      $form = Form::insertGetId([
+         'name' => 'Vehicle Modification Assessment Template'
+      ]);
+
+      $heading1 = FormHeading::insertGetId([
+         'form_heading' => 'PART 1 – Participant and Plan Management Details',
+         'form_id' => $form,
+         'section_html' => $section1
+      ]);
+
+      $heading2 = FormHeading::insertGetId([
+         'form_heading' => ' PART 2 – Evaluation and Assessment',
+         'form_id' => $form,
+         'section_html' => $section2
+      ]);
+
+      $heading3 = FormHeading::insertGetId([
+         'form_heading' => 'PART 3 – Exploration of Options',
+         'form_id' => $form,
+         'section_html' => $section3
+      ]);
+
+      $heading4 = FormHeading::insertGetId([
+         'form_heading' => 'PART 4 – Recommendation',
+         'form_id' => $form,
+         'section_html' => $section4
+      ]);
+
+      $heading5 = FormHeading::insertGetId([
+         'form_heading' => 'PART 5 – Details of Assistive Technology Assessor',
+         'form_id' => $form,
+         'section_html' => $section5
+      ]);
+
+      $heading6 = FormHeading::insertGetId([
+         'form_heading' => 'PART 6 – Consent to Collect and Share Your Information –                 Provider AT Assessment and Quotation(s)',
+         'form_id' => $form,
+         'section_html' => $section6
+      ]);
+
+      FormField::create([
+         'form_heading_id' => $heading1,
+         'form_field' => $form_fields
+      ]);
+      FormField::create([
+         'form_heading_id' => $heading2,
+         'form_field' => $form_fields2
+      ]);
+      FormField::create([
+         'form_heading_id' => $heading3,
+         'form_field' => $form_fields3
+      ]);
+      FormField::create([
+         'form_heading_id' => $heading4,
+         'form_field' => $form_fields4
+      ]);
+      FormField::create([
+         'form_heading_id' => $heading5,
+         'form_field' => $form_fields5
+      ]);
+      FormField::create([
+         'form_heading_id' => $heading6,
+         'form_field' => $form_fields6
+      ]);
+   }
+>>>>>>> 52cf4aa6a824ebe8f2ad0837255557ea5b62a503
 }

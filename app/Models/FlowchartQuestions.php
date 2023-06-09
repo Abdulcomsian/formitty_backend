@@ -11,9 +11,9 @@ class FlowchartQuestions extends Model
 
     protected $fillable = ['assessment_tool_id', 'title', 'parent_id'];
 
-    public function child()
+    public function children()
     {
-        return $this->hasMany(FlowchartQuestions::class, 'parent_id')->with('child');
+        return $this->hasMany(FlowchartQuestions::class, 'parent_id')->with('children');
     }
 
     public function parent()
@@ -24,6 +24,11 @@ class FlowchartQuestions extends Model
     public function assessment_tool()
     {
         return $this->belongsTo(AssessmentTool::class);
+    }
+
+    public function flowchart_response()
+    {
+        return $this->hasOne(FlowchartResponse::class);
     }
 
 }

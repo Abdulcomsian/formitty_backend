@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\AssessmentTool;
 use App\Models\Log;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 
 class AssessmentToolController extends Controller
 {
@@ -45,7 +48,18 @@ class AssessmentToolController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::beginTransaction();
+        $this->validate($request, [
+            'title' => 'required',
+        ]);
+        $assessment_tool = new AssessmentTool();
+        $assessment_tool->title = $request->title;
+        $assessment_tool->type = $request->type;
+        $assessment_tool->slug = Str::slug($request->title);
+        $assessment_tool->save();
+        Session::flash('success', 'Assessment Tool Created Successfully');
+        DB::commit();
+        return redirect()->back();
     }
 
     /**
