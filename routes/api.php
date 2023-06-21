@@ -62,6 +62,8 @@ Route::post('/create-note', [FormBuilderController::class, 'create_note']);
 
 Route::post('/delete-create-note', [FormBuilderController::class, 'deleteCreateNote']);
 Route::post('/update-create-note', [FormBuilderController::class, 'updateCreateNote']);
+Route::post('/store-therapist', [FormBuilderController::class, 'storeTherapists']);
+Route::post('convert-speech-to-text' , [SpeechController::class , 'convertSpeech']);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request)
