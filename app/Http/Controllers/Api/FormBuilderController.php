@@ -1436,7 +1436,7 @@ class FormBuilderController extends ApiController
         //write custom query for getting user form data
 
         try {
-            $user_form = UserForm::find($request->user_form_id);
+            $user_form = UserForm::with('openaiResponse')->find($request->user_form_id);
             $form = Form::find($user_form->form_id);
 
             if (!$user_form) {
@@ -1494,6 +1494,15 @@ class FormBuilderController extends ApiController
                         'field_data' => $field_data,
                     ];
                 }
+            }
+
+             // Add openai_response to the form_data
+            if ($user_form->openaiResponse) {
+              $openai_response_data = [
+                  'note_response' => $user_form->openaiResponse->note_response,
+                  'audio_response' => $user_form->openaiResponse->audio_response,
+              ];
+              $form_data[]['openai_response'] = $openai_response_data;
             }
 
             $data = [
