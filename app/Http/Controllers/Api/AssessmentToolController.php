@@ -14,6 +14,7 @@ use App\Models\Answer;
 use App\Models\Response;
 use App\Models\FlowchartAnswer;
 use App\Models\AssessmentGroup;
+use App\Models\OpenaiResponse;
 use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Client;
 use PDF;
@@ -390,6 +391,38 @@ class AssessmentToolController extends ApiController
                 ->header('Content-Disposition', 'attachment; filename="pdf_file.pdf"');
             return $pdf;
             return $this->successResponse($pdf, 'Flowchart updated successfully!.', 200);
+        } catch (\Throwable $th) {
+            return $this->errorResponse($th->getMessage(), 401);
+        }
+    }
+
+    public function storeOpenAiResponses(Request $request)
+    {
+        try{
+            $openai = OpenaiResponse::where('form_id', $request->form_id)->first();
+            // if($openai){
+            //     $openai->form_id = $request->form_id;
+            //     if($request->note_response){
+            //         $openai->note_response = $request->note_response;
+            //     }
+            //     if($request->note_response){
+            //         $openai->audio_response = $request->audio_response;
+            //     }
+            //     $openai->save();
+            //     return $this->successResponse($openai, 'OpenAiResponse updated successfully!.', 200);
+            // }
+            if(!$openai){
+                $openai = new OpenaiResponse();
+            }
+            $openai->form_id = $request->form_id;
+            if($request->note_response){
+                $openai->note_response = $request->note_response;
+            }
+            if($request->audio_response){
+                $openai->audio_response = $request->audio_response;
+            }            
+            $openai->save();
+        return $this->successResponse($openai, 'OpenAiResponse updated successfully!.', 200);
         } catch (\Throwable $th) {
             return $this->errorResponse($th->getMessage(), 401);
         }

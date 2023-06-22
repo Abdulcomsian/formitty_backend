@@ -34,9 +34,9 @@ Route::post('/import', [AuthController::class, 'import']);
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('getLoggedInUser', [AuthController::class,'getLoggedInUser']);
-        Route::post('convert-speech-to-text' , [SpeechController::class , 'convertSpeech']);
     Route::post('report-speech-list' , [SpeechController::class , 'getSpeechList']);
     Route::post('delete-speech' , [SpeechController::class , 'deleteSpeech']);
+    Route::post('convert-speech-to-text' , [SpeechController::class , 'convertSpeech']);
 });
 Route::post('get-user-forms', [FormBuilderController::class, 'getUserForm']);
 Route::post('get-user-forms-data', [FormBuilderController::class, 'getUserFormsData']);
@@ -63,7 +63,7 @@ Route::post('/create-note', [FormBuilderController::class, 'create_note']);
 Route::post('/delete-create-note', [FormBuilderController::class, 'deleteCreateNote']);
 Route::post('/update-create-note', [FormBuilderController::class, 'updateCreateNote']);
 Route::post('/store-therapist', [FormBuilderController::class, 'storeTherapists']);
-Route::post('convert-speech-to-text' , [SpeechController::class , 'convertSpeech']);
+Route::post('store-openai-responses' , [AssessmentToolController::class , 'storeOpenAiResponses']);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request)

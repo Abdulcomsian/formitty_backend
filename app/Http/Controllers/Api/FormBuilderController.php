@@ -19,8 +19,15 @@ use App\Models\Answer;
 use App\Models\Option;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+use App\Models\User;
+use App\Models\UserDetail;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\TherapistCreated;
+
 //create complete crud operation using ajax
 class FormBuilderController extends ApiController
 {
@@ -1677,6 +1684,54 @@ class FormBuilderController extends ApiController
             $interaction->delete();
 
             return $this->successResponse(null, 'Create Note deleted successfully', 200);
+        }
+
+
+        public function storeTherapists(Request $request)
+        {
+            try {
+                DB::beginTransaction();
+
+                $user = new User();
+                $name = $request->input('first_name');
+                $surename = $request->input('last_name');
+                
+                $name = $name . ' ' . $surename;
+                $user->name = $name;
+                $user->email = $request->email;
+                $user->password = bcrypt('12345678');
+                $user->save();
+
+                $user_detail = new UserDetail();
+                $user_detail->state = $request->input('state');
+                $user_detail->profession = $request->input('profession');
+                $user_detail->graduation_year = $request->input('graduation_year');
+                $user_detail->institution = $request->input('institution');
+                $user_detail->save();
+
+                $permissions = Permission::pluck('id','id')->all();
+
+                $role = Role::findByName('user'); // Replace 'admin' with the desired role name
+                $user->assignRole($role);
+                $adminEmail = 'admin@example.com'; // Replace with the admin's email address
+                $emailData = [
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'state' => $user_detail->state,
+                    'profession' => $user_detail->profession,
+                    'graduation_year' => $user_detail->graduation_year,
+                    'institution' => $user_detail->institution,
+                ];
+
+                Mail::to($adminEmail)->send(new TherapistCreated($emailData));
+
+                DB::commit();
+
+                return $this->successResponse($user_detail, 'Form data saved successfully!.', 200);
+            } catch (\Throwable $th) {
+                DB::rollBack();
+                return $this->errorResponse($th->getMessage(), 500);
+            }
         }
 
 
