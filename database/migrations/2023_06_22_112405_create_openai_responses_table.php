@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('form_id');
             $table->longText('note_response')->nullable();
-            $table->string('audio_response')->nullable();
+            $table->longText('audio_response')->nullable();
             $table->foreign('form_id')->references('id')->on('user_form')->onDelete('cascade');
             $table->timestamps();
         });
