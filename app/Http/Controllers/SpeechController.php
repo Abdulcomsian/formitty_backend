@@ -140,47 +140,73 @@ class SpeechController extends Controller
 
     public function convertSpeech(Request $request)
     {
-                // API GG Authenic Json Path
-        $json = public_path('google2.json');
-        putenv('GOOGLE_APPLICATION_CREDENTIALS='.$json);
-
-
-
-        /** Uncomment and populate these variables in your code */
-        $audioFile = $request->audioFile;
-
-        // change these variables if necessary
-        $encoding = AudioEncoding::MP3;
-        $sampleRateHertz = 32000;
-        // Your language
-        $languageCode = 'en-US';
-
-        // get contents of a file into a string
-        $content = file_get_contents($audioFile);
-
-        // set string as audio content
-        $audio = (new RecognitionAudio())
-            ->setContent($content);
-
-        // set config
-        $config = (new RecognitionConfig())
-            ->setEncoding($encoding)
-            ->setSampleRateHertz($sampleRateHertz)
-            ->setLanguageCode($languageCode);
-
-        // create the speech client
-        $client = new SpeechClient();
-
         try {
-            $response = $client->recognize($config, $audio);
-            foreach ($response->getResults() as $result) {
-                $alternatives = $result->getAlternatives();
-                $mostLikely = $alternatives[0];
-                $transcript = $mostLikely->getTranscript();
-                printf($transcript);
+            $validator = Validator::make($request->all() , [
+                'audioFile' => "required|file|mimes:mp3",
+                'report_id' => "required|numeric"
+            ]);
+
+            if($validator->fails())
+            {
+                return response()->json(['status' => false , 'error' => $validator->getMessageBag() ]);
             }
-        } finally {
-            $client->close();
+            else
+            {
+        
+                // API GG Authenic Json Path
+                $json = public_path('google2.json');
+                putenv('GOOGLE_APPLICATION_CREDENTIALS='.$json);
+
+
+
+                /** Uncomment and populate these variables in your code */
+                $audioFile = $request->audioFile;
+                $fileName = $audioFile->getClientOriginalName();
+
+                // change these variables if necessary
+                $encoding = AudioEncoding::MP3;
+                $sampleRateHertz = 32000;
+                // Your language
+                $languageCode = 'en-US';
+
+                // get contents of a file into a string
+                $content = file_get_contents($audioFile);
+
+                // set string as audio content
+                $audio = (new RecognitionAudio())
+                    ->setContent($content);
+
+                // set config
+                $config = (new RecognitionConfig())
+                    ->setEncoding($encoding)
+                    ->setSampleRateHertz($sampleRateHertz)
+                    ->setLanguageCode($languageCode);
+
+                // create the speech client
+                $client = new SpeechClient();
+
+                try {
+                    $response = $client->recognize($config, $audio);
+                    foreach ($response->getResults() as $result) {
+                        $alternatives = $result->getAlternatives();
+                        $mostLikely = $alternatives[0];
+                        $transcript = $mostLikely->getTranscript();
+                        printf($transcript);
+                    }
+                } finally {
+                    $client->close();
+                }
+                SpeechText::create([
+                    "user_id" => auth()->user()->id,
+                    "report_id" => $request->report_id,
+                    "speech" => $transcript,
+                    "file_name" => $audioFile
+                ]);
+                
+        }
+            
+        } catch (\Exception $e) {
+            return response()->json([ 'status' => false ,  'error' => $e->getMessage()]);
         }
     }
 
