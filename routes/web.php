@@ -51,6 +51,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('/save-user', [HomeController::class, 'saveUser'])->name('save_user');
+
 
 Route::get('/test1', [TestController::class, 'test'])->name('test_route');
 Route::get('/test2', [TestController::class, 'test2'])->name('test2_route');

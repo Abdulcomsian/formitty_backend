@@ -51,6 +51,9 @@
             <li class="nav-item">
               <a class="nav-link" id="demo" href="#section-5">Request Demo</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link btn btn-success" id="demo" href="{{ env('APP_URL') }}sparklight/login">Login</a>
+            </li>          
           </ul>
         </div>
       </div>
@@ -271,49 +274,51 @@
       <span>Lorem ipsum dolor sit amet consectetur. </span>
     </div>
     <div class="form-section m-auto px-5 mt-md-5">
-      <form>
+      @include('admin.partials._msg')
+      <form action="{{ route('save_user') }}" method="POST">
+        @csrf
         <div class="row ">
           <div class="col-md mt-3">
-            <input type="text" placeholder="Name" class="form-control">
+            <input type="text" name="first_name" {{old('first_name')}} placeholder="First Name" class="form-control">
           </div>
           <div class="col-md mt-3">
-            <input type="text" placeholder="Surname" class="form-control">
+            <input type="text" name="last_name" {{old('last_name')}} placeholder="Last Name" class="form-control">
           </div>
         </div>
         <div class="row mt-3">
           <div class="col">
 
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            <input type="email" name="email" {{old('email')}} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
               placeholder="Email">
           </div>
         </div>
         <div class="row mt-3">
           <div class="col-md">
-            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-              <option selected class="select">Select State</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
-          </div>
-          <div class="col-md">
-            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-              <option selected class="select">Select Profession</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
-          </div>
+            <div class="col-md">
+              <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="state">
+                  <option value="" disabled>Select State</option>
+                  <option value="1" {{ old('state') == '1' ? 'selected' : '' }}>One</option>
+                  <option value="2" {{ old('state') == '2' ? 'selected' : '' }}>Two</option>
+                  <option value="3" {{ old('state') == '3' ? 'selected' : '' }}>Three</option>
+              </select>
+            </div>
+            <div class="col-md">
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="profession">
+                    <option value="" disabled>Select Profession</option>
+                    <option value="1" {{ old('profession') == '1' ? 'selected' : '' }}>One</option>
+                    <option value="2" {{ old('profession') == '2' ? 'selected' : '' }}>Two</option>
+                    <option value="3" {{ old('profession') == '3' ? 'selected' : '' }}>Three</option>
+                </select>
+            </div>          
         </div>
         <div class="row mt-2">
           <div class="col">
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
-              placeholder="Type your message here"></textarea>
+            <textarea class="form-control" name="message" id="exampleFormControlTextarea1" rows="5" placeholder="Type your message here"></textarea>
           </div>
         </div>
         <div class="row mt-3">
           <div class="col">
-            <button class="btns" style="width: 100%;"> Submit </button>
+            <button type="submit" class="btns" style="width: 100%;"> Submit </button>
           </div>
         </div>
       </form>
