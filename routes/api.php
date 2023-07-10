@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\FormBuilderController;
 use App\Http\Controllers\Api\AssessmentToolController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\{ HomeController , SpeechController};
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +34,9 @@ Route::post('/import', [AuthController::class, 'import']);
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('getLoggedInUser', [AuthController::class,'getLoggedInUser']);
+    Route::post('report-speech-list' , [SpeechController::class , 'getSpeechList']);
+    Route::post('delete-speech' , [SpeechController::class , 'deleteSpeech']);
+    Route::post('convert-speech-to-text' , [SpeechController::class , 'convertSpeech']);
 });
 Route::post('get-user-forms', [FormBuilderController::class, 'getUserForm']);
 Route::post('get-user-forms-data', [FormBuilderController::class, 'getUserFormsData']);
@@ -59,6 +62,9 @@ Route::post('/create-note', [FormBuilderController::class, 'create_note']);
 
 Route::post('/delete-create-note', [FormBuilderController::class, 'deleteCreateNote']);
 Route::post('/update-create-note', [FormBuilderController::class, 'updateCreateNote']);
+Route::post('/store-therapist', [FormBuilderController::class, 'storeTherapists']);
+Route::post('store-openai-responses' , [AssessmentToolController::class , 'storeOpenAiResponses']);
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request)
 {

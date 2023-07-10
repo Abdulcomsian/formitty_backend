@@ -29,4 +29,9 @@ class UserForm extends Model
     {
         return $this->belongsTo(Form::class);
     }
+
+    public function openaiResponse()
+    {
+        return $this->hasOne(OpenaiResponse::class, 'form_id');
+    }
 }
