@@ -52,7 +52,7 @@
               <a class="nav-link" id="demo" href="#section-5">Request Demo</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link btn btn-success" id="demo" href="{{ env('APP_URL') }}sparklight/login">Login</a>
+              <a class="nav-link btn btn-success" id="demo" href="{{ env('APP_URL') }}sparkintelligence/login">Login</a>
             </li>          
           </ul>
         </div>
