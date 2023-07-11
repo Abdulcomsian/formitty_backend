@@ -376,9 +376,9 @@ class AssessmentToolController extends ApiController
 
             $client = new Client();
 
-            $product_response = $client->get('https://formitydev.com/bagisto/public/api/products/' . $request->product_id);
+            $product_response = $client->get('https://marketplace.formitydev.com/api/products/' . $request->product_id);
             // @dd($product_response);
-            $review_response = $client->get('https://formitydev.com/bagisto/public/api/reviews?product_id=' . $request->product_id);
+            $review_response = $client->get('https://marketplace.formitydev.com/api/reviews?product_id=' . $request->product_id);
             // @dd($review_response);
             $product_response = json_decode($product_response->getBody(), true);
             $review_response = json_decode($review_response->getBody(), true);
