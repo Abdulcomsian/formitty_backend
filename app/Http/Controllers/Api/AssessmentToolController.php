@@ -18,6 +18,7 @@ use App\Models\OpenaiResponse;
 use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Client;
 use PDF;
+use App\Models\StaticOption;
 
 class AssessmentToolController extends ApiController
 {
@@ -427,4 +428,26 @@ class AssessmentToolController extends ApiController
             return $this->errorResponse($th->getMessage(), 401);
         }
     }
+
+    public function chatgptPrompts(Request $request)
+    {
+        try {
+            $options = StaticOption::whereIn('option_name', ['audio_prompt', 'notes_prompt'])->get();
+            
+            $audioPrompt = $options->where('option_name', 'audio_prompt')->first()->option_value;
+            $notesPrompt = $options->where('option_name', 'notes_prompt')->first()->option_value;
+            
+            // Return as separate variables
+            return $this->successResponse([
+                'audio_prompt' => $audioPrompt,
+                'notes_prompt' => $notesPrompt
+            ], 'Chatgpt prompts updated successfully!', 200);
+            
+            // Return as an array
+            // return $this->successResponse([$audioPrompt, $notesPrompt], 'Chatgpt prompts updated successfully!', 200);
+        } catch (\Throwable $th) {
+            return $this->errorResponse($th->getMessage(), 401);
+        }
+    }
+
 }

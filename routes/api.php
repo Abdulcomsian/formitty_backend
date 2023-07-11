@@ -58,12 +58,14 @@ Route::post('generate-pdf', [AssessmentToolController::class, 'generatePdf']);
 // created notes api
 Route::post('/get-create-note', [FormBuilderController::class, 'getCreateNote']);
 Route::post('/create-note', [FormBuilderController::class, 'create_note']);
+Route::post('/create-note', [FormBuilderController::class, 'create_note']);
 // Route::delete('/delete-note/{reportId}', [FormBuilderController::class, 'deleteCreateNote']);
 
 Route::post('/delete-create-note', [FormBuilderController::class, 'deleteCreateNote']);
 Route::post('/update-create-note', [FormBuilderController::class, 'updateCreateNote']);
 Route::post('/store-therapist', [FormBuilderController::class, 'storeTherapists']);
 Route::post('store-openai-responses' , [AssessmentToolController::class , 'storeOpenAiResponses']);
+Route::post('get-chatgpt-prompts' , [AssessmentToolController::class , 'chatgptPrompts']);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request)
