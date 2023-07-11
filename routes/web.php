@@ -118,6 +118,10 @@ Route::group([
     Route::get('/general-settings/site-identity', [GeneralSettingsController::class, 'site_identity'])->name('admin.general.site.identity');
     Route::post('/general-settings/site-identity', [GeneralSettingsController::class, 'update_site_identity']);
 
+    //chatgpt prompts
+    Route::get('/general-settings/chatgpt-prompts', [GeneralSettingsController::class, 'chatgpt_prompts'])->name('admin.general.chatgpt.prompts');
+    Route::post('/general-settings/chatgpt-prompts', [GeneralSettingsController::class, 'update_chatgpt_prompts']);
+
     Route::get('/general-settings/basic-settings', [GeneralSettingsController::class, 'basic_settings'])->name('admin.general.basic.settings');
     Route::post('/general-settings/basic-settings', [GeneralSettingsController::class, 'update_basic_settings']);
     //smtp settings
