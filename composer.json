@@ -7,8 +7,10 @@
     "require": {
         "php": "^8.0.2",
         "barryvdh/laravel-dompdf": "^2.0",
+        "google/auth": "^1.28",
         "google/cloud-speech": "^1.13",
-        "guzzlehttp/guzzle": "^7.2",
+        "google/cloud-storage": "^1.33",
+        "guzzlehttp/guzzle": "^7.7",
         "intervention/image": "^2.7",
         "kris/laravel-form-builder": "^1.51",
         "laravel/framework": "^9.19",
