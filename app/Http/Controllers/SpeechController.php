@@ -462,7 +462,7 @@ class SpeechController extends Controller
             // Set the audio URI
             // $audioUri = 'gs://' . $bucketName . '/' . $objectName;
             // $audioUri = 'gs://sparkintelligence/audio/sample (1).mp3';
-            $audioUri = 'gs://sparkintelligence/audio/new_audio.mp3';
+                $audioUri = 'gs://' . $bucketName . '/' . $objectName;
             // Create the audio object with the audio URI
             $audio = (new RecognitionAudio())->setUri($audioUri);
 
