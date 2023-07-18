@@ -36,8 +36,9 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('getLoggedInUser', [AuthController::class,'getLoggedInUser']);
     Route::post('report-speech-list' , [SpeechController::class , 'getSpeechList']);
     Route::post('delete-speech' , [SpeechController::class , 'deleteSpeech']);
-    Route::post('convert-speech-to-text' , [SpeechController::class , 'convertSpeech']);
 });
+    Route::post('convert-speech-to-text' , [SpeechController::class , 'convertSpeech']);
+        Route::post('get-status' , [SpeechController::class , 'getStatus']);
 Route::post('get-user-forms', [FormBuilderController::class, 'getUserForm']);
 Route::post('get-user-forms-data', [FormBuilderController::class, 'getUserFormsData']);
 //Route::get('marked-completed/{user_form_id}', [FormBuilderController::class, 'markComplete']);
@@ -66,7 +67,6 @@ Route::post('/update-create-note', [FormBuilderController::class, 'updateCreateN
 Route::post('/store-therapist', [FormBuilderController::class, 'storeTherapists']);
 Route::post('store-openai-responses' , [AssessmentToolController::class , 'storeOpenAiResponses']);
 Route::post('get-chatgpt-prompts' , [AssessmentToolController::class , 'chatgptPrompts']);
-
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request)
 {
