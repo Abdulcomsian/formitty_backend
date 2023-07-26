@@ -7,16 +7,12 @@
   <title>Spark Medical</title>
   <script src="https://cdn.jsdelivr.net/npm/sass.js/dist/sass.min.js"></script>
   <link rel="stylesheet" href="{{asset('assets/styles/index.css')}}" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
-
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -31,8 +27,7 @@
         </a>
 
         <!-- Toggler/collapsible Button -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -53,7 +48,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link btn btn-success" id="demo" href="{{ env('APP_URL') }}sparkintelligence/login">Login</a>
-            </li>          
+            </li>
           </ul>
         </div>
       </div>
@@ -140,7 +135,7 @@
           <div class="backcircle-2">
           </div>
         </div>
-       
+
       </div>
       <div class="col-lg-7 fix-2">
         <div class="text-3">
@@ -173,13 +168,13 @@
         </div>
       </div>
       <div class="col-lg-5 mt-5">
-        <div class="fix-center"> 
+        <div class="fix-center">
           <div class="backcircle">
           </div>
           <div class="backcircle-3">
           </div>
         </div>
-       
+
       </div>
     </div>
     <!-- third future  -->
@@ -190,7 +185,7 @@
           </div>
           <div class="backcircle-4">
           </div>
-        </div>  
+        </div>
       </div>
       <div class="col-lg-7 fix-2 mt-5">
         <div class="text-3">
@@ -271,11 +266,11 @@
     </div>
     <hr>
     <div class="demo-heading-2 mt-4 text-center m-auto" style="width: 60%;">
-      <span>Lorem ipsum dolor sit amet consectetur. </span>
+      <span> Fill the form below to Sign up.</span>
     </div>
     <div class="form-section m-auto px-5 mt-md-5">
       @include('admin.partials._msg')
-      <form action="{{ route('save_user') }}" method="POST">
+      <form action="{{ route('save_user') }}" method="POST" cla>
         @csrf
         <div class="row ">
           <div class="col-md mt-3">
@@ -287,38 +282,23 @@
         </div>
         <div class="row mt-3">
           <div class="col">
+            <input type="email" name="email" {{old('email')}} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <input type="password" name="password" {{old('password')}} class="form-control" id="exampleInputPassword" aria-describedby="emailHelp" placeholder="Password">
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <input type="password" name="confirm-password" {{old('confirm-password')}} class="form-control" id="exampleInputConfirmPassword" aria-describedby="emailHelp" placeholder="Confirm Password">
+          </div>
+        </div>
 
-            <input type="email" name="email" {{old('email')}} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-              placeholder="Email">
-          </div>
-        </div>
-        <div class="row mt-3">
-          <div class="col-md">
-            <div class="col-md">
-              <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="state">
-                  <option value="" disabled>Select State</option>
-                  <option value="1" {{ old('state') == '1' ? 'selected' : '' }}>One</option>
-                  <option value="2" {{ old('state') == '2' ? 'selected' : '' }}>Two</option>
-                  <option value="3" {{ old('state') == '3' ? 'selected' : '' }}>Three</option>
-              </select>
-            </div>
-            <div class="col-md">
-                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="profession">
-                    <option value="" disabled>Select Profession</option>
-                    <option value="1" {{ old('profession') == '1' ? 'selected' : '' }}>One</option>
-                    <option value="2" {{ old('profession') == '2' ? 'selected' : '' }}>Two</option>
-                    <option value="3" {{ old('profession') == '3' ? 'selected' : '' }}>Three</option>
-                </select>
-            </div>          
-        </div>
-        <div class="row mt-2">
-          <div class="col">
-            <textarea class="form-control" name="message" id="exampleFormControlTextarea1" rows="5" placeholder="Type your message here"></textarea>
-          </div>
-        </div>
         <div class="row mt-3">
           <div class="col">
-            <button type="submit" class="btns" style="width: 100%;"> Submit </button>
+            <button type="submit" id="submitBtn" class="btns" style="width: 100%;"> Sign Up </button>
           </div>
         </div>
       </form>
@@ -330,7 +310,7 @@
   <footer>
     <div class="section-6">
       <div class=" m-auto d-flex justify-content-center mt">
-        <div class=" d-flex gap-3 mt-3" >
+        <div class=" d-flex gap-3 mt-3">
           <div> <img src="{{asset('')}}/assets/images/facebook.png" alt=""> </div>
           <div> <img src="{{asset('')}}/assets/images/twitter.png" alt=""> </div>
           <div> <img src="{{asset('')}}/assets/images/linkedin.png" alt=""> </div>
@@ -350,19 +330,35 @@
   </div>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get references to the password and confirm password input fields and the submit button
+      const passwordInput = document.getElementById('exampleInputPassword');
+      const confirmPasswordInput = document.getElementById('exampleInputConfirmPassword');
+      const submitButton = document.getElementById('submitBtn');
 
-    <!-- <script>
-          function about(){
-            document.getElementById("home").classList.remove("active")
-            document.getElementById("about").classList.add("active")
-            document.getElementById("features").classList.remove("active")
-            document.getElementById("demo").classList.remove("active")
-          }
-    </script> -->
+      // Function to check if the passwords match and enable/disable the submit button accordingly
+      function checkPasswordMatch() {
+        const password = passwordInput.value;
+        const confirmPassword = confirmPasswordInput.value;
+
+        if (password === confirmPassword) {
+          submitButton.removeAttribute('disabled');
+        } else {
+          submitButton.setAttribute('disabled', 'disabled');
+        }
+      }
+
+      // Add event listeners to the password and confirm password input fields
+      if (passwordInput && confirmPasswordInput && submitButton) {
+        passwordInput.addEventListener('input', checkPasswordMatch);
+        confirmPasswordInput.addEventListener('input', checkPasswordMatch);
+      }
+    });
+  </script>
+
 </body>
 
 </html>
