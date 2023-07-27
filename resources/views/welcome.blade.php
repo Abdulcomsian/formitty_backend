@@ -268,8 +268,8 @@
       <span> Fill the form below to Sign up.</span>
     </div>
     <div class="form-section m-auto px-5 mt-md-5">
-      @include('admin.partials._msg')
-      <form action="{{ route('save_user') }}" method="POST" cla>
+      {{-- @include('admin.partials._msg') --}}
+      {{-- <form action="{{ route('save_user') }}" method="POST" cla>
         @csrf
         <div class="row ">
           <div class="col-md mt-3">
@@ -300,7 +300,52 @@
             <button type="submit" id="submitBtn" class="btns" style="width: 100%;"> Sign Up </button>
           </div>
         </div>
-      </form>
+      </form> --}}
+      <form method="POST" action="{{ route('register') }}">
+        @csrf
+        <div class="row">
+            <div class="col-md mt-3">
+                <input type="text" name="first_name" value="{{ old('first_name') }}" placeholder="First Name" class="form-control" required>
+                @error('first_name')
+                  <span class="error invalid-feedback" style="display:block;">{{ $message }}</span>
+                @enderror
+            </div>
+            <div class="col-md mt-3">
+                <input type="text" name="last_name" value="{{ old('last_name') }}" placeholder="Last Name" class="form-control" required>
+                @error('last_name')
+                  <span class="error invalid-feedback" style="display:block;">{{ $message }}</span>
+                @enderror
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <input type="email" name="email" value="{{ old('email') }}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" required>
+                @error('email')
+                  <span class="error invalid-feedback" style="display:block;">{{ $message }}</span>
+                @enderror
+              </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <input type="password" name="password" class="form-control" id="exampleInputPassword" aria-describedby="emailHelp" placeholder="Password" required>
+                @error('password')
+                  <span class="error invalid-feedback" style="display:block;">{{ $message }}</span>
+                @enderror
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <input type="password" name="password_confirmation" class="form-control" id="exampleInputConfirmPassword" aria-describedby="emailHelp" placeholder="Confirm Password" required>
+            </div>
+        </div>
+    
+        <div class="row mt-3">
+            <div class="col">
+                <button type="submit" id="submitBtn" class="btns" style="width: 100%;"> Sign Up </button>
+            </div>
+        </div>
+    </form>
+    
     </div>
   </div>
 
