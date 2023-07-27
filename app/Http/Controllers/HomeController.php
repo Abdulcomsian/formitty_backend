@@ -34,20 +34,18 @@ class HomeController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'email' => 'required|unique:users,email',
-            'state' => 'required',
-            'profession' => 'required',
-            'message' => 'required',
+            'password' => 'required|min:8|confirmed',
         ]);
 
         // Create a new user record
         $user = new User();
         $user->name = $request->input('first_name').' '.$request->input('last_name');
         $user->email = $request->input('email');
-        $user->state = $request->input('state');
-        $user->profession = $request->input('profession');
-        $user->message = $request->input('message');
-        $user->active = 0;
-        $user->password = bcrypt(generateRandomNumber());
+        // $user->state = $request->input('state');
+        // $user->profession = $request->input('profession');
+        // $user->message = $request->input('message');
+        $user->active = 1;
+        $user->password = bcrypt($request->password);
         $user->save();
 
         // Redirect or return a response

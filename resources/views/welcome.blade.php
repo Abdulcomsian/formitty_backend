@@ -267,8 +267,8 @@
     <div class="demo-heading-2 mt-4 text-center m-auto" style="width: 60%;">
       <span> Fill the form below to Sign up.</span>
     </div>
+    @include('admin.partials._msg')
     <div class="form-section m-auto px-5 mt-md-5">
-      {{-- @include('admin.partials._msg') --}}
       {{-- <form action="{{ route('save_user') }}" method="POST" cla>
         @csrf
         <div class="row ">
@@ -301,7 +301,7 @@
           </div>
         </div>
       </form> --}}
-      <form method="POST" action="{{ route('register') }}">
+      <form method="POST" action="{{ route('save_user') }}">
         @csrf
         <div class="row">
             <div class="col-md mt-3">
