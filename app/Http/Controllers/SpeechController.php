@@ -419,98 +419,98 @@ class SpeechController extends Controller
     
 
 
-    public function convertSpeech(Request $request)
-{
-    try {
-        $validator = Validator::make($request->all(), [
-            'audioFile' => "required|file|mimes:mp3",
-            'report_id' => "required|numeric"
-        ]);
+//     public function convertSpeech(Request $request)
+// {
+//     try {
+//         $validator = Validator::make($request->all(), [
+//             'audioFile' => "required|file|mimes:mp3",
+//             'report_id' => "required|numeric"
+//         ]);
 
-        if ($validator->fails()) {
-            return response()->json(['status' => false, 'error' => $validator->getMessageBag()]);
-        } else {
-            // API GG Authenic Json Path
-            $json = public_path('google4.json');
-            putenv('GOOGLE_APPLICATION_CREDENTIALS='.$json);
+//         if ($validator->fails()) {
+//             return response()->json(['status' => false, 'error' => $validator->getMessageBag()]);
+//         } else {
+//             // API GG Authenic Json Path
+//             $json = public_path('google4.json');
+//             putenv('GOOGLE_APPLICATION_CREDENTIALS='.$json);
 
-            //Save the file on Google Cloud Storage
-            $storage = new StorageClient([
-                'keyFilePath' => $json,
-            ]);
+//             //Save the file on Google Cloud Storage
+//             $storage = new StorageClient([
+//                 'keyFilePath' => $json,
+//             ]);
 
-            $bucketName = 'sparkintelligence';
-            $bucket = $storage->bucket($bucketName);
+//             $bucketName = 'sparkintelligence';
+//             $bucket = $storage->bucket($bucketName);
 
-            $audioFile = $request->file('audioFile');
-            $fileName = $audioFile->getClientOriginalName();
-            $objectName = 'audio/' . $fileName;
+//             $audioFile = $request->file('audioFile');
+//             $fileName = $audioFile->getClientOriginalName();
+//             $objectName = 'audio/' . $fileName;
 
-            $bucket->upload(
-                file_get_contents($audioFile),
-                [
-                    'name' => $objectName
-                ]
-            );
+//             $bucket->upload(
+//                 file_get_contents($audioFile),
+//                 [
+//                     'name' => $objectName
+//                 ]
+//             );
 
-            // Convert the audio to text
-            $encoding = AudioEncoding::MP3;
-            // $sampleRateHertz = 44100;
-            $sampleRateHertz = 32000;
-            $languageCode = 'en-US';
+//             // // Convert the audio to text
+//             $encoding = AudioEncoding::MP3;
+//             // // $sampleRateHertz = 44100;
+//             $sampleRateHertz = 32000;
+//             $languageCode = 'en-US';
 
-            // Set the audio URI
-            // $audioUri = 'gs://' . $bucketName . '/' . $objectName;
-            // $audioUri = 'gs://sparkintelligence/audio/sample (1).mp3';
-                $audioUri = 'gs://' . $bucketName . '/' . $objectName;
-            // Create the audio object with the audio URI
-            $audio = (new RecognitionAudio())->setUri($audioUri);
+//             // Set the audio URI
+//             // $audioUri = 'gs://' . $bucketName . '/' . $objectName;
+//             $audioUri = 'gs://sparkintelligence/audio/One of The Greatest Speeches Ever by President Obama - Best Eye Opening Speech (online-audio-converter.com).mp3';
+//                 // $audioUri = 'gs://' . $bucketName . '/' . $objectName;
+//             // Create the audio object with the audio URI
+//             $audio = (new RecognitionAudio())->setUri($audioUri);
 
-            // Create the recognition config
-            $config = (new RecognitionConfig())
-                ->setEncoding($encoding)
-                ->setSampleRateHertz($sampleRateHertz)
-                ->setLanguageCode($languageCode);
+//             // Create the recognition config
+//             $config = (new RecognitionConfig())
+//                 ->setEncoding($encoding)
+//                 ->setSampleRateHertz($sampleRateHertz)
+//                 ->setLanguageCode($languageCode);
 
-            // Create the speech client
-            $client = new SpeechClient();
+//             // Create the speech client
+//             $client = new SpeechClient();
 
-            // Start the asynchronous speech recognition operation
-            $operation = $client->longRunningRecognize($config, $audio);
+//             // Start the asynchronous speech recognition operation
+//             $operation = $client->longRunningRecognize($config, $audio);
 
-            // Get the operation name
-            $operationName = $operation->getName();
+//             // Get the operation name
+//             $operationName = $operation->getName();
 
-            // Wait for the operation to complete
-            $operation->pollUntilComplete(['timeout' => 100]);
+//             // Wait for the operation to complete
+//             $operation->pollUntilComplete(['timeout' => 100]);
 
-            // Retrieve the response
-            $response = $operation->getResult();
+//             // Retrieve the response
+//             $response = $operation->getResult();
 
-            // Process the response
-            $results = $response->getResults();
-            $transcript = '';
-            foreach ($results as $result) {
-                $alternatives = $result->getAlternatives();
-                $mostLikely = $alternatives[0];
-                $transcript .= $mostLikely->getTranscript();
-            }
+//             // Process the response
+//             $results = $response->getResults();
+//             $transcript = '';
+//             foreach ($results as $result) {
+//                 $alternatives = $result->getAlternatives();
+//                 $mostLikely = $alternatives[0];
+//                 $transcript .= $mostLikely->getTranscript();
+//             }
 
-            $client->close();
+//             $client->close();
 
-            $result = SpeechText::create([
-                "user_id" => auth()->user()->id ?? 1,
-                "report_id" => $request->report_id,
-                "speech" => $transcript,
-                "file_name" => $fileName
-            ]);
+//             $result = SpeechText::create([
+//                 "user_id" => auth()->user()->id ?? 1,
+//                 "report_id" => $request->report_id,
+//                 "speech" => $transcript,
+//                 "file_name" => $fileName ?? 'file'
+//             ]);
 
-            return response()->json(['status' => true, 'message' => 'File uploaded and converted successfully', 'result' => $result]);
-        }
-    } catch (\Exception $e) {
-        return response()->json(['status' => false, 'error' => $e->getMessage()]);
-    }
-}
+//             return response()->json(['status' => true, 'message' => 'File uploaded and converted successfully', 'result' => $result]);
+//         }
+//     } catch (\Exception $e) {
+//         return response()->json(['status' => false, 'error' => $e->getMessage()]);
+//     }
+// }
 
     
     // public function convertSpeech(Request $request)
@@ -564,65 +564,161 @@ class SpeechController extends Controller
     //     return response()->json(['transcription' => $transcription]);
     // }
     
-    // public function convertSpeech(Request $request)
-    // {
-    //             // Set the request URL
-    //     $url = 'https://speech.googleapis.com/v1p1beta1/speech:longrunningrecognize';
-    //     $json = public_path('google4.json');
-    //         putenv('GOOGLE_APPLICATION_CREDENTIALS='.$json);
-    //     // Set the request headers
-    //     $headers = array(
-    //         'Authorization: Bearer ' . self::getAccessToken(),
-    //         'Content-Type: application/json; charset=utf-8'
-    //     );
+    public function convertSpeech(Request $request)
+    {
+        // Set the request URL for the long-running operation
+        $url = 'https://speech.googleapis.com/v1p1beta1/speech:longrunningrecognize';
+        $json = public_path('google4.json');
+        putenv('GOOGLE_APPLICATION_CREDENTIALS='.$json);
+    
+        // Save the file on Google Cloud Storage
+        $storage = new StorageClient([
+            'keyFilePath' => $json,
+        ]);
+    
+        $bucketName = 'sparkintelligence';
+        $bucket = $storage->bucket($bucketName);
+    
+        $audioFile = $request->file('audioFile');
+        $fileName = $audioFile->getClientOriginalName();
+        $objectName = 'audio/' . $fileName;
+    
+        $bucket->upload(
+            file_get_contents($audioFile),
+            [
+                'name' => $objectName
+            ]
+        );
+    
+        $audioUri = 'gs://' . $bucketName . '/' . $objectName;
+    
+        // Set the request headers
+        $headers = array(
+            'Authorization: Bearer ' . self::getAccessToken(),
+            'Content-Type: application/json; charset=utf-8'
+        );
+    
+        // Set the request data
+        $data = array(
+            'config' => array(
+                'encoding' => 'MP3',
+                'sampleRateHertz' => 32000,
+                'language_code' => 'en-US',
+            ),
+            'audio' => array(
+                'uri' => $audioUri
+            )
+        );
+    
+        // Convert data to JSON
+        $jsonData = json_encode($data);
+    
+        // Initialize cURL for the long-running operation
+        $curl = curl_init($url);
+    
+        // Set cURL options
+        curl_setopt($curl, CURLOPT_POST, true);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $jsonData);
+    
+        // Execute the request and get the response
+        $response = curl_exec($curl);
+    
+        // Check for errors
+        if ($response === false) {
+            $error = curl_error($curl);
+            return $error;
+            // Handle the error appropriately
+        } else {
+            // Decode the response JSON
+            $responseData = json_decode($response, true);
+            $resultArray = json_decode($response, true);
         
-    //     // Set the request data
-    //     $data = array(
-    //         'config' => array(
-    //             'encoding' => 'MP3',
-    //             'sampleRateHertz' => 32000,
-    //             'language_code' => 'en-US',
-    //         ),
-    //         'output_config' => array(
-    //             'gcs_uri' => 'gs://sparkintelligence/audio/test.json'
-    //         ),
-    //         'audio' => array(
-    //             'uri' => 'gs://sparkintelligence/audio/new_audio.mp3'
-    //         )
-    //     );
+            // Now you can access the 'name' key from the array
+            $operationName = $resultArray['name'];
         
-    //     // Convert data to JSON
-    //     $jsonData = json_encode($data);
-    //     // dd($jsonData);
-    //     // Initialize cURL
-    //     $curl = curl_init($url);
+            // Extract the operation name from the response
+            $operationName = $responseData['name'];
+
+            // Close cURL
+            curl_close($curl);
+    
+            // Use the operation name to check the status and retrieve the results
+            $result = $this->checkSpeechRecognitionStatus($operationName);
+            $data = SpeechText::create([
+                "user_id" => auth()->user()->id ?? 1,
+                "report_id" => $request->report_id,
+                "speech" => '',
+                "file_name" => $fileName,
+                'operation_name' => $result['operationName']
+            ]);
+            return response()->json([
+                    'status' => 'Success',
+                    'name' => $result['operationName'],
+                    'speech_text' => $data
+                ], 200);
+            }
+                        
         
-    //     // Set cURL options
-    //     curl_setopt($curl, CURLOPT_POST, true);
-    //     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    //     curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-    //     curl_setopt($curl, CURLOPT_POSTFIELDS, $jsonData);
-        
-    //     // Execute the request
-    //     $response = curl_exec($curl);
-        
-    //     // Check for errors
-    //     if ($response === false) {
-    //         $error = curl_error($curl);
-    //         return $error;
-    //         // Handle the error appropriately
-    //     } else{
-            
-    //         return 'success '.$response;
-            
-    //     }
-        
-    //     // Close cURL
-    //     curl_close($curl);
+    }
 
 
+    private function checkSpeechRecognitionStatus($operationName)
+    {
+        // Set the request URL to check the operation status
+        $url = "https://speech.googleapis.com/v1/operations/{$operationName}";
+        $headers = array(
+            'Authorization: Bearer ' . self::getAccessToken(),
+            'Content-Type: application/json; charset=utf-8'
+        );
+    
+        // Initialize cURL to check the status
+        $curl = curl_init($url);
+    
+        // Set cURL options
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+    
+        // Execute the request and get the response
+        $response = curl_exec($curl);
+    
+        // Check for errors
+        if ($response === false) {
+            $error = curl_error($curl);
+            return $error;
+            // Handle the error appropriately
+        } else {
+            // Decode the response JSON
+            $responseData = json_decode($response, true);
+    
+            // Check if the operation is complete
+            if (isset($responseData['done']) && $responseData['done'] === true) {
+                // The operation is complete, retrieve the results
+                $results = $responseData['response']['results'];
+                $transcripts = array_map(function ($result) {
+                    return $result['alternatives'][0]['transcript'];
+                }, $results);
+    
+                $finalTranscript = implode(' ', $transcripts);
+    
+                // Clean up (optional): Delete the file from Google Cloud Storage if needed
+                // $storage = new StorageClient();
+                // $storage->bucket('your_bucket_name')->object($objectName)->delete();
+    
+                return $finalTranscript;
+            } else {
+                // The operation is still in progress, return both the message and operation name
+                return [
+                    'message' => 'Recognition in progress...',
+                    'operationName' => $operationName
+                ];
+            }
+        }
+    }
 
-    // }
+
+    
     public function getStatus(Request $request)
     {
         $url = 'https://speech.googleapis.com/v1/operations/'. $request->name;
@@ -640,31 +736,40 @@ class SpeechController extends Controller
             ]
         ]);
                 $response = file_get_contents($url, false, $context);
-
-        // $curl = curl_init($url);
-        
-        // // Set cURL options
-        // curl_setopt($curl, CURLOPT_POST, true);
-        // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        // curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-        // // curl_setopt($curl, CURLOPT_POSTFIELDS, $jsonData);
-        
-        // // Execute the request
-        // $response = curl_exec($curl);
+                
         
         // Check for errors
         if ($response === false) {
             $error = curl_error($curl);
             return $error;
             // Handle the error appropriately
-        } else{
-            
-            return 'success '.$response;
-            
+        } else {
+            $responseData = json_decode($response, true);
+    
+            // Check if the operation is complete
+            if (isset($responseData['done']) && $responseData['done'] === true) {
+                // The operation is complete, retrieve the results
+                $results = $responseData['response']['results'];
+                $transcripts = array_map(function ($result) {
+                    return $result['alternatives'][0]['transcript'];
+                }, $results);
+    
+                $finalTranscript = implode(' ', $transcripts);
+                $speech_text = SpeechText::findorfail($request->speech_text_id);
+                $speech_text->speech = $finalTranscript;
+                $speech_text->save();
+                return response()->json([
+                                    'status' => 'Success',
+                                    'transcript' => $finalTranscript,
+                                    'speech_text' =>$speech_text
+                                ], 200);
+                return 'success ' . $finalTranscript;
+            } else {
+                // The operation is still in progress, return the response as it is
+                return 'success ' . $response;
+            }
         }
         
-        // Close cURL
-        curl_close($curl);
     }
     // Function to retrieve the access token
     public function getAccessToken() {
