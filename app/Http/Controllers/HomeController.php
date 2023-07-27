@@ -47,6 +47,7 @@ class HomeController extends Controller
         $user->active = 1;
         $user->password = bcrypt($request->password);
         $user->save();
+        $user->assignRole(['user']);
 
         // Redirect or return a response
         return redirect()->back()->with('success', 'User saved successfully!');
