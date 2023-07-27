@@ -39,6 +39,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 });
     Route::post('convert-speech-to-text' , [SpeechController::class , 'convertSpeech']);
         Route::post('get-status' , [SpeechController::class , 'getStatus']);
+        Route::get('get-speech-status/{operation}' , [SpeechController::class , 'checkSpeechRecognitionStatus']);
 Route::post('get-user-forms', [FormBuilderController::class, 'getUserForm']);
 Route::post('get-user-forms-data', [FormBuilderController::class, 'getUserFormsData']);
 //Route::get('marked-completed/{user_form_id}', [FormBuilderController::class, 'markComplete']);

@@ -59,6 +59,8 @@ Route::get('/test2', [TestController::class, 'test2'])->name('test2_route');
 Route::get('/test3', [TestController::class, 'test3'])->name('test3_route');
 Route::get('/test4', [TestController::class, 'test4'])->name('test4_route');
 Route::get('/test5', [TestController::class, 'test5'])->name('test5_route');
+Route::get('/test-email', [TestController::class, 'testEmail'])->name('test_email');
+
 
 Auth::routes();
 
