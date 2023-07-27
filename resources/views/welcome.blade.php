@@ -12,7 +12,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -274,25 +273,25 @@
         @csrf
         <div class="row ">
           <div class="col-md mt-3">
-            <input type="text" name="first_name" {{old('first_name')}} placeholder="First Name" class="form-control">
+            <input type="text" name="first_name" {{old('first_name')}} placeholder="First Name" class="form-control" required>
           </div>
           <div class="col-md mt-3">
-            <input type="text" name="last_name" {{old('last_name')}} placeholder="Last Name" class="form-control">
+            <input type="text" name="last_name" {{old('last_name')}} placeholder="Last Name" class="form-control" required>
           </div>
         </div>
         <div class="row mt-3">
           <div class="col">
-            <input type="email" name="email" {{old('email')}} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+            <input type="email" name="email" {{old('email')}} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" required>
           </div>
         </div>
         <div class="row mt-3">
           <div class="col">
-            <input type="password" name="password" {{old('password')}} class="form-control" id="exampleInputPassword" aria-describedby="emailHelp" placeholder="Password">
+            <input type="password" name="password" {{old('password')}} class="form-control" id="exampleInputPassword" aria-describedby="emailHelp" placeholder="Password" required>
           </div>
         </div>
         <div class="row mt-3">
           <div class="col">
-            <input type="password" name="confirm-password" {{old('confirm-password')}} class="form-control" id="exampleInputConfirmPassword" aria-describedby="emailHelp" placeholder="Confirm Password">
+            <input type="password" name="confirm-password" {{old('confirm-password')}} class="form-control" id="exampleInputConfirmPassword" aria-describedby="emailHelp" placeholder="Confirm Password" required>
           </div>
         </div>
 
