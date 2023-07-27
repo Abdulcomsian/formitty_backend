@@ -19,7 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger("report_id");
             $table->longText("speech");
             $table->foreign("user_id")->references("id")->on("users");
-            $table->foreign("report_id")->references("id")->on("user_form");
+            // $table->foreign("report_id")->references("id")->on("user_form");
             $table->timestamps();
         });
     }
