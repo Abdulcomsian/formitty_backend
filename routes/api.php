@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\FormBuilderController;
 use App\Http\Controllers\Api\AssessmentToolController;
 use App\Http\Controllers\{ HomeController , SpeechController};
+use App\Http\Controllers\Api\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,10 +37,12 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('getLoggedInUser', [AuthController::class,'getLoggedInUser']);
     Route::post('report-speech-list' , [SpeechController::class , 'getSpeechList']);
     Route::post('delete-speech' , [SpeechController::class , 'deleteSpeech']);
-});
+    Route::post('dashboard-api', [DashboardController::class, 'dashboardApi']);
     Route::post('convert-speech-to-text' , [SpeechController::class , 'convertSpeech']);
-        Route::post('get-status' , [SpeechController::class , 'getStatus']);
-        Route::get('get-speech-status/{operation}' , [SpeechController::class , 'checkSpeechRecognitionStatus']);
+    Route::post('get-status' , [SpeechController::class , 'getStatus']);
+    Route::get('get-speech-status/{operation}' , [SpeechController::class , 'checkSpeechRecognitionStatus']);
+});
+   
 Route::post('get-user-forms', [FormBuilderController::class, 'getUserForm']);
 Route::post('get-user-forms-data', [FormBuilderController::class, 'getUserFormsData']);
 //Route::get('marked-completed/{user_form_id}', [FormBuilderController::class, 'markComplete']);
@@ -60,7 +63,7 @@ Route::post('generate-pdf', [AssessmentToolController::class, 'generatePdf']);
 // created notes api
 Route::post('/get-create-note', [FormBuilderController::class, 'getCreateNote']);
 Route::post('/create-note', [FormBuilderController::class, 'create_note']);
-Route::post('/create-note', [FormBuilderController::class, 'create_note']);
+// Route::post('/create-note', [FormBuilderController::class, 'create_note']);
 // Route::delete('/delete-note/{reportId}', [FormBuilderController::class, 'deleteCreateNote']);
 
 Route::post('/delete-create-note', [FormBuilderController::class, 'deleteCreateNote']);
