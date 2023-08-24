@@ -48,7 +48,7 @@ class Handler extends ExceptionHandler
          // Handle TokenMismatchException (419 error)
         $this->renderable(function (\Exception $e) {
             if ($e->getPrevious() instanceof \Illuminate\Session\TokenMismatchException) {
-                return redirect()->route('login');
+                return redirect()->route('welcome');
             };
         });
         /*$this->reportable(function (Throwable $e) {

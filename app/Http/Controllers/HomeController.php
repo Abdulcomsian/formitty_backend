@@ -59,7 +59,7 @@ class HomeController extends Controller
     }
 
     function sendRegistrationEmail($username, $email) {
-        $to = "haroonniaz96@gmail.com";
+        $to = "amajeed@sparkmedicalsolutions.com.au";
         // $to = "haroon@blondmail.com ";
         $subject = "New User Registration";
         $message = "Hello Admin,\r\n\r\nA new user has been registered with the following details:\r\n";
