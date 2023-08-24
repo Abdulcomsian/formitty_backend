@@ -5,6 +5,7 @@ use App\Models\Log;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Session\TokenMismatchException;
 
 class Handler extends ExceptionHandler
 {
@@ -44,6 +45,12 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
+         // Handle TokenMismatchException (419 error)
+        $this->renderable(function (\Exception $e) {
+            if ($e->getPrevious() instanceof \Illuminate\Session\TokenMismatchException) {
+                return redirect()->route('login');
+            };
+        });
         /*$this->reportable(function (Throwable $e) {
             $userId = 1;
             if (Auth::user()) {
