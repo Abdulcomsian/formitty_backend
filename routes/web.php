@@ -49,7 +49,7 @@ Route::get('/clear', function () {
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::post('/save-user', [HomeController::class, 'saveUser'])->name('save_user');
 

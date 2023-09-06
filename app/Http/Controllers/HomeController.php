@@ -29,6 +29,8 @@ class HomeController extends Controller
 
     public function saveUser(Request $request)
     {
+        try{
+
         // Validate the form data
         $request->validate([
             'first_name' => 'required',
@@ -41,17 +43,38 @@ class HomeController extends Controller
         $user = new User();
         $user->name = $request->input('first_name').' '.$request->input('last_name');
         $user->email = $request->input('email');
-        // $user->state = $request->input('state');
-        // $user->profession = $request->input('profession');
-        // $user->message = $request->input('message');
+
         $user->active = 1;
         $user->password = bcrypt($request->password);
         $user->save();
         $user->assignRole(['user']);
 
+        // Send the email
+        self::sendRegistrationEmail($user->name, $user->email);
         // Redirect or return a response
         return redirect()->back()->with('success', 'User saved successfully!');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error', $th->getMessage());
+        }
     }
 
+    function sendRegistrationEmail($username, $email) {
+        $to = "amajeed@sparkmedicalsolutions.com.au";
+        // $to = "haroon@blondmail.com ";
+        $subject = "New User Registration";
+        $message = "Hello Admin,\r\n\r\nA new user has been registered with the following details:\r\n";
+        $message .= "Username: " . $username . "\r\n";
+        $message .= "Email: " . $email . "\r\n\r\n";
+        $message .= "Thank you,\r\nYour Website";
+    
+        // Set additional headers (optional)
+        $headers = "From: admin@yourwebsite.com\r\n";
+        $headers .= "Reply-To: admin@yourwebsite.com\r\n";
+        $headers .= "X-Mailer: PHP/" . phpversion();
+    
+        // Send the email
+        mail($to, $subject, $message, $headers);
+    }
+    
 
 }
