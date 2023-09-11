@@ -592,7 +592,7 @@ class ContinenceSeeder extends Seeder
               <tbody>
                 <tr>
                   <td style='border: 1px solid lightslategray; padding: 10px; width: 60%; background-color: lightgrey; font-size: 15px'>State/Territory Scheme specification (optional)</td>
-                  <td style='border: 1px solid lightslategray; padding: 10px; font-size: 15px'>{{part_4_con_recomm_schemeSpecification}}</td>
+                  <td style='border: 1px solid lightslategray; padding: 10px; font-size: 15px'>{{part_4_con_recomm_scheme_specification}}</td>
                 </tr>
                 <tr>
                   <td style='border: 1px solid lightslategray; padding: 10px; width: 60%; background-color: lightgrey; font-size: 15px'>Other supplier’s specification (optional)</td>
@@ -831,6 +831,15 @@ class ContinenceSeeder extends Seeder
 
 
     $form_fields = '[
+      {
+        "type":"heading",
+        "required":false,
+        "label_1":"1.1 NDIS Participant Details ",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_1",
+        "access":false
+     },
           {
              "type":"text",
              "required":false,
@@ -944,13 +953,22 @@ class ContinenceSeeder extends Seeder
           {
              "type":"text",
              "required":false,
-             "label":"Cotact Details",
+             "label":"Contact Details",
              "placeholder":"Enter Your Contact Details",
              "className":"form-control",
              "name":"part_1_ndis_participantcontact_details",
              "access":false,
              "subtype":"text"
           },
+          {
+            "type":"heading",
+            "required":false,
+            "label_1":"1.2 Plan Management Details",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_1_heading_extra_2",
+            "access":false
+         },
           {
              "type":"text",
              "required":false,
@@ -996,10 +1014,20 @@ class ContinenceSeeder extends Seeder
 
 
     $form_fields2 = '[
+      {
+        "type":"heading",
+        "required":false,
+        "label_1":"2.1 Background",
+        "label_2":"General: Describe participant’s current status which may include diagnosis, prognosis, co-existing conditions, disability, personal and instrumental activities of daily living, formal and informal support arrangements and life transitions. Consider health issues and other related aspects that may influence the need for continence support.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_2_heading_extra_1",
+        "access":false
+     },
           {
              "type":"textarea",
              "required":false,
-             "label":"Background",
+             "label":"",
              "placeholder":"Enter Your Background",
              "className":"form-control",
              "name":"part_2_assesment_background",
@@ -1007,9 +1035,19 @@ class ContinenceSeeder extends Seeder
              "subtype":"text"
           },
           {
+            "type":"heading",
+            "required":false,
+            "label_1":"2.2 Participant Goals",
+            "label_2":"If the participant’s NDIS plan has been made available, you can refer to the statement of participant’s goals and outline those relevant to the AT solution.",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_2_heading_extra_2",
+            "access":false
+         },
+          {
              "type":"textarea",
              "required":false,
-             "label":"Participant Goals",
+             "label":"",
              "placeholder":"Enter Your Participant Goals",
              "className":"form-control",
              "name":"part_2_assesment_participantgoals",
@@ -1017,9 +1055,20 @@ class ContinenceSeeder extends Seeder
              "subtype":"text"
           },
           {
+            "type":"heading",
+            "required":false,
+            "label_1":"2.3 Functional Assessment",
+            "label_2":"",
+            "label_3":"Note current level of function related to disability and impact on life roles: skin integrity issues; rapidly changing condition – including cognitive issues; dexterity and mobility issues. Consider the need for a support person to assist with the use of continence products. Does the participant currently need assistance to use their continence items? What assistance do they currently get? Will your recommendations result in a change in personal care needs? What assistance will the participant need? \nNDIS expects relevant assessments are conducted where required and records held by AT assessor for NDIS audit purposes.",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_2_heading_extra_3",
+            "access":false
+         },
+          {
              "type":"textarea",
              "required":false,
-             "label":"Functional Assessment",
+             "label":"",
              "placeholder":"Enter Functional Assessment",
              "className":"form-control",
              "name":"part_2_assesment_functional_assessment",
@@ -1046,6 +1095,16 @@ class ContinenceSeeder extends Seeder
              "access":false,
              "subtype":"text"
           },
+          {
+            "type":"heading",
+            "required":false,
+            "label_1":"2.4 Current Continence products in use",
+            "label_2":"",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_2_heading_extra_4",
+            "access":false
+         },
           {
              "type":"text",
              "required":false,
@@ -1087,15 +1146,36 @@ class ContinenceSeeder extends Seeder
              "subtype":"text"
           },
           {
+            "type":"heading",
+            "required":false,
+            "label_1":"2.5 Consideration of health and other issues",
+            "label_2":"2.5.1 Summarise recommendations from allied health and/or medical assessments.",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_2_heading_extra_5",
+            "access":false
+         },
+          {
              "type":"textarea",
              "required":false,
-             "label":"Summarise recommendations from allied health and/or medical assessments",
+             "label":"",
              "placeholder":"Summarise recommendations from allied health and/or medical assessments",
              "className":"form-control",
              "name":"part_2_summarise_recommendations_from_allied_health_medical_assessments",
              "access":false,
              "subtype":"text"
           },
+          {
+            "type":"heading",
+            "required":false,
+            "label_1":"",
+            "label_2":"2.5.2 Are further health, medical assessments, AT solutions and/or advice required from any of the following health or allied health professionals? Yes/No",
+            "label_3":"Indicate relevant health professional",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_2_heading_extra_6",
+            "access":false
+         },
           {
              "type":"text",
              "required":false,
@@ -1167,9 +1247,20 @@ class ContinenceSeeder extends Seeder
              "subtype":"text"
           },
           {
+            "type":"heading",
+            "required":false,
+            "label_1":"",
+            "label_2":"",
+            "label_3":"If yes, please provide the following information. \n Has the participant agreed to seek this assessment and/or advice? \n Is the participant aware that the NDIS cannot fund mainstream medical and health services? \n Describe the additional continence product/training needs identified by participant/Continence Assessor? \n Are other AT solutions or environmental adaptations/home modifications such as toileting AT or bathroom modifications required? \n Does the participant demonstrate behaviours of concern and have a behaviour support plan for restrictive practice? \n How might the outcome of this advice change the recommended NDIS continence supports to pursue the participant’s goals?\n",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_2_heading_extra_7",
+            "access":false
+         },
+          {
              "type":"textarea",
              "required":false,
-             "label":"Other",
+             "label":"",
              "placeholder":"If yes, please provide the following information",
              "className":"form-control",
              "name":"part_2_additional_information",
@@ -1182,42 +1273,34 @@ class ContinenceSeeder extends Seeder
     $form_fields3 = '
         [
           {
+            "type":"heading",
+            "required":false,
+            "label_1":"3.1 Evaluation of options",
+            "label_2":"",
+            "label_3":"Thorough list of alternatives including use of other supports and approaches. Where trials have been conducted please give details of where the trials took place and for how long. \nNOTE training in device use is included and expected to be accomplished within 2 hours. Provide rationale and hours required if more extensive or specific training is indicated.",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_3_heading_extra_1",
+            "access":false
+         },
+          {
+            "type":"heading",
+            "required":false,
+            "label_1":"",
+            "label_2":"",
+            "label_3":"Data Entry Section 1",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_3_heading_extra_2",
+            "access":false
+         },
+          {
              "type":"text",
              "required":false,
              "label":"Option",
              "placeholder":"Enter option",
              "className":"form-control",
              "name":"part_3_con_option_evaluation_option1",
-             "access":false,
-             "subtype":"text"
-          },
-          {
-             "type":"text",
-             "required":false,
-             "label":"Option",
-             "placeholder":"Enter option",
-             "className":"form-control",
-             "name":"part_3_con_option_evaluation_option2",
-             "access":false,
-             "subtype":"text"
-          },
-          {
-             "type":"text",
-             "required":false,
-             "label":"Option",
-             "placeholder":"Enter option",
-             "className":"form-control",
-             "name":"part_3_con_option_evaluation_option3",
-             "access":false,
-             "subtype":"text"
-          },
-          {
-             "type":"text",
-             "required":false,
-             "label":"Option",
-             "placeholder":"Enter option",
-             "className":"form-control",
-             "name":"part_3_con_option_evaluation_option4",
              "access":false,
              "subtype":"text"
           },
@@ -1234,6 +1317,67 @@ class ContinenceSeeder extends Seeder
           {
              "type":"text",
              "required":false,
+             "label":"Trialled (T) or Considered (C)? Include trial details (timing, location)",
+             "placeholder":"Enter Trial Details",
+             "className":"form-control",
+             "name":"part_3_con_option_trial_option1",
+             "access":false,
+             "subtype":"text"
+          },
+          {
+             "type":"text",
+             "required":false,
+             "label":"Advantages",
+             "placeholder":"Enter Advantages",
+             "className":"form-control",
+             "name":"part_3_con_option_advantage1",
+             "access":false,
+             "subtype":"text"
+          },
+          {
+             "type":"text",
+             "required":false,
+             "label":"Disadvantages",
+             "placeholder":"Enter Disadvantage",
+             "className":"form-control",
+             "name":"part_3_con_option_disdvantage1",
+             "access":false,
+             "subtype":"text"
+          },
+          {
+             "type":"text",
+             "required":false,
+             "label":"Estimated hours for training & review",
+             "placeholder":"Enter Estimated Time",
+             "className":"form-control",
+             "name":"part_3_con_option_estimatedTime1",
+             "access":false,
+             "subtype":"text"
+          },
+          {
+            "type":"heading",
+            "required":false,
+            "label_1":"",
+            "label_2":"",
+            "label_3":"Data Entry Section 2",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_3_heading_extra_3",
+            "access":false
+         },
+          {
+             "type":"text",
+             "required":false,
+             "label":"Option",
+             "placeholder":"Enter option",
+             "className":"form-control",
+             "name":"part_3_con_option_evaluation_option2",
+             "access":false,
+             "subtype":"text"
+          },
+          {
+             "type":"text",
+             "required":false,
              "label":"Describe potential options trialled in relation to goal attainment",
              "placeholder":"Enter Potential Option",
              "className":"form-control",
@@ -1244,10 +1388,132 @@ class ContinenceSeeder extends Seeder
           {
              "type":"text",
              "required":false,
+             "label":"Trialled (T) or Considered (C)? Include trial details (timing, location)",
+             "placeholder":"Enter Trial Details",
+             "className":"form-control",
+             "name":"part_3_con_option_trial_option2",
+             "access":false,
+             "subtype":"text"
+          },
+          {
+             "type":"text",
+             "required":false,
+             "label":"Advantages",
+             "placeholder":"Enter Advantages",
+             "className":"form-control",
+             "name":"part_3_con_option_advantage2",
+             "access":false,
+             "subtype":"text"
+          },
+          {
+             "type":"text",
+             "required":false,
+             "label":"Disadvantages",
+             "placeholder":"Enter Disadvantage",
+             "className":"form-control",
+             "name":"part_3_con_option_disdvantage2",
+             "access":false,
+             "subtype":"text"
+          },
+          {
+             "type":"text",
+             "required":false,
+             "label":"Estimated hours for training & review",
+             "placeholder":"Enter Estimated Time",
+             "className":"form-control",
+             "name":"part_3_con_option_estimatedTime2",
+             "access":false,
+             "subtype":"text"
+          },
+          {
+            "type":"heading",
+            "required":false,
+            "label_1":"",
+            "label_2":"",
+            "label_3":"Data Entry Section 3",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_3_heading_extra_4",
+            "access":false
+         },
+          {
+             "type":"text",
+             "required":false,
+             "label":"Option",
+             "placeholder":"Enter option",
+             "className":"form-control",
+             "name":"part_3_con_option_evaluation_option3",
+             "access":false,
+             "subtype":"text"
+          },
+          {
+             "type":"text",
+             "required":false,
              "label":"Describe potential options trialled in relation to goal attainment",
              "placeholder":"Enter Potential Option",
              "className":"form-control",
              "name":"part_3_con_option_potential_option3",
+             "access":false,
+             "subtype":"text"
+          },
+          {
+             "type":"text",
+             "required":false,
+             "label":"Trialled (T) or Considered (C)? Include trial details (timing, location)",
+             "placeholder":"Enter Trial Details",
+             "className":"form-control",
+             "name":"part_3_con_option_trial_option3",
+             "access":false,
+             "subtype":"text"
+          },
+          {
+             "type":"text",
+             "required":false,
+             "label":"Advantages",
+             "placeholder":"Enter Advantages",
+             "className":"form-control",
+             "name":"part_3_con_option_advantage3",
+             "access":false,
+             "subtype":"text"
+          },
+          {
+             "type":"text",
+             "required":false,
+             "label":"Disadvantages",
+             "placeholder":"Enter Disadvantage",
+             "className":"form-control",
+             "name":"part_3_con_option_disdvantage3",
+             "access":false,
+             "subtype":"text"
+          },
+          {
+             "type":"text",
+             "required":false,
+             "label":"Estimated hours for training & review",
+             "placeholder":"Enter Estimated Time",
+             "className":"form-control",
+             "name":"part_3_con_option_estimatedTime3",
+             "access":false,
+             "subtype":"text"
+          },
+          {
+            "type":"heading",
+            "required":false,
+            "label_1":"",
+            "label_2":"",
+            "label_3":"Data Entry Section 4",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_3_heading_extra_5",
+            "access":false
+         },
+          {
+             "type":"text",
+             "required":false,
+             "label":"Option",
+             "placeholder":"Enter option",
+             "className":"form-control",
+             "name":"part_3_con_option_evaluation_option4",
              "access":false,
              "subtype":"text"
           },
@@ -1267,67 +1533,7 @@ class ContinenceSeeder extends Seeder
              "label":"Trialled (T) or Considered (C)? Include trial details (timing, location)",
              "placeholder":"Enter Trial Details",
              "className":"form-control",
-             "name":"part_3_con_option_trial_option1",
-             "access":false,
-             "subtype":"text"
-          },
-          {
-             "type":"text",
-             "required":false,
-             "label":"Trialled (T) or Considered (C)? Include trial details (timing, location)",
-             "placeholder":"Enter Trial Details",
-             "className":"form-control",
-             "name":"part_3_con_option_trial_option2",
-             "access":false,
-             "subtype":"text"
-          },
-          {
-             "type":"text",
-             "required":false,
-             "label":"Trialled (T) or Considered (C)? Include trial details (timing, location)",
-             "placeholder":"Enter Trial Details",
-             "className":"form-control",
-             "name":"part_3_con_option_trial_option3",
-             "access":false,
-             "subtype":"text"
-          },
-          {
-             "type":"text",
-             "required":false,
-             "label":"Trialled (T) or Considered (C)? Include trial details (timing, location)",
-             "placeholder":"Enter Trial Details",
-             "className":"form-control",
              "name":"part_3_con_option_trial_option4",
-             "access":false,
-             "subtype":"text"
-          },
-          {
-             "type":"text",
-             "required":false,
-             "label":"Advantages",
-             "placeholder":"Enter Advantages",
-             "className":"form-control",
-             "name":"part_3_con_option_advantage1",
-             "access":false,
-             "subtype":"text"
-          },
-          {
-             "type":"text",
-             "required":false,
-             "label":"Advantages",
-             "placeholder":"Enter Advantages",
-             "className":"form-control",
-             "name":"part_3_con_option_advantage2",
-             "access":false,
-             "subtype":"text"
-          },
-          {
-             "type":"text",
-             "required":false,
-             "label":"Advantages",
-             "placeholder":"Enter Advantages",
-             "className":"form-control",
-             "name":"part_3_con_option_advantage3",
              "access":false,
              "subtype":"text"
           },
@@ -1347,67 +1553,7 @@ class ContinenceSeeder extends Seeder
              "label":"Disadvantages",
              "placeholder":"Enter Disadvantage",
              "className":"form-control",
-             "name":"part_3_con_option_disdvantage1",
-             "access":false,
-             "subtype":"text"
-          },
-          {
-             "type":"text",
-             "required":false,
-             "label":"Disadvantages",
-             "placeholder":"Enter Disadvantage",
-             "className":"form-control",
-             "name":"part_3_con_option_disdvantage2",
-             "access":false,
-             "subtype":"text"
-          },
-          {
-             "type":"text",
-             "required":false,
-             "label":"Disadvantages",
-             "placeholder":"Enter Disadvantage",
-             "className":"form-control",
-             "name":"part_3_con_option_disdvantage3",
-             "access":false,
-             "subtype":"text"
-          },
-          {
-             "type":"text",
-             "required":false,
-             "label":"Disadvantages",
-             "placeholder":"Enter Disadvantage",
-             "className":"form-control",
              "name":"part_3_con_option_disdvantage4",
-             "access":false,
-             "subtype":"text"
-          },
-          {
-             "type":"text",
-             "required":false,
-             "label":"Estimated hours for training & review",
-             "placeholder":"Enter Estimated Time",
-             "className":"form-control",
-             "name":"part_3_con_option_estimatedTime1",
-             "access":false,
-             "subtype":"text"
-          },
-          {
-             "type":"text",
-             "required":false,
-             "label":"Estimated hours for training & review",
-             "placeholder":"Enter Estimated Time",
-             "className":"form-control",
-             "name":"part_3_con_option_estimatedTime2",
-             "access":false,
-             "subtype":"text"
-          },
-          {
-             "type":"text",
-             "required":false,
-             "label":"Estimated hours for training & review",
-             "placeholder":"Enter Estimated Time",
-             "className":"form-control",
-             "name":"part_3_con_option_estimatedTime3",
              "access":false,
              "subtype":"text"
           },
@@ -1427,9 +1573,20 @@ class ContinenceSeeder extends Seeder
     $form_fields4 = '
         [
           {
+            "type":"heading",
+            "required":false,
+            "label_1":"4.1 Provide specific evidence that the supports/products described will enable the participant to pursue their identified goals and be of long-term benefit considering both current and future needs.",
+            "label_2":"",
+            "label_3":"",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_4_heading_extra_1",
+            "access":false
+         },
+          {
              "type":"textarea",
              "required":false,
-             "label":"Continence Recommendations",
+             "label":"",
              "placeholder":"Enter Specific Evidence",
              "className":"form-control",
              "name":"part_4_con_recomm_specific_evidence",
@@ -1437,15 +1594,48 @@ class ContinenceSeeder extends Seeder
              "subtype":"textarea"
           },
           {
+            "type":"heading",
+            "required":false,
+            "label_1":"4.2 Are there additional features, customisation or specification recommended that is considered to be above the minimum or standard level for this support? Please provide the specific evidence or clinical justification for these.",
+            "label_2":"",
+            "label_3":"",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_4_heading_extra_2",
+            "access":false
+         },
+          {
              "type":"textarea",
              "required":false,
-             "label":"Continence Recommendations",
+             "label":"",
              "placeholder":"Enter additional features, customisation or specification recommended",
              "className":"form-control",
              "name":"part_4_con_recomm_additional_feature",
              "access":false,
              "subtype":"textarea"
           },
+          {
+            "type":"heading",
+            "required":false,
+            "label_1":"4.3 Description of continence products and/or AT solution. Detail all necessary components required to meet participant’s goal. This must be detailed enough to ensure that the item can be accurately supplied (attach completed supplier(s) specification/quotes as required).",
+            "label_2":"",
+            "label_3":"",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_4_heading_extra_3",
+            "access":false
+         },
+         {
+          "type":"heading",
+          "required":false,
+          "label_1":"",
+          "label_2":"",
+          "label_3":"Data Entry Section 1",
+          "placeholder":"Full Name",
+          "className":"form-control",
+          "name":"part_4_heading_extra_4",
+          "access":false
+       },
           {
              "type":"text",
              "required":false,
@@ -1457,6 +1647,47 @@ class ContinenceSeeder extends Seeder
              "subtype":"textarea"
           },
           {
+            "type":"text",
+            "required":false,
+            "label":"Quantity 1",
+            "placeholder":"Enter Quantity",
+            "className":"form-control",
+            "name":"part_4_con_recomm_quantity1",
+            "access":false,
+            "subtype":"textarea"
+         },
+         {
+          "type":"text",
+          "required":false,
+          "label":"Frequency of Supply 1",
+          "placeholder":"Enter Frequency of Supply",
+          "className":"form-control",
+          "name":"part_4_con_recomm_frequency1",
+          "access":false,
+          "subtype":"text"
+        },
+        {
+           "type":"text",
+           "required":false,
+           "label":"State / Specification 1",
+           "placeholder":"Enter State/Specification",
+           "className":"form-control",
+           "name":"part_4_con_recomm_StateSpecification1",
+           "access":false,
+           "subtype":"text"
+        },
+        {
+          "type":"heading",
+          "required":false,
+          "label_1":"",
+          "label_2":"",
+          "label_3":"Data Entry Section 2",
+          "placeholder":"Full Name",
+          "className":"form-control",
+          "name":"part_4_heading_extra_5",
+          "access":false
+       },
+          {
              "type":"text",
              "required":false,
              "label":"Item 2",
@@ -1467,32 +1698,53 @@ class ContinenceSeeder extends Seeder
              "subtype":"textarea"
           },
           {
+            "type":"text",
+            "required":false,
+            "label":"Quantity 2",
+            "placeholder":"Enter Quantity",
+            "className":"form-control",
+            "name":"part_4_con_recomm_quantity2",
+            "access":false,
+            "subtype":"textarea"
+         },
+         {
+          "type":"text",
+          "required":false,
+          "label":"Frequency of Supply 2",
+          "placeholder":"Enter Frequency of Supply",
+          "className":"form-control",
+          "name":"part_4_con_recomm_frequency2",
+          "access":false,
+          "subtype":"text"
+       },
+       {
+          "type":"text",
+          "required":false,
+          "label":"State / Specification 2",
+          "placeholder":"Enter State/Specification",
+          "className":"form-control",
+          "name":"part_4_con_recomm_StateSpecification2",
+          "access":false,
+          "subtype":"text"
+       },
+       {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Data Entry Section 3",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_4_heading_extra_6",
+        "access":false
+     },
+          {
              "type":"text",
              "required":false,
              "label":"Item 3",
              "placeholder":"Enter Item",
              "className":"form-control",
              "name":"part_4_con_recomm_item3",
-             "access":false,
-             "subtype":"textarea"
-          },
-          {
-             "type":"text",
-             "required":false,
-             "label":"Quantity 1",
-             "placeholder":"Enter Quantity",
-             "className":"form-control",
-             "name":"part_4_con_recomm_quantity1",
-             "access":false,
-             "subtype":"textarea"
-          },
-          {
-             "type":"text",
-             "required":false,
-             "label":"Quantity 2",
-             "placeholder":"Enter Quantity",
-             "className":"form-control",
-             "name":"part_4_con_recomm_quantity2",
              "access":false,
              "subtype":"textarea"
           },
@@ -1509,50 +1761,10 @@ class ContinenceSeeder extends Seeder
           {
              "type":"text",
              "required":false,
-             "label":"Frequency of Supply 1",
-             "placeholder":"Enter Frequency of Supply",
-             "className":"form-control",
-             "name":"part_4_con_recomm_frequency1",
-             "access":false,
-             "subtype":"text"
-          },
-          {
-             "type":"text",
-             "required":false,
-             "label":"Frequency of Supply 2",
-             "placeholder":"Enter Frequency of Supply",
-             "className":"form-control",
-             "name":"part_4_con_recomm_frequency2",
-             "access":false,
-             "subtype":"text"
-          },
-          {
-             "type":"text",
-             "required":false,
              "label":"Frequency of Supply 3",
              "placeholder":"Enter Frequency of Supply",
              "className":"form-control",
              "name":"part_4_con_recomm_frequency3",
-             "access":false,
-             "subtype":"text"
-          },
-          {
-             "type":"text",
-             "required":false,
-             "label":"State / Specification 1",
-             "placeholder":"Enter State/Specification",
-             "className":"form-control",
-             "name":"part_4_con_recomm_StateSpecification1",
-             "access":false,
-             "subtype":"text"
-          },
-          {
-             "type":"text",
-             "required":false,
-             "label":"State / Specification 2",
-             "placeholder":"Enter State/Specification",
-             "className":"form-control",
-             "name":"part_4_con_recomm_StateSpecification2",
              "access":false,
              "subtype":"text"
           },
@@ -1569,8 +1781,8 @@ class ContinenceSeeder extends Seeder
           {
              "type":"text",
              "required":false,
-             "label":"Preferred supplier (Optional)",
-             "placeholder":"Enter your Preferred Supplier",
+             "label":"Participant’s preferred supplier (optional):",
+             "placeholder":"Enter Participant’s preferred supplier",
              "className":"form-control",
              "name":"part_4_con_recomm_preferred_supplier1",
              "access":false,
@@ -1579,7 +1791,7 @@ class ContinenceSeeder extends Seeder
           {
              "type":"checkbox-group",
              "required":false,
-             "label":"Supplier Product Use Guidence",
+             "label":"Is recommendation in line with supplier product use guidance? Yes/No",
              "toggle":false,
              "inline":false,
              "name":"part_4_con_recomm_SPUG1",
@@ -1594,9 +1806,20 @@ class ContinenceSeeder extends Seeder
              ]
           },
           {
+            "type":"heading",
+            "required":false,
+            "label_1":"4.4 The participant is to be provided with product information and instructions for use including any precautions. Specify who is to do this and when.",
+            "label_2":"",
+            "label_3":"",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_4_heading_extra_7",
+            "access":false
+         },
+          {
              "type":"textarea",
              "required":false,
-             "label":"Information and Instructions",
+             "label":"",
              "placeholder":"Enter Information and Instructions for Usage.",
              "className":"form-control",
              "name":"part_4_con_recomm_information_instructions_field",
@@ -1604,9 +1827,20 @@ class ContinenceSeeder extends Seeder
              "subtype":"textarea"
           },
           {
+            "type":"heading",
+            "required":false,
+            "label_1":"4.5 Is urgent supply required? Yes or No Details",
+            "label_2":"",
+            "label_3":"",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_4_heading_extra_8",
+            "access":false
+         },
+          {
              "type":"textarea",
              "required":false,
-             "label":"Urgent supply required?&nbsp;",
+             "label":"",
              "placeholder":"Enter detail with YES/NO",
              "className":"form-control",
              "name":"part_4_con_recomm_urgentSupply",
@@ -1614,12 +1848,23 @@ class ContinenceSeeder extends Seeder
              "subtype":"textarea"
           },
           {
+            "type":"heading",
+            "required":false,
+            "label_1":"4.6 Continence product order detail is attached (as advised by supplier(s))",
+            "label_2":"",
+            "label_3":"",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_4_heading_extra_9",
+            "access":false
+         },
+          {
              "type":"text",
              "required":false,
-             "label":"Scheme Specification (Optional)",
-             "placeholder":"Enter your scheme specification here.",
+             "label":"State/Territory Scheme specification (optional)",
+             "placeholder":"Enter your scheme specification",
              "className":"form-control",
-             "name":"part_4_con_recomm_schemeSpecification",
+             "name":"part_4_con_recomm_scheme_specification",
              "access":false,
              "subtype":"text"
           },
@@ -1633,6 +1878,17 @@ class ContinenceSeeder extends Seeder
              "access":false,
              "subtype":"text"
           },
+          {
+            "type":"heading",
+            "required":false,
+            "label_1":"4.7 Participant Agreement",
+            "label_2":"Does the participant agree with the recommended continence assessment and products? (Are the assessor’s clinical recommendations and participant preference the same?)",
+            "label_3":"",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_4_heading_extra_10",
+            "access":false
+         },
           {
              "type":"radio-group",
              "required":true,
@@ -1662,7 +1918,7 @@ class ContinenceSeeder extends Seeder
           {
              "type":"textarea",
              "required":false,
-             "label":"Other supplier specification (Optional)",
+             "label":"Please provide details",
              "placeholder":"Please provide detail about Participant Agreement",
              "className":"form-control",
              "name":"part_4_detail_about_Participant_Agreement",
@@ -1677,7 +1933,7 @@ class ContinenceSeeder extends Seeder
           {
              "type":"checkbox-group",
              "required":false,
-             "label":"Meet the NDIA expectation",
+             "label":"I certify that I meet the NDIA expectations of AT assessor provider suitability (including understanding of the current NDIS Act, Rules and Operational Guidelines) to assess the type of assistive technology and associated supports, at the level of complexity required by this participant.",
              "toggle":false,
              "inline":false,
              "name":"part_5_declaration_NDIA_expectation",
@@ -1694,7 +1950,7 @@ class ContinenceSeeder extends Seeder
           {
              "type":"checkbox-group",
              "required":false,
-             "label":"Providing appropriate evidence to the NDIA",
+             "label":"I will provide appropriate evidence to the NDIA and/or Quality and Safe Guards Commission if and as requested.",
              "toggle":false,
              "inline":false,
              "name":"part_5_declaration_appropriate_evidence",
@@ -1711,7 +1967,7 @@ class ContinenceSeeder extends Seeder
           {
              "type":"checkbox-group",
              "required":false,
-             "label":"I understand all about the NDIA",
+             "label":"I understand and acknowledge that the NDIA and participant will rely on my professional advice to select, source and implement this assistive technology.",
              "toggle":false,
              "inline":false,
              "name":"part_5_declaration_NDIA_understanding",
@@ -1728,7 +1984,7 @@ class ContinenceSeeder extends Seeder
           {
              "type":"checkbox-group",
              "required":false,
-             "label":"Accessing by the treating multi-disciplinary team",
+             "label":"This assistive technology has been assessed by the treating multi-disciplinary team and I have completed the AT assessment on behalf of that team.",
              "toggle":false,
              "inline":false,
              "name":"part_5_declaration_accessing_team",
@@ -1877,7 +2133,7 @@ class ContinenceSeeder extends Seeder
           {
              "type":"checkbox-group",
              "required":false,
-             "label":"I understand that I am giving consent by NDIS",
+             "label":"I understand that I am giving consent to the NDIA to do the things with my information set out in this section. I understand that I can withdraw my consent for the NDIS to do things with my information at any time by letting the NDIA know.",
              "toggle":false,
              "inline":false,
              "name":"part_6_understand_giving_consent",
@@ -1892,15 +2148,22 @@ class ContinenceSeeder extends Seeder
              ]
           },
           {
-             "type":"text",
-             "required":false,
-             "label":"I understand that I can access the NDIAs Privacy Notice",
-             "placeholder":"Enter Assessors  Name",
-             "className":"form-control",
-             "name":"part_6_i_can_access_NDIA_privacy_notice",
-             "access":false,
-             "subtype":"text"
-          },
+            "type":"checkbox-group",
+            "required":false,
+            "label":"I understand that I can access the NDIA’s Privacy Notice and Privacy Policy on the NDIA website(http://phpword.readthedocs.io) or by contacting the NDIA.",
+            "toggle":false,
+            "inline":false,
+            "name":"part_6_i_can_access_NDIA_privacy_notice",
+            "access":false,
+            "other":false,
+            "values":[
+               {
+                  "label":"YES/NO",
+                  "value":"option-1",
+                  "selected":false
+               }
+            ]
+         },
           {
              "type":"text",
              "required":false,
@@ -1925,11 +2188,21 @@ class ContinenceSeeder extends Seeder
              "type":"text",
              "required":false,
              "label":"Full Name",
-             "placeholder":"Enter Full_Name",
+             "placeholder":"Enter Full Name",
              "className":"form-control",
              "name":"part_6_full_name_here",
              "access":false
           },
+          {
+            "type":"heading",
+            "required":false,
+            "label_1": "",
+            "label_2":"If you have signed this Form on behalf of the NDIS participant, please complete the details below. It is an offence to provide false or misleading information. We may require you to provide evidence of your authority to sign on behalf of the person.",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_6_heading_extra_1",
+            "access":false
+         },
           {
              "type":"text",
              "required":false,
@@ -1950,7 +2223,7 @@ class ContinenceSeeder extends Seeder
              "access":false
           },
           {
-             "type":"date",
+             "type":"text",
              "required":false,
              "label":"Full Name",
              "placeholder":"Full Name",
