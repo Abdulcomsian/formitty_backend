@@ -147,7 +147,7 @@ class FormBuilderController extends ApiController
 
         self::generateWordDocument($user_form->id);
 
-        $success['file_path'] = 'https://formitydev.com/download.docx';
+        $success['file_path'] = 'https://formitydev.com/export_download.docx';
         $success['fields'] = $input;
         $success['user_form_id'] = $user_form->id;
         return $this->successResponse($success, 'Document Generated Successfully.');
@@ -448,7 +448,7 @@ class FormBuilderController extends ApiController
             $html .= $section_html;
         }
         // Save file
-        $fileName = "download.docx";
+        $fileName = "export_download.docx";
         \PhpOffice\PhpWord\Shared\Html::addHtml($section, $html, false, false);
         $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
 
