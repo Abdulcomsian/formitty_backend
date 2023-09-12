@@ -431,7 +431,7 @@ class FormBuilderController extends ApiController
         foreach ($usr_forms->userFormHeadings as $userFormHeading) {
             if ($userFormHeading->heading_type == 'custom') {
                 $section_html = $userFormHeading->customHeading->form_heading;
-            } else {
+              } elseif($userFormHeading->heading_type == 'predefined') {
                 $section_html = $userFormHeading->formHeading->section_html;
             }
             if ($userFormHeading->heading_type != 'custom') {
