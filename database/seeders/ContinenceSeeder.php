@@ -1018,7 +1018,8 @@ class ContinenceSeeder extends Seeder
         "type":"heading",
         "required":false,
         "label_1":"2.1 Background",
-        "label_2":"General: Describe participant’s current status which may include diagnosis, prognosis, co-existing conditions, disability, personal and instrumental activities of daily living, formal and informal support arrangements and life transitions. Consider health issues and other related aspects that may influence the need for continence support.",
+        "label_2":"",
+        "label_3":"General: Describe participant’s current status which may include diagnosis, prognosis, co-existing conditions, disability, personal and instrumental activities of daily living, formal and informal support arrangements and life transitions. Consider health issues and other related aspects that may influence the need for continence support.",
         "placeholder":"Full Name",
         "className":"form-control",
         "name":"part_2_heading_extra_1",
@@ -1038,7 +1039,8 @@ class ContinenceSeeder extends Seeder
             "type":"heading",
             "required":false,
             "label_1":"2.2 Participant Goals",
-            "label_2":"If the participant’s NDIS plan has been made available, you can refer to the statement of participant’s goals and outline those relevant to the AT solution.",
+            "label_2":"",
+            "label_3":"If the participant’s NDIS plan has been made available, you can refer to the statement of participant’s goals and outline those relevant to the AT solution.",
             "placeholder":"Full Name",
             "className":"form-control",
             "name":"part_2_heading_extra_2",
@@ -1931,6 +1933,17 @@ class ContinenceSeeder extends Seeder
     $form_fields5 = '
         [
           {
+            "type":"heading",
+            "required":false,
+            "label_1": "",
+            "label_2":"DECLARATION (indicate all relevant sections that apply)",
+            "label_3": "",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_5_heading_extra_1",
+            "access":false
+         },
+          {
              "type":"checkbox-group",
              "required":false,
              "label":"I certify that I meet the NDIA expectations of AT assessor provider suitability (including understanding of the current NDIS Act, Rules and Operational Guidelines) to assess the type of assistive technology and associated supports, at the level of complexity required by this participant.",
@@ -1998,6 +2011,17 @@ class ContinenceSeeder extends Seeder
                 }
              ]
           },
+          {
+            "type":"heading",
+            "required":false,
+            "label_1": "",
+            "label_2":"Assessor’s Details",
+            "label_3": "",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_5_heading_extra_2",
+            "access":false
+         },
           {
              "type":"text",
              "required":false,
@@ -2080,6 +2104,17 @@ class ContinenceSeeder extends Seeder
     $form_fields6 = '
         [
           {
+            "type":"heading",
+            "required":false,
+            "label_1": "",
+            "label_2": "For the participant to complete",
+            "label_3":"As a participant who requires assistive technology supports, the National Disability Insurance Agency (NDIA) may need to contact your AT assessor and / or AT supplier to discuss information within your assistive technology assessment and quotation(s). This will assist the NDIA with determining whether your request for assistive technology support(s) can be provided to you under the NDIS. \nDo you consent to the NDIA collecting and disclosing your information including from these third parties mentioned above, in relation to your assistive technology assessment and quotation? ",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_6_heading_extra_1",
+            "access":false
+         },
+          {
              "type":"checkbox-group",
              "required":false,
              "label":"Yes, I consent",
@@ -2150,7 +2185,7 @@ class ContinenceSeeder extends Seeder
           {
             "type":"checkbox-group",
             "required":false,
-            "label":"I understand that I can access the NDIA’s Privacy Notice and Privacy Policy on the NDIA website(http://phpword.readthedocs.io) or by contacting the NDIA.",
+            "label":"I understand that I can access the NDIA’s Privacy Notice and Privacy Policy on the NDIA website(https://www.ndis.gov.au/about-us/operational-guidelines/information-handling-operational-guideline/information-handling-operational-guideline-privacy) or by contacting the NDIA (https://www.ndis.gov.au/contact).",
             "toggle":false,
             "inline":false,
             "name":"part_6_i_can_access_NDIA_privacy_notice",
@@ -2197,10 +2232,11 @@ class ContinenceSeeder extends Seeder
             "type":"heading",
             "required":false,
             "label_1": "",
-            "label_2":"If you have signed this Form on behalf of the NDIS participant, please complete the details below. It is an offence to provide false or misleading information. We may require you to provide evidence of your authority to sign on behalf of the person.",
+            "label_2": "",
+            "label_3":"If you have signed this Form on behalf of the NDIS participant, please complete the details below. \nNote: It is an offence to provide false or misleading information. \nWe may require you to provide evidence of your authority to sign on behalf of the person.",
             "placeholder":"Full Name",
             "className":"form-control",
-            "name":"part_6_heading_extra_1",
+            "name":"part_6_heading_extra_2",
             "access":false
          },
           {
@@ -2260,26 +2296,26 @@ class ContinenceSeeder extends Seeder
     ]);
 
     $heading3 = FormHeading::insertGetId([
-      'form_heading' => 'PART 3 – Property Details',
+      'form_heading' => 'PART 3 - Exploration of Continence Interventions and Options',
       'form_id' => $form,
       'section_html' => $section3
     ]);
 
     $heading4 = FormHeading::insertGetId([
-      'form_heading' => 'PART 4 – Social Situation',
+      'form_heading' => 'PART 4 – Continence Recommendations',
       'form_id' => $form,
       'section_html' => $section4
     ]);
 
     $heading5 = FormHeading::insertGetId([
-      'form_heading' => 'PART 5 – Complex Home Modification Recommendations',
+      'form_heading' => 'PART 5 – Details of Assistive Technology Assessor',
       'form_id' => $form,
       'section_html' => $section5
     ]);
 
 
     $heading6 = FormHeading::insertGetId([
-      'form_heading' => 'PART 6 – Complex Home Modification Quotes',
+      'form_heading' => 'PART 6 – Consent to Collect and Share Your Information – Provider AT Assessment and Quotation(s)',
       'form_id' => $form,
       'section_html' => $section6
     ]);
