@@ -147,7 +147,7 @@ class FormBuilderController extends ApiController
 
         self::generateWordDocument($user_form->id);
 
-        $success['file_path'] = 'https://formity.accrualdev.com/public/download.docx';
+        $success['file_path'] = 'https://formitydev.com/download.docx';
         $success['fields'] = $input;
         $success['user_form_id'] = $user_form->id;
         return $this->successResponse($success, 'Document Generated Successfully.');
