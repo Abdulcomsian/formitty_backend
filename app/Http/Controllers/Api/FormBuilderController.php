@@ -137,17 +137,20 @@ class FormBuilderController extends ApiController
                     $form_data = FormData::findorfail($form_data->id);
                     $form_data->user_form_heading_id = $user_form_heading->id;
                     $form_data->save();
-//                    $custom_heading = $this->checkCustomHeadingOrCustomField($name, $heading_id, $order_id, $value, $array, $user_form);
                 }
             }
         }
-        /*if($update){
-            $this->updateResponse($update, $user_form);
-        }*/
 
-        self::generateWordDocument($user_form->id);
-
-        $success['file_path'] = 'https://formitydev.com/export_download.docx';
+        $user_id = auth('sanctum')->user()->id;
+        $fileName=$user_id.'.docx';
+        $local_file_path = public_path($fileName);
+        if (file_exists($local_file_path)) {
+        unlink($local_file_path);
+        }
+        self::generateWordDocument($user_form->id,$fileName);
+        $file_path = env('APP_URL');
+        $file_path = $file_path.$fileName;
+        $success['file_path'] = $file_path;
         $success['fields'] = $input;
         $success['user_form_id'] = $user_form->id;
         return $this->successResponse($success, 'Document Generated Successfully.');
@@ -409,7 +412,7 @@ class FormBuilderController extends ApiController
         }
     }
 
-    public function generateWordDocument($id)
+    public function generateWordDocument($id,$fileName)
     {
         $phpWord = new \PhpOffice\PhpWord\PhpWord();
 
@@ -431,11 +434,11 @@ class FormBuilderController extends ApiController
         foreach ($usr_forms->userFormHeadings as $userFormHeading) {
             if ($userFormHeading->heading_type == 'custom') {
                 $section_html = $userFormHeading->customHeading->form_heading;
-            }
-            //   } elseif($userFormHeading->heading_type == 'predefined') {
-            //     $section_html = $userFormHeading->formHeading->section_html;
             // }
-            if ($userFormHeading->heading_type != 'custom' && $userFormHeading->heading_type != 'assessment_tool') {
+              } elseif($userFormHeading->heading_type == 'predefined') {
+                $section_html = $userFormHeading->formHeading->section_html;
+            }
+            if ($userFormHeading->heading_type != 'custom') {
                 foreach ($userFormHeading->formData as $formData) {
                     $field_name = $formData->name;
                     $field_value = $formData->value;
@@ -449,7 +452,7 @@ class FormBuilderController extends ApiController
             $html .= $section_html;
         }
         // Save file
-        $fileName = "export_download.docx";
+        // $fileName = "export_download.docx";
         \PhpOffice\PhpWord\Shared\Html::addHtml($section, $html, false, false);
         $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
 
