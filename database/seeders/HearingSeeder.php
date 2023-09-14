@@ -2697,20 +2697,10 @@ class HearingSeeder extends Seeder
         {
             "type":"text",
             "required":false,
-            "label":"Membership of Professional Association",
-            "placeholder":"Membership of Professional Association",
-            "className":"form-control",
-            "name":"part_7_details_of_assessor8",
-            "access":false,
-            "subtype":"text"
-        },
-        {
-            "type":"text",
-            "required":false,
             "label":"Organisation / Company",
             "placeholder":"Organisation / Company",
             "className":"form-control",
-            "name":"part_7_details_of_assessor9",
+            "name":"part_7_details_of_assessor8",
             "access":false,
             "subtype":"text"
         },
@@ -2721,7 +2711,7 @@ class HearingSeeder extends Seeder
             "label":"Current arrangements with preferred suppliers.",
             "placeholder":"Current arrangements with preferred suppliers.",
             "className":"form-control",
-            "name":"part_7_details_of_assessor10",
+            "name":"part_7_details_of_assessor9",
             "access":false,
             "subtype":"text"
         },
@@ -2732,7 +2722,7 @@ class HearingSeeder extends Seeder
             "label":"NDIS Provider Registration number (where applicable)",
             "placeholder":"NDIS Provider Registration number (where applicable)",
             "className":"form-control",
-            "name":"part_7_details_of_assessor11",
+            "name":"part_7_details_of_assessor10",
             "access":false,
             "subtype":"text"
         },
@@ -2743,7 +2733,7 @@ class HearingSeeder extends Seeder
             "label":"Phone",
             "placeholder":"Phone",
             "className":"form-control",
-            "name":"part_7_details_of_assessor12",
+            "name":"part_7_details_of_assessor11",
             "access":false,
             "subtype":"text"
         },
@@ -2754,7 +2744,7 @@ class HearingSeeder extends Seeder
             "label":"Email",
             "placeholder":"Email",
             "className":"form-control",
-            "name":"part_7_details_of_assessor13",
+            "name":"part_7_details_of_assessor12",
             "access":false,
             "subtype":"text"
         },
@@ -2765,7 +2755,7 @@ class HearingSeeder extends Seeder
             "label":"Signature",
             "placeholder":"Signature",
             "className":"form-control",
-            "name":"part_7_details_of_assessor14",
+            "name":"part_7_details_of_assessor13",
             "access":false,
             "subtype":"text"
         },
@@ -2776,7 +2766,7 @@ class HearingSeeder extends Seeder
             "label":"Date of Assessment",
             "placeholder":"Date of Assessment",
             "className":"form-control",
-            "name":"part_7_details_of_assessor15",
+            "name":"part_7_details_of_assessor14",
             "access":false,
             "subtype":"text"
         },
@@ -2786,6 +2776,16 @@ class HearingSeeder extends Seeder
             "required":false,
             "label":"Name",
             "placeholder":"Name",
+            "className":"form-control",
+            "name":"part_7_details_of_assessor15",
+            "access":false,
+            "subtype":"text"
+        },
+        {
+            "type":"date",
+            "required":false,
+            "label":"Date of Report",
+            "placeholder":"Date of Report",
             "className":"form-control",
             "name":"part_7_details_of_assessor16",
             "access":false,
