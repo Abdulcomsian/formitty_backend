@@ -4,18 +4,18 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\{Form , FormHeading , FormField};
+use App\Models\{Form, FormHeading, FormField};
 
 class HomeSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
-        $section1 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
+   /**
+    * Run the database seeds.
+    *
+    * @return void
+    */
+   public function run()
+   {
+      $section1 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
                         <tr>
                             <td>
                                 <p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'>  PART 1 – Participant and Plan Management Details</p>
@@ -158,7 +158,7 @@ class HomeSeeder extends Seeder
                     <p></p>";
 
 
-        $section2 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
+      $section2 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
                         <tr>
                             <td>
                                 <p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'>  PART 2 – Assessment</p>
@@ -347,7 +347,7 @@ class HomeSeeder extends Seeder
                     <p></p>";
 
 
-        $section3 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
+      $section3 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
                         <tr>
                         <td>
                         <p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'>  PART 3 – Property Details</p>
@@ -433,7 +433,7 @@ class HomeSeeder extends Seeder
                         </table>";
 
 
-        $section4 = "<p style='font-size:12pt; margin-top:10px; margin-bottom:10px; '></p>
+      $section4 = "<p style='font-size:12pt; margin-top:10px; margin-bottom:10px; '></p>
                 <table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
                 <tr>
                 <td>
@@ -476,7 +476,7 @@ class HomeSeeder extends Seeder
                 <p style='font-size:12pt; margin-top:10px; margin-bottom:10px; font-weight: bold'></p>";
 
 
-        $section5 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
+      $section5 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
                     <tr>
                     <td>
                     <p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'>  PART 5 – Complex Home Modification Recommendations</p>
@@ -818,8 +818,7 @@ class HomeSeeder extends Seeder
                     </tr>
                     </table>";
 
-
-        $section6 = "<p style='font-size:12pt; margin-top:10px; margin-bottom:10px; '></p>
+      $section6 = "<p style='font-size:12pt; margin-top:10px; margin-bottom:10px; '></p>
                     <table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
                     <tr>
                     <td>
@@ -835,8 +834,7 @@ class HomeSeeder extends Seeder
                     </table>
                     <p></p>";
 
-
-        $section7 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
+      $section7 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
                     <tr>
                     <td><p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'>  PART 7 – Details of Assessor  </p></td>
                     </tr>
@@ -937,18 +935,7 @@ class HomeSeeder extends Seeder
                    </tr>
                    </table>";
 
-
-
-
-
-
-
-
-
-
-
-
-        $section8 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
+      $section8 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
                     <tr>
                     <td>
                     <p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'>8.	Consent to Collect and Share Your Information</p>
@@ -961,40 +948,40 @@ class HomeSeeder extends Seeder
 
                     <table style='width:100%; margin-top: 10px; border: 1px solid black'>
                     <tr>
-                    <td style='background-color: #efefef; width: 70%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'> Yes, I consent </p></td>
+                    <td style='background-color: #efefef; width: 40%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'> Yes, I consent </p></td>
                     <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_01}}</p></td>
                     </tr>
                     <tr>
-                    <td style='background-color: #efefef; width: 70%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  No, I do not consent </p></td>
+                    <td style='background-color: #efefef; width: 40%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'> No, I do not consent </p></td>
                     <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_02}}</p></td>
                     </tr>
 
                     <tr>
-                    <td><p style='font-size:12pt; margin-top:10px; margin-bottom:10px;'>Participant’s Signature When I sign this form:</p></td>
-                    <td></td>
-                    </tr>
-
-                    <tr>
-                    <td style='background-color: #efefef; width: 70%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  I understand that I am giving consent to the NDIA to do the things with my information set out in this section. I understand that I can withdraw my consent for the NDIS to do things with my information at any time by letting the NDIA know.</p></td>
+                    <td style='background-color: #efefef; width: 40%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'> Participant’s Signature When I sign this form: </p></td>
                     <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_03}}</p></td>
                     </tr>
+
                     <tr>
-                    <td style='background-color: #efefef; width: 70%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  I understand that I can access the NDIA’s Privacy Notice and Privacy Policy on the NDIA website or by contacting the NDIA.</p></td>
+                    <td style='background-color: #efefef; width: 80%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  I understand that I am giving consent to the NDIA to do the things with my information set out in this section. I understand that I can withdraw my consent for the NDIS to do things with my information at any time by letting the NDIA know.</p></td>
                     <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_04}}</p></td>
                     </tr>
-
-
                     <tr>
-                    <td style='background-color: #efefef; width: 70%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Signature.</p></td>
+                    <td style='background-color: #efefef; width: 80%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  I understand that I can access the NDIA’s Privacy Notice and Privacy Policy on the NDIA website or by contacting the NDIA.</p></td>
                     <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_05}}</p></td>
                     </tr>
+
+
                     <tr>
-                    <td style='background-color: #efefef; width: 70%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Date.</p></td>
+                    <td style='background-color: #efefef; width: 40%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Signature.</p></td>
                     <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_06}}</p></td>
                     </tr>
                     <tr>
-                    <td style='background-color: #efefef; width: 70%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Full name </p></td>
+                    <td style='background-color: #efefef; width: 40%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Date.</p></td>
                     <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_07}}</p></td>
+                    </tr>
+                    <tr>
+                    <td style='background-color: #efefef; width: 40%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Full name </p></td>
+                    <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_08}}</p></td>
                     </tr>
                    
                     </table>
@@ -1003,318 +990,222 @@ class HomeSeeder extends Seeder
                     <table style='width:100%; margin-top: 10px; border: 1px solid black'>
 
                     <tr>
-                    <td style='background-color: #efefef; width: 70%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Signature</p></td>
-                    <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_08}}</p></td>
-                    </tr>
-                    <tr>
-                    <td style='background-color: #efefef; width: 70%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Date</p></td>
+                    <td style='background-color: #efefef; width: 40%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Signature</p></td>
                     <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_09}}</p></td>
                     </tr>
                     <tr>
-                    <td style='background-color: #efefef; width: 70%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Full Name of person completing this form (please print):</p></td>
+                    <td style='background-color: #efefef; width: 40%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Date</p></td>
                     <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_10}}</p></td>
                     </tr>
                     <tr>
-                    <td style='background-color: #efefef; width: 70%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Relationship to participant or person wishing to become an NDIS participant:</p></td>
+                    <td style='background-color: #efefef; width: 40%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Full Name of person completing this form (please print):</p></td>
                     <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_11}}</p></td>
+                    </tr>
+                    <tr>
+                    <td style='background-color: #efefef; width: 40%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Relationship to participant or person wishing to become an NDIS participant:</p></td>
+                    <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_12}}</p></td>
                     </tr>
                     </table>
                     <p></p>";
 
+      $form_fields = '[
+                     {
+                       "type":"heading",
+                       "required":false,
+                       "label_1":"1.1 NDIS Participant Details ",
+                       "placeholder":"Full Name",
+                       "className":"form-control",
+                       "name":"part_1_heading_extra_1",
+                       "access":false
+                    },
+                         {
+                            "type":"text",
+                            "required":false,
+                            "label":"Full Name",
+                            "placeholder":"Enter Your Full Name",
+                            "className":"form-control",
+                            "name":"part_1_ndis_name",
+                            "access":false,
+                            "subtype":"text"
+                         },
+                         {
+                            "type":"date",
+                            "required":false,
+                            "label":"Date of Birth",
+                            "placeholder":"Enter Your Date of Birth",
+                            "className":"form-control",
+                            "name":"part_1_ndis_date_of_birth",
+                            "access":false,
+                            "subtype":"text"
+                         },
+                         {
+                            "type":"text",
+                            "required":false,
+                            "label":"Age",
+                            "placeholder":"Enter Your Age",
+                            "className":"form-control",
+                            "name":"part_1_ndis_age",
+                            "access":false,
+                            "subtype":"text"
+                         },
+                         {
+                            "type":"text",
+                            "required":false,
+                            "label":"NDIS Number",
+                            "placeholder":"Enter Your NDIS Number",
+                            "className":"form-control",
+                            "name":"part_1_ndis_participantndis_number",
+                            "access":false,
+                            "subtype":"text"
+                         },
+                         {
+                            "type":"text",
+                            "required":false,
+                            "label":"Address",
+                            "placeholder":"Enter Your Address",
+                            "className":"form-control",
+                            "name":"part_1_ndis_participant_address",
+                            "access":false,
+                            "subtype":"text"
+                         },
+                         {
+                            "type":"text",
+                            "required":false,
+                            "label":"Phone Number",
+                            "placeholder":"Enter Your Phone Number",
+                            "className":"form-control",
+                            "name":"part_1_ndis_participantphone_number",
+                            "access":false,
+                            "subtype":"text"
+                         },
+                         {
+                            "type":"email",
+                            "required":false,
+                            "label":"Email",
+                            "placeholder":"Enter Your Email",
+                            "className":"form-control",
+                            "name":"part_1_ndis_participant_email",
+                            "access":false,
+                            "subtype":"text"
+                         },
+                         {
+                            "type":"text",
+                            "required":false,
+                            "label":"Preferred Contact Method",
+                            "placeholder":"Enter Your Preferred Contact Method",
+                            "className":"form-control",
+                            "name":"part_1_ndis_participant_preferredcontact",
+                            "access":false,
+                            "subtype":"text"
+                         },
+                         {
+                            "type":"text",
+                            "required":false,
+                            "label":"Nominee or Guardian Name",
+                            "placeholder":"Enter Your Nominee or Guardian Name",
+                            "className":"form-control",
+                            "name":"part_1_ndis_participantguardian_name",
+                            "access":false,
+                            "subtype":"text"
+                         },
+                         {
+                            "type":"text",
+                            "required":false,
+                            "label":"Nominee or Guardian Phone",
+                            "placeholder":"Enter Your Nominee or Guardian Phone",
+                            "className":"form-control",
+                            "name":"part_1_ndis_participantguardian_phone",
+                            "access":false,
+                            "subtype":"text"
+                         },
+                         {
+                            "type":"text",
+                            "required":false,
+                            "label":"NDIS Support Coordinator",
+                            "placeholder":"Enter Your NDIS Support Coordinator",
+                            "className":"form-control",
+                            "name":"part_1_ndis_support_coordinator",
+                            "access":false,
+                            "subtype":"text"
+                         },
+                         {
+                            "type":"text",
+                            "required":false,
+                            "label":"Contact Details",
+                            "placeholder":"Enter Your Contact Details",
+                            "className":"form-control",
+                            "name":"part_1_ndis_participantcontact_details",
+                            "access":false,
+                            "subtype":"text"
+                         },
+                         {
+                           "type":"heading",
+                           "required":false,
+                           "label_1":"1.2 Plan Management Details",
+                           "placeholder":"Full Name",
+                           "className":"form-control",
+                           "name":"part_1_heading_extra_2",
+                           "access":false
+                        },
+                         {
+                            "type":"text",
+                            "required":false,
+                            "label":"Agency Managed",
+                            "placeholder":"Enter Agency Managed",
+                            "className":"form-control",
+                            "name":"part_1_plan_management_agency_managed",
+                            "access":false,
+                            "subtype":"text"
+                         },
+                         {
+                            "type":"text",
+                            "required":false,
+                            "label":"Self-Managed",
+                            "placeholder":"Enter Self Managed",
+                            "className":"form-control",
+                            "name":"part_1_plan_management_self_managed",
+                            "access":false,
+                            "subtype":"text"
+                         },
+                         {
+                            "type":"text",
+                            "required":false,
+                            "label":"Registered Plan Management Provider",
+                            "placeholder":"Enter Registered Plan Management Provider",
+                            "className":"form-control",
+                            "name":"part_1_plan_management_registered_plan_management_provider",
+                            "access":false,
+                            "subtype":"text"
+                         },
+                         {
+                            "type":"text",
+                            "required":false,
+                            "label":"Contact Details",
+                            "placeholder":"Enter Your Contact Details",
+                            "className":"form-control",
+                            "name":"part_1_plan_management_contact_details",
+                            "access":false,
+                            "subtype":"text"
+                         }
+                      ]';
 
 
-
-                    // <table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
-                    // <tr>
-                    // <td>
-                    // <p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'>9.	Appendix A: Replacement Device Requestr</p>
-                    // </td>
-                    // </tr>
-                    // </table>
-                    // <p style='font-size: 12pt; margin-top: 10px; margin-bottom: 10px'>Replacement device requests occur when the previous device is lost / damaged beyond repair / has reached the end of its service life AND the same level of technology is requested.</p>
-                    // <table style='width:100%; border: 1px solid black'>
-                    // <tr>
-                    //     <td style='background-color: #efefef; width: 33%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>  Reason</p></td>
-                    //     <td style='background-color: #efefef; width: 33%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>  Evidence required</p></td>
-                    //     <td style='background-color: #efefef; width: 33%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>  Considerations</p></td>
-                    // </tr>
-                    // <tr>
-                    //     <td style='width: 33%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>  Current device has reached the end of its service life</p></td>
-                    //     <td style='width: 33%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>  Date of last fitting of device to be provided by audiologist/ audiometrist, with model and make of device.</p></td>
-                    //     <td style='width: 33%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>  Expected service life of sound processors is 6 years.</p></td>
-                    // </tr>
-                    // <tr>
-                    //     <td style='width: 33%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>  Current device is out of warranty</p></td>
-                    //     <td style='width: 33%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>  None required</p></td>
-                    //     <td style='width: 33%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>  Completion of the warranty period is not a valid reason for replacement of hearing technology.</p></td>
-                    // </tr>
-                    // <tr>
-                    //     <td style='width: 33%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>  Current device is faulty or damaged beyond repair</p></td>
-                    //     <td style='width: 33%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>  Service and maintenance report from the manufacturer, demonstrating the device requires a major repair that is not considered cost effective and /or the device cannot be repaired.</p></td>
-                    //     <td style='width: 33%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>  NDIS will replace a faulty device that is out of warranty or a damaged device, with the same item on the market.</p></td>
-                    // </tr>
-                    // <tr>
-                    //     <td style='width: 33%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>  Current device is lost or stolen</p></td>
-                    //     <td style='width: 33%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>  A statutory declaration is required.Consideration needs to be given whether the cost of the device can be recovered through household insurance where relevant.</p></td>
-                    //     <td style='width: 33%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>  NDIS will replace a lost / stolen device with the same item on the market (if available), unless the participant’s needs meet upgrade criteria.</p></td>
-                    // </tr>
-                    // </table>
-                    // <table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
-                    // <tr>
-                    // <td>
-                    // <p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'>10.	Appendix B: Refit / Upgrade Request</p>
-                    // </td>
-                    // </tr>
-                    // </table>
-                    // <p style='font-size: 12pt; margin-top: 10px; margin-bottom: 10px'>A refitted/upgraded device is requested when a new device with higher specifications or a different style is required because the participant’s functional capacity has changed.</p>
-                    // <table style='width:100%; border: 1px solid black'>
-                    // <tr>
-                    //         <td style='background-color: #efefef; width: 50%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold; text-align: center'>  Reason</p></td>
-                    //         <td style='background-color: #efefef; width: 50%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold; text-align: center'>  Evidence required</p></td>
-                    // </tr>
-                    // <tr>
-                    //         <td style='width: 50%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px; text-align: center'> The current hearing devices are not suitable because they can no longer be optimised by adjustments or any other modifications to meet current gain requirements. </p></td>
-                    //         <td style='width: 50%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px; text-align: center'> Documented evidence on file that the current hearing technology is established to be in optimal working order.
-                    //         And
-                    //         After adjustment/modification has been made to current hearing aid(s) through manufacturer service/repair, mould/shell modification or replacement to accommodate changes in thresholds, Real Ear Measurements show a poor match to targets.
-                    //         Or
-                    //         Aid specifications show that the client’s current Hearing Threshold Level (HTL) is outside the range of the current hearing aid(s) and they were previously optimally fitted.
-                    //         </p></td>
-                    // </tr>
-                    // <tr>
-                    //         <td style='width: 50%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px; text-align: center'> The current hearing technology is unsuitable because the client can no longer use the device due to a significant deterioration in health, dexterity or cognitive ability since last fitting.
-                    //         Or
-                    //         A permanent change in physical condition of the ear or ear health has occurred since last fitting and the client requires a different style </p></td>
-                    //         <td style='width: 50%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px; text-align: center'> Documented evidence on file describes the change in physical condition of the ear or ear health; or describes the client’s deterioration and how this affects the client’s ability to manage their hearing aid(s); or a letter from the client’s doctor, carer, nurse, supervisor etc. giving details of how the condition affects current hearing aid usage. Details of what has been tried with the current hearing aid(s) or why they cannot be modified 
-                    //         And
-                    //         Details how the new aid(s) proposed for refitting will address the issues with the current hearing aid(s)
-                    //         </p></td>
-                    // </tr>
-                    // </table>
-                    // <table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
-                    // <tr>
-                    // <td>
-                    // <p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'>11.	Appendix C: Examples of functional measures for hearing device refitting requests</p>
-                    // </td>
-                    // </tr>
-                    // </table>
-                    // <p style='font-size: 12pt; margin-top: 10px; margin-bottom: 10px'><strong>Please note</strong>: This Appendix is to be used as a guide for functional evidence.  Please complete as appropriate or attach relevant clinical documentation that provides similar information.</p>
-                    // <p style='font-size: 12pt; font-weight: bold'>Option 1</p>
-                    // <ul style='margin-bottom: 10px; margin-top: 10px'>
-                    // <li style='font-size: 11pt'>Aided Audiogram or Real Ear Measurements (Please attach)</li>
-                    // <li style='font-size: 11pt'>Hearing   </li>
-                    // <li style='font-size: 11pt'>Speech Audiometry including dynamic range, Loudness Discomfort Level (LDL) and speech in noise testing (Please attach)</li>
-                    // </ul>
-                    // <p style='margin-top: 10px; margin-bottom: 10px; font-size: 12pt'>What functional benefit does the requested device provide in the context of the participant’s current communication profile (including all current hearing supports accessed)? Provide comparison, for example, hearing aids alone, hearing aids with a remote microphone.</p>
-                    // <p style='margin-bottom: 10px; font-size: 12pt'>Speech in noise, for example, Quick SIN / SPIN / Other</p>
-                    // <table style='width:100%; margin-top: 10px; border: 1px solid black'>
-                    // <tr>
-                    // <td style='background-color: #efefef; width: 20%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>   Unaided</p></td>
-                    // <td style='background-color: #efefef; width: 20%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>   Current preferred aided condition (if relevant</p></td>
-                    // <td style='background-color: #efefef; width: 20%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>   Option 1 Device Details</p></td>
-                    // <td style='background-color: #efefef; width: 20%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>   Option 2 Device Details</p></td>
-                    // <td style='background-color: #efefef; width: 20%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>   Option 3 Device Details</p></td>
-                    // </tr>
-                    // <tr>
-                    // <td style='background-color: #efefef; width: 20%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>   Data-Field</p></td>
-                    // <td style='background-color: #efefef; width: 20%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>   Data-Field</p></td>
-                    // <td style='background-color: #efefef; width: 20%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>   Data-Field</p></td>
-                    // <td style='background-color: #efefef; width: 20%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>   Data-Field</p></td>
-                    // <td style='background-color: #efefef; width: 20%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>   Data-Field</p></td>
-                    // </tr>
-                    // </table>
-
-
-        $form_fields = '[
+      $form_fields2 = '[
             {
-               "type":"text",
+               "type":"heading",
                "required":false,
-               "label":"Full Name",
-               "placeholder":"Enter Your Full Name",
+               "label_1":"2.1 Background",
+               "label_2":"",
+               "label_3":"General: Describe participant’s current status which may include diagnosis, prognosis, co-existing conditions, disability, personal and instrumental activities of daily living, formal and informal support arrangements and life transitions.",
+               "placeholder":"Full Name",
                "className":"form-control",
-               "name":"part_1_ndis_name",
-               "access":false,
-               "subtype":"text"
+               "name":"part_2_heading_extra_1",
+               "access":false
             },
-            {
-               "type":"date",
-               "required":false,
-               "label":"Date of Birth",
-               "placeholder":"Enter Your Date of Birth",
-               "className":"form-control",
-               "name":"part_1_ndis_date_of_birth",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Age",
-               "placeholder":"Enter Your Age",
-               "className":"form-control",
-               "name":"part_1_ndis_age",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"NDIS Number",
-               "placeholder":"Enter Your NDIS Number",
-               "className":"form-control",
-               "name":"part_1_ndis_participantndis_number",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Address",
-               "placeholder":"Enter Your Address",
-               "className":"form-control",
-               "name":"part_1_ndis_participant_address",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Phone Number",
-               "placeholder":"Enter Your Phone Number",
-               "className":"form-control",
-               "name":"part_1_ndis_participantphone_number",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"email",
-               "required":false,
-               "label":"Email",
-               "placeholder":"Enter Your Email",
-               "className":"form-control",
-               "name":"part_1_ndis_participant_email",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Preferred Contact Method",
-               "placeholder":"Enter Your Preferred Contact Method",
-               "className":"form-control",
-               "name":"part_1_ndis_participant_preferredcontact",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Nominee or Guardian Name",
-               "placeholder":"Enter Your Nominee or Guardian Name",
-               "className":"form-control",
-               "name":"part_1_ndis_participantguardian_name",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Nominee or Guardian Phone",
-               "placeholder":"Enter Your Nominee or Guardian Phone",
-               "className":"form-control",
-               "name":"part_1_ndis_participantguardian_phone",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"NDIS Support Coordinator",
-               "placeholder":"Enter Your NDIS Support Coordinator",
-               "className":"form-control",
-               "name":"part_1_ndis_support_coordinator",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Cotact Details",
-               "placeholder":"Enter Your Contact Details",
-               "className":"form-control",
-               "name":"part_1_ndis_participantcontact_details",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"date",
-               "required":false,
-               "label":"Date of Assessment",
-               "placeholder":"Enter Date of Assessment",
-               "className":"form-control",
-               "name":"part_1_ndis_date_of_assessment",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"date",
-               "required":false,
-               "label":"Date of Report",
-               "placeholder":"Enter Your Date of Report",
-               "className":"form-control",
-               "name":"part_1_ndis_participan_date_of_report",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Agency Managed",
-               "placeholder":"Enter Your Agency Managed",
-               "className":"form-control",
-               "name":"part_1_plan_management_agency_managed",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Self-Managed",
-               "placeholder":"Self-Managed",
-               "className":"form-control",
-               "name":"part_1_plan_management_self_managed",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Registered Plan Management Provider",
-               "placeholder":"Enter Registered Plan Management Provider",
-               "className":"form-control",
-               "name":"part_1_plan_management_registered_plan_management_provider",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Contact Details ",
-               "placeholder":"Enter Contact Details ",
-               "className":"form-control",
-               "name":"part_1_plan_management_contact_details",
-               "access":false,
-               "subtype":"text"
-            }
-         ]';
-
-
-
-        $form_fields2 = '[
             {
                "type":"textarea",
                "required":false,
-               "label":"Background",
+               "label":"",
                "placeholder":"Enter Your Background",
                "className":"form-control",
                "name":"part_2_assesment_background",
@@ -1322,14 +1213,47 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"2.2 Participant Goals",
+               "label_2":"",
+               "label_3":"If the participant’s NDIS plan has been made available, you can refer to the statement of participant’s goals and outline those relevant to the AT solution.",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_2",
+               "access":false
+            },
+            {
                "type":"textarea",
                "required":false,
-               "label":"Participant Goals",
+               "label":"",
                "placeholder":"Enter Your Participant Goals",
                "className":"form-control",
                "name":"part_2_assesment_participantgoals",
                "access":false,
                "subtype":"text"
+            },
+            {
+               "type":"heading",
+               "required":false,
+               "label_1":"2.3 Functional Assessment",
+               "label_2":"",
+               "label_3":"Outline the specific functional limitation/s related to the participant’s disability that indicate the need for the home modification as below; \n   1. Current functional status, including functional outcomes on discharge if hospitalised, outlining anticipated optimum level of independence and participation in personal care and domestic activities within the home. \n   2. Details of any formal personal support / informal support and the impact of the proposed complex home modification that the participant requires to perform activities of daily living. \n   3. Comment on the impact of any other non-disability related issues on the participant’s functioning. Consider whether assistive technology, additional capacity building supports would enable the participant to maximise their independence. \n   4. Consider the social and economic participation and the location of the participants home from their activities.",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_3",
+               "access":false
+            },
+            {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"2.3.1 Frequency of use of proposed modification.",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_4",
+               "access":false
             },
             {
                "type":"text",
@@ -1362,30 +1286,55 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"text",
+               "type":"heading",
                "required":false,
-               "label":"Is the Participant / Nominee in agreement with this AT request? Please describe",
-               "placeholder":"Is the Participant / Nominee in agreement with this AT request? Yes",
+               "label_1":"",
+               "label_2":"2.3.2 Is the Participant / Nominee in agreement with this AT request? Please describe.",
+               "label_3":"",
+               "placeholder":"Full Name",
                "className":"form-control",
+               "name":"part_2_heading_extra_5",
+               "access":false
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"Yes",
+               "toggle":false,
+               "inline":false,
                "name":"part_2_assesment_functional_assessment4",
                "access":false,
-               "subtype":"text"
+               "other":false,
+               "values":[
+                  {
+                     "label":"Option 1",
+                     "value":"option-1",
+                     "selected":true
+                  }
+               ]
             },
             {
-               "type":"text",
+               "type":"checkbox-group",
                "required":false,
-               "label":"Is the Participant / Nominee in agreement with this AT request? Please describe",
-               "placeholder":"Is the Participant / Nominee in agreement with this AT request? No",
-               "className":"form-control",
+               "label":"No",
+               "toggle":false,
+               "inline":false,
                "name":"part_2_assesment_functional_assessment5",
                "access":false,
-               "subtype":"text"
+               "other":false,
+               "values":[
+                  {
+                     "label":"Option 1",
+                     "value":"option-1",
+                     "selected":true
+                  }
+               ]
             },
             {
-               "type":"text",
+               "type":"textarea",
                "required":false,
-               "label":"Is the Participant / Nominee in agreement with this AT request? Please describe",
-               "placeholder":"Is the Participant / Nominee in agreement with this AT request? Comment",
+               "label":"Comments",
+               "placeholder":"Is the Participant / Nominee in agreement with this AT request? Comments",
                "className":"form-control",
                "name":"part_2_assesment_functional_assessment6",
                "access":false,
@@ -1774,7 +1723,7 @@ class HomeSeeder extends Seeder
          ]';
 
 
-        $form_fields3 = '[
+      $form_fields3 = '[
             {
                "type":"text",
                "required":false,
@@ -1907,7 +1856,7 @@ class HomeSeeder extends Seeder
             }
          ]';
 
-        $form_fields4 = '[
+      $form_fields4 = '[
             {
                "type":"textarea",
                "required":false,
@@ -1960,7 +1909,7 @@ class HomeSeeder extends Seeder
             }
          ]';
 
-        $form_fields5 = '[
+      $form_fields5 = '[
             {
                "type":"text",
                "required":false,
@@ -2513,11 +2462,11 @@ class HomeSeeder extends Seeder
             }
          ]';
 
-        $form_fields6 = '[
+      $form_fields6 = '[
             {
                "type":"textarea",
                "required":false,
-               "label":"Complex Home Modification Quotes",
+               "label":"Please attach information from relevant builders, building project management meetings or relevant scope of works documents",
                "placeholder":"Complex Home Modification Quotes",
                "className":"form-control",
                "name":"part_6_complex_home_modification_quotes",
@@ -2526,418 +2475,531 @@ class HomeSeeder extends Seeder
             }
          ]';
 
+      $form_fields7 = '[
+         {
+            "type": "heading",
+            "required": false,
+            "label_1": "",
+            "label_2": "DECLARATION (indicate all relevant sections that apply)",
+            "label_3": "",
+            "placeholder": "Full Name",
+            "className": "form-control",
+            "name": "part_7_heading_extra_1",
+            "access": false
+         },
+         {
+            "type": "checkbox-group",
+            "required": false,
+            "label": "I certify that I meet the NDIA expectations of AT assessor provider suitability (including understanding of the current NDIS Act, Rules and Operational Guidelines) to assess the type of assistive technology and associated supports, at the level of complexity required by this participant.",
+            "toggle": false,
+            "inline": false,
+            "name": "part_7_details_of_assessor_01",
+            "access": false,
+            "other": false,
+            "values": [
+               {
+                  "label": "YES/NO",
+                  "value": "option-1",
+                  "selected": true
+               }
+            ]
+         },
+         {
+            "type": "checkbox-group",
+            "required": false,
+            "label": "I will provide appropriate evidence to the NDIA and/or Quality and Safe Guards Commission if and as requested.",
+            "toggle": false,
+            "inline": false,
+            "name": "part_7_details_of_assessor_02",
+            "access": false,
+            "other": false,
+            "values": [
+               {
+                  "label": "YES/NO",
+                  "value": "option-1",
+                  "selected": true
+               }
+            ]
+         },
+         {
+            "type": "checkbox-group",
+            "required": false,
+            "label": "I understand and acknowledge that the NDIA and participant will rely on my professional advice to select, source and implement this assistive technology.",
+            "toggle": false,
+            "inline": false,
+            "name": "part_7_details_of_assessor_03",
+            "access": false,
+            "other": false,
+            "values": [
+               {
+                  "label": "YES/NO",
+                  "value": "option-1",
+                  "selected": false
+               }
+            ]
+         },
+         {
+            "type": "checkbox-group",
+            "required": false,
+            "label": "This assistive technology has been assessed by the treating multi-disciplinary team and I have completed the AT assessment on behalf of that team.",
+            "toggle": false,
+            "inline": false,
+            "name": "part_7_details_of_assessor_04",
+            "access": false,
+            "other": false,
+            "values": [
+               {
+                  "label": "YES/NO",
+                  "value": "option-1",
+                  "selected": false
+               }
+            ]
+         },
+         {
+            "type": "heading",
+            "required": false,
+            "label_1": "",
+            "label_2": "Assessor’s Details",
+            "label_3": "",
+            "placeholder": "Full Name",
+            "className": "form-control",
+            "name": "part_7_heading_extra_2",
+            "access": false
+         },
+         {
+            "type": "text",
+            "required": false,
+            "label": "Name",
+            "placeholder": "Enter Assessor’s  Name",
+            "className": "form-control",
+            "name": "part_7_details_of_assessor_05",
+            "access": false,
+            "subtype": "text"
+         },
+         {
+            "type": "text",
+            "required": false,
+            "label": "NDIS Provider Registration Number",
+            "placeholder": "Enter Registration Number",
+            "className": "form-control",
+            "name": "part_7_details_of_assessor_06",
+            "access": false,
+            "subtype": "text"
+         },
+         {
+            "type": "text",
+            "required": false,
+            "label": "Phone Number",
+            "placeholder": "Enter Phone Number",
+            "className": "form-control",
+            "name": "part_7_details_of_assessor_07",
+            "access": false,
+            "subtype": "text"
+         },
+         {
+            "type": "email",
+            "subtype": "email",
+            "required": false,
+            "label": "Email",
+            "placeholder": "Enter Email Address",
+            "className": "form-control",
+            "name": "part_7_details_of_assessor_08",
+            "access": false
+         },
+         {
+            "type": "text",
+            "required": false,
+            "label": "Signature",
+            "placeholder": "Enter Signature",
+            "className": "form-control",
+            "name": "part_7_details_of_assessor_09",
+            "access": false
+         },
+         {
+            "type": "text",
+            "required": false,
+            "label": "Qualification",
+            "placeholder": "Enter Qualification here.",
+            "className": "form-control",
+            "name": "part_7_details_of_assessor_10",
+            "access": false,
+            "subtype": "text"
+         },
+         {
+            "type": "date",
+            "required": false,
+            "label": "Date of Assessment",
+            "placeholder": "Set Date of Assessment",
+            "className": "form-control",
+            "name": "part_7_details_of_assessor_11",
+            "access": false
+         },
+         {
+            "type": "date",
+            "required": false,
+            "label": "Date of Report",
+            "placeholder": "Set Date of Report",
+            "className": "form-control",
+            "name": "part_7_details_of_assessor_12",
+            "access": false
+         },
+         {
+            "type": "heading",
+            "required": false,
+            "label_1": "",
+            "label_2": "Review by Building Construction Professional (as applicable)",
+            "label_3": "",
+            "placeholder": "Full Name",
+            "className": "form-control",
+            "name": "part_7_heading_extra_3",
+            "access": false
+         },
+         {
+            "type": "text",
+            "required": false,
+            "label": "Name",
+            "placeholder": "Enter Assessor’s  Name",
+            "className": "form-control",
+            "name": "part_7_details_of_assessor_13",
+            "access": false,
+            "subtype": "text"
+         },
+         {
+            "type": "text",
+            "required": false,
+            "label": "NDIS Provider Registration Number",
+            "placeholder": "Enter Registration Number",
+            "className": "form-control",
+            "name": "part_7_details_of_assessor_14",
+            "access": false,
+            "subtype": "text"
+         },
+         {
+            "type": "text",
+            "required": false,
+            "label": "Phone Number",
+            "placeholder": "Enter Phone Number",
+            "className": "form-control",
+            "name": "part_7_details_of_assessor_15",
+            "access": false,
+            "subtype": "text"
+         },
+         {
+            "type": "email",
+            "subtype": "email",
+            "required": false,
+            "label": "Email",
+            "placeholder": "Enter Email Address",
+            "className": "form-control",
+            "name": "part_7_details_of_assessor_16",
+            "access": false
+         },
+         {
+            "type": "text",
+            "required": false,
+            "label": "Signature",
+            "placeholder": "Enter Signature",
+            "className": "form-control",
+            "name": "part_7_details_of_assessor_17",
+            "access": false
+         },
+         {
+            "type": "text",
+            "required": false,
+            "label": "Qualification",
+            "placeholder": "Enter Qualification here.",
+            "className": "form-control",
+            "name": "part_7_details_of_assessor_18",
+            "access": false,
+            "subtype": "text"
+         },
+         {
+            "type": "date",
+            "required": false,
+            "label": "Date of review by Building Construction Professional",
+            "placeholder": "Set Date of Review",
+            "className": "form-control",
+            "name": "part_7_details_of_assessor_19",
+            "access": false
+         },
+         {
+            "type":"textarea",
+            "required":false,
+            "label":"Indicate where this report has been developed in consultation with a Building Construction Professional. The recommendations contained herein are viable for this property (including construction risks e.g. asbestos) and are proposed as the most suitable of all reasonable alternatives.",
+            "placeholder":"Indicate where this report has been developed",
+            "className":"form-control",
+            "name":"part_7_details_of_assessor_20",
+            "access":false,
+            "subtype":"text"
+         }
+      ]';
 
-            // Details of Assessor  
-
-        $form_fields7 = '[
-            {
-               "type":"text",
-               "required":false,
-               "label":"Details of Assessor",
-               "placeholder":"Details of Assessor",
-               "className":"form-control",
-               "name":"part_7_details_of_assessor_01",
-               "access":false,
-               "subtype":"textarea"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Details of Assessor ",
-               "placeholder":"Details of Assessor",
-               "className":"form-control",
-               "name":"part_7_details_of_assessor_02",
-               "access":false,
-               "subtype":"textarea"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Details of Assessor ",
-               "placeholder":"Details of Assessor",
-               "className":"form-control",
-               "name":"part_7_details_of_assessor_03",
-               "access":false,
-               "subtype":"textarea"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Details of Assessor ",
-               "placeholder":"Details of Assessor",
-               "className":"form-control",
-               "name":"part_7_details_of_assessor_04",
-               "access":false,
-               "subtype":"textarea"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Name",
-               "placeholder":"Name",
-               "className":"form-control",
-               "name":"part_7_details_of_assessor_05",
-               "access":false,
-               "subtype":"textarea"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"NDIS Provider Registration number",
-               "placeholder":"NDIS Provider Registration number",
-               "className":"form-control",
-               "name":"part_7_details_of_assessor_06",
-               "access":false,
-               "subtype":"textarea"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Phone",
-               "placeholder":"Phone",
-               "className":"form-control",
-               "name":"part_7_details_of_assessor_07",
-               "access":false,
-               "subtype":"textarea"
-            },
-            {
-               "type":"email",
-               "required":false,
-               "label":"Email",
-               "placeholder":"Enter Your Email",
-               "className":"form-control",
-               "name":"part_7_details_of_assessor_08",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Signature",
-               "placeholder":"Signature",
-               "className":"form-control",
-               "name":"part_7_details_of_assessor_09",
-               "access":false,
-               "subtype":"textarea"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Qualification",
-               "placeholder":"Qualification",
-               "className":"form-control",
-               "name":"part_7_details_of_assessor_10",
-               "access":false,
-               "subtype":"textarea"
-            },
-            {
-               "type":"date",
-               "required":false,
-               "label":"Date of Assessment ",
-               "placeholder":"Date of Assessment ",
-               "className":"form-control",
-               "name":"part_7_details_of_assessor_11",
-               "access":false,
-               "subtype":"textarea"
-            },
-            {
-               "type":"date",
-               "required":false,
-               "label":"Date of Report ",
-               "placeholder":"Date of Report",
-               "className":"form-control",
-               "name":"part_7_details_of_assessor_12",
-               "access":false,
-               "subtype":"textarea"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Name",
-               "placeholder":"Name",
-               "className":"form-control",
-               "name":"part_7_details_of_assessor_13",
-               "access":false,
-               "subtype":"textarea"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"NDIS Provider Registration number ",
-               "placeholder":"NDIS Provider Registration and/or Builder Registration",
-               "className":"form-control",
-               "name":"part_7_details_of_assessor_14",
-               "access":false,
-               "subtype":"textarea"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Phone",
-               "placeholder":"Phone",
-               "className":"form-control",
-               "name":"part_7_details_of_assessor_15",
-               "access":false,
-               "subtype":"textarea"
-            },
-            {
-               "type":"email",
-               "required":false,
-               "label":"Email",
-               "placeholder":"Enter Your Email",
-               "className":"form-control",
-               "name":"part_7_details_of_assessor_16",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Signature",
-               "placeholder":"Signature",
-               "className":"form-control",
-               "name":"part_7_details_of_assessor_17",
-               "access":false,
-               "subtype":"textarea"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Qualification",
-               "placeholder":"Qualification",
-               "className":"form-control",
-               "name":"part_7_details_of_assessor_18",
-               "access":false,
-               "subtype":"textarea"
-            },
-            {
-               "type":"date",
-               "required":false,
-               "label":"Date of review by Building Construction Professional",
-               "placeholder":"Date of review by Building Construction Professional",
-               "className":"form-control",
-               "name":"part_7_details_of_assessor_19",
-               "access":false,
-               "subtype":"textarea"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Indicate where this report has been developed in consultation",
-               "placeholder":"Indicate where this report has been developed in consultation",
-               "className":"form-control",
-               "name":"part_7_details_of_assessor_20",
-               "access":false,
-               "subtype":"textarea"
-            }
-         ]';
+      $form_fields8 = '[
+         {
+            "type": "heading",
+            "required": false,
+            "label_1": "",
+            "label_2": "For the participant to complete",
+            "label_3": "As a participant who requires home modification and/or assistive technology supports, the National Disability Insurance Agency (NDIA) may need to contact your service providers, health and medical practitioners to discuss information within your assistive technology assessment and quotation(s). This will assist the NDIA with determining whether your request for assistive technology funded support(s) can be provided to you under the NDIS. \nIf you choose not to provide this consent, this may extend the time required in considering this request for assistive technology supports to be included in your NDIS plan. \nDo you consent to the NDIA collecting and disclosing your information including from these third parties mentioned above, in relation to your assistive technology assessment and quotation?",
+            "placeholder": "Full Name",
+            "className": "form-control",
+            "name": "part_8_heading_extra_1",
+            "access": false
+         },
+         {
+            "type": "checkbox-group",
+            "required": false,
+            "label": "Yes, I consent",
+            "toggle": false,
+            "inline": false,
+            "name": "part_8_Consent_to_collect_and_share_your_information_01",
+            "access": false,
+            "other": false,
+            "values": [
+               {
+                  "label": "YES/NO",
+                  "value": "option-1",
+                  "selected": true
+               }
+            ]
+         },
+         {
+            "type": "checkbox-group",
+            "required": false,
+            "label": "No, I do not consent",
+            "toggle": false,
+            "inline": false,
+            "name": "part_8_Consent_to_collect_and_share_your_information_02",
+            "access": false,
+            "other": false,
+            "values": [
+               {
+                  "label": "YES/NO",
+                  "value": "option-1",
+                  "selected": true
+               }
+            ]
+         },
+         {
+            "type": "checkbox-group",
+            "required": false,
+            "label": "Participants Signature",
+            "toggle": false,
+            "inline": false,
+            "name": "part_8_Consent_to_collect_and_share_your_information_03",
+            "access": false,
+            "other": false,
+            "values": [
+               {
+                  "label": "YES/NO",
+                  "value": "option-1",
+                  "selected": false
+               }
+            ]
+         },
+         {
+            "type": "checkbox-group",
+            "required": false,
+            "label": "I understand that I am giving consent to the NDIA to do the things with my information set out in this section. I understand that I can withdraw my consent for the NDIS to do things with my information at any time by letting the NDIA know.",
+            "toggle": false,
+            "inline": false,
+            "name": "part_8_Consent_to_collect_and_share_your_information_04",
+            "access": false,
+            "other": false,
+            "values": [
+               {
+                  "label": "YES/NO",
+                  "value": "option-1",
+                  "selected": false
+               }
+            ]
+         },
+         {
+            "type": "checkbox-group",
+            "required": false,
+            "label": "I understand that I can access the NDIA’s Privacy Notice and Privacy Policy on the NDIA website(https://www.ndis.gov.au/about-us/operational-guidelines/information-handling-operational-guideline/information-handling-operational-guideline-privacy) or by contacting the NDIA (https://www.ndis.gov.au/contact).",
+            "toggle": false,
+            "inline": false,
+            "name": "part_8_Consent_to_collect_and_share_your_information_05",
+            "access": false,
+            "other": false,
+            "values": [
+               {
+                  "label": "YES/NO",
+                  "value": "option-1",
+                  "selected": false
+               }
+            ]
+         },
+         {
+            "type": "text",
+            "required": false,
+            "label": "Signature",
+            "placeholder": "Enter Signature",
+            "className": "form-control",
+            "name": "part_8_Consent_to_collect_and_share_your_information_06",
+            "access": false,
+            "subtype": "text"
+         },
+         {
+            "type": "date",
+            "required": false,
+            "label": "Date",
+            "placeholder": "Enter Date",
+            "className": "form-control",
+            "name": "part_8_Consent_to_collect_and_share_your_information_07",
+            "access": false,
+            "subtype": "text"
+         },
+         {
+            "type": "text",
+            "required": false,
+            "label": "Full Name",
+            "placeholder": "Enter Full Name",
+            "className": "form-control",
+            "name": "part_8_Consent_to_collect_and_share_your_information_08",
+            "access": false
+         },
+         {
+            "type": "heading",
+            "required": false,
+            "label_1": "",
+            "label_2": "",
+            "label_3": "If you have signed this Form on behalf of the NDIS participant, please complete the details below. \nNote: It is an offence to provide false or misleading information. \nWe may require you to provide evidence of your authority to sign on behalf of the person.",
+            "placeholder": "Full Name",
+            "className": "form-control",
+            "name": "part_8_heading_extra_2",
+            "access": false
+         },
+         {
+            "type": "text",
+            "required": false,
+            "label": "Signature",
+            "placeholder": "Enter Signature.",
+            "className": "form-control",
+            "name": "part_8_Consent_to_collect_and_share_your_information_09",
+            "access": false,
+            "subtype": "text"
+         },
+         {
+            "type": "date",
+            "required": false,
+            "label": "Date",
+            "placeholder": "Set Date of Assessment",
+            "className": "form-control",
+            "name": "part_8_Consent_to_collect_and_share_your_information_10",
+            "access": false
+         },
+         {
+            "type": "text",
+            "required": false,
+            "label": "Full Name of person completing this form (please print):",
+            "placeholder": "Full Name",
+            "className": "form-control",
+            "name": "part_8_Consent_to_collect_and_share_your_information_11",
+            "access": false
+         },
+         {
+            "type": "text",
+            "required": false,
+            "label": "Relationship to participant or person wishing to become an NDIS participant:",
+            "placeholder": "Relationship to participant",
+            "className": "form-control",
+            "name": "part_8_Consent_to_collect_and_share_your_information_12",
+            "access": false
+         }
+      ]';
 
 
-        $form_fields8 = '[
-            {
-               "type":"text",
-               "required":false,
-               "label":"Yes, I consent",
-               "placeholder":"Yes, I consent",
-               "className":"form-control",
-               "name":"part_8_Consent_to_collect_and_share_your_information_01",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"No, I do not consent",
-               "placeholder":"No, I do not consent",
-               "className":"form-control",
-               "name":"part_8_Consent_to_collect_and_share_your_information_02",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"I understand that I am giving consent to the NDIA to do the things.",
-               "placeholder":"I understand that I am giving consent to the NDIA to do the things",
-               "className":"form-control",
-               "name":"part_8_Consent_to_collect_and_share_your_information_03",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"I understand that I can access the NDIA’s Privacy Notice and Privacy Policy .",
-               "placeholder":"I understand that I can access the NDIA’s Privacy Notice and Privacy Policy.",
-               "className":"form-control",
-               "name":"part_8_Consent_to_collect_and_share_your_information_04",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Signature",
-               "placeholder":"Signature",
-               "className":"form-control",
-               "name":"part_8_Consent_to_collect_and_share_your_information_05",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"date",
-               "required":false,
-               "label":"Date",
-               "placeholder":"Date",
-               "className":"form-control",
-               "name":"part_8_Consent_to_collect_and_share_your_information_06",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Full name ",
-               "placeholder":"Full name ",
-               "className":"form-control",
-               "name":"part_8_Consent_to_collect_and_share_your_information_07",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Signature",
-               "placeholder":"Signature",
-               "className":"form-control",
-               "name":"part_8_Consent_to_collect_and_share_your_information_08",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"date",
-               "required":false,
-               "label":"Date",
-               "placeholder":"Date",
-               "className":"form-control",
-               "name":"part_8_Consent_to_collect_and_share_your_information_09",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Full Name of person completing this form (please print):",
-               "placeholder":"Full Name of person completing this form (please print):",
-               "className":"form-control",
-               "name":"part_8_Consent_to_collect_and_share_your_information_10",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Relationship to participant or person wishing to become an NDIS participant:",
-               "placeholder":"Relationship to participant or person wishing to become an NDIS participant:",
-               "className":"form-control",
-               "name":"part_8_Consent_to_collect_and_share_your_information_11",
-               "access":false,
-               "subtype":"text"
-            }
-         ]';
+      $form = Form::insertGetId([
+         'name' => 'Complex Home Modification Assessment Template'
+      ]);
 
 
-        $form = Form::insertGetId([
-            'name' => 'Complex Home Modification Assessment Template'
-        ]);
+      $heading1 = FormHeading::insertGetId([
+         'form_heading' => 'PART 1 – Participant and Plan Management Details',
+         'form_id' => $form,
+         'section_html' => $section1
+      ]);
+
+      $heading2 = FormHeading::insertGetId([
+         'form_heading' => 'PART 2 – Assessment',
+         'form_id' => $form,
+         'section_html' => $section2
+      ]);
+
+      $heading3 = FormHeading::insertGetId([
+         'form_heading' => 'PART 3 – Property Details',
+         'form_id' => $form,
+         'section_html' => $section3
+      ]);
+
+      $heading4 = FormHeading::insertGetId([
+         'form_heading' => 'PART 4 – Social Situation',
+         'form_id' => $form,
+         'section_html' => $section4
+      ]);
+
+      $heading5 = FormHeading::insertGetId([
+         'form_heading' => 'PART 5 – Complex Home Modification Recommendations',
+         'form_id' => $form,
+         'section_html' => $section5
+      ]);
 
 
-        $heading1 = FormHeading::insertGetId([
-            'form_heading' => 'PART 1 – Participant and Plan Management Details',
-            'form_id' => $form,
-            'section_html' => $section1
-        ]);
-
-        $heading2 = FormHeading::insertGetId([
-            'form_heading' => 'PART 2 – Assessment',
-            'form_id' => $form,
-            'section_html' => $section2
-        ]);
-
-        $heading3 = FormHeading::insertGetId([
-            'form_heading' => 'PART 3 – Property Details',
-            'form_id' => $form,
-            'section_html' => $section3
-        ]);
-
-        $heading4 = FormHeading::insertGetId([
-            'form_heading' => 'PART 4 – Social Situation',
-            'form_id' => $form,
-            'section_html' => $section4
-        ]);
-
-        $heading5 = FormHeading::insertGetId([
-            'form_heading' => 'PART 5 – Complex Home Modification Recommendations',
-            'form_id' => $form,
-            'section_html' => $section5
-        ]);
+      $heading6 = FormHeading::insertGetId([
+         'form_heading' => 'PART 6 – Complex Home Modification Quotes',
+         'form_id' => $form,
+         'section_html' => $section6
+      ]);
 
 
-        $heading6 = FormHeading::insertGetId([
-            'form_heading' => 'PART 6 – Complex Home Modification Quotes',
-            'form_id' => $form,
-            'section_html' => $section6
-        ]);
+      $heading7 = FormHeading::insertGetId([
+         'form_heading' => 'PART 7 – Details of Assessor',
+         'form_id' => $form,
+         'section_html' => $section7
+      ]);
 
-
-        $heading7 = FormHeading::insertGetId([
-            'form_heading' => 'PART 7 – Details of Assessor',
-            'form_id' => $form,
-            'section_html' => $section7
-        ]);
-
-        $heading8 = FormHeading::insertGetId([
-            'form_heading' => 'PART 8 – Consent to Collect and Share Your Information ',
-            'form_id' => $form,
-            'section_html' => $section8
-        ]);
+      $heading8 = FormHeading::insertGetId([
+         'form_heading' => 'PART 8 – Consent to Collect and Share Your Information ',
+         'form_id' => $form,
+         'section_html' => $section8
+      ]);
 
 
 
-        FormField::create([
-            'form_heading_id' => $heading1,
-            'form_field' => $form_fields
-        ]);
-        FormField::create([
-            'form_heading_id' => $heading2,
-            'form_field' => $form_fields2
-        ]);
-        FormField::create([
-            'form_heading_id' => $heading3,
-            'form_field' => $form_fields3
-        ]);
-        FormField::create([
-            'form_heading_id' => $heading4,
-            'form_field' => $form_fields4
-        ]);
-        FormField::create([
-            'form_heading_id' => $heading5,
-            'form_field' => $form_fields5
-        ]);
-        FormField::create([
-            'form_heading_id' => $heading6,
-            'form_field' => $form_fields6
-        ]);
-        FormField::create([
-            'form_heading_id' => $heading7,
-            'form_field' => $form_fields7
-        ]);
+      FormField::create([
+         'form_heading_id' => $heading1,
+         'form_field' => $form_fields
+      ]);
+      FormField::create([
+         'form_heading_id' => $heading2,
+         'form_field' => $form_fields2
+      ]);
+      FormField::create([
+         'form_heading_id' => $heading3,
+         'form_field' => $form_fields3
+      ]);
+      FormField::create([
+         'form_heading_id' => $heading4,
+         'form_field' => $form_fields4
+      ]);
+      FormField::create([
+         'form_heading_id' => $heading5,
+         'form_field' => $form_fields5
+      ]);
+      FormField::create([
+         'form_heading_id' => $heading6,
+         'form_field' => $form_fields6
+      ]);
+      FormField::create([
+         'form_heading_id' => $heading7,
+         'form_field' => $form_fields7
+      ]);
 
-        FormField::create([
-            'form_heading_id' => $heading8,
-            'form_field' => $form_fields8
-        ]);
-
-    }
-
+      FormField::create([
+         'form_heading_id' => $heading8,
+         'form_field' => $form_fields8
+      ]);
+   }
 }
