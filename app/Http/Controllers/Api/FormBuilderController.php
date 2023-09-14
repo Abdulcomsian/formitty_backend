@@ -137,17 +137,20 @@ class FormBuilderController extends ApiController
                     $form_data = FormData::findorfail($form_data->id);
                     $form_data->user_form_heading_id = $user_form_heading->id;
                     $form_data->save();
-//                    $custom_heading = $this->checkCustomHeadingOrCustomField($name, $heading_id, $order_id, $value, $array, $user_form);
                 }
             }
         }
-        /*if($update){
-            $this->updateResponse($update, $user_form);
-        }*/
 
-        self::generateWordDocument($user_form->id);
-
-        $success['file_path'] = 'https://formity.accrualdev.com/public/download.docx';
+        $user_id = auth('sanctum')->user()->id;
+        $fileName=$user_id.'.docx';
+        $local_file_path = public_path($fileName);
+        if (file_exists($local_file_path)) {
+        unlink($local_file_path);
+        }
+        self::generateWordDocument($user_form->id,$fileName);
+        $file_path = env('APP_URL');
+        $file_path = $file_path.$fileName;
+        $success['file_path'] = $file_path;
         $success['fields'] = $input;
         $success['user_form_id'] = $user_form->id;
         return $this->successResponse($success, 'Document Generated Successfully.');
@@ -409,7 +412,7 @@ class FormBuilderController extends ApiController
         }
     }
 
-    public function generateWordDocument($id)
+    public function generateWordDocument($id,$fileName)
     {
         $phpWord = new \PhpOffice\PhpWord\PhpWord();
 
@@ -429,26 +432,82 @@ class FormBuilderController extends ApiController
         );
         $section_html = "<h1>".$image."</h1>";*/
         foreach ($usr_forms->userFormHeadings as $userFormHeading) {
+          $count++;
+          if ($userFormHeading->heading_type == 'custom') {
+              $section_html = $userFormHeading->customHeading->section_html;
+            } elseif($userFormHeading->heading_type == 'predefined') {
+              // $section_html = $userFormHeading->formHeading->section_html;
+              $section_html = $userFormHeading->formHeading->section_html;
+          } elseif($userFormHeading->heading_type == 'assessment_tool'){
+            $response = Response::with('assessment_tool', 'assessment_tool.questions', 'assessment_tool.questions.answers')->find($userFormHeading->heading_id);
+            // $section_html = $response->assessment_tool->title;
+            $section_html = $this->generateAssessmentToolHtml($response, $section_html);
+          }
+          if ($userFormHeading->heading_type != 'custom' && $userFormHeading->heading_type != 'assessment_tool') {
+              foreach ($userFormHeading->formData as $formData) {
+                  $field_name = $formData->name;
+                  $field_value = $formData->value;
+                  $section_html = str_replace("{{" . $field_name . "}}", $field_value, $section_html);
+              }
+          }
+          
+          $html .= $section_html;
+        }
+        // Save file
+        // $fileName = "export_download.docx";
+        \PhpOffice\PhpWord\Shared\Html::addHtml($section, $html, false, false);
+        $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
+
+        $objWriter->save($fileName);
+    }
+
+    public function testgenerateWordDocument($id)
+    {
+        $fileName = 'test.docx';
+        $phpWord = new \PhpOffice\PhpWord\PhpWord();
+
+        $section = $phpWord->addSection();
+
+        $usr_forms = UserForm::with(['userFormHeadings', 'userFormHeadings.formData', 'userFormHeadings.formHeading'])->findorfail($id);
+
+        // $usr_forms = UserForm::with(['userFormHeadings','userFormHeadings.formHeading'])->findorfail($id);
+
+        $usr_forms->userFormHeadings = $usr_forms->userFormHeadings->sortBy('order_id');
+
+        $count = 0;
+        $html = View::make('users.sections.header')->render();
+        $section_html = '';
+        /*$image_path = asset('image.jpg');
+        $image = $section->addImage(
+            'data:image/jpeg;base4,' . $image_path, // Use the base 4 notation as the image source
+            ['width' => 300, 'height' => 200] // Set the image size
+        );
+        $section_html = "<h1>".$image."</h1>";*/
+        foreach ($usr_forms->userFormHeadings as $userFormHeading) {
+            $count++;
             if ($userFormHeading->heading_type == 'custom') {
-                $section_html = $userFormHeading->customHeading->form_heading;
+                $section_html = $userFormHeading->customHeading->section_html;
               } elseif($userFormHeading->heading_type == 'predefined') {
+                // $section_html = $userFormHeading->formHeading->section_html;
                 $section_html = $userFormHeading->formHeading->section_html;
+            } elseif($userFormHeading->heading_type == 'assessment_tool'){
+              $response = Response::with('assessment_tool', 'assessment_tool.questions', 'assessment_tool.questions.answers')->find($userFormHeading->heading_id);
+              // $section_html = $response->assessment_tool->title;
+              $section_html = $this->generateAssessmentToolHtml($response, $section_html);
             }
-            if ($userFormHeading->heading_type != 'custom') {
+            if ($userFormHeading->heading_type != 'custom' && $userFormHeading->heading_type != 'assessment_tool') {
                 foreach ($userFormHeading->formData as $formData) {
                     $field_name = $formData->name;
                     $field_value = $formData->value;
                     $section_html = str_replace("{{" . $field_name . "}}", $field_value, $section_html);
                 }
             }
-            if($userFormHeading->heading_type == 'assessment_tool'){
-                $response = Response::with('assessment_tool', 'assessment_tool.questions', 'assessment_tool.questions.answers')->find($userFormHeading->heading_id);
-                $section_html = $this->generateAssessmentToolHtml($response, $section_html);
-            }
+            
             $html .= $section_html;
-        }
+          }
+        // dd($count);
         // Save file
-        $fileName = "download.docx";
+        // $fileName = "export_download.docx";
         \PhpOffice\PhpWord\Shared\Html::addHtml($section, $html, false, false);
         $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
 
@@ -456,21 +515,21 @@ class FormBuilderController extends ApiController
     }
 
     public function generateAssessmentToolHtml($response, $section_html){
-
+        $section_html = '';
         if($response->assessment_tool->id == '1'){
-            $section_html = $this->createECANSTool($response, $section_html);
+            $section_html2 = $this->createECANSTool($response, $section_html);
         }
         if($response->assessment_tool->id == '2'){
-            $section_html = $this->createWHODASTool($response, $section_html);
+            $section_html2 = $this->createWHODASTool($response, $section_html);
         }
         if($response->assessment_tool->id == '3'){
-            $section_html = $this->createDSMSELFTool($response, $section_html);
+            $section_html2 = $this->createDSMSELFTool($response, $section_html);
         }
         if($response->assessment_tool->id == '4' || $response->assessment_tool->id == '5' ){
-            $section_html = $this->createDSMPARENTTool($response, $section_html);
+            $section_html2 = $this->createDSMPARENTTool($response, $section_html);
         }
         if($response->assessment_tool->id == '6' || $response->assessment_tool->id == '7' ){
-            $section_html = $this->createLEVEL2TTool($response, $section_html);
+            $section_html2 = $this->createLEVEL2TTool($response, $section_html);
         }
         if($response->assessment_tool->id == '8'
             || $response->assessment_tool->id == '9'
@@ -478,21 +537,21 @@ class FormBuilderController extends ApiController
             || $response->assessment_tool->id == '15'
             || $response->assessment_tool->id == '16'
             || $response->assessment_tool->id == '19'){
-            $section_html = $this->createMRS9QTool($response, $section_html);
+            $section_html2 = $this->createMRS9QTool($response, $section_html);
         }
         if($response->assessment_tool->id == '11' || $response->assessment_tool->id == '14'){
-            $section_html = $this->createLSPTool($response, $section_html);
+            $section_html2 = $this->createLSPTool($response, $section_html);
         }
 //        if($response->assessment_tool->id == '12'){
 //            $section_html = $this->createBarthalTool($response, $section_html);
 //        }
         if($response->assessment_tool->id == '13' || $response->assessment_tool->id == '18'){
-            $section_html = $this->createCaregiverBurdenTool($response, $section_html);
+            $section_html2 = $this->createCaregiverBurdenTool($response, $section_html);
         }
         if($response->assessment_tool->id == '17' || $response->assessment_tool->id == '12'){
-            $section_html = $this->createLawtonBrodyTool($response, $section_html);
+            $section_html2 = $this->createLawtonBrodyTool($response, $section_html);
         }
-        return $section_html;
+        return $section_html2;
     }
 
     public function createECANSTool($response, $section_html)
@@ -649,7 +708,7 @@ class FormBuilderController extends ApiController
     }
 
     public function createWHODASTool($response, $section_html){
-        // Add questions and answers to the HTML
+        //Add questions and answers to the HTML
         $title = $response->assessment_tool->title ?? '';
         $section_html .= "<br /> <table style='width: 100%; border-collapse: collapse'>
                             <thead>

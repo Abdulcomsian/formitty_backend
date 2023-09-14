@@ -10,17 +10,6 @@ class UserFormHeading extends Model
 //    protected $table = 'user_form';
     use HasFactory;
 
-    /*public function formHeading()
-    {
-        dd($this->heading_type);
-        if ($this->heading_type == 'custom') {
-            dd("qqq");
-            return $this->belongsTo(CustomHeading::class, 'id', 'heading_id');
-        }
-        dd("ttt");
-        return $this->belongsTo(FormHeading::class, 'id', 'heading_id');
-    }*/
-
     public function formHeading()
     {
         return $this->belongsTo(FormHeading::class,'heading_id');
