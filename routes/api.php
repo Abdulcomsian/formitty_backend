@@ -27,6 +27,7 @@ Route::post('/user-login', [AuthController::class, 'userLogin']);
 Route::post('/import', [AuthController::class, 'import']);
 Route::get('/download/{id}', [AuthController::class, 'download']);
 Route::post('/get-fields', [FormBuilderController::class, 'getFormFields']);
+Route::get('/test/{id}', [FormBuilderController::class, 'testgenerateWordDocument']);
 //Route::post('/get-user-forms', [FormBuilderController::class, 'getUserForms']);
 Route::post('/get-forms', [FormBuilderController::class, 'getForms']);
 Route::post('/store-form-fields', [FormBuilderController::class, 'storeFormField']);
