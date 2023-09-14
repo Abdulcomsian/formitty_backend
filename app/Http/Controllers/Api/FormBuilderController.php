@@ -142,7 +142,8 @@ class FormBuilderController extends ApiController
         }
 
         $user_id = auth('sanctum')->user()->id;
-        $fileName=$user_id.'.docx';
+        $randomNumber = random_int(100000, 999999);
+        $fileName=$randomNumber.'.docx';
         $local_file_path = public_path($fileName);
         if (file_exists($local_file_path)) {
         unlink($local_file_path);

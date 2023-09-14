@@ -214,10 +214,10 @@ class ContinenceSeeder extends Seeder
             <td style='width: 30%; border: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>{{part_2_does_it_need_reassessment}}</p></td>
         </tr>
         <tr>
-            <td style='width: 30%; border: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>{{part_2_type_of_continence_product}}</p></td>
-            <td style='width: 30%; border: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>{{part_2_assesment_usage}}</p></td>
-            <td style='width: 30%; border: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>{{part_2_participants_report_of_suitability}}</p></td>
-            <td style='width: 30%; border: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>{{part_2_does_it_need_reassessment}}</p></td>
+            <td style='width: 30%; border: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>{{part_2_type_of_continence_2product}}</p></td>
+            <td style='width: 30%; border: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>{{part_2_assesment_2usage}}</p></td>
+            <td style='width: 30%; border: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>{{part_2_participants_report_of_2suitability}}</p></td>
+            <td style='width: 30%; border: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>{{part_2_does_it_need_2reassessment}}</p></td>
         </tr>
     </table>
     <p style='font-weight:bold; font-size:12pt;margin-top:10px; margin-bottom:10px;'>2.5 Consideration of health and other issues</p>
@@ -1147,6 +1147,46 @@ class ContinenceSeeder extends Seeder
              "access":false,
              "subtype":"text"
           },
+          {
+            "type":"text",
+            "required":false,
+            "label":"Type of Continence Product 2",
+            "placeholder":"Type of Continence Product 2",
+            "className":"form-control",
+            "name":"part_2_type_of_continence_2product",
+            "access":false,
+            "subtype":"text"
+         },
+         {
+            "type":"text",
+            "required":false,
+            "label":"Usage 2",
+            "placeholder":"Enter Usage 2",
+            "className":"form-control",
+            "name":"part_2_assesment_2usage",
+            "access":false,
+            "subtype":"text"
+         },
+         {
+            "type":"text",
+            "required":false,
+            "label":"Participant’s report of suitability 2",
+            "placeholder":"Enter Participant’s report of suitability 2",
+            "className":"form-control",
+            "name":"part_2_participants_report_of_2suitability",
+            "access":false,
+            "subtype":"text"
+         },
+         {
+            "type":"text",
+            "required":false,
+            "label":"Does it need reassessment Yes/No 2",
+            "placeholder":"Does it need reassessment 2",
+            "className":"form-control",
+            "name":"part_2_does_it_need_2reassessment",
+            "access":false,
+            "subtype":"text"
+         },
           {
             "type":"heading",
             "required":false,
