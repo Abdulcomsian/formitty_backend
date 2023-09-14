@@ -1633,7 +1633,7 @@ class HearingSeeder extends Seeder
             {
             "type":"text",
             "required":false,
-            "label":"Cotact Details",
+            "label":"Contact Details",
             "placeholder":"Enter Your Contact Details",
             "className":"form-control",
             "name":"part_1_ndis_participantcontact_details",
