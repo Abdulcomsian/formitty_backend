@@ -1022,11 +1022,11 @@ class HearingSeeder extends Seeder
 
         <table style=" width:100%; border: 1px solid black;">
         <tr>
-            <td style="width:40%; background-color: lightgrey; font-size: 17px;">{{part_8_participant_consent_and_acknowledgement_of_iinterest9}}</td>
+            <td style="width:40%; background-color: lightgrey; font-size: 17px;">{{part_8_participant_consent_and_acknowledgement_of_iinterest10}}</td>
             <td style="width:60%; border: 1px solid black;">I understand that I am giving consent to the NDIA to do the things with my information set out in this section.</td>
         </tr>
         <tr>
-            <td style="width:40%; background-color: lightgrey; font-size: 17px;">{{part_8_participant_consent_and_acknowledgement_of_iinterest10}}</td>
+            <td style="width:40%; background-color: lightgrey; font-size: 17px;">{{part_8_participant_consent_and_acknowledgement_of_iinterest11}}</td>
             <td style="width:60%; border: 1px solid black;">I understand that I can access the NDIA’s Privacy Notice and Privacy Policy on the NDIA website</td>
         </tr>
         </table>
@@ -1035,15 +1035,15 @@ class HearingSeeder extends Seeder
         <table style=" width:100%; border: 1px solid black;">
         <tr>
             <td style="width:30%; background-color: lightgrey; font-size: 17px;">Signature</td>
-            <td style="width:70%; border: 1px solid black;">{{part_8_participant_consent_and_acknowledgement_of_iinterest11}}</td>
+            <td style="width:70%; border: 1px solid black;">{{part_8_participant_consent_and_acknowledgement_of_iinterest12}}</td>
         </tr>
         <tr>
             <td style="width:30%; background-color: lightgrey; font-size: 17px;">Date</td>
-            <td style="width:70%; border: 1px solid black;">{{part_8_participant_consent_and_acknowledgement_of_iinterest2}}</td>
+            <td style="width:70%; border: 1px solid black;">{{part_8_participant_consent_and_acknowledgement_of_iinterest13}}</td>
         </tr>
         <tr>
             <td style="width:30%; background-color: lightgrey; font-size: 17px;">Full name (please print)</td>
-            <td style="width:70%; border: 1px solid black;">{{part_8_participant_consent_and_acknowledgement_of_iinterest3}}</td>
+            <td style="width:70%; border: 1px solid black;">{{part_8_participant_consent_and_acknowledgement_of_iinterest14}}</td>
         </tr>
         </table>
 
@@ -1053,19 +1053,19 @@ class HearingSeeder extends Seeder
         <table style=" width:100%; border: 1px solid black;">
         <tr>
             <td style="width:30%; background-color: lightgrey; font-size: 17px;">Signature</td>
-            <td style="width:70%; border: 1px solid black;">{{part_8_participant_consent_and_acknowledgement_of_iinterest14}}</td>
-        </tr>
-        <tr>
-            <td style="width:30%; background-color: lightgrey; font-size: 17px;">Date</td>
-            <td style="width:70%; border: 1px solid black;">{{part_8_participant_consent_and_acknowledgement_of_iinterest14}}</td>
-        </tr>
-        <tr>
-            <td style="width:30%; background-color: lightgrey; font-size: 17px;">Full name (please print)</td>
             <td style="width:70%; border: 1px solid black;">{{part_8_participant_consent_and_acknowledgement_of_iinterest15}}</td>
         </tr>
         <tr>
+            <td style="width:30%; background-color: lightgrey; font-size: 17px;">Date</td>
+            <td style="width:70%; border: 1px solid black;">{{part_8_participant_consent_and_acknowledgement_of_iinterest16}}</td>
+        </tr>
+        <tr>
+            <td style="width:30%; background-color: lightgrey; font-size: 17px;">Full name (please print)</td>
+            <td style="width:70%; border: 1px solid black;">{{part_8_participant_consent_and_acknowledgement_of_iinterest17}}</td>
+        </tr>
+        <tr>
         <td style="width:30%; background-color: lightgrey; font-size: 17px;">Relationship to participant or person wishing to become an NDIS participant</td>
-        <td style="width:70%; border: 1px solid black;">{{part_8_participant_consent_and_acknowledgement_of_iinterest16}}</td>
+        <td style="width:70%; border: 1px solid black;">{{part_8_participant_consent_and_acknowledgement_of_iinterest18}}</td>
         </tr>
         </table>
         <p style="margin-top:12pt:"></p>';
