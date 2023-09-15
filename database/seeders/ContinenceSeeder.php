@@ -1078,6 +1078,17 @@ class ContinenceSeeder extends Seeder
              "subtype":"text"
           },
           {
+            "type":"heading",
+            "required":false,
+            "label_1":"",
+            "label_2":"",
+            "label_3":"Indicate type of loss",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_2_heading_extra_4",
+            "access":false
+         },
+          {
              "type":"text",
              "required":false,
              "label":"Bladder",
@@ -1104,7 +1115,7 @@ class ContinenceSeeder extends Seeder
             "label_2":"",
             "placeholder":"Full Name",
             "className":"form-control",
-            "name":"part_2_heading_extra_4",
+            "name":"part_2_heading_extra_5",
             "access":false
          },
           {
@@ -1194,7 +1205,7 @@ class ContinenceSeeder extends Seeder
             "label_2":"2.5.1 Summarise recommendations from allied health and/or medical assessments.",
             "placeholder":"Full Name",
             "className":"form-control",
-            "name":"part_2_heading_extra_5",
+            "name":"part_2_heading_extra_6",
             "access":false
          },
           {
@@ -1215,7 +1226,7 @@ class ContinenceSeeder extends Seeder
             "label_3":"Indicate relevant health professional",
             "placeholder":"Full Name",
             "className":"form-control",
-            "name":"part_2_heading_extra_6",
+            "name":"part_2_heading_extra_7",
             "access":false
          },
           {
@@ -1296,7 +1307,7 @@ class ContinenceSeeder extends Seeder
             "label_3":"If yes, please provide the following information. \n Has the participant agreed to seek this assessment and/or advice? \n Is the participant aware that the NDIS cannot fund mainstream medical and health services? \n Describe the additional continence product/training needs identified by participant/Continence Assessor? \n Are other AT solutions or environmental adaptations/home modifications such as toileting AT or bathroom modifications required? \n Does the participant demonstrate behaviours of concern and have a behaviour support plan for restrictive practice? \n How might the outcome of this advice change the recommended NDIS continence supports to pursue the participant’s goals?\n",
             "placeholder":"Full Name",
             "className":"form-control",
-            "name":"part_2_heading_extra_7",
+            "name":"part_2_heading_extra_8",
             "access":false
          },
           {
