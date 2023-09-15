@@ -1118,6 +1118,17 @@ class ContinenceSeeder extends Seeder
             "name":"part_2_heading_extra_5",
             "access":false
          },
+         {
+          "type":"heading",
+          "required":false,
+          "label_1":"",
+          "label_2":"",
+          "label_3":"Data Entry Row 1",
+          "placeholder":"Full Name",
+          "className":"form-control",
+          "name":"part_2_heading_extra_6",
+          "access":false
+       },
           {
              "type":"text",
              "required":false,
@@ -1159,10 +1170,21 @@ class ContinenceSeeder extends Seeder
              "subtype":"text"
           },
           {
+            "type":"heading",
+            "required":false,
+            "label_1":"",
+            "label_2":"",
+            "label_3":"Data Entry Row 2",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_2_heading_extra_7",
+            "access":false
+         },
+          {
             "type":"text",
             "required":false,
-            "label":"Type of Continence Product 2",
-            "placeholder":"Type of Continence Product 2",
+            "label":"Type of Continence Product",
+            "placeholder":"Type of Continence Product",
             "className":"form-control",
             "name":"part_2_type_of_continence_2product",
             "access":false,
@@ -1171,8 +1193,8 @@ class ContinenceSeeder extends Seeder
          {
             "type":"text",
             "required":false,
-            "label":"Usage 2",
-            "placeholder":"Enter Usage 2",
+            "label":"Usage",
+            "placeholder":"Enter Usage",
             "className":"form-control",
             "name":"part_2_assesment_2usage",
             "access":false,
@@ -1181,8 +1203,8 @@ class ContinenceSeeder extends Seeder
          {
             "type":"text",
             "required":false,
-            "label":"Participant’s report of suitability 2",
-            "placeholder":"Enter Participant’s report of suitability 2",
+            "label":"Participant’s report of suitability",
+            "placeholder":"Enter Participant’s report of suitability",
             "className":"form-control",
             "name":"part_2_participants_report_of_2suitability",
             "access":false,
@@ -1191,8 +1213,8 @@ class ContinenceSeeder extends Seeder
          {
             "type":"text",
             "required":false,
-            "label":"Does it need reassessment Yes/No 2",
-            "placeholder":"Does it need reassessment 2",
+            "label":"Does it need reassessment Yes/No",
+            "placeholder":"Does it need reassessment",
             "className":"form-control",
             "name":"part_2_does_it_need_2reassessment",
             "access":false,
@@ -1205,7 +1227,7 @@ class ContinenceSeeder extends Seeder
             "label_2":"2.5.1 Summarise recommendations from allied health and/or medical assessments.",
             "placeholder":"Full Name",
             "className":"form-control",
-            "name":"part_2_heading_extra_6",
+            "name":"part_2_heading_extra_8",
             "access":false
          },
           {
@@ -1226,7 +1248,7 @@ class ContinenceSeeder extends Seeder
             "label_3":"Indicate relevant health professional",
             "placeholder":"Full Name",
             "className":"form-control",
-            "name":"part_2_heading_extra_7",
+            "name":"part_2_heading_extra_9",
             "access":false
          },
           {
@@ -1307,7 +1329,7 @@ class ContinenceSeeder extends Seeder
             "label_3":"If yes, please provide the following information. \n Has the participant agreed to seek this assessment and/or advice? \n Is the participant aware that the NDIS cannot fund mainstream medical and health services? \n Describe the additional continence product/training needs identified by participant/Continence Assessor? \n Are other AT solutions or environmental adaptations/home modifications such as toileting AT or bathroom modifications required? \n Does the participant demonstrate behaviours of concern and have a behaviour support plan for restrictive practice? \n How might the outcome of this advice change the recommended NDIS continence supports to pursue the participant’s goals?\n",
             "placeholder":"Full Name",
             "className":"form-control",
-            "name":"part_2_heading_extra_8",
+            "name":"part_2_heading_extra_10",
             "access":false
          },
           {
