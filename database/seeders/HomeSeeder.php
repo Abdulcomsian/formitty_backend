@@ -1139,6 +1139,26 @@ class HomeSeeder extends Seeder
                             "subtype":"text"
                          },
                          {
+                           "type":"date",
+                           "required":false,
+                           "label":"Date of Assessment",
+                           "placeholder":"Enter Your Date of Birth",
+                           "className":"form-control",
+                           "name":"part_1_ndis_date_of_assessment",
+                           "access":false,
+                           "subtype":"text"
+                        },
+                        {
+                           "type":"date",
+                           "required":false,
+                           "label":"Date of Report",
+                           "placeholder":"Enter Your Date of Birth",
+                           "className":"form-control",
+                           "name":"part_1_ndis_participan_date_of_report",
+                           "access":false,
+                           "subtype":"text"
+                        },
+                         {
                            "type":"heading",
                            "required":false,
                            "label_1":"1.2 Plan Management Details",
