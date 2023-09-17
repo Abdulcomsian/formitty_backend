@@ -1040,7 +1040,7 @@ class DogFormSeeder extends Seeder
             "type":"date",
             "required":false,
             "label":"Date of Assessment",
-            "placeholder":"Assessor_Date of Assessment",
+            "placeholder":"Date of Assessment",
             "className":"form-control",
             "name":"part_5_details_of_assistive_technology_assessor_11",
             "access":false,
@@ -1050,7 +1050,7 @@ class DogFormSeeder extends Seeder
             "type":"date",
             "required":false,
             "label":"Date of Report",
-            "placeholder":"Assessor_Date of Report",
+            "placeholder":"Date of Report",
             "className":"form-control",
             "name":"part_5_details_of_assistive_technology_assessor_12",
             "access":false,
@@ -1249,9 +1249,6 @@ class DogFormSeeder extends Seeder
             "subtype": "text"
         }
         ]';
-
-
-
 
     FormField::create([
       'form_heading_id' => $form->id,
