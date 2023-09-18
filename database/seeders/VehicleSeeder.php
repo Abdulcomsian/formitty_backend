@@ -868,46 +868,6 @@ class VehicleSeeder extends Seeder
                              "subtype":"text"
                              },
                              {
-                             "type":"text",
-                             "required":false,
-                             "label":"Agency Managed",
-                             "placeholder":"Enter Agency Managed",
-                             "className":"form-control",
-                             "name":"part_1_ndis_agency_managed",
-                             "access":false,
-                             "subtype":"text"
-                             },
-                             {
-                             "type":"text",
-                             "required":false,
-                             "label":"Self-Managed",
-                             "placeholder":"Enter Self Managed",
-                             "className":"form-control",
-                             "name":"part_1_ndis_self_managed",
-                             "access":false,
-                             "subtype":"text"
-                             },
-                             {
-                             "type":"text",
-                             "required":false,
-                             "label":"Registered Plan Management Provider",
-                             "placeholder":"Enter Registered Plan Management Provider",
-                             "className":"form-control",
-                             "name":"part_1_ndis_registeredplanmanagement_provider",
-                             "access":false,
-                             "subtype":"text"
-                             },
-                             {
-                             "type":"text",
-                             "required":false,
-                             "label":"Contact Details",
-                             "placeholder":"Enter Registered Plan Management Provider Contact Details",
-                             "className":"form-control",
-                             "name":"part_1_ndis_registeredplanmanagementcontact_details",
-                             "access":false,
-                             "subtype":"text"
-                             },
-                             {
                               "type":"heading",
                               "required":false,
                               "label_1":"1.2 Plan Management Details",
@@ -1005,7 +965,7 @@ class VehicleSeeder extends Seeder
                                        "type":"heading",
                                        "required":false,
                                        "label_1":"2.3 Functional Assessment",
-                                       "label_2":".3.1 Outline the specific functional limitation/s related to the participant’s disability that indicate the need for the vehicle modification. Consider indoor/outdoor mobility, transfer function, balance, upper and lower limb function. Summarise or attach relevant assessments that have been undertaken such as cognitive and mobility assessments.",
+                                       "label_2":"2.3.1 Outline the specific functional limitation/s related to the participant’s disability that indicate the need for the vehicle modification. Consider indoor/outdoor mobility, transfer function, balance, upper and lower limb function. Summarise or attach relevant assessments that have been undertaken such as cognitive and mobility assessments.",
                                        "label_3":"",
                                        "placeholder":"Full Name",
                                        "className":"form-control",
@@ -1247,7 +1207,7 @@ class VehicleSeeder extends Seeder
                                     {
                                     "type":"date",
                                     "required":false,
-                                    "label":"OOwnership of the vehicle and date of purchase",
+                                    "label":"Ownership of the vehicle and date of purchase",
                                     "placeholder":"Enter Ownership  of the vehicle and date of purchase",
                                     "className":"form-control",
                                     "name":"part_2_ownershipanddateof_purchase",
@@ -1706,7 +1666,7 @@ class VehicleSeeder extends Seeder
                "label_3":"If yes, give details (e.g. standard or modified, and what Australian Standards you, as the Assessor of the vehicle modification, have adhered to when assessing the car seat (describe the features of the modified car seat and relevant standard)",
                "placeholder":"Full Name",
                "className":"form-control",
-               "name":"part_4_heading_extra_4",
+               "name":"part_4_heading_extra_5",
                "access":false
             },
             {
@@ -1762,7 +1722,7 @@ class VehicleSeeder extends Seeder
                "label_3":"Give details (e.g. headrest; technical details of crash testing of this model; compliant tie- down points/brackets; compliant use of current /proposed vehicle occupant restraint system)",
                "placeholder":"Full Name",
                "className":"form-control",
-               "name":"part_4_heading_extra_5",
+               "name":"part_4_heading_extra_6",
                "access":false
             },
             {
@@ -1792,7 +1752,7 @@ class VehicleSeeder extends Seeder
                "label_3":"",
                "placeholder":"Full Name",
                "className":"form-control",
-               "name":"part_4_heading_extra_6",
+               "name":"part_4_heading_extra_7",
                "access":false
             },
             {
@@ -1803,7 +1763,7 @@ class VehicleSeeder extends Seeder
                "label_3":"Data Entry Row 1",
                "placeholder":"Full Name",
                "className":"form-control",
-               "name":"part_4_heading_extra_7",
+               "name":"part_4_heading_extra_8",
                "access":false
             },
             {
@@ -1834,7 +1794,7 @@ class VehicleSeeder extends Seeder
                "label_3":"Data Entry Row 2",
                "placeholder":"Full Name",
                "className":"form-control",
-               "name":"part_4_heading_extra_8",
+               "name":"part_4_heading_extra_9",
                "access":false
             },
             {
@@ -1865,7 +1825,7 @@ class VehicleSeeder extends Seeder
                "label_3":"Data Entry Row 3",
                "placeholder":"Full Name",
                "className":"form-control",
-               "name":"part_4_heading_extra_9",
+               "name":"part_4_heading_extra_10",
                "access":false
             },
             {
@@ -1923,7 +1883,7 @@ class VehicleSeeder extends Seeder
                "label_3":"",
                "placeholder":"Full Name",
                "className":"form-control",
-               "name":"part_4_heading_extra_10",
+               "name":"part_4_heading_extra_11",
                "access":false
             },
             {
@@ -1934,7 +1894,7 @@ class VehicleSeeder extends Seeder
                "label_3":"Data Entry Row 1",
                "placeholder":"Full Name",
                "className":"form-control",
-               "name":"part_4_heading_extra_11",
+               "name":"part_4_heading_extra_12",
                "access":false
             },
             {
@@ -1965,7 +1925,7 @@ class VehicleSeeder extends Seeder
                "label_3":"Data Entry Row 2",
                "placeholder":"Full Name",
                "className":"form-control",
-               "name":"part_4_heading_extra_12",
+               "name":"part_4_heading_extra_13",
                "access":false
             },
             {
@@ -1996,7 +1956,7 @@ class VehicleSeeder extends Seeder
                "label_3":"Data Entry Row 3",
                "placeholder":"Full Name",
                "className":"form-control",
-               "name":"part_4_heading_extra_13",
+               "name":"part_4_heading_extra_14",
                "access":false
             },
             {
@@ -2020,17 +1980,6 @@ class VehicleSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"heading",
-               "required":false,
-               "label_1":"4.5 Repairs and Maintenance",
-               "label_2":"",
-               "label_3":"",
-               "placeholder":"Full Name",
-               "className":"form-control",
-               "name":"part_4_heading_extra_14",
-               "access":false
-            },
-            {
                "type":"checkbox-group",
                "required":false,
                "label":"Will the participant have comprehensive vehicle insurance to cover repairs or replacement of the vehicle and vehicle modifications in the event of accidents or theft? Yes or No",
@@ -2048,9 +1997,20 @@ class VehicleSeeder extends Seeder
                ]
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"4.5 Repairs and Maintenance",
+               "label_2":"",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_15",
+               "access":false
+            },
+            {
                "type":"checkbox-group",
                "required":false,
-               "label":"Is the participant aware that maintenance of the vehicle, including vehicle features not related to the disability modification, are not the responsibility of the NDIS to fund as they are an everyday living cost e.g. engine, exterior and non-disability specific interior features are considered an everyday cost under Section 34(1)(e)?  Yes or No",
+               "label":"Will the participant have comprehensive vehicle insurance to cover repairs or replacement of the vehicle and vehicle modifications in the event of accidents or theft? Yes or No",
                "toggle":false,
                "inline":false,
                "name":"part_4_participant__has_comprehensive_vehicle_insurance",
@@ -2067,7 +2027,7 @@ class VehicleSeeder extends Seeder
             {
                "type":"checkbox-group",
                "required":false,
-               "label":"Is the participant aware that maintenance of the vehicle",
+               "label":"Is the participant aware that maintenance of the vehicle, including vehicle features not related to the disability modification, are not the responsibility of the NDIS to fund as they are an everyday living cost e.g. engine, exterior and non-disability specific interior features are considered an everyday cost under Section 34(1)(e)?  Yes or No",
                "toggle":false,
                "inline":false,
                "name":"part_4_participant_aware_that_maintenance_of_the_vehicle",
