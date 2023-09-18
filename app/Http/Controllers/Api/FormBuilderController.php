@@ -150,7 +150,7 @@ class FormBuilderController extends ApiController
         }
         self::generateWordDocument($user_form->id,$file_name);
         $file_path = env('APP_URL');
-        // $file_path = $file_path.$file_name;
+        $file_path = $file_path.$file_name;
         $success['file_path'] = $file_name;
         $success['fields'] = $input;
         $success['user_form_id'] = $user_form->id;
