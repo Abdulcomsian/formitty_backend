@@ -965,7 +965,7 @@ class VehicleSeeder extends Seeder
                                        "type":"heading",
                                        "required":false,
                                        "label_1":"2.3 Functional Assessment",
-                                       "label_2":".3.1 Outline the specific functional limitation/s related to the participant’s disability that indicate the need for the vehicle modification. Consider indoor/outdoor mobility, transfer function, balance, upper and lower limb function. Summarise or attach relevant assessments that have been undertaken such as cognitive and mobility assessments.",
+                                       "label_2":"2.3.1 Outline the specific functional limitation/s related to the participant’s disability that indicate the need for the vehicle modification. Consider indoor/outdoor mobility, transfer function, balance, upper and lower limb function. Summarise or attach relevant assessments that have been undertaken such as cognitive and mobility assessments.",
                                        "label_3":"",
                                        "placeholder":"Full Name",
                                        "className":"form-control",
@@ -1207,7 +1207,7 @@ class VehicleSeeder extends Seeder
                                     {
                                     "type":"date",
                                     "required":false,
-                                    "label":"OOwnership of the vehicle and date of purchase",
+                                    "label":"Ownership of the vehicle and date of purchase",
                                     "placeholder":"Enter Ownership  of the vehicle and date of purchase",
                                     "className":"form-control",
                                     "name":"part_2_ownershipanddateof_purchase",
@@ -1666,7 +1666,7 @@ class VehicleSeeder extends Seeder
                "label_3":"If yes, give details (e.g. standard or modified, and what Australian Standards you, as the Assessor of the vehicle modification, have adhered to when assessing the car seat (describe the features of the modified car seat and relevant standard)",
                "placeholder":"Full Name",
                "className":"form-control",
-               "name":"part_4_heading_extra_4",
+               "name":"part_4_heading_extra_5",
                "access":false
             },
             {
@@ -1722,7 +1722,7 @@ class VehicleSeeder extends Seeder
                "label_3":"Give details (e.g. headrest; technical details of crash testing of this model; compliant tie- down points/brackets; compliant use of current /proposed vehicle occupant restraint system)",
                "placeholder":"Full Name",
                "className":"form-control",
-               "name":"part_4_heading_extra_5",
+               "name":"part_4_heading_extra_6",
                "access":false
             },
             {
@@ -1752,7 +1752,7 @@ class VehicleSeeder extends Seeder
                "label_3":"",
                "placeholder":"Full Name",
                "className":"form-control",
-               "name":"part_4_heading_extra_6",
+               "name":"part_4_heading_extra_7",
                "access":false
             },
             {
@@ -1763,7 +1763,7 @@ class VehicleSeeder extends Seeder
                "label_3":"Data Entry Row 1",
                "placeholder":"Full Name",
                "className":"form-control",
-               "name":"part_4_heading_extra_7",
+               "name":"part_4_heading_extra_8",
                "access":false
             },
             {
@@ -1794,7 +1794,7 @@ class VehicleSeeder extends Seeder
                "label_3":"Data Entry Row 2",
                "placeholder":"Full Name",
                "className":"form-control",
-               "name":"part_4_heading_extra_8",
+               "name":"part_4_heading_extra_9",
                "access":false
             },
             {
@@ -1825,7 +1825,7 @@ class VehicleSeeder extends Seeder
                "label_3":"Data Entry Row 3",
                "placeholder":"Full Name",
                "className":"form-control",
-               "name":"part_4_heading_extra_9",
+               "name":"part_4_heading_extra_10",
                "access":false
             },
             {
@@ -1883,7 +1883,7 @@ class VehicleSeeder extends Seeder
                "label_3":"",
                "placeholder":"Full Name",
                "className":"form-control",
-               "name":"part_4_heading_extra_10",
+               "name":"part_4_heading_extra_11",
                "access":false
             },
             {
@@ -1894,7 +1894,7 @@ class VehicleSeeder extends Seeder
                "label_3":"Data Entry Row 1",
                "placeholder":"Full Name",
                "className":"form-control",
-               "name":"part_4_heading_extra_11",
+               "name":"part_4_heading_extra_12",
                "access":false
             },
             {
@@ -1925,7 +1925,7 @@ class VehicleSeeder extends Seeder
                "label_3":"Data Entry Row 2",
                "placeholder":"Full Name",
                "className":"form-control",
-               "name":"part_4_heading_extra_12",
+               "name":"part_4_heading_extra_13",
                "access":false
             },
             {
@@ -1956,7 +1956,7 @@ class VehicleSeeder extends Seeder
                "label_3":"Data Entry Row 3",
                "placeholder":"Full Name",
                "className":"form-control",
-               "name":"part_4_heading_extra_13",
+               "name":"part_4_heading_extra_14",
                "access":false
             },
             {
@@ -1987,7 +1987,7 @@ class VehicleSeeder extends Seeder
                "label_3":"",
                "placeholder":"Full Name",
                "className":"form-control",
-               "name":"part_4_heading_extra_14",
+               "name":"part_4_heading_extra_15",
                "access":false
             },
             {
