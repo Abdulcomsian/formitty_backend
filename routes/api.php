@@ -42,6 +42,10 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('convert-speech-to-text' , [SpeechController::class , 'convertSpeech']);
     Route::post('get-status' , [SpeechController::class , 'getStatus']);
     Route::get('get-speech-status/{operation}' , [SpeechController::class , 'checkSpeechRecognitionStatus']);
+
+    Route::post('get-questions', [AssessmentToolController::class, 'getQuestions']);
+    Route::post('store-questions', [AssessmentToolController::class, 'storeQuestions']);
+    Route::post('store-flowchart', [AssessmentToolController::class, 'storeFlowChart']);
 });
    
 Route::post('get-user-forms', [FormBuilderController::class, 'getUserForm']);
@@ -51,9 +55,7 @@ Route::get('change-status/{user_form_heading_id}', [FormBuilderController::class
 Route::post('search-filter', [FormBuilderController::class, 'searchFilter']);
 Route::get('assessment-tools', [AssessmentToolController::class, 'assessmentTools']);
 Route::post('user-assessment-tools', [AssessmentToolController::class, 'userAssessmentTools']);
-Route::post('get-questions', [AssessmentToolController::class, 'getQuestions']);
-Route::post('store-questions', [AssessmentToolController::class, 'storeQuestions']);
-Route::post('store-flowchart', [AssessmentToolController::class, 'storeFlowChart']);
+
 Route::post('edit-assessment', [AssessmentToolController::class, 'editAssessment']);
 Route::post('store-assessment', [AssessmentToolController::class, 'storeAssessmentTool']);
 Route::post('get-flowchart-questions', [AssessmentToolController::class, 'getFlowChartQuestions']);
