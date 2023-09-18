@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\{Form , FormHeading , FormField};
+use App\Models\{Form, FormHeading, FormField};
 
 class NutritionSeeder extends Seeder
 {
@@ -17,7 +17,7 @@ class NutritionSeeder extends Seeder
 
     {
 
-     $section1 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
+        $section1 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
         <tr>
             <td>
                 <p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'>  PART 1 – Participant and Plan Management Details</p>
@@ -97,7 +97,7 @@ class NutritionSeeder extends Seeder
             <tr>
             <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 15px'><p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>   NDIS Support Coordinator</p></td>
             <td style='border: 1px solid lightslategray; padding: 10px'>
-                <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>{{part_1_ndis_support_coordinator}}</p>
+                <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>{{part_1_plan_management_ndis_coordinator}}</p>
             </td>
             </tr>
             <tr>
@@ -146,7 +146,7 @@ class NutritionSeeder extends Seeder
     </table>";
 
 
-    $section2 = "<p style='margin-top:10px'></p>
+        $section2 = "<p style='margin-top:10px'></p>
                 <table style='background-color:#7209B7; border:none; width:100%;'>
                     <tr>
                         <td>
@@ -208,7 +208,7 @@ class NutritionSeeder extends Seeder
                 <p style='margin-top:10px'></p>";
 
 
-    $section3 = "<table style='background-color:#7209B7; border:none; width:100%;'>
+        $section3 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                     <tr>
                         <td>
                             <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'> PART 3 – Exploration of Optionst</p>
@@ -279,7 +279,7 @@ class NutritionSeeder extends Seeder
 
 
 
-    $section4 = "<p style='margin-top:10px'></p>
+        $section4 = "<p style='margin-top:10px'></p>
                 <table style='background-color:#7209B7; border:none; width:100%;'>
                     <tr>
                         <td>
@@ -327,7 +327,7 @@ class NutritionSeeder extends Seeder
 
 
 
-    $section5 = "<table style='background-color:#7209B7; border:none; width:100%;'>
+        $section5 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                     <tr>
                         <td>
                             <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'>  PART 5 – Recommended Nutrition Support AT specification</p>
@@ -413,7 +413,7 @@ class NutritionSeeder extends Seeder
 
 
 
-    $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
+        $section6 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                     <tr>
                         <td>
                             <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'>  PART 6 – Details of Assistive Technology Assessor</p>
@@ -495,7 +495,7 @@ class NutritionSeeder extends Seeder
 
 
 
-    $section7 = "<table style='background-color:#7209B7; border:none; width:100%;'>
+        $section7 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                         <tr>
                             <td>
                                 <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'>  PART 7 – Consent to Collect and Share Your Information - Provider AT Assessment and Quotation(s)</p>
@@ -558,175 +558,204 @@ class NutritionSeeder extends Seeder
                     </table>";
 
 
-    $form_fields = '[
+        $form_fields = '[
                         {
-                        "type":"text",
-                        "required":false,
-                        "label":"Full Name",
-                        "placeholder":"Enter Your Full Name",
-                        "className":"form-control",
-                        "name":"part_1_ndis_name",
-                        "access":false,
-                        "subtype":"text"
+                           "type":"heading",
+                           "required":false,
+                           "label_1":"1.1 NDIS Participant Details",
+                           "placeholder":"Full Name",
+                           "className":"form-control",
+                           "name":"part_1_heading_extra_1",
+                           "access":false
                         },
-                        {
-                        "type":"date",
-                        "required":false,
-                        "label":"Date of Birth",
-                        "placeholder":"Enter Your Date of Birth",
-                        "className":"form-control",
-                        "name":"part_1_ndis_date_of_birth",
-                        "access":false,
-                        "subtype":"text"
-                        },
-                        {
-                        "type":"text",
-                        "required":false,
-                        "label":"Age",
-                        "placeholder":"Enter Your Age",
-                        "className":"form-control",
-                        "name":"part_1_ndis_age",
-                        "access":false,
-                        "subtype":"text"
-                        },
-                        {
-                        "type":"text",
-                        "required":false,
-                        "label":"NDIS Number",
-                        "placeholder":"Enter Your NDIS Number",
-                        "className":"form-control",
-                        "name":"part_1_ndis_participantndis_number",
-                        "access":false,
-                        "subtype":"text"
-                        },
-                        {
-                        "type":"text",
-                        "required":false,
-                        "label":"Address",
-                        "placeholder":"Enter Your Address",
-                        "className":"form-control",
-                        "name":"part_1_ndis_participant_address",
-                        "access":false,
-                        "subtype":"text"
-                        },
-                        {
-                        "type":"text",
-                        "required":false,
-                        "label":"Phone Number",
-                        "placeholder":"Enter Your Phone Number",
-                        "className":"form-control",
-                        "name":"part_1_ndis_participantphone_number",
-                        "access":false,
-                        "subtype":"text"
-                        },
-                        {
-                        "type":"email",
-                        "required":false,
-                        "label":"Email",
-                        "placeholder":"Enter Your Email",
-                        "className":"form-control",
-                        "name":"part_1_ndis_participant_email",
-                        "access":false,
-                        "subtype":"text"
-                        },
-                        {
-                        "type":"text",
-                        "required":false,
-                        "label":"Preferred Contact Method",
-                        "placeholder":"Enter Your Preferred Contact Method",
-                        "className":"form-control",
-                        "name":"part_1_ndis_participant_preferredcontact",
-                        "access":false,
-                        "subtype":"text"
-                        },
-                        {
-                        "type":"text",
-                        "required":false,
-                        "label":"Nominee or Guardian Name",
-                        "placeholder":"Enter Your Nominee or Guardian Name",
-                        "className":"form-control",
-                        "name":"part_1_ndis_participantguardian_name",
-                        "access":false,
-                        "subtype":"text"
-                        },
-                        {
-                        "type":"text",
-                        "required":false,
-                        "label":"Nominee or Guardian Phone",
-                        "placeholder":"Enter Your Nominee or Guardian Phone",
-                        "className":"form-control",
-                        "name":"part_1_ndis_participantguardian_phone",
-                        "access":false,
-                        "subtype":"text"
-                        },
-                        {
-                            "type":"text",
-                            "required":false,
-                            "label":"NDIS Support Coordinator",
-                            "placeholder":"Enter Your NDIS Support Coordinator",
-                            "className":"form-control",
-                            "name":"part_1_ndis_support_coordinator",
-                            "access":false,
-                            "subtype":"text"
-                        },
-                        {
-                        "type":"text",
-                        "required":false,
-                        "label":"Cotact Details",
-                        "placeholder":"Enter Your Contact Details",
-                        "className":"form-control",
-                        "name":"part_1_ndis_participantcontact_details",
-                        "access":false,
-                        "subtype":"text"
-                        },
-                        {
-                        "type":"text",
-                        "required":false,
-                        "label":"Agency Managed",
-                        "placeholder":"Enter Your Agency Managed",
-                        "className":"form-control",
-                        "name":"part_1_plan_management_agency_managed",
-                        "access":false,
-                        "subtype":"text"
-                        },
-                        {
-                        "type":"text",
-                        "required":false,
-                        "label":"Self-Managed",
-                        "placeholder":"Self-Managed",
-                        "className":"form-control",
-                        "name":"part_1_plan_management_self_managed",
-                        "access":false,
-                        "subtype":"text"
-                        },
-                        {
-                        "type":"text",
-                        "required":false,
-                        "label":"Registered Plan Management Provider",
-                        "placeholder":"Enter Registered Plan Management Provider",
-                        "className":"form-control",
-                        "name":"part_1_plan_management_registered_plan_management_provider",
-                        "access":false,
-                        "subtype":"text"
-                        },
-                        {
-                            "type":"text",
-                            "required":false,
-                            "label":"Contact Details ",
-                            "placeholder":"Enter Contact Details ",
-                            "className":"form-control",
-                            "name":"part_1_plan_management_contact_details",
-                            "access":false,
-                            "subtype":"text"
-                        }
-            ]';
+                                   {
+                                   "type":"text",
+                                   "required":false,
+                                   "label":"Full Name",
+                                   "placeholder":"Enter Your Full Name",
+                                   "className":"form-control",
+                                   "name":"part_1_ndis_name",
+                                   "access":false,
+                                   "subtype":"text"
+                                   },
+                                   {
+                                   "type":"date",
+                                   "required":false,
+                                   "label":"Date of Birth",
+                                   "placeholder":"Enter Your Date of Birth",
+                                   "className":"form-control",
+                                   "name":"part_1_ndis_date_of_birth",
+                                   "access":false,
+                                   "subtype":"text"
+                                   },
+                                   {
+                                   "type":"text",
+                                   "required":false,
+                                   "label":"Age",
+                                   "placeholder":"Enter Your Age",
+                                   "className":"form-control",
+                                   "name":"part_1_ndis_age",
+                                   "access":false,
+                                   "subtype":"text"
+                                   },
+                                   {
+                                   "type":"text",
+                                   "required":false,
+                                   "label":"NDIS Number",
+                                   "placeholder":"Enter Your NDIS Number",
+                                   "className":"form-control",
+                                   "name":"part_1_ndis_participantndis_number",
+                                   "access":false,
+                                   "subtype":"text"
+                                   },
+                                   {
+                                   "type":"text",
+                                   "required":false,
+                                   "label":"Address",
+                                   "placeholder":"Enter Your Address",
+                                   "className":"form-control",
+                                   "name":"part_1_ndis_participant_address",
+                                   "access":false,
+                                   "subtype":"text"
+                                   },
+                                   {
+                                   "type":"text",
+                                   "required":false,
+                                   "label":"Phone Number",
+                                   "placeholder":"Enter Your Phone Number",
+                                   "className":"form-control",
+                                   "name":"part_1_ndis_participantphone_number",
+                                   "access":false,
+                                   "subtype":"text"
+                                   },
+                                   {
+                                   "type":"email",
+                                   "required":false,
+                                   "label":"Email",
+                                   "placeholder":"Enter Your Email",
+                                   "className":"form-control",
+                                   "name":"part_1_ndis_participant_email",
+                                   "access":false,
+                                   "subtype":"text"
+                                   },
+                                   {
+                                   "type":"text",
+                                   "required":false,
+                                   "label":"Preferred Contact Method",
+                                   "placeholder":"Enter Your Preferred Contact Method",
+                                   "className":"form-control",
+                                   "name":"part_1_ndis_participant_preferredcontact",
+                                   "access":false,
+                                   "subtype":"text"
+                                   },
+                                   {
+                                   "type":"text",
+                                   "required":false,
+                                   "label":"Nominee or Guardian Name",
+                                   "placeholder":"Enter Your Nominee or Guardian Name",
+                                   "className":"form-control",
+                                   "name":"part_1_ndis_participantguardian_name",
+                                   "access":false,
+                                   "subtype":"text"
+                                   },
+                                   {
+                                   "type":"text",
+                                   "required":false,
+                                   "label":"Nominee or Guardian Phone",
+                                   "placeholder":"Enter Your Nominee or Guardian Phone",
+                                   "className":"form-control",
+                                   "name":"part_1_ndis_participantguardian_phone",
+                                   "access":false,
+                                   "subtype":"text"
+                                   },
+                                   {
+                                   "type":"text",
+                                   "required":false,
+                                   "label":"NDIS Coordinator",
+                                   "placeholder":"Enter Your NDIS Coordinator",
+                                   "className":"form-control",
+                                   "name":"part_1_plan_management_ndis_coordinator",
+                                   "access":false,
+                                   "subtype":"text"
+                                   },
+                                   {
+                                   "type":"text",
+                                   "required":false,
+                                   "label":"Contact Details",
+                                   "placeholder":"Enter Contact Details",
+                                   "className":"form-control",
+                                   "name":"part_1_ndis_participantcontact_details",
+                                   "access":false,
+                                   "subtype":"text"
+                                   },
+                                   {
+                                    "type":"heading",
+                                    "required":false,
+                                    "label_1":"1.2 Plan Management Details",
+                                    "placeholder":"Full Name",
+                                    "className":"form-control",
+                                    "name":"part_1_heading_extra_2",
+                                    "access":false
+                                 },
+                                 {
+                                    "type":"text",
+                                    "required":false,
+                                    "label":"Agency Managed",
+                                    "placeholder":"Enter Your Agency Managed",
+                                    "className":"form-control",
+                                    "name":"part_1_plan_management_agency_managed",
+                                    "access":false,
+                                    "subtype":"text"
+                                    },
+                                    {
+                                    "type":"text",
+                                    "required":false,
+                                    "label":"Self-Managed",
+                                    "placeholder":"Self-Managed",
+                                    "className":"form-control",
+                                    "name":"part_1_plan_management_self_managed",
+                                    "access":false,
+                                    "subtype":"text"
+                                    },
+                                    {
+                                    "type":"text",
+                                    "required":false,
+                                    "label":"Registered Plan Management Provider",
+                                    "placeholder":"Enter Registered Plan Management Provider",
+                                    "className":"form-control",
+                                    "name":"part_1_plan_management_registered_plan_management_provider",
+                                    "access":false,
+                                    "subtype":"text"
+                                    },
+                                    {
+                                        "type":"text",
+                                        "required":false,
+                                        "label":"Contact Details ",
+                                        "placeholder":"Enter Contact Details ",
+                                        "className":"form-control",
+                                        "name":"part_1_plan_management_contact_details",
+                                        "access":false,
+                                        "subtype":"text"
+                                    }
+                                   ]';
 
 
-    $form_fields2 = '[
+        $form_fields2 = '[
+            {
+                "type":"heading",
+                "required":false,
+                "label_1":"2.1 Background",
+                "label_1":"",
+                "label_1":"Note participant’s circumstances, including: \n   1. disability; \n   2. current living situation; \n   3. social supports and environment in general and with regard to use of AT; \n   4. if moving through life transition; \n   5. coexisting medical and health conditions including behavioural status (note that NDIS can only fund AT related to participant’s disability). \nPlease include information regarding the participant’s current mealtime regime and nutritional supports and how well these meet participant’s nutritional needs.",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_2_heading_extra_1",
+                "access":false
+             },
                 {
                 "type":"textarea",
                 "required":false,
-                "label":"Background",
+                "label":"",
                 "placeholder":"Enter Your Background",
                 "className":"form-control",
                 "name":"part_2_assesment_background_01",
@@ -734,15 +763,37 @@ class NutritionSeeder extends Seeder
                 "subtype":"text"
                 },
                 {
+                    "type":"heading",
+                    "required":false,
+                    "label_1":"2.2 Functional Assessment findings",
+                    "label_1":"",
+                    "label_1":"Please clearly outline the specific functional limitation/s related to the participant’s disability and impact on life roles: \n   1. postural deformity or complex postural needs; \n   2. skin integrity issues; \n   3. rapidly changing condition – including growth or weight change; \n   4. cognitive issues; \n   5. behaviours of concern; \n   6. dysphagia; \n   7. bowel habits. \n*NDIS expects relevant assessments are conducted where required and records held by AT assessor for NDIS audit purposes.",
+                    "placeholder":"Full Name",
+                    "className":"form-control",
+                    "name":"part_2_heading_extra_2",
+                    "access":false
+                 },
+                {
                 "type":"textarea",
                 "required":false,
-                "label":"Functional Assessment findings",
+                "label":"",
                 "placeholder":"Enter Functional Assessment findings",
                 "className":"form-control",
                 "name":"part_2_assesment_functional_assessment_02",
                 "access":false,
                 "subtype":"text"
                 },
+                {
+                    "type":"heading",
+                    "required":false,
+                    "label_1":"2.3 Participant’s measurements details",
+                    "label_1":"",
+                    "label_1":"",
+                    "placeholder":"Full Name",
+                    "className":"form-control",
+                    "name":"part_2_heading_extra_3",
+                    "access":false
+                 },
                 {
                 "type":"date",
                 "required":false,
@@ -776,7 +827,29 @@ class NutritionSeeder extends Seeder
                 ]';
 
 
-    $form_fields3 = '[
+        $form_fields3 = '[
+            {
+                "type":"heading",
+                "required":false,
+                "label_1":"3.1 Evaluation of options",
+                "label_2":"",
+                "label_3":"Please provide information on all alternatives considered (including non-nutrition support AT-related solutions) to achieve goal/s, including use of other supports and approaches and reasons why they were not considered suitable. Note that the NDIA will generally fund the most cost-effective option, usually the minimum necessary, for example, tinned products rather than ‘ready-made premixed’ and larger tins rather than individual serves. Where trials have been conducted, please give details of where the trials took place and for how long.",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_3_heading_extra_1",
+                "access":false
+             },
+             {
+                "type":"heading",
+                "required":false,
+                "label_1":"",
+                "label_2":"",
+                "label_3":"Data Entry Row 1",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_3_heading_extra_2",
+                "access":false
+             },
         {
             "type":"text",
             "required":false,
@@ -828,6 +901,17 @@ class NutritionSeeder extends Seeder
             "subtype":"text"
         },
         {
+            "type":"heading",
+            "required":false,
+            "label_1":"",
+            "label_2":"",
+            "label_3":"Data Entry Row 2",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_3_heading_extra_3",
+            "access":false
+         },
+        {
             "type":"text",
             "required":false,
             "label":"Option",
@@ -875,6 +959,17 @@ class NutritionSeeder extends Seeder
             "access":false,
             "subtype":"text"
         },
+        {
+            "type":"heading",
+            "required":false,
+            "label_1":"",
+            "label_2":"",
+            "label_3":"Data Entry Row 3",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_3_heading_extra_4",
+            "access":false
+         },
         {
             "type":"text",
             "required":false,
@@ -927,11 +1022,22 @@ class NutritionSeeder extends Seeder
         ]';
 
 
-    $form_fields4 = '[
+        $form_fields4 = '[
+            {
+                "type":"heading",
+                "required":false,
+                "label_1":"4.1 Please state all the supports required for the recommended option including non AT supports and environmental modifications.",
+                "label_2":"",
+                "label_3":"The specification for the AT support/device should be provided in Part 5.",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_4_heading_extra_1",
+                "access":false
+             },
         {
             "type":"textarea",
             "required":false,
-            "label":"State all the supports required for the recommended option ",
+            "label":"",
             "placeholder":"Enter State all the supports required for the recommended option",
             "className":"form-control",
             "name":"part_4_state_all_the_supports_required_for_the_recommended_option",
@@ -939,9 +1045,20 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
+            "type":"heading",
+            "required":false,
+            "label_1":"",
+            "label_2":"",
+            "label_3":"Is there agreement between the AT assessor and participant on the recommended option? Yes or No. Explain if required.",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_4_heading_extra_2",
+            "access":false
+         },
+        {
             "type":"textarea",
             "required":false,
-            "label":"Agreement between the AT assessor and participant",
+            "label":"",
             "placeholder":"Enter Is there agreement between the AT assessor and participant on the recommended option? Yes or No. Explain if required?",
             "className":"form-control",
             "name":"part_4_agreement_between_the_at_assessor_and_participant",
@@ -949,9 +1066,20 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
+            "type":"heading",
+            "required":false,
+            "label_1":"4.2 Explain the evidence for the recommended option which will facilitate the participant’s goals compared to other options considered.",
+            "label_2":"",
+            "label_3":"E.g., demonstrated trial outcomes and consideration of long term benefit in both current and anticipated future needs; change or adjustment to personal care supports need. If the recommended enteral feed, nutritional supplement, or thickener is above the basic minimum or standard level, please include specific evidence/ clinical justification in Section 4.4 below. Please consider those products available on the Pharmaceutical Benefits Scheme.",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_4_heading_extra_3",
+            "access":false
+         },
+        {
             "type":"textarea",
             "required":false,
-            "label":"Evidence for the recommended option",
+            "label":"",
             "placeholder":"Enter Explain the evidence for the recommended option which will facilitate the participant’s goals compared to other options considered",
             "className":"form-control",
             "name":"part_4_evidence_for_the_recommended_option",
@@ -959,9 +1087,20 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
+            "type":"heading",
+            "required":false,
+            "label_1":"4.3 Are there any other factors that need resolution in order to implement the above?",
+            "label_2":"",
+            "label_3":"E.g., postural management; behavioural management plan for restrictive practice; are any environmental modifications required.",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_4_heading_extra_4",
+            "access":false
+         },
+        {
             "type":"textarea",
             "required":false,
-            "label":"Are there any other factors that need resolution in order to implement the above? ",
+            "label":"",
             "placeholder":"Enter Are there any other factors that need resolution in order to implement the above? ",
             "className":"form-control",
             "name":"part_4_other_factors_that_need_resolution_in_order",
@@ -969,9 +1108,20 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
+            "type":"heading",
+            "required":false,
+            "label_1":"4.4 If an enteral feed, nutritional supplement or thickener is above basic minimum or standard level being recommended in Section 4.2.",
+            "label_2":"",
+            "label_3":"Please provide the specific evidence/ clinical justification (e.g., medical confirmation of results of food allergies/intolerance tests or blood nutrient analysis), or if the participant has agreed to fund.",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_4_heading_extra_5",
+            "access":false
+         },
+        {
             "type":"textarea",
             "required":false,
-            "label":"If an enteral feed, nutritional supplement or thickener",
+            "label":"",
             "placeholder":"Enter If an enteral feed, nutritional supplement or thickener",
             "className":"form-control",
             "name":"part_4_enteral_feed_nutritional_supplement_thickener",
@@ -980,11 +1130,22 @@ class NutritionSeeder extends Seeder
         }
         ]';
 
-    $form_fields5 = '[
+        $form_fields5 = '[
+            {
+                "type":"heading",
+                "required":false,
+                "label_1":"5.1 Description of nutrition support AT including recommended product(s).",
+                "label_2":"",
+                "label_3":"Detail all necessary specifications required to meet client’s goal. This must be detailed enough to ensure that the item can be accurately quoted and supplied.",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_5_heading_extra_1",
+                "access":false
+             },
         {
             "type":"textarea",
             "required":false,
-            "label":"Description of nutrition support AT including recommended product",
+            "label":"",
             "placeholder":"Enter Description of nutrition support AT including recommended product",
             "className":"form-control",
             "name":"part_5_description_nutrition_support_AT_including_recommended_product",
@@ -992,9 +1153,20 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
+            "type":"heading",
+            "required":false,
+            "label_1":"",
+            "label_2":"",
+            "label_3":"Recommended supplier.",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_5_heading_extra_2",
+            "access":false
+         },
+        {
             "type":"textarea",
             "required":false,
-            "label":"Recommended supplier.",
+            "label":"",
             "placeholder":"Enter Recommended supplier.",
             "className":"form-control",
             "name":"part_5_Recommended_supplier",
@@ -1002,9 +1174,20 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
+            "type":"heading",
+            "required":false,
+            "label_1":"",
+            "label_2":"",
+            "label_3":"Nutrition support AT equipment delivery costs",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_5_heading_extra_3",
+            "access":false
+         },
+        {
             "type":"textarea",
             "required":false,
-            "label":"Nutrition support AT equipment delivery costs",
+            "label":"",
             "placeholder":"Enter Nutrition support AT equipment delivery costs",
             "className":"form-control",
             "name":"part_5_nutrition_suppor_AT_equipment_elivery_costs",
@@ -1012,7 +1195,29 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
-            "type":"textarea",
+            "type":"heading",
+            "required":false,
+            "label_1":"5.2 Extra Features.",
+            "label_2":"",
+            "label_3":"List below and estimate cost of any other nutrition support supplies (including additional cost of food when necessary) that are desired by the participant but are not due to the functional limitation/s related to the participant’s disability and the achievement of their stated goals.",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_5_heading_extra_4",
+            "access":false
+         },
+         {
+            "type":"heading",
+            "required":false,
+            "label_1":"",
+            "label_2":"",
+            "label_3":"Data Entry Row 1",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_5_heading_extra_5",
+            "access":false
+         },
+        {
+            "type":"text",
             "required":false,
             "label":"Item(s):",
             "placeholder":"Enter Item(s):",
@@ -1022,7 +1227,7 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
-            "type":"textarea",
+            "type":"text",
             "required":false,
             "label":"Quantity/frequency of supply required:",
             "placeholder":"Enter Quantity/frequency of supply required:",
@@ -1032,7 +1237,7 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
-            "type":"textarea",
+            "type":"text",
             "required":false,
             "label":"Cost estimate (including delivery):",
             "placeholder":"Enter Cost estimate (including delivery):",
@@ -1042,7 +1247,18 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
-            "type":"textarea",
+            "type":"heading",
+            "required":false,
+            "label_1":"",
+            "label_2":"",
+            "label_3":"Data Entry Row 2",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_5_heading_extra_6",
+            "access":false
+         },
+        {
+            "type":"text",
             "required":false,
             "label":"Item(s):",
             "placeholder":"Enter Item(s):",
@@ -1052,7 +1268,7 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
-            "type":"textarea",
+            "type":"text",
             "required":false,
             "label":"Quantity/frequency of supply required:",
             "placeholder":"Enter Quantity/frequency of supply required:",
@@ -1062,7 +1278,7 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
-            "type":"textarea",
+            "type":"text",
             "required":false,
             "label":"Cost estimate (including delivery):",
             "placeholder":"Enter Cost estimate (including delivery):",
@@ -1072,7 +1288,18 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
-            "type":"textarea",
+            "type":"heading",
+            "required":false,
+            "label_1":"",
+            "label_2":"",
+            "label_3":"Data Entry Row 3",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_5_heading_extra_7",
+            "access":false
+         },
+        {
+            "type":"text",
             "required":false,
             "label":"Item(s):",
             "placeholder":"Enter Item(s):",
@@ -1082,7 +1309,7 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         },
         {
-            "type":"textarea",
+            "type":"text",
             "required":false,
             "label":"Quantity/frequency of supply required:",
             "placeholder":"Enter Quantity/frequency of supply required:",
@@ -1092,7 +1319,7 @@ class NutritionSeeder extends Seeder
             "subtype":"textarea"
         }, 
         {
-            "type":"textarea",
+            "type":"text",
             "required":false,
             "label":"Cost estimate (including delivery):",
             "placeholder":"Enter Cost estimate (including delivery):",
@@ -1123,140 +1350,197 @@ class NutritionSeeder extends Seeder
         }
        ]';
 
-    $form_fields6 = '[
+        $form_fields6 = '[
         {
-            "type":"checkbox-group",
-            "required":false,
-            "label":"I certify that I meet the NDIA expectations of AT assessor provider suitability",
-            "placeholder":"Enter I certify that I meet the NDIA expectations of AT assessor provider suitability",
-            "className":"form-control",
-            "name":"part_6_details_of_assistive_technology_assessor1",
-            "access":false,
-            "subtype":"textarea"
+           "type": "heading",
+           "required": false,
+           "label_1": "DECLARATION (indicate all relevant sections that apply)",
+           "label_2": "",
+           "label_3": "",
+           "placeholder": "Full Name",
+           "className": "form-control",
+           "name": "part_6_heading_extra_1",
+           "access": false
         },
         {
-            "type":"checkbox-group",
-            "required":false,
-            "label":"I will provide appropriate evidence to the NDIA and/or NDIS Quality",
-            "placeholder":"Enter I will provide appropriate evidence to the NDIA and/or NDIS Quality ",
-            "className":"form-control",
-            "name":"part_6_details_of_assistive_technology_assessor2",
-            "access":false,
-            "subtype":"textarea"
+           "type": "checkbox-group",
+           "required": false,
+           "label": "I certify that I meet the NDIA expectations of AT assessor provider suitability (including understanding of the current NDIS Act, Rules and Operational Guidelines) to assess the type of assistive technology and associated supports, at the level of complexity required by this participant.",
+           "toggle": false,
+           "inline": false,
+           "name": "part_6_details_of_assistive_technology_assessor1",
+           "access": false,
+           "other": false,
+           "values": [
+              {
+                 "label": "YES/NO",
+                 "value": "option-1",
+                 "selected": true
+              }
+           ]
         },
         {
-            "type":"checkbox-group",
-            "required":false,
-            "label":"I understand and acknowledge that the NDIA and participant",
-            "placeholder":"I understand and acknowledge that the NDIA and participant",
-            "className":"form-control",
-            "name":"part_6_details_of_assistive_technology_assessor3",
-            "access":false,
-            "subtype":"textarea"
+           "type": "checkbox-group",
+           "required": false,
+           "label": "I will provide appropriate evidence to the NDIA and/or Quality and Safe Guards Commission if and as requested.",
+           "toggle": false,
+           "inline": false,
+           "name": "part_6_details_of_assistive_technology_assessor2",
+           "access": false,
+           "other": false,
+           "values": [
+              {
+                 "label": "YES/NO",
+                 "value": "option-1",
+                 "selected": true
+              }
+           ]
         },
         {
-            "type":"checkbox-group",
-            "required":false,
-            "label":"This assistive technology has been assessed by the treating multi-disciplinary team",
-            "placeholder":"This assistive technology has been assessed by the treating multi-disciplinary team",
-            "className":"form-control",
-            "name":"part_6_details_of_assistive_technology_assessor4",
-            "access":false,
-            "subtype":"textarea"
+           "type": "checkbox-group",
+           "required": false,
+           "label": "I understand and acknowledge that the NDIA and participant will rely on my professional advice to select, source and implement this assistive technology.",
+           "toggle": false,
+           "inline": false,
+           "name": "part_6_details_of_assistive_technology_assessor3",
+           "access": false,
+           "other": false,
+           "values": [
+              {
+                 "label": "YES/NO",
+                 "value": "option-1",
+                 "selected": false
+              }
+           ]
         },
         {
-            "type":"text",
-            "required":false,
-            "label":"Name",
-            "placeholder":"Name",
-            "className":"form-control",
-            "name":"part_6_details_of_assistive_technology_assessor5",
-            "access":false,
-            "subtype":"textarea"
+           "type": "checkbox-group",
+           "required": false,
+           "label": "This assistive technology has been assessed by the treating multi-disciplinary team and I have completed the AT assessment on behalf of that team.",
+           "toggle": false,
+           "inline": false,
+           "name": "part_6_details_of_assistive_technology_assessor4",
+           "access": false,
+           "other": false,
+           "values": [
+              {
+                 "label": "YES/NO",
+                 "value": "option-1",
+                 "selected": false
+              }
+           ]
         },
         {
-            "type":"text",
-            "required":false,
-            "label":"Position",
-            "placeholder":"Position",
-            "className":"form-control",
-            "name":"part_6_details_of_assistive_technology_assessor6",
-            "access":false,
-            "subtype":"textarea"
+           "type": "heading",
+           "required": false,
+           "label_1": "Assessor’s Details",
+           "label_2": "",
+           "label_3": "You must be able to provide evidence of competence in assessing AT needs at this level on request from NDIS Auditor",
+           "placeholder": "Full Name",
+           "className": "form-control",
+           "name": "part_6_heading_extra_2",
+           "access": false
         },
         {
-            "type":"text",
-            "required":false,
-            "label":"Qualification",
-            "placeholder":"Qualification",
-            "className":"form-control",
-            "name":"part_6_details_of_assistive_technology_assessor7",
-            "access":false,
-            "subtype":"textarea"
+           "type": "text",
+           "required": false,
+           "label": "Name",
+           "placeholder": "Enter Name",
+           "className": "form-control",
+           "name": "part_6_details_of_assistive_technology_assessor5",
+           "access": false,
+           "subtype": "text"
         },
         {
-            "type":"text",
-            "required":false,
-            "label":"Business Name",
-            "placeholder":"Business Name",
-            "className":"form-control",
-            "name":"part_6_details_of_assistive_technology_assessor8",
-            "access":false,
-            "subtype":"textarea"
+           "type": "text",
+           "required": false,
+           "label": "Position",
+           "placeholder": "Position",
+           "className": "form-control",
+           "name": "part_6_details_of_assistive_technology_assessor6",
+           "access": false,
+           "subtype": "textarea"
         },
         {
-            "type":"text",
-            "required":false,
-            "label":"Contact Telephone Number",
-            "placeholder":"Contact Telephone Number",
-            "className":"form-control",
-            "name":"part_6_details_of_assistive_technology_assessor9",
-            "access":false,
-            "subtype":"textarea"
+           "type": "text",
+           "required": false,
+           "label": "Qualification",
+           "placeholder": "Enter Qualification",
+           "className": "form-control",
+           "name": "part_6_details_of_assistive_technology_assessor7",
+           "access": false,
+           "subtype": "text"
         },
         {
-            "type":"email",
-            "required":false,
-            "label":"Email ",
-            "placeholder":"Email",
-            "className":"form-control",
-            "name":"part_6_details_of_assistive_technology_assessor10",
-            "access":false,
-            "subtype":"textarea"
+           "type": "text",
+           "required": false,
+           "label": "Business Name",
+           "placeholder": "Business Name",
+           "className": "form-control",
+           "name": "part_6_details_of_assistive_technology_assessor8",
+           "access": false,
+           "subtype": "textarea"
         },
         {
-            "type":"text",
-            "required":false,
-            "label":"Preferred Contact Method  ",
-            "placeholder":"Preferred Contact Method ",
-            "className":"form-control",
-            "name":"part_6_details_of_assistive_technology_assessor11",
-            "access":false,
-            "subtype":"textarea"
+           "type": "text",
+           "required": false,
+           "label": "Contact Telephone Number",
+           "placeholder": "Contact Telephone Number",
+           "className": "form-control",
+           "name": "part_6_details_of_assistive_technology_assessor9",
+           "access": false,
+           "subtype": "textarea"
         },
         {
-            "type":"date",
-            "required":false,
-            "label":"Date of assessment",
-            "placeholder":"Date of assessment",
-            "className":"form-control",
-            "name":"part_6_details_of_assistive_technology_assessor12",
-            "access":false,
-            "subtype":"textarea"
+           "type": "email",
+           "subtype": "email",
+           "required": false,
+           "label": "Email",
+           "placeholder": "Enter Email Address",
+           "className": "form-control",
+           "name": "part_6_details_of_assistive_technology_assessor10",
+           "access": false
         },
         {
-            "type":"date",
-            "required":false,
-            "label":"Date of report",
-            "placeholder":"Date of report",
-            "className":"form-control",
-            "name":"part_6_details_of_assistive_technology_assessor13",
-            "access":false,
-            "subtype":"textarea"
+           "type": "text",
+           "required": false,
+           "label": "Preferred Contact Method",
+           "placeholder": "Preferred Contact Method ",
+           "className": "form-control",
+           "name": "part_6_details_of_assistive_technology_assessor11",
+           "access": false,
+           "subtype": "textarea"
+        },
+        {
+           "type": "date",
+           "required": false,
+           "label": "Date of Assessment",
+           "placeholder": "Set Date of Assessment",
+           "className": "form-control",
+           "name":"part_6_details_of_assistive_technology_assessor12",
+           "access": false
+        },
+        {
+           "type": "date",
+           "required": false,
+           "label": "Date of Report",
+           "placeholder": "Set Date of Report",
+           "className": "form-control",
+           "name":"part_6_details_of_assistive_technology_assessor13",
+           "access": false
         }
-        ]';
+     ]';
 
-    $form_fields7 = '[
+        $form_fields7 = '[
+            {
+                "type":"heading",
+                "required":false,
+                "label_1":"For the participant to complete \nAs a participant who requires assistive technology supports, the National Disability Insurance Agency (NDIA) may need to contact your service providers, health and medical practitioners to discuss information within your assistive technology assessment and quotation(s). This will assist the NDIA with determining whether your request for assistive technology funded support(s) can be provided to you under the NDIS. \nIf you choose not to provide this consent, this may extend the time required in considering this request for assistive technology supports to be included in your NDIS plan. \nDo you consent to the NDIA collecting and disclosing your information, including from these third parties mentioned above, in relation to your assistive technology assessment and quotation? (Please tick either the yes or no answer below.)",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_7_heading_extra_1",
+                "access":false
+             },
         {
             "type":"checkbox-group",
             "required":false,
@@ -1277,6 +1561,15 @@ class NutritionSeeder extends Seeder
             "access":false,
             "subtype":"textarea"
         },
+        {
+            "type":"heading",
+            "required":false,
+            "label_1":"When I sign this form: \nI understand that I am giving consent to the NDIA to do the things with my information set out in Part 5. I understand that I can withdraw my consent for the NDIS to do things with my information at any time by letting the NDIA know. \nI understand that I can access the NDIA’s Privacy Notice and Privacy Policy on the NDIA website or by contacting the NDIA.",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_7_heading_extra_2",
+            "access":false
+         },
         {
             "type":"text",
             "required":false,
@@ -1307,6 +1600,15 @@ class NutritionSeeder extends Seeder
             "access":false,
             "subtype":"textarea"
         },
+        {
+            "type":"heading",
+            "required":false,
+            "label_1":"If you have signed this form on behalf of the NDIS participant, please complete the details below. It is an offence to provide false or misleading information. \nWe may require you to provide evidence of your authority to sign on behalf of the person.",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_7_heading_extra_3",
+            "access":false
+         },
         {
             "type":"text",
             "required":false,
@@ -1395,42 +1697,33 @@ class NutritionSeeder extends Seeder
             'section_html' => $section7
         ]);
 
-        // $form = FormHeading::create([
-        //     'form_heading' => 'Participant and Plan Management Details',
-        //     'form_id' => '8',
-        //     'section_html' => $section7
-        // ]);
-
-
         FormField::create([
-        'form_heading_id' => $heading1,
-        'form_field' => $form_fields
+            'form_heading_id' => $heading1,
+            'form_field' => $form_fields
         ]);
         FormField::create([
-        'form_heading_id' => $heading2,
-        'form_field' => $form_fields2
+            'form_heading_id' => $heading2,
+            'form_field' => $form_fields2
         ]);
         FormField::create([
-        'form_heading_id' => $heading3,
-        'form_field' => $form_fields3
+            'form_heading_id' => $heading3,
+            'form_field' => $form_fields3
         ]);
         FormField::create([
-        'form_heading_id' => $heading4,
-        'form_field' => $form_fields4
+            'form_heading_id' => $heading4,
+            'form_field' => $form_fields4
         ]);
         FormField::create([
-        'form_heading_id' => $heading5,
-        'form_field' => $form_fields5
+            'form_heading_id' => $heading5,
+            'form_field' => $form_fields5
         ]);
         FormField::create([
-        'form_heading_id' => $heading6,
-        'form_field' => $form_fields6
+            'form_heading_id' => $heading6,
+            'form_field' => $form_fields6
         ]);
         FormField::create([
-        'form_heading_id' => $heading7,
-        'form_field' => $form_fields7
+            'form_heading_id' => $heading7,
+            'form_field' => $form_fields7
         ]);
-
-        
     }
 }
