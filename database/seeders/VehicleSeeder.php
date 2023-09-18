@@ -1980,17 +1980,6 @@ class VehicleSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"heading",
-               "required":false,
-               "label_1":"4.5 Repairs and Maintenance",
-               "label_2":"",
-               "label_3":"",
-               "placeholder":"Full Name",
-               "className":"form-control",
-               "name":"part_4_heading_extra_15",
-               "access":false
-            },
-            {
                "type":"checkbox-group",
                "required":false,
                "label":"Will the participant have comprehensive vehicle insurance to cover repairs or replacement of the vehicle and vehicle modifications in the event of accidents or theft? Yes or No",
@@ -2008,9 +1997,20 @@ class VehicleSeeder extends Seeder
                ]
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"4.5 Repairs and Maintenance",
+               "label_2":"",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_15",
+               "access":false
+            },
+            {
                "type":"checkbox-group",
                "required":false,
-               "label":"Is the participant aware that maintenance of the vehicle, including vehicle features not related to the disability modification, are not the responsibility of the NDIS to fund as they are an everyday living cost e.g. engine, exterior and non-disability specific interior features are considered an everyday cost under Section 34(1)(e)?  Yes or No",
+               "label":"Will the participant have comprehensive vehicle insurance to cover repairs or replacement of the vehicle and vehicle modifications in the event of accidents or theft? Yes or No",
                "toggle":false,
                "inline":false,
                "name":"part_4_participant__has_comprehensive_vehicle_insurance",
@@ -2027,7 +2027,7 @@ class VehicleSeeder extends Seeder
             {
                "type":"checkbox-group",
                "required":false,
-               "label":"Is the participant aware that maintenance of the vehicle",
+               "label":"Is the participant aware that maintenance of the vehicle, including vehicle features not related to the disability modification, are not the responsibility of the NDIS to fund as they are an everyday living cost e.g. engine, exterior and non-disability specific interior features are considered an everyday cost under Section 34(1)(e)?  Yes or No",
                "toggle":false,
                "inline":false,
                "name":"part_4_participant_aware_that_maintenance_of_the_vehicle",
