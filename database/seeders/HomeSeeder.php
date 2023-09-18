@@ -1139,6 +1139,26 @@ class HomeSeeder extends Seeder
                             "subtype":"text"
                          },
                          {
+                           "type":"date",
+                           "required":false,
+                           "label":"Date of Assessment",
+                           "placeholder":"Enter Your Date of Birth",
+                           "className":"form-control",
+                           "name":"part_1_ndis_date_of_assessment",
+                           "access":false,
+                           "subtype":"text"
+                        },
+                        {
+                           "type":"date",
+                           "required":false,
+                           "label":"Date of Report",
+                           "placeholder":"Enter Your Date of Birth",
+                           "className":"form-control",
+                           "name":"part_1_ndis_participan_date_of_report",
+                           "access":false,
+                           "subtype":"text"
+                        },
+                         {
                            "type":"heading",
                            "required":false,
                            "label_1":"1.2 Plan Management Details",
@@ -1341,10 +1361,32 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"2.3.3 Findings from functional assessment",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_6",
+               "access":false
+            },
+            {
+               "type":"heading",
+               "required":false,
+               "label_1":"Assessment Area",
+               "label_2":"Mobility (Including the ability to use stairs and ramps)",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_7",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Mobility",
-               "placeholder":"Enter Mobility",
+               "label":"Current Status",
+               "placeholder":"Enter Current Status",
                "className":"form-control",
                "name":"part_2_functional_assessment1",
                "access":false,
@@ -1353,18 +1395,29 @@ class HomeSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Mobility",
-               "placeholder":"Enter Mobility",
+               "label":"Expected future level of independence",
+               "placeholder":"Enter Expected future level of independence",
                "className":"form-control",
                "name":"part_2_functional_assessment2",
                "access":false,
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"Transfers, consider bed, chair, toilet and car.",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_8",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Transfers, consider bed, chair, toilet and car",
-               "placeholder":"Enter Transfers, consider bed, chair, toilet and car",
+               "label":"Current Status",
+               "placeholder":"Enter Current Status",
                "className":"form-control",
                "name":"part_2_functional_assessment3",
                "access":false,
@@ -1373,18 +1426,29 @@ class HomeSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Transfers, consider bed, chair, toilet and car",
-               "placeholder":"Enter Transfers, consider bed, chair, toilet and car",
+               "label":"Expected future level of independence",
+               "placeholder":"Enter Expected future level of independence",
                "className":"form-control",
                "name":"part_2_functional_assessment4",
                "access":false,
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"Mobility aids, consider typical footprint and circulation space required for wheelchairs",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_9",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Mobility aids, consider typical footprint and circulation space required for wheelchairs",
-               "placeholder":"Mobility aids, consider typical footprint and circulation space required for wheelchairs",
+               "label":"Current Status",
+               "placeholder":"Enter Current Status",
                "className":"form-control",
                "name":"part_2_functional_assessment5",
                "access":false,
@@ -1393,18 +1457,29 @@ class HomeSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Mobility aids, consider typical footprint and circulation space required for wheelchairs",
-               "placeholder":"Mobility aids, consider typical footprint and circulation space required for wheelchairs",
+               "label":"Expected future level of independence",
+               "placeholder":"Enter Expected future level of independence",
                "className":"form-control",
                "name":"part_2_functional_assessment6",
                "access":false,
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"Upper limb / Hand function and reach",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_10",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Upper limb / Hand function and reach",
-               "placeholder":"Upper limb / Hand function and reach",
+               "label":"Current Status",
+               "placeholder":"Enter Current Status",
                "className":"form-control",
                "name":"part_2_functional_assessment7",
                "access":false,
@@ -1413,18 +1488,29 @@ class HomeSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Upper limb / Hand function and reach",
-               "placeholder":"Upper limb / Hand function and reach",
+               "label":"Expected future level of independence",
+               "placeholder":"Enter Expected future level of independence",
                "className":"form-control",
                "name":"part_2_functional_assessment8",
                "access":false,
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"Lifting and carrying capacity",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_11",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Lifting and carrying capacity",
-               "placeholder":"Lifting and carrying capacity",
+               "label":"Current Status",
+               "placeholder":"Enter Current Status",
                "className":"form-control",
                "name":"part_2_functional_assessment9",
                "access":false,
@@ -1433,18 +1519,29 @@ class HomeSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Lifting and carrying capacity",
-               "placeholder":"Lifting and carrying capacity",
+               "label":"Expected future level of independence",
+               "placeholder":"Enter Expected future level of independence",
                "className":"form-control",
                "name":"part_2_functional_assessment10",
                "access":false,
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"Functional cognitive status",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_12",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Functional cognitive status",
-               "placeholder":"Functional cognitive status",
+               "label":"Current Status",
+               "placeholder":"Enter Current Status",
                "className":"form-control",
                "name":"part_2_functional_assessment11",
                "access":false,
@@ -1453,18 +1550,29 @@ class HomeSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Functional cognitive status",
-               "placeholder":"Functional cognitive status",
+               "label":"Expected future level of independence",
+               "placeholder":"Enter Expected future level of independence",
                "className":"form-control",
                "name":"part_2_functional_assessment12",
                "access":false,
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"Other general safety issues",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_13",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Other general safety issues",
-               "placeholder":"Other general safety issues",
+               "label":"Current Status",
+               "placeholder":"Enter Current Status",
                "className":"form-control",
                "name":"part_2_functional_assessment13",
                "access":false,
@@ -1473,18 +1581,29 @@ class HomeSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Other general safety issues",
-               "placeholder":"Other general safety issues",
+               "label":"Expected future level of independence",
+               "placeholder":"Enter Expected future level of independence",
                "className":"form-control",
                "name":"part_2_functional_assessment14",
                "access":false,
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"Personal ADL",
+               "label_2":"Toileting",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_14",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Toileting ",
-               "placeholder":"Toileting",
+               "label":"Current Status",
+               "placeholder":"Enter Current Status",
                "className":"form-control",
                "name":"part_2_functional_assessment15",
                "access":false,
@@ -1493,18 +1612,29 @@ class HomeSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Toileting ",
-               "placeholder":"Toileting",
+               "label":"Expected future level of independence",
+               "placeholder":"Enter Expected future level of independence",
                "className":"form-control",
                "name":"part_2_functional_assessment16",
                "access":false,
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"Dressing",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_15",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Dressing",
-               "placeholder":"Dressing",
+               "label":"Current Status",
+               "placeholder":"Enter Current Status",
                "className":"form-control",
                "name":"part_2_functional_assessment17",
                "access":false,
@@ -1513,18 +1643,29 @@ class HomeSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Dressing",
-               "placeholder":"Dressing",
+               "label":"Expected future level of independence",
+               "placeholder":"Enter Expected future level of independence",
                "className":"form-control",
                "name":"part_2_functional_assessment18",
                "access":false,
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"Showering/bathing",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_16",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Showering/bathing ",
-               "placeholder":"Showering/bathing ",
+               "label":"Current Status",
+               "placeholder":"Enter Current Status",
                "className":"form-control",
                "name":"part_2_functional_assessment19",
                "access":false,
@@ -1533,18 +1674,29 @@ class HomeSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Showering/bathing ",
-               "placeholder":"Showering/bathing ",
+               "label":"Expected future level of independence",
+               "placeholder":"Enter Expected future level of independence",
                "className":"form-control",
                "name":"part_2_functional_assessment20",
                "access":false,
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"Grooming",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_17",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Grooming",
-               "placeholder":"Grooming ",
+               "label":"Current Status",
+               "placeholder":"Enter Current Status",
                "className":"form-control",
                "name":"part_2_functional_assessment21",
                "access":false,
@@ -1553,18 +1705,29 @@ class HomeSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Grooming",
-               "placeholder":"Grooming ",
+               "label":"Expected future level of independence",
+               "placeholder":"Enter Expected future level of independence",
                "className":"form-control",
                "name":"part_2_functional_assessment22",
                "access":false,
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"Other",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_18",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Other",
-               "placeholder":"Other ",
+               "label":"Current Status",
+               "placeholder":"Current Status",
                "className":"form-control",
                "name":"part_2_functional_assessment23",
                "access":false,
@@ -1573,18 +1736,29 @@ class HomeSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Other",
-               "placeholder":"Other ",
+               "label":"Expected future level of independence",
+               "placeholder":"Expected future level of independence",
                "className":"form-control",
                "name":"part_2_functional_assessment24",
                "access":false,
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"Domestic ADL",
+               "label_2":"Meal preparation",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_19",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Meal preparation",
-               "placeholder":"Meal preparation",
+               "label":"Current Status",
+               "placeholder":"Enter Current Status",
                "className":"form-control",
                "name":"part_2_functional_assessment25",
                "access":false,
@@ -1593,18 +1767,29 @@ class HomeSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Meal preparation",
-               "placeholder":"Meal preparation",
+               "label":"Expected future level of independence",
+               "placeholder":"Enter Expected future level of independence",
                "className":"form-control",
                "name":"part_2_functional_assessment26",
                "access":false,
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"Cleaning",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_20",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Cleaning",
-               "placeholder":"Cleaning",
+               "label":"Current Status",
+               "placeholder":"Enter Current Status",
                "className":"form-control",
                "name":"part_2_functional_assessment27",
                "access":false,
@@ -1613,18 +1798,29 @@ class HomeSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Cleaning",
-               "placeholder":"Cleaning",
+               "label":"Expected future level of independence",
+               "placeholder":"Enter Expected future level of independence",
                "className":"form-control",
                "name":"part_2_functional_assessment28",
                "access":false,
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"Laundry",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_21",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Laundry",
-               "placeholder":"Laundry",
+               "label":"Current Status",
+               "placeholder":"Enter Current Status",
                "className":"form-control",
                "name":"part_2_functional_assessment29",
                "access":false,
@@ -1633,18 +1829,29 @@ class HomeSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Laundry",
-               "placeholder":"Laundry",
+               "label":"Expected future level of independence",
+               "placeholder":"Enter Expected future level of independence",
                "className":"form-control",
                "name":"part_2_functional_assessment30",
                "access":false,
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"Other",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_22",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Other",
-               "placeholder":"Other",
+               "label":"Current Status",
+               "placeholder":"Enter Current Status",
                "className":"form-control",
                "name":"part_2_functional_assessment31",
                "access":false,
@@ -1653,18 +1860,29 @@ class HomeSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Other",
-               "placeholder":"Other",
+               "label":"Expected future level of independence",
+               "placeholder":"Enter Expected future level of independence",
                "className":"form-control",
                "name":"part_2_functional_assessment32",
                "access":false,
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"Community Activities / Access",
+               "label_2":"Recreation and leisure",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_23",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Recreation and leisure",
-               "placeholder":"Recreation and leisure",
+               "label":"Current Status",
+               "placeholder":"Enter Current Status",
                "className":"form-control",
                "name":"part_2_functional_assessment33",
                "access":false,
@@ -1673,18 +1891,29 @@ class HomeSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Recreation and leisure",
-               "placeholder":"Recreation and leisure",
+               "label":"Expected future level of independence",
+               "placeholder":"Enter Expected future level of independence",
                "className":"form-control",
                "name":"part_2_functional_assessment34",
                "access":false,
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"Driving and/or transportation in vehicle/cars",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_24",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Driving and/or transportation in vehicle/cars",
-               "placeholder":"Driving and/or transportation in vehicle/cars",
+               "label":"Current Status",
+               "placeholder":"Enter Current Status",
                "className":"form-control",
                "name":"part_2_functional_assessment35",
                "access":false,
@@ -1693,18 +1922,29 @@ class HomeSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Driving and/or transportation in vehicle/cars",
-               "placeholder":"Driving and/or transportation in vehicle/cars",
+               "label":"Expected future level of independence",
+               "placeholder":"Enter Expected future level of independence",
                "className":"form-control",
                "name":"part_2_functional_assessment36",
                "access":false,
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"Work and study issues",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_25",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Work and study issues",
-               "placeholder":"Work and study issues",
+               "label":"Current Status",
+               "placeholder":"Enter Current Status",
                "className":"form-control",
                "name":"part_2_functional_assessment37",
                "access":false,
@@ -1713,8 +1953,8 @@ class HomeSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Work and study issues",
-               "placeholder":"Work and study issues",
+               "label":"Expected future level of independence",
+               "placeholder":"Enter Expected future level of independence",
                "className":"form-control",
                "name":"part_2_functional_assessment38",
                "access":false,
@@ -1724,6 +1964,17 @@ class HomeSeeder extends Seeder
 
 
       $form_fields3 = '[
+         {
+            "type":"heading",
+            "required":false,
+            "label_1":"3.1 Home ownership",
+            "label_2":"3.1.1 Please indicate the ownership status of the property being assessed. Where ownership is other than the participant, provide more details, e.g. name of real estate agency and contact number",
+            "label_3":"",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_3_heading_extra_1",
+            "access":false
+         },
             {
                "type":"text",
                "required":false,
@@ -1775,59 +2026,120 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"text",
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"3.1.2 Has the property had previous modifications funded by the NDIA? If ‘yes’, please outline previous modifications completed",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_3_heading_extra_2",
+               "access":false
+            },
+            {
+               "type":"checkbox-group",
                "required":false,
                "label":"Yes",
-               "placeholder":"Enter Yes",
-               "className":"form-control",
+               "toggle":false,
+               "inline":false,
                "name":"part_3_property_details_yes1",
                "access":false,
-               "subtype":"text"
+               "other":false,
+               "values":[
+                  {
+                     "label":"Option 1",
+                     "value":"option-1",
+                     "selected":true
+                  }
+               ]
             },
             {
-               "type":"text",
+               "type":"checkbox-group",
                "required":false,
-               "label":"Yes",
-               "placeholder":"Enter No",
-               "className":"form-control",
+               "label":"No",
+               "toggle":false,
+               "inline":false,
                "name":"part_3_property_details_no1",
                "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Details of previous modifications",
-               "placeholder":"Enter Details of previous modifications",
-               "className":"form-control",
-               "name":"part_3_property_details__of_previous_modifications",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Yes",
-               "placeholder":"Enter Yes",
-               "className":"form-control",
-               "name":"part_3_property_details_yes2",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Yes",
-               "placeholder":"Enter Yes",
-               "className":"form-control",
-               "name":"part_3_property_details_no2",
-               "access":false,
-               "subtype":"text"
+               "other":false,
+               "values":[
+                  {
+                     "label":"Option 1",
+                     "value":"option-1",
+                     "selected":true
+                  }
+               ]
             },
             {
                "type":"textarea",
                "required":false,
-               "label":"Structure of property",
+               "label":"Details of previous modifications",
+               "placeholder":"Enter Details of previous modification",
+               "className":"form-control",
+               "name":"part_3_home_enviroment",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"3.1.3 Is the owner of the property aware of and provided written authorisation for the potential modifications?",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_3_heading_extra_3",
+               "access":false
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"Yes",
+               "toggle":false,
+               "inline":false,
+               "name":"part_3_property_details_yes2",
+               "access":false,
+               "other":false,
+               "values":[
+                  {
+                     "label":"Option 1",
+                     "value":"option-1",
+                     "selected":true
+                  }
+               ]
+            },
+            {
+               "type":"checkbox-group",
+               "required":false,
+               "label":"No",
+               "toggle":false,
+               "inline":false,
+               "name":"part_3_property_details_no2",
+               "access":false,
+               "other":false,
+               "values":[
+                  {
+                     "label":"Option 1",
+                     "value":"option-1",
+                     "selected":true
+                  }
+               ]
+            },
+            {
+               "type":"heading",
+               "required":false,
+               "label_1":"3.2 Structure of property",
+               "label_2":"",
+               "label_3":"Please describe the construction type, e.g. brick or weatherboard, colour bond or tiled roof, approximate age or era, concrete slab or timber stumps",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_3_heading_extra_4",
+               "access":false
+            },
+            {
+               "type":"textarea",
+               "required":false,
+               "label":"",
                "placeholder":"Enter Structure of property",
                "className":"form-control",
                "name":"part_3_property_details_structure_of_property",
@@ -1835,9 +2147,20 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"3.3 Description of property",
+               "label_2":"",
+               "label_3":"Please describe the layout and size, e.g. 3 bedroom residence with central bathroom and two living areas, single garage, porch at front and back entrances, medium sized home = approx 20 square metres, block size approx 500 – 600 square metres, level block, etc.",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_3_heading_extra_5",
+               "access":false
+            },
+            {
                "type":"textarea",
                "required":false,
-               "label":"Description of property",
+               "label":"",
                "placeholder":"Enter Description of property",
                "className":"form-control",
                "name":"part_3_property_details_description_of_property",
@@ -1845,9 +2168,20 @@ class HomeSeeder extends Seeder
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"3.4 Special Conditions",
+               "label_2":"",
+               "label_3":"Please outline any special conditions or considerations, e.g. heritage listed",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_3_heading_extra_6",
+               "access":false
+            },
+            {
                "type":"textarea",
                "required":false,
-               "label":"Special Conditions",
+               "label":"",
                "placeholder":"Enter Special Conditions",
                "className":"form-control",
                "name":"part_3_property_details_special_conditions",
@@ -1857,10 +2191,21 @@ class HomeSeeder extends Seeder
          ]';
 
       $form_fields4 = '[
+         {
+            "type":"heading",
+            "required":false,
+            "label_1":"4.1 Social Circumstances",
+            "label_2":"",
+            "label_3":"Detail the participant’s living arrangements, social background, relationship status and other information relevant to the need for home modifications.",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_4_heading_extra_1",
+            "access":false
+         },
             {
                "type":"textarea",
                "required":false,
-               "label":"Social Circumstances",
+               "label":"",
                "placeholder":"Enter Social Circumstances",
                "className":"form-control",
                "name":"part_4_property_details_participant_owned",
@@ -1868,14 +2213,25 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
-               "type":"textarea",
+               "type":"heading",
+               "required":false,
+               "label_1":"4.2 Hospitalisation or Inpatient",
+               "label_2":"",
+               "label_3":"If currently an inpatient, please outline which hospital, the current discharge plan and describe any interim arrangements while complex home modifications are completed such as short term accommodation. Describe other assistive technology as appropriate.",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_2",
+               "access":false
+            },
+            {
+               "type":"text",
                "required":false,
                "label":"Not Available",
                "placeholder":"Enter N/A",
                "className":"form-control",
-               "name":"part_4_property_details_n_a",
+               "name":"part_2_communication_functional_assessment",
                "access":false,
-               "subtype":"textarea"
+               "subtype":"text"
             },
             {
                "type":"date",
@@ -1898,9 +2254,20 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"4.3 Proposed living arrangements (including post-discharge, where appropriate)",
+               "label_2":"",
+               "label_3":"Comments in this section will relate to decisions that have been made about where and who the participant will live with and how long it is expected they will reside in the house which is being considered for modification. Detail the participant’s expected long-term household/social situation and household supports as well as the participant’s current family support and any known future plans or changes to this.",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_3",
+               "access":false
+            },
+            {
                "type":"textarea",
                "required":false,
-               "label":"Proposed living arrangements ",
+               "label":"",
                "placeholder":"Enter Proposed living arrangements",
                "className":"form-control",
                "name":"part_4_property_details_proposed_living_arrangements",
@@ -1910,6 +2277,17 @@ class HomeSeeder extends Seeder
          ]';
 
       $form_fields5 = '[
+         {
+            "type":"heading",
+            "required":false,
+            "label_1":"5.1 Modification Details",
+            "label_2":"",
+            "label_3":"You should detail the participant’s existing home environment and provide clinical evidence for all home modification recommendation(s). Recommended specifications for access must be consistent with The NDIA document “Guidance for Builders and Designers” unless specifically referenced as an ‘exception’. \nYou must include: \n   1. Recommendations, having considered all reasonable options \n   2. Recommendations should reflect consideration of the requirements of the legislation to pay for the reasonable costs of home modifications required as a result of the participant’s disability. \n   3. Clinical evidence for each aspect of your recommendations. \n   4. Specific details to ensure recommendations for home modifications are comprehensive and meet the participant’s home modification needs \n   5. Where relevant, details of any related modifications or equipment currently being used by the participant \n   6. Where appropriate, provide diagrams and/or digital photographs of the home areas requiring modification \n   7. Note the participant’s or family preferences separately to the assessor’s recommendations where applicable \n   8. Under each area/room requiring modification below, please detail any changes required to door widths, fixtures, fittings, floor coverings etc. \n   9. Recommendations comply with relevant Australian Standards",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_5_heading_extra_1",
+            "access":false
+         },
             {
                "type":"text",
                "required":false,
@@ -1921,10 +2299,21 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"5.2 Externals",
+               "label_2":"5.2.1 Front Access",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_5_heading_extra_2",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Modification Details N/A",
-               "placeholder":"Enter Modification Details N/A",
+               "label":"N/A",
+               "placeholder":"Enter N/A",
                "className":"form-control",
                "name":"part_5_complex_home_modification_recommendations_externals_n_a",
                "access":false,
@@ -1971,10 +2360,21 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"5.2.2 Other Access",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_5_heading_extra_3",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Modification Details N/A",
-               "placeholder":"Enter Modification Details N/A",
+               "label":"N/A",
+               "placeholder":"Enter N/A",
                "className":"form-control",
                "name":"part_5_complex_home_modification_recommendations_externals_n_a1",
                "access":false,
@@ -2021,10 +2421,21 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"5.2.3 Car Parking",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_5_heading_extra_4",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Modification Details N/A",
-               "placeholder":"Enter Modification Details N/A",
+               "label":"N/A",
+               "placeholder":"Enter N/A",
                "className":"form-control",
                "name":"part_5_complex_home_modification_recommendations_externals_n_a2",
                "access":false,
@@ -2071,10 +2482,21 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"5.3 Internals",
+               "label_2":"5.3.1 Bedroom",
+               "label_3":"Suitable for participant to use (preferably located on ground floor). Please include doorways, flooring, lights, fixtures/fittings, door handles and light switches where applicable",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_5_heading_extra_5",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Internals N/A",
-               "placeholder":"Enter Modification Details N/A",
+               "label":"N/A",
+               "placeholder":"Enter N/A",
                "className":"form-control",
                "name":"part_5_complex_home_modification_recommendations_internals_n_a3",
                "access":false,
@@ -2121,10 +2543,21 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"5.3.2 Living Area",
+               "label_3":"Please include doorways, flooring, lights, fixtures/fittings, door handles and light switches, circulation space where applicable",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_5_heading_extra_6",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Internals N/A",
-               "placeholder":"Enter Modification Details N/A",
+               "label":"N/A",
+               "placeholder":"Enter N/A",
                "className":"form-control",
                "name":"part_5_complex_home_modification_recommendations_internals_n_a4",
                "access":false,
@@ -2171,10 +2604,21 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"5.3.3 Hallway",
+               "label_3":"Internal steps to enable access to a suitable bedroom and bathroom. Please include doorways, flooring, lights, fixtures/fittings, door handles, light switches and width of corridors where applicable",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_5_heading_extra_7",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Internals N/A",
-               "placeholder":"Enter Modification Details N/A",
+               "label":"N/A",
+               "placeholder":"Enter N/A",
                "className":"form-control",
                "name":"part_5_complex_home_modification_recommendations_internals_n_a5",
                "access":false,
@@ -2221,10 +2665,21 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"5.3.4 Bathroom/Toilet",
+               "label_3":"Bathroom/toilet that would be suitable for participant to use (preferably located on ground floor). Please include doorways, flooring, lights, fixtures/fittings, door handles and light switches, hand rails, tap ware, shower hose, etc. where applicable. Describe if combined or separate.",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_5_heading_extra_8",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Internals N/A",
-               "placeholder":"Enter Modification Details N/A",
+               "label":"N/A",
+               "placeholder":"Enter N/A",
                "className":"form-control",
                "name":"part_5_complex_home_modification_recommendations_internals_n_a6",
                "access":false,
@@ -2271,10 +2726,21 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"5.3.5 Kitchen",
+               "label_3":"Please include doorways, flooring, lights, fixtures/fittings, door handles and light switches, hand rails, tap ware, etc. where applicable",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_5_heading_extra_9",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Internals N/A",
-               "placeholder":"Enter Modification Details N/A",
+               "label":"N/A",
+               "placeholder":"Enter N/A",
                "className":"form-control",
                "name":"part_5_complex_home_modification_recommendations_internals_n_a7",
                "access":false,
@@ -2321,10 +2787,21 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"5.3.6 Laundry",
+               "label_3":"Please include doorways, flooring, lights, fixtures/fittings, door handles and light switches, hand rails, tap ware, etc. where applicable",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_5_heading_extra_10",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Internals N/A",
-               "placeholder":"Enter Modification Details N/A",
+               "label":"N/A",
+               "placeholder":"Enter N/A",
                "className":"form-control",
                "name":"part_5_complex_home_modification_recommendations_internals_n_a8",
                "access":false,
@@ -2371,10 +2848,21 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"5.3.7 Other/not included above",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_5_heading_extra_11",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Internals N/A",
-               "placeholder":"Enter Modification Details N/A",
+               "label":"N/A",
+               "placeholder":"Enter N/A",
                "className":"form-control",
                "name":"part_5_complex_home_modification_recommendations_internals_n_a9",
                "access":false,
@@ -2421,14 +2909,36 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"5.4 Heating and Cooling",
+               "label_2":"",
+               "label_3":"Please note, this modification applies only to participants with medically diagnosed thermoregulation impairment. Please provide details of current heating and cooling systems.",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_5_heading_extra_12",
+               "access":false
+            },
+            {
                "type":"textarea",
                "required":false,
-               "label":"Heating and Cooling",
+               "label":"",
                "placeholder":"Heating and Cooling",
                "className":"form-control",
                "name":"part_5_complex_home_modification_recommendations_heating_and_cooling",
                "access":false,
                "subtype":"textarea"
+            },
+            {
+               "type":"heading",
+               "required":false,
+               "label_1":"5.5 Staged Process",
+               "label_2":"",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_5_heading_extra_13",
+               "access":false
             },
             {
                "type":"text",
@@ -2441,14 +2951,36 @@ class HomeSeeder extends Seeder
                "subtype":"textarea"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"e.g. first stage is to enable access for safe discharge from hospital and short term accommodation. The second stage is modifications to enable the participant to transition to long-term accommodation.",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_5_heading_extra_14",
+               "access":false
+            },
+            {
                "type":"textarea",
                "required":false,
-               "label":"Staged Process",
+               "label":"",
                "placeholder":"Staged Process",
                "className":"form-control",
                "name":"part_5_complex_home_modification_recommendations_staged_process2",
                "access":false,
                "subtype":"textarea"
+            },
+            {
+               "type":"heading",
+               "required":false,
+               "label_1":"5.6 Exception to Disability Standards",
+               "label_2":"",
+               "label_3":"Please note in most cases compliance with Australian Standard 1428 Design for Access and Mobility Part 1 (General) (AS 1428.1) is not required but are examples of best practice.  Users of this template need to ensure they understand the relevant building codes, standards and regulations that relate to the state and location where the modification is planned.",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_5_heading_extra_15",
+               "access":false
             },
             {
                "type":"textarea",
