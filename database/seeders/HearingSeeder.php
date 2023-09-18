@@ -1521,6 +1521,15 @@ class HearingSeeder extends Seeder
 
         $form_fields = '[
             {
+                "type":"heading",
+                "required":false,
+                "label_1":"1.1 NDIS Participant Details",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_1_heading_extra_1",
+                "access":false
+             },
+            {
             "type":"text",
             "required":false,
             "label":"Full Name",
@@ -1640,7 +1649,17 @@ class HearingSeeder extends Seeder
             "access":false,
             "subtype":"text"
             },
-
+            {
+                "type":"heading",
+                "required":false,
+                "label_1":"1.2 Plan Management Details",
+                "label_2":"",
+                "label_3":"Select option by checking the box",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_1_heading_extra_2",
+                "access":false
+             },
             {
             "type":"text",
             "required":false,
@@ -1683,6 +1702,17 @@ class HearingSeeder extends Seeder
             }
             ]';
         $form_fields2 = '[
+            {
+                "type":"heading",
+                "required":false,
+                "label_1":"2.1 Reason for request",
+                "label_2":"",
+                "label_3":"See Appendix A and Appendix B for guidance regarding replacement and refitting criteria. \nThis technology is being requested as: \nUse the check box to indicate if the device is;",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_2_heading_extra_1",
+                "access":false
+             },
             {
                "type":"checkbox-group",
                "required":false,
@@ -1771,7 +1801,7 @@ class HearingSeeder extends Seeder
             {
                "type":"checkbox-group",
                "required":false,
-               "label":"A new device with higher specifications",
+               "label":"A new device with higher specifications or different style is required because of the participants functional capacity has changed?",
                "toggle":false,
                "inline":false,
                "name":"part_2_background_information6",
@@ -1786,9 +1816,20 @@ class HearingSeeder extends Seeder
                ]
             },
             {
-               "type":"text",
+                "type":"heading",
+                "required":false,
+                "label_1":"2.2 Hearing background",
+                "label_2":"",
+                "label_3":"Describe below the participant’s ear and hearing history, include age of diagnosis, cause of hearing loss (if known), and hearing device usage history.",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_2_heading_extra_2",
+                "access":false
+             },
+            {
+               "type":"textarea",
                "required":false,
-               "label":"Hearing background",
+               "label":"",
                "placeholder":"Enter Hearing background",
                "className":"form-control",
                "name":"part_2_background_information7",
@@ -1796,9 +1837,20 @@ class HearingSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"text",
+                "type":"heading",
+                "required":false,
+                "label_1":"2.3 Communication background",
+                "label_2":"",
+                "label_3":"Include information about the participant’s current communication including preferred mode of communication and any barriers to communicate (for example, literacy).",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_2_heading_extra_3",
+                "access":false
+             },
+            {
+               "type":"textarea",
                "required":false,
-               "label":"Communication background",
+               "label":"",
                "placeholder":"Enter Communication background",
                "className":"form-control",
                "name":"part_2_background_information8",
@@ -1806,9 +1858,20 @@ class HearingSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"text",
+                "type":"heading",
+                "required":false,
+                "label_1":"2.4 Medical / Health background",
+                "label_2":"",
+                "label_3":"Provide information about co-existing conditions or disabilities that may impact on communication and/or device use, if relevant to the device prescription. Attach relevant reports if available (with the participant’s consent) and provide information about treating professionals.",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_2_heading_extra_4",
+                "access":false
+             },
+            {
+               "type":"textarea",
                "required":false,
-               "label":"Medical / Health background",
+               "label":"",
                "placeholder":"Enter Medical / Health background",
                "className":"form-control",
                "name":"part_2_background_information9",
@@ -1816,9 +1879,20 @@ class HearingSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"text",
+                "type":"heading",
+                "required":false,
+                "label_1":"2.5 Participant Goals",
+                "label_2":"",
+                "label_3":"If the participant’s NDIS plan has been made available, you can refer to the statement of participant’s goals and outline the goals relevant to the hearing technology request. Include any other relevant communication goals, for example Client Oriented Scale of Improvement (COSI) goals or other goal-setting tools. Where possible, goals should be specific and measurable. In the assessor’s view, are the participant’s goals realistic and achievable?",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_2_heading_extra_5",
+                "access":false
+             },
+            {
+               "type":"textarea",
                "required":false,
-               "label":"Participant Goals",
+               "label":"",
                "placeholder":"Enter Participant Goals",
                "className":"form-control",
                "name":"part_2_background_information10",
@@ -1829,11 +1903,44 @@ class HearingSeeder extends Seeder
 
 
         $form_fields3 = '[
+            {
+                "type":"heading",
+                "required":false,
+                "label_1":"",
+                "label_2":"",
+                "label_3":"Note: Complete Section 3a OR 3b. Delete the section that is not required.",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_1_heading_extra_1",
+                "access":false
+             },
+            {
+                "type":"heading",
+                "required":false,
+                "label_1":"3.1 Section 3a: Request for Cochlear Implant Sound Processor",
+                "label_2":"",
+                "label_3":"",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_1_heading_extra_2",
+                "access":false
+             },
+             {
+                "type":"heading",
+                "required":false,
+                "label_1":"",
+                "label_2":"",
+                "label_3":"Manufacturer",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_1_heading_extra_3",
+                "access":false
+             },
     {
         "type":"text",
         "required":false,
-        "label":"Manufacturer",
-        "placeholder":"Enter Manufacturer",
+        "label":"Left ear",
+        "placeholder":"Enter Left ear",
         "className":"form-control",
         "name":"part_3_recommended_option_01",
         "access":false,
@@ -1842,19 +1949,29 @@ class HearingSeeder extends Seeder
     {
         "type":"text",
         "required":false,
-        "label":"Manufacturer",
-        "placeholder":"Enter Manufacturer",
+        "label":"Right ear",
+        "placeholder":"Enter Right ear",
         "className":"form-control",
         "name":"part_3_recommended_option_02",
         "access":false,
         "subtype":"text"
     },
-
+    {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Model and Style",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_4",
+        "access":false
+     },
     {
         "type":"text",
         "required":false,
-        "label":"Model and Style",
-        "placeholder":"Enter Model and Style",
+        "label":"Left ear",
+        "placeholder":"Enter Left ear",
         "className":"form-control",
         "name":"part_3_recommended_option_03",
         "access":false,
@@ -1863,20 +1980,29 @@ class HearingSeeder extends Seeder
     {
         "type":"text",
         "required":false,
-        "label":"Model and Style",
-        "placeholder":"Enter Model and Style",
+        "label":"Right ear",
+        "placeholder":"Enter Right ear",
         "className":"form-control",
         "name":"part_3_recommended_option_04",
         "access":false,
         "subtype":"text"
     },
-
-
+    {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Date of a last fitting",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_5",
+        "access":false
+     },
     {
         "type":"date",
         "required":false,
-        "label":"Date of a last fitting",
-        "placeholder":"Enter Date of a last fitting",
+        "label":"Left ear",
+        "placeholder":"Enter Left ear",
         "className":"form-control",
         "name":"part_3_recommended_option_05",
         "access":false,
@@ -1885,19 +2011,29 @@ class HearingSeeder extends Seeder
     {
         "type":"date",
         "required":false,
-        "label":"Date of a last fitting",
-        "placeholder":"Enter Date of a last fitting",
+        "label":"Right ear",
+        "placeholder":"Enter Right ear",
         "className":"form-control",
         "name":"part_3_recommended_option_06",
         "access":false,
         "subtype":"text"
     },
-
+    {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Hours worn per day / week. Provide evidence of use, including data logging where possible.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_6",
+        "access":false
+     },
     {
         "type":"text",
         "required":false,
-        "label":"Hours worn per day / week",
-        "placeholder":"Enter Hours worn per day / week. Provide evidence of use, including data logging where possible.",
+        "label":"Left ear",
+        "placeholder":"Enter Left ear",
         "className":"form-control",
         "name":"part_3_recommended_option_07",
         "access":false,
@@ -1906,20 +2042,29 @@ class HearingSeeder extends Seeder
     {
         "type":"text",
         "required":false,
-        "label":"Hours worn per day / week",
-        "placeholder":"Enter Hours worn per day / week. Provide evidence of use, including data logging where possible.",
+        "label":"Right ear",
+        "placeholder":"Enter Right ear",
         "className":"form-control",
         "name":"part_3_recommended_option_08",
         "access":false,
         "subtype":"text"
     },
-
-
+    {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Service and repair history (where relevant). Attach documentation to application. Yes/No",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_7",
+        "access":false
+     },
     {
         "type":"text",
         "required":false,
-        "label":"Service and repair history",
-        "placeholder":"Enter Service and repair history (where relevant). Attach documentation to application. Yes/No.",
+        "label":"Left ear",
+        "placeholder":"Enter Left ear",
         "className":"form-control",
         "name":"part_3_recommended_option_09",
         "access":false,
@@ -1928,19 +2073,29 @@ class HearingSeeder extends Seeder
     {
         "type":"text",
         "required":false,
-        "label":"Service and repair history",
-        "placeholder":"Enter Service and repair history (where relevant). Attach documentation to application. Yes/No.",
+        "label":"Right ear",
+        "placeholder":"Enter Right ear",
         "className":"form-control",
         "name":"part_3_recommended_option_10",
         "access":false,
         "subtype":"text"
     },
-
+    {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"List other assistive devices available to the participant. For example, remote microphones, phone clips, television streamers etc.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_8",
+        "access":false
+     },
     {
         "type":"text",
         "required":false,
-        "label":"List other assistive devices available to the participant",
-        "placeholder":"Enter List other assistive devices available to the participant. For example, remote microphones, phone clips, television streamers etc.",
+        "label":"Left ear",
+        "placeholder":"Enter Left ear",
         "className":"form-control",
         "name":"part_3_recommended_option_11",
         "access":false,
@@ -1949,16 +2104,15 @@ class HearingSeeder extends Seeder
     {
         "type":"text",
         "required":false,
-        "label":"List other assistive devices available to the participant",
-        "placeholder":"Enter List other assistive devices available to the participant. For example, remote microphones, phone clips, television streamers etc.",
+        "label":"Right ear",
+        "placeholder":"Enter Right ear",
         "className":"form-control",
         "name":"part_3_recommended_option_12",
         "access":false,
         "subtype":"text"
     },
-
     {
-        "type":"text",
+        "type":"textarea",
         "required":false,
         "label":"Comments",
         "placeholder":"Enter Comments",
@@ -1967,9 +2121,19 @@ class HearingSeeder extends Seeder
         "access":false,
         "subtype":"text"
     },
-
     {
-        "type":"text",
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"If the devices are not used on a daily basis, describe when the devices are used.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_9",
+        "access":false
+     },
+    {
+        "type":"textarea",
         "required":false,
         "label":"Comments",
         "placeholder":"Enter Comments",
@@ -1978,9 +2142,19 @@ class HearingSeeder extends Seeder
         "access":false,
         "subtype":"text"
     },
-
     {
-        "type":"text",
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Recommended replacement sound processor(s):",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_10",
+        "access":false
+     },
+    {
+        "type":"textarea",
         "required":false,
         "label":"Make and Model",
         "placeholder":"Enter Make and Model",
@@ -1989,6 +2163,17 @@ class HearingSeeder extends Seeder
         "access":false,
         "subtype":"text"
     },
+    {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Evidence of functional outcomes with the recommended sound processor(s) \nEvidence is attached:",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_11",
+        "access":false
+     },
     {
        "type":"checkbox-group",
        "required":false,
@@ -2017,10 +2202,32 @@ class HearingSeeder extends Seeder
         "subtype":"text"
     },
     {
+        "type":"heading",
+        "required":false,
+        "label_1":"3.2 Section 3b: Request for hearing aid",
+        "label_2":"3.2.1 Hearing aid information for current users",
+        "label_3":"",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_12",
+        "access":false
+     },
+     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Manufacturer",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_13",
+        "access":false
+     },
+    {
         "type":"text",
         "required":false,
-        "label":"Manufacturer",
-        "placeholder":"Enter Manufacturer",
+        "label":"Left ear",
+        "placeholder":"Enter Left ear",
         "className":"form-control",
         "name":"part_3_recommended_option_19",
         "access":false,
@@ -2029,21 +2236,29 @@ class HearingSeeder extends Seeder
     {
         "type":"text",
         "required":false,
-        "label":"Manufacturer",
-        "placeholder":"Enter Manufacturer",
+        "label":"Right ear",
+        "placeholder":"Enter Right ear",
         "className":"form-control",
         "name":"part_3_recommended_option_20",
         "access":false,
         "subtype":"text"
     },
-
-
-
+    {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Model and Style of hearing aid / sound processor",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_14",
+        "access":false
+     },
     {
         "type":"text",
         "required":false,
-        "label":"Model and Style",
-        "placeholder":"Enter Model and Style",
+        "label":"Left ear",
+        "placeholder":"Enter Left ear",
         "className":"form-control",
         "name":"part_3_recommended_option_21",
         "access":false,
@@ -2052,20 +2267,29 @@ class HearingSeeder extends Seeder
     {
         "type":"text",
         "required":false,
-        "label":"Model and Style",
-        "placeholder":"Enter Model and Style",
+        "label":"Right ear",
+        "placeholder":"Enter Right ear",
         "className":"form-control",
         "name":"part_3_recommended_option_22",
         "access":false,
         "subtype":"text"
     },
-
-
+    {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Date of a last fitting",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_15",
+        "access":false
+     },
     {
         "type":"date",
         "required":false,
-        "label":"Date of a last fitting",
-        "placeholder":"Enter Date of a last fitting",
+        "label":"Left ear",
+        "placeholder":"Enter Left ear",
         "className":"form-control",
         "name":"part_3_recommended_option_23",
         "access":false,
@@ -2074,20 +2298,29 @@ class HearingSeeder extends Seeder
     {
         "type":"date",
         "required":false,
-        "label":"Date of a last fitting",
-        "placeholder":"Enter Date of a last fitting",
+        "label":"Right ear",
+        "placeholder":"Enter Right ear",
         "className":"form-control",
         "name":"part_3_recommended_option_24",
         "access":false,
         "subtype":"text"
     },
-
-
+    {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Hours worn per day / week. Provide evidence of use, including data logging where possible.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_16",
+        "access":false
+     },
     {
         "type":"text",
         "required":false,
-        "label":"Hours worn per day / week",
-        "placeholder":"Enter Hours worn per day / week. Provide evidence of use, including data logging where possible.",
+        "label":"Left ear",
+        "placeholder":"Enter Left ear",
         "className":"form-control",
         "name":"part_3_recommended_option_25",
         "access":false,
@@ -2096,20 +2329,29 @@ class HearingSeeder extends Seeder
     {
         "type":"text",
         "required":false,
-        "label":"Hours worn per day / week",
-        "placeholder":"Enter Hours worn per day / week. Provide evidence of use, including data logging where possible.",
+        "label":"Right ear",
+        "placeholder":"Enter Right ear",
         "className":"form-control",
         "name":"part_3_recommended_option_26",
         "access":false,
         "subtype":"text"
     },
-
-
+    {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"List other assistive devices available to the participant. For example, remote microphones, phone clips, television streamers etc.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_17",
+        "access":false
+     },
     {
         "type":"text",
         "required":false,
-        "label":"List other assistive devices available to the participant",
-        "placeholder":"Enter List other assistive devices available to the participant. For example, remote microphones, phone clips, television streamers etc.",
+        "label":"Left ear",
+        "placeholder":"Enter Left ear",
         "className":"form-control",
         "name":"part_3_recommended_option_27",
         "access":false,
@@ -2118,16 +2360,15 @@ class HearingSeeder extends Seeder
     {
         "type":"text",
         "required":false,
-        "label":"List other assistive devices available to the participant",
-        "placeholder":"Enter List other assistive devices available to the participant. For example, remote microphones, phone clips, television streamers etc.",
+        "label":"Right ear",
+        "placeholder":"Enter Right ear",
         "className":"form-control",
         "name":"part_3_recommended_option_28",
         "access":false,
         "subtype":"text"
     },
-
     {
-        "type":"text",
+        "type":"textarea",
         "required":false,
         "label":"Comments",
         "placeholder":"Enter Comments",
@@ -2136,10 +2377,19 @@ class HearingSeeder extends Seeder
         "access":false,
         "subtype":"text"
     },
-
-
     {
-        "type":"text",
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"If the devices are not used on a daily basis, describe when the devices are used.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_18",
+        "access":false
+     },
+    {
+        "type":"textarea",
         "required":false,
         "label":"Comments",
         "placeholder":"Enter Comments",
@@ -2148,97 +2398,186 @@ class HearingSeeder extends Seeder
         "access":false,
         "subtype":"text"
     },
-
     {
-        "type":"text",
+        "type":"heading",
         "required":false,
-        "label":"Participant Suitability",
+        "label_1":"",
+        "label_2":"3.2.2 Participant Suitability",
+        "label_3":"Outline the participant’s suitability to use the recommended hearing technology: \nEvidence of suitability, which may include outcomes from speech discrimination and speech in noise assessments and / or other measures.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_19",
+        "access":false
+     },
+    {
+        "type":"textarea",
+        "required":false,
+        "label":"Comments",
         "placeholder":"Enter Comments",
         "className":"form-control",
         "name":"part_3_recommended_option_31",
         "access":false,
         "subtype":"text"
     },
-
     {
-        "type":"text",
+        "type":"heading",
         "required":false,
-        "label":"Participant Suitability",
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Previous hearing technology use: \n   1. Length and frequency of the technology use.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_20",
+        "access":false
+     },
+    {
+        "type":"textarea",
+        "required":false,
+        "label":"Comments",
         "placeholder":"Enter Comments",
         "className":"form-control",
         "name":"part_3_recommended_option_32",
         "access":false,
         "subtype":"text"
     },
-
     {
-        "type":"text",
+        "type":"heading",
         "required":false,
-        "label":"Participant Suitability",
+        "label_1":"",
+        "label_2":"",
+        "label_3":"   2. Comment on the success of technology use.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_21",
+        "access":false
+     },
+    {
+        "type":"textarea",
+        "required":false,
+        "label":"Comments",
         "placeholder":"Enter Comments",
         "className":"form-control",
         "name":"part_3_recommended_option_33",
         "access":false,
         "subtype":"text"
     },
-
     {
-        "type":"text",
+        "type":"heading",
         "required":false,
-        "label":"Participant Suitability",
+        "label_1":"",
+        "label_2":"",
+        "label_3":"   3. Comment on the use of compatible assistive listening devices, such as remote microphone systems and /or other wireless streaming devices.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_22",
+        "access":false
+     },
+    {
+        "type":"textarea",
+        "required":false,
+        "label":"Comments",
         "placeholder":"Enter Comments",
         "className":"form-control",
         "name":"part_3_recommended_option_34",
         "access":false,
         "subtype":"text"
     },
-
     {
-        "type":"text",
+        "type":"heading",
         "required":false,
-        "label":"Participant Suitability",
+        "label_1":"",
+        "label_2":"",
+        "label_3":"   4. Identify factors that impacted on the success of technology use, and steps taken to address any challenges experienced by the participant in using the technology successfully.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_23",
+        "access":false
+     },
+    {
+        "type":"textarea",
+        "required":false,
+        "label":"Comments",
         "placeholder":"Enter Comments",
         "className":"form-control",
         "name":"part_3_recommended_option_35",
         "access":false,
         "subtype":"text"
     },
-
-
     {
-        "type":"text",
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"3.2.3 Recommendation of hearing aid(s)",
+        "label_3":"The recommended hearing aid has the following level of technology:",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_24",
+        "access":false
+     },
+     {
+        "type":"checkbox-group",
         "required":false,
         "label":"Basic / Essential",
-        "placeholder":"Enter Recommendation of hearing aid",
-        "className":"form-control",
+        "toggle":false,
+        "inline":false,
         "name":"part_3_recommended_option_36",
         "access":false,
-        "subtype":"text"
-    },
-
+        "other":false,
+        "values":[
+           {
+              "label":"Option 1",
+              "value":"option-1",
+              "selected":true
+           }
+        ]
+     },
     {
-        "type":"text",
+        "type":"checkbox-group",
         "required":false,
         "label":"Intermediate / Standard",
-        "placeholder":"Enter Recommendation of hearing aid",
-        "className":"form-control",
+        "toggle":false,
+        "inline":false,
         "name":"part_3_recommended_option_37",
         "access":false,
-        "subtype":"text"
-    },
-
+        "other":false,
+        "values":[
+           {
+              "label":"Option 1",
+              "value":"option-1",
+              "selected":true
+           }
+        ]
+     },
     {
-        "type":"text",
+        "type":"checkbox-group",
         "required":false,
         "label":"Advanced / Premium / Premium Plus",
-        "placeholder":"Enter Recommendation of hearing aid",
-        "className":"form-control",
+        "toggle":false,
+        "inline":false,
         "name":"part_3_recommended_option_38",
         "access":false,
-        "subtype":"text"
-    },
+        "other":false,
+        "values":[
+           {
+              "label":"Option 1",
+              "value":"option-1",
+              "selected":true
+           }
+        ]
+     },
+     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"Option1: Hearing aid recommendation for basic or essential level hearing aids:",
+        "label_3":"Recommended device name, model number and style:",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_25",
+        "access":false
+     },
     {
-        "type":"text",
+        "type":"textarea",
         "required":false,
         "label":"Recommendation",
         "placeholder":"Enter Recommendation of hearing aid",
@@ -2247,6 +2586,17 @@ class HearingSeeder extends Seeder
         "access":false,
         "subtype":"text"
     },
+    {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Evidence of functional outcomes with the recommended device: Both objective evidence (test results) and subjective evidence (participant feedback) is required. Evidence can be provided in the comment section below, or can be attached. Assessors can refer to Appendix C for examples of evidence. Then go to Part 4.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_26",
+        "access":false
+     },
     {
         "type":"text",
         "required":false,
@@ -2257,6 +2607,28 @@ class HearingSeeder extends Seeder
         "access":false,
         "subtype":"text"
     },
+    {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"OR",
+        "label_3":"Option 2: Recommendation of intermediate, advanced or premium level hearing aids: Differences in functional capacity with recommended device. \nProvide a detailed description of current communication/listening contexts. How is the participant’s functional capacity expected to change with the recommended technology, based on objective assessment as well as participant experience? Functional assessments can be attached to this form. See Appendix C for examples of assessments. The assessor is expected to compare hearing aids of more than one level of technology, and preferably adjacent levels of technology. For example; do not compare a basic hearing aid to a premium-level hearing aid. \nPlease note: Where work-related contexts are described (including self-employed contexts), provide information regarding steps taken through Job Access to modify the working environment and/or obtain suitable assistive technology.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_27",
+        "access":false
+     },
+     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Context 1: Describe context, including frequency experienced",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_28",
+        "access":false
+     },
     {
         "type":"text",
         "required":false,
@@ -2288,6 +2660,17 @@ class HearingSeeder extends Seeder
         "subtype":"text"
     },
     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Context 2: Describe context, including frequency experienced",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_29",
+        "access":false
+     },
+    {
         "type":"text",
         "required":false,
         "label":"Goals and outcomes with current device",
@@ -2317,6 +2700,17 @@ class HearingSeeder extends Seeder
         "access":false,
         "subtype":"text"
     },
+    {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Context 3: Describe context, including frequency experienced",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_30",
+        "access":false
+     },
     {
         "type":"text",
         "required":false,
@@ -2348,6 +2742,17 @@ class HearingSeeder extends Seeder
         "subtype":"text"
     },
     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Context 4: Describe context, including frequency experienced",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_31",
+        "access":false
+     },
+    {
         "type":"text",
         "required":false,
         "label":"Goals and outcomes with current device",
@@ -2377,6 +2782,17 @@ class HearingSeeder extends Seeder
         "access":false,
         "subtype":"text"
     },
+    {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Context 5: Describe context, including frequency experienced",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_32",
+        "access":false
+     },
     {
         "type":"text",
         "required":false,
@@ -2408,6 +2824,17 @@ class HearingSeeder extends Seeder
         "subtype":"text"
     },
     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Context 6: Describe context, including frequency experienced",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_33",
+        "access":false
+     },
+    {
         "type":"text",
         "required":false,
         "label":"Goals and outcomes with current device",
@@ -2437,6 +2864,17 @@ class HearingSeeder extends Seeder
         "access":false,
         "subtype":"text"
     },
+    {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Context 7: Describe context, including frequency experienced",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_34",
+        "access":false
+     },
     {
         "type":"text",
         "required":false,
@@ -2468,15 +2906,37 @@ class HearingSeeder extends Seeder
         "subtype":"text"
     },
     {
-        "type":"text",
+        "type":"heading",
         "required":false,
-        "label":"Other Relevant Information for intermediate, advanced and/or premium level hearing aids",
+        "label_1":"",
+        "label_2":"3.2.3.1 Other Relevant Information for intermediate, advanced and/or premium level hearing aids.",
+        "label_3":"Provide any other relevant information, such as activities of daily living; formal and informal support arrangements (families or carers who can support device usage); the participant’s attitude towards hearing aids and technology in general; their expectations of the devices; and foreseeable life-stage transitions.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_35",
+        "access":false
+     },
+    {
+        "type":"textarea",
+        "required":false,
+        "label":"Comments",
         "placeholder":"Enter Comments",
         "className":"form-control",
         "name":"part_3_recommended_option_62",
         "access":false,
         "subtype":"text"
     },
+    {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"3.2.3.2 Most Suitable / Appropriate Alternative to facilitate goal attainment",
+        "label_3":"Briefly summarise the evidence for the recommended option as the most suitable/appropriate alternative which will facilitate attainment of the participant’s goal compared to others considered, including lower cost alternatives. These alternatives can include accessories, or intervention that does not involve technology, such as counselling, auditory training or speech reading training. Note: In the instance where previous hearing aid use was not successful, provide evidence of actions, such as auditory training, counselling, and setting realistic expectations.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_36",
+        "access":false
+     },
     {
         "type":"text",
         "required":false,
@@ -2508,6 +2968,17 @@ class HearingSeeder extends Seeder
         "subtype":"text"
     },
     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Other devices trialled (including lower cost options)",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_37",
+        "access":false
+     },
+    {
         "type":"text",
         "required":false,
         "label":"Device name",
@@ -2537,11 +3008,19 @@ class HearingSeeder extends Seeder
         "access":false,
         "subtype":"text"
     },
-
-
-
     {
-        "type":"text",
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Steps taken to consider lower cost alternatives to improve hearing outcomes. For example; lower cost devices trialled, use of remote microphones / wireless streaming devices.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_38",
+        "access":false
+     },
+    {
+        "type":"textarea",
         "required":false,
         "label":"Comments",
         "placeholder":"Enter Comments",
@@ -2551,7 +3030,18 @@ class HearingSeeder extends Seeder
         "subtype":"text"
     },
     {
-        "type":"text",
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Are there any comparable support options that would achieve similar outcomes at a lower cost? For example, auditory training, training in handling devices, etc.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_39",
+        "access":false
+     },
+    {
+        "type":"textarea",
         "required":false,
         "label":"Comments",
         "placeholder":"Enter Comments",
@@ -2561,7 +3051,18 @@ class HearingSeeder extends Seeder
         "subtype":"text"
     },
     {
-        "type":"text",
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Evidence that the recommended device is the most appropriate, based on measurable goals and outcomes. Where an intermediate, advanced or premium level hearing aid is recommended, comparison to other devices is required. Where the participant has a hearing loss in both ears, it is expected that the evidence be based on two aided ears. For example; sound processor in one ear, recommended hearing aid in the other ear.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_40",
+        "access":false
+     },
+    {
+        "type":"textarea",
         "required":false,
         "label":"Comments",
         "placeholder":"Enter Comments",
@@ -2573,8 +3074,19 @@ class HearingSeeder extends Seeder
     ]';
 
         $form_fields4 = '[
+            {
+                "type":"heading",
+                "required":false,
+                "label_1":"",
+                "label_2":"",
+                "label_3":"Are there any additional supports required to improve functional device outcomes? For example, compatible assistive technology to support device use? Auditory training and/or counselling to derive improved functional benefit from the device? Management of the participant’s expectations of device outcomes? Device management support to assist the participant to independently handle their devices? \nDescribe the supports required, including the reason for the recommendation.",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_4_heading_extra_1",
+                "access":false
+             },
     {
-        "type":"text",
+        "type":"textarea",
         "required":false,
         "label":"Comment",
         "placeholder":"Enter Comment",
@@ -2586,28 +3098,53 @@ class HearingSeeder extends Seeder
  ]';
 
         $form_fields5 = '[
+            {
+                "type":"heading",
+                "required":false,
+                "label_1":"",
+                "label_2":"",
+                "label_3":"Does the participant agree with the recommended AT solution and Auditory Rehabilitation Program? (Are the assessor’s clinical recommendation and participant preference the same?)",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_5_heading_extra_1",
+                "access":false
+             },
     {
-        "type":"text",
+        "type":"checkbox-group",
         "required":false,
         "label":"Yes",
-        "placeholder":"Enter Participant Agreement",
-        "className":"form-control",
+        "toggle":false,
+        "inline":false,
         "name":"part_5_participant_agreement1",
         "access":false,
-        "subtype":"text"
-    },
+        "other":false,
+        "values":[
+           {
+              "label":"Option 1",
+              "value":"option-1",
+              "selected":true
+           }
+        ]
+     },
     {
-        "type":"text",
+        "type":"checkbox-group",
         "required":false,
         "label":"No",
-        "placeholder":"Enter Participant Agreement",
-        "className":"form-control",
+        "toggle":false,
+        "inline":false,
         "name":"part_5_participant_agreement2",
         "access":false,
-        "subtype":"text"
-    },
+        "other":false,
+        "values":[
+           {
+              "label":"Option 1",
+              "value":"option-1",
+              "selected":true
+           }
+        ]
+     },
     {
-        "type":"text",
+        "type":"textarea",
         "required":false,
         "label":"Please provide details",
         "placeholder":"Enter Participant Agreement",
@@ -2618,60 +3155,127 @@ class HearingSeeder extends Seeder
     }
     ]';
 
-        $form_fields6 = '[]';
+        $form_fields6 = '[
+            {
+                "type":"heading",
+                "required":false,
+                "label_1":"",
+                "label_2":"",
+                "label_3":"Please attach: \n   1. Audiogram and audiological assessment report (including speech discrimination testing and tympanometry) obtained less than 12 months before the request. \n   2. Signal to Noise Ratio (SNR) loss (for participants where it can be calculated). \n   3. Report from ENT (if relevant, with participant’s consent). \n   4. Reports from medical or allied health professionals where other conditions may impact on communication or use of hearing technology (with participant’s consent). \n   5. Recent quote(s). \n   6. Functional measures with recommended technology (For example; real ear insertion gain, comparative speech testing). \n   7. Evidence required for device replacement or refitting as per Appendix A and Appendix B.",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_6_heading_extra_1",
+                "access":false
+             }
+        ]';
         $form_fields7 = '[
-        {
-            "type":"text",
-            "required":false,
-            "label":"Declaration",
-            "placeholder":"I certify that I meet the NDIA expectations of AT assessor provider suitability ",
-            "className":"form-control",
-            "name":"part_7_details_of_assessor1",
-            "access":false,
-            "subtype":"text"
-        },
-        {
-            "type":"text",
-            "required":false,
-            "label":"Declaration",
-            "placeholder":"I will provide appropriate evidence to the NDIA",
-            "className":"form-control",
-            "name":"part_7_details_of_assessor2",
-            "access":false,
-            "subtype":"text"
-        },
-        {
-            "type":"text",
-            "required":false,
-            "label":"Declaration",
-            "placeholder":"I understand and acknowledge that the NDIA and participant will rely on my professional advice to select",
-            "className":"form-control",
-            "name":"part_7_details_of_assessor3",
-            "access":false,
-            "subtype":"text"
-        },
-
-        {
-            "type":"text",
-            "required":false,
-            "label":"Declaration",
-            "placeholder":"I have informed the participant of any arrangements with suppliers of hearing technology",
-            "className":"form-control",
-            "name":"part_7_details_of_assessor4",
-            "access":false,
-            "subtype":"text"
-        },
-
-        {
-            "type":"text",
-            "required":false,
-            "label":"Declaration",
-            "placeholder":"For HSP eligible participants, I have informed them of services available through Specialist Hearing Services",
-            "className":"form-control",
-            "name":"part_7_details_of_assessor5",
-            "access":false,
-            "subtype":"text"
-        },
+            {
+                "type":"heading",
+                "required":false,
+                "label_1":"DECLARATION (indicate all relevant sections that apply)",
+                "label_2":"",
+                "label_3":"",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_7_heading_extra_1",
+                "access":false
+             },
+             {
+                "type":"checkbox-group",
+                "required":false,
+                "label":"I certify that I meet the NDIA expectations of AT assessor provider suitability (including understanding of the current NDIS Act, Rules and Operational Guidelines) to assess the type of assistive technology and associated supports, at the level of complexity required by this participant.",
+                "toggle":false,
+                "inline":false,
+                "name":"part_7_details_of_assessor1",
+                "access":false,
+                "other":false,
+                "values":[
+                   {
+                      "label":"YES/NO",
+                      "value":"option-1",
+                      "selected":true
+                   }
+                ]
+             },
+             {
+                "type":"checkbox-group",
+                "required":false,
+                "label":"I will provide appropriate evidence to the NDIA and/or Quality and Safe Guards Commission if and as requested.",
+                "toggle":false,
+                "inline":false,
+                "name":"part_7_details_of_assessor2",
+                "access":false,
+                "other":false,
+                "values":[
+                   {
+                      "label":"YES/NO",
+                      "value":"option-1",
+                      "selected":true
+                   }
+                ]
+             },
+             {
+                "type":"checkbox-group",
+                "required":false,
+                "label":"I understand and acknowledge that the NDIA and participant will rely on my professional advice to select, source and implement this assistive technology, and confirm that I am acting in accordance with the NDIS Quality and Safeguards Commission (https://www.ndiscommission.gov.au/) Code of Conduct and Practice Standards.",
+                "toggle":false,
+                "inline":false,
+                "name":"part_7_details_of_assessor3",
+                "access":false,
+                "other":false,
+                "values":[
+                   {
+                      "label":"YES/NO",
+                      "value":"option-1",
+                      "selected":false
+                   }
+                ]
+             },
+             {
+                "type":"checkbox-group",
+                "required":false,
+                "label":"I have informed the participant of any arrangements with suppliers of hearing technology.",
+                "toggle":false,
+                "inline":false,
+                "name":"part_7_details_of_assessor4",
+                "access":false,
+                "other":false,
+                "values":[
+                   {
+                      "label":"YES/NO",
+                      "value":"option-1",
+                      "selected":false
+                   }
+                ]
+             },
+             {
+                "type":"checkbox-group",
+                "required":false,
+                "label":"For HSP eligible participants, I have informed them of services available through Specialist Hearing Services (Community Service Obligations) where relevant",
+                "toggle":false,
+                "inline":false,
+                "name":"part_7_details_of_assessor5",
+                "access":false,
+                "other":false,
+                "values":[
+                   {
+                      "label":"YES/NO",
+                      "value":"option-1",
+                      "selected":false
+                   }
+                ]
+             },
+             {
+                "type":"heading",
+                "required":false,
+                "label_1":"Assessor’s Details",
+                "label_2":"",
+                "label_3":"",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_7_heading_extra_2",
+                "access":false
+             },
         {
             "type":"text",
             "required":false,
@@ -2682,7 +3286,6 @@ class HearingSeeder extends Seeder
             "access":false,
             "subtype":"text"
         },
-
         {
             "type":"text",
             "required":false,
@@ -2693,7 +3296,6 @@ class HearingSeeder extends Seeder
             "access":false,
             "subtype":"text"
         },
-
         {
             "type":"text",
             "required":false,
@@ -2704,18 +3306,16 @@ class HearingSeeder extends Seeder
             "access":false,
             "subtype":"text"
         },
-
         {
             "type":"text",
             "required":false,
-            "label":"Current arrangements with preferred suppliers.",
+            "label":"Current arrangements with preferred suppliers. Include details of supplier(s) and types of devices",
             "placeholder":"Current arrangements with preferred suppliers.",
             "className":"form-control",
             "name":"part_7_details_of_assessor9",
             "access":false,
             "subtype":"text"
         },
-
         {
             "type":"text",
             "required":false,
@@ -2726,7 +3326,6 @@ class HearingSeeder extends Seeder
             "access":false,
             "subtype":"text"
         },
-
         {
             "type":"text",
             "required":false,
@@ -2737,7 +3336,6 @@ class HearingSeeder extends Seeder
             "access":false,
             "subtype":"text"
         },
-
         {
             "type":"email",
             "required":false,
@@ -2748,7 +3346,6 @@ class HearingSeeder extends Seeder
             "access":false,
             "subtype":"text"
         },
-
         {
             "type":"text",
             "required":false,
@@ -2759,7 +3356,6 @@ class HearingSeeder extends Seeder
             "access":false,
             "subtype":"text"
         },
-
         {
             "type":"date",
             "required":false,
@@ -2770,7 +3366,6 @@ class HearingSeeder extends Seeder
             "access":false,
             "subtype":"text"
         },
-
         {
             "type":"text",
             "required":false,
@@ -2795,94 +3390,185 @@ class HearingSeeder extends Seeder
 
         $form_fields8 = '[
             {
-                "type":"text",
+                "type":"heading",
+                "required":false,
+                "label_1":"",
+                "label_2":"For the participant to complete",
+                "label_3":"Has your audiologist/Audiometrist discussed arrangements they have with particular suppliers of hearing aids?",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_8_heading_extra_1",
+                "access":false
+             },
+            {
+                "type":"checkbox-group",
                 "required":false,
                 "label":"Yes",
-                "placeholder":"Has your audiologist/Audiometrist discussed arrangements they have with particular suppliers of hearing aids?",
-                "className":"form-control",
+                "toggle":false,
+                "inline":false,
                 "name":"part_8_participant_consent_and_acknowledgement_of_iinterest1",
                 "access":false,
-                "subtype":"text"
-            },
+                "other":false,
+                "values":[
+                   {
+                      "label":"YES/NO",
+                      "value":"option-1",
+                      "selected":false
+                   }
+                ]
+             },
             {
-                "type":"text",
+                "type":"checkbox-group",
                 "required":false,
                 "label":"No",
-                "placeholder":"Has your audiologist/Audiometrist discussed arrangements they have with particular suppliers of hearing aids?",
-                "className":"form-control",
+                "toggle":false,
+                "inline":false,
                 "name":"part_8_participant_consent_and_acknowledgement_of_iinterest2",
                 "access":false,
-                "subtype":"text"
-            },
-
-
+                "other":false,
+                "values":[
+                   {
+                      "label":"YES/NO",
+                      "value":"option-1",
+                      "selected":false
+                   }
+                ]
+             },
+             {
+                "type":"heading",
+                "required":false,
+                "label_1":"",
+                "label_2":"",
+                "label_3":"Do you understand that your Audiologist/Audiometrist may only work with a small number of hearing aid brands, and that other providers may recommend different hearing aids?",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_8_heading_extra_2",
+                "access":false
+             },
             {
-                "type":"text",
+                "type":"checkbox-group",
                 "required":false,
                 "label":"Yes",
-                "placeholder":"Do you understand that your Audiologist/Audiometrist may only work with a small number of hearing aid brands",
-                "className":"form-control",
+                "toggle":false,
+                "inline":false,
                 "name":"part_8_participant_consent_and_acknowledgement_of_iinterest3",
                 "access":false,
-                "subtype":"text"
-            },
+                "other":false,
+                "values":[
+                   {
+                      "label":"YES/NO",
+                      "value":"option-1",
+                      "selected":false
+                   }
+                ]
+             },
             {
-                "type":"text",
+                "type":"checkbox-group",
                 "required":false,
                 "label":"No",
-                "placeholder":"Do you understand that your Audiologist/Audiometrist may only work with a small number of hearing aid brands",
-                "className":"form-control",
+                "toggle":false,
+                "inline":false,
                 "name":"part_8_participant_consent_and_acknowledgement_of_iinterest4",
                 "access":false,
-                "subtype":"text"
-            },
-
-
+                "other":false,
+                "values":[
+                   {
+                      "label":"YES/NO",
+                      "value":"option-1",
+                      "selected":false
+                   }
+                ]
+             },
+             {
+                "type":"heading",
+                "required":false,
+                "label_1":"",
+                "label_2":"",
+                "label_3":"Do you understand that the National Disability Insurance Agency (NDIA) will generally fund the standard level of technology you require to achieve functional hearing and that not all requested technology may be funded?",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_8_heading_extra_3",
+                "access":false
+             },
             {
-                "type":"text",
+                "type":"checkbox-group",
                 "required":false,
                 "label":"Yes",
-                "placeholder":"Do you understand that the National Disability Insurance Agency (NDIA) will generally fund the standard level of technology you require to achieve functional hearing ",
-                "className":"form-control",
+                "toggle":false,
+                "inline":false,
                 "name":"part_8_participant_consent_and_acknowledgement_of_iinterest5",
                 "access":false,
-                "subtype":"text"
-            },
+                "other":false,
+                "values":[
+                   {
+                      "label":"YES/NO",
+                      "value":"option-1",
+                      "selected":false
+                   }
+                ]
+             },
             {
-                "type":"text",
+                "type":"checkbox-group",
                 "required":false,
                 "label":"No",
-                "placeholder":"Do you understand that the National Disability Insurance Agency (NDIA) will generally fund the standard level of technology you require to achieve functional hearing ",
-                "className":"form-control",
+                "toggle":false,
+                "inline":false,
                 "name":"part_8_participant_consent_and_acknowledgement_of_iinterest6",
                 "access":false,
-                "subtype":"text"
-            },
-
-
-
-            {
-                "type":"text",
+                "other":false,
+                "values":[
+                   {
+                      "label":"YES/NO",
+                      "value":"option-1",
+                      "selected":false
+                   }
+                ]
+             },
+             {
+                "type":"heading",
+                "required":false,
+                "label_1":"",
+                "label_2":"",
+                "label_3":"The NDIA may need to contact your Audiologist/Audiometrist to discuss information within your assessment and quotation(s). This will assist the NDIA to determine if your request can be funded under the NDIS. Do you consent to the NDIA collecting and disclosing your information including from these third parties mentioned above, in relation to your hearing technology assessment and quotation?",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_8_heading_extra_4",
+                "access":false
+             },
+             {
+                "type":"checkbox-group",
                 "required":false,
                 "label":"Yes, I consent",
-                "placeholder":"The NDIA may need to contact your Audiologist/Audiometrist to discuss information within your assessment and quotation",
-                "className":"form-control",
+                "toggle":false,
+                "inline":false,
                 "name":"part_8_participant_consent_and_acknowledgement_of_iinterest7",
                 "access":false,
-                "subtype":"text"
-            },
+                "other":false,
+                "values":[
+                   {
+                      "label":"YES/NO",
+                      "value":"option-1",
+                      "selected":false
+                   }
+                ]
+             },
             {
-                "type":"text",
+                "type":"checkbox-group",
                 "required":false,
                 "label":"No, I do not consent",
-                "placeholder":"The NDIA may need to contact your Audiologist/Audiometrist to discuss information within your assessment and quotation",
-                "className":"form-control",
+                "toggle":false,
+                "inline":false,
                 "name":"part_8_participant_consent_and_acknowledgement_of_iinterest8",
                 "access":false,
-                "subtype":"text"
-            },
-
-
+                "other":false,
+                "values":[
+                   {
+                      "label":"YES/NO",
+                      "value":"option-1",
+                      "selected":false
+                   }
+                ]
+             },
             {
                 "type":"text",
                 "required":false,
@@ -2893,30 +3579,40 @@ class HearingSeeder extends Seeder
                 "access":false,
                 "subtype":"text"
             },
-
-
             {
-                "type":"text",
+                "type":"checkbox-group",
                 "required":false,
-                "label":"For the participant to complete",
-                "placeholder":"I understand that I am giving consent to the NDIA to do the things with my information set out in this section",
-                "className":"form-control",
+                "label":"I understand that I am giving consent to the NDIA to do the things with my information set out in this section. I understand that I can withdraw my consent for the NDIS to do things with my information at any time by letting the NDIA know.",
+                "toggle":false,
+                "inline":false,
                 "name":"part_8_participant_consent_and_acknowledgement_of_iinterest10",
                 "access":false,
-                "subtype":"text"
-            },
-
-            {
-                "type":"text",
+                "other":false,
+                "values":[
+                   {
+                      "label":"YES/NO",
+                      "value":"option-1",
+                      "selected":false
+                   }
+                ]
+             },
+             {
+                "type":"checkbox-group",
                 "required":false,
-                "label":"For the participant to complete",
-                "placeholder":"I understand that I can access the NDIA’s Privacy Notice and Privacy Policy on the NDIA website or by contacting the NDIA.",
-                "className":"form-control",
+                "label":"I understand that I can access the NDIA’s Privacy Notice and Privacy Policy on the NDIA website or by contacting the NDIA.",
+                "toggle":false,
+                "inline":false,
                 "name":"part_8_participant_consent_and_acknowledgement_of_iinterest11",
                 "access":false,
-                "subtype":"text"
-            },
-
+                "other":false,
+                "values":[
+                   {
+                      "label":"YES/NO",
+                      "value":"option-1",
+                      "selected":false
+                   }
+                ]
+             },
             {
                 "type":"text",
                 "required":false,
@@ -2927,7 +3623,6 @@ class HearingSeeder extends Seeder
                 "access":false,
                 "subtype":"text"
             },
-            
             {
                 "type":"date",
                 "required":false,
@@ -2938,7 +3633,6 @@ class HearingSeeder extends Seeder
                 "access":false,
                 "subtype":"text"
             },
-
             {
                 "type":"text",
                 "required":false,
@@ -2949,7 +3643,17 @@ class HearingSeeder extends Seeder
                 "access":false,
                 "subtype":"text"
             },
-
+            {
+                "type":"heading",
+                "required":false,
+                "label_1":"",
+                "label_2":"",
+                "label_3":"If you have signed this Form on behalf of the NDIS participant, please complete the details below. It is an offence to provide false or misleading information. \nWe may require you to provide evidence of your authority to sign on behalf of the person.",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_8_heading_extra_5",
+                "access":false
+             },
             {
                 "type":"text",
                 "required":false,
@@ -2960,7 +3664,6 @@ class HearingSeeder extends Seeder
                 "access":false,
                 "subtype":"text"
             },
-
             {
                 "type":"date",
                 "required":false,
