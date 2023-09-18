@@ -142,16 +142,16 @@ class FormBuilderController extends ApiController
         }
 
         $user_id = auth('sanctum')->user()->id;
-        $randomNumber = random_int(100000, 999999);
-        $fileName=$randomNumber.'.docx';
-        $local_file_path = public_path($fileName);
+        // $randomNumber = random_int(100000, 999999);
+        $file_name=$user_id.'.docx';
+        $local_file_path = public_path($file_name);
         if (file_exists($local_file_path)) {
         unlink($local_file_path);
         }
-        self::generateWordDocument($user_form->id,$fileName);
+        self::generateWordDocument($user_form->id,$file_name);
         $file_path = env('APP_URL');
-        $file_path = $file_path.$fileName;
-        $success['file_path'] = $file_path;
+        // $file_path = $file_path.$file_name;
+        $success['file_path'] = $file_name;
         $success['fields'] = $input;
         $success['user_form_id'] = $user_form->id;
         return $this->successResponse($success, 'Document Generated Successfully.');
