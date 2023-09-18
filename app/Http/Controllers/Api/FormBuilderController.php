@@ -651,7 +651,7 @@ class FormBuilderController extends ApiController
             foreach ($assessment_group->questions as $question) {
                 $total_questions++;
                 $total_group_questions++;
-                $answer = Answer::with('option')->where('question_id', $question->id)->first();
+                $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->first();
                 $quest = $question->title ?? '';
                 if ($question->type === 'multiple_choice') {
                     $answer1 = $answer->option->title ?? '';
