@@ -1911,7 +1911,7 @@ class HearingSeeder extends Seeder
                 "label_3":"Note: Complete Section 3a OR 3b. Delete the section that is not required.",
                 "placeholder":"Full Name",
                 "className":"form-control",
-                "name":"part_1_heading_extra_1",
+                "name":"part_3_heading_extra_1",
                 "access":false
              },
             {
@@ -1922,7 +1922,7 @@ class HearingSeeder extends Seeder
                 "label_3":"",
                 "placeholder":"Full Name",
                 "className":"form-control",
-                "name":"part_1_heading_extra_2",
+                "name":"part_3_heading_extra_2",
                 "access":false
              },
              {
@@ -1933,7 +1933,7 @@ class HearingSeeder extends Seeder
                 "label_3":"Manufacturer",
                 "placeholder":"Full Name",
                 "className":"form-control",
-                "name":"part_1_heading_extra_3",
+                "name":"part_3_heading_extra_3",
                 "access":false
              },
     {
@@ -1964,7 +1964,7 @@ class HearingSeeder extends Seeder
         "label_3":"Model and Style",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_4",
+        "name":"part_3_heading_extra_4",
         "access":false
      },
     {
@@ -1995,7 +1995,7 @@ class HearingSeeder extends Seeder
         "label_3":"Date of a last fitting",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_5",
+        "name":"part_3_heading_extra_5",
         "access":false
      },
     {
@@ -2026,7 +2026,7 @@ class HearingSeeder extends Seeder
         "label_3":"Hours worn per day / week. Provide evidence of use, including data logging where possible.",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_6",
+        "name":"part_3_heading_extra_6",
         "access":false
      },
     {
@@ -2057,7 +2057,7 @@ class HearingSeeder extends Seeder
         "label_3":"Service and repair history (where relevant). Attach documentation to application. Yes/No",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_7",
+        "name":"part_3_heading_extra_7",
         "access":false
      },
     {
@@ -2088,7 +2088,7 @@ class HearingSeeder extends Seeder
         "label_3":"List other assistive devices available to the participant. For example, remote microphones, phone clips, television streamers etc.",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_8",
+        "name":"part_3_heading_extra_8",
         "access":false
      },
     {
@@ -2129,7 +2129,7 @@ class HearingSeeder extends Seeder
         "label_3":"If the devices are not used on a daily basis, describe when the devices are used.",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_9",
+        "name":"part_3_heading_extra_9",
         "access":false
      },
     {
@@ -2150,7 +2150,7 @@ class HearingSeeder extends Seeder
         "label_3":"Recommended replacement sound processor(s):",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_10",
+        "name":"part_3_heading_extra_10",
         "access":false
      },
     {
@@ -2171,7 +2171,7 @@ class HearingSeeder extends Seeder
         "label_3":"Evidence of functional outcomes with the recommended sound processor(s) \nEvidence is attached:",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_11",
+        "name":"part_3_heading_extra_11",
         "access":false
      },
     {
@@ -2209,7 +2209,7 @@ class HearingSeeder extends Seeder
         "label_3":"",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_12",
+        "name":"part_3_heading_extra_12",
         "access":false
      },
      {
@@ -2220,7 +2220,7 @@ class HearingSeeder extends Seeder
         "label_3":"Manufacturer",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_13",
+        "name":"part_3_heading_extra_13",
         "access":false
      },
     {
@@ -2251,7 +2251,7 @@ class HearingSeeder extends Seeder
         "label_3":"Model and Style of hearing aid / sound processor",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_14",
+        "name":"part_3_heading_extra_14",
         "access":false
      },
     {
@@ -2282,7 +2282,7 @@ class HearingSeeder extends Seeder
         "label_3":"Date of a last fitting",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_15",
+        "name":"part_3_heading_extra_15",
         "access":false
      },
     {
@@ -2313,7 +2313,7 @@ class HearingSeeder extends Seeder
         "label_3":"Hours worn per day / week. Provide evidence of use, including data logging where possible.",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_16",
+        "name":"part_3_heading_extra_16",
         "access":false
      },
     {
@@ -2344,7 +2344,7 @@ class HearingSeeder extends Seeder
         "label_3":"List other assistive devices available to the participant. For example, remote microphones, phone clips, television streamers etc.",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_17",
+        "name":"part_3_heading_extra_17",
         "access":false
      },
     {
@@ -2385,7 +2385,7 @@ class HearingSeeder extends Seeder
         "label_3":"If the devices are not used on a daily basis, describe when the devices are used.",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_18",
+        "name":"part_3_heading_extra_18",
         "access":false
      },
     {
@@ -2406,7 +2406,7 @@ class HearingSeeder extends Seeder
         "label_3":"Outline the participant’s suitability to use the recommended hearing technology: \nEvidence of suitability, which may include outcomes from speech discrimination and speech in noise assessments and / or other measures.",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_19",
+        "name":"part_3_heading_extra_19",
         "access":false
      },
     {
@@ -2427,7 +2427,7 @@ class HearingSeeder extends Seeder
         "label_3":"Previous hearing technology use: \n   1. Length and frequency of the technology use.",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_20",
+        "name":"part_3_heading_extra_20",
         "access":false
      },
     {
@@ -2448,7 +2448,7 @@ class HearingSeeder extends Seeder
         "label_3":"   2. Comment on the success of technology use.",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_21",
+        "name":"part_3_heading_extra_21",
         "access":false
      },
     {
@@ -2469,7 +2469,7 @@ class HearingSeeder extends Seeder
         "label_3":"   3. Comment on the use of compatible assistive listening devices, such as remote microphone systems and /or other wireless streaming devices.",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_22",
+        "name":"part_3_heading_extra_22",
         "access":false
      },
     {
@@ -2490,7 +2490,7 @@ class HearingSeeder extends Seeder
         "label_3":"   4. Identify factors that impacted on the success of technology use, and steps taken to address any challenges experienced by the participant in using the technology successfully.",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_23",
+        "name":"part_3_heading_extra_23",
         "access":false
      },
     {
@@ -2511,7 +2511,7 @@ class HearingSeeder extends Seeder
         "label_3":"The recommended hearing aid has the following level of technology:",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_24",
+        "name":"part_3_heading_extra_24",
         "access":false
      },
      {
@@ -2573,7 +2573,7 @@ class HearingSeeder extends Seeder
         "label_3":"Recommended device name, model number and style:",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_25",
+        "name":"part_3_heading_extra_25",
         "access":false
      },
     {
@@ -2594,7 +2594,7 @@ class HearingSeeder extends Seeder
         "label_3":"Evidence of functional outcomes with the recommended device: Both objective evidence (test results) and subjective evidence (participant feedback) is required. Evidence can be provided in the comment section below, or can be attached. Assessors can refer to Appendix C for examples of evidence. Then go to Part 4.",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_26",
+        "name":"part_3_heading_extra_26",
         "access":false
      },
     {
@@ -2615,7 +2615,7 @@ class HearingSeeder extends Seeder
         "label_3":"Option 2: Recommendation of intermediate, advanced or premium level hearing aids: Differences in functional capacity with recommended device. \nProvide a detailed description of current communication/listening contexts. How is the participant’s functional capacity expected to change with the recommended technology, based on objective assessment as well as participant experience? Functional assessments can be attached to this form. See Appendix C for examples of assessments. The assessor is expected to compare hearing aids of more than one level of technology, and preferably adjacent levels of technology. For example; do not compare a basic hearing aid to a premium-level hearing aid. \nPlease note: Where work-related contexts are described (including self-employed contexts), provide information regarding steps taken through Job Access to modify the working environment and/or obtain suitable assistive technology.",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_27",
+        "name":"part_3_heading_extra_27",
         "access":false
      },
      {
@@ -2626,7 +2626,7 @@ class HearingSeeder extends Seeder
         "label_3":"Context 1: Describe context, including frequency experienced",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_28",
+        "name":"part_3_heading_extra_28",
         "access":false
      },
     {
@@ -2667,7 +2667,7 @@ class HearingSeeder extends Seeder
         "label_3":"Context 2: Describe context, including frequency experienced",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_29",
+        "name":"part_3_heading_extra_29",
         "access":false
      },
     {
@@ -2708,7 +2708,7 @@ class HearingSeeder extends Seeder
         "label_3":"Context 3: Describe context, including frequency experienced",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_30",
+        "name":"part_3_heading_extra_30",
         "access":false
      },
     {
@@ -2749,7 +2749,7 @@ class HearingSeeder extends Seeder
         "label_3":"Context 4: Describe context, including frequency experienced",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_31",
+        "name":"part_3_heading_extra_31",
         "access":false
      },
     {
@@ -2790,7 +2790,7 @@ class HearingSeeder extends Seeder
         "label_3":"Context 5: Describe context, including frequency experienced",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_32",
+        "name":"part_3_heading_extra_32",
         "access":false
      },
     {
@@ -2831,7 +2831,7 @@ class HearingSeeder extends Seeder
         "label_3":"Context 6: Describe context, including frequency experienced",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_33",
+        "name":"part_3_heading_extra_33",
         "access":false
      },
     {
@@ -2872,7 +2872,7 @@ class HearingSeeder extends Seeder
         "label_3":"Context 7: Describe context, including frequency experienced",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_34",
+        "name":"part_3_heading_extra_34",
         "access":false
      },
     {
@@ -2913,7 +2913,7 @@ class HearingSeeder extends Seeder
         "label_3":"Provide any other relevant information, such as activities of daily living; formal and informal support arrangements (families or carers who can support device usage); the participant’s attitude towards hearing aids and technology in general; their expectations of the devices; and foreseeable life-stage transitions.",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_35",
+        "name":"part_3_heading_extra_35",
         "access":false
      },
     {
@@ -2934,7 +2934,7 @@ class HearingSeeder extends Seeder
         "label_3":"Briefly summarise the evidence for the recommended option as the most suitable/appropriate alternative which will facilitate attainment of the participant’s goal compared to others considered, including lower cost alternatives. These alternatives can include accessories, or intervention that does not involve technology, such as counselling, auditory training or speech reading training. Note: In the instance where previous hearing aid use was not successful, provide evidence of actions, such as auditory training, counselling, and setting realistic expectations.",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_36",
+        "name":"part_3_heading_extra_36",
         "access":false
      },
     {
@@ -2975,7 +2975,7 @@ class HearingSeeder extends Seeder
         "label_3":"Other devices trialled (including lower cost options)",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_37",
+        "name":"part_3_heading_extra_37",
         "access":false
      },
     {
@@ -3016,7 +3016,7 @@ class HearingSeeder extends Seeder
         "label_3":"Steps taken to consider lower cost alternatives to improve hearing outcomes. For example; lower cost devices trialled, use of remote microphones / wireless streaming devices.",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_38",
+        "name":"part_3_heading_extra_38",
         "access":false
      },
     {
@@ -3037,7 +3037,7 @@ class HearingSeeder extends Seeder
         "label_3":"Are there any comparable support options that would achieve similar outcomes at a lower cost? For example, auditory training, training in handling devices, etc.",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_39",
+        "name":"part_3_heading_extra_39",
         "access":false
      },
     {
@@ -3058,7 +3058,7 @@ class HearingSeeder extends Seeder
         "label_3":"Evidence that the recommended device is the most appropriate, based on measurable goals and outcomes. Where an intermediate, advanced or premium level hearing aid is recommended, comparison to other devices is required. Where the participant has a hearing loss in both ears, it is expected that the evidence be based on two aided ears. For example; sound processor in one ear, recommended hearing aid in the other ear.",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_1_heading_extra_40",
+        "name":"part_3_heading_extra_40",
         "access":false
      },
     {
