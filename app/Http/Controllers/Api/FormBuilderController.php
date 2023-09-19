@@ -963,7 +963,7 @@ class FormBuilderController extends ApiController
 
       $yes = ($answer == 'Yes' ? $answer : '');
       $no = ($answer == 'No' ? $answer : '');
-      $none = ($answer == 'None' ? $answer : '');
+      $none = ($answer == 'Don\'t Know' ? $answer : '');
 
       if ($question->type == 'multiple_choice') {
         $section_html .= "
