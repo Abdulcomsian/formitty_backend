@@ -14,11 +14,15 @@ use App\Models\Answer;
 use App\Models\Response;
 use App\Models\FlowchartAnswer;
 use App\Models\AssessmentGroup;
+use App\Models\CustomHeading;
 use App\Models\OpenaiResponse;
 use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Client;
 use PDF;
 use App\Models\StaticOption;
+use App\Models\UserForm;
+use App\Models\UserFormHeading;
+use Illuminate\Support\Facades\DB;
 
 class AssessmentToolController extends ApiController
 {
@@ -450,4 +454,58 @@ class AssessmentToolController extends ApiController
         }
     }
 
+    public function deleteAssessmentTool(Request $request){
+        // Validate the request data
+        try{
+            DB::beginTransaction();
+            $validator = Validator::make($request->all(), [
+                'user_heading_id' => 'required|integer',
+                'user_form_id' => 'required|integer',
+                'heading_type' => 'required',
+            ]);
+            if ($validator->fails()) {
+                return response()->json([
+                    'message' => 'Validation error',
+                    'errors' => $validator->errors()
+                ], 400);
+            }
+            // $user_form_heading = UserFormHeading::where('user_form_id', $request->user_form_id)->where('heading_id', $request->user_heading_id)->where('heading_type', $request->heading_type)->first();
+            $user_form_heading = UserFormHeading::where('user_form_id', $request->user_form_id)->where('heading_id', $request->user_heading_id)->where('heading_type', $request->heading_type)->first();
+
+            if($user_form_heading == null){
+                return $this->errorResponse("No Record found!", 404);
+            }
+
+            $response = Response::findorfail($request->user_heading_id);
+
+            if($response && $request->heading_type == 'assessment_tool'){
+                // dd($response->answers);
+                $response->answers()->delete();
+
+                $response->delete();
+    
+                $user_form_heading->delete();
+            }
+
+
+            if($request->heading_type == 'custom'){
+                $custom_heading = CustomHeading::where('user_form_id', $request->user_form_id)->where('user_heading_id', $user_form_heading->id)->first();
+
+                $custom_heading->delete();
+
+                $user_form_heading->delete();
+            }
+           
+            DB::commit();
+
+             // Return as separate variables
+             return $this->successResponse([
+                'data' => $user_form_heading,
+            ], 'Assessment tool deleted successfully!', 200);
+
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            return $this->errorResponse($th->getMessage(), 401);
+        }
+    }
 }
