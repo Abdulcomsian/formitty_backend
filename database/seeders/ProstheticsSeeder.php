@@ -916,46 +916,6 @@ class ProstheticsSeeder extends Seeder
                     "subtype":"text"
                     },
                     {
-                    "type":"text",
-                    "required":false,
-                    "label":"Agency Managed",
-                    "placeholder":"Enter Agency Managed",
-                    "className":"form-control",
-                    "name":"part_1_ndis_agency_managed",
-                    "access":false,
-                    "subtype":"text"
-                    },
-                    {
-                    "type":"text",
-                    "required":false,
-                    "label":"Self-Managed",
-                    "placeholder":"Enter Self Managed",
-                    "className":"form-control",
-                    "name":"part_1_ndis_self_managed",
-                    "access":false,
-                    "subtype":"text"
-                    },
-                    {
-                    "type":"text",
-                    "required":false,
-                    "label":"Registered Plan Management Provider",
-                    "placeholder":"Enter Registered Plan Management Provider",
-                    "className":"form-control",
-                    "name":"part_1_ndis_registeredplanmanagement_provider",
-                    "access":false,
-                    "subtype":"text"
-                    },
-                    {
-                    "type":"text",
-                    "required":false,
-                    "label":"Contact Details",
-                    "placeholder":"Enter Registered Plan Management Provider Contact Details",
-                    "className":"form-control",
-                    "name":"part_1_ndis_registeredplanmanagementcontact_details",
-                    "access":false,
-                    "subtype":"text"
-                    },
-                    {
                      "type":"heading",
                      "required":false,
                      "label_1":"1.2 Plan Management Details",
@@ -2978,8 +2938,8 @@ class ProstheticsSeeder extends Seeder
          {
            "type":"heading",
            "required":false,
-           "label_1":"DECLARATION (indicate all relevant sections that apply)",
-           "label_2":"",
+           "label_1":"",
+           "label_2":"DECLARATION (indicate all relevant sections that apply)",
            "label_3":"",
            "placeholder":"Full Name",
            "className":"form-control",
@@ -3057,8 +3017,8 @@ class ProstheticsSeeder extends Seeder
            {
              "type":"heading",
              "required":false,
-             "label_1":"Assessor’s Details",
-             "label_2":"",
+             "label_1":"",
+             "label_2":"Assessor’s Details",
              "label_3":"",
              "placeholder":"Full Name",
              "className":"form-control",
