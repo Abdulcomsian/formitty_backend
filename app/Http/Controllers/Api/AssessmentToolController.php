@@ -156,12 +156,18 @@ class AssessmentToolController extends ApiController
                         'response_id' => $response->id
                     ]);
                 } elseif ($name == 'group_point') {
-                    $group = AssessmentGroup::findorfail($question_id);
-                    if ($group) {
-                        $group->update([
-                            'point' => $value,
+                    $question = Answer::where([['question_id', $question_id], ['response_id', $response->id]])->first();
+                    if ($question) {
+                        $question->update([
+                            'level' => $value,
                         ]);
                     }
+                    // $group = AssessmentGroup::findorfail($question_id);
+                    // if ($group) {
+                    //     $group->update([
+                    //         'point' => $value,
+                    //     ]);
+                    // }
                 } elseif ($name == 'point') {
                     $question = Answer::where([['question_id', $question_id], ['response_id', $response->id]])->first();
                     if ($question) {
