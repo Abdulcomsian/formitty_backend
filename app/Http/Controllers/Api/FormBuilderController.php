@@ -1101,7 +1101,7 @@ class FormBuilderController extends ApiController
       $answer3 = ($answer == '3' ? $answer : '');
       $answer4 = ($answer == '4' ? $answer : '');
       $answer5 = ($answer == '5' ? $answer : '');
-      $point = $question->point ?? '';
+      $point = $question->answers->level ?? '';
       $section_html .= "
              <tr>
                 <td style='width: 7%; border: 1px solid black; text-align: center;'>" . $count . "</td>
