@@ -3172,8 +3172,8 @@ class HearingSeeder extends Seeder
             {
                 "type":"heading",
                 "required":false,
-                "label_1":"DECLARATION (indicate all relevant sections that apply)",
-                "label_2":"",
+                "label_1":"",
+                "label_2":"DECLARATION (indicate all relevant sections that apply)",
                 "label_3":"",
                 "placeholder":"Full Name",
                 "className":"form-control",
@@ -3268,8 +3268,8 @@ class HearingSeeder extends Seeder
              {
                 "type":"heading",
                 "required":false,
-                "label_1":"Assessor’s Details",
-                "label_2":"",
+                "label_1":"",
+                "label_2":"Assessor’s Details",
                 "label_3":"",
                 "placeholder":"Full Name",
                 "className":"form-control",
