@@ -94,7 +94,7 @@ class AssessmentToolController extends ApiController
         try {
 
             if(!auth('sanctum')->user()){
-                return $this->errorResponse("User is not authenticated", 404);
+                return $this->errorResponse("User is not authenticated", 401);
               }
               $user_id = auth('sanctum')->user()->id;
             // Create a new response object
@@ -188,7 +188,7 @@ class AssessmentToolController extends ApiController
 
             return $this->successResponse($response, 'Questions get successfully!.', 200);
         } catch (\Throwable $th) {
-            return $this->errorResponse($th->getMessage(), 401);
+            return $this->errorResponse($th->getMessage(), 500);
         }
     }
 
