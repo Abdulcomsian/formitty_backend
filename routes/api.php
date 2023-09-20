@@ -46,6 +46,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('get-questions', [AssessmentToolController::class, 'getQuestions']);
     Route::post('store-questions', [AssessmentToolController::class, 'storeQuestions']);
     Route::post('store-flowchart', [AssessmentToolController::class, 'storeFlowChart']);
+    Route::post('delete-assessmenttool', [AssessmentToolController::class, 'deleteAssessmentTool']);
 });
    
 Route::post('get-user-forms', [FormBuilderController::class, 'getUserForm']);
