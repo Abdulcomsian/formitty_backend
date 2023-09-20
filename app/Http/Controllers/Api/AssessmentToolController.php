@@ -83,7 +83,7 @@ class AssessmentToolController extends ApiController
             }
             return $this->successResponse($assessment_tools, 'Questions get successfully!.', 200);
         } catch (\Throwable $th) {
-            return $this->errorResponse($th->getMessage(), 401);
+            return $this->errorResponse($th->getMessage(), 500);
         }
     }
 
@@ -163,12 +163,18 @@ class AssessmentToolController extends ApiController
                         ]);
                     }
                 } elseif ($name == 'point') {
-                    $question = Question::findorfail($question_id);
+                    $question = Answer::where([['question_id', $question_id], ['response_id', $response->id]])->first();
                     if ($question) {
                         $question->update([
-                            'point' => $value,
+                            'level' => $value,
                         ]);
                     }
+                    // $question = Question::findorfail($question_id);
+                    // if ($question) {
+                    //     $question->update([
+                    //         'point' => $value,
+                    //     ]);
+                    // }
                 }
                 $answer->save();
             }
