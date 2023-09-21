@@ -13,14 +13,15 @@ class CASPYouthAssessmentToolSeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     * 
      *
      * @return void
      */
     public function run()
     {
         $assessment_tool = AssessmentTool::create([
-            'title' => 'Child & Adolescent Scale of Participation (CASP-Youth Version)',
-            'slug' => 'Child & Adolescent Scale of Participation (CASP-Youth Version)',
+            'title' => 'Child And Adolescent Scale of Participation (CASP-Youth Version)',
+            'slug' => 'Child And Adolescent Scale of Participation (CASP-Youth Version)',
             'type' => 'questionnaire'
         ]);
 
