@@ -21,6 +21,7 @@ use GuzzleHttp\Client;
 use PDF;
 use App\Models\StaticOption;
 use App\Models\UserForm;
+use App\Models\AssessmentGroupPoint;
 use App\Models\UserFormHeading;
 use Illuminate\Support\Facades\DB;
 
@@ -156,12 +157,14 @@ class AssessmentToolController extends ApiController
                         'response_id' => $response->id
                     ]);
                 } elseif ($name == 'group_point') {
-                    $question = Answer::where([['question_id', $question_id], ['response_id', $response->id]])->first();
-                    if ($question) {
-                        $question->update([
-                            'level' => $value,
-                        ]);
-                    }
+                    $group = AssessmentGroup::findorfail($question_id);
+                    $group_point = new AssessmentGroupPoint();
+                    $group_point->assessment_group_id = $group->id;
+                    $group_point->user_form_id = $request->user_form_id;
+                    $group_point->response_id = $response->id;
+                    $group_point->point = $value;
+                    $group_point->save();
+
                     // $group = AssessmentGroup::findorfail($question_id);
                     // if ($group) {
                     //     $group->update([
@@ -209,7 +212,7 @@ class AssessmentToolController extends ApiController
 
         try {
             // Find the response with the given ID
-            $response = Response::with('assessment_tool', 'assessment_tool.assessment_groups', 'assessment_tool.assessment_groups.questions', 'assessment_tool.assessment_groups.questions.options')->findOrFail($request->user_assessment_id);
+            $response = Response::with('assessment_tool', 'assessment_tool.assessment_groups','assessment_tool.assessment_groups.assessment_group_points', 'assessment_tool.assessment_groups.questions', 'assessment_tool.assessment_groups.questions.options')->findOrFail($request->user_assessment_id);
             if ($response->assessment_tool->assessment_groups->isEmpty()) {
                 $response = Response::with('assessment_tool', 'assessment_tool.questions', 'assessment_tool.questions.options')->findOrFail($request->user_assessment_id);
             }
