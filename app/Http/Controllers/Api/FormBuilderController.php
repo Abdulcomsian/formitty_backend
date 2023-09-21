@@ -734,7 +734,7 @@ class FormBuilderController extends ApiController
     $count = 0;
     foreach ($response->assessment_tool->questions as $question) {
       $quest = $question->title ?? '';
-      $answer = Answer::with('option')->where('question_id', $question->id)->first();
+      $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->first();
       $answer = $answer->answer ?? '';
 
       if ($question->type == 'multiple_choice') {
@@ -853,7 +853,7 @@ class FormBuilderController extends ApiController
     foreach ($response->assessment_tool->questions as $question) {
       $count++;
       $quest = $question->title ?? '';
-      $answer = Answer::with('option')->where('question_id', $question->id)->first();
+      $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->first();
       $answer = $answer->answer ?? '';
 
       // $answer = $question->answers->answer ?? '';
@@ -959,7 +959,7 @@ class FormBuilderController extends ApiController
     foreach ($response->assessment_tool->questions as $question) {
       $count++;
       $quest = $question->title ?? '';
-      $answer = Answer::with('option')->where('question_id', $question->id)->first();
+      $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->first();
       $answer = $answer->answer ?? '';
 
       $answer0 = ($answer == '0' ? $answer : '');
@@ -1103,13 +1103,15 @@ class FormBuilderController extends ApiController
     foreach ($response->assessment_tool->questions as $question) {
       $count++;
       $quest = $question->title ?? '';
-      $answer = $question->answers->answer ?? '';
+      $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->first();
+      $answer = $answer->answer ?? '';
+      // $answer = $question->answers->answer ?? '';
       $answer1 = ($answer == '1' ? $answer : '');
       $answer2 = ($answer == '2' ? $answer : '');
       $answer3 = ($answer == '3' ? $answer : '');
       $answer4 = ($answer == '4' ? $answer : '');
       $answer5 = ($answer == '5' ? $answer : '');
-      $point = $question->answers->level ?? '';
+      $point = $answer->level ?? '';
       $section_html .= "
              <tr>
                 <td style='width: 7%; border: 1px solid black; text-align: center;'>" . $count . "</td>
@@ -1162,7 +1164,9 @@ class FormBuilderController extends ApiController
     foreach ($response->assessment_tool->questions as $question) {
       $count++;
       $quest = $question->title ?? '';
-      $answer = $question->answers->answer ?? '';
+      $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->first();
+      $answer = $answer->answer ?? '';
+      // $answer = $question->answers->answer ?? '';
       if ($response->assessment_tool->id == 10) {
         $answer = ($answer == '1' ?? 'never');
         $answer = ($answer == '2' ?? 'rarely');
@@ -1209,7 +1213,7 @@ class FormBuilderController extends ApiController
                             </tr>";
     $section_html .= "";
     foreach ($response->assessment_tool->questions as $question) {
-      $answer = Answer::with('option')->where('question_id', $question->id)->first();
+      $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->first();
       $quest = $question->title ?? '';
       if ($question->type === 'multiple_choice') {
         $answer1 = $answer->option->title ?? '';
@@ -1255,7 +1259,7 @@ class FormBuilderController extends ApiController
                             </tr>";
     $section_html .= "";
     foreach ($response->assessment_tool->questions as $question) {
-      $answer = Answer::with('option')->where('question_id', $question->id)->first();
+      $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->first();
       $quest = $question->title ?? '';
       $answer1 = $answer->option->title ?? '';
       $section_html .= "<tr>
@@ -1313,7 +1317,7 @@ class FormBuilderController extends ApiController
             </td>
             </tr>";
       foreach ($assessment_group->questions as $question) {
-        $answer = Answer::with('option')->where('question_id', $question->id)->first();
+        $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->first();
         $quest = $question->title ?? '';
         $answer1 = $answer->answer ?? '';
         if ($response->assessment_tool->id == '18') {
@@ -1360,8 +1364,9 @@ class FormBuilderController extends ApiController
                                 <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>Answer</p>
                             </td>
                         </tr>";
-    foreach ($assessment_group->questions as $question) {
-      $answer = Answer::with('option')->where('question_id', $question->id)->first();
+    foreach ($response->assessment_tool->questions as $question) {
+    // foreach ($assessment_group->questions as $question) {
+      $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->first();
       $quest = $question->title ?? '';
       $answer1 = $answer->option->title ?? '';
       $section_html .= "<tr>
@@ -1404,7 +1409,7 @@ class FormBuilderController extends ApiController
                             </tr>";
     $section_html .= "";
     foreach ($response->assessment_tool->questions as $question) {
-      $answer = Answer::with('option')->where('question_id', $question->id)->first();
+      $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->first();
       $quest = $question->title ?? '';
       if ($question->type === 'multiple_choice') {
         $answer1 = $answer->option->title ?? '';
