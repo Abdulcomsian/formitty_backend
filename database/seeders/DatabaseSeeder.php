@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
 //        $this->call(FormSeeder::class);
         $this->call(ContinenceSeeder::class);
         $this->call(AnimalSeeder::class);
+        $this->call(HomeSeeder::class);
         $this->call(HearingSeeder::class);
         $this->call(VehicleSeeder::class);
         $this->call(NutritionSeeder::class);
@@ -44,8 +45,9 @@ class DatabaseSeeder extends Seeder
         $this->call(KettleTestAssessmentToolSeeder::class);
         $this->call(LawtonBrodyIADLAssessmentToolSeeder::class);
         $this->call(FAMAssessmentToolSeeder::class);
-        $this->call(AssessmentToolSeeder::class);
-
+        $this->call(CASPYouthAssessmentToolSeeder::class);
+        // $this->call(AssessmentToolSeeder::class);
+        $this->call(ProstheticsSeeder::class);
 //        $this->call(QuestionsTableSeeder::class);
         $this->call(FlowChartQuestionTableSeeder::class);
     }

@@ -20,6 +20,9 @@ return new class extends Migration
             $table->tinyInteger('active')->default(1);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('state')->nullable();
+            $table->string('profession')->nullable();
+            $table->string('message')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

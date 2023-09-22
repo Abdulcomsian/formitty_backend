@@ -63,4 +63,22 @@ class GeneralSettingsController extends Controller
         Session::flash('success_message', 'Great! Site Setting has been saved successfully!');
         return redirect()->back();
     }
+
+    public function chatgpt_prompts()
+    {
+        return view('admin.general_settings.chatgpt_prompts');
+    }
+
+    public function update_chatgpt_prompts(Request $request)
+    {
+        $this->validate($request, [
+            'notes_prompt' => 'nullable|string|max:1000',
+            'audio_prompt' => 'nullable|string|max:1000',
+        ]);
+        update_static_option('notes_prompt', $request->notes_prompt);
+        update_static_option('audio_prompt', $request->audio_prompt);
+
+        Session::flash('success_message', 'Great! ChatGpt Prompts has been saved successfully!');
+        return redirect()->back();
+    }
 }
