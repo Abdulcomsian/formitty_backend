@@ -1103,6 +1103,8 @@ class FormBuilderController extends ApiController
       $count++;
       $quest = $question->title ?? '';
       $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->first();
+      // $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->get();
+      $point = $answer->level ?? '';
       $answer = $answer->answer ?? '';
       // $answer = $question->answers->answer ?? '';
       $answer1 = ($answer == '1' ? $answer : '');
