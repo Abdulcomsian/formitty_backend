@@ -1438,10 +1438,10 @@ class FormBuilderController extends ApiController
   {
     try {
       if (!auth('sanctum')->user()) {
-        return $this->errorResponse("User is not authenticated", 404);
+        return $this->errorResponse("User is not authenticated", 401);
       }
       $user_id = auth('sanctum')->user()->id;
-      $user_form = UserForm::where('user_id', $user_id)->get();
+      $user_form = UserForm::where('user_id', $user_id)->latest()->get();
       $data = [];
 
       foreach ($user_form as $uf) {
@@ -1458,7 +1458,7 @@ class FormBuilderController extends ApiController
 
       return $this->successResponse($data, 'Form fields get successfully!.', 200);
     } catch (\Throwable $th) {
-      return $this->errorResponse($th->getMessage(), 401);
+      return $this->errorResponse($th->getMessage(), 500);
     }
   }
 
