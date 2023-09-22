@@ -25,8 +25,8 @@ class AssessmentGroup extends Model
         return $this->belongsTo(AssessmentTool::class);
     }
 
-    public function assessment_group_points()
+    public function assessment_group_point()
     {
-        return $this->hasMany(AssessmentGroupPoint::class);
+        return $this->hasOne(AssessmentGroupPoint::class);
     }
 }
