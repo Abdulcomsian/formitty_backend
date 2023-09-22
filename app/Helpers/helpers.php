@@ -169,3 +169,20 @@ function generateRandomNumber()
     
     return $randomNumber;
 }
+
+function mapAnswerToText($answer) {
+    switch ($answer) {
+        case 1:
+            return 'never';
+        case 2:
+            return 'rarely';
+        case 3:
+            return 'sometimes';
+        case 4:
+            return 'often';
+        case 5:
+            return 'always';
+        default:
+            return ''; // Default to an empty string for unknown values
+    }
+}

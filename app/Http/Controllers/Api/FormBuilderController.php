@@ -469,7 +469,6 @@ class FormBuilderController extends ApiController
     // $usr_forms = UserForm::with(['userFormHeadings','userFormHeadings.formHeading'])->findorfail($id);
 
     $usr_forms->userFormHeadings = $usr_forms->userFormHeadings->sortBy('order_id');
-
     $count = 0;
     $html = View::make('users.sections.header')->render();
     $section_html = '';
@@ -1165,14 +1164,12 @@ class FormBuilderController extends ApiController
       $count++;
       $quest = $question->title ?? '';
       $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->first();
+      // $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->get();
+      // dd($answer);
       $answer = $answer->answer ?? '';
       // $answer = $question->answers->answer ?? '';
       if ($response->assessment_tool->id == 10) {
-        $answer = ($answer == '1' ?? 'never');
-        $answer = ($answer == '2' ?? 'rarely');
-        $answer = ($answer == '3' ?? 'sometimes');
-        $answer = ($answer == '4' ?? 'often');
-        $answer = ($answer == '5' ?? 'always');
+        $answer = mapAnswerToText($answer);
       }
       $section_html .= "
              <tr style='border: 1px solid black;'>
@@ -1215,8 +1212,12 @@ class FormBuilderController extends ApiController
     foreach ($response->assessment_tool->questions as $question) {
       $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->first();
       $quest = $question->title ?? '';
-      if ($question->type === 'multiple_choice') {
+      if($response->assessment_tool->id == '14'){
         $answer1 = $answer->option->title ?? '';
+      } else{
+        $answer1 = $answer->answer ?? '';
+      }
+      if ($question->type === 'multiple_choice') {
         $section_html .= "<tr>
                                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $quest . "</p>
