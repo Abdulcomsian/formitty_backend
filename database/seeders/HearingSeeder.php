@@ -397,8 +397,8 @@ class HearingSeeder extends Seeder
                     </tr>
                     <tr>
                         <td style="border: 1px solid lightslategray; padding: 10px; width: 30%;">Service and repair history is attached (where relevant).</td>
-                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_73}}</td>
                         <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_74}}</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_75}}</td>
                     </tr>
 
                     <tr>
