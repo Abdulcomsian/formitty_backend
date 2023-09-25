@@ -1167,15 +1167,18 @@ class FormBuilderController extends ApiController
       $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->first();
       // $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->get();
       // dd($answer);
-      $answer = $answer->answer ?? '';
+      $answer1 = $answer->answer ?? '';
       // $answer = $question->answers->answer ?? '';
       if ($response->assessment_tool->id == 10) {
-        $answer = mapAnswerToText($answer);
+        $answer1 = mapAnswerToText($answer1);
+      }
+      if ($response->assessment_tool->id == 19) {
+        $answer1 = $answer->option->title ?? $answer1;
       }
       $section_html .= "
              <tr style='border: 1px solid black;'>
                 <td style='width: 85%; border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black; border-right: none'><table><tr><td>" . $quest . "</td></tr></table></td>
-                <td style='width: 15%; text-align: center; border-top: 1px solid black; border-left: none; border-bottom: 1px solid black; border-right: 1px solid black'>" . $answer . "</td>
+                <td style='width: 15%; text-align: center; border-top: 1px solid black; border-left: none; border-bottom: 1px solid black; border-right: 1px solid black'>" . $answer1 . "</td>
               </tr>";
     }
 
