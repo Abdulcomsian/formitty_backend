@@ -1152,7 +1152,7 @@ class FormBuilderController extends ApiController
     $section_html .= "<br /> <table style='width: 100%; border-collapse: collapse; border: 1px solid black; margin-top: 8px;'>
                             <thead>
                                       <tr style='background-color: #6A2C75'>
-                                        <td colspan='2'>
+                                        <td colspan='3'>
                                           <p style=' font-size: 14pt; font-weight: bold; margin-top: 8px;
                                               margin-bottom: 8px; color: white; '>" . $title . "
                                             </p>
