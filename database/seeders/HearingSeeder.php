@@ -392,13 +392,13 @@ class HearingSeeder extends Seeder
                     </tr>
                     <tr>
                         <td style="border: 1px solid lightslategray; padding: 10px; width: 30%;">Is the device fitted optimally? For example when doing real ear insertion gain measurements</td>
-                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">Yes / No</td>
-                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">Yes / No</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_72}}</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_73}}</td>
                     </tr>
                     <tr>
                         <td style="border: 1px solid lightslategray; padding: 10px; width: 30%;">Service and repair history is attached (where relevant).</td>
-                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">Yes / No</td>
-                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">Yes / No</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_73}}</td>
+                        <td style="border: 1px solid lightslategray; padding: 10px; width: 35%;">{{part_3_recommended_option_74}}</td>
                     </tr>
 
                     <tr>
@@ -2333,6 +2333,68 @@ class HearingSeeder extends Seeder
         "placeholder":"Enter Right ear",
         "className":"form-control",
         "name":"part_3_recommended_option_26",
+        "access":false,
+        "subtype":"text"
+    },
+    {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Is the device fitted optimally?",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_42",
+        "access":false
+     },
+    {
+        "type":"text",
+        "required":false,
+        "label":"Left ear",
+        "placeholder":"Enter Left ear",
+        "className":"form-control",
+        "name":"part_3_recommended_option_72",
+        "access":false,
+        "subtype":"text"
+    },
+    {
+        "type":"text",
+        "required":false,
+        "label":"Right ear",
+        "placeholder":"Enter Right ear",
+        "className":"form-control",
+        "name":"part_3_recommended_option_73",
+        "access":false,
+        "subtype":"text"
+    },
+    {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Service and repair history is attached (where relevant).",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_43",
+        "access":false
+     },
+    {
+        "type":"text",
+        "required":false,
+        "label":"Left ear",
+        "placeholder":"Enter Left ear",
+        "className":"form-control",
+        "name":"part_3_recommended_option_74",
+        "access":false,
+        "subtype":"text"
+    },
+    {
+        "type":"text",
+        "required":false,
+        "label":"Right ear",
+        "placeholder":"Enter Right ear",
+        "className":"form-control",
+        "name":"part_3_recommended_option_75",
         "access":false,
         "subtype":"text"
     },

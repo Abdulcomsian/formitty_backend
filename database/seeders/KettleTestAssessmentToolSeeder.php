@@ -454,7 +454,7 @@ class KettleTestAssessmentToolSeeder extends Seeder
         ]);
 
         Option::create([
-            'question_id' => $question12->id,
+            'question_id' => $question19->id,
             'title' => '2',
         ]);
 
