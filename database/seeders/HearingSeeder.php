@@ -4761,64 +4761,64 @@ class HearingSeeder extends Seeder
         ]);
 
         $heading1 = FormHeading::insertGetId([
-            'form_heading' => 'Participant and Plan Management Details',
+            'form_heading' => 'PART 1 - Participant and Plan Management Details',
             'form_id' => $form,
             'section_html' => $section1
         ]);
 
         $heading2 = FormHeading::insertGetId([
-            'form_heading' => 'Background Information',
+            'form_heading' => 'PART 2 - Background Information',
             'form_id' => $form,
             'section_html' => $section2
         ]);
 
         $heading3 = FormHeading::insertGetId([
-            'form_heading' => 'Recommended Option',
+            'form_heading' => 'PART 3 - Recommended Option',
             'form_id' => $form,
             'section_html' => $section3
         ]);
 
         $heading4 = FormHeading::insertGetId([
-            'form_heading' => 'Additional Technology / Supports',
+            'form_heading' => 'PART 4 - Additional Technology / Supports',
             'form_id' => $form,
             'section_html' => $section4
         ]);
 
         $heading5 = FormHeading::insertGetId([
-            'form_heading' => 'Participant Agreement',
+            'form_heading' => 'PART 5 - Participant Agreement',
             'form_id' => $form,
             'section_html' => $section5
         ]);
 
         $heading6 = FormHeading::insertGetId([
-            'form_heading' => 'Attachments',
+            'form_heading' => 'PART 6 - Attachments',
             'form_id' => $form,
             'section_html' => $section6
         ]);
 
         $heading7 = FormHeading::insertGetId([
-            'form_heading' => 'Details of Assessor',
+            'form_heading' => 'PART 7 - Details of Assessor',
             'form_id' => $form,
             'section_html' => $section7
         ]);
 
         $heading8 = FormHeading::insertGetId([
-            'form_heading' => 'Participant Consent and Acknowledgement of Interest',
+            'form_heading' => 'PART 8 - Participant Consent and Acknowledgement of Interest',
             'form_id' => $form,
             'section_html' => $section8
         ]);
         $heading9 = FormHeading::insertGetId([
-            'form_heading' => 'Appendix A: Replacement Device Request',
+            'form_heading' => 'PART 9 - Appendix A: Replacement Device Request',
             'form_id' => $form,
             'section_html' => $section9
         ]);
         $heading10 = FormHeading::insertGetId([
-            'form_heading' => 'Appendix B: Refit / Upgrade Request',
+            'form_heading' => 'PART 10 - Appendix B: Refit / Upgrade Request',
             'form_id' => $form,
             'section_html' => $section10
         ]);
         $heading11 = FormHeading::insertGetId([
-            'form_heading' => 'Appendix C: Examples of functional measures for hearing device refitting requests',
+            'form_heading' => 'PART 11 - Appendix C: Examples of functional measures for hearing device refitting requests',
             'form_id' => $form,
             'section_html' => $section11
         ]);
