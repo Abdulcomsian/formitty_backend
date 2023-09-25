@@ -391,7 +391,7 @@ class HomeSeeder extends Seeder
                         </tr>
                         <tr>
                             <td style='background-color: #efefef; width: 30%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>  Detail of Previous Modification</p></td>
-                            <td><p style='margin-top:10px; margin-bottom:10px;'>{{part_3_property_details__of_previous_modifications}}</p></td>
+                            <td><p style='margin-top:10px; margin-bottom:10px;'>{{part_3_home_enviroment}}</p></td>
                         </tr>
                         </table>
 
