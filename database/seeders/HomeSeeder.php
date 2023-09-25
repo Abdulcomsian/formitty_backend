@@ -453,7 +453,7 @@ class HomeSeeder extends Seeder
                 <table style='width:100%; margin-top: 10px; border: 1px solid black'>
                 <tr>
                 <td style='background-color: #efefef; width: 40%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>  N/A</p></td>
-                <td><p style='margin-top:10px; margin-bottom:10px;'>{{part_4_property_details_n_a}}</p></td>
+                <td><p style='margin-top:10px; margin-bottom:10px;'>{{part_2_communication_functional_assessment}}</p></td>
                 </tr>
                 <tr>
                 <td style='background-color: #efefef; width: 40%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px;'>  Anticipated discharge date</p></td>
