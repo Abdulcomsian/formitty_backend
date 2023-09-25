@@ -1175,10 +1175,10 @@ class FormBuilderController extends ApiController
       if ($response->assessment_tool->id == 19) {
         $answer1 = $answer->option->title ?? $answer1;
       }
-      $section_html .= "
-             <tr style='border: 1px solid black;'>
-                <td style='width: 85%; border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black; border-right: none'><table><tr><td>" . $quest . "</td></tr></table></td>
-                <td style='width: 15%; text-align: center; border-top: 1px solid black; border-left: none; border-bottom: 1px solid black; border-right: 1px solid black'>" . $answer1 . "</td>
+      $section_html .= "<tr style='border: 1px solid black;'>
+                <td style='width: 80%; border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black; border-right: none'><table><tr><td>" . $quest . "</td></tr></table></td>";
+      $section_html .= "<td style='width: 5%; text-align: center; border-top: 1px solid black; border-left: none; border-bottom: 1px solid black; border-right: 1px solid black'>" . $answer1 . "</td>";
+      $section_html .= "<td style='width: 15%; text-align: center; border-top: 1px solid black; border-left: none; border-bottom: 1px solid black; border-right: 1px solid black'>" . $answer1 . "</td>
               </tr>";
     }
 
