@@ -49,10 +49,10 @@ class AssessmentToolController extends ApiController
             return $this->errorResponse($validator->messages(), 422);
         }
 
-        if(!auth('sanctum')->user()){
+        if (!auth('sanctum')->user()) {
             return $this->errorResponse("User is not authenticated", 404);
-          }
-        
+        }
+
         $user_id = auth('sanctum')->user()->id;
 
         try {
@@ -94,10 +94,10 @@ class AssessmentToolController extends ApiController
 
         try {
 
-            if(!auth('sanctum')->user()){
+            if (!auth('sanctum')->user()) {
                 return $this->errorResponse("User is not authenticated", 401);
-              }
-              $user_id = auth('sanctum')->user()->id;
+            }
+            $user_id = auth('sanctum')->user()->id;
             // Create a new response object
             if ($request->user_assessment_id) {
                 $response = Response::find($request->user_assessment_id);
@@ -212,7 +212,7 @@ class AssessmentToolController extends ApiController
 
         try {
             // Find the response with the given ID
-            $response = Response::with('assessment_tool', 'assessment_tool.assessment_groups','assessment_tool.assessment_groups.assessment_group_point', 'assessment_tool.assessment_groups.questions', 'assessment_tool.assessment_groups.questions.options')->findOrFail($request->user_assessment_id);
+            $response = Response::with('assessment_tool', 'assessment_tool.assessment_groups', 'assessment_tool.assessment_groups.assessment_group_point', 'assessment_tool.assessment_groups.questions', 'assessment_tool.assessment_groups.questions.options')->findOrFail($request->user_assessment_id);
             if ($response->assessment_tool->assessment_groups->isEmpty()) {
                 $response = Response::with('assessment_tool', 'assessment_tool.questions', 'assessment_tool.questions.options')->findOrFail($request->user_assessment_id);
             }
@@ -253,10 +253,10 @@ class AssessmentToolController extends ApiController
 
         try {
 
-            if(!auth('sanctum')->user()){
+            if (!auth('sanctum')->user()) {
                 return $this->errorResponse("User is not authenticated", 404);
             }
-            
+
             $user_id = auth('sanctum')->user()->id;
 
             $response = new Response();
@@ -294,10 +294,10 @@ class AssessmentToolController extends ApiController
     public function storeFlowChart(Request $request)
     {
         try {
-            if(!auth('sanctum')->user()){
+            if (!auth('sanctum')->user()) {
                 return $this->errorResponse("User is not authenticated", 404);
             }
-            
+
             $user_id = auth('sanctum')->user()->id;
             $response = new FlowchartResponse();
             $response->user_id = $user_id;
@@ -368,10 +368,10 @@ class AssessmentToolController extends ApiController
                     'errors' => $validator->errors()
                 ], 400);
             }
-            if(!auth('sanctum')->user()){
+            if (!auth('sanctum')->user()) {
                 return $this->errorResponse("User is not authenticated", 404);
             }
-            
+
             $user_id = auth('sanctum')->user()->id;
 
             $response = FlowchartResponse::where('user_form_id', $request->user_form_id)->where('assessment_tool_id', $request->assessment_tool_id)->delete();
@@ -418,7 +418,7 @@ class AssessmentToolController extends ApiController
 
     public function storeOpenAiResponses(Request $request)
     {
-        try{
+        try {
             $openai = OpenaiResponse::where('form_id', $request->form_id)->first();
             // if($openai){
             //     $openai->form_id = $request->form_id;
@@ -431,18 +431,18 @@ class AssessmentToolController extends ApiController
             //     $openai->save();
             //     return $this->successResponse($openai, 'OpenAiResponse updated successfully!.', 200);
             // }
-            if(!$openai){
+            if (!$openai) {
                 $openai = new OpenaiResponse();
             }
             $openai->form_id = $request->form_id;
-            if($request->note_response){
+            if ($request->note_response) {
                 $openai->note_response = $request->note_response;
             }
-            if($request->audio_response){
+            if ($request->audio_response) {
                 $openai->audio_response = $request->audio_response;
-            }            
+            }
             $openai->save();
-        return $this->successResponse($openai, 'OpenAiResponse updated successfully!.', 200);
+            return $this->successResponse($openai, 'OpenAiResponse updated successfully!.', 200);
         } catch (\Throwable $th) {
             return $this->errorResponse($th->getMessage(), 401);
         }
@@ -452,26 +452,27 @@ class AssessmentToolController extends ApiController
     {
         try {
             $options = StaticOption::whereIn('option_name', ['audio_prompt', 'notes_prompt'])->get();
-            
+
             $audioPrompt = $options->where('option_name', 'audio_prompt')->first()->option_value;
             $notesPrompt = $options->where('option_name', 'notes_prompt')->first()->option_value;
-            
+
             // Return as separate variables
             return $this->successResponse([
                 'audio_prompt' => $audioPrompt,
                 'notes_prompt' => $notesPrompt
             ], 'Chatgpt prompts updated successfully!', 200);
-            
+
             // Return as an array
             // return $this->successResponse([$audioPrompt, $notesPrompt], 'Chatgpt prompts updated successfully!', 200);
         } catch (\Throwable $th) {
-            return $this->errorResponse($th->getMessage(), 401);
+            return $this->errorResponse($th->getMessage(), 500);
         }
     }
 
-    public function deleteAssessmentTool(Request $request){
+    public function deleteAssessmentTool(Request $request)
+    {
         // Validate the request data
-        try{
+        try {
             DB::beginTransaction();
             $validator = Validator::make($request->all(), [
                 'user_heading_id' => 'required|integer',
@@ -487,37 +488,36 @@ class AssessmentToolController extends ApiController
             // $user_form_heading = UserFormHeading::where('user_form_id', $request->user_form_id)->where('heading_id', $request->user_heading_id)->where('heading_type', $request->heading_type)->first();
             $user_form_heading = UserFormHeading::where('user_form_id', $request->user_form_id)->where('heading_id', $request->user_heading_id)->where('heading_type', $request->heading_type)->first();
 
-            if($user_form_heading == null){
+            if ($user_form_heading == null) {
                 return $this->errorResponse("No Record found!", 404);
             }
 
             $response = Response::findorfail($request->user_heading_id);
 
-            if($response && $request->heading_type == 'assessment_tool'){
+            if ($response && $request->heading_type == 'assessment_tool') {
                 // dd($response->answers);
                 $response->answers()->delete();
 
                 $response->delete();
-    
+
                 $user_form_heading->delete();
             }
 
 
-            if($request->heading_type == 'custom'){
+            if ($request->heading_type == 'custom') {
                 $custom_heading = CustomHeading::where('user_form_id', $request->user_form_id)->where('user_heading_id', $user_form_heading->id)->first();
 
                 $custom_heading->delete();
 
                 $user_form_heading->delete();
             }
-           
+
             DB::commit();
 
-             // Return as separate variables
-             return $this->successResponse([
+            // Return as separate variables
+            return $this->successResponse([
                 'data' => $user_form_heading,
             ], 'Assessment tool deleted successfully!', 200);
-
         } catch (\Throwable $th) {
             DB::rollBack();
             return $this->errorResponse($th->getMessage(), 401);
