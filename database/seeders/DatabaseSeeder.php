@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CreateAdminUserSeeder::class);
 //        $this->call(FormSeeder::class);
         $this->call(ContinenceSeeder::class);
+        $this->call(StaticOptionsTableSeeder::class);
         $this->call(AnimalSeeder::class);
         $this->call(HomeSeeder::class);
         $this->call(HearingSeeder::class);
