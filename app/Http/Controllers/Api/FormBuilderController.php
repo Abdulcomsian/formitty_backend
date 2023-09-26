@@ -540,13 +540,14 @@ class FormBuilderController extends ApiController
     if ($response->assessment_tool->id == '11' || $response->assessment_tool->id == '14') {
       $section_html2 = $this->createLSPTool($response, $section_html);
     }
-           if($response->assessment_tool->id == '12'){
-               $section_html = $this->createBarthalTool($response, $section_html);
-           }
+    if($response->assessment_tool->id == '12'){
+        $section_html2 = $this->createBarthalTool($response, $section_html);
+    }
     if ($response->assessment_tool->id == '13' || $response->assessment_tool->id == '18') {
       $section_html2 = $this->createCaregiverBurdenTool($response, $section_html);
     }
-    if ($response->assessment_tool->id == '17' || $response->assessment_tool->id == '12') {
+    // if ($response->assessment_tool->id == '17' || $response->assessment_tool->id == '12') {
+    if ($response->assessment_tool->id == '17') {
       $section_html2 = $this->createLawtonBrodyTool($response, $section_html);
     }
     return $section_html2;
@@ -1418,12 +1419,15 @@ class FormBuilderController extends ApiController
                                 </td>
                             </tr>";
     $section_html .= "";
+    $total_score = 0;
     foreach ($response->assessment_tool->questions as $question) {
       $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->first();
       $quest = $question->title ?? '';
       if ($question->type === 'multiple_choice') {
         $answer1 = $answer->option->title ?? '';
         $score = $answer->option->point ?? '';
+        $total = intval($score);
+        $total_score +=$total;
         $section_html .= "<tr>
                                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $quest . "</p>
@@ -1437,6 +1441,15 @@ class FormBuilderController extends ApiController
                             </tr>";
       }
     }
+
+    $section_html .= "<tr>
+                                <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px;' colspan='2'>
+                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>Total Score</p>
+                                </td>
+                                <td style='border: 1px solid lightslategray; padding: 10px'>
+                                    <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $total_score . "</p>
+                                </td>
+                            </tr>";
 
     $section_html .= "</tbody>
                     </table>";
