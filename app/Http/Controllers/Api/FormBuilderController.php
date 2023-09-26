@@ -1222,11 +1222,11 @@ class FormBuilderController extends ApiController
     foreach ($response->assessment_tool->questions as $question) {
       $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->first();
       $quest = $question->title ?? '';
-      if ($response->assessment_tool->id == '14') {
+      // if ($response->assessment_tool->id == '14') {
         $answer1 = $answer->option->title ?? '';
-      } else {
-        $answer1 = $answer->answer ?? '';
-      }
+      // } else {
+      //   $answer1 = $answer->answer ?? '';
+      // }
       if ($question->type === 'multiple_choice') {
         $section_html .= "<tr>
                                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
