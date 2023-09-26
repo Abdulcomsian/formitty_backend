@@ -853,7 +853,10 @@ class FormBuilderController extends ApiController
     $count = 0;
     $group_point = 0;
     foreach($response->assessment_tool->assessment_groups as $assessment_group) {
-      $assessment_group_point = AssessmentGroupPoint::where('response_id', $response->id)->where('assessment_group_id', $assessment_group->id)->first();
+      $assessment_group_point = AssessmentGroupPoint::where('response_id', $response->id)
+        ->where('assessment_group_id', $assessment_group->id)
+        ->latest() // This will order the results by the created_at column in descending order (latest first).
+        ->first();
       $group_point = $assessment_group_point->point;
       foreach ($assessment_group->questions as $question) {
         $count++;
@@ -962,7 +965,11 @@ class FormBuilderController extends ApiController
           </tr>";
     $count = 0;
     foreach($response->assessment_tool->assessment_groups as $assessment_group) {
-        $assessment_group_point = AssessmentGroupPoint::where('response_id', $response->id)->where('assessment_group_id', $assessment_group->id)->first();
+        $assessment_group_point = AssessmentGroupPoint::where('response_id', $response->id)
+        ->where('assessment_group_id', $assessment_group->id)
+        ->latest() // This will order the results by the created_at column in descending order (latest first).
+        ->first();
+  
         $group_point = $assessment_group_point->point;
       foreach ($assessment_group->questions as $question) {
         $count++;
