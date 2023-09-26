@@ -27,6 +27,11 @@ class AssessmentGroup extends Model
 
     public function assessment_group_point()
     {
-        return $this->hasOne(AssessmentGroupPoint::class);
+        return $this->hasOne(AssessmentGroupPoint::class)->latestOfMany();
     }
+
+    // public function assessment_group_point()
+    // {
+    //     return $this->hasOne(AssessmentGroupPoint::class);
+    // }
 }
