@@ -856,7 +856,7 @@ class FormBuilderController extends ApiController
       $answer = $answer->answer ?? '';
 
       // $answer = $question->answers->answer ?? '';
-      
+
 
       $answer0 = ($answer == '0' ? $answer : '');
       $answer1 = ($answer == '1' ? $answer : '');
@@ -1216,9 +1216,9 @@ class FormBuilderController extends ApiController
     foreach ($response->assessment_tool->questions as $question) {
       $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->first();
       $quest = $question->title ?? '';
-      if($response->assessment_tool->id == '14'){
+      if ($response->assessment_tool->id == '14') {
         $answer1 = $answer->option->title ?? '';
-      } else{
+      } else {
         $answer1 = $answer->answer ?? '';
       }
       if ($question->type === 'multiple_choice') {
@@ -1370,7 +1370,7 @@ class FormBuilderController extends ApiController
                             </td>
                         </tr>";
     foreach ($response->assessment_tool->questions as $question) {
-    // foreach ($assessment_group->questions as $question) {
+      // foreach ($assessment_group->questions as $question) {
       $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->first();
       $quest = $question->title ?? '';
       $answer1 = $answer->option->title ?? '';
@@ -1655,17 +1655,20 @@ class FormBuilderController extends ApiController
       'activity' => 'required|string',
       'impact' => 'required|string',
       'next_steps' => 'required|string',
+      'id' => 'required|numeric'
     ]);
-    // dd($request);
+    // dd($request->all());
 
     if ($validator->fails()) {
       return $this->errorResponse($validator->messages(), 422);
     }
 
     $reportId = $validator->validated()['report_id'];
+    $id = $validator->validated()['id'];
 
     // Find the interaction based on the report_id
-    $interaction = Interaction::where('report_id', $reportId)->first();
+    // $interaction = Interaction::where('report_id', $reportId)->first();
+    $interaction = Interaction::where('id', $id)->first();
 
     if (!$interaction) {
       return $this->errorResponse('Create Note not found', 404);
