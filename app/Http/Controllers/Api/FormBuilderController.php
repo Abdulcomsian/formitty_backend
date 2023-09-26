@@ -27,6 +27,7 @@ use App\Models\UserDetail;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\TherapistCreated;
+use App\Models\AssessmentGroupPoint;
 
 //create complete crud operation using ajax
 class FormBuilderController extends ApiController
@@ -850,34 +851,38 @@ class FormBuilderController extends ApiController
             >Highest Domain Score (clinician)</td>
           </tr>";
     $count = 0;
-    foreach ($response->assessment_tool->questions as $question) {
-      $count++;
-      $quest = $question->title ?? '';
-      $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->first();
-      $answer = $answer->answer ?? '';
+    $group_point = 0;
+    foreach($response->assessment_tool->assessment_groups as $assessment_group) {
+      $assessment_group_point = AssessmentGroupPoint::where('response_id', $response->id)->where('assessment_group_id', $assessment_group->id)->first();
+      $group_point = $assessment_group_point->point;
+      foreach ($assessment_group->questions as $question) {
+        $count++;
+        $quest = $question->title ?? '';
+        $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->first();
+        $answer = $answer->answer ?? '';
+        // $answer = $question->answers->answer ?? '';
 
-      // $answer = $question->answers->answer ?? '';
 
+        $answer0 = ($answer == '0' ? $answer : '');
+        $answer1 = ($answer == '1' ? $answer : '');
+        $answer2 = ($answer == '2' ? $answer : '');
+        $answer3 = ($answer == '3' ? $answer : '');
+        $answer4 = ($answer == '4' ? $answer : '');
 
-      $answer0 = ($answer == '0' ? $answer : '');
-      $answer1 = ($answer == '1' ? $answer : '');
-      $answer2 = ($answer == '2' ? $answer : '');
-      $answer3 = ($answer == '3' ? $answer : '');
-      $answer4 = ($answer == '4' ? $answer : '');
-      $group_point = $question->assessmentGroup->point ?? '';
-
-      $section_html .= "
-            <tr>
-                <td rowspan='2' style='width: 4%; border: 1px solid black; text-align: center;'>" . $count . "</td>
-                <td style='width: 54%; border: 1px solid black'>" . $count . "  " . $quest . "</td>
-                <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer0</td>
-                <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer1</td>
-                <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer2</td>
-                <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer3</td>
-                <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer4</td>
-                <td style=' width: 7%; background-color: #DBE4F0; border: 1px solid black; text-align: center;'>" . $group_point . "</td>
-            </tr>";
+        $section_html .= "
+              <tr>
+                  <td rowspan='2' style='width: 4%; border: 1px solid black; text-align: center;'>" . $count . "</td>
+                  <td style='width: 54%; border: 1px solid black'>" . $count . "  " . $quest . "</td>
+                  <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer0</td>
+                  <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer1</td>
+                  <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer2</td>
+                  <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer3</td>
+                  <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer4</td>
+                  <td style=' width: 7%; background-color: #DBE4F0; border: 1px solid black; text-align: center;'>" . $group_point . "</td>
+              </tr>";
+      }
     }
+
     $section_html .= "
         </tbody>
         </table>";
@@ -956,47 +961,49 @@ class FormBuilderController extends ApiController
             >Highest Domain Score (clinician)</td>
           </tr>";
     $count = 0;
-    foreach ($response->assessment_tool->questions as $question) {
-      $count++;
-      $quest = $question->title ?? '';
-      $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->first();
-      $answer = $answer->answer ?? '';
+    foreach($response->assessment_tool->assessment_groups as $assessment_group) {
+        $assessment_group_point = AssessmentGroupPoint::where('response_id', $response->id)->where('assessment_group_id', $assessment_group->id)->first();
+        $group_point = $assessment_group_point->point;
+      foreach ($assessment_group->questions as $question) {
+        $count++;
+        $quest = $question->title ?? '';
+        $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->first();
+        $answer = $answer->answer ?? '';
 
-      $answer0 = ($answer == '0' ? $answer : '');
-      $answer1 = ($answer == '1' ? $answer : '');
-      $answer2 = ($answer == '2' ? $answer : '');
-      $answer3 = ($answer == '3' ? $answer : '');
-      $answer4 = ($answer == '4' ? $answer : '');
-      $group_point = $question->assessmentGroup->point ?? '';
+        $answer0 = ($answer == '0' ? $answer : '');
+        $answer1 = ($answer == '1' ? $answer : '');
+        $answer2 = ($answer == '2' ? $answer : '');
+        $answer3 = ($answer == '3' ? $answer : '');
+        $answer4 = ($answer == '4' ? $answer : '');
+        $yes = ($answer == 'Yes' ? $answer : '');
+        $no = ($answer == 'No' ? $answer : '');
+        $none = ($answer == 'Don\'t Know' ? $answer : '');
 
-      $yes = ($answer == 'Yes' ? $answer : '');
-      $no = ($answer == 'No' ? $answer : '');
-      $none = ($answer == 'Don\'t Know' ? $answer : '');
+        if ($question->type == 'multiple_choice') {
+          $section_html .= "
+                  <tr>
+                      <td rowspan='2' style='width: 4%; border: 1px solid black; text-align: center;'>" . $count . "</td>
+                      <td style='width: 54%; border: 1px solid black'>" . $count . "  " . $quest . "</td>
+                      <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer0</td>
+                      <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer1</td>
+                      <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer2</td>
+                      <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer3</td>
+                      <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer4</td>
+                      <td style=' width: 7%; background-color: #DBE4F0; border: 1px solid black; text-align: center;'>" . $group_point . "</td>
+                  </tr>";
+        }
 
-      if ($question->type == 'multiple_choice') {
-        $section_html .= "
-                <tr>
-                    <td rowspan='2' style='width: 4%; border: 1px solid black; text-align: center;'>" . $count . "</td>
-                    <td style='width: 54%; border: 1px solid black'>" . $count . "  " . $quest . "</td>
-                    <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer0</td>
-                    <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer1</td>
-                    <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer2</td>
-                    <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer3</td>
-                    <td style='width: 7%; border: 1px solid black; text-align: center;'>$answer4</td>
-                    <td style=' width: 7%; background-color: #DBE4F0; border: 1px solid black; text-align: center;'>" . $group_point . "</td>
-                </tr>";
-      }
-
-      if ($question->type == 'open_ended') {
-        $section_html .= "
-                <tr>
-                    <td rowspan='2' style='width: 4%; border: 1px solid black; text-align: center;'>" . $count . "</td>
-                    <td style='width: 54%; border: 1px solid black'>" . $count . "  " . $quest . "</td>
-                    <td style='width: 7%; border: 1px solid black; text-align: center;'>" . $yes . "</td>
-                    <td colspan='2' style='width: 7%; border: 1px solid black; text-align: center;'>" . $no . "</td>
-                    <td colspan='2' style='width: 7%; border: 1px solid black; text-align: center;'>" . $none . "</td>
-                    <td style=' width: 7%; background-color: #DBE4F0; border: 1px solid black; text-align: center;'>" . $group_point . "</td>
-                </tr>";
+        if ($question->type == 'open_ended') {
+          $section_html .= "
+                  <tr>
+                      <td rowspan='2' style='width: 4%; border: 1px solid black; text-align: center;'>" . $count . "</td>
+                      <td style='width: 54%; border: 1px solid black'>" . $count . "  " . $quest . "</td>
+                      <td style='width: 7%; border: 1px solid black; text-align: center;'>" . $yes . "</td>
+                      <td colspan='2' style='width: 7%; border: 1px solid black; text-align: center;'>" . $no . "</td>
+                      <td colspan='2' style='width: 7%; border: 1px solid black; text-align: center;'>" . $none . "</td>
+                      <td style=' width: 7%; background-color: #DBE4F0; border: 1px solid black; text-align: center;'>" . $group_point . "</td>
+                  </tr>";
+        }
       }
     }
     $section_html .= "
