@@ -475,9 +475,12 @@ class AssessmentToolController extends ApiController
         try {
             DB::beginTransaction();
             $validator = Validator::make($request->all(), [
-                'user_heading_id' => 'required|integer',
+                'user_heading_id' => 'required_without:assestment_id',
+                'assestment_id' => 'required_without:user_heading_id',
+                // 'user_heading_id' => 'required|integer',
                 'user_form_id' => 'required|integer',
-                'heading_type' => 'required',
+                'heading_type' => 'required_with:user_heading_id',
+                
             ]);
             if ($validator->fails()) {
                 return response()->json([
@@ -485,6 +488,12 @@ class AssessmentToolController extends ApiController
                     'errors' => $validator->errors()
                 ], 400);
             }
+
+            $userFormHeading = $request->user_heading_id;
+            $assestmentId = $request->assestment_id;
+
+            if(isset($userFormHeading) && !is_null($userFormHeading)){
+
             // $user_form_heading = UserFormHeading::where('user_form_id', $request->user_form_id)->where('heading_id', $request->user_heading_id)->where('heading_type', $request->heading_type)->first();
             $user_form_heading = UserFormHeading::where('user_form_id', $request->user_form_id)->where('heading_id', $request->user_heading_id)->where('heading_type', $request->heading_type)->first();
 
@@ -513,14 +522,19 @@ class AssessmentToolController extends ApiController
             }
 
             DB::commit();
-
+        }else{
+                $res = Response::where('id' , $assestmentId)->first();
+                $res->delete();
+                DB::commit();
+            
+        }
             // Return as separate variables
             return $this->successResponse([
-                'data' => $user_form_heading,
+                'data' => $user_form_heading ?? $assestmentId,
             ], 'Assessment tool deleted successfully!', 200);
         } catch (\Throwable $th) {
             DB::rollBack();
-            return $this->errorResponse($th->getMessage(), 401);
+            return $this->errorResponse($th->getMessage(), 500);
         }
     }
 }
