@@ -354,11 +354,11 @@ class AnimalSeeder extends Seeder
                 <table style='border-collapse: collapse;width: 100%;margin: auto;border: 1px solid lightslategray;'>
                     <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 20%; background-color: lightgrey; font-size: 17px'>Yes</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_schoold_attendance}}</td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_schoold_attendance_yes}}</td>
                     </tr>                   
                     <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 20%; background-color: lightgrey; font-size: 17px'>No</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_schoold_attendance}}</td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_schoold_attendance_no}}</td>
                     </tr>
                     <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 20%; background-color: lightgrey; font-size: 17px'>Describe</td>
@@ -1410,13 +1410,41 @@ class AnimalSeeder extends Seeder
         "name":"part_3_heading_extra_21",
         "access":false
      },
+     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Will the Assistance Animal Attending School with the participant?",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_22",
+        "access":false
+     },
+     {
+        "type":"checkbox-group",
+        "required":false,
+        "label":"Yes",
+        "toggle":false,
+        "inline":false,
+        "name":"part_3_schoold_attendance_yes",
+        "access":false,
+        "other":false,
+        "values":[
+           {
+              "label":"Option 1",
+              "value":"option-1",
+              "selected":true
+           }
+        ]
+     },
     {
        "type":"checkbox-group",
        "required":false,
-       "label":"Will the Assistance Animal Attending School with the participant?",
+       "label":"No",
        "toggle":false,
        "inline":false,
-       "name":"part_3_schoold_attendance",
+       "name":"part_3_schoold_attendance_no",
        "access":false,
        "other":false,
        "values":[
@@ -1428,7 +1456,7 @@ class AnimalSeeder extends Seeder
        ]
     },
     {
-       "type":"text",
+       "type":"textarea",
        "required":false,
        "label":"Describe",
        "placeholder":"Will the Assistance Animal Attending School with the participant? Describe",
@@ -1445,7 +1473,7 @@ class AnimalSeeder extends Seeder
         "label_3":"Where the assistance animal will be attending school provide evidence from school that the Assistance Animal is permitted to attend with the participant.",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_3_heading_extra_22",
+        "name":"part_3_heading_extra_23",
         "access":false
      },
     {
@@ -1466,7 +1494,7 @@ class AnimalSeeder extends Seeder
         "label_3":"Where the assistance animal will be attending school provide evidence that the school environment has been assessed as suitable for the Assistance Animal.",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_3_heading_extra_23",
+        "name":"part_3_heading_extra_24",
         "access":false
      },
     {
@@ -1487,7 +1515,7 @@ class AnimalSeeder extends Seeder
         "label_3":"Provide evidence that the Assistance Animal has passed the Public Access Test, as assessed by an unbiased independent assessor.",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_3_heading_extra_24",
+        "name":"part_3_heading_extra_25",
         "access":false
      },
     {
@@ -1508,7 +1536,7 @@ class AnimalSeeder extends Seeder
         "label_3":"Please provide details of the person who will take legal responsibility if something happens to the animal.",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_3_heading_extra_25",
+        "name":"part_3_heading_extra_26",
         "access":false
      },
     {
@@ -1529,7 +1557,7 @@ class AnimalSeeder extends Seeder
         "label_3":"Provide the Standards the Assistance Animal provider adheres to.",
         "placeholder":"Full Name",
         "className":"form-control",
-        "name":"part_3_heading_extra_26",
+        "name":"part_3_heading_extra_27",
         "access":false
      },
     {
