@@ -420,7 +420,8 @@ class FormBuilderController extends ApiController
     $usr_forms->userFormHeadings = $usr_forms->userFormHeadings->sortBy('order_id');
 
     $count = 1;
-    $html = View::make('users.sections.header')->render();
+    $view = 'users.sections.header'.$usr_forms->form_id;
+    $html = View::make($view)->render();
     $section_html = '';
     /*$image_path = asset('image.jpg');
         $image = $section->addImage(
