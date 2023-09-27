@@ -1964,32 +1964,23 @@ class ContinenceSeeder extends Seeder
             "name":"part_4_heading_extra_10",
             "access":false
          },
-          {
-             "type":"radio-group",
-             "required":true,
-             "label":"Participant Agreement",
-             "inline":false,
-             "name":"part_4_con_recomm_participant_agreement",
-             "access":false,
-             "other":false,
-             "values":[
-                {
-                   "label":"Yes",
-                   "value":"",
-                   "selected":true
-                },
-                {
-                   "label":"No",
-                   "value":"option-2",
-                   "selected":false
-                },
-                {
-                   "label":"Please provide details",
-                   "value":"option-3",
-                   "selected":false
-                }
-             ]
-          },
+         {
+          "type":"checkbox-group",
+          "required":false,
+          "label":"Participant Agreement",
+          "toggle":false,
+          "inline":false,
+          "name":"part_4_con_recomm_participant_agreement",
+          "access":false,
+          "other":false,
+          "values":[
+             {
+                "label":"YES/NO",
+                "value":"option-1",
+                "selected":true
+             }
+          ]
+       },
           {
              "type":"textarea",
              "required":false,
