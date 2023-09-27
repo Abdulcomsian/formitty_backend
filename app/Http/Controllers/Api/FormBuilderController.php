@@ -54,7 +54,7 @@ class FormBuilderController extends ApiController
 
       return $this->successResponse($forms, 'Form fields get successfully!.', 200);
     } catch (\Throwable $th) {
-      return $this->errorResponse($th->getMessage(), 401);
+      return $this->errorResponse($th->getMessage(), 500);
     }
   }
 
@@ -69,7 +69,7 @@ class FormBuilderController extends ApiController
 
       return $this->successResponse($forms, 'Form fields get successfully!.', 200);
     } catch (\Throwable $th) {
-      return $this->errorResponse($th->getMessage(), 401);
+      return $this->errorResponse($th->getMessage(), 500);
     }
   }
 
@@ -405,7 +405,7 @@ class FormBuilderController extends ApiController
 
       return $this->successResponseFormField($return_array, 'Document Generated Successfully.');
     } catch (\Throwable $th) {
-      return $this->errorResponse($th->getMessage(), 401);
+      return $this->errorResponse($th->getMessage(), 500);
     }
   }
 
@@ -1598,7 +1598,7 @@ class FormBuilderController extends ApiController
       $user_form_id->save();
       return $this->successResponse($user_form_id, 'Status marked as complete!.', 200);
     } catch (\Throwable $th) {
-      return $this->errorResponse($th->getMessage(), 401);
+      return $this->errorResponse($th->getMessage(), 500);
     }
   }
 
