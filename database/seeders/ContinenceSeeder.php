@@ -631,13 +631,13 @@ class ContinenceSeeder extends Seeder
                 <tr>
                   <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Yes</td>
                   <td style='border: 1px solid lightslategray; padding: 10px'>
-                    {{part_4_con_recomm_participant_agreement}}
+                    {{part_4_con_recomm_participant_agreement_yes}}
                   </td>
                 </tr>
                 <tr>
                   <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>No</td>
                   <td style='border: 1px solid lightslategray; padding: 10px'>
-                    {{part_4_con_recomm_participant_agreement}}
+                    {{part_4_con_recomm_participant_agreement_no}}
                   </td>
                 </tr>
                 <tr>
@@ -1967,10 +1967,10 @@ class ContinenceSeeder extends Seeder
          {
           "type":"checkbox-group",
           "required":false,
-          "label":"Participant Agreement",
+          "label":"Yes",
           "toggle":false,
           "inline":false,
-          "name":"part_4_con_recomm_participant_agreement",
+          "name":"part_4_con_recomm_participant_agreement_yes",
           "access":false,
           "other":false,
           "values":[
@@ -1981,6 +1981,23 @@ class ContinenceSeeder extends Seeder
              }
           ]
        },
+       {
+        "type":"checkbox-group",
+        "required":false,
+        "label":"No",
+        "toggle":false,
+        "inline":false,
+        "name":"part_4_con_recomm_participant_agreement_no",
+        "access":false,
+        "other":false,
+        "values":[
+           {
+              "label":"YES/NO",
+              "value":"option-1",
+              "selected":true
+           }
+        ]
+     },
           {
              "type":"textarea",
              "required":false,
