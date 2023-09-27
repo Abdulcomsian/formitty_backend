@@ -1,7 +1,7 @@
 <table style="background-color:#6a2c75; border:none; width:100%; margin-top:20px">
     <tr>
         <td>
-            <p style="font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white">  Notes for Assistive Technology Assessors of Prosthetics & Orthotics</p>
+            <p style="font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white">  Notes for Assistive Technology Assessors of Prosthetics And Orthotics</p>
         </td>
     </tr>
 </table>
