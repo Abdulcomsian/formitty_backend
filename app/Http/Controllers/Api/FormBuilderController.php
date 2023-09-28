@@ -28,6 +28,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\TherapistCreated;
 use App\Models\AssessmentGroupPoint;
+use App\Models\SpeechText;
 
 //create complete crud operation using ajax
 class FormBuilderController extends ApiController
@@ -297,13 +298,18 @@ class FormBuilderController extends ApiController
         $user_form_heading->delete();
       }
 
+      
       // delete the user form
       $user_form = UserForm::find($user_form_id);
       $user_form->delete();
-
-
+      
+      
       $response = self::storeFormField($request, $user_form_id);
 
+      //new code starts here
+      $formId = $response['user_form_id'];
+      Interaction::where('report_id' , $user_form_id)->update(['report_id' => $formId]);
+      SpeechText::where('report_id' , $user_form_id)->update(['report_id' => $formId]);
       DB::commit();
 
       return $this->successResponse($response, 'User form deleted successfully.');
