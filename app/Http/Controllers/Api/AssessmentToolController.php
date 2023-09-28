@@ -50,7 +50,7 @@ class AssessmentToolController extends ApiController
         }
 
         if (!auth('sanctum')->user()) {
-            return $this->errorResponse("User is not authenticated", 404);
+            return $this->errorResponse("User is not authenticated", 401);
         }
 
         $user_id = auth('sanctum')->user()->id;
@@ -295,7 +295,7 @@ class AssessmentToolController extends ApiController
     {
         try {
             if (!auth('sanctum')->user()) {
-                return $this->errorResponse("User is not authenticated", 404);
+                return $this->errorResponse("User is not authenticated", 401);
             }
 
             $user_id = auth('sanctum')->user()->id;
