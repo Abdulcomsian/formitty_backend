@@ -297,7 +297,8 @@ class FormBuilderController extends ApiController
 
 
         // delete the user form
-        $user_form = UserForm::find($user_form_id);
+        $user_form = UserForm::with('openaiResponse')->where('id', $user_form_id)->first();
+        $aiResponse = $user_form->openaiResponse; 
         $user_form->delete();
 
 
@@ -306,7 +307,7 @@ class FormBuilderController extends ApiController
         $formId = $response['user_form_id'];
         Interaction::where('report_id', $user_form_id)->update(['report_id' => $formId]);
         SpeechText::where('report_id', $user_form_id)->update(['report_id' => $formId]);
-        OpenaiResponse::where('form_id' , $user_form_id)->update(['form_id' => $formId]);
+        OpenaiResponse::create(['form_id' => $formId , 'note_response' => $aiResponse->note_response , 'audio_response' => $aiResponse->audio_response]);
 
 
         DB::commit();
