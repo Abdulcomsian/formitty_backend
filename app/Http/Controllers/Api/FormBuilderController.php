@@ -55,7 +55,7 @@ class FormBuilderController extends ApiController
 
       return $this->successResponse($forms, 'Form fields get successfully!.', 200);
     } catch (\Throwable $th) {
-      return $this->errorResponse($th->getMessage(), 401);
+      return $this->errorResponse($th->getMessage(), 500);
     }
   }
 
@@ -70,7 +70,7 @@ class FormBuilderController extends ApiController
 
       return $this->successResponse($forms, 'Form fields get successfully!.', 200);
     } catch (\Throwable $th) {
-      return $this->errorResponse($th->getMessage(), 401);
+      return $this->errorResponse($th->getMessage(), 500);
     }
   }
 
@@ -78,9 +78,10 @@ class FormBuilderController extends ApiController
   {
     $input = $request->all();
     $array = [];
+    $globalArray = [];
 
     if (!auth('sanctum')->user()) {
-      return $this->errorResponse("User is not authenticated", 404);
+      return $this->errorResponse("User is not authenticated", 401);
     }
 
     $user_id = auth('sanctum')->user()->id;
@@ -100,7 +101,16 @@ class FormBuilderController extends ApiController
         $name = $result[1];
         $order_id = $result[3];
         if ($name == 'assessment_tool') {
+        $heading_id = $result[2];
           $this->storeAssessmentToolOrder($name, $heading_id, $order_id, $value, $user_form, $update);
+          $globalArray[] =[
+            "name" => $name,
+            "heading_id" => $heading_id,
+            "order_id" => $order_id,
+            "value" => $value,
+            "user_form" => $user_form,
+            "update" => $update,
+          ];
           continue;
         }
       } else {
@@ -154,15 +164,15 @@ class FormBuilderController extends ApiController
     $success['file_path'] = $file_path;
     $success['fields'] = $input;
     $success['user_form_id'] = $user_form->id;
-    return  $success;
-    // return $this->successResponse($success, 'Document Generated Successfully.');
+    $success['assessmentDetail'] = $globalArray;
+    return $this->successResponse($success, 'Document Generated Successfully.');
   }
 
   private function createUserForm($request)
   {
 
     if (!auth('sanctum')->user()) {
-      return $this->errorResponse("User is not authenticated", 404);
+      return $this->errorResponse("User is not authenticated", 401);
     }
 
     $user_id = auth('sanctum')->user()->id;
@@ -412,7 +422,7 @@ class FormBuilderController extends ApiController
 
       return $this->successResponseFormField($return_array, 'Document Generated Successfully.');
     } catch (\Throwable $th) {
-      return $this->errorResponse($th->getMessage(), 401);
+      return $this->errorResponse($th->getMessage(), 500);
     }
   }
 
@@ -1516,7 +1526,7 @@ class FormBuilderController extends ApiController
       $form = Form::find($user_form->form_id);
 
       if (!$user_form) {
-        return $this->errorResponse("User form not found", 404);
+        return $this->errorResponse("User form not found", 401);
       }
 
       $user_form_headings = UserFormHeading::where('user_form_id', $user_form->id)
@@ -1605,7 +1615,7 @@ class FormBuilderController extends ApiController
       $user_form_id->save();
       return $this->successResponse($user_form_id, 'Status marked as complete!.', 200);
     } catch (\Throwable $th) {
-      return $this->errorResponse($th->getMessage(), 401);
+      return $this->errorResponse($th->getMessage(), 500);
     }
   }
 
