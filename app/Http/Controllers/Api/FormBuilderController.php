@@ -29,6 +29,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\TherapistCreated;
 use App\Models\AssessmentGroupPoint;
 use App\Models\SpeechText;
+use PhpOffice\PhpWord\SimpleType\Jc;
 
 //create complete crud operation using ajax
 class FormBuilderController extends ApiController
@@ -101,7 +102,7 @@ class FormBuilderController extends ApiController
         $name = $result[1];
         $order_id = $result[3];
         if ($name == 'assessment_tool') {
-        $heading_id = $result[2];
+          $heading_id = $result[2];
           $this->storeAssessmentToolOrder($name, $heading_id, $order_id, $value, $user_form, $update);
           continue;
         }
@@ -271,7 +272,7 @@ class FormBuilderController extends ApiController
 
   public function updateFormField(Request $request, $user_form_id)
   {
-    try{
+    try {
       DB::beginTransaction();
       $user_form = UserForm::find($user_form_id);
 
@@ -293,17 +294,17 @@ class FormBuilderController extends ApiController
           $user_form_heading->delete();
         }
 
-        
+
         // delete the user form
         $user_form = UserForm::find($user_form_id);
         $user_form->delete();
-        
-        
+
+
         $response = self::storeFormField($request, $user_form_id);
         //new code starts here
         $formId = $response['user_form_id'];
-        Interaction::where('report_id' , $user_form_id)->update(['report_id' => $formId]);
-        SpeechText::where('report_id' , $user_form_id)->update(['report_id' => $formId]);
+        Interaction::where('report_id', $user_form_id)->update(['report_id' => $formId]);
+        SpeechText::where('report_id', $user_form_id)->update(['report_id' => $formId]);
         DB::commit();
 
         return $this->successResponse($response, 'User form updated successfully.');
@@ -311,9 +312,8 @@ class FormBuilderController extends ApiController
         return $this->errorResponse('User form not found.', 404);
       }
     } catch (\Throwable $th) {
-      return $this->errorResponse($th->getMessage().' '.$th->getLine(), 500);
+      return $this->errorResponse($th->getMessage() . ' ' . $th->getLine(), 500);
     }
-    
   }
 
 
@@ -435,15 +435,9 @@ class FormBuilderController extends ApiController
     $usr_forms->userFormHeadings = $usr_forms->userFormHeadings->sortBy('order_id');
 
     $count = 1;
-    $view = 'users.sections.header'.$usr_forms->form_id;
+    $view = 'users.sections.header' . $usr_forms->form_id;
     $html = View::make($view)->render();
     $section_html = '';
-    /*$image_path = asset('image.jpg');
-        $image = $section->addImage(
-            'data:image/jpeg;base4,' . $image_path, // Use the base 4 notation as the image source
-            ['width' => 300, 'height' => 200] // Set the image size
-        );
-        $section_html = "<h1>".$image."</h1>";*/
     foreach ($usr_forms->userFormHeadings as $userFormHeading) {
       $count++;
       if ($userFormHeading->heading_type == 'custom') {
@@ -466,6 +460,20 @@ class FormBuilderController extends ApiController
 
       $html .= $section_html;
     }
+      $fontStyle = new \PhpOffice\PhpWord\Style\Font();
+      $fontStyle->setName('Arial')
+        ->setSize(18)
+        ->setColor('#6a2c75')
+        ->setBold(true);
+
+      $header = $section->addHeader();
+      $headerParagraph = $header->addTextRun(array('marginBottom' => 20));
+      $header->addImage(public_path('assets/images/Group.png'), [
+        'width' => 60, // Adjust the width as needed
+        'height' => 60, // Adjust the height as needed
+        'alignment' => Jc::END, // Center the image in the header
+    ]);
+      $headerParagraph->addText('Continence Related Assistive Technology Assessment Template', $fontStyle);
     // Save file
     // $fileName = "export_download.docx";
     \PhpOffice\PhpWord\Shared\Html::addHtml($section, $html, false, false);
@@ -557,8 +565,8 @@ class FormBuilderController extends ApiController
     if ($response->assessment_tool->id == '11' || $response->assessment_tool->id == '14') {
       $section_html2 = $this->createLSPTool($response, $section_html);
     }
-    if($response->assessment_tool->id == '12'){
-        $section_html2 = $this->createBarthalTool($response, $section_html);
+    if ($response->assessment_tool->id == '12') {
+      $section_html2 = $this->createBarthalTool($response, $section_html);
     }
     if ($response->assessment_tool->id == '13' || $response->assessment_tool->id == '18') {
       $section_html2 = $this->createCaregiverBurdenTool($response, $section_html);
@@ -868,7 +876,7 @@ class FormBuilderController extends ApiController
           </tr>";
     $count = 0;
     $group_point = 0;
-    foreach($response->assessment_tool->assessment_groups as $assessment_group) {
+    foreach ($response->assessment_tool->assessment_groups as $assessment_group) {
       $assessment_group_point = AssessmentGroupPoint::where('response_id', $response->id)
         ->where('assessment_group_id', $assessment_group->id)
         ->latest() // This will order the results by the created_at column in descending order (latest first).
@@ -980,13 +988,13 @@ class FormBuilderController extends ApiController
             >Highest Domain Score (clinician)</td>
           </tr>";
     $count = 0;
-    foreach($response->assessment_tool->assessment_groups as $assessment_group) {
-        $assessment_group_point = AssessmentGroupPoint::where('response_id', $response->id)
+    foreach ($response->assessment_tool->assessment_groups as $assessment_group) {
+      $assessment_group_point = AssessmentGroupPoint::where('response_id', $response->id)
         ->where('assessment_group_id', $assessment_group->id)
         ->latest() // This will order the results by the created_at column in descending order (latest first).
         ->first();
-  
-        $group_point = $assessment_group_point->point;
+
+      $group_point = $assessment_group_point->point;
       foreach ($assessment_group->questions as $question) {
         $count++;
         $quest = $question->title ?? '';
@@ -1213,7 +1221,7 @@ class FormBuilderController extends ApiController
                 <td style='width: 80%; border-top: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black; border-right: none'><table><tr><td>" . $quest . "</td></tr></table></td>";
       if ($response->assessment_tool->id == 16) {
         $section_html .= "<td style='width: 5%; text-align: center; border-top: 1px solid black; border-left: none; border-bottom: 1px solid black; border-right: 1px solid black'>" . $option . "</td>";
-        }
+      }
       $section_html .= "<td style='width: 15%; text-align: center; border-top: 1px solid black; border-left: none; border-bottom: 1px solid black; border-right: 1px solid black'>" . $answer1 . "</td>
               </tr>";
     }
@@ -1253,7 +1261,7 @@ class FormBuilderController extends ApiController
       $answer = Answer::with('option')->where('response_id', $response->id)->where('question_id', $question->id)->first();
       $quest = $question->title ?? '';
       // if ($response->assessment_tool->id == '14') {
-        $answer1 = $answer->option->title ?? '';
+      $answer1 = $answer->option->title ?? '';
       // } else {
       //   $answer1 = $answer->answer ?? '';
       // }
@@ -1457,7 +1465,7 @@ class FormBuilderController extends ApiController
         $answer1 = $answer->option->title ?? '';
         $score = $answer->option->point ?? '';
         $total = intval($score);
-        $total_score +=$total;
+        $total_score += $total;
         $section_html .= "<tr>
                                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'>
                                     <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>" . $quest . "</p>
