@@ -103,14 +103,6 @@ class FormBuilderController extends ApiController
         if ($name == 'assessment_tool') {
         $heading_id = $result[2];
           $this->storeAssessmentToolOrder($name, $heading_id, $order_id, $value, $user_form, $update);
-          $globalArray[] =[
-            "name" => $name,
-            "heading_id" => $heading_id,
-            "order_id" => $order_id,
-            "value" => $value,
-            "user_form" => $user_form,
-            "update" => $update,
-          ];
           continue;
         }
       } else {
@@ -165,7 +157,8 @@ class FormBuilderController extends ApiController
     $success['fields'] = $input;
     $success['user_form_id'] = $user_form->id;
     $success['assessmentDetail'] = $globalArray;
-    return $this->successResponse($success, 'Document Generated Successfully.');
+    return $success;
+    // return $this->successResponse($success, 'Document Generated Successfully.');
   }
 
   private function createUserForm($request)
@@ -187,7 +180,8 @@ class FormBuilderController extends ApiController
 
   private function storeAssessmentToolOrder($name, $heading_id, $order_id, $value, $user_form_data, $update)
   {
-    $user_form = Response::where('user_form_id', $update)->first();
+    // $user_form = Response::where('user_form_id', $update, '')->first();
+    $user_form = Response::find($heading_id);
     if ($user_form) {
       //            foreach ($user_forms as $user_form){
       $user_form->user_form_id = $user_form_data->id;
@@ -277,45 +271,49 @@ class FormBuilderController extends ApiController
 
   public function updateFormField(Request $request, $user_form_id)
   {
-    DB::beginTransaction();
-    $user_form = UserForm::find($user_form_id);
+    try{
+      DB::beginTransaction();
+      $user_form = UserForm::find($user_form_id);
 
-    if ($user_form) {
+      if ($user_form) {
 
-      // find all the user form headings that correspond to the given $user_form_id
-      $user_form_headings = UserFormHeading::where('user_form_id', $user_form_id)->get();
+        // find all the user form headings that correspond to the given $user_form_id
+        $user_form_headings = UserFormHeading::where('user_form_id', $user_form_id)->get();
 
-      foreach ($user_form_headings as $user_form_heading) {
-        // find all the form data that correspond to the user form heading
-        $form_data = FormData::where('user_form_heading_id', $user_form_heading->id)->get();
+        foreach ($user_form_headings as $user_form_heading) {
+          // find all the form data that correspond to the user form heading
+          $form_data = FormData::where('user_form_heading_id', $user_form_heading->id)->get();
 
-        // delete all the form data
-        foreach ($form_data as $data) {
-          $data->delete();
+          // delete all the form data
+          foreach ($form_data as $data) {
+            $data->delete();
+          }
+
+          // delete the user form heading
+          $user_form_heading->delete();
         }
 
-        // delete the user form heading
-        $user_form_heading->delete();
+        
+        // delete the user form
+        $user_form = UserForm::find($user_form_id);
+        $user_form->delete();
+        
+        
+        $response = self::storeFormField($request, $user_form_id);
+        //new code starts here
+        $formId = $response['user_form_id'];
+        Interaction::where('report_id' , $user_form_id)->update(['report_id' => $formId]);
+        SpeechText::where('report_id' , $user_form_id)->update(['report_id' => $formId]);
+        DB::commit();
+
+        return $this->successResponse($response, 'User form updated successfully.');
+      } else {
+        return $this->errorResponse('User form not found.', 404);
       }
-
-      
-      // delete the user form
-      $user_form = UserForm::find($user_form_id);
-      $user_form->delete();
-      
-      
-      $response = self::storeFormField($request, $user_form_id);
-
-      //new code starts here
-      $formId = $response['user_form_id'];
-      Interaction::where('report_id' , $user_form_id)->update(['report_id' => $formId]);
-      SpeechText::where('report_id' , $user_form_id)->update(['report_id' => $formId]);
-      DB::commit();
-
-      return $this->successResponse($response, 'User form deleted successfully.');
-    } else {
-      return $this->errorResponse('User form not found.', 404);
+    } catch (\Throwable $th) {
+      return $this->errorResponse($th->getMessage().' '.$th->getLine(), 500);
     }
+    
   }
 
 
