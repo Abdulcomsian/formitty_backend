@@ -28,6 +28,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\TherapistCreated;
 use App\Models\AssessmentGroupPoint;
+use App\Models\OpenaiResponse;
 use App\Models\SpeechText;
 
 //create complete crud operation using ajax
@@ -304,6 +305,9 @@ class FormBuilderController extends ApiController
         $formId = $response['user_form_id'];
         Interaction::where('report_id' , $user_form_id)->update(['report_id' => $formId]);
         SpeechText::where('report_id' , $user_form_id)->update(['report_id' => $formId]);
+        OpenaiResponse::where('form_id' , $user_form_id)->update(['form_id' => $formId]);
+
+
         DB::commit();
 
         return $this->successResponse($response, 'User form updated successfully.');
