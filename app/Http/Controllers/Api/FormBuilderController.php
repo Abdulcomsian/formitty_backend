@@ -307,7 +307,12 @@ class FormBuilderController extends ApiController
         $formId = $response['user_form_id'];
         Interaction::where('report_id', $user_form_id)->update(['report_id' => $formId]);
         SpeechText::where('report_id', $user_form_id)->update(['report_id' => $formId]);
-        OpenaiResponse::create(['form_id' => $formId , 'note_response' => $aiResponse->note_response , 'audio_response' => $aiResponse->audio_response]);
+        if(isset($aiResponse->note_response)){
+          OpenaiResponse::create(['form_id' => $formId , 'note_response' => $aiResponse->note_response]);
+        }
+        if(isset($aiResponse->audio_response)){
+          OpenaiResponse::create(['form_id' => $formId , 'audio_response' => $aiResponse->audio_response]);
+        }
 
 
         DB::commit();
