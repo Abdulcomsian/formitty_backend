@@ -495,67 +495,78 @@ class NutritionSeeder extends Seeder
 
 
 
-        $section7 = "<table style='background-color:#7209B7; border:none; width:100%;'>
-                        <tr>
-                            <td>
-                                <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'>  PART 7 – Consent to Collect and Share Your Information - Provider AT Assessment and Quotation(s)</p>
-                            </td>
-                        </tr>
-                    </table>
-                    <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'>For the participant to complete</p>
-                    <p style='margin-bottom: 10px'>As a participant who requires assistive technology supports, the National Disability Insurance Agency (NDIA) may need to contact your service providers, health and medical practitioners to discuss information within your assistive technology assessment and quotation(s). This will assist the NDIA with determining whether your request for assistive technology funded support(s) can be provided to you under the NDIS.</p>
-                    <p style='margin-bottom: 10px'>(indicate all relevant sections that apply)If you choose not to provide this consent, this may extend the time required in considering this request for assistive technology supports to be included in your NDIS plan.</p>
-                    <p style='margin-bottom: 10px'>(indicate all relevant sections that apply)Do you consent to the NDIA collecting and disclosing your information, including from these third parties mentioned above, in relation to your assistive technology assessment and quotation? (Please tick either the yes or no answer below.)</p>
-                    
-                    <table style=' width:100%; border: 1px solid black;'>
-                    <tr>
-                        <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Yes, I consent</td>
-                        <td style='width:60%; border: 1px solid black;'>{{part_7_consent_to_collect_share_your_information1}}</td>
-                    </tr>
-                    <tr>
-                        <td style='width:40%; background-color: lightgrey; font-size: 17px;'>No, I do not consent</td>
-                        <td style='width:60%; border: 1px solid black;'>{{part_7_consent_to_collect_share_your_information2}}</td>
-                    </tr>
-                    </table>
-                    <p style='margin-bottom: 10px'>When i sign this form:</p>
-                    <p style='margin-bottom: 10px'>I understand that I am giving consent to the NDIA to do the things with my information set out in Part 5. I understand that I can withdraw my consent for the NDIS to do things with my information at any time by letting the NDIA know.</p>
-                    <p style='margin-bottom: 10px'>I understand that I can access the NDIA’s Privacy Notice and Privacy Policy on the NDIA website or by contacting the NDIA.</p>
-                    <table style=' width:100%; border: 1px solid black;'>
-                    <tr>
-                        <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Signature</td>
-                        <td style='width:60%; border: 1px solid black;'>{{part_7_consent_to_collect_share_your_information3}}</td>
-                    </tr>
-                    <tr>
-                        <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Full name</td>
-                        <td style='width:60%; border: 1px solid black;'>{{part_7_consent_to_collect_share_your_information4}}</td>
-                    </tr>
-                    <tr>
-                        <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Date</td>
-                        <td style='width:60%; border: 1px solid black;'>{{part_7_consent_to_collect_share_your_information5}}</td>
-                    </tr>
-                    </table>
+        $section7 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
+        <tr>
+        <td>
+        <p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'>PART 7 – Consent to Collect and Share Your Information - Provider AT Assessment and Quotation(s)</p>
+        </td>
+        </tr>
+        </table>
 
-                    <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'>If you have signed this form on behalf of the NDIS participant,</p>
-                    <p style='margin-bottom: 10px'>please complete the details below. It is an offence to provide false or misleading information.</p>
-                    <p style='margin-bottom: 10px'>We may require you to provide evidence of your authority to sign on behalf of the person</p>
-                    <table style=' width:100%; border: 1px solid black;'>
-                    <tr>
-                        <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Signature</td>
-                        <td style='width:60%; border: 1px solid black;'>{{part_7_consent_to_collect_share_your_information6}}</td>
-                    </tr>
-                    <tr>
-                        <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Date</td>
-                        <td style='width:60%; border: 1px solid black;'>{{part_7_consent_to_collect_share_your_information7}}</td>
-                    </tr>
-                    <tr>
-                        <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Full Name of person completing this form (please print):</td>
-                        <td style='width:60%; border: 1px solid black;'>{{part_7_consent_to_collect_share_your_information8}}</td>
-                    </tr>
-                    <tr>
-                        <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Relationship to participant</td>
-                        <td style='width:60%; border: 1px solid black;'>{{part_7_consent_to_collect_share_your_information9}}</td>
-                    </tr>
-                    </table>";
+        <p style='font-size:12pt; margin-top:10px; margin-bottom:10px; font-weight: bold'>For the participant to complete</p>
+        <p style='font-size:12pt; margin-top:10px; margin-bottom:10px;'>As a participant who requires home modification and/or assistive technology supports, the National Disability Insurance Agency (NDIA) may need to contact your service providers, health and medical practitioners to discuss information within your assistive technology assessment and quotation(s). This will assist the NDIA with determining whether your request for assistive technology funded support(s) can be provided to you under the NDIS.If you choose not to provide this consent, this may extend the time required in considering this request for assistive technology supports to be included in your NDIS plan.Do you consent to the NDIA collecting and disclosing your information including from these third parties mentioned above, in relation to your assistive technology assessment and quotation?</p>
+
+        <table style='width:100%; margin-top: 10px; border: 1px solid black'>
+        <tr>
+        <td style='background-color: #efefef; width: 40%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'> Yes, I consent </p></td>
+        <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_01}}</p></td>
+        </tr>
+        <tr>
+        <td style='background-color: #efefef; width: 40%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'> No, I do not consent </p></td>
+        <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_02}}</p></td>
+        </tr>
+
+        <tr>
+        <td style='background-color: #efefef; width: 40%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'> Participant’s Signature When I sign this form: </p></td>
+        <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_03}}</p></td>
+        </tr>
+
+        <tr>
+        <td style='background-color: #efefef; width: 80%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  I understand that I am giving consent to the NDIA to do the things with my information set out in this section. I understand that I can withdraw my consent for the NDIS to do things with my information at any time by letting the NDIA know.</p></td>
+        <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_04}}</p></td>
+        </tr>
+        <tr>
+        <td style='background-color: #efefef; width: 80%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  I understand that I can access the NDIA’s Privacy Notice and Privacy Policy on the NDIA website or by contacting the NDIA.</p></td>
+        <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_05}}</p></td>
+        </tr>
+
+
+        <tr>
+        <td style='background-color: #efefef; width: 40%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Signature.</p></td>
+        <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_06}}</p></td>
+        </tr>
+        <tr>
+        <td style='background-color: #efefef; width: 40%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Date.</p></td>
+        <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_07}}</p></td>
+        </tr>
+        <tr>
+        <td style='background-color: #efefef; width: 40%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Full name </p></td>
+        <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_08}}</p></td>
+        </tr>
+       
+        </table>
+        <p style='font-size:12pt; margin-top: 10px; margin-bottom: 10px'><strong>If you have signed this Form on behalf of the NDIS participant,</strong>, please complete the details below. It is an offence to provide false or misleading information.</p>
+        <p style='font-size: 12pt; margin-bottom: 10px'>We may require you to provide evidence of your authority to sign on behalf of the person.</p>
+        <table style='width:100%; margin-top: 10px; border: 1px solid black'>
+
+        <tr>
+        <td style='background-color: #efefef; width: 40%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Signature</p></td>
+        <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_09}}</p></td>
+        </tr>
+        <tr>
+        <td style='background-color: #efefef; width: 40%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Date</p></td>
+        <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_10}}</p></td>
+        </tr>
+        <tr>
+        <td style='background-color: #efefef; width: 40%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Full Name of person completing this form (please print):</p></td>
+        <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_11}}</p></td>
+        </tr>
+        <tr>
+        <td style='background-color: #efefef; width: 40%; border-right: 1px solid black'><p style='margin-top:10px; margin-bottom:10px'>  Relationship to participant or person wishing to become an NDIS participant:</p></td>
+        <td style='border-right: 1px solid black;'><p style='margin-top:10px; margin-bottom:10px; font-weight: bold'>{{part_8_Consent_to_collect_and_share_your_information_12}}</p></td>
+        </tr>
+        </table>
+        <p></p>";
 
 
         $form_fields = '[
@@ -1533,123 +1544,179 @@ class NutritionSeeder extends Seeder
 
         $form_fields7 = '[
             {
-                "type":"heading",
-                "required":false,
-                "label_1":"For the participant to complete \nAs a participant who requires assistive technology supports, the National Disability Insurance Agency (NDIA) may need to contact your service providers, health and medical practitioners to discuss information within your assistive technology assessment and quotation(s). This will assist the NDIA with determining whether your request for assistive technology funded support(s) can be provided to you under the NDIS. \nIf you choose not to provide this consent, this may extend the time required in considering this request for assistive technology supports to be included in your NDIS plan. \nDo you consent to the NDIA collecting and disclosing your information, including from these third parties mentioned above, in relation to your assistive technology assessment and quotation? (Please tick either the yes or no answer below.)",
-                "placeholder":"Full Name",
-                "className":"form-control",
-                "name":"part_7_heading_extra_1",
-                "access":false
-             },
-        {
-            "type":"checkbox-group",
-            "required":false,
-            "label":"Yes, I consent",
-            "placeholder":"Yes, I consent",
-            "className":"form-control",
-            "name":"part_7_consent_to_collect_share_your_information1",
-            "access":false,
-            "subtype":"textarea"
-        },
-        {
-            "type":"checkbox-group",
-            "required":false,
-            "label":"No, I do not consent",
-            "placeholder":"No, I do not consent",
-            "className":"form-control",
-            "name":"part_7_consent_to_collect_share_your_information2",
-            "access":false,
-            "subtype":"textarea"
-        },
-        {
-            "type":"heading",
-            "required":false,
-            "label_1":"When I sign this form: \nI understand that I am giving consent to the NDIA to do the things with my information set out in Part 5. I understand that I can withdraw my consent for the NDIS to do things with my information at any time by letting the NDIA know. \nI understand that I can access the NDIA’s Privacy Notice and Privacy Policy on the NDIA website or by contacting the NDIA.",
-            "placeholder":"Full Name",
-            "className":"form-control",
-            "name":"part_7_heading_extra_2",
-            "access":false
-         },
-        {
-            "type":"text",
-            "required":false,
-            "label":"Signature",
-            "placeholder":"Signature",
-            "className":"form-control",
-            "name":"part_7_consent_to_collect_share_your_information3",
-            "access":false,
-            "subtype":"textarea"
-        },
-        {
-            "type":"date",
-            "required":false,
-            "label":"Date",
-            "placeholder":"Date",
-            "className":"form-control",
-            "name":"part_7_consent_to_collect_share_your_information4",
-            "access":false,
-            "subtype":"textarea"
-        },
-        {
-            "type":"text",
-            "required":false,
-            "label":"Full name",
-            "placeholder":"Full name",
-            "className":"form-control",
-            "name":"part_7_consent_to_collect_share_your_information5",
-            "access":false,
-            "subtype":"textarea"
-        },
-        {
-            "type":"heading",
-            "required":false,
-            "label_1":"If you have signed this form on behalf of the NDIS participant, please complete the details below. It is an offence to provide false or misleading information. \nWe may require you to provide evidence of your authority to sign on behalf of the person.",
-            "placeholder":"Full Name",
-            "className":"form-control",
-            "name":"part_7_heading_extra_3",
-            "access":false
-         },
-        {
-            "type":"text",
-            "required":false,
-            "label":"Signature",
-            "placeholder":"Signature",
-            "className":"form-control",
-            "name":"part_7_consent_to_collect_share_your_information6",
-            "access":false,
-            "subtype":"textarea"
-        },
-        {
-            "type":"date",
-            "required":false,
-            "label":"Date",
-            "placeholder":"Date",
-            "className":"form-control",
-            "name":"part_7_consent_to_collect_share_your_information7",
-            "access":false,
-            "subtype":"textarea"
-        },
-        {
-            "type":"text",
-            "required":false,
-            "label":"Full Name of person completing this form (please print):",
-            "placeholder":"Full Name of person completing this form (please print):",
-            "className":"form-control",
-            "name":"part_7_consent_to_collect_share_your_information8",
-            "access":false,
-            "subtype":"textarea"
-        },
-        {
-            "type":"text",
-            "required":false,
-            "label":"Relationship to participant",
-            "placeholder":"Relationship to participant",
-            "className":"form-control",
-            "name":"part_7_consent_to_collect_share_your_information9",
-            "access":false,
-            "subtype":"textarea"
-        }
-     ]';
+               "type": "heading",
+               "required": false,
+               "label_1": "",
+               "label_2": "For the participant to complete",
+               "label_3": "As a participant who requires home modification and/or assistive technology supports, the National Disability Insurance Agency (NDIA) may need to contact your service providers, health and medical practitioners to discuss information within your assistive technology assessment and quotation(s). This will assist the NDIA with determining whether your request for assistive technology funded support(s) can be provided to you under the NDIS. \nIf you choose not to provide this consent, this may extend the time required in considering this request for assistive technology supports to be included in your NDIS plan. \nDo you consent to the NDIA collecting and disclosing your information including from these third parties mentioned above, in relation to your assistive technology assessment and quotation?",
+               "placeholder": "Full Name",
+               "className": "form-control",
+               "name": "part_8_heading_extra_1",
+               "access": false
+            },
+            {
+               "type": "checkbox-group",
+               "required": false,
+               "label": "Yes, I consent",
+               "toggle": false,
+               "inline": false,
+               "name": "part_8_Consent_to_collect_and_share_your_information_01",
+               "access": false,
+               "other": false,
+               "values": [
+                  {
+                     "label": "YES/NO",
+                     "value": "option-1",
+                     "selected": true
+                  }
+               ]
+            },
+            {
+               "type": "checkbox-group",
+               "required": false,
+               "label": "No, I do not consent",
+               "toggle": false,
+               "inline": false,
+               "name": "part_8_Consent_to_collect_and_share_your_information_02",
+               "access": false,
+               "other": false,
+               "values": [
+                  {
+                     "label": "YES/NO",
+                     "value": "option-1",
+                     "selected": true
+                  }
+               ]
+            },
+            {
+               "type": "checkbox-group",
+               "required": false,
+               "label": "Participants Signature",
+               "toggle": false,
+               "inline": false,
+               "name": "part_8_Consent_to_collect_and_share_your_information_03",
+               "access": false,
+               "other": false,
+               "values": [
+                  {
+                     "label": "YES/NO",
+                     "value": "option-1",
+                     "selected": false
+                  }
+               ]
+            },
+            {
+               "type": "checkbox-group",
+               "required": false,
+               "label": "I understand that I am giving consent to the NDIA to do the things with my information set out in this section. I understand that I can withdraw my consent for the NDIS to do things with my information at any time by letting the NDIA know.",
+               "toggle": false,
+               "inline": false,
+               "name": "part_8_Consent_to_collect_and_share_your_information_04",
+               "access": false,
+               "other": false,
+               "values": [
+                  {
+                     "label": "YES/NO",
+                     "value": "option-1",
+                     "selected": false
+                  }
+               ]
+            },
+            {
+               "type": "checkbox-group",
+               "required": false,
+               "label": "I understand that I can access the NDIA’s Privacy Notice and Privacy Policy on the NDIA website(https://www.ndis.gov.au/about-us/operational-guidelines/information-handling-operational-guideline/information-handling-operational-guideline-privacy) or by contacting the NDIA (https://www.ndis.gov.au/contact).",
+               "toggle": false,
+               "inline": false,
+               "name": "part_8_Consent_to_collect_and_share_your_information_05",
+               "access": false,
+               "other": false,
+               "values": [
+                  {
+                     "label": "YES/NO",
+                     "value": "option-1",
+                     "selected": false
+                  }
+               ]
+            },
+            {
+               "type": "text",
+               "required": false,
+               "label": "Signature",
+               "placeholder": "Enter Signature",
+               "className": "form-control",
+               "name": "part_8_Consent_to_collect_and_share_your_information_06",
+               "access": false,
+               "subtype": "text"
+            },
+            {
+               "type": "date",
+               "required": false,
+               "label": "Date",
+               "placeholder": "Enter Date",
+               "className": "form-control",
+               "name": "part_8_Consent_to_collect_and_share_your_information_07",
+               "access": false,
+               "subtype": "text"
+            },
+            {
+               "type": "text",
+               "required": false,
+               "label": "Full Name",
+               "placeholder": "Enter Full Name",
+               "className": "form-control",
+               "name": "part_8_Consent_to_collect_and_share_your_information_08",
+               "access": false
+            },
+            {
+               "type": "heading",
+               "required": false,
+               "label_1": "",
+               "label_2": "",
+               "label_3": "If you have signed this Form on behalf of the NDIS participant, please complete the details below. \nNote: It is an offence to provide false or misleading information. \nWe may require you to provide evidence of your authority to sign on behalf of the person.",
+               "placeholder": "Full Name",
+               "className": "form-control",
+               "name": "part_8_heading_extra_2",
+               "access": false
+            },
+            {
+               "type": "text",
+               "required": false,
+               "label": "Signature",
+               "placeholder": "Enter Signature.",
+               "className": "form-control",
+               "name": "part_8_Consent_to_collect_and_share_your_information_09",
+               "access": false,
+               "subtype": "text"
+            },
+            {
+               "type": "date",
+               "required": false,
+               "label": "Date",
+               "placeholder": "Set Date of Assessment",
+               "className": "form-control",
+               "name": "part_8_Consent_to_collect_and_share_your_information_10",
+               "access": false
+            },
+            {
+               "type": "text",
+               "required": false,
+               "label": "Full Name of person completing this form (please print):",
+               "placeholder": "Full Name",
+               "className": "form-control",
+               "name": "part_8_Consent_to_collect_and_share_your_information_11",
+               "access": false
+            },
+            {
+               "type": "text",
+               "required": false,
+               "label": "Relationship to participant or person wishing to become an NDIS participant:",
+               "placeholder": "Relationship to participant",
+               "className": "form-control",
+               "name": "part_8_Consent_to_collect_and_share_your_information_12",
+               "access": false
+            }
+         ]';
 
         $form = Form::insertGetId([
             'name' => 'Nutrition and Dysphagia Assistive Technology Supports Assessment Template'
