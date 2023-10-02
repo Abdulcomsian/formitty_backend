@@ -274,7 +274,7 @@ class FormBuilderController extends ApiController
   public function updateFormField(Request $request, $user_form_id)
   {
     try {
-      DB::beginTransaction();
+      // DB::beginTransaction();
       $user_form = UserForm::find($user_form_id);
 
       if ($user_form) {
@@ -298,25 +298,22 @@ class FormBuilderController extends ApiController
 
         // delete the user form
         $user_form = UserForm::with('openaiResponse')->where('id', $user_form_id)->first();
-        $aiResponse = $user_form->openaiResponse;
+        $noteResponse = "";
+        $audioResponse = "";
+        if ($user_form->openaiResponse) {
+          $noteResponse = $user_form->openaiResponse->note_response ? $user_form->openaiResponse->note_response : "";
+          $audioResponse = $user_form->openaiResponse->audio_response ? $user_form->openaiResponse->audio_response : "";
+        }
         $user_form->delete();
-
-
         $response = self::storeFormField($request, $user_form_id);
         //new code starts here
         $formId = $response['user_form_id'];
         Interaction::where('report_id', $user_form_id)->update(['report_id' => $formId]);
         SpeechText::where('report_id', $user_form_id)->update(['report_id' => $formId]);
-        if (isset($aiResponse->note_response)) {
-          OpenaiResponse::create(['form_id' => $formId, 'note_response' => $aiResponse->note_response]);
+        if (strlen($audioResponse) > 0 || strlen($noteResponse) > 0) {
+          OpenaiResponse::create(['form_id' => $formId, 'note_response' => $noteResponse, 'audio_response' => $audioResponse]);
         }
-        if (isset($aiResponse->audio_response)) {
-          OpenaiResponse::create(['form_id' => $formId, 'audio_response' => $aiResponse->audio_response]);
-        }
-
-
         DB::commit();
-
         return $this->successResponse($response, 'User form updated successfully.');
       } else {
         return $this->errorResponse('User form not found.', 404);
