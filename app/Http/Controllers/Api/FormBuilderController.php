@@ -480,7 +480,6 @@ class FormBuilderController extends ApiController
     if ($usr_forms->form_id === 1) {
       // Create a header for the section
       $header = $section->addHeader();
-
       // Create a table with two columns in the header
       $table = $header->addTable();
       $table->addRow();
@@ -496,26 +495,21 @@ class FormBuilderController extends ApiController
     if ($usr_forms->form_id === 2) {
       // Create a header for the section
       $header = $section->addHeader();
-
       // Create a table with two columns in the header
       $table = $header->addTable();
-      $table->addRow();
-      // Add an image to the second column
-      $cell = $table->addCell(); // Adjust the width as needed
-      $imagePath = public_path('assets/images/National_Disability_Insurance_Scheme_logo.svg.png'); // Replace with the actual path to your image
-      $cell->addImage($imagePath, array('width' => 90, 'height' => 70));
-
       $table->addRow();
       // Add text to the first column
       $cell = $table->addCell(); // Adjust the width as needed
       $textRun = $cell->addTextRun();
       $textRun->addText('Assistance Animal Assessment Template', $fontStyle);
-      // Adjust the image width and height as needed
+      // Add an image to the second column
+      $cell = $table->addCell(); // Adjust the width as needed
+      $imagePath = public_path('assets/images/National_Disability_Insurance_Scheme_logo.svg.png'); // Replace with the actual path to your image
+      $cell->addImage($imagePath, array('width' => 90, 'height' => 70)); // Adjust the image width and height as needed
     }
     if ($usr_forms->form_id === 3) {
       // Create a header for the section
       $header = $section->addHeader();
-
       // Create a table with two columns in the header
       $table = $header->addTable();
       $table->addRow();
@@ -531,23 +525,21 @@ class FormBuilderController extends ApiController
     if ($usr_forms->form_id === 4) {
       // Create a header for the section
       $header = $section->addHeader();
-
       // Create a table with two columns in the header
       $table = $header->addTable();
       $table->addRow();
-      // Add an image to the second column
-      $cell = $table->addCell(); // Adjust the width as needed
-      $imagePath = public_path('assets/images/National_Disability_Insurance_Scheme_logo.svg.png'); // Replace with the actual path to your image
-      $cell->addImage($imagePath, array('width' => 90, 'height' => 70)); // Adjust the image width and height as needed
       // Add text to the first column
       $cell = $table->addCell(); // Adjust the width as needed
       $textRun = $cell->addTextRun();
       $textRun->addText('Hearing Devices and Hearing Technology Assessment Template', $fontStyle);
+      // Add an image to the second column
+      $cell = $table->addCell(); // Adjust the width as needed
+      $imagePath = public_path('assets/images/National_Disability_Insurance_Scheme_logo.svg.png'); // Replace with the actual path to your image
+      $cell->addImage($imagePath, array('width' => 90, 'height' => 70)); // Adjust the image width and height as needed
     }
     if ($usr_forms->form_id === 5) {
       // Create a header for the section
       $header = $section->addHeader();
-
       // Create a table with two columns in the header
       $table = $header->addTable();
       $table->addRow();
@@ -563,7 +555,6 @@ class FormBuilderController extends ApiController
     if ($usr_forms->form_id === 6) {
       // Create a header for the section
       $header = $section->addHeader();
-
       // Create a table with two columns in the header
       $table = $header->addTable();
       $table->addRow();
@@ -579,12 +570,11 @@ class FormBuilderController extends ApiController
     if ($usr_forms->form_id === 7) {
       // Create a header for the section
       $header = $section->addHeader();
-
       // Create a table with two columns in the header
       $table = $header->addTable();
       $table->addRow();
       // Add text to the first column
-      $cell = $table->addCell(10000); // Adjust the width as needed
+      $cell = $table->addCell(); // Adjust the width as needed
       $textRun = $cell->addTextRun();
       $textRun->addText('Dog Guide Assessment Template', $fontStyle);
       // Add an image to the second column
@@ -595,12 +585,11 @@ class FormBuilderController extends ApiController
     if ($usr_forms->form_id === 8) {
       // Create a header for the section
       $header = $section->addHeader();
-
       // Create a table with two columns in the header
       $table = $header->addTable();
       $table->addRow();
       // Add text to the first column
-      $cell = $table->addCell(10000); // Adjust the width as needed
+      $cell = $table->addCell(); // Adjust the width as needed
       $textRun = $cell->addTextRun();
       $textRun->addText('Prosthetics & Orthotics Assistive Technology Assessment Template', $fontStyle);
       // Add an image to the second column
