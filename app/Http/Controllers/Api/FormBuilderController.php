@@ -298,11 +298,11 @@ class FormBuilderController extends ApiController
 
         // delete the user form
         $user_form = UserForm::with('openaiResponse')->where('id', $user_form_id)->first();
-        $noteResponse = "";
-        $audioResponse = "";
+        $noteResponse = null;
+        $audioResponse = null;
         if ($user_form->openaiResponse) {
-          $noteResponse = $user_form->openaiResponse->note_response ? $user_form->openaiResponse->note_response : "";
-          $audioResponse = $user_form->openaiResponse->audio_response ? $user_form->openaiResponse->audio_response : "";
+          $noteResponse = $user_form->openaiResponse->note_response ? $user_form->openaiResponse->note_response : null;
+          $audioResponse = $user_form->openaiResponse->audio_response ? $user_form->openaiResponse->audio_response : null;
         }
         $user_form->delete();
         $response = self::storeFormField($request, $user_form_id);
