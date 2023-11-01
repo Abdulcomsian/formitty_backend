@@ -195,11 +195,12 @@ class AssessmentToolController extends ApiController
             $questionList = $request->all();
         // dd($questionList);
 
-        $assesmentId = $questionList['assessment_id'];
+        $assesmentId = $questionList['assessment_id'] ?? $response->assessment_tool_id;
+    
         $formId = $questionList['user_form_id'];
 
         $heading = AssessmentTool::find($assesmentId)->title;
-
+        
         $prompt = "I am an occupational therapist. Here is the response of the participants for the questionnaire named '$heading' Here is the questionnaire along with the participants' responses.";
 
         $questionType = ['open_ended' , 'multiple_choice'];
@@ -260,7 +261,7 @@ class AssessmentToolController extends ApiController
             $apiKey = env('OPENAI_CLIENT_KEY');
             $client = new Client();
     
-            $response = $client->post('https://api.openai.com/v1/engines/text-davinci-003/completions', [
+            $aiResponse = $client->post('https://api.openai.com/v1/engines/text-davinci-003/completions', [
                 'headers' => [
                     'Authorization' => 'Bearer ' . $apiKey,
                 ],
@@ -271,8 +272,9 @@ class AssessmentToolController extends ApiController
                 ],
             ]);
     
-            $data = json_decode($response->getBody());
+            $data = json_decode($aiResponse->getBody());
             $content = $data->choices[0]->text;
+    
 
            AssesmentAiResponse::updateOrCreate(
             ['assesment_tool_id' => $assesmentId, 'user_form_id' =>  $formId , 'response_id' => $response->id],
@@ -627,5 +629,25 @@ class AssessmentToolController extends ApiController
             DB::rollBack();
             return $this->errorResponse($th->getMessage(), 500);
         }
+    }
+
+    public function getReportResponse(Request $request){
+        $validator = Validator::make([
+            'response_id' => 'required|integer'
+        ]);
+        try{
+            if($validator->fails()){
+                return $this->errorResponse($validator->getMessageBag(), 500);
+            }else{
+                $response = Response::with('aiReport')->where('id' , $request->response_id);
+                return $this->successResponse([
+                    'data' => $response,
+                ], 'Response Found successfully!', 200);
+            }
+
+        }catch(\Exception $e){
+            return $this->errorResponse($e->getMessage(), 500);
+        }
+
     }
 }
