@@ -633,13 +633,13 @@ class AssessmentToolController extends ApiController
 
     public function getReportResponse(Request $request){
         $validator = Validator::make([
-            'response_id' => 'required|integer'
+            'user_assessment_id' => 'required|integer'
         ]);
         try{
             if($validator->fails()){
                 return $this->errorResponse($validator->getMessageBag(), 500);
             }else{
-                $response = Response::with('aiReport')->where('id' , $request->response_id);
+                $response = Response::with('aiReport')->where('id' , $request->user_assessment_id);
                 return $this->successResponse([
                     'data' => $response,
                 ], 'Response Found successfully!', 200);
