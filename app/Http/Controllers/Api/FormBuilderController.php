@@ -274,7 +274,7 @@ class FormBuilderController extends ApiController
   public function updateFormField(Request $request, $user_form_id)
   {
     try {
-      DB::beginTransaction();
+      // DB::beginTransaction();
       $user_form = UserForm::find($user_form_id);
 
       if ($user_form) {
@@ -298,25 +298,22 @@ class FormBuilderController extends ApiController
 
         // delete the user form
         $user_form = UserForm::with('openaiResponse')->where('id', $user_form_id)->first();
-        $aiResponse = $user_form->openaiResponse; 
+        $noteResponse = null;
+        $audioResponse = null;
+        if ($user_form->openaiResponse) {
+          $noteResponse = $user_form->openaiResponse->note_response ? $user_form->openaiResponse->note_response : null;
+          $audioResponse = $user_form->openaiResponse->audio_response ? $user_form->openaiResponse->audio_response : null;
+        }
         $user_form->delete();
-
-
         $response = self::storeFormField($request, $user_form_id);
         //new code starts here
         $formId = $response['user_form_id'];
         Interaction::where('report_id', $user_form_id)->update(['report_id' => $formId]);
         SpeechText::where('report_id', $user_form_id)->update(['report_id' => $formId]);
-        if(isset($aiResponse->note_response)){
-          OpenaiResponse::create(['form_id' => $formId , 'note_response' => $aiResponse->note_response]);
+        if (strlen($audioResponse) > 0 || strlen($noteResponse) > 0) {
+          OpenaiResponse::create(['form_id' => $formId, 'note_response' => $noteResponse, 'audio_response' => $audioResponse]);
         }
-        if(isset($aiResponse->audio_response)){
-          OpenaiResponse::create(['form_id' => $formId , 'audio_response' => $aiResponse->audio_response]);
-        }
-
-
         DB::commit();
-
         return $this->successResponse($response, 'User form updated successfully.');
       } else {
         return $this->errorResponse('User form not found.', 404);
@@ -470,20 +467,133 @@ class FormBuilderController extends ApiController
 
       $html .= $section_html;
     }
-      $fontStyle = new \PhpOffice\PhpWord\Style\Font();
-      $fontStyle->setName('Arial')
-        ->setSize(18)
-        ->setColor('#6a2c75')
-        ->setBold(true);
 
+    $fontStyle = new \PhpOffice\PhpWord\Style\Font();
+    $fontStyle->setName('Arial')
+      ->setSize(18)
+      ->setColor('#6a2c75')
+      ->setBold(true);
+
+    if ($usr_forms->form_id === 1) {
+      // Create a header for the section
       $header = $section->addHeader();
-      $headerParagraph = $header->addTextRun(array('marginBottom' => 20));
-      $header->addImage(public_path('assets/images/Group.png'), [
-        'width' => 60, // Adjust the width as needed
-        'height' => 60, // Adjust the height as needed
-        'alignment' => Jc::END, // Center the image in the header
-    ]);
-      $headerParagraph->addText('Continence Related Assistive Technology Assessment Template', $fontStyle);
+      // Create a table with two columns in the header
+      $table = $header->addTable();
+      $table->addRow();
+      // Add text to the first column
+      $cell = $table->addCell(); // Adjust the width as needed
+      $textRun = $cell->addTextRun();
+      $textRun->addText('Continence Related Assistive Technology Assessment Template', $fontStyle);
+      // Add an image to the second column
+      $cell = $table->addCell(); // Adjust the width as needed
+      $imagePath = public_path('assets/images/National_Disability_Insurance_Scheme_logo.svg.png'); // Replace with the actual path to your image
+      $cell->addImage($imagePath, array('width' => 90, 'height' => 70)); // Adjust the image width and height as needed
+    }
+    if ($usr_forms->form_id === 2) {
+      // Create a header for the section
+      $header = $section->addHeader();
+      // Create a table with two columns in the header
+      $table = $header->addTable();
+      $table->addRow();
+      // Add text to the first column
+      $cell = $table->addCell(); // Adjust the width as needed
+      $textRun = $cell->addTextRun();
+      $textRun->addText('Assistance Animal Assessment Template', $fontStyle);
+      // Add an image to the second column
+      $cell = $table->addCell(); // Adjust the width as needed
+      $imagePath = public_path('assets/images/National_Disability_Insurance_Scheme_logo.svg.png'); // Replace with the actual path to your image
+      $cell->addImage($imagePath, array('width' => 90, 'height' => 70)); // Adjust the image width and height as needed
+    }
+    if ($usr_forms->form_id === 3) {
+      // Create a header for the section
+      $header = $section->addHeader();
+      // Create a table with two columns in the header
+      $table = $header->addTable();
+      $table->addRow();
+      // Add text to the first column
+      $cell = $table->addCell(); // Adjust the width as needed
+      $textRun = $cell->addTextRun();
+      $textRun->addText('Complex Home Modification Assessment Template', $fontStyle);
+      // Add an image to the second column
+      $cell = $table->addCell(); // Adjust the width as needed
+      $imagePath = public_path('assets/images/National_Disability_Insurance_Scheme_logo.svg.png'); // Replace with the actual path to your image
+      $cell->addImage($imagePath, array('width' => 90, 'height' => 70)); // Adjust the image width and height as needed
+    }
+    if ($usr_forms->form_id === 4) {
+      // Create a header for the section
+      $header = $section->addHeader();
+      // Create a table with two columns in the header
+      $table = $header->addTable();
+      $table->addRow();
+      // Add text to the first column
+      $cell = $table->addCell(); // Adjust the width as needed
+      $textRun = $cell->addTextRun();
+      $textRun->addText('Hearing Devices and Hearing Technology Assessment Template', $fontStyle);
+      // Add an image to the second column
+      $cell = $table->addCell(); // Adjust the width as needed
+      $imagePath = public_path('assets/images/National_Disability_Insurance_Scheme_logo.svg.png'); // Replace with the actual path to your image
+      $cell->addImage($imagePath, array('width' => 90, 'height' => 70)); // Adjust the image width and height as needed
+    }
+    if ($usr_forms->form_id === 5) {
+      // Create a header for the section
+      $header = $section->addHeader();
+      // Create a table with two columns in the header
+      $table = $header->addTable();
+      $table->addRow();
+      // Add text to the first column
+      $cell = $table->addCell(); // Adjust the width as needed
+      $textRun = $cell->addTextRun();
+      $textRun->addText('Vehicle Modification Assessment Template', $fontStyle);
+      // Add an image to the second column
+      $cell = $table->addCell(); // Adjust the width as needed
+      $imagePath = public_path('assets/images/National_Disability_Insurance_Scheme_logo.svg.png'); // Replace with the actual path to your image
+      $cell->addImage($imagePath, array('width' => 90, 'height' => 70)); // Adjust the image width and height as needed
+    }
+    if ($usr_forms->form_id === 6) {
+      // Create a header for the section
+      $header = $section->addHeader();
+      // Create a table with two columns in the header
+      $table = $header->addTable();
+      $table->addRow();
+      // Add text to the first column
+      $cell = $table->addCell(); // Adjust the width as needed
+      $textRun = $cell->addTextRun();
+      $textRun->addText('Nutrition and Dysphagia Assistive Technology Supports Assessment Template', $fontStyle);
+      // Add an image to the second column
+      $cell = $table->addCell(); // Adjust the width as needed
+      $imagePath = public_path('assets/images/National_Disability_Insurance_Scheme_logo.svg.png'); // Replace with the actual path to your image
+      $cell->addImage($imagePath, array('width' => 90, 'height' => 70)); // Adjust the image width and height as needed
+    }
+    if ($usr_forms->form_id === 7) {
+      // Create a header for the section
+      $header = $section->addHeader();
+      // Create a table with two columns in the header
+      $table = $header->addTable();
+      $table->addRow();
+      // Add text to the first column
+      $cell = $table->addCell(); // Adjust the width as needed
+      $textRun = $cell->addTextRun();
+      $textRun->addText('Dog Guide Assessment Template', $fontStyle);
+      // Add an image to the second column
+      $cell = $table->addCell(); // Adjust the width as needed
+      $imagePath = public_path('assets/images/National_Disability_Insurance_Scheme_logo.svg.png'); // Replace with the actual path to your image
+      $cell->addImage($imagePath, array('width' => 90, 'height' => 70)); // Adjust the image width and height as needed
+    }
+    if ($usr_forms->form_id === 8) {
+      // Create a header for the section
+      $header = $section->addHeader();
+      // Create a table with two columns in the header
+      $table = $header->addTable();
+      $table->addRow();
+      // Add text to the first column
+      $cell = $table->addCell(); // Adjust the width as needed
+      $textRun = $cell->addTextRun();
+      $textRun->addText('Prosthetics & Orthotics Assistive Technology Assessment Template', $fontStyle);
+      // Add an image to the second column
+      $cell = $table->addCell(); // Adjust the width as needed
+      $imagePath = public_path('assets/images/National_Disability_Insurance_Scheme_logo.svg.png'); // Replace with the actual path to your image
+      $cell->addImage($imagePath, array('width' => 90, 'height' => 70)); // Adjust the image width and height as needed
+    }
     // Save file
     // $fileName = "export_download.docx";
     \PhpOffice\PhpWord\Shared\Html::addHtml($section, $html, false, false);
