@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\AssesmentAiResponse;
 
 class Response extends Model
 {
@@ -33,5 +34,9 @@ class Response extends Model
     public function answers()
     {
         return $this->hasMany(Answer::class);
+    }
+
+    public function aiReport(){
+        return $this->hasOne(AssesmentAiResponse::class , 'response_id' , 'id');
     }
 }

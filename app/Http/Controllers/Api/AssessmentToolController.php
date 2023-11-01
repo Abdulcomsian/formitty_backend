@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\View;
 use App\Models\Question;
 use App\Models\FlowchartResponse;
 use App\Models\Answer;
+use App\Models\AssesmentAiResponse;
 use App\Models\Response;
 use App\Models\FlowchartAnswer;
 use App\Models\AssessmentGroup;
@@ -92,6 +93,7 @@ class AssessmentToolController extends ApiController
     {
         $input = $request->all();
 
+
         try {
 
             if (!auth('sanctum')->user()) {
@@ -128,7 +130,7 @@ class AssessmentToolController extends ApiController
                 $name = $result[0];
                 $question_id = $result[1] ?? null;
                 $option_id = $result[2] ?? null;
-
+                
                 if ($name == 'multiple_choice') {
                     $answer = new Answer([
                         'question_id' => $question_id,
@@ -188,6 +190,95 @@ class AssessmentToolController extends ApiController
                 $answer->save();
             }
 
+            //open ai code starts here
+
+            $questionList = $request->all();
+        // dd($questionList);
+
+        $assesmentId = $questionList['assessment_id'];
+        $formId = $questionList['user_form_id'];
+
+        $heading = AssessmentTool::find($assesmentId)->title;
+
+        $prompt = "I am an occupational therapist. Here is the response of the participants for the questionnaire named '$heading' Here is the questionnaire along with the participants' responses.";
+
+        $questionType = ['open_ended' , 'multiple_choice'];
+        $questionIds = [];
+        $arrayDetail = [];
+        $index = 0;
+        foreach($questionList as $key => $question){
+           $element =  explode("-" , $key);
+           if(in_array($element[0] , $questionType)){
+                $questionIds[] =  (int)$element[1];
+                $arrayDetail[] = ["index" => $index , "value" => $question];
+           }
+           $index++;
+        }
+        // Ques
+        $questions = Question::whereIn('id' , $questionIds)->get();
+        
+        $check = [0,1,2,3,4];
+        // dd($questions);
+        foreach($questions as $index => $question){
+                $prompt .= "Question: ".$question->title." \n";
+                // if($question->id == 110)
+                // dd($arrayDetail[$index]["value"], $index);
+                
+                if($question->type == 'multiple_choice'){
+                    if(in_array( (int)$arrayDetail[$index]["value"] , $check)){
+                        switch((int)$arrayDetail[$index]["value"]){
+                            case 0:
+                                $prompt .= "Answer: (None) Not At All \n";
+                            break;
+                            case 1:
+                                $prompt .= "Answer: Slight (Rare, less than a day or two) \n";
+                            break;
+                            case 2:
+                                $prompt .= "Answer: Mild (Several days) \n";
+                            break;
+                            case 3:
+                                $prompt .= "Answer: Moderate (More than half the days) \n";
+                            break;
+                            default:
+                                $prompt .= "Answer: Severe (Nearly every day) \n";
+
+                        }
+                    }else{
+                        $prompt .= "Answer: ".$arrayDetail[$index]["value"]." \n";
+                    }
+                }else{
+                    $prompt .= "Answer: ".$arrayDetail[$index]["value"]." \n";
+                }
+                // $prompt .= 
+        }
+
+        $prompt .=  "Please generate a brief summary of the data.";
+
+
+
+
+            $apiKey = env('OPENAI_CLIENT_KEY');
+            $client = new Client();
+    
+            $response = $client->post('https://api.openai.com/v1/engines/text-davinci-003/completions', [
+                'headers' => [
+                    'Authorization' => 'Bearer ' . $apiKey,
+                ],
+                'json' => [
+                    'prompt' => $prompt,
+                    'max_tokens' => 500,
+                    'temperature' => 0.8
+                ],
+            ]);
+    
+            $data = json_decode($response->getBody());
+            $content = $data->choices[0]->text;
+
+           AssesmentAiResponse::updateOrCreate(
+            ['assesment_tool_id' => $assesmentId, 'user_form_id' =>  $formId , 'response_id' => $response->id],
+            ['assesment_tool_id' => $assesmentId, 'user_form_id' =>  $formId , 'assesment_questions' => $prompt , 'assesment_openai_response' => $content, 'response_id' => $response->id],
+           );
+            //open ai code ends here
 
             return $this->successResponse($response, 'Questions get successfully!.', 200);
         } catch (\Throwable $th) {
