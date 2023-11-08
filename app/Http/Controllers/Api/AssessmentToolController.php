@@ -58,7 +58,7 @@ class AssessmentToolController extends ApiController
 
         try {
             $assessment_tools = [];
-            $assessment_tools[] = Response::with('assessment_tool')->where([['user_id', $user_id], ['user_form_id', $request->user_form_id]])->get();
+            $assessment_tools[] = Response::with('assessment_tool' , 'aiReport')->where([['user_id', $user_id], ['user_form_id', $request->user_form_id]])->get();
             $assessment_tools[] = FlowchartResponse::with('assessment_tool')->where([['user_id', $user_id], ['user_form_id', $request->user_form_id]])->get();
             return $this->successResponse($assessment_tools, 'Assessment tools get successfully!.', 200);
         } catch (\Throwable $th) {
@@ -632,14 +632,14 @@ class AssessmentToolController extends ApiController
     }
 
     public function getReportResponse(Request $request){
-        $validator = Validator::make([
+        $validator = Validator::make($request->all(),[
             'user_assessment_id' => 'required|integer'
         ]);
         try{
             if($validator->fails()){
                 return $this->errorResponse($validator->getMessageBag(), 500);
             }else{
-                $response = Response::with('aiReport')->where('id' , $request->user_assessment_id);
+                $response = Response::with('aiReport')->where('id' , $request->user_assessment_id)->first();
                 return $this->successResponse([
                     'data' => $response,
                 ], 'Response Found successfully!', 200);
