@@ -55,7 +55,6 @@ class AssessmentToolController extends ApiController
         }
 
         $user_id = auth('sanctum')->user()->id;
-
         try {
             $assessment_tools = [];
             $assessment_tools[] = Response::with('assessment_tool' , 'aiReport')->where([['user_id', $user_id], ['user_form_id', $request->user_form_id]])->get();
@@ -277,8 +276,8 @@ class AssessmentToolController extends ApiController
     
 
            AssesmentAiResponse::updateOrCreate(
-            ['assesment_tool_id' => $assesmentId, 'user_form_id' =>  $formId , 'response_id' => $response->id],
-            ['assesment_tool_id' => $assesmentId, 'user_form_id' =>  $formId , 'assesment_questions' => $prompt , 'assesment_openai_response' => $content, 'response_id' => $response->id],
+            ['assesment_tool_id' => $assesmentId, 'response_id' => $response->id],
+            ['assesment_tool_id' => $assesmentId,  'assesment_questions' => $prompt , 'assesment_openai_response' => $content, 'response_id' => $response->id],
            );
             //open ai code ends here
 

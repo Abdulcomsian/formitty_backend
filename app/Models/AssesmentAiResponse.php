@@ -14,9 +14,6 @@ class AssesmentAiResponse extends Model
     protected $primaryKey = "id";
     protected $fillable = ["user_form_id" , "assesment_tool_id" , "assesment_questions" , "assesment_openai_response" , "response_id" , "user_form_heading_id"];
     
-    public function form(){
-        return $this->belongsTo(UserForm::class , 'user_form_id' , 'id');
-    } 
 
     public function assesmentTool(){
         return $this->belongsTo(AssessmentTool::class , 'assesment_tool_id' , 'id');

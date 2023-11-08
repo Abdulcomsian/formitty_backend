@@ -16,15 +16,13 @@ return new class extends Migration
         Schema::create('assesment_ai_response', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('assesment_tool_id');
-            $table->unsignedBigInteger('user_form_id');
-            $table->unsignedBigInteger('response_id');
-            $table->unsignedBigInteger('user_form_heading_id');
+            $table->unsignedBigInteger('response_id')->nullable();
+            $table->unsignedBigInteger('user_form_heading_id')->nullable();
             $table->longText('assesment_questions');
             $table->longText('assesment_openai_response');
             $table->foreign('assesment_tool_id')->references('id')->on('assessment_tools')->onDelete('cascade');
-            $table->foreign('user_form_id')->references('id')->on('user_form')->onDelete('cascade');
-            $table->foreign('response_id')->references('id')->on('responses')->nullable();
-            $table->foreign('user_form_heading_id')->references('id')->on('user_form_headings')->nullable();
+            $table->foreign('response_id')->references('id')->on('responses');
+            $table->foreign('user_form_heading_id')->references('id')->on('user_form_headings');
             $table->timestamps();
         });
     }
