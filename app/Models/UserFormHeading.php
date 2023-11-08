@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\{ AssesmentAiResponse };
 
 class UserFormHeading extends Model
 {
@@ -23,5 +24,10 @@ class UserFormHeading extends Model
     public function formData()
     {
         return $this->hasMany(FormData::class, 'user_form_heading_id', 'id');
+    }
+
+    public function aiReport()
+    {
+        return $this->hasOne(AssesmentAiResponse::class , 'user_form_heading_id' , 'id');
     }
 }
