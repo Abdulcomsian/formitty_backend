@@ -183,7 +183,8 @@ class FormBuilderController extends ApiController
   private function storeAssessmentToolOrder($name, $heading_id, $order_id, $value, $user_form_data, $update)
   {
     // $user_form = Response::where('user_form_id', $update, '')->first();
-    $user_form = Response::find($heading_id);
+    // $user_form = Response::find($heading_id);
+    $user_form = Response::with('aiReport')->where('id' , $heading_id)->first();
     if ($user_form) {
       //            foreach ($user_forms as $user_form){
       $user_form->user_form_id = $user_form_data->id;
@@ -196,6 +197,15 @@ class FormBuilderController extends ApiController
       $userFormHeading->user_form_id = $user_form_data->id;
       $userFormHeading->heading_type = 'assessment_tool';
       $userFormHeading->save();
+
+      $aiReport = $user_form->aiReport;
+      if($aiReport){
+        $aiReport->user_form_heading_id = $userFormHeading->id;
+        $aiReport->response_id = null;
+        $aiReport->user_form_id = $user_form->id;
+        $aiReport->save();
+      }
+
     }
     //        }
   }

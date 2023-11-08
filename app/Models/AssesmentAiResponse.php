@@ -12,7 +12,7 @@ class AssesmentAiResponse extends Model
 
     protected $table = "assesment_ai_response";
     protected $primaryKey = "id";
-    protected $fillable = ["user_form_id" , "assesment_tool_id" , "assesment_questions" , "assesment_openai_response" , "response_id"];
+    protected $fillable = ["user_form_id" , "assesment_tool_id" , "assesment_questions" , "assesment_openai_response" , "response_id" , "user_form_heading_id"];
     
     public function form(){
         return $this->belongsTo(UserForm::class , 'user_form_id' , 'id');
@@ -24,6 +24,10 @@ class AssesmentAiResponse extends Model
 
     public function response(){
         return $this->belongsTo(Response::class , 'response_id' , 'id');
-    }     
+    } 
+    
+    public function formHeading(){
+        return $this->belongsTo(Response::class , 'user_form_heading_id' , 'id');
+    } 
 
 }
