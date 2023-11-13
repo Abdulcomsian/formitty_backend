@@ -24,6 +24,7 @@ return new class extends Migration
             $table->foreign('response_id')->references('id')->on('responses')->onDelete('cascade');
             $table->foreign('user_form_heading_id')->references('id')->on('user_form_headings')->onDelete('cascade');
             $table->timestamps();
+            
         });
     }
 
