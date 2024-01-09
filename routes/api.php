@@ -5,8 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\FormBuilderController;
 use App\Http\Controllers\Api\AssessmentToolController;
-use App\Http\Controllers\{ HomeController , SpeechController};
+use App\Http\Controllers\{ HomeController , OpenAiConfigurationController, SpeechController , SubscriptionController , StripeController};
 use App\Http\Controllers\Api\DashboardController;
+use App\Models\OpenAiConfiguration;
+use Google\Service\AnalyticsHub\Subscription;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +49,14 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('store-questions', [AssessmentToolController::class, 'storeQuestions']);
     Route::post('store-flowchart', [AssessmentToolController::class, 'storeFlowChart']);
     Route::post('delete-assessmenttool', [AssessmentToolController::class, 'deleteAssessmentTool']);
+    Route::post('update-open-ai-configuration' , [OpenAiConfigurationController::class , 'updateConfigurationKey']);
+    Route::get('get-open-ai-configuration' , [OpenAiConfigurationController::class , 'getOpenAiConfiguration']);
+
+    //subscription route starts here
+    Route::get('get-subscription-plans' , [SubscriptionController::class , 'getSubscriptionPlan']);
+    Route::post('create-payment-intent' , [StripeController::class , 'getPaymentIntent']);
+    //subscription route ends here
+
 });
    
 Route::post('get-user-forms', [FormBuilderController::class, 'getUserForm']);
@@ -76,6 +86,8 @@ Route::post('/update-create-note', [FormBuilderController::class, 'updateCreateN
 Route::post('/store-therapist', [FormBuilderController::class, 'storeTherapists']);
 Route::post('store-openai-responses' , [AssessmentToolController::class , 'storeOpenAiResponses']);
 Route::post('get-chatgpt-prompts' , [AssessmentToolController::class , 'chatgptPrompts']);
+
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request)
 {

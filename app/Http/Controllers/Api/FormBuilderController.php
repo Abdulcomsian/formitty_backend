@@ -184,6 +184,7 @@ class FormBuilderController extends ApiController
   {
     // $user_form = Response::where('user_form_id', $update, '')->first();
     $user_form = Response::find($heading_id);
+    // $user_form = Response::with('aiReport')->where('id' , $heading_id)->first();
     if ($user_form) {
       //            foreach ($user_forms as $user_form){
       $user_form->user_form_id = $user_form_data->id;
@@ -196,6 +197,15 @@ class FormBuilderController extends ApiController
       $userFormHeading->user_form_id = $user_form_data->id;
       $userFormHeading->heading_type = 'assessment_tool';
       $userFormHeading->save();
+
+      // $aiReport = $user_form->aiReport;
+      // if($aiReport){
+      //   $aiReport->user_form_heading_id = $userFormHeading->id;
+      //   $aiReport->response_id = null;
+      //   $aiReport->user_form_id = $user_form->id;
+      //   $aiReport->save();
+      // }
+
     }
     //        }
   }
@@ -769,10 +779,11 @@ class FormBuilderController extends ApiController
           </table>
         </td>
       </tr>";
+    $characterArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
     $section_html .= "";
     $total_questions = 0;
     $total_achieved_points = 0;
-    foreach ($response->assessment_tool->assessment_groups as $assessment_group) {
+    foreach ($response->assessment_tool->assessment_groups as $index => $assessment_group) {
       $total_group_questions = 0;
       $total_group_questions_achieved = 0;
       $assessment_group_title = $assessment_group->title ?? '';
@@ -832,7 +843,7 @@ class FormBuilderController extends ApiController
       }
       $section_html .= "<tr>
                         <td colspan='3' style='border: 1px solid black; border-right: none'>
-                          <table style='width: 100%'><tr><td style='width: 20%'></td><td style='width: 60%'><span style='font-weight: bold'>Group A subtotal </span><span style='text-decoration: underline'>" . $total_group_questions_achieved . "</span> /" . $total_group_questions . "</td><td style='width: 20%'></td></tr></table>
+                          <table style='width: 100%'><tr><td style='width: 20%'></td><td style='width: 60%'><span style='font-weight: bold'>Group $characterArray[$index] subtotal </span><span style='text-decoration: underline'>" . $total_group_questions_achieved . "</span> /" . $total_group_questions . "</td><td style='width: 20%'></td></tr></table>
                         </td>
                       </tr>";
     }
@@ -841,7 +852,7 @@ class FormBuilderController extends ApiController
                         <td colspan='3' style='width: 45%; border: 1px solid black'>
                           <table style='width: 100%'>
                             <tr>
-                              <td style='width: 20%;'></td><td style='width: 60%; text-align: start'><span style='font-weight: bold;'>Group A + Group B + Group C + Group D = " . $total_achieved_points . " / " . $total_questions . " = </span><span style='text-decoration: underline'></span></td><td style='width: 20%;'></td>
+                              <td style='width: 20%;'></td><td style='width: 60%; text-align: start'><span style='font-weight: bold;'>Group A + Group B + Group C + Group D = " . $total_achieved_points . " / " . $total_questions . " </span><span style='text-decoration: underline'></span></td><td style='width: 20%;'></td>
                             </tr>
                           </table>
                         </td>
