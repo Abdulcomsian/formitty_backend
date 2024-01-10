@@ -71,7 +71,7 @@ class StripeController extends Controller
         try{
 
            if(!$request->user()->stripe_id){
-                $request->user()->createStripeCustomer();
+                $request->user()->createAsStripeCustomer();
            }
 
            $request->user()->updateDefaultPaymentMethod($request->payment_method);
