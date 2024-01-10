@@ -79,7 +79,7 @@ class StripeController extends Controller
 
         //    dd("after updating payment");
 
-           $subscription = $request->user()->newSubscription('default' , $subscriptionPlan->plan_id)->create($request->payment_method);
+           $subscription = $request->user()->newSubscription('default' , $subscriptionPlan->plan_id)->create();
 
            if($subscription){
                 return response()->json(['status' => true , 'msg' => 'Subscription Added Successfully']);
