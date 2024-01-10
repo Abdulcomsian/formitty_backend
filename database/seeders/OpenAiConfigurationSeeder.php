@@ -15,9 +15,6 @@ class OpenAiConfigurationSeeder extends Seeder
      */
     public function run()
     {
-        OpenAiConfiguration::create([
-            'client_key' => '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',
-            'organization_key' => 'org-6oc7dro0mGzxO3qzULeAA79r' 
-        ]);
+        //write code here
     }
 }
