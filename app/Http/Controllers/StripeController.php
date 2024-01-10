@@ -19,8 +19,6 @@ class StripeController extends Controller
 
     public function getPaymentIntent(Request $request){
 
-        dd("main");
-
         $validator = Validator::make($request->all() , [
             'plan_id' => 'required|numeric'
         ]);
@@ -34,8 +32,6 @@ class StripeController extends Controller
         if(!$subscriptionPlan){
             return response()->json(['status' => false , 'msg' => 'Something Went Wrong' , 'error' => 'No plan found with this id']);
         }
-
-        dd("here");
 
         try{
             $paymentIntent = PaymentIntent::create([
