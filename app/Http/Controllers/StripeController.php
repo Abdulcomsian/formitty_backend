@@ -69,7 +69,7 @@ class StripeController extends Controller
         }
 
         try{
-
+            dd($request->user()->stripe_id);
            if(!$request->user()->stripe_id){
                 $customer = $request->user()->createAsStripeCustomer();
                 dd($customer);
