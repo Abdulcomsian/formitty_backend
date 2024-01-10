@@ -75,7 +75,7 @@ class StripeController extends Controller
            }
 
            $request->user()->updateDefaultPaymentMethod($request->payment_method);
-
+                             
            $subscription = $request->user()->newSubscription('default' , $subscriptionPlan->plan_id)->create($request->payment_method);
 
            if($subscription){
