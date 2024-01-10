@@ -69,14 +69,16 @@ class StripeController extends Controller
         }
 
         try{
-            dd($request->user()->stripe_id);
+            
+
            if(!$request->user()->stripe_id){
                 $customer = $request->user()->createAsStripeCustomer();
-                dd($customer);
            }
 
            $request->user()->updateDefaultPaymentMethod($request->payment_method);
-                             
+           
+           dd("after updating payment");
+
            $subscription = $request->user()->newSubscription('default' , $subscriptionPlan->plan_id)->create($request->payment_method);
 
            if($subscription){
