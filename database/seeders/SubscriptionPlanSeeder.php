@@ -15,9 +15,10 @@ class SubscriptionPlanSeeder extends Seeder
      */
     public function run()
     {
-        $plan = new SubscriptionPlan;
+        $plan = SubscriptionPlan::where('id' , 1)->first();
+        // $plan = new SubscriptionPlan;
         $plan->title = 'Formitty Monthly Test Plan';
-        $plan->plan_id = 'price_1OWdesDIWRQsl2HU2qeTZwqX';
+        $plan->plan_id = 'price_1OWYXgJvfFTzYQLITRZNZyux';
         $plan->amount = 15.00;
         $plan->save();
         
