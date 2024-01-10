@@ -8,14 +8,14 @@ use App\Models\{Form, FormHeading, FormField};
 
 class ProstheticsSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
-        $section1 = "<table style='background-color:#7209B7; border:none; width:100%;'>
+   /**
+    * Run the database seeds.
+    *
+    * @return void
+    */
+   public function run()
+   {
+      $section1 = "<table style='background-color:#7209B7; border:none; width:100%;'>
                     <tr>
                         <td>
                             <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'>  PART 1 – Participant and Plan Management Details</p>
@@ -82,7 +82,7 @@ class ProstheticsSeeder extends Seeder
                         </tr>
                     </tbody>
                 </table>
-                <p style='font-weight: bold; margin-bottom: 10px; margin-top: 10px'>1.2 Plan Management Details</p>
+                <p style='font-weight: bold; margin-bottom: 10px; margin-top: 10px; font-size: 12pt'>1.2	Plan Management Details</p>
                 <table
                     style='
                         border-collapse: collapse;
@@ -93,26 +93,34 @@ class ProstheticsSeeder extends Seeder
                     >
                     <tbody>
                         <tr>
-                        <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Agency Managed</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_agency_managed}}</td>
+                        <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'><p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>  Agency Managed</p></td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>
+                            <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>   {{part_1_plan_management_agency_managed}}</p>
+                        </td>
                         </tr>
                         <tr>
-                        <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Self-Managed</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_self_managed}}</td>
+                        <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'><p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>  Self-Managed</p></td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>
+                            <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>   {{part_1_plan_management_self_managed}}</p>
+                        </td>
                         </tr>
                         <tr>
-                        <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Registered Plan Management Provider</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_registeredplanmanagement_provider}}</td>
+                        <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'><p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>  Registered Plan Management Provider</p></td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>
+                            <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>   {{part_1_plan_management_registered_plan_management_provider}}</p>
+                        </td>
                         </tr>
                         <tr>
-                        <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Contact Details </td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_1_ndis_registeredplanmanagementcontact_details}}</td>
+                        <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 15px'><p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>  Contact Details</p> </td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>
+                            <p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>   {{part_1_plan_management_contact_details}}</p>
+                        </td>
                         </tr>
                     </tbody>
                 </table>
                 <p style='margin-top:10px'></p>";
 
-        $section2 = "<table style='background-color:#7209B7; border:none; width:100%;'>
+      $section2 = "<table style='background-color:#7209B7; border:none; width:100%;'>
         <tr>
             <td>
                 <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'> PART 2 – Assessment</p>
@@ -193,7 +201,7 @@ class ProstheticsSeeder extends Seeder
     </tr>
 </table><p> </p>";
 
-        $section3 = "<table style='background-color:#7209B7; border:none; width:100%; margin-top:20px; margin-bottom:20px;'>
+      $section3 = "<table style='background-color:#7209B7; border:none; width:100%; margin-top:20px; margin-bottom:20px;'>
         <tr>
             <td>
                 <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'>PART 3 – Exploration of Options and Recommendation</p>
@@ -309,7 +317,7 @@ class ProstheticsSeeder extends Seeder
     </table>
     <p> </p>";
 
-        $section4 = "<table style='background-color:#7209B7; border:none; width:100%;'>
+      $section4 = "<table style='background-color:#7209B7; border:none; width:100%;'>
         <tr>
             <td>
                 <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'>PART 4 – Specification of Recommended P and O solution/device</p>
@@ -608,7 +616,7 @@ class ProstheticsSeeder extends Seeder
         </table>
         <p></p>";
 
-        $section5 = "<table style='background-color:#7209B7; border:none; width:100%;'>
+      $section5 = "<table style='background-color:#7209B7; border:none; width:100%;'>
         <tr>
             <td>
                 <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'>PART 5 – Details of Assistive Technology Assessor</p>
@@ -619,19 +627,19 @@ class ProstheticsSeeder extends Seeder
         <table style=' width:100%; border: 1px solid black;'>
         <tr>
         <td style='width:80%; background-color: lightgrey; font-size: 17px;'>I certify that I meet the NDIA expectations of AT assessor provider suitability (including understanding of the current NDIS Act, Rules and Operational Guidelines) to assess the type of assistive technology and associated supports, at the level of complexity required by this participant.</td>
-        <td style='width:20%; border: 1px solid black;'>{{part_5_declaration_NDIA_expectation}}</td>
+        <td style='width:20%; border: 1px solid black;'>{{part_5_details_of_assistive_technology_assessor_01}}</td>
         </tr>
         <tr>
         <td style='width:80%; background-color: lightgrey; font-size: 17px;'>I will provide appropriate evidence to the NDIA and/or NDIS Quality and Safeguards Commission if and as requested.</td>
-        <td style='width:20%; border: 1px solid black;'>{{part_5_declaration_appropriate_evidence}}</td>
+        <td style='width:20%; border: 1px solid black;'>{{part_5_details_of_assistive_technology_assessor_02}}</td>
         </tr>
         <tr>
         <td style='width:80%; background-color: lightgrey; font-size: 17px;'>I understand and acknowledge that the NDIA and participant will rely on my professional advice to select, source and implement this assistive technology.</td>
-        <td style='width:20%; border: 1px solid black;'>{{part_5_declaration_NDIA_understanding}}</td>
+        <td style='width:20%; border: 1px solid black;'>{{part_5_details_of_assistive_technology_assessor_03}}</td>
         </tr>
         <tr>
         <td style='width:80%; background-color: lightgrey; font-size: 17px;'>This assistive technology has been assessed by the treating multi-disciplinary team and I have completed the AT assessment on behalf of that team.</td>
-        <td style='width:20%; border: 1px solid black;'>{{part_5_declaration_accessing_team}}</td>
+        <td style='width:20%; border: 1px solid black;'>{{part_5_details_of_assistive_technology_assessor_04}}</td>
         </tr>
         </table>
         <p style='margin-top:10px'></p>
@@ -648,109 +656,117 @@ class ProstheticsSeeder extends Seeder
             <tbody>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Name</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_assessors_name}}</td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_details_of_assistive_technology_assessor_05}}</td>
                 </tr>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>NDIS Provider Registration number (where applicable)</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_provider_registration_number}}</td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_details_of_assistive_technology_assessor_06}}</td>
                 </tr>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%; background-color: lightgrey; font-size: 17px'>Phone</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_assessorphone_number}}</td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_details_of_assistive_technology_assessor_07}}</td>
                 </tr>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Email</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_email_address}}</td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_details_of_assistive_technology_assessor_08}}</td>
                 </tr>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Signature</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'></td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_details_of_assistive_technology_assessor_09}}</td>
                 </tr>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Qualification</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_qualification}}</td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_details_of_assistive_technology_assessor_10}}</td>
                 </tr>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Date of Assessment(s)</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_date_assessment}}</td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_details_of_assistive_technology_assessor_11}}</td>
                 </tr>
                 <tr>
                 <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 17px'>Date of Report</td>
-                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_reportDate}}</td>
+                <td style='border: 1px solid lightslategray; padding: 10px'>{{part_5_details_of_assistive_technology_assessor_12}}</td>
                 </tr>
             </tbody>
         </table>";
 
-        $section6 = "<p style='margin-top:10px'></p>
-                    <table style='background-color:#7209B7; border:none; width:100%;'>
-                    <tr>
-                        <td>
-                            <p style='font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white'>  PART 6 – Consent to Collect and Share Your Information – 
-                    Provider AT Assessment and Quotation(s)</p>
-                        </td>
-                    </tr>
-                    </table>
-                    <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'>For the participant to complete</p>
-    
-                    <p style='margin-bottom: 10px'>As a participant who requires assistive technology supports, the National Disability Insurance Agency (NDIA) may need to contact your AT assessor and / or AT supplier to discuss information within your assistive technology assessment and quotation(s). This will assist the NDIA with determining whether your request for assistive technology support(s) can be provided to you under the NDIS. Do you consent to the NDIA collecting and disclosing your information including from these third parties mentioned above, in relation to your assistive technology assessment and quotation?</p>
-                    <table style=' width:100%; border: 1px solid black;'>
-                    <tr>
-                    <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Yes, I consent</td>
-                    <td style='width:60%; border: 1px solid black;'>{{part_6_yes_consent}}</td>
-                    </tr>
-                    <tr>
-                    <td style='width:40%; background-color: lightgrey; font-size: 17px;'>No, I do not consent</td>
-                    <td style='width:60%; border: 1px solid black;'>{{part_6_noidonot_consent}}</td>
-                    </tr>
-                    </table>
-                    <p style='margin-bottom: 10px'>Participant’s Signature</p>
-                    <table style=' width:100%; border: 1px solid black;'>
-                    <tr>
-                    <td style='width:80%; background-color: lightgrey; font-size: 17px;'>I understand that I am giving consent to the NDIA to do the things with my information set out in this section. I understand that I can withdraw my consent for the NDIS to do things with my information at any time by letting the NDIA know.</td>
-                    <td style='width:20%; border: 1px solid black;'>{{part_6_iunderstandthatiamgivingconsenttothe_NDIA}}</td>
-                    </tr>
-                    <tr>
-                    <td style='width:80%; background-color: lightgrey; font-size: 17px;'>I understand that I can access the NDIA’s Privacy Notice and Privacy Policy on the NDIA website or by contacting the NDIA.</td>
-                    <td style='width:20%; border: 1px solid black;'>{{part_6_iunderstandthaticanaccesstheNDIAsprivacy_notice}}</td>
-                    </tr>
-                    </table>
-                    <table style=' width:100%; border: 1px solid black;'>
-                    <tr>
-                    <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Signature</td>
-                    <td style='width:60%; border: 1px solid black;'></td>
-                    </tr>
-                    <tr>
-                    <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Full name</td>
-                    <td style='width:60%; border: 1px solid black;'>{{part_6_signaturersfull_name}}</td>
-                    </tr>
-                    <tr>
-                    <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Date</td>
-                    <td style='width:60%; border: 1px solid black;'>{{part_6_signaturers_date}}</td>
-                    </tr>
-                    </table>
-                    <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'>If you have signed this Form on behalf of the NDIS participant,</p>
-                    <p style='margin-bottom: 10px'>please complete the details below. It is an offence to provide false or misleading information.</p>
-                    <p style='margin-bottom: 10px'>We may require you to provide evidence of your authority to sign on behalf of the person</p>
-                    <table style=' width:100%; border: 1px solid black;'>
-                    <tr>
-                    <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Signature</td>
-                    <td style='width:60%; border: 1px solid black;'></td>
-                    </tr>
-                    <tr>
-                    <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Date</td>
-                    <td style='width:60%; border: 1px solid black;'>{{part_6_signaturersonbefalfofparticipant_date}}</td>
-                    </tr>
-                    <tr>
-                    <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Full Name of person completing this form (please print):</td>
-                    <td style='width:60%; border: 1px solid black;'>{{part_6_fullnameofpersoncompletingthis_form}}</td>
-                    </tr>
-                    <tr>
-                    <td style='width:40%; background-color: lightgrey; font-size: 17px;'>Relationship to participant</td>
-                    <td style='width:60%; border: 1px solid black;'>{{part_6_relationshiptoparticipant}}</td>
-                    </tr>
-                    </table>";
+      $section6 = '<table style="background-color:#7209B7; border:none; width:100%;">
+        <tr>
+          <td>
+              <p style="font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white"> PART 6 – Consent to Collect and Share Your Information – Provider AT Assessment and Quotation(s)</p>
+          </td>
+        </tr>
+        </table>
+        <p style="font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;">For the participant to complete</p>
+        <p style="font-size:12pt;">As a participant who requires assistive technology supports, the National Disability Insurance Agency (NDIA) may need to contact your AT assessor and / or AT supplier to discuss information within your assistive technology assessment and quotation(s). This will assist the NDIA with determining whether your request for assistive technology support(s) can be provided to you under the NDIS. Do you consent to the NDIA collecting and disclosing your information including from these third parties mentioned above, in relation to your assistive technology assessment and quotation?</p>
+        
+        <table style=" width:100%; border: 1px solid black;">
+        <tr>
+          <td style="width:40%;">Yes, I consent</td>
+          <td style="width: 60%; border: 1px solid black;">{{part_6_consent_to_collect_and_share_your_information_01}}</td>
+        </tr>
+        <tr>
+          <td style="width:40%;">No, I do not consent</td>
+          <td style="width: 60%; border: 1px solid black;">{{part_6_consent_to_collect_and_share_your_information_02}}</td>
+        </tr>
+        <tr>
+          <td style="width:40%;">Participants Signature</td>
+          <td style="width: 60%; border: 1px solid black;">{{part_6_consent_to_collect_and_share_your_information_03}}</td>
+        </tr>
+        <tr>
+          <td style="width:80%;">I understand that I am giving consent to the NDIA to do the things with my information set out in this section. I understand that I can withdraw my consent for the NDIS to do things with my information at any time by letting the NDIA know.</td>
+          <td style="width: 20%; border: 1px solid black;">{{part_6_consent_to_collect_and_share_your_information_04}}</td>
+        </tr>
+        <tr>
+          <td style="width:80%;">I understand that I can access the NDIA’s Privacy Notice and Privacy Policy on the NDIA website or by contacting the NDIA.</td>
+          <td style="width: 20%; border: 1px solid black;">{{part_6_consent_to_collect_and_share_your_information_05}}</td>
+        </tr>
+        <tr>
+          <td style="width:40%;">Signature</td>
+          <td style="width: 60%; border: 1px solid black;">{{part_6_consent_to_collect_and_share_your_information_06}}</td>
+        </tr>
+        <tr>
+          <td style="width:40%;">Date</td>
+          <td style="width: 60%; border: 1px solid black;">{{part_6_consent_to_collect_and_share_your_information_07}}</td>
+        </tr>
+        <tr>
+          <td style="width:40%;">Full name</td>
+          <td style="width: 60%; border: 1px solid black;">{{part_6_consent_to_collect_and_share_your_information_08}}</td>
+        </tr>
+        </table>
+        <p style="font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;">If you have signed this Form on behalf of the NDIS participant,</p>
+        <p style="font-size:12pt;">please complete the details below. It is an offence to provide false or misleading information.</p>
+        <p style="font-size:12pt;">We may require you to provide evidence of your authority to sign on behalf of the person.</p>
+        
+        <table style=" width:100%; border: 1px solid black;">
+        <tr>
+          <td style="width:40%;">Signature</td>
+          <td style="width: 60%; border: 1px solid black;">{{part_6_consent_to_collect_and_share_your_information_09}}</td>
+        </tr>
+        <tr>
+          <td style="width:40%;">Date</td>
+          <td style="width: 60%; border: 1px solid black;">{{part_6_consent_to_collect_and_share_your_information_10}}</td>
+        </tr>
+        <tr>
+          <td style="width:40%;">Full Name of person completing this form (please print):</td>
+          <td style="width: 60%; border: 1px solid black;">{{part_6_consent_to_collect_and_share_your_information_11}}</td>
+        </tr>
+        <tr>
+          <td style="width:40%;">Relationship to participant or person wishing to become an NDIS participant:</td>
+          <td style="width: 60%; border: 1px solid black;">{{part_6_consent_to_collect_and_share_your_information_12}}</td>
+        </tr>
+        </table>
+        <p></p>';
 
-        $form_fields = '[
+      $form_fields = '[
+         {
+            "type":"heading",
+            "required":false,
+            "label_1":"1.1 NDIS Participant Details",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_1_heading_extra_1",
+            "access":false
+         },
                     {
                     "type":"text",
                     "required":false,
@@ -872,52 +888,72 @@ class ProstheticsSeeder extends Seeder
                     "subtype":"text"
                     },
                     {
-                    "type":"text",
-                    "required":false,
-                    "label":"Agency Managed",
-                    "placeholder":"Enter Agency Managed",
-                    "className":"form-control",
-                    "name":"part_1_ndis_agency_managed",
-                    "access":false,
-                    "subtype":"text"
-                    },
-                    {
-                    "type":"text",
-                    "required":false,
-                    "label":"Self-Managed",
-                    "placeholder":"Enter Self Managed",
-                    "className":"form-control",
-                    "name":"part_1_ndis_self_managed",
-                    "access":false,
-                    "subtype":"text"
-                    },
-                    {
-                    "type":"text",
-                    "required":false,
-                    "label":"Registered Plan Management Provider",
-                    "placeholder":"Enter Registered Plan Management Provider",
-                    "className":"form-control",
-                    "name":"part_1_ndis_registeredplanmanagement_provider",
-                    "access":false,
-                    "subtype":"text"
-                    },
-                    {
-                    "type":"text",
-                    "required":false,
-                    "label":"Contact Details",
-                    "placeholder":"Enter Registered Plan Management Provider Contact Details",
-                    "className":"form-control",
-                    "name":"part_1_ndis_registeredplanmanagementcontact_details",
-                    "access":false,
-                    "subtype":"text"
-                    }
+                     "type":"heading",
+                     "required":false,
+                     "label_1":"1.2 Plan Management Details",
+                     "placeholder":"Full Name",
+                     "className":"form-control",
+                     "name":"part_1_heading_extra_2",
+                     "access":false
+                  },
+                  {
+                     "type":"text",
+                     "required":false,
+                     "label":"Agency Managed",
+                     "placeholder":"Enter Your Agency Managed",
+                     "className":"form-control",
+                     "name":"part_1_plan_management_agency_managed",
+                     "access":false,
+                     "subtype":"text"
+                     },
+                     {
+                     "type":"text",
+                     "required":false,
+                     "label":"Self-Managed",
+                     "placeholder":"Self-Managed",
+                     "className":"form-control",
+                     "name":"part_1_plan_management_self_managed",
+                     "access":false,
+                     "subtype":"text"
+                     },
+                     {
+                     "type":"text",
+                     "required":false,
+                     "label":"Registered Plan Management Provider",
+                     "placeholder":"Enter Registered Plan Management Provider",
+                     "className":"form-control",
+                     "name":"part_1_plan_management_registered_plan_management_provider",
+                     "access":false,
+                     "subtype":"text"
+                     },
+                     {
+                         "type":"text",
+                         "required":false,
+                         "label":"Contact Details ",
+                         "placeholder":"Enter Contact Details ",
+                         "className":"form-control",
+                         "name":"part_1_plan_management_contact_details",
+                         "access":false,
+                         "subtype":"text"
+                     }
                     ]';
 
-        $form_fields2 = '[
+      $form_fields2 = '[
+         {
+            "type":"heading",
+            "required":false,
+            "label_1":"2.1 Background",
+            "label_2":"",
+            "label_3":"General: Describe participant’s current status which may include diagnosis, prognosis, co-existing conditions, disability, personal and instrumental activities of daily living, formal and informal support arrangements and life transitions.",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_2_heading_extra_1",
+            "access":false
+         },
             {
                "type":"textarea",
                "required":false,
-               "label":"Background",
+               "label":"",
                "placeholder":"Enter Your Background",
                "className":"form-control",
                "name":"part_2_assesment_background",
@@ -925,9 +961,20 @@ class ProstheticsSeeder extends Seeder
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"2.2 Participant Goals ",
+               "label_2":"",
+               "label_3":"If the participant’s NDIS plan has been made available, you can refer to the statement of participant’s goals and outline those relevant to the AT solution.",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_2",
+               "access":false
+            },
+            {
                "type":"textarea",
                "required":false,
-               "label":"Participant Goals",
+               "label":"",
                "placeholder":"Enter Participant Goals",
                "className":"form-control",
                "name":"part_2_participant_goals",
@@ -935,14 +982,36 @@ class ProstheticsSeeder extends Seeder
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"2.3 Functional Assessment",
+               "label_2":"",
+               "label_3":"Summarise the assessment findings relevant to your recommendations (include aspects such as range of motion, strength, interpretation of valid outcome measure findings etc. as appropriate) and explain the impact on life roles. *NDIS expects valid and reliable outcome measures are conducted, where possible, and records held by AT assessor for NDIS audit purposes. (e.g. AMPPRO, DASH)",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_3",
+               "access":false
+            },
+            {
                "type":"textarea",
                "required":false,
-               "label":"Functional Assessment",
+               "label":"",
                "placeholder":"Enter Functional Assessment",
                "className":"form-control",
                "name":"part_2_functional_assessment",
                "access":false,
                "subtype":"text"
+            },
+            {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"What are the applicant’s measurements?",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_4",
+               "access":false
             },
             {
                "type":"text",
@@ -965,10 +1034,32 @@ class ProstheticsSeeder extends Seeder
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"2.4 Current AT in use",
+               "label_2":"",
+               "label_3":"If it is the view of the NDIS participant or AT assessor that another relevant item of AT involved in goal achievement needs to be reassessed before this P&O assessment progresses, contact should be made with Participant’s LAC and/or Support Plan Coordinator at this point (e.g. where an Occupational Therapy upper limb assessment is required before a prosthetic recommendation can be made). \n*Document ‘Type of AT’ in detail; e.g. “jointed ankle foot orthosis with XX shells and XX joints”, or specific component name of prosthetic knees and feet. \n**Note: To add rows for additional items navigate to any column. Either right mouse click or select the right context menu, move to and select Insert…move to and select Insert below to add a row. Repeat as required.",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_5",
+               "access":false
+            },
+            {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Data Entry Row 1",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_6",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Type of AT 1",
-               "placeholder":"Enter Type of AT 1",
+               "label":"Type of AT",
+               "placeholder":"Enter Type of AT",
                "className":"form-control",
                "name":"part_2_type_of_at1",
                "access":false,
@@ -977,8 +1068,8 @@ class ProstheticsSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Usage 1",
-               "placeholder":"Enter Usage 1",
+               "label":"Usage",
+               "placeholder":"Enter Usage",
                "className":"form-control",
                "name":"part_2_usage1",
                "access":false,
@@ -987,8 +1078,8 @@ class ProstheticsSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Participant’s report of suitability 1",
-               "placeholder":"Enter Participant’s report of suitability 1",
+               "label":"Participant’s report of suitability",
+               "placeholder":"Enter Participant’s report of suitability",
                "className":"form-control",
                "name":"part_2_participant’s_report_of_suitability1",
                "access":false,
@@ -997,7 +1088,7 @@ class ProstheticsSeeder extends Seeder
             {
                "type":"checkbox-group",
                "required":false,
-               "label":"Does it need reassessment 1?",
+               "label":"Does it need reassessment?",
                "toggle":false,
                "inline":false,
                "name":"part_2_does_it_need_reassessment1",
@@ -1012,10 +1103,21 @@ class ProstheticsSeeder extends Seeder
                ]
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Data Entry Row 2",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_7",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Type of AT 2",
-               "placeholder":"Enter Type of AT 2",
+               "label":"Type of AT",
+               "placeholder":"Enter Type of AT",
                "className":"form-control",
                "name":"part_2_type_of_at2",
                "access":false,
@@ -1024,8 +1126,8 @@ class ProstheticsSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Usage 2",
-               "placeholder":"Enter Usage 2",
+               "label":"Usage",
+               "placeholder":"Enter Usage",
                "className":"form-control",
                "name":"part_2_usage2",
                "access":false,
@@ -1034,8 +1136,8 @@ class ProstheticsSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Participant’s report of suitability 2",
-               "placeholder":"Enter Participant’s report of suitability 2",
+               "label":"Participant’s report of suitability",
+               "placeholder":"Enter Participant’s report of suitability",
                "className":"form-control",
                "name":"part_2_participant’s_report_of_suitability2",
                "access":false,
@@ -1044,7 +1146,7 @@ class ProstheticsSeeder extends Seeder
             {
                "type":"checkbox-group",
                "required":false,
-               "label":"Does it need reassessment 2?",
+               "label":"Does it need reassessment?",
                "toggle":false,
                "inline":false,
                "name":"part_2_does_it_need_reassessment2",
@@ -1059,10 +1161,21 @@ class ProstheticsSeeder extends Seeder
                ]
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Data Entry Row 3",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_8",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Type of AT 3",
-               "placeholder":"Enter Type of AT 3",
+               "label":"Type of AT",
+               "placeholder":"Enter Type of AT",
                "className":"form-control",
                "name":"part_2_type_of_at3",
                "access":false,
@@ -1071,8 +1184,8 @@ class ProstheticsSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Usage 3",
-               "placeholder":"Enter Usage 3",
+               "label":"Usage",
+               "placeholder":"Enter Usage",
                "className":"form-control",
                "name":"part_2_usage3",
                "access":false,
@@ -1081,8 +1194,8 @@ class ProstheticsSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Participant’s report of suitability 3",
-               "placeholder":"Enter Participant’s report of suitability 3",
+               "label":"Participant’s report of suitability",
+               "placeholder":"Enter Participant’s report of suitability",
                "className":"form-control",
                "name":"part_2_participant’s_report_of_suitability3",
                "access":false,
@@ -1091,7 +1204,7 @@ class ProstheticsSeeder extends Seeder
             {
                "type":"checkbox-group",
                "required":false,
-               "label":"Does it need reassessment 3?",
+               "label":"Does it need reassessment?",
                "toggle":false,
                "inline":false,
                "name":"part_2_does_it_need_reassessment3",
@@ -1106,9 +1219,20 @@ class ProstheticsSeeder extends Seeder
                ]
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"2.4.1 Outline any disability related functional limitation/s which need to be addressed to pursue the stated goal(s). Describe any limitations such as malfunctioning AT, no prior access to this AT etc. If no functional limitation changes, indicate why AT requires replacement in the plan period (e.g. ill-fitting).",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_2_heading_extra_9",
+               "access":false
+            },
+            {
                "type":"textarea",
                "required":false,
-               "label":"Outline any disability",
+               "label":"",
                "placeholder":"Enter Outline any disability",
                "className":"form-control",
                "name":"part_2_outline_any_disability",
@@ -1117,11 +1241,33 @@ class ProstheticsSeeder extends Seeder
             }
          ]';
 
-        $form_fields3 = '[
+      $form_fields3 = '[
+         {
+            "type":"heading",
+            "required":false,
+            "label_1":"3.1 Evaluation of other options",
+            "label_2":"",
+            "label_3":"Please provide information on alternatives considered to pursue goal/s including repairs, adjustments, therapy or AT training, and reasons why they were not considered suitable. Note that NDIA will generally fund the most cost-effective option, usually the minimum necessary componentry to pursue the goals, so lowest cost solutions must be considered. Where trials have been conducted or alternative AT used in the past, please give details of where the trials/use took place, for how long and the outcomes. Where necessary add further lines and/or attach further detail \n**Note: To add rows for additional items navigate to any column. Either right mouse click or select the right context menu, move to and select Insert…move to and select Insert below to add a row. Repeat as required.",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_3_heading_extra_1",
+            "access":false
+         },
+         {
+            "type":"heading",
+            "required":false,
+            "label_1":"",
+            "label_2":"",
+            "label_3":"Data Entry Row 1",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_3_heading_extra_2",
+            "access":false
+         },
             {
                "type":"text",
                "required":false,
-               "label":"Evaluation_optionTextField",
+               "label":"Option",
                "placeholder":"Enter option",
                "className":"form-control",
                "name":"part_3_con_option_evaluation_option1",
@@ -1131,37 +1277,7 @@ class ProstheticsSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Evaluation_optionTextField",
-               "placeholder":"Enter option",
-               "className":"form-control",
-               "name":"part_3_con_option_evaluation_option2",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Evaluation_optionTextField",
-               "placeholder":"Enter option",
-               "className":"form-control",
-               "name":"part_3_con_option_evaluation_option3",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Evaluation_optionTextField",
-               "placeholder":"Enter option",
-               "className":"form-control",
-               "name":"part_3_con_option_evaluation_option4",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Evaluation_optionTextField",
+               "label":"Describe the features or functions of AT solutions  and other options trialled  to address the goal",
                "placeholder":"Enter Potential Option",
                "className":"form-control",
                "name":"part_3_con_option_potential_option1",
@@ -1171,37 +1287,7 @@ class ProstheticsSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Evaluation_optionTextField",
-               "placeholder":"Enter Potential Option",
-               "className":"form-control",
-               "name":"part_3_con_option_potential_option2",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Evaluation_optionTextField",
-               "placeholder":"Enter Potential Option",
-               "className":"form-control",
-               "name":"part_3_con_option_potential_option3",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Evaluation_optionTextField",
-               "placeholder":"Enter Potential Option",
-               "className":"form-control",
-               "name":"part_3_con_option_potential_option4",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Evaluation_optionTextField",
+               "label":"Trialled (T) or considered (C)? Include trial details",
                "placeholder":"Enter Trial Details",
                "className":"form-control",
                "name":"part_3_con_option_trial_option1",
@@ -1211,37 +1297,7 @@ class ProstheticsSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Evaluation_optionTextField",
-               "placeholder":"Enter Trial Details",
-               "className":"form-control",
-               "name":"part_3_con_option_trial_option2",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Evaluation_optionTextField",
-               "placeholder":"Enter Trial Details",
-               "className":"form-control",
-               "name":"part_3_con_option_trial_option3",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Evaluation_optionTextField",
-               "placeholder":"Enter Trial Details",
-               "className":"form-control",
-               "name":"part_3_con_option_trial_option4",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Evaluation_optionTextField",
+               "label":"Describe why it was not considered suitable (not applicable for the preferred option)",
                "placeholder":"Enter Disadvantage",
                "className":"form-control",
                "name":"part_3_con_option_disdvantage1",
@@ -1251,7 +1307,58 @@ class ProstheticsSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Evaluation_optionTextField",
+               "label":"Estimated cost (include training)",
+               "placeholder":"Enter Cost (include training)",
+               "className":"form-control",
+               "name":"part_3_con_option_cost1",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Data Entry Row 2",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_3_heading_extra_3",
+               "access":false
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Option",
+               "placeholder":"Enter option",
+               "className":"form-control",
+               "name":"part_3_con_option_evaluation_option2",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Describe the features or functions of AT solutions  and other options trialled  to address the goal",
+               "placeholder":"Enter Potential Option",
+               "className":"form-control",
+               "name":"part_3_con_option_potential_option2",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Trialled (T) or considered (C)? Include trial details",
+               "placeholder":"Enter Trial Details",
+               "className":"form-control",
+               "name":"part_3_con_option_trial_option2",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Describe why it was not considered suitable (not applicable for the preferred option)",
                "placeholder":"Enter Disadvantage",
                "className":"form-control",
                "name":"part_3_con_option_disdvantage2",
@@ -1261,7 +1368,58 @@ class ProstheticsSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Evaluation_optionTextField",
+               "label":"Estimated cost (include training)",
+               "placeholder":"Enter Cost (include training)",
+               "className":"form-control",
+               "name":"part_3_con_option_cost2",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Data Entry Row 3",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_3_heading_extra_4",
+               "access":false
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Option",
+               "placeholder":"Enter option",
+               "className":"form-control",
+               "name":"part_3_con_option_evaluation_option3",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Describe the features or functions of AT solutions  and other options trialled  to address the goal",
+               "placeholder":"Enter Potential Option",
+               "className":"form-control",
+               "name":"part_3_con_option_potential_option3",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Trialled (T) or considered (C)? Include trial details",
+               "placeholder":"Enter Trial Details",
+               "className":"form-control",
+               "name":"part_3_con_option_trial_option3",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Describe why it was not considered suitable (not applicable for the preferred option)",
                "placeholder":"Enter Disadvantage",
                "className":"form-control",
                "name":"part_3_con_option_disdvantage3",
@@ -1271,7 +1429,58 @@ class ProstheticsSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Evaluation_optionTextField",
+               "label":"Estimated cost (include training)",
+               "placeholder":"Enter Cost (include training)",
+               "className":"form-control",
+               "name":"part_3_con_option_cost3",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Data Entry Row 4",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_3_heading_extra_5",
+               "access":false
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Option",
+               "placeholder":"Enter option",
+               "className":"form-control",
+               "name":"part_3_con_option_evaluation_option4",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Describe the features or functions of AT solutions  and other options trialled  to address the goal",
+               "placeholder":"Enter Potential Option",
+               "className":"form-control",
+               "name":"part_3_con_option_potential_option4",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Trialled (T) or considered (C)? Include trial details",
+               "placeholder":"Enter Trial Details",
+               "className":"form-control",
+               "name":"part_3_con_option_trial_option4",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Describe why it was not considered suitable (not applicable for the preferred option)",
                "placeholder":"Enter Disadvantage",
                "className":"form-control",
                "name":"part_3_con_option_disdvantage4",
@@ -1281,37 +1490,7 @@ class ProstheticsSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Cost (include training)",
-               "placeholder":"Enter Cost (include training)",
-               "className":"form-control",
-               "name":"part_3_con_option_cost1",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Cost (include training)",
-               "placeholder":"Enter Cost (include training)",
-               "className":"form-control",
-               "name":"part_3_con_option_cost2",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Cost (include training)",
-               "placeholder":"Enter Cost (include training)",
-               "className":"form-control",
-               "name":"part_3_con_option_cost3",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Cost (include training)",
+               "label":"Estimated cost (include training)",
                "placeholder":"Enter Cost (include training)",
                "className":"form-control",
                "name":"part_3_con_option_cost4",
@@ -1319,10 +1498,32 @@ class ProstheticsSeeder extends Seeder
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"3.2 Recommended Solution (specification in Section 4)",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_3_heading_extra_6",
+               "access":false
+            },
+            {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Data Entry Row 1",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_3_heading_extra_7",
+               "access":false
+            },
+            {
                "type":"text",
                "required":false,
-               "label":"Feature 1",
-               "placeholder":"Enter Feature 1",
+               "label":"Describe the features or functions of solution  that address the goal and functional need",
+               "placeholder":"Enter Feature",
                "className":"form-control",
                "name":"part_3_feature_option1",
                "access":false,
@@ -1331,18 +1532,8 @@ class ProstheticsSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Feature 2",
-               "placeholder":"Enter Feature 2",
-               "className":"form-control",
-               "name":"part_3_feature_option2",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Trial Details 1",
-               "placeholder":"Enter Trial Details 1",
+               "label":"Include any trial details",
+               "placeholder":"Enter Trial Details",
                "className":"form-control",
                "name":"part_3_trial_details1",
                "access":false,
@@ -1351,8 +1542,39 @@ class ProstheticsSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Trial Details 2",
-               "placeholder":"Enter Trial Details 2",
+               "label":"Estimated cost (include training",
+               "placeholder":"Enter Feature Cost",
+               "className":"form-control",
+               "name":"part_3_feature_cost1",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Data Entry Row 2",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_3_heading_extra_8",
+               "access":false
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Describe the features or functions of solution  that address the goal and functional need",
+               "placeholder":"Enter Feature",
+               "className":"form-control",
+               "name":"part_3_feature_option2",
+               "access":false,
+               "subtype":"text"
+            },
+            {
+               "type":"text",
+               "required":false,
+               "label":"Include any trial details",
+               "placeholder":"Enter Trial Details",
                "className":"form-control",
                "name":"part_3_trial_details2",
                "access":false,
@@ -1361,27 +1583,28 @@ class ProstheticsSeeder extends Seeder
             {
                "type":"text",
                "required":false,
-               "label":"Feature Cost 1",
-               "placeholder":"Enter Feature Cost 1",
-               "className":"form-control",
-               "name":"part_3_feature_cost1",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Feature Cost 2",
-               "placeholder":"Enter Feature Cost 2",
+               "label":"Estimated cost (include training",
+               "placeholder":"Enter Feature Cost",
                "className":"form-control",
                "name":"part_3_feature_cost2",
                "access":false,
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"3.3 Evidence",
+               "label_2":"",
+               "label_3":"Explain the evidence for the recommended option as the most suitable and cost-effective, which will facilitate pursuit of the participant’s goal(s), facilitate participation, and/or improve life stage outcomes, compared to others considered (e.g. trial outcomes and consideration of long term benefit in both current and anticipated future needs, change/adjustment to personal care support need etc.). Particularly where a change in AT is recommended, briefly discuss why this is required e.g. rule out all mechanical knee options before considering only microprocessor knee unit options.",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_3_heading_extra_9",
+               "access":false
+            },
+            {
                "type":"textarea",
                "required":false,
-               "label":"Evidence",
+               "label":"",
                "placeholder":"Enter Evidence",
                "className":"form-control",
                "name":"part_3_evidence",
@@ -1389,9 +1612,20 @@ class ProstheticsSeeder extends Seeder
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"3.4 Identify where change to other supports may be required (noting reduction or addition) for the recommended option including non AT supports and environmental modifications.",
+               "label_2":"",
+               "label_3":"Results of options review from perspective of participant and P&O assessor.",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_3_heading_extra_10",
+               "access":false
+            },
+            {
                "type":"textarea",
                "required":false,
-               "label":"Identify where change to other supports may be required",
+               "label":"",
                "placeholder":"Identify where change to other supports may be required",
                "className":"form-control",
                "name":"part_3_identify_where_changeto_other_support",
@@ -1399,9 +1633,20 @@ class ProstheticsSeeder extends Seeder
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"3.5 Measuring success",
+               "label_2":"3.5.1 What are the expected outcomes of providing this recommended support? E.g. specific goals achieved, other supports changed/reduced, etc.?",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_3_heading_extra_11",
+               "access":false
+            },
+            {
                "type":"textarea",
                "required":false,
-               "label":"What are the expected outcomes of providing this recommended support?",
+               "label":"",
                "placeholder":"What are the expected outcomes of providing this recommended support?",
                "className":"form-control",
                "name":"part_3_expected_outcomes",
@@ -1409,9 +1654,20 @@ class ProstheticsSeeder extends Seeder
                "subtype":"text"
             },
             {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"3.5.2 How will you measure whether these outcomes have been achieved?",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_3_heading_extra_12",
+               "access":false
+            },
+            {
                "type":"textarea",
                "required":false,
-               "label":"If Outcomes Acheive",
+               "label":"",
                "placeholder":"If Outcomes Acheive",
                "className":"form-control",
                "name":"part_3_if_outcomes_achieve",
@@ -1419,19 +1675,20 @@ class ProstheticsSeeder extends Seeder
                "subtype":"text"
             },
             {
-               "type":"textarea",
+               "type":"heading",
                "required":false,
-               "label":"If Outcomes Acheive",
-               "placeholder":"If Outcomes Acheive",
+               "label_1":"",
+               "label_2":"3.5.3 When will you measure these outcomes?",
+               "label_3":"",
+               "placeholder":"Full Name",
                "className":"form-control",
-               "name":"part_3_if_outcomes_achieve",
-               "access":false,
-               "subtype":"text"
+               "name":"part_3_heading_extra_13",
+               "access":false
             },
             {
                "type":"textarea",
                "required":false,
-               "label":"Measure These Outcomes",
+               "label":"",
                "placeholder":"Measure These Outcomes",
                "className":"form-control",
                "name":"part_3_measure_these_outcomes",
@@ -1440,22 +1697,55 @@ class ProstheticsSeeder extends Seeder
             }
          ]';
 
-        $form_fields4 = '[
+      $form_fields4 = '[
+         {
+            "type":"heading",
+            "required":false,
+            "label_1":"4.1 Specification/Description of P&O AT solution/device",
+            "label_2":"Detail all necessary components required to meet participant’s goal. This must be detailed enough to ensure that reasonable and necessary can be accurately assessed in relation to the information supplied above (the fully completed  Activity, Detail and quantity  columns only of an AOPA  compliant example quotation form can be attached to this form as an alternative) Reference: AOPA  Quotation Development Guidance Quotation Development Tool (https://www.aopa.org.au/sb_cache/events/id/488/f/AOPA-Quotation-Development-Tool-%20Final_2015.pdf)",
+            "label_3":"",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_4_heading_extra_1",
+            "access":false
+         },
             {
                 "type":"textarea",
                 "required":false,
-                "label":"Description of P&O AT solution",
-                "placeholder":"Description of P&O AT solution",
+                "label":"",
+                "placeholder":"",
                 "className":"form-control",
                 "name":"part_3_description_of_P&O_AT_solution",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"4.1.1 (Capacity building) Professional assessment, specification, fitting and training",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_2",
+               "access":false
+            },
+            {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Clinical Assessment",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_3",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Clinical Assessment",
-                "placeholder":"Enter Clinical Assessment Detail",
+                "label":"Detail",
+                "placeholder":"Enter Detail",
                 "className":"form-control",
                 "name":"part_3_detail1",
                 "access":false,
@@ -1464,18 +1754,29 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Clinical Assessment",
-                "placeholder":"Enter Clinical Assessment Quantity",
+                "label":"Quantity (hrs)",
+                "placeholder":"Enter Quantity (hrs)",
                 "className":"form-control",
                 "name":"part_3_quantity1",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Liaise with other health professionals",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_4",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Liaise with other health professionals",
-                "placeholder":"Enter Liaise with other health professionals Detail",
+                "label":"Detail",
+                "placeholder":"Enter Detail",
                 "className":"form-control",
                 "name":"part_3_detail2",
                 "access":false,
@@ -1484,18 +1785,29 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Liaise with other health professionals",
-                "placeholder":"Enter Liaise with other health professionals Quantity",
+                "label":"Quantity (hrs)",
+                "placeholder":"Enter Quantity (hrs)",
                 "className":"form-control",
                 "name":"part_3_quantity2",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Device specification/measurement",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_5",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Device specification/measurement",
-                "placeholder":"Enter Device specification/measurement Detail",
+                "label":"Detail",
+                "placeholder":"Enter Detail",
                 "className":"form-control",
                 "name":"part_3_detail3",
                 "access":false,
@@ -1504,18 +1816,29 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Device specification/measurement",
-                "placeholder":"Enter Device specification/measurement Quantity",
+                "label":"Quantity (hrs)",
+                "placeholder":"Enter Quantity (hrs)",
                 "className":"form-control",
                 "name":"part_3_quantity3",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Fitting and adjustment",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_6",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Fitting and adjustment",
-                "placeholder":"Enter Fitting and adjustment Detail",
+                "label":"Detail",
+                "placeholder":"Enter Detail",
                 "className":"form-control",
                 "name":"part_3_detail4",
                 "access":false,
@@ -1524,18 +1847,29 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Fitting and adjustment",
-                "placeholder":"Enter Fitting and adjustment Quantity",
+                "label":"Quantity (hrs)",
+                "placeholder":"Enter Quantity (hrs)",
                 "className":"form-control",
                 "name":"part_3_quantity4",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Client education",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_7",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Client education",
-                "placeholder":"Enter Client education Detail",
+                "label":"Detail",
+                "placeholder":"Enter Detail",
                 "className":"form-control",
                 "name":"part_3_detail5",
                 "access":false,
@@ -1544,18 +1878,29 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Client education",
-                "placeholder":"Enter Client education Quantity",
+                "label":"Quantity (hrs)",
+                "placeholder":"Enter Quantity (hrs)",
                 "className":"form-control",
                 "name":"part_3_quantity5",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Ongoing review/s (Identify intervals for first two years)",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_8",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Ongoing review/s (Identify intervals for first two years)",
-                "placeholder":"Enter Ongoing review/s (Identify intervals for first two years) Detail",
+                "label":"Detail",
+                "placeholder":"Enter Detail",
                 "className":"form-control",
                 "name":"part_3_detail6",
                 "access":false,
@@ -1564,17 +1909,28 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Ongoing review/s (Identify intervals for first two years)",
-                "placeholder":"Enter Ongoing review/s (Identify intervals for first two years) Quantity",
+                "label":"Quantity (hrs)",
+                "placeholder":"Enter Quantity (hrs)",
                 "className":"form-control",
                 "name":"part_3_quantity6",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"Capital Building Hours Sub Total (hrs)",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_9",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Capital Building Hours Sub Total",
+                "label":"",
                 "placeholder":"Capital Building Hours Sub Total",
                 "className":"form-control",
                 "name":"capital_building_hours_sub_total",
@@ -1582,9 +1938,20 @@ class ProstheticsSeeder extends Seeder
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"Capital Building Hours x Hourly Rate Sub Total ($) (A)",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_10",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Capital Building Hours x Hourly Rate",
+                "label":"",
                 "placeholder":"Capital Building Hours x Hourly Rate",
                 "className":"form-control",
                 "name":"capital_building_hours_hour_rate_sub__total",
@@ -1592,10 +1959,32 @@ class ProstheticsSeeder extends Seeder
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"4.1.2 (Capital) Labour",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_11",
+               "access":false
+            },
+            {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Fabrication/modification",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_12",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Fabrication/modification",
-                "placeholder":"Fabrication/modification Detail",
+                "label":"Detail",
+                "placeholder":"Enter Detail",
                 "className":"form-control",
                 "name":"part_3_detail7",
                 "access":false,
@@ -1604,18 +1993,29 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Client education",
-                "placeholder":"Fabrication/modification Value",
+                "label":"Value ($)",
+                "placeholder":"Enter Value ($)",
                 "className":"form-control",
                 "name":"part_3_quantity7",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Fitting/s",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_13",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Fitting/s",
-                "placeholder":"Fitting/s Detail",
+                "label":"Detail",
+                "placeholder":"Enter Detail",
                 "className":"form-control",
                 "name":"part_3_detail8",
                 "access":false,
@@ -1624,18 +2024,29 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Fitting/s",
-                "placeholder":"Fitting/s Value",
+                "label":"Value ($)",
+                "placeholder":"Enter Value ($)",
                 "className":"form-control",
                 "name":"part_3_quantity8",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Administration",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_14",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Administration",
-                "placeholder":"Administration Detail",
+                "label":"Detail",
+                "placeholder":"Enter Detail",
                 "className":"form-control",
                 "name":"part_3_detail9",
                 "access":false,
@@ -1644,17 +2055,28 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Administration",
-                "placeholder":"Administration Value",
+                "label":"Value ($)",
+                "placeholder":"Enter Value ($)",
                 "className":"form-control",
                 "name":"part_3_quantity9",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"Capital Labour Sub Total ($) (B)",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_15",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Capital Labour Sub Total",
+                "label":"",
                 "placeholder":"Capital Labour Sub Total",
                 "className":"form-control",
                 "name":"part_3_capital_labour_sub_total",
@@ -1662,10 +2084,32 @@ class ProstheticsSeeder extends Seeder
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"4.1.3 Componentry included in specification (Prosthetic) List details using ISO codes.",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_16",
+               "access":false
+            },
+            {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Connective componentry",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_17",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Connective componentry",
-                "placeholder":"Connective componentry Detail",
+                "label":"Detail",
+                "placeholder":"Enter Detail",
                 "className":"form-control",
                 "name":"part_3_detail10",
                 "access":false,
@@ -1674,18 +2118,29 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Connective componentry",
-                "placeholder":"Connective componentry Value",
+                "label":"Value ($)",
+                "placeholder":"Enter Value ($)",
                 "className":"form-control",
                 "name":"part_3_quantity10",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Knee/Elbow",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_18",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Knee/Elbow",
-                "placeholder":"Knee/Elbow Detail",
+                "label":"Detail",
+                "placeholder":"Enter Detail",
                 "className":"form-control",
                 "name":"part_3_detail11",
                 "access":false,
@@ -1694,18 +2149,29 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Knee/Elbow",
-                "placeholder":"Knee/Elbow Value",
+                "label":"Value ($)",
+                "placeholder":"Enter Value ($)",
                 "className":"form-control",
                 "name":"part_3_quantity11",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Foot/Wrist",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_19",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Foot/Wrist",
-                "placeholder":"Foot/Wrist Detail",
+                "label":"Detail",
+                "placeholder":"Enter Detail",
                 "className":"form-control",
                 "name":"part_3_detail12",
                 "access":false,
@@ -1714,18 +2180,29 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Foot/Wrist",
-                "placeholder":"Foot/Wrist Value",
+                "label":"Value ($)",
+                "placeholder":"Enter Value",
                 "className":"form-control",
                 "name":"part_3_quantity12",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Socket/suspension",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_20",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Socket/suspension",
-                "placeholder":"Socket/suspension Detail",
+                "label":"Detail",
+                "placeholder":"Enter Detail",
                 "className":"form-control",
                 "name":"part_3_detail13",
                 "access":false,
@@ -1734,18 +2211,29 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Socket/suspension",
-                "placeholder":"Socket/suspension Value",
+                "label":"Value ($)",
+                "placeholder":"Enter Value ($)",
                 "className":"form-control",
                 "name":"part_3_quantity13",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Consumables",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_21",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Consumables",
-                "placeholder":"Consumables Detail",
+                "label":"Detail",
+                "placeholder":"Enter Detail",
                 "className":"form-control",
                 "name":"part_3_detail14",
                 "access":false,
@@ -1754,17 +2242,28 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Consumables",
-                "placeholder":"Consumables Value",
+                "label":"Value ($)",
+                "placeholder":"Enter Value ($)",
                 "className":"form-control",
                 "name":"part_3_quantity14",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"Prosthetic Componentry Sub Total ($) (C)",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_22",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Prosthetic Componentry Sub Total ($) (C)",
+                "label":"",
                 "placeholder":"Prosthetic Componentry Sub Total ($) (C)",
                 "className":"form-control",
                 "name":"part_3_Prosthetic_Componentry_Sub_Total",
@@ -1772,10 +2271,21 @@ class ProstheticsSeeder extends Seeder
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Fabrication materials",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_23",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Fabrication materials",
-                "placeholder":"Fabrication materials Detail",
+                "label":"Detail",
+                "placeholder":"Enter Detail",
                 "className":"form-control",
                 "name":"part_3_detail15",
                 "access":false,
@@ -1784,18 +2294,29 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Fabrication materials",
-                "placeholder":"Fabrication materials Value",
+                "label":"Value ($)",
+                "placeholder":"Enter Value ($)",
                 "className":"form-control",
                 "name":"part_3_quantity15",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Ankle Joints (Size; batch number)",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_24",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Fankle Joints  (Size; batch number)",
-                "placeholder":"Fankle Joints  (Size; batch number) Detail",
+                "label":"FDetail",
+                "placeholder":"Enter Detail",
                 "className":"form-control",
                 "name":"part_3_detail16",
                 "access":false,
@@ -1804,18 +2325,29 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Fankle Joints  (Size; batch number)",
-                "placeholder":"Fankle Joints  (Size; batch number) Value",
+                "label":"Value ($)",
+                "placeholder":"Enter Value ($)",
                 "className":"form-control",
                 "name":"part_3_quantity16",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Knee Joints",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_25",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Knee Joints",
-                "placeholder":"Knee Joints Detail",
+                "label":"Detail",
+                "placeholder":"Enter Detail",
                 "className":"form-control",
                 "name":"part_3_detail17",
                 "access":false,
@@ -1824,18 +2356,29 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Knee Joints",
-                "placeholder":"Knee Joints Value",
+                "label":"Value ($)",
+                "placeholder":"Enter Value ($)",
                 "className":"form-control",
                 "name":"part_3_quantity17",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Other Joints",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_26",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Other Joints",
-                "placeholder":"Other Joints Detail",
+                "label":"Detail",
+                "placeholder":"Enter Detail",
                 "className":"form-control",
                 "name":"part_3_detail18",
                 "access":false,
@@ -1844,18 +2387,29 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Other Joints",
-                "placeholder":"Other Joints Value",
+                "label":"Value ($)",
+                "placeholder":"Enter Value ($)",
                 "className":"form-control",
                 "name":"part_3_quantity18",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Prefabricated componentry",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_27",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Prefabricated componentry",
-                "placeholder":"Prefabricated componentry Detail",
+                "label":"Detail",
+                "placeholder":"Enter Detail",
                 "className":"form-control",
                 "name":"part_3_detail19",
                 "access":false,
@@ -1864,18 +2418,29 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Prefabricated componentry",
-                "placeholder":"Prefabricated componentry Value",
+                "label":"Value ($)",
+                "placeholder":"Enter Value ($)",
                 "className":"form-control",
                 "name":"part_3_quantity19",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Custom made componentry",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_28",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Custom made componentry",
-                "placeholder":"Custom made componentry Detail",
+                "label":"Detail",
+                "placeholder":"Enter Detail",
                 "className":"form-control",
                 "name":"part_3_detail20",
                 "access":false,
@@ -1884,18 +2449,29 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Custom made componentry",
-                "placeholder":"Custom made componentry Value",
+                "label":"Value ($)",
+                "placeholder":"Enter Value ($)",
                 "className":"form-control",
                 "name":"part_3_quantity20",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Consumables",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_29",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Consumables",
-                "placeholder":"Consumables Detail",
+                "label":"Detail",
+                "placeholder":"Enter Detail",
                 "className":"form-control",
                 "name":"part_3_detail21",
                 "access":false,
@@ -1904,17 +2480,28 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Consumables",
-                "placeholder":"Consumables Value",
+                "label":"Value ($)",
+                "placeholder":"Enter Value ($)",
                 "className":"form-control",
                 "name":"part_3_quantity21",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"Orthotic Componentry Sub Total ($) (D)",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_30",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Orthotic Componentry Sub Total",
+                "label":"",
                 "placeholder":"Orthotic Componentry Sub Total",
                 "className":"form-control",
                 "name":"part_3_Orthotic_Componentry_Sub_Total",
@@ -1922,9 +2509,20 @@ class ProstheticsSeeder extends Seeder
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"Quoted Capital Cost of Total Solution/Device ($) (A + B + C + D)",
+               "label_3":"",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_31",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Quoted Capital Cost of Total Solution",
+                "label":"",
                 "placeholder":"Quoted Capital Cost of Total Solution",
                 "className":"form-control",
                 "name":"part_3_Quoted_Capital_Cost_of_Total_Solution",
@@ -1932,9 +2530,20 @@ class ProstheticsSeeder extends Seeder
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"4.1.5 Extra Features. List and Estimate cost of components/accessories (if any) that are desired by the participant but are unlikely to be assessed reasonable and necessary. Does the participant agree to pay for these from their own (not NDIS) funds?",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_32",
+               "access":false
+            },
+             {
                 "type":"checkbox-group",
                 "required":false,
-                "label":"Extra Features (If any)",
+                "label":"Yes",
                 "toggle":false,
                 "inline":false,
                 "name":"part_5_features_if_yes",
@@ -1951,7 +2560,7 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"checkbox-group",
                 "required":false,
-                "label":"Extra Features (If none)",
+                "label":"No",
                 "toggle":false,
                 "inline":false,
                 "name":"part_5_features_if_no",
@@ -1966,10 +2575,21 @@ class ProstheticsSeeder extends Seeder
                 ]
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Data Entry Row 1",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_33",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Item 1",
-                "placeholder":"Enter Item 1",
+                "label":"Item",
+                "placeholder":"Enter Item",
                 "className":"form-control",
                 "name":"part_3_item22",
                 "access":false,
@@ -1978,8 +2598,8 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Details 1",
-                "placeholder":"Enter Details 1",
+                "label":"Detail",
+                "placeholder":"Enter Details",
                 "className":"form-control",
                 "name":"part_3_detail22",
                 "access":false,
@@ -1988,18 +2608,29 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Details 1",
-                "placeholder":"Enter Cost 1",
+                "label":"Cost Estimate($)",
+                "placeholder":"Enter Cost Estimate($)",
                 "className":"form-control",
                 "name":"part_3_quantity22",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Data Entry Row 2",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_34",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Item 2",
-                "placeholder":"Enter Item 2",
+                "label":"Item",
+                "placeholder":"Enter Item",
                 "className":"form-control",
                 "name":"part_3_item23",
                 "access":false,
@@ -2008,8 +2639,8 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Details 2",
-                "placeholder":"Enter Details 2",
+                "label":"Detail",
+                "placeholder":"Enter Detail",
                 "className":"form-control",
                 "name":"part_3_detail23",
                 "access":false,
@@ -2018,18 +2649,29 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Details 2",
-                "placeholder":"Enter Cost 2",
+                "label":"Cost Estimate($)",
+                "placeholder":"Enter Cost Estimate($)",
                 "className":"form-control",
                 "name":"part_3_quantity23",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Data Entry Row 3",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_35",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Item 3",
-                "placeholder":"Enter Item 3",
+                "label":"Item",
+                "placeholder":"Enter Item",
                 "className":"form-control",
                 "name":"part_3_item24",
                 "access":false,
@@ -2038,8 +2680,8 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Details 3",
-                "placeholder":"Enter Details 3",
+                "label":"Details",
+                "placeholder":"Enter Details",
                 "className":"form-control",
                 "name":"part_3_detail24",
                 "access":false,
@@ -2048,17 +2690,28 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"text",
                 "required":false,
-                "label":"Details 3",
-                "placeholder":"Enter Cost 3",
+                "label":"Cost Estimate($)",
+                "placeholder":"Enter Cost Estimate($)",
                 "className":"form-control",
                 "name":"part_3_quantity24",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"4.1.6 The participant must be provided with maintenance and servicing information for their prosthetic/orthotic to remain in good working order. When will this be done? What are the warranty periods applying?",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_36",
+               "access":false
+            },
+             {
                 "type":"textarea",
                 "required":false,
-                "label":"The participant must be provided with maintenance and servicing information",
+                "label":"",
                 "placeholder":"The participant must be provided with maintenance and servicing information",
                 "className":"form-control",
                 "name":"part_3_The_participant_must_be_provided",
@@ -2066,9 +2719,20 @@ class ProstheticsSeeder extends Seeder
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"Time from funding approval to expected  orthosis/prosthesis provision (weeks):?",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_37",
+               "access":false
+            },
+             {
                 "type":"text",
                 "required":false,
-                "label":"Time from funding approval to expected  orthosis/prosthesis provision",
+                "label":"",
                 "placeholder":"Time from funding approval to expected  orthosis/prosthesis provision",
                 "className":"form-control",
                 "name":"part_3_Time_from_funding_approval",
@@ -2076,9 +2740,20 @@ class ProstheticsSeeder extends Seeder
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"4.1.7 Is the participant at safety or other risk while waiting for the orthosis/prosthesis? Yes or no, give details",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_38",
+               "access":false
+            },
+             {
                 "type":"checkbox-group",
                 "required":false,
-                "label":"Yes, the participant at safety or other risk while waiting for the orthosis/prosthesis.",
+                "label":"Yes",
                 "toggle":false,
                 "inline":false,
                 "name":"part_5_Yes_the_participant_at_safety",
@@ -2095,7 +2770,7 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"checkbox-group",
                 "required":false,
-                "label":"No, the participant at safety or other risk while waiting for the orthosis/prosthesis.",
+                "label":"No",
                 "toggle":false,
                 "inline":false,
                 "name":"part_5_No_the_participant_at_safety",
@@ -2112,17 +2787,28 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"textarea",
                 "required":false,
-                "label":"Is the participant at safety or other risk while waiting for the orthosis/prosthesis? Yes or no, give details",
-                "placeholder":"Is the participant at safety or other risk while waiting for the orthosis/prosthesis? Yes or no, give details",
+                "label":"Details",
+                "placeholder":"Enter Details",
                 "className":"form-control",
                 "name":"part_3_detail25",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"",
+               "label_2":"",
+               "label_3":"4.1.8 Is a short term option necessary? E.g. immediate repair on current or prefabricated item to trial or rent to ensure safety prior to final orthosis/prosthesis provision. Yes or no, give details.",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_39",
+               "access":false
+            },
+             {
                 "type":"checkbox-group",
                 "required":false,
-                "label":"Yes short term option is necessary",
+                "label":"Yes",
                 "toggle":false,
                 "inline":false,
                 "name":"part_5_yes_short_term_option_is_necessary",
@@ -2139,7 +2825,7 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"checkbox-group",
                 "required":false,
-                "label":"No short term option is not necessary",
+                "label":"No",
                 "toggle":false,
                 "inline":false,
                 "name":"part_5_No_short_term_option_is_not_necessary",
@@ -2156,17 +2842,28 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"textarea",
                 "required":false,
-                "label":"Is a short term option necessary?  Yes or no, give details",
-                "placeholder":"Is a short term option necessary?  Yes or no, give details",
+                "label":"Details",
+                "placeholder":"Enter Details",
                 "className":"form-control",
                 "name":"part_3_detail26",
                 "access":false,
                 "subtype":"text"
              },
              {
+               "type":"heading",
+               "required":false,
+               "label_1":"4.2 Participant Agreement",
+               "label_2":"",
+               "label_3":"Do AT Assessor and Participant agree on the recommended option?",
+               "placeholder":"Full Name",
+               "className":"form-control",
+               "name":"part_4_heading_extra_40",
+               "access":false
+            },
+             {
                 "type":"checkbox-group",
                 "required":false,
-                "label":"Yes, AT Assessor and Participant agree",
+                "label":"Yes",
                 "toggle":false,
                 "inline":false,
                 "name":"part_5_Yes_AT_Assessor_and_Participant_agree",
@@ -2183,7 +2880,7 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"checkbox-group",
                 "required":false,
-                "label":"No, AT Assessor and Participant does not agree",
+                "label":"No",
                 "toggle":false,
                 "inline":false,
                 "name":"part_5_No_AT_Assessor_and_Participant_does_not_agree",
@@ -2200,8 +2897,8 @@ class ProstheticsSeeder extends Seeder
              {
                 "type":"textarea",
                 "required":false,
-                "label":"Do AT Assessor and Participant agree on the recommended option? Yes or no, give details",
-                "placeholder":"Do AT Assessor and Participant agree on the recommended option? Yes or no, give details",
+                "label":"Details",
+                "placeholder":"Enter Details",
                 "className":"form-control",
                 "name":"part_3_detail27",
                 "access":false,
@@ -2209,334 +2906,427 @@ class ProstheticsSeeder extends Seeder
              }
         ]';
 
-        $form_fields5 = '[
-            {
-               "type":"checkbox-group",
-               "required":false,
-               "label":"Meet the NDIA expectation",
-               "toggle":false,
-               "inline":false,
-               "name":"part_5_declaration_NDIA_expectation",
-               "access":false,
-               "other":false,
-               "values":[
-                  {
-                     "label":"YES/NO",
-                     "value":"option-1",
-                     "selected":true
-                  }
+      $form_fields5 = '[
+         {
+           "type":"heading",
+           "required":false,
+           "label_1":"",
+           "label_2":"DECLARATION (indicate all relevant sections that apply)",
+           "label_3":"",
+           "placeholder":"Full Name",
+           "className":"form-control",
+           "name":"part_5_heading_extra_1",
+           "access":false
+        },
+             {
+               "type": "checkbox-group",
+               "required": false,
+               "label": "I certify that I meet the NDIA expectations of AT assessor provider suitability (including understanding of the current NDIS Act, Rules and Operational Guidelines) to assess the type of assistive technology and associated supports, at the level of complexity required by this participant.",
+               "toggle": false,
+               "inline": false,
+               "name": "part_5_details_of_assistive_technology_assessor_01",
+               "access": false,
+               "other": false,
+               "values": [
+                   {
+                       "label": "YES/NO",
+                       "value": "option-1",
+                       "selected": true
+                   }
                ]
-            },
-            {
-               "type":"checkbox-group",
-               "required":false,
-               "label":"Providing appropriate evidence to the NDIA",
-               "toggle":false,
-               "inline":false,
-               "name":"part_5_declaration_appropriate_evidence",
-               "access":false,
-               "other":false,
-               "values":[
-                  {
-                     "label":"YES/NO",
-                     "value":"option-1",
-                     "selected":true
-                  }
+           },
+             {
+               "type": "checkbox-group",
+               "required": false,
+               "label": "I will provide appropriate evidence to the NDIA and/or Quality and Safe Guards Commission if and as requested.",
+               "toggle": false,
+               "inline": false,
+               "name": "part_5_details_of_assistive_technology_assessor_02",
+               "access": false,
+               "other": false,
+               "values": [
+                   {
+                       "label": "YES/NO",
+                       "value": "option-1",
+                       "selected": true
+                   }
                ]
-            },
-            {
-               "type":"checkbox-group",
-               "required":false,
-               "label":"I understand all about the NDIA",
-               "toggle":false,
-               "inline":false,
-               "name":"part_5_declaration_NDIA_understanding",
-               "access":false,
-               "other":false,
-               "values":[
-                  {
-                     "label":"YES/NO",
-                     "value":"option-1",
-                     "selected":false
-                  }
+           },
+             {
+               "type": "checkbox-group",
+               "required": false,
+               "label": "I understand and acknowledge that the NDIA and participant will rely on my professional advice to select, source and implement this assistive technology.",
+               "toggle": false,
+               "inline": false,
+               "name": "part_5_details_of_assistive_technology_assessor_03",
+               "access": false,
+               "other": false,
+               "values": [
+                   {
+                       "label": "YES/NO",
+                       "value": "option-1",
+                       "selected": true
+                   }
                ]
-            },
-            {
-               "type":"checkbox-group",
-               "required":false,
-               "label":"Accessing by the treating multi-disciplinary team",
-               "toggle":false,
-               "inline":false,
-               "name":"part_5_declaration_accessing_team",
-               "access":false,
-               "other":false,
-               "values":[
-                  {
-                     "label":"YES/NO",
-                     "value":"option-1",
-                     "selected":false
-                  }
+           },
+             {
+               "type": "checkbox-group",
+               "required": false,
+               "label": "This assistive technology has been assessed by the treating multi-disciplinary team and I have completed the AT assessment on behalf of that team.",
+               "toggle": false,
+               "inline": false,
+               "name": "part_5_details_of_assistive_technology_assessor_04",
+               "access": false,
+               "other": false,
+               "values": [
+                   {
+                       "label": "YES/NO",
+                       "value": "option-1",
+                       "selected": true
+                   }
                ]
-            },
-            {
+           },
+           {
+             "type":"heading",
+             "required":false,
+             "label_1":"",
+             "label_2":"Assessor’s Details",
+             "label_3":"",
+             "placeholder":"Full Name",
+             "className":"form-control",
+             "name":"part_5_heading_extra_2",
+             "access":false
+          },
+             {
                "type":"text",
                "required":false,
-               "label":"Assessor’s Name",
-               "placeholder":"Enter Assessor’s Name",
+               "label":"Name",
+               "placeholder":"Enter Name",
                "className":"form-control",
-               "name":"part_5_assessors_name",
+               "name":"part_5_details_of_assistive_technology_assessor_05",
                "access":false,
                "subtype":"text"
             },
-            {
+             {
                "type":"text",
                "required":false,
-               "label":"Assessor’s NDIS Provider Registration Number",
-               "placeholder":"Enter Assessor’s NDIS Provider Registration Number",
+               "label":"NDIS Provider Registration number (where applicable)",
+               "placeholder":"Enter NDIS Provider Registration number (where applicable)",
                "className":"form-control",
-               "name":"part_5_provider_registration_number",
+               "name":"part_5_details_of_assistive_technology_assessor_06",
                "access":false,
                "subtype":"text"
             },
-            {
+             {
                "type":"text",
                "required":false,
-               "label":"Assessor’s Phone Number",
-               "placeholder":"Enter Assessor’s Phone Number",
+               "label":"Phone",
+               "placeholder":"Enter Phone",
                "className":"form-control",
-               "name":"part_5_assessorphone_number",
+               "name":"part_5_details_of_assistive_technology_assessor_07",
                "access":false,
                "subtype":"text"
             },
-            {
-               "type":"email",
-               "subtype":"email",
-               "required":false,
-               "label":"Assessor’s Email",
-               "placeholder":"Enter Assessor’s Email Address",
-               "className":"form-control",
-               "name":"part_5_email_address",
-               "access":false
-            },
-            {
+             {
                "type":"text",
                "required":false,
-               "label":"Assessor’s Qualification",
-               "placeholder":"Enter Assessor’s Qualification",
+               "label":"Email",
+               "placeholder":"Enter Email",
                "className":"form-control",
-               "name":"part_5_qualification",
+               "name":"part_5_details_of_assistive_technology_assessor_08",
                "access":false,
                "subtype":"text"
             },
-            {
+             {
+               "type":"text",
+               "required":false,
+               "label":"Signature",
+               "placeholder":"Enter Signature",
+               "className":"form-control",
+               "name":"part_5_details_of_assistive_technology_assessor_09",
+               "access":false,
+               "subtype":"text"
+            },
+             {
+               "type":"text",
+               "required":false,
+               "label":"Qualification",
+               "placeholder":"Enter Qualification",
+               "className":"form-control",
+               "name":"part_5_details_of_assistive_technology_assessor_10",
+               "access":false,
+               "subtype":"text"
+            },
+             {
                "type":"date",
                "required":false,
-               "label":"Assessor’s Date of Assessment",
-               "placeholder":"Set Assessor’s Date of Assessment",
+               "label":"Date of Assessment",
+               "placeholder":"Date of Assessment",
                "className":"form-control",
-               "name":"part_5_date_assessment",
-               "access":false
-            },
-            {
+               "name":"part_5_details_of_assistive_technology_assessor_11",
+               "access":false,
+               "subtype":"textarea"
+             },
+             {
                "type":"date",
                "required":false,
-               "label":"Assessor’s Date of Report",
-               "placeholder":"Set Assessor’s Date of Report",
+               "label":"Date of Report",
+               "placeholder":"Date of Report",
                "className":"form-control",
-               "name":"part_5_reportDate",
-               "access":false
-            }
+               "name":"part_5_details_of_assistive_technology_assessor_12",
+               "access":false,
+               "subtype":"textarea"
+             }
          ]';
 
-        $form_fields6 = '[
+      $form_fields6 = '[
             {
-               "type":"checkbox-group",
-               "required":false,
-               "label":"Yes, I consent",
-               "toggle":false,
-               "inline":false,
-               "name":"part_6_yes_consent",
-               "access":false,
-               "other":false,
-               "values":[
-                  {
-                     "label":"YES/NO",
-                     "value":"option-1",
-                     "selected":true
-                  }
-               ]
-            },
-            {
-               "type":"checkbox-group",
-               "required":false,
-               "label":"No, I do not consent",
-               "toggle":false,
-               "inline":false,
-               "name":"part_6_noidonot_consent",
-               "access":false,
-               "other":false,
-               "values":[
-                  {
-                     "label":"YES/NO",
-                     "value":"option-1",
-                     "selected":true
-                  }
-               ]
-            },
-            {
-               "type":"checkbox-group",
-               "required":false,
-               "label":"I understand that I am giving consent to the NDIA",
-               "toggle":false,
-               "inline":false,
-               "name":"part_6_iunderstandthatiamgivingconsenttothe_NDIA",
-               "access":false,
-               "other":false,
-               "values":[
-                  {
-                     "label":"YES/NO",
-                     "value":"option-1",
-                     "selected":false
-                  }
-               ]
-            },
-            {
-               "type":"checkbox-group",
-               "required":false,
-               "label":"I understand that I can access the NDIA’s Privacy Notice",
-               "toggle":false,
-               "inline":false,
-               "name":"part_6_iunderstandthaticanaccesstheNDIAsprivacy_notice",
-               "access":false,
-               "other":false,
-               "values":[
-                  {
-                     "label":"YES/NO",
-                     "value":"option-1",
-                     "selected":false
-                  }
-               ]
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Full Name",
-               "placeholder":"Enter Full  Name",
-               "className":"form-control",
-               "name":"part_6_signaturersfull_name",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"date",
-               "required":false,
-               "label":"Date",
-               "placeholder":"Enter Date",
-               "className":"form-control",
-               "name":"part_6_signaturers_date",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Full Name of person completing this form",
-               "placeholder":"Enter Full Name of person completing this form",
-               "className":"form-control",
-               "name":"part_6_fullnameofpersoncompletingthis_form",
-               "access":false,
-               "subtype":"text"
-            },
-            {
-                "type":"date",
+              "type":"heading",
+              "required":false,
+              "label_1":"For the participant to complete",
+              "label_2":"",
+              "label_3":"As a participant who requires assistive technology supports, the National Disability Insurance Agency (NDIA) may need to contact your AT assessor and / or AT supplier to discuss information within your assistive technology assessment and quotation(s). This will assist the NDIA with determining whether your request for assistive technology support(s) can be provided to you under the NDIS. Do you consent to the NDIA collecting and disclosing your information including from these third parties mentioned above, in relation to your assistive technology assessment and quotation?",
+              "placeholder":"Full Name",
+              "className":"form-control",
+              "name":"part_6_heading_extra_1",
+              "access":false
+           },
+                {
+                  "type":"checkbox-group",
+                  "required":false,
+                  "label":"Yes, I consent",
+                  "toggle":false,
+                  "inline":false,
+                  "name":"part_6_consent_to_collect_and_share_your_information_01",
+                  "access":false,
+                  "other":false,
+                  "values":[
+                     {
+                        "label":"Option 1",
+                        "value":"option-1",
+                        "selected":true
+                     }
+                  ]
+               },
+                {
+                  "type":"checkbox-group",
+                  "required":false,
+                  "label":"No, I do not consent",
+                  "toggle":false,
+                  "inline":false,
+                  "name":"part_6_consent_to_collect_and_share_your_information_02",
+                  "access":false,
+                  "other":false,
+                  "values":[
+                     {
+                        "label":"Option 1",
+                        "value":"option-1",
+                        "selected":true
+                     }
+                  ]
+               },
+                {
+                  "type":"checkbox-group",
+                  "required":false,
+                  "label":"Participant’s Signature",
+                  "toggle":false,
+                  "inline":false,
+                  "name":"part_6_consent_to_collect_and_share_your_information_03",
+                  "access":false,
+                  "other":false,
+                  "values":[
+                     {
+                        "label":"Option 1",
+                        "value":"option-1",
+                        "selected":true
+                     }
+                  ]
+               },
+                {
+                  "type":"checkbox-group",
+                  "required":false,
+                  "label":"I understand that I am giving consent to the NDIA to do the things with my information set out in this section. I understand that I can withdraw my consent for the NDIS to do things with my information at any time by letting the NDIA know.",
+                  "toggle":false,
+                  "inline":false,
+                  "name":"part_6_consent_to_collect_and_share_your_information_04",
+                  "access":false,
+                  "other":false,
+                  "values":[
+                     {
+                        "label":"Option 1",
+                        "value":"option-1",
+                        "selected":true
+                     }
+                  ]
+               },
+                {
+                  "type":"checkbox-group",
+                  "required":false,
+                  "label":"I understand that I can access the NDIA’s Privacy Notice and Privacy Policy on the NDIA website(https://www.ndis.gov.au/about-us/operational-guidelines/information-handling-operational-guideline/information-handling-operational-guideline-privacy) or by contacting the NDIA (https://www.ndis.gov.au/contact).",
+                  "toggle":false,
+                  "inline":false,
+                  "name":"part_6_consent_to_collect_and_share_your_information_05",
+                  "access":false,
+                  "other":false,
+                  "values":[
+                     {
+                        "label":"Option 1",
+                        "value":"option-1",
+                        "selected":true
+                     }
+                  ]
+               },
+                {
+                  "type": "text",
+                  "required": false,
+                  "label": "Signature",
+                  "placeholder": "Signature",
+                  "className": "form-control",
+                  "name": "part_6_consent_to_collect_and_share_your_information_06",
+                  "access": false,
+                  "subtype": "text"
+              },
+                {
+                  "type":"date",
+                  "required":false,
+                  "label":"Date",
+                  "placeholder":"Date",
+                  "className":"form-control",
+                  "name":"part_6_consent_to_collect_and_share_your_information_07",
+                  "access":false,
+                  "subtype":"textarea"
+                },
+                {
+                  "type": "text",
+                  "required": false,
+                  "label": "Full name",
+                  "placeholder": "Enter Full name",
+                  "className": "form-control",
+                  "name": "part_6_consent_to_collect_and_share_your_information_08",
+                  "access": false,
+                  "subtype": "text"
+              },
+              {
+                "type":"heading",
                 "required":false,
-                "label":"Date",
-                "placeholder":"Enter Date",
+                "label_1": "",
+                "label_2": "",
+                "label_3": "If you have signed this Form on behalf of the NDIS participant, please complete the details below. It is an offence to provide false or misleading information. \nWe may require you to provide evidence of your authority to sign on behalf of the person.",
+                "placeholder":"Full Name",
                 "className":"form-control",
-                "name":"part_6_signaturersonbefalfofparticipant_date",
-                "access":false,
-                "subtype":"text"
-            },
-            {
-               "type":"text",
-               "required":false,
-               "label":"Relationship to participant",
-               "placeholder":"Enter Relationship to participant",
-               "className":"form-control",
-               "name":"part_6_relationshiptoparticipant",
-               "access":false,
-               "subtype":"text"
-            }
-         ]';
+                "name":"part_6_heading_extra_2",
+                "access":false
+             },
+                {
+                  "type": "text",
+                  "required": false,
+                  "label": "Signature",
+                  "placeholder": "Signature",
+                  "className": "form-control",
+                  "name": "part_6_consent_to_collect_and_share_your_information_09",
+                  "access": false,
+                  "subtype": "text"
+              },
+                {
+                  "type":"date",
+                  "required":false,
+                  "label":"Date",
+                  "placeholder":"Date",
+                  "className":"form-control",
+                  "name":"part_6_consent_to_collect_and_share_your_information_10",
+                  "access":false,
+                  "subtype":"textarea"
+                },
+                {
+                  "type": "text",
+                  "required": false,
+                  "label": "Full Name of person completing this form (please print)",
+                  "placeholder": "Enter Full Name of person completing this form (please print)",
+                  "className": "form-control",
+                  "name": "part_6_consent_to_collect_and_share_your_information_11",
+                  "access": false,
+                  "subtype": "text"
+              },
+                {
+                  "type": "text",
+                  "required": false,
+                  "label": "Relationship to participant or person wishing to become an NDIS participant",
+                  "placeholder": "Enter Relationship to participant or person wishing to become an NDIS participant",
+                  "className": "form-control",
+                  "name": "part_6_consent_to_collect_and_share_your_information_12",
+                  "access": false,
+                  "subtype": "text"
+              }
+              ]';
 
-        $form = Form::insertGetId([
-            'name' => 'Prosthetics & Orthotics Assistive Technology Assessment Template'
-        ]);
+      $form = Form::insertGetId([
+         'name' => 'Prosthetics & Orthotics Assistive Technology Assessment Template'
+      ]);
 
-        $heading1 = FormHeading::insertGetId([
-            'form_heading' => 'PART 1 – Participant and Plan Management Details',
-            'form_id' => $form,
-            'section_html' => $section1
-        ]);
+      $heading1 = FormHeading::insertGetId([
+         'form_heading' => 'PART 1 – Participant and Plan Management Details',
+         'form_id' => $form,
+         'section_html' => $section1
+      ]);
 
-        $heading2 = FormHeading::insertGetId([
-            'form_heading' => 'PART 2 – Assessment',
-            'form_id' => $form,
-            'section_html' => $section2
-        ]);
+      $heading2 = FormHeading::insertGetId([
+         'form_heading' => 'PART 2 – Assessment',
+         'form_id' => $form,
+         'section_html' => $section2
+      ]);
 
-        $heading3 = FormHeading::insertGetId([
-            'form_heading' => 'PART 3 – Exploration of Options and Recommendation',
-            'form_id' => $form,
-            'section_html' => $section3
-        ]);
+      $heading3 = FormHeading::insertGetId([
+         'form_heading' => 'PART 3 – Exploration of Options and Recommendation',
+         'form_id' => $form,
+         'section_html' => $section3
+      ]);
 
-        $heading4 = FormHeading::insertGetId([
-            'form_heading' => 'PART 4 – Specification of Recommended P&O solution/device',
-            'form_id' => $form,
-            'section_html' => $section4
-        ]);
+      $heading4 = FormHeading::insertGetId([
+         'form_heading' => 'PART 4 – Specification of Recommended P&O solution/device',
+         'form_id' => $form,
+         'section_html' => $section4
+      ]);
 
-        $heading5 = FormHeading::insertGetId([
-            'form_heading' => 'PART 5 – Details of Assistive Technology Assessor',
-            'form_id' => $form,
-            'section_html' => $section5
-        ]);
+      $heading5 = FormHeading::insertGetId([
+         'form_heading' => 'PART 5 – Details of Assistive Technology Assessor',
+         'form_id' => $form,
+         'section_html' => $section5
+      ]);
 
-        $heading6 = FormHeading::insertGetId([
-            'form_heading' => 'PART 6 – Consent to Collect and Share Your Information – Provider AT Assessment and Quotation(s)',
-            'form_id' => $form,
-            'section_html' => $section6
-        ]);
+      $heading6 = FormHeading::insertGetId([
+         'form_heading' => 'PART 6 – Consent to Collect and Share Your Information – Provider AT Assessment and Quotation(s)',
+         'form_id' => $form,
+         'section_html' => $section6
+      ]);
 
-        FormField::create([
-            'form_heading_id' => $heading1,
-            'form_field' => $form_fields
-        ]);
+      FormField::create([
+         'form_heading_id' => $heading1,
+         'form_field' => $form_fields
+      ]);
 
-        FormField::create([
-            'form_heading_id' => $heading2,
-            'form_field' => $form_fields2
-        ]);
+      FormField::create([
+         'form_heading_id' => $heading2,
+         'form_field' => $form_fields2
+      ]);
 
-        FormField::create([
-            'form_heading_id' => $heading3,
-            'form_field' => $form_fields3
-        ]);
+      FormField::create([
+         'form_heading_id' => $heading3,
+         'form_field' => $form_fields3
+      ]);
 
-        FormField::create([
-            'form_heading_id' => $heading4,
-            'form_field' => $form_fields4
-        ]);
+      FormField::create([
+         'form_heading_id' => $heading4,
+         'form_field' => $form_fields4
+      ]);
 
-        FormField::create([
-            'form_heading_id' => $heading5,
-            'form_field' => $form_fields5
-        ]);
+      FormField::create([
+         'form_heading_id' => $heading5,
+         'form_field' => $form_fields5
+      ]);
 
-        FormField::create([
-            'form_heading_id' => $heading6,
-            'form_field' => $form_fields6
-        ]);
-    }
+      FormField::create([
+         'form_heading_id' => $heading6,
+         'form_field' => $form_fields6
+      ]);
+   }
 }

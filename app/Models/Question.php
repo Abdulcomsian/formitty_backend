@@ -35,4 +35,9 @@ class Question extends Model
     {
         return $this->belongsTo(AssessmentGroup::class);
     }
+
+    public function assessmentGroupPoint()
+    {
+        return $this->hasOne(AssessmentGroupPoint::class);
+    }
 }

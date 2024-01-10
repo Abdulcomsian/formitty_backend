@@ -11,12 +11,20 @@ use Illuminate\Support\Facades\View;
 use App\Models\Question;
 use App\Models\FlowchartResponse;
 use App\Models\Answer;
+use App\Models\AssesmentAiResponse;
 use App\Models\Response;
 use App\Models\FlowchartAnswer;
 use App\Models\AssessmentGroup;
+use App\Models\CustomHeading;
+use App\Models\OpenaiResponse;
 use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Client;
 use PDF;
+use App\Models\StaticOption;
+use App\Models\UserForm;
+use App\Models\AssessmentGroupPoint;
+use App\Models\UserFormHeading;
+use Illuminate\Support\Facades\DB;
 
 class AssessmentToolController extends ApiController
 {
@@ -42,15 +50,14 @@ class AssessmentToolController extends ApiController
             return $this->errorResponse($validator->messages(), 422);
         }
 
-        if(!auth('sanctum')->user()){
-            return $this->errorResponse("User is not authenticated", 404);
-          }
-        
-        $user_id = auth('sanctum')->user()->id;
+        if (!auth('sanctum')->user()) {
+            return $this->errorResponse("User is not authenticated", 401);
+        }
 
+        $user_id = auth('sanctum')->user()->id;
         try {
             $assessment_tools = [];
-            $assessment_tools[] = Response::with('assessment_tool')->where([['user_id', $user_id], ['user_form_id', $request->user_form_id]])->get();
+            $assessment_tools[] = Response::with('assessment_tool' , 'aiReport')->where([['user_id', $user_id], ['user_form_id', $request->user_form_id]])->get();
             $assessment_tools[] = FlowchartResponse::with('assessment_tool')->where([['user_id', $user_id], ['user_form_id', $request->user_form_id]])->get();
             return $this->successResponse($assessment_tools, 'Assessment tools get successfully!.', 200);
         } catch (\Throwable $th) {
@@ -77,7 +84,7 @@ class AssessmentToolController extends ApiController
             }
             return $this->successResponse($assessment_tools, 'Questions get successfully!.', 200);
         } catch (\Throwable $th) {
-            return $this->errorResponse($th->getMessage(), 401);
+            return $this->errorResponse($th->getMessage(), 500);
         }
     }
 
@@ -85,12 +92,13 @@ class AssessmentToolController extends ApiController
     {
         $input = $request->all();
 
+
         try {
 
-            if(!auth('sanctum')->user()){
-                return $this->errorResponse("User is not authenticated", 404);
-              }
-              $user_id = auth('sanctum')->user()->id;
+            if (!auth('sanctum')->user()) {
+                return $this->errorResponse("User is not authenticated", 401);
+            }
+            $user_id = auth('sanctum')->user()->id;
             // Create a new response object
             if ($request->user_assessment_id) {
                 $response = Response::find($request->user_assessment_id);
@@ -121,7 +129,7 @@ class AssessmentToolController extends ApiController
                 $name = $result[0];
                 $question_id = $result[1] ?? null;
                 $option_id = $result[2] ?? null;
-
+                
                 if ($name == 'multiple_choice') {
                     $answer = new Answer([
                         'question_id' => $question_id,
@@ -151,26 +159,131 @@ class AssessmentToolController extends ApiController
                     ]);
                 } elseif ($name == 'group_point') {
                     $group = AssessmentGroup::findorfail($question_id);
-                    if ($group) {
-                        $group->update([
-                            'point' => $value,
-                        ]);
-                    }
+                    $group_point = new AssessmentGroupPoint();
+                    $group_point->assessment_group_id = $group->id;
+                    $group_point->user_form_id = $request->user_form_id;
+                    $group_point->response_id = $response->id;
+                    $group_point->point = $value;
+                    $group_point->save();
+
+                    // $group = AssessmentGroup::findorfail($question_id);
+                    // if ($group) {
+                    //     $group->update([
+                    //         'point' => $value,
+                    //     ]);
+                    // }
                 } elseif ($name == 'point') {
-                    $question = Question::findorfail($question_id);
+                    $question = Answer::where([['question_id', $question_id], ['response_id', $response->id]])->first();
                     if ($question) {
                         $question->update([
-                            'point' => $value,
+                            'level' => $value,
                         ]);
                     }
+                    // $question = Question::findorfail($question_id);
+                    // if ($question) {
+                    //     $question->update([
+                    //         'point' => $value,
+                    //     ]);
+                    // }
                 }
                 $answer->save();
             }
 
+            //open ai code starts here
+
+            $questionList = $request->all();
+        // dd($questionList);
+
+        $assesmentId = $questionList['assessment_id'] ?? $response->assessment_tool_id;
+    
+        $formId = $questionList['user_form_id'];
+
+        $heading = AssessmentTool::find($assesmentId)->title;
+        
+        $prompt = "I am an occupational therapist. Here is the response of the participants for the questionnaire named '$heading' Here is the questionnaire along with the participants' responses.";
+
+        $questionType = ['open_ended' , 'multiple_choice'];
+        $questionIds = [];
+        $arrayDetail = [];
+        $index = 0;
+        foreach($questionList as $key => $question){
+           $element =  explode("-" , $key);
+           if(in_array($element[0] , $questionType)){
+                $questionIds[] =  (int)$element[1];
+                $arrayDetail[] = ["index" => $index , "value" => $question];
+           }
+           $index++;
+        }
+        // Ques
+        $questions = Question::whereIn('id' , $questionIds)->get();
+        
+        $check = [0,1,2,3,4];
+        // dd($questions);
+        foreach($questions as $index => $question){
+                $prompt .= "Question: ".$question->title." \n";
+                // if($question->id == 110)
+                // dd($arrayDetail[$index]["value"], $index);
+                
+                if($question->type == 'multiple_choice'){
+                    if(in_array( (int)$arrayDetail[$index]["value"] , $check)){
+                        switch((int)$arrayDetail[$index]["value"]){
+                            case 0:
+                                $prompt .= "Answer: (None) Not At All \n";
+                            break;
+                            case 1:
+                                $prompt .= "Answer: Slight (Rare, less than a day or two) \n";
+                            break;
+                            case 2:
+                                $prompt .= "Answer: Mild (Several days) \n";
+                            break;
+                            case 3:
+                                $prompt .= "Answer: Moderate (More than half the days) \n";
+                            break;
+                            default:
+                                $prompt .= "Answer: Severe (Nearly every day) \n";
+
+                        }
+                    }else{
+                        $prompt .= "Answer: ".$arrayDetail[$index]["value"]." \n";
+                    }
+                }else{
+                    $prompt .= "Answer: ".$arrayDetail[$index]["value"]." \n";
+                }
+                // $prompt .= 
+        }
+
+        $prompt .=  "Please generate a brief summary of the data.";
+
+
+
+
+            $apiKey = env('OPENAI_CLIENT_KEY');
+            $client = new Client();
+    
+            $aiResponse = $client->post('https://api.openai.com/v1/engines/text-davinci-003/completions', [
+                'headers' => [
+                    'Authorization' => 'Bearer ' . $apiKey,
+                ],
+                'json' => [
+                    'prompt' => $prompt,
+                    'max_tokens' => 500,
+                    'temperature' => 0.8
+                ],
+            ]);
+    
+            $data = json_decode($aiResponse->getBody());
+            $content = $data->choices[0]->text;
+    
+
+           AssesmentAiResponse::updateOrCreate(
+            ['assesment_tool_id' => $assesmentId, 'response_id' => $response->id],
+            ['assesment_tool_id' => $assesmentId,  'assesment_questions' => $prompt , 'assesment_openai_response' => $content, 'response_id' => $response->id],
+           );
+            //open ai code ends here
 
             return $this->successResponse($response, 'Questions get successfully!.', 200);
         } catch (\Throwable $th) {
-            return $this->errorResponse($th->getMessage(), 401);
+            return $this->errorResponse($th->getMessage(), 500);
         }
     }
 
@@ -191,7 +304,7 @@ class AssessmentToolController extends ApiController
 
         try {
             // Find the response with the given ID
-            $response = Response::with('assessment_tool', 'assessment_tool.assessment_groups', 'assessment_tool.assessment_groups.questions', 'assessment_tool.assessment_groups.questions.options')->findOrFail($request->user_assessment_id);
+            $response = Response::with('assessment_tool', 'assessment_tool.assessment_groups', 'assessment_tool.assessment_groups.assessment_group_point', 'assessment_tool.assessment_groups.questions', 'assessment_tool.assessment_groups.questions.options')->findOrFail($request->user_assessment_id);
             if ($response->assessment_tool->assessment_groups->isEmpty()) {
                 $response = Response::with('assessment_tool', 'assessment_tool.questions', 'assessment_tool.questions.options')->findOrFail($request->user_assessment_id);
             }
@@ -232,10 +345,10 @@ class AssessmentToolController extends ApiController
 
         try {
 
-            if(!auth('sanctum')->user()){
+            if (!auth('sanctum')->user()) {
                 return $this->errorResponse("User is not authenticated", 404);
             }
-            
+
             $user_id = auth('sanctum')->user()->id;
 
             $response = new Response();
@@ -273,10 +386,10 @@ class AssessmentToolController extends ApiController
     public function storeFlowChart(Request $request)
     {
         try {
-            if(!auth('sanctum')->user()){
-                return $this->errorResponse("User is not authenticated", 404);
+            if (!auth('sanctum')->user()) {
+                return $this->errorResponse("User is not authenticated", 401);
             }
-            
+
             $user_id = auth('sanctum')->user()->id;
             $response = new FlowchartResponse();
             $response->user_id = $user_id;
@@ -347,10 +460,10 @@ class AssessmentToolController extends ApiController
                     'errors' => $validator->errors()
                 ], 400);
             }
-            if(!auth('sanctum')->user()){
+            if (!auth('sanctum')->user()) {
                 return $this->errorResponse("User is not authenticated", 404);
             }
-            
+
             $user_id = auth('sanctum')->user()->id;
 
             $response = FlowchartResponse::where('user_form_id', $request->user_form_id)->where('assessment_tool_id', $request->assessment_tool_id)->delete();
@@ -375,9 +488,9 @@ class AssessmentToolController extends ApiController
 
             $client = new Client();
 
-            $product_response = $client->get('https://formitydev.com/bagisto/public/api/products/' . $request->product_id);
+            $product_response = $client->get('https://marketplace.formitydev.com/api/products/' . $request->product_id);
             // @dd($product_response);
-            $review_response = $client->get('https://formitydev.com/bagisto/public/api/reviews?product_id=' . $request->product_id);
+            $review_response = $client->get('https://marketplace.formitydev.com/api/reviews?product_id=' . $request->product_id);
             // @dd($review_response);
             $product_response = json_decode($product_response->getBody(), true);
             $review_response = json_decode($review_response->getBody(), true);
@@ -393,5 +506,147 @@ class AssessmentToolController extends ApiController
         } catch (\Throwable $th) {
             return $this->errorResponse($th->getMessage(), 401);
         }
+    }
+
+    public function storeOpenAiResponses(Request $request)
+    {
+        try {
+            $openai = OpenaiResponse::where('form_id', $request->form_id)->first();
+            // if($openai){
+            //     $openai->form_id = $request->form_id;
+            //     if($request->note_response){
+            //         $openai->note_response = $request->note_response;
+            //     }
+            //     if($request->note_response){
+            //         $openai->audio_response = $request->audio_response;
+            //     }
+            //     $openai->save();
+            //     return $this->successResponse($openai, 'OpenAiResponse updated successfully!.', 200);
+            // }
+            if (!$openai) {
+                $openai = new OpenaiResponse();
+            }
+            $openai->form_id = $request->form_id;
+            if ($request->note_response) {
+                $openai->note_response = $request->note_response;
+            }
+            if ($request->audio_response) {
+                $openai->audio_response = $request->audio_response;
+            }
+            $openai->save();
+            return $this->successResponse($openai, 'OpenAiResponse updated successfully!.', 200);
+        } catch (\Throwable $th) {
+            return $this->errorResponse($th->getMessage(), 401);
+        }
+    }
+
+    public function chatgptPrompts(Request $request)
+    {
+        try {
+            $options = StaticOption::whereIn('option_name', ['audio_prompt', 'notes_prompt'])->get();
+
+            $audioPrompt = $options->where('option_name', 'audio_prompt')->first()->option_value;
+            $notesPrompt = $options->where('option_name', 'notes_prompt')->first()->option_value;
+
+            // Return as separate variables
+            return $this->successResponse([
+                'audio_prompt' => $audioPrompt,
+                'notes_prompt' => $notesPrompt
+            ], 'Chatgpt prompts updated successfully!', 200);
+
+            // Return as an array
+            // return $this->successResponse([$audioPrompt, $notesPrompt], 'Chatgpt prompts updated successfully!', 200);
+        } catch (\Throwable $th) {
+            return $this->errorResponse($th->getMessage(), 500);
+        }
+    }
+
+    public function deleteAssessmentTool(Request $request)
+    {
+        // Validate the request data
+        try {
+            DB::beginTransaction();
+            $validator = Validator::make($request->all(), [
+                'user_heading_id' => 'required_without:assestment_id',
+                'assestment_id' => 'required_without:user_heading_id',
+                // 'user_heading_id' => 'required|integer',
+                'user_form_id' => 'required|integer',
+                'heading_type' => 'required_with:user_heading_id',
+                
+            ]);
+            if ($validator->fails()) {
+                return response()->json([
+                    'message' => 'Validation error',
+                    'errors' => $validator->errors()
+                ], 400);
+            }
+
+            $userFormHeading = $request->user_heading_id;
+            $assestmentId = $request->assestment_id;
+
+            if(isset($userFormHeading) && !is_null($userFormHeading)){
+
+            // $user_form_heading = UserFormHeading::where('user_form_id', $request->user_form_id)->where('heading_id', $request->user_heading_id)->where('heading_type', $request->heading_type)->first();
+            $user_form_heading = UserFormHeading::where('user_form_id', $request->user_form_id)->where('heading_id', $request->user_heading_id)->where('heading_type', $request->heading_type)->first();
+
+            if ($user_form_heading == null) {
+                return $this->errorResponse("No Record found!", 404);
+            }
+
+            $response = Response::findorfail($request->user_heading_id);
+
+            if ($response && $request->heading_type == 'assessment_tool') {
+                // dd($response->answers);
+                $response->answers()->delete();
+
+                $response->delete();
+
+                $user_form_heading->delete();
+            }
+
+
+            if ($request->heading_type == 'custom') {
+                $custom_heading = CustomHeading::where('user_form_id', $request->user_form_id)->where('user_heading_id', $user_form_heading->id)->first();
+
+                $custom_heading->delete();
+
+                $user_form_heading->delete();
+            }
+
+            DB::commit();
+        }else{
+                $res = Response::where('id' , $assestmentId)->first();
+                $res->delete();
+                DB::commit();
+            
+        }
+            // Return as separate variables
+            return $this->successResponse([
+                'data' => $user_form_heading ?? $assestmentId,
+            ], 'Assessment tool deleted successfully!', 200);
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            return $this->errorResponse($th->getMessage(), 500);
+        }
+    }
+
+    public function getReportResponse(Request $request){
+        $validator = Validator::make($request->all(),[
+            'user_assessment_id' => 'required|integer'
+        ]);
+        try{
+            if($validator->fails()){
+                return $this->errorResponse($validator->getMessageBag(), 500);
+            }else{
+                $response = Response::with('aiReport')->where('id' , $request->user_assessment_id)->first();
+                return $this->successResponse([
+                    'data' => $response,
+                ], 'Response Found successfully!', 200);
+            }
+
+        }catch(\Exception $e){
+            return $this->errorResponse($e->getMessage(), 500);
+        }
+
     }
 }

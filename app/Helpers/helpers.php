@@ -2,6 +2,7 @@
 
 use App\Models\MediaUpload;
 use App\Models\StaticOption;
+use Illuminate\Support\Str;
 
 function get_static_option($key)
 {
@@ -159,5 +160,29 @@ function assessment_tool($type){
         return '<span class="badge badge-primary">Questionnaire</span>';
     }elseif($type == 'flow_chart'){
         return '<span class="badge badge-success">Flow Chart</span>';
+    }
+}
+
+function generateRandomNumber()
+{
+    $randomNumber = mt_rand(10000000, 99999999);
+    
+    return $randomNumber;
+}
+
+function mapAnswerToText($answer) {
+    switch ($answer) {
+        case 1:
+            return 'never';
+        case 2:
+            return 'rarely';
+        case 3:
+            return 'sometimes';
+        case 4:
+            return 'often';
+        case 5:
+            return 'always';
+        default:
+            return ''; // Default to an empty string for unknown values
     }
 }

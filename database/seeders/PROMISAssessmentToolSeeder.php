@@ -66,13 +66,6 @@ class PROMISAssessmentToolSeeder extends Seeder
             'type' => 'multiple_choice',
         ]);
 
-        $question7 = Question::create([
-            'assessment_tool_id' => $assessment_tool->id,
-            'title' => 'I felt unhappy.',
-            'type' => 'multiple_choice',
-        ]);
-
-
         $question8 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'I felt hopeless.',

@@ -4,22 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\{ AssesmentAiResponse };
 
 class UserFormHeading extends Model
 {
 //    protected $table = 'user_form';
     use HasFactory;
-
-    /*public function formHeading()
-    {
-        dd($this->heading_type);
-        if ($this->heading_type == 'custom') {
-            dd("qqq");
-            return $this->belongsTo(CustomHeading::class, 'id', 'heading_id');
-        }
-        dd("ttt");
-        return $this->belongsTo(FormHeading::class, 'id', 'heading_id');
-    }*/
 
     public function formHeading()
     {
@@ -34,5 +24,10 @@ class UserFormHeading extends Model
     public function formData()
     {
         return $this->hasMany(FormData::class, 'user_form_heading_id', 'id');
+    }
+
+    public function aiReport()
+    {
+        return $this->hasOne(AssesmentAiResponse::class , 'user_form_heading_id' , 'id');
     }
 }

@@ -7,6 +7,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\WelcomeEmail;
 
 class UsersController extends Controller
 {
@@ -200,15 +202,22 @@ class UsersController extends Controller
         $user->name = $input['name'];
         $user->email = $input['email'];
         if ($request->active) {
-            $user->active = 1;
+                $user->active = 1;
+                // Generate a password
+                $password = generateRandomNumber(); 
+                $user->password = bcrypt($password);
         } else {
             $user->active = 0;
         }
         if (!empty($input['password'])) {
-            $user->password = bcrypt($input['password']);
+            $password = $input['password'];
+            $user->password = bcrypt($password);
         }
         $user->save();
-
+        if ($request->active) {
+            // Send an email to the user
+            Mail::to($user->email)->send(new WelcomeEmail($user, $password)); // Assuming you have a Welcome
+        }
         Session::flash('success_message', 'Great! user successfully updated!');
         return redirect()->back();
     }

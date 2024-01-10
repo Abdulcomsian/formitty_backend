@@ -49,7 +49,9 @@ Route::get('/clear', function () {
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
+
+Route::post('/save-user', [HomeController::class, 'saveUser'])->name('save_user');
 
 
 Route::get('/test1', [TestController::class, 'test'])->name('test_route');
@@ -57,6 +59,8 @@ Route::get('/test2', [TestController::class, 'test2'])->name('test2_route');
 Route::get('/test3', [TestController::class, 'test3'])->name('test3_route');
 Route::get('/test4', [TestController::class, 'test4'])->name('test4_route');
 Route::get('/test5', [TestController::class, 'test5'])->name('test5_route');
+Route::get('/test-email', [TestController::class, 'testEmail'])->name('test_email');
+
 
 Auth::routes();
 
@@ -115,6 +119,10 @@ Route::group([
     //general settings
     Route::get('/general-settings/site-identity', [GeneralSettingsController::class, 'site_identity'])->name('admin.general.site.identity');
     Route::post('/general-settings/site-identity', [GeneralSettingsController::class, 'update_site_identity']);
+
+    //chatgpt prompts
+    Route::get('/general-settings/chatgpt-prompts', [GeneralSettingsController::class, 'chatgpt_prompts'])->name('admin.general.chatgpt.prompts');
+    Route::post('/general-settings/chatgpt-prompts', [GeneralSettingsController::class, 'update_chatgpt_prompts']);
 
     Route::get('/general-settings/basic-settings', [GeneralSettingsController::class, 'basic_settings'])->name('admin.general.basic.settings');
     Route::post('/general-settings/basic-settings', [GeneralSettingsController::class, 'update_basic_settings']);

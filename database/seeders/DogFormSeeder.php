@@ -10,14 +10,14 @@ use Illuminate\Database\Seeder;
 
 class DogFormSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
-$section1 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
+  /**
+   * Run the database seeds.
+   *
+   * @return void
+   */
+  public function run()
+  {
+    $section1 = "<table style='background-color:#6a2c75; border:none; width:100%; margin-top:20px'>
       <tr>
           <td>
               <p style='font-size:14pt; font-weight:bold; margin-top:8px; margin-bottom:8px; color: white'>  PART 1 – Participant and Plan Management Details</p>
@@ -105,20 +105,7 @@ $section1 = "<table style='background-color:#6a2c75; border:none; width:100%; ma
           <td style='border: 1px solid lightslategray; padding: 10px'>
               <p style='margin-top:8px; margin-bottom:8px; margin-left:10px'>{{part_1_ndis_participantcontact_details}}</p>
           </td>
-          </tr>
-          <tr>
-          <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 15px'><p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>   Date of Assessment</p></td>
-          <td style='border: 1px solid lightslategray; padding: 10px'>
-              <p style='margin-top:8px; margin-bottom:8px; margin-left:10px'>{{part_1_ndis_date_of_assessment}}</p>
-          </td>
-          </tr>
-          <tr>
-          <td style='border: 1px solid lightslategray; padding: 10px; width: 40%;background-color: lightgrey; font-size: 15px'><p style='margin-top:8px; margin-bottom:8px; margin-left:8px'>   Date of Report</p></td>
-          <td style='border: 1px solid lightslategray; padding: 10px'>
-              <p style='margin-top:8px; margin-bottom:8px; margin-left:10px'>{{part_1_ndis_participan_date_of_report}}</p>
-          </td>
-          </tr>
-          
+          </tr>          
       </tbody>
   </table>
   <p style='font-weight: bold; margin-bottom: 10px; margin-top: 10px; font-size: 12pt'>1.2	Plan Management Details</p>
@@ -158,8 +145,8 @@ $section1 = "<table style='background-color:#6a2c75; border:none; width:100%; ma
       </tbody>
   </table>
   <p></p>";
-    
-$section2 = '<table style="background-color:#7209B7; border:none; width:100%;">
+
+    $section2 = '<table style="background-color:#7209B7; border:none; width:100%;">
             <tr>
                 <td>
                     <p style="font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white"> PART 2 – Evaluation and Assessment</p>
@@ -224,8 +211,8 @@ $section2 = '<table style="background-color:#7209B7; border:none; width:100%;">
         <p></p>';
 
 
-    
-$section3 = '<table style="background-color:#7209B7; border:none; width:100%;">
+
+    $section3 = '<table style="background-color:#7209B7; border:none; width:100%;">
         <tr>
             <td>
                 <p style="font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white"> PART 3 – Recommended Option</p>
@@ -265,10 +252,10 @@ $section3 = '<table style="background-color:#7209B7; border:none; width:100%;">
     </tr>
     </table>
     <p></p>';
-    
 
 
-$section4 = '<table style="background-color:#7209B7; border:none; width:100%;">
+
+    $section4 = '<table style="background-color:#7209B7; border:none; width:100%;">
     <tr>
       <td>
           <p style="font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white"> PART 4 – Attachments</p>
@@ -283,8 +270,8 @@ $section4 = '<table style="background-color:#7209B7; border:none; width:100%;">
     </ul>
     <p style="font-size:12pt;">Please Note: for an approved dog guide, funding for the extra in maintenance costs would be considered to reflect the higher costs of a dog guide over those of an equivalent companion animal/pet. The NDIS will provide an appropriate annual maintenance cost which the participant can use to pay for reasonable and necessary dog guide maintenance costs (including food, grooming, flea and worm treatments, medication, vaccinations, veterinary costs and/or insurance).</p>
   <p></p>';
-    
-$section5 = '<table style="background-color:#7209B7; border:none; width:100%;">
+
+    $section5 = '<table style="background-color:#7209B7; border:none; width:100%;">
             <tr>
               <td>
                   <p style="font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white"> PART 5 – Details of Assistive Technology Assessor</p>
@@ -350,7 +337,7 @@ $section5 = '<table style="background-color:#7209B7; border:none; width:100%;">
             <p></p>';
 
 
-$section6='<table style="background-color:#7209B7; border:none; width:100%;">
+    $section6 = '<table style="background-color:#7209B7; border:none; width:100%;">
             <tr>
               <td>
                   <p style="font-size:12pt; font-weight:bold; margin-top:5px; margin-bottom:5px; color: white"> PART 6 – Consent to Collect and Share Your Information – Provider AT Assessment and Quotation(s)</p>
@@ -420,17 +407,26 @@ $section6='<table style="background-color:#7209B7; border:none; width:100%;">
 
 
 
-        $form_title = Form::create([
-            'name' => 'Dog Guide Report'
-        ]);
+    $form_title = Form::create([
+      'name' => 'Dog Guide Report'
+    ]);
 
-        $form = FormHeading::create([
-            'form_heading' => 'Participant and Plan Management Details',
-            'form_id' => $form_title->id,
-            'section_html'=>$section1
-        ]);
+    $form = FormHeading::create([
+      'form_heading' => 'PART 1 – Participant and Plan Management Details',
+      'form_id' => $form_title->id,
+      'section_html' => $section1
+    ]);
 
-$form_fields = '[
+    $form_fields = '[
+      {
+        "type":"heading",
+        "required":false,
+        "label_1":"1.1 NDIS Participant Details",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_1_heading_extra_1",
+        "access":false
+     },
           {
           "type":"text",
           "required":false,
@@ -544,7 +540,7 @@ $form_fields = '[
           {
           "type":"text",
           "required":false,
-          "label":"Cotact Details",
+          "label":"Contact Details",
           "placeholder":"Enter Your Contact Details",
           "className":"form-control",
           "name":"part_1_ndis_participantcontact_details",
@@ -552,25 +548,14 @@ $form_fields = '[
           "subtype":"text"
           },
           {
-              "type":"date",
-              "required":false,
-              "label":"Date of Assessment",
-              "placeholder":"Enter Date of Assessment",
-              "className":"form-control",
-              "name":"part_1_ndis_date_of_assessment",
-              "access":false,
-              "subtype":"text"
-          },
-          {
-              "type":"date",
-              "required":false,
-              "label":"Date of Report",
-              "placeholder":"Enter Your Date of Report",
-              "className":"form-control",
-              "name":"part_1_ndis_participan_date_of_report",
-              "access":false,
-              "subtype":"text"
-          },
+            "type":"heading",
+            "required":false,
+            "label_1":"1.2 Plan Management Details",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_1_heading_extra_2",
+            "access":false
+         },
           {
           "type":"text",
           "required":false,
@@ -613,101 +598,173 @@ $form_fields = '[
           }
           ]';
 
-        FormField::create([
-              'form_heading_id' => $form->id,
-              'form_field' => $form_fields
-          ]);
-      
-      
-        $form = FormHeading::create([
-            'form_heading' => 'Evaluation and Assessment',
-            'form_id' => $form_title->id,
-            'section_html'=>$section2
-        ]);
+    FormField::create([
+      'form_heading_id' => $form->id,
+      'form_field' => $form_fields
+    ]);
 
-$form_fields2 = '[
+
+    $form = FormHeading::create([
+      'form_heading' => 'PART 2 – Evaluation and Assessment',
+      'form_id' => $form_title->id,
+      'section_html' => $section2
+    ]);
+
+    $form_fields2 = '[
+      {
+        "type":"heading",
+        "required":false,
+        "label_1":"2.1 Vision Background",
+        "label_2":"Describe participant’s vision diagnosis and functional vision information.",
+        "label_3":"",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_2_heading_extra_1",
+        "access":false
+     },
           {
-            "type":"text",
+            "type":"textarea",
             "required":false,
-            "label":"Vision Background ",
-            "placeholder":"Vision Background ",
+            "label":"",
+            "placeholder":"Enter Vision Background",
             "className":"form-control",
             "name":"part_2_evaluation_and_assessment_01",
             "access":false,
             "subtype":"text"
-          },
-
+         },
           {
-            "type":"text",
+            "type":"heading",
             "required":false,
-            "label":"Background Information",
-            "placeholder":"Background Information",
+            "label_1":"2.2 Background Information",
+            "label_2":"Include information about the participant’s current mobility including travel routes the participant can currently do, or has the capacity to do (with any current mobility aids or equipment used) without the use of a dog guide.",
+            "label_3":"",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_2_heading_extra_2",
+            "access":false
+         },
+          {
+            "type":"textarea",
+            "required":false,
+            "label":"",
+            "placeholder":"Enter Background Information",
             "className":"form-control",
             "name":"part_2_evaluation_and_assessment_02",
             "access":false,
             "subtype":"text"
-          },
-
+         },
           {
-            "type":"text",
+            "type":"heading",
             "required":false,
-            "label":"Participant Goals ",
-            "placeholder":"Participant Goals ",
+            "label_1":"2.3 Participant Goals",
+            "label_2":"If the participant’s NDIS plan has been made available, you can refer to the statement of participant’s goals and outline those relevant to the dog guide request. Include any other relevant mobility goals.",
+            "label_3":"",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_2_heading_extra_3",
+            "access":false
+         },
+          {
+            "type":"textarea",
+            "required":false,
+            "label":"",
+            "placeholder":"Enter Participant Goals",
             "className":"form-control",
             "name":"part_2_evaluation_and_assessment_03",
             "access":false,
             "subtype":"text"
-          },
-
+         },
           {
-            "type":"text",
+            "type":"heading",
             "required":false,
-            "label":"Dog Guide Assessor Information: Participant Suitability",
-            "placeholder":"Dog Guide Assessor Information: Participant Suitability",
+            "label_1":"2.4 Dog Guide Assessor Information: Participant Suitability",
+            "label_2":"Outline the participant’s suitability to be a dog guide user. Evidence may include outcomes from an experiential walk or previous dog guide experience. Previous dog guide history should include information regarding the length of the working partnership and reasons for the partnership ending.",
+            "label_3":"",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_2_heading_extra_4",
+            "access":false
+         },
+          {
+            "type":"textarea",
+            "required":false,
+            "label":"",
+            "placeholder":"Enter Dog Guide Assessor Information: Participant Suitability",
             "className":"form-control",
             "name":"part_2_evaluation_and_assessment_04",
             "access":false,
             "subtype":"text"
-          },
-
+         },
           {
-            "type":"text",
+            "type":"heading",
             "required":false,
-            "label":"Dog Guide Assessor Information: Expected Differences",
-            "placeholder":"Dog Guide Assessor Information: Expected Differences",
+            "label_1":"2.5 Dog Guide Assessor Information: Expected Differences",
+            "label_2":"Either detail information regarding any expected differences in the participant’s ability to travel independently with the dog guide. Including: \n   1. any changes to the type, frequency and duration of travel routes. \n   2. any changes to additional community access supports i.e. an outline of formal and informal support currently required to access the community and if and how this will change with the implementation of a dog guide. \nOr, in the instance that a participant has a dog guide that is soon to retire, you should note this, and indicate the extent of independence lost in similar lines, if a further dog guide is not available.",
+            "label_3":"",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_2_heading_extra_5",
+            "access":false
+         },
+          {
+            "type":"textarea",
+            "required":false,
+            "label":"",
+            "placeholder":"Enter Dog Guide Assessor Information: Expected Differences",
             "className":"form-control",
             "name":"part_2_evaluation_and_assessment_05",
             "access":false,
             "subtype":"text"
-          },
-
+         },
           {
-            "type":"text",
+            "type":"heading",
             "required":false,
-            "label":"Other Relevant Information",
-            "placeholder":"Other Relevant Information",
+            "label_1":"2.6 Other Relevant Information",
+            "label_2":"Provide any relevant medical information (such as allergies, cognitive, psychosocial, other physical impairment or cardiopulmonary conditions that would limit mobility) that impact on the participant’s current and ongoing ability to use the dog guide. A medical report supporting the use of the dog guide is recommended.",
+            "label_3":"",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_2_heading_extra_6",
+            "access":false
+         },
+          {
+            "type":"textarea",
+            "required":false,
+            "label":"",
+            "placeholder":"Enter Other Relevant Information",
             "className":"form-control",
             "name":"part_2_evaluation_and_assessment_06",
             "access":false,
             "subtype":"text"
-          }
+         }
           ]';
 
-        FormField::create([
-          'form_heading_id' => $form->id,
-          'form_field' => $form_fields2
-        ]);
-        $form = FormHeading::create([
-            'form_heading' => 'Recommended Option',
-            'form_id' => $form_title->id,
-            'section_html'=>$section3
-        ]);
+    FormField::create([
+      'form_heading_id' => $form->id,
+      'form_field' => $form_fields2
+    ]);
+    $form = FormHeading::create([
+      'form_heading' => 'PART 3 - Recommended Option',
+      'form_id' => $form_title->id,
+      'section_html' => $section3
+    ]);
 
-$form_fields3 = '[
+    $form_fields3 = '[
+      {
+        "type":"heading",
+        "required":false,
+        "label_1":"3.1 Most Suitable / Appropriate Alternative to facilitate goal attainment",
+        "label_2":"",
+        "label_3":"Briefly summarise the evidence for the recommended option as the most suitable/appropriate alternative which will facilitate attainment of the participant’s goal compared to others considered, including lower cost alternatives. (N.B. in the instance where previous dog guide relationship failed, evidence of actions to reduce the risk of repeat issues)",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_1",
+        "access":false
+     },
           {
             "type":"textarea",
             "required":false,
-            "label":"Most Suitable / Appropriate Alternative to facilitate goal attainment",
+            "label":"",
             "placeholder":"Most Suitable / Appropriate Alternative to facilitate goal attainment",
             "className":"form-control",
             "name":"part_3_recommended_option_01",
@@ -715,9 +772,20 @@ $form_fields3 = '[
             "subtype":"textarea"
           },
           {
+            "type":"heading",
+            "required":false,
+            "label_1":"3.2 Additional Features",
+            "label_2":"",
+            "label_3":"Are there any additional features, customisation or specification recommended that is considered to be above the minimum or standard level of this support for reasonable and necessary funding? (E.g. customised harness, the requirement for additional training hours (that is: training that is considered above the ‘usual’ amount), and additional maintenance costs).",
+            "placeholder":"Full Name",
+            "className":"form-control",
+            "name":"part_3_heading_extra_2",
+            "access":false
+         },
+          {
             "type":"textarea",
             "required":false,
-            "label":"Additional Features",
+            "label":"",
             "placeholder":"Additional Features",
             "className":"form-control",
             "name":"part_3_recommended_option_02",
@@ -725,25 +793,50 @@ $form_fields3 = '[
             "subtype":"textarea"
           },
           {
-            "type":"textarea",
+            "type":"heading",
             "required":false,
-            "label":"Yes",
-            "placeholder":"Yes, Participant signature",
+            "label_1":"3.3 Participant Agreement",
+            "label_2":"",
+            "label_3":"Does the participant agree with the recommended AT solution?  (Are the assessor’s clinical recommendation and participant preference the same?)",
+            "placeholder":"Full Name",
             "className":"form-control",
-            "name":"part_3_recommended_option_03",
-            "access":false,
-            "subtype":"textarea"
-          },
+            "name":"part_3_heading_extra_3",
+            "access":false
+         },
           {
-            "type":"textarea",
-            "required":false,
-            "label":"No",
-            "placeholder":"No, Participant Suitability",
-            "className":"form-control",
-            "name":"part_3_recommended_option_04",
-            "access":false,
-            "subtype":"textarea"
-          },
+            "type": "checkbox-group",
+            "required": false,
+            "label": "Yes",
+            "toggle": false,
+            "inline": false,
+            "name": "part_3_recommended_option_03",
+            "access": false,
+            "other": false,
+            "values": [
+                {
+                    "label": "YES/NO",
+                    "value": "option-1",
+                    "selected": true
+                }
+            ]
+        },
+          {
+            "type": "checkbox-group",
+            "required": false,
+            "label": "No",
+            "toggle": false,
+            "inline": false,
+            "name": "part_3_recommended_option_04",
+            "access": false,
+            "other": false,
+            "values": [
+                {
+                    "label": "YES/NO",
+                    "value": "option-1",
+                    "selected": true
+                }
+            ]
+        },
           {
             "type":"textarea",
             "required":false,
@@ -756,136 +849,198 @@ $form_fields3 = '[
           }
           ]';
 
-        FormField::create([
-          'form_heading_id' => $form->id,
-          'form_field' => $form_fields3
-      ]);
-        $form = FormHeading::create([
-            'form_heading' => 'Attachments',
-            'form_id' => $form_title->id,
-            'section_html'=>$section4
-        ]);
+    FormField::create([
+      'form_heading_id' => $form->id,
+      'form_field' => $form_fields3
+    ]);
+    $form = FormHeading::create([
+      'form_heading' => 'PART 4 - Attachments',
+      'form_id' => $form_title->id,
+      'section_html' => $section4
+    ]);
 
-$form_fields4 = '[]';
+    $form_fields4 = '[
+      {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Please attach:\n   1. A detailed quote outlining the full cost of any assessment, training, matching and follow-up associated with the cost of the dog guide purchase. \n   2. Medical Report (as outlined in section 2.6 if relevant). \nPlease Note: for an approved dog guide, funding for the extra in maintenance costs would be considered to reflect the higher costs of a dog guide over those of an equivalent companion animal/pet. The NDIS will provide an appropriate annual maintenance cost which the participant can use to pay for reasonable and necessary dog guide maintenance costs (including food, grooming, flea and worm treatments, medication, vaccinations, veterinary costs and/or insurance).",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_4_heading_extra_1",
+        "access":false
+      }
+    ]';
 
-        FormField::create([
-          'form_heading_id' => $form->id,
-          'form_field' => $form_fields4
-      ]);
+    FormField::create([
+      'form_heading_id' => $form->id,
+      'form_field' => $form_fields4
+    ]);
 
 
-        $form = FormHeading::create([
-            'form_heading' => 'Details of Assistive Technology Assessor',
-            'form_id' => $form_title->id,
-            'section_html'=>$section5
-        ]);
+    $form = FormHeading::create([
+      'form_heading' => 'PART 5 – Details of Assistive Technology Assessor',
+      'form_id' => $form_title->id,
+      'section_html' => $section5
+    ]);
 
-$form_fields5 = '[
+    $form_fields5 = '[
+      {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"DECLARATION (indicate all relevant sections that apply)",
+        "label_3":"",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_5_heading_extra_1",
+        "access":false
+     },
           {
-            "type":"textarea",
-            "required":false,
-            "label":"I certify that I meet the NDIA expectations of AT assessor provider suitability ",
-            "placeholder":"I certify that I meet the NDIA expectations of AT assessor provider suitability ",
-            "className":"form-control",
-            "name":"part_5_details_of_assistive_technology_assessor_01",
-            "access":false,
-            "subtype":"textarea"
-          },
+            "type": "checkbox-group",
+            "required": false,
+            "label": "I certify that I meet the NDIA expectations of AT assessor provider suitability (including understanding of the current NDIS Act, Rules and Operational Guidelines) to assess the type of assistive technology and associated supports, at the level of complexity required by this participant.",
+            "toggle": false,
+            "inline": false,
+            "name": "part_5_details_of_assistive_technology_assessor_01",
+            "access": false,
+            "other": false,
+            "values": [
+                {
+                    "label": "YES/NO",
+                    "value": "option-1",
+                    "selected": true
+                }
+            ]
+        },
           {
-            "type":"textarea",
-            "required":false,
-            "label":"I will provide appropriate evidence to the NDIA and/or Quality and Safe Guards Commission if and as requested.",
-            "placeholder":"I will provide appropriate evidence to the NDIA and/or Quality and Safe Guards Commission if and as requested.",
-            "className":"form-control",
-            "name":"part_5_details_of_assistive_technology_assessor_02",
-            "access":false,
-            "subtype":"textarea"
-          },
+            "type": "checkbox-group",
+            "required": false,
+            "label": "I will provide appropriate evidence to the NDIA and/or Quality and Safe Guards Commission if and as requested.",
+            "toggle": false,
+            "inline": false,
+            "name": "part_5_details_of_assistive_technology_assessor_02",
+            "access": false,
+            "other": false,
+            "values": [
+                {
+                    "label": "YES/NO",
+                    "value": "option-1",
+                    "selected": true
+                }
+            ]
+        },
           {
-            "type":"textarea",
-            "required":false,
-            "label":"I understand and acknowledge that the NDIA and participant ",
-            "placeholder":"I understand and acknowledge that the NDIA and participant",
-            "className":"form-control",
-            "name":"part_5_details_of_assistive_technology_assessor_03",
-            "access":false,
-            "subtype":"textarea"
-          },
+            "type": "checkbox-group",
+            "required": false,
+            "label": "I understand and acknowledge that the NDIA and participant will rely on my professional advice to select, source and implement this assistive technology.",
+            "toggle": false,
+            "inline": false,
+            "name": "part_5_details_of_assistive_technology_assessor_03",
+            "access": false,
+            "other": false,
+            "values": [
+                {
+                    "label": "YES/NO",
+                    "value": "option-1",
+                    "selected": true
+                }
+            ]
+        },
           {
-            "type":"textarea",
-            "required":false,
-            "label":"This assistive technology has been assessed by the treating multi-disciplinary team",
-            "placeholder":"This assistive technology has been assessed by the treating multi-disciplinary team",
-            "className":"form-control",
-            "name":"part_5_details_of_assistive_technology_assessor_04",
-            "access":false,
-            "subtype":"textarea"
-          },
+            "type": "checkbox-group",
+            "required": false,
+            "label": "This assistive technology has been assessed by the treating multi-disciplinary team and I have completed the AT assessment on behalf of that team.",
+            "toggle": false,
+            "inline": false,
+            "name": "part_5_details_of_assistive_technology_assessor_04",
+            "access": false,
+            "other": false,
+            "values": [
+                {
+                    "label": "YES/NO",
+                    "value": "option-1",
+                    "selected": true
+                }
+            ]
+        },
+        {
+          "type":"heading",
+          "required":false,
+          "label_1":"",
+          "label_2":"Assessor’s Details",
+          "label_3":"",
+          "placeholder":"Full Name",
+          "className":"form-control",
+          "name":"part_5_heading_extra_2",
+          "access":false
+       },
           {
-            "type":"textarea",
+            "type":"text",
             "required":false,
             "label":"Name",
-            "placeholder":"Assessor_Name",
+            "placeholder":"Enter Name",
             "className":"form-control",
             "name":"part_5_details_of_assistive_technology_assessor_05",
             "access":false,
-            "subtype":"textarea"
-          },
+            "subtype":"text"
+         },
           {
-            "type":"textarea",
+            "type":"text",
             "required":false,
             "label":"NDIS Provider Registration number (where applicable)",
-            "placeholder":"Assessor_NDIS Provider Registration number (where applicable)",
+            "placeholder":"Enter NDIS Provider Registration number (where applicable)",
             "className":"form-control",
             "name":"part_5_details_of_assistive_technology_assessor_06",
             "access":false,
-            "subtype":"textarea"
-          },
+            "subtype":"text"
+         },
           {
-            "type":"textarea",
+            "type":"text",
             "required":false,
             "label":"Phone",
-            "placeholder":"Assessor_Phone",
+            "placeholder":"Enter Phone",
             "className":"form-control",
             "name":"part_5_details_of_assistive_technology_assessor_07",
             "access":false,
-            "subtype":"textarea"
-          },
+            "subtype":"text"
+         },
           {
-            "type":"email",
+            "type":"text",
             "required":false,
             "label":"Email",
-            "placeholder":"Assessor_Email",
+            "placeholder":"Enter Email",
             "className":"form-control",
             "name":"part_5_details_of_assistive_technology_assessor_08",
             "access":false,
-            "subtype":"textarea"
-          },
+            "subtype":"text"
+         },
           {
-            "type":"textarea",
+            "type":"text",
             "required":false,
             "label":"Signature",
-            "placeholder":"Assessor_Signature",
+            "placeholder":"Enter Signature",
             "className":"form-control",
             "name":"part_5_details_of_assistive_technology_assessor_09",
             "access":false,
-            "subtype":"textarea"
-          },
+            "subtype":"text"
+         },
           {
-            "type":"textarea",
+            "type":"text",
             "required":false,
             "label":"Qualification",
-            "placeholder":"Assessor_Qualification",
+            "placeholder":"Enter Qualification",
             "className":"form-control",
             "name":"part_5_details_of_assistive_technology_assessor_10",
             "access":false,
-            "subtype":"textarea"
-          },
+            "subtype":"text"
+         },
           {
             "type":"date",
             "required":false,
-            "label":"Date of Assessment ",
-            "placeholder":"Assessor_Date of Assessment ",
+            "label":"Date of Assessment",
+            "placeholder":"Date of Assessment",
             "className":"form-control",
             "name":"part_5_details_of_assistive_technology_assessor_11",
             "access":false,
@@ -895,7 +1050,7 @@ $form_fields5 = '[
             "type":"date",
             "required":false,
             "label":"Date of Report",
-            "placeholder":"Assessor_Date of Report",
+            "placeholder":"Date of Report",
             "className":"form-control",
             "name":"part_5_details_of_assistive_technology_assessor_12",
             "access":false,
@@ -903,85 +1058,125 @@ $form_fields5 = '[
           }
         ]';
 
-        FormField::create([
-          'form_heading_id' => $form->id,
-          'form_field' => $form_fields5
-      ]);
+    FormField::create([
+      'form_heading_id' => $form->id,
+      'form_field' => $form_fields5
+    ]);
 
 
-        $form = FormHeading::create([
-            'form_heading' => 'Consent to Collect and Share Your Information – Provider AT Assessment and Quotation(s)',
-            'form_id' => $form_title->id,
-            'section_html'=>$section6
-        ]);
+    $form = FormHeading::create([
+      'form_heading' => 'PART 6 – Consent to Collect and Share Your Information – Provider AT Assessment and Quotation(s)',
+      'form_id' => $form_title->id,
+      'section_html' => $section6
+    ]);
 
-$form_fields6 = '[
+    $form_fields6 = '[
+      {
+        "type":"heading",
+        "required":false,
+        "label_1":"For the participant to complete",
+        "label_2":"",
+        "label_3":"As a participant who requires assistive technology supports, the National Disability Insurance Agency (NDIA) may need to contact your AT assessor and / or AT supplier to discuss information within your assistive technology assessment and quotation(s). This will assist the NDIA with determining whether your request for assistive technology support(s) can be provided to you under the NDIS. Do you consent to the NDIA collecting and disclosing your information including from these third parties mentioned above, in relation to your assistive technology assessment and quotation?",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_6_heading_extra_1",
+        "access":false
+     },
           {
-            "type":"textarea",
+            "type":"checkbox-group",
             "required":false,
             "label":"Yes, I consent",
-            "placeholder":"Yes, I consent",
-            "className":"form-control",
+            "toggle":false,
+            "inline":false,
             "name":"part_6_consent_to_collect_and_share_your_information_01",
             "access":false,
-            "subtype":"textarea"
-          },
-
+            "other":false,
+            "values":[
+               {
+                  "label":"Option 1",
+                  "value":"option-1",
+                  "selected":true
+               }
+            ]
+         },
           {
-            "type":"textarea",
+            "type":"checkbox-group",
             "required":false,
             "label":"No, I do not consent",
-            "placeholder":"No, I do not consent",
-            "className":"form-control",
+            "toggle":false,
+            "inline":false,
             "name":"part_6_consent_to_collect_and_share_your_information_02",
             "access":false,
-            "subtype":"textarea"
-          },
-
+            "other":false,
+            "values":[
+               {
+                  "label":"Option 1",
+                  "value":"option-1",
+                  "selected":true
+               }
+            ]
+         },
           {
-            "type":"textarea",
+            "type":"checkbox-group",
             "required":false,
             "label":"Participant’s Signature",
-            "placeholder":"Participant’s Signature",
-            "className":"form-control",
+            "toggle":false,
+            "inline":false,
             "name":"part_6_consent_to_collect_and_share_your_information_03",
             "access":false,
-            "subtype":"textarea"
-          },
-
+            "other":false,
+            "values":[
+               {
+                  "label":"Option 1",
+                  "value":"option-1",
+                  "selected":true
+               }
+            ]
+         },
           {
-            "type":"textarea",
+            "type":"checkbox-group",
             "required":false,
-            "label":"I understand that I am giving consent to the NDIA to do the things ",
-            "placeholder":"I understand that I am giving consent to the NDIA to do the things ",
-            "className":"form-control",
+            "label":"I understand that I am giving consent to the NDIA to do the things with my information set out in this section. I understand that I can withdraw my consent for the NDIS to do things with my information at any time by letting the NDIA know.",
+            "toggle":false,
+            "inline":false,
             "name":"part_6_consent_to_collect_and_share_your_information_04",
             "access":false,
-            "subtype":"textarea"
-          },
-
+            "other":false,
+            "values":[
+               {
+                  "label":"Option 1",
+                  "value":"option-1",
+                  "selected":true
+               }
+            ]
+         },
           {
-            "type":"textarea",
+            "type":"checkbox-group",
             "required":false,
-            "label":"I understand that I can access the NDIA’s Privacy Notice and Privacy Policy",
-            "placeholder":"I understand that I can access the NDIA’s Privacy Notice and Privacy Policy",
-            "className":"form-control",
+            "label":"I understand that I can access the NDIA’s Privacy Notice and Privacy Policy on the NDIA website(https://www.ndis.gov.au/about-us/operational-guidelines/information-handling-operational-guideline/information-handling-operational-guideline-privacy) or by contacting the NDIA (https://www.ndis.gov.au/contact).",
+            "toggle":false,
+            "inline":false,
             "name":"part_6_consent_to_collect_and_share_your_information_05",
             "access":false,
-            "subtype":"textarea"
-          },
-
+            "other":false,
+            "values":[
+               {
+                  "label":"Option 1",
+                  "value":"option-1",
+                  "selected":true
+               }
+            ]
+         },
           {
-            "type":"textarea",
-            "required":false,
-            "label":"Signature",
-            "placeholder":"Signature",
-            "className":"form-control",
-            "name":"part_6_consent_to_collect_and_share_your_information_06",
-            "access":false,
-            "subtype":"textarea"
-          },
-
+            "type": "text",
+            "required": false,
+            "label": "Signature",
+            "placeholder": "Signature",
+            "className": "form-control",
+            "name": "part_6_consent_to_collect_and_share_your_information_06",
+            "access": false,
+            "subtype": "text"
+        },
           {
             "type":"date",
             "required":false,
@@ -992,29 +1187,37 @@ $form_fields6 = '[
             "access":false,
             "subtype":"textarea"
           },
-
           {
-            "type":"textarea",
-            "required":false,
-            "label":"Full name ",
-            "placeholder":"Full name ",
-            "className":"form-control",
-            "name":"part_6_consent_to_collect_and_share_your_information_08",
-            "access":false,
-            "subtype":"textarea"
-          },
-
+            "type": "text",
+            "required": false,
+            "label": "Full name",
+            "placeholder": "Enter Full name",
+            "className": "form-control",
+            "name": "part_6_consent_to_collect_and_share_your_information_08",
+            "access": false,
+            "subtype": "text"
+        },
+        {
+          "type":"heading",
+          "required":false,
+          "label_1": "",
+          "label_2": "",
+          "label_3": "If you have signed this Form on behalf of the NDIS participant, please complete the details below. It is an offence to provide false or misleading information. \nWe may require you to provide evidence of your authority to sign on behalf of the person.",
+          "placeholder":"Full Name",
+          "className":"form-control",
+          "name":"part_6_heading_extra_2",
+          "access":false
+       },
           {
-            "type":"textarea",
-            "required":false,
-            "label":"Signature",
-            "placeholder":"Signature",
-            "className":"form-control",
-            "name":"part_6_consent_to_collect_and_share_your_information_09",
-            "access":false,
-            "subtype":"textarea"
-          },
-
+            "type": "text",
+            "required": false,
+            "label": "Signature",
+            "placeholder": "Signature",
+            "className": "form-control",
+            "name": "part_6_consent_to_collect_and_share_your_information_09",
+            "access": false,
+            "subtype": "text"
+        },
           {
             "type":"date",
             "required":false,
@@ -1025,37 +1228,31 @@ $form_fields6 = '[
             "access":false,
             "subtype":"textarea"
           },
-
           {
-            "type":"textarea",
-            "required":false,
-            "label":"Full Name of person completing this form (please print):",
-            "placeholder":"Full Name of person completing this form (please print):",
-            "className":"form-control",
-            "name":"part_6_consent_to_collect_and_share_your_information_11",
-            "access":false,
-            "subtype":"textarea"
-          },
-
+            "type": "text",
+            "required": false,
+            "label": "Full Name of person completing this form (please print)",
+            "placeholder": "Enter Full Name of person completing this form (please print)",
+            "className": "form-control",
+            "name": "part_6_consent_to_collect_and_share_your_information_11",
+            "access": false,
+            "subtype": "text"
+        },
           {
-            "type":"textarea",
-            "required":false,
-            "label":"Relationship to participant or person wishing to become an NDIS participant:",
-            "placeholder":"Relationship to participant or person wishing to become an NDIS participant:",
-            "className":"form-control",
-            "name":"part_6_consent_to_collect_and_share_your_information_12",
-            "access":false,
-            "subtype":"textarea"
-          }
+            "type": "text",
+            "required": false,
+            "label": "Relationship to participant or person wishing to become an NDIS participant",
+            "placeholder": "Enter Relationship to participant or person wishing to become an NDIS participant",
+            "className": "form-control",
+            "name": "part_6_consent_to_collect_and_share_your_information_12",
+            "access": false,
+            "subtype": "text"
+        }
         ]';
 
-       
-
-
-        FormField::create([
-            'form_heading_id' => $form->id ,
-            'form_field' => $form_fields6
-        ]);
-
-    }
+    FormField::create([
+      'form_heading_id' => $form->id,
+      'form_field' => $form_fields6
+    ]);
+  }
 }

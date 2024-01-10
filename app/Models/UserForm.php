@@ -29,4 +29,14 @@ class UserForm extends Model
     {
         return $this->belongsTo(Form::class);
     }
+
+    public function openaiResponse()
+    {
+        return $this->hasOne(OpenaiResponse::class, 'form_id');
+    }
+
+    public function assessmentGroupPoints()
+    {
+        return $this->hasMany(AssessmentGroupPoint::class);
+    }
 }

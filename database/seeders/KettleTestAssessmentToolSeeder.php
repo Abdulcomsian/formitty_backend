@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\AssessmentTool;
 use App\Models\Question;
+use App\Models\Option;
 
 class KettleTestAssessmentToolSeeder extends Seeder
 {
@@ -66,10 +67,60 @@ class KettleTestAssessmentToolSeeder extends Seeder
             'type' => 'multiple_choice',
         ]);
 
+        Option::create([
+            'question_id' => $question7->id,
+            'title' => '0',
+        ]);
+
+        Option::create([
+            'question_id' => $question7->id,
+            'title' => '1',
+        ]);
+
+        Option::create([
+            'question_id' => $question7->id,
+            'title' => '2',
+        ]);
+
+        Option::create([
+            'question_id' => $question7->id,
+            'title' => '3',
+        ]);
+
+        Option::create([
+            'question_id' => $question7->id,
+            'title' => '4',
+        ]);
+
         $question8 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Filling the kettle with about 2 Cups of water',
             'type' => 'multiple_choice',
+        ]);
+
+        Option::create([
+            'question_id' => $question8->id,
+            'title' => '0',
+        ]);
+
+        Option::create([
+            'question_id' => $question8->id,
+            'title' => '1',
+        ]);
+
+        Option::create([
+            'question_id' => $question8->id,
+            'title' => '2',
+        ]);
+
+        Option::create([
+            'question_id' => $question8->id,
+            'title' => '3',
+        ]);
+
+        Option::create([
+            'question_id' => $question8->id,
+            'title' => '4',
         ]);
 
         $question9 = Question::create([
@@ -78,10 +129,60 @@ class KettleTestAssessmentToolSeeder extends Seeder
             'type' => 'multiple_choice',
         ]);
 
+        Option::create([
+            'question_id' => $question9->id,
+            'title' => '0',
+        ]);
+
+        Option::create([
+            'question_id' => $question9->id,
+            'title' => '1',
+        ]);
+
+        Option::create([
+            'question_id' => $question9->id,
+            'title' => '2',
+        ]);
+
+        Option::create([
+            'question_id' => $question9->id,
+            'title' => '3',
+        ]);
+
+        Option::create([
+            'question_id' => $question9->id,
+            'title' => '4',
+        ]);
+
         $question10 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Assembling the Kettle',
             'type' => 'multiple_choice',
+        ]);
+
+        Option::create([
+            'question_id' => $question10->id,
+            'title' => '0',
+        ]);
+
+        Option::create([
+            'question_id' => $question10->id,
+            'title' => '1',
+        ]);
+
+        Option::create([
+            'question_id' => $question10->id,
+            'title' => '2',
+        ]);
+        
+        Option::create([
+            'question_id' => $question10->id,
+            'title' => '3',
+        ]);
+
+        Option::create([
+            'question_id' => $question10->id,
+            'title' => '4',
         ]);
 
         $question11 = Question::create([
@@ -90,10 +191,61 @@ class KettleTestAssessmentToolSeeder extends Seeder
             'type' => 'multiple_choice',
         ]);
 
+        Option::create([
+            'question_id' => $question11->id,
+            'title' => '0',
+        ]);
+
+        Option::create([
+            'question_id' => $question11->id,
+            'title' => '1',
+        ]);
+
+        Option::create([
+            'question_id' => $question11->id,
+            'title' => '2',
+        ]);
+
+        Option::create([
+            'question_id' => $question11->id,
+            'title' => '3',
+        ]);
+
+        Option::create([
+            'question_id' => $question11->id,
+            'title' => '4',
+        ]);
+
         $question12 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Plugging the electric cord in an electric Socket',
             'type' => 'multiple_choice',
+        ]);
+
+        Option::create([
+            'question_id' => $question12->id,
+            'title' => '0',
+        ]);
+
+        Option::create([
+            'question_id' => $question12->id,
+            'title' => '1',
+        ]);
+
+        Option::create([
+            'question_id' => $question12->id,
+            'title' => '2',
+        ]);
+
+        Option::create([
+            'question_id' => $question12->id,
+            'title' => '3',
+        ]);
+
+
+        Option::create([
+            'question_id' => $question12->id,
+            'title' => '4',
         ]);
 
         $question13 = Question::create([
@@ -102,10 +254,60 @@ class KettleTestAssessmentToolSeeder extends Seeder
             'type' => 'multiple_choice',
         ]);
 
+        Option::create([
+            'question_id' => $question13->id,
+            'title' => '0',
+        ]);
+
+        Option::create([
+            'question_id' => $question13->id,
+            'title' => '1',
+        ]);
+
+        Option::create([
+            'question_id' => $question13->id,
+            'title' => '2',
+        ]);
+
+        Option::create([
+            'question_id' => $question13->id,
+            'title' => '3',
+        ]);
+
+        Option::create([
+            'question_id' => $question13->id,
+            'title' => '4',
+        ]);
+
         $question14 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Assembling the ingredients',
             'type' => 'multiple_choice',
+        ]);
+
+        Option::create([
+            'question_id' => $question14->id,
+            'title' => '0',
+        ]);
+
+        Option::create([
+            'question_id' => $question14->id,
+            'title' => '1',
+        ]);
+
+        Option::create([
+            'question_id' => $question14->id,
+            'title' => '2',
+        ]);
+
+        Option::create([
+            'question_id' => $question14->id,
+            'title' => '3',
+        ]);
+
+        Option::create([
+            'question_id' => $question14->id,
+            'title' => '4',
         ]);
 
         $question15 = Question::create([
@@ -114,10 +316,61 @@ class KettleTestAssessmentToolSeeder extends Seeder
             'type' => 'multiple_choice',
         ]);
 
+        Option::create([
+            'question_id' => $question15->id,
+            'title' => '0',
+        ]);
+
+        Option::create([
+            'question_id' => $question15->id,
+            'title' => '1',
+        ]);
+
+        Option::create([
+            'question_id' => $question15->id,
+            'title' => '2',
+        ]);
+
+        Option::create([
+            'question_id' => $question15->id,
+            'title' => '3',
+        ]);
+
+        Option::create([
+            'question_id' => $question15->id,
+            'title' => '4',
+        ]);
+
         $question16 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Picking up the kettle when water boils',
             'type' => 'multiple_choice',
+        ]);
+
+        Option::create([
+            'question_id' => $question16->id,
+            'title' => '0',
+        ]);
+
+        Option::create([
+            'question_id' => $question16->id,
+            'title' => '1',
+        ]);
+
+        Option::create([
+            'question_id' => $question16->id,
+            'title' => '2',
+        ]);
+
+        Option::create([
+            'question_id' => $question16->id,
+            'title' => '3',
+        ]);
+
+
+        Option::create([
+            'question_id' => $question16->id,
+            'title' => '4',
         ]);
 
         $question17 = Question::create([
@@ -126,16 +379,94 @@ class KettleTestAssessmentToolSeeder extends Seeder
             'type' => 'multiple_choice',
         ]);
 
+        Option::create([
+            'question_id' => $question17->id,
+            'title' => '0',
+        ]);
+
+        Option::create([
+            'question_id' => $question17->id,
+            'title' => '1',
+        ]);
+
+        Option::create([
+            'question_id' => $question17->id,
+            'title' => '2',
+        ]);
+
+        Option::create([
+            'question_id' => $question17->id,
+            'title' => '3',
+        ]);
+
+
+        Option::create([
+            'question_id' => $question17->id,
+            'title' => '4',
+        ]);
+
         $question18 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Adding the Milk',
             'type' => 'multiple_choice',
         ]);
 
+        Option::create([
+            'question_id' => $question18->id,
+            'title' => '0',
+        ]);
+
+        Option::create([
+            'question_id' => $question18->id,
+            'title' => '1',
+        ]);
+
+        Option::create([
+            'question_id' => $question18->id,
+            'title' => '2',
+        ]);
+
+        Option::create([
+            'question_id' => $question18->id,
+            'title' => '3',
+        ]);
+
+
+        Option::create([
+            'question_id' => $question18->id,
+            'title' => '4',
+        ]);
+
         $question19 = Question::create([
             'assessment_tool_id' => $assessment_tool->id,
             'title' => 'Indication of the task Completion(e.g. verbal,gesture,serving)',
             'type' => 'multiple_choice',
+        ]);
+
+        Option::create([
+            'question_id' => $question19->id,
+            'title' => '0',
+        ]);
+
+        Option::create([
+            'question_id' => $question19->id,
+            'title' => '1',
+        ]);
+
+        Option::create([
+            'question_id' => $question19->id,
+            'title' => '2',
+        ]);
+
+        Option::create([
+            'question_id' => $question19->id,
+            'title' => '3',
+        ]);
+
+
+        Option::create([
+            'question_id' => $question19->id,
+            'title' => '4',
         ]);
 
     }

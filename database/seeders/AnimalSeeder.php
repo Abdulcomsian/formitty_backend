@@ -354,11 +354,11 @@ class AnimalSeeder extends Seeder
                 <table style='border-collapse: collapse;width: 100%;margin: auto;border: 1px solid lightslategray;'>
                     <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 20%; background-color: lightgrey; font-size: 17px'>Yes</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_schoold_attendance}}</td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_schoold_attendance_yes}}</td>
                     </tr>                   
                     <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 20%; background-color: lightgrey; font-size: 17px'>No</td>
-                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_schoold_attendance}}</td>
+                        <td style='border: 1px solid lightslategray; padding: 10px'>{{part_3_schoold_attendance_no}}</td>
                     </tr>
                     <tr>
                         <td style='border: 1px solid lightslategray; padding: 10px; width: 20%; background-color: lightgrey; font-size: 17px'>Describe</td>
@@ -499,13 +499,44 @@ class AnimalSeeder extends Seeder
                     </td>
                 </tr>
             </table>
-            <p style='font-weight:bold; font-size:13pt;margin-top:20px; margin-bottom:20px;'><b>Declaration</b> (indicate all relevant section that apply)</p>
-            <p style='margin-bottom: 10px'>I/we certify that I/we meet the NDIA expectations of AT assessor provider suitability (including understanding of the current NDIS Act, Rules and Operational Guidelines) to assess the type of assistive technology and associated supports, at the level of complexity required by this participant.</p>
-            <p style='margin-bottom: 10px'>I/we will provide appropriate evidence to the NDIA and/or Quality and Safe Guards Commission if and as requested.</p>
-            <p style='margin-bottom: 10px'>I/we understand and acknowledge that the NDIA and participant will rely on my professional advice to select, source and implement this assistive technology.</p>
-            <p style='margin-bottom: 10px'>This assistive technology has been assessed by the treating multi-disciplinary team and I have completed the AT assessment on behalf of that team.</p>
-            <p style='margin-bottom: 10px;font-weight:bold;'>Assessor 1 Details</p>
+            <p></p>
+            <table
+          style='
+            border-collapse: collapse;
+            width: 100%;
+            margin: auto;
+            border: 1px solid lightslategray;
+          '
+        >
+            <tbody>
+                <tr>
+                    <td style='border: 1px solid lightslategray; padding: 10px; width: 80%; background-color: lightgrey; font-size: 17px'>I certify that I meet the NDIA expectations of AT assessor provider suitability (including understanding of the current NDIS Act, Rules and Operational Guidelines) to assess the type of assistive technology and associated supports, at the level of complexity required by this participant.</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>
+                    {{part_6_declaration_NDIA_expectation}}
+                    </td>
+                </tr>
+                <tr>
+                    <td style='border: 1px solid lightslategray; padding: 10px; width: 80%;background-color: lightgrey; font-size: 17px'>I will provide appropriate evidence to the NDIA and/or Quality and Safe Guards Commission if and as requested.</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>
+                    {{part_6_declaration_appropriate_evidence}}
+                    </td>
+                </tr>
+                <tr>
+                    <td style='border: 1px solid lightslategray; padding: 10px; width: 80%; background-color: lightgrey; font-size: 17px'>I understand and acknowledge that the NDIA and participant will rely on my professional advice to select, source and implement this assistive technology.</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>
+                    {{part_6_declaration_NDIA_understanding}}
+                    </td>
+                </tr>
+                <tr>
+                    <td style='border: 1px solid lightslategray; padding: 10px; width: 80%; background-color: lightgrey; font-size: 17px'>This assistive technology has been assessed by the treating multi-disciplinary team and I have completed the AT assessment on behalf of that team.</td>
+                    <td style='border: 1px solid lightslategray; padding: 10px'>
+                    {{part_6_declaration_accessing_team}}
+                </td>
+                 </tr>
+            </tbody>
+        </table>
 
+            <p style='margin-bottom: 10px;font-weight:bold;'>Assessor 1 Details</p>
             <table
             style='border-collapse: collapse;width: 100%;margin: auto;border: 1px solid lightslategray;'>
                 <tr>
@@ -899,6 +930,15 @@ class AnimalSeeder extends Seeder
             </table>
             <p style='margin-top:10px'></p>";
         $form_fields = '[
+            {
+                "type":"heading",
+                "required":false,
+                "label_1":"1.1 NDIS Participant Details ",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_1_heading_extra_1",
+                "access":false
+             },
     {
        "type":"text",
        "required":false,
@@ -1023,10 +1063,21 @@ class AnimalSeeder extends Seeder
 >>>>>>> 52cf4aa6a824ebe8f2ad0837255557ea5b62a503
 
         $form_fields2 = '[
+            {
+                "type":"heading",
+                "required":false,
+                "label_1":"2.1 Background",
+                "label_2":"",
+                "label_2":"General: Describe participant’s current status which may include diagnosis, prognosis, co-existing conditions, disability, personal and instrumental activities of daily living, formal and informal support arrangements and life transitions.",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_2_heading_extra_1",
+                "access":false
+             },
     {
        "type":"textarea",
        "required":false,
-       "label":"Background",
+       "label":"",
        "placeholder":"Enter Your Background",
        "className":"form-control",
        "name":"part_2_assesment_background",
@@ -1034,14 +1085,36 @@ class AnimalSeeder extends Seeder
        "subtype":"text"
     },
     {
+        "type":"heading",
+        "required":false,
+        "label_1":"2.2 Participant Goals",
+        "label_2":"",
+        "label_3":"If the participant’s NDIS plan has been made available, you can refer to the statement of participant’s goals and outline those relevant to provision of an Assistance Animal.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_2_heading_extra_2",
+        "access":false
+     },
+    {
         "type":"textarea",
         "required":false,
-        "label":"Participant Goals",
+        "label":"",
         "placeholder":"Enter Participant Goals",
         "className":"form-control",
         "name":"part_2_participant_goals",
         "access":false,
         "subtype":"text"
+     },
+     {
+        "type":"heading",
+        "required":false,
+        "label_1":"2.3 Functional Assessment",
+        "label_2":"",
+        "label_3":"Outline the specific functional limitation/s related to the participant’s disability that indicate the need for the Assistance Animal. Summarise relevant assessments that have been undertaken such as sensory profiling, cognitive assessments, current capacity to access the community, positive behaviour support assessments. Please only comment on the below points where applicable.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_2_heading_extra_3",
+        "access":false
      },
     {
        "type":"text",
@@ -1095,10 +1168,32 @@ class AnimalSeeder extends Seeder
     }
  ]';
         $form_fields3 = '[
+            {
+                "type":"heading",
+                "required":false,
+                "label_1":"",
+                "label_2":"",
+                "label_3":"NDIA delegates determine whether the support is “reasonable and necessary” according to section 34 of the NDIS Act. The following section will assist to inform a delegate reasonable and necessary decision.",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_3_heading_extra_1",
+                "access":false
+             },
+             {
+                "type":"heading",
+                "required":false,
+                "label_1":"3.1 Information to support decision",
+                "label_2":"3.1.1 Evidence",
+                "label_3":"Consider and outline evidence regarding how the recommended Assistance Animal will assist the participant to pursue the goals, objectives and aspirations contained in the participant’s statement in their plan.",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_3_heading_extra_2",
+                "access":false
+             },
     {
        "type":"textarea",
        "required":false,
-       "label":"Evidence",
+       "label":"",
        "placeholder":"Enter Evidence",
        "className":"form-control",
        "name":"part_3_evidence",
@@ -1106,9 +1201,20 @@ class AnimalSeeder extends Seeder
        "subtype":"text"
     },
     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"3.1.2 Functional limitation",
+        "label_3":"Outline the functional limitations of the participant to be mitigated by the Assistance Animal. There should be a minimum of three tasks which are measurable that the Assistance Animal is intended to perform to reduce the functional impact of the participant’s disability.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_3",
+        "access":false
+     },
+    {
        "type":"textarea",
        "required":false,
-       "label":"Functional limitation",
+       "label":"",
        "placeholder":"Enter Functional Limitation",
        "className":"form-control",
        "name":"part_3_functional_limitation",
@@ -1116,9 +1222,20 @@ class AnimalSeeder extends Seeder
        "subtype":"text"
     },
     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"3.1.3 How the Assistance Animal will assist",
+        "label_3":"Consider and outline evidence regarding how the Assistance Animal will assist the participant to undertake activities so as to facilitate their social and /or economic participation. Consider including information regarding current baseline functioning and anticipated outcome measures.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_4",
+        "access":false
+     },
+    {
        "type":"textarea",
        "required":false,
-       "label":"How the Assistance Animal will assist",
+       "label":"",
        "placeholder":"How Assistance Animal will Assist",
        "className":"form-control",
        "name":"part_3_assistanceanimation_assist",
@@ -1126,9 +1243,20 @@ class AnimalSeeder extends Seeder
        "subtype":"text"
     },
     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"3.1.4 Equipment / methods and access to allied health",
+        "label_3":"Detail the participant’s current equipment/methods / access to allied health interventions",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_5",
+        "access":false
+     },
+    {
        "type":"textarea",
        "required":false,
-       "label":"Equipment / methods and access to allied health",
+       "label":"",
        "placeholder":"Equipment / methods and access to allied health",
        "className":"form-control",
        "name":"part_3_current_equipment",
@@ -1136,9 +1264,20 @@ class AnimalSeeder extends Seeder
        "subtype":"text"
     },
     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"3.1.5 Alternative options",
+        "label_3":"Detail other options which have been considered as an alternative to an Assistance Animal, including evidence based best practice intervention, capacity building, alternative assistive technology, linkages with community supports and increased social participation. Information should include outcomes of intervention provided.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_6",
+        "access":false
+     },
+    {
        "type":"textarea",
        "required":false,
-       "label":"Alternative options",
+       "label":"",
        "placeholder":"Enter Alternative Options",
        "className":"form-control",
        "name":"part_3_alternative_options",
@@ -1146,9 +1285,20 @@ class AnimalSeeder extends Seeder
        "subtype":"text"
     },
     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"3.1.6 Benefits",
+        "label_3":"Outline how the Assistance Animal benefits exceed those reasonably expected from the presence of a companion animal.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_7",
+        "access":false
+     },
+    {
        "type":"textarea",
        "required":false,
-       "label":"Benefits",
+       "label":"",
        "placeholder":"Enter Benefits",
        "className":"form-control",
        "name":"part_3_assistanceanimal_benefits",
@@ -1156,25 +1306,58 @@ class AnimalSeeder extends Seeder
        "subtype":"text"
     },
     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"3.1.7 Participant Activities",
+        "label_3":"Please provide comprehensive detail regarding the activities the participant will complete with the Assistance Animal, including the frequency of activities",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_8",
+        "access":false
+     },
+    {
        "type":"textarea",
        "required":false,
-       "label":"Participant Activities",
-       "placeholder":"Participant Activities",
+       "label":"",
+       "placeholder":"Enter Participant Activities",
        "className":"form-control",
        "name":"part_3_comprehensive_detail",
        "access":false,
        "subtype":"text"
     },
     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"3.1.8 Assistance Animal working life",
+        "label_3":"What is the anticipated working life of the Assistance Animal?",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_9",
+        "access":false
+     },
+    {
        "type":"textarea",
        "required":false,
-       "label":"Assistance Animal working life",
-       "placeholder":"Assistance Animal working life",
+       "label":"",
+       "placeholder":"Enter Assistance Animal working life",
        "className":"form-control",
        "name":"part_3_working_life",
        "access":false,
        "subtype":"text"
     },
+    {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"3.1.9 Participant supports",
+        "label_3":"Outline the participant’s current use of formal and informal supports, including frequency of supports provided.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_10",
+        "access":false
+     },
     {
        "type":"textarea",
        "required":false,
@@ -1186,19 +1369,41 @@ class AnimalSeeder extends Seeder
        "subtype":"text"
     },
     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"3.1.10 Plan of use",
+        "label_3":"Please provide a detailed plan, including a timeframe, regarding how the Assistance Animal will reduce the participant’s current use of formal and informal support required.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_11",
+        "access":false
+     },
+    {
        "type":"textarea",
        "required":false,
-       "label":"Plan Of Use",
-       "placeholder":"Plan Of Use",
+       "label":"",
+       "placeholder":"Enter Plan Of Use",
        "className":"form-control",
        "name":"part_3_planof_use",
        "access":false,
        "subtype":"text"
     },
     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"3.1.11 Evidence of effectiveness",
+        "label_3":"Having regard to evidenced based practice, what evidence indicates the proposed Assistance Animal will be, or is likely to be, effective and beneficial for the participant? (For example; past participant experience of an assistance animal).",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_12",
+        "access":false
+     },
+    {
        "type":"textarea",
        "required":false,
-       "label":"Evidence of effectiveness",
+       "label":"",
        "placeholder":"Enter Evidence of effectiveness",
        "className":"form-control",
        "name":"part_3_evidence_effectiveness",
@@ -1206,9 +1411,20 @@ class AnimalSeeder extends Seeder
        "subtype":"text"
     },
     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"3.1.12 Objective outcomes",
+        "label_3":"Objective outcomes from a trial with the Assistance Animal including pre and post outcome measures.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_13",
+        "access":false
+     },
+    {
        "type":"textarea",
        "required":false,
-       "label":"Objective outcomes",
+       "label":"",
        "placeholder":"Enter Outcome Objectives",
        "className":"form-control",
        "name":"part_3_objective_outcomes",
@@ -1216,29 +1432,62 @@ class AnimalSeeder extends Seeder
        "subtype":"text"
     },
     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"3.1.13 Participant experience with previous animals",
+        "label_3":"Detail of the participant’s previous lived experience with animals, family pet, or animal assisted therapy interventions and the effect it had on the participant.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_14",
+        "access":false
+     },
+    {
        "type":"textarea",
        "required":false,
-       "label":"Participant experience with previous animals",
-       "placeholder":"Participant experience with previous animals",
+       "label":"",
+       "placeholder":"Enter Participant experience with previous animals",
        "className":"form-control",
        "name":"part_3_participant_experience",
        "access":false,
        "subtype":"text"
     },
     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"3.1.14 Medical impacts",
+        "label_3":"Any relevant medical information that impacts on the participant’s ability to use the Assistance Animal?",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_15",
+        "access":false
+     },
+    {
        "type":"textarea",
        "required":false,
-       "label":"Medical impacts",
-       "placeholder":"Enter Any Medical impacts",
+       "label":"",
+       "placeholder":"Enter Medical impacts",
        "className":"form-control",
        "name":"part_3_medical_impact",
        "access":false,
        "subtype":"text"
     },
     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"3.1.15 Alternate funding",
+        "label_3":"Consider whether support delivered under alternative funding through the NDIS is being provided for the same functional goals.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_16",
+        "access":false
+     },
+    {
        "type":"textarea",
        "required":false,
-       "label":"Alternate funding",
+       "label":"",
        "placeholder":"Enter Alternate funding",
        "className":"form-control",
        "name":"part_3_alternate_funding",
@@ -1246,9 +1495,20 @@ class AnimalSeeder extends Seeder
        "subtype":"text"
     },
     {
+        "type":"heading",
+        "required":false,
+        "label_1":"3.2 Reasonable expectations of care",
+        "label_2":"",
+        "label_3":"Has this assessment considered what it is reasonable to expect family, carers, informal networks and the community to provide?",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_17",
+        "access":false
+     },
+    {
        "type":"textarea",
        "required":false,
-       "label":"Reasonable expectations of care",
+       "label":"",
        "placeholder":"Enter Reasonable expectations of care",
        "className":"form-control",
        "name":"part_3_expectation_care",
@@ -1256,9 +1516,20 @@ class AnimalSeeder extends Seeder
        "subtype":"text"
     },
     {
+        "type":"heading",
+        "required":false,
+        "label_1":"3.3 Mitigation of Risk",
+        "label_2":"",
+        "label_3":"Detail any behaviour issues which may impact on, or potentially cause harm to the Assistance Animal and how these will be managed. Please note: In reference to Assistance Animal Operational Guideline, NDIS funding for Assistance Animals for a participant with behaviours of concern will not be provided due to the foreseeable risk to the participant and the animal. Behaviours of concern should be addressed prior to consideration of an Assistance Animal. Please attach a behaviour support plan if relevant.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_18",
+        "access":false
+     },
+    {
        "type":"textarea",
        "required":false,
-       "label":"Mitigation of Risk",
+       "label":"",
        "placeholder":"Enter Mitigation of Risk",
        "className":"form-control",
        "name":"part_3_mitigation_risk",
@@ -1266,9 +1537,20 @@ class AnimalSeeder extends Seeder
        "subtype":"text"
     },
     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"3.3.1 Primary handler",
+        "label_3":"Please list the primary handler/responsible person/people in the home, community, school and any other environments.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_19",
+        "access":false
+     },
+    {
        "type":"textarea",
        "required":false,
-       "label":"Primary handler",
+       "label":"",
        "placeholder":"Enter Primary handler",
        "className":"form-control",
        "name":"part_3_primary_handler",
@@ -1276,9 +1558,20 @@ class AnimalSeeder extends Seeder
        "subtype":"text"
     },
     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"3.3.2 Home environment",
+        "label_3":"Provide evidence that the environment where the Assistance Animal will be homed is suitable for all household members and the welfare of the Assistance Animal.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_20",
+        "access":false
+     },
+    {
        "type":"textarea",
        "required":false,
-       "label":"Home environment",
+       "label":"",
        "placeholder":"Enter Home environment",
        "className":"form-control",
        "name":"part_3_home_enviroment",
@@ -1286,12 +1579,51 @@ class AnimalSeeder extends Seeder
        "subtype":"text"
     },
     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"3.3.3 Attendance at school",
+        "label_3":"",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_21",
+        "access":false
+     },
+     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"",
+        "label_3":"Will the Assistance Animal Attending School with the participant?",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_22",
+        "access":false
+     },
+     {
+        "type":"checkbox-group",
+        "required":false,
+        "label":"Yes",
+        "toggle":false,
+        "inline":false,
+        "name":"part_3_schoold_attendance_yes",
+        "access":false,
+        "other":false,
+        "values":[
+           {
+              "label":"Option 1",
+              "value":"option-1",
+              "selected":true
+           }
+        ]
+     },
+    {
        "type":"checkbox-group",
        "required":false,
-       "label":"Will the Assistance Animal Attending School with the participant?",
+       "label":"No",
        "toggle":false,
        "inline":false,
-       "name":"part_3_schoold_attendance",
+       "name":"part_3_schoold_attendance_no",
        "access":false,
        "other":false,
        "values":[
@@ -1303,29 +1635,51 @@ class AnimalSeeder extends Seeder
        ]
     },
     {
-       "type":"text",
+       "type":"textarea",
        "required":false,
-       "label":"Details",
-       "placeholder":"Will the Assistance Animal Attending School with the participant? Details",
+       "label":"Describe",
+       "placeholder":"Will the Assistance Animal Attending School with the participant? Describe",
        "className":"form-control",
        "name":"part_3_schoold_attendance_details",
        "access":false,
        "subtype":"text"
     },
     {
-       "type":"text",
-       "required":false,
-       "label":"Permission to attend school",
-       "placeholder":"Do you have Permission For Animal to attend school",
-       "className":"form-control",
-       "name":"part_3_permissionattend",
-       "access":false,
-       "subtype":"text"
-    },
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"3.3.4 Permission to attend school",
+        "label_3":"Where the assistance animal will be attending school provide evidence from school that the Assistance Animal is permitted to attend with the participant.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_23",
+        "access":false
+     },
     {
-       "type":"text",
+        "type":"textarea",
+        "required":false,
+        "label":"",
+        "placeholder":"Do you have Permission For Animal to attend school",
+        "className":"form-control",
+        "name":"part_3_permissionattend",
+        "access":false,
+        "subtype":"text"
+     },
+     {
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"3.3.5 School environment",
+        "label_3":"Where the assistance animal will be attending school provide evidence that the school environment has been assessed as suitable for the Assistance Animal.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_24",
+        "access":false
+     },
+    {
+       "type":"textarea",
        "required":false,
-       "label":"School environment",
+       "label":"",
        "placeholder":"Enter School environment",
        "className":"form-control",
        "name":"part_3_schoolenviroment",
@@ -1333,9 +1687,20 @@ class AnimalSeeder extends Seeder
        "subtype":"text"
     },
     {
-       "type":"text",
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"3.3.6 Public access test",
+        "label_3":"Provide evidence that the Assistance Animal has passed the Public Access Test, as assessed by an unbiased independent assessor.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_25",
+        "access":false
+     },
+    {
+       "type":"textarea",
        "required":false,
-       "label":"Public access test",
+       "label":"",
        "placeholder":"Provide Evidence of Public access test",
        "className":"form-control",
        "name":"part_3_publicaccess_test",
@@ -1343,9 +1708,20 @@ class AnimalSeeder extends Seeder
        "subtype":"text"
     },
     {
-       "type":"text",
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"3.3.7 Legal responsibility",
+        "label_3":"Please provide details of the person who will take legal responsibility if something happens to the animal.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_26",
+        "access":false
+     },
+    {
+       "type":"textarea",
        "required":false,
-       "label":"Enter Legal responsibility",
+       "label":"",
        "placeholder":"Enter Name of Person",
        "className":"form-control",
        "name":"part_3_legal_responsibility",
@@ -1353,9 +1729,20 @@ class AnimalSeeder extends Seeder
        "subtype":"text"
     },
     {
-       "type":"text",
+        "type":"heading",
+        "required":false,
+        "label_1":"",
+        "label_2":"3.3.8 Standards",
+        "label_3":"Provide the Standards the Assistance Animal provider adheres to.",
+        "placeholder":"Full Name",
+        "className":"form-control",
+        "name":"part_3_heading_extra_27",
+        "access":false
+     },
+    {
+       "type":"textarea",
        "required":false,
-       "label":"Standards",
+       "label":"",
        "placeholder":"Provide the Standards the Assistance Animal provider adheres to.",
        "className":"form-control",
        "name":"part_3_standards",
@@ -1363,356 +1750,572 @@ class AnimalSeeder extends Seeder
        "subtype":"text"
     }
  ]';
-        $form_fields4 = '[]';
+        $form_fields4 = '[
+            {
+                "type":"heading",
+                "required":false,
+                "label_1":"",
+                "label_2":"",
+                "label_3":"Please attach:\n   1. A detailed quote outlining the full cost of any assessment, training of the participant with the dog, matching, and follow-up associated with the cost of the Assistance Animal purchase. \n   Noting, as outlined in the Assistance Animal Operational Guideline that NDIS funding is provided for a fully qualified Assistance Animal and not for the training of an animal to become an Assistance Animal. \n   2. Behaviour Support Plan (as outlined in section 3.3 if relevant). \nPlease Note: For an approved Assistance Animal the NDIS will provide an appropriate annual maintenance cost which the participant can use to pay for reasonable and necessary Assistance Animal maintenance costs (including food, grooming, flea and worm treatments, medication, vaccinations, and veterinary costs).",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_4_heading_extra_1",
+                "access":false
+             }
+        ]';
         $form_fields5 = '[
-    {
-       "type":"text",
-       "required":false,
-       "label":"Yes",
-       "placeholder":"Yes, Agreement with AT Request ",
-       "className":"form-control",
-       "name":"part_5_agreement_yes2",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"text",
-       "required":false,
-       "label":"No",
-       "placeholder":"No, Agreement with AT Request",
-       "className":"form-control",
-       "name":"part_5_agreement_no1",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"text",
-       "required":false,
-       "label":"Comments",
-       "placeholder":"Comments",
-       "className":"form-control",
-       "name":"part_5_agreement_comments3",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"text",
-       "required":false,
-       "label":"Yes",
-       "placeholder":"Yes, Has a copy of the assessment been given to the participant? If not please explain.",
-       "className":"form-control",
-       "name":"part_5_copyassessment_yes4",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"text",
-       "required":false,
-       "label":"No",
-       "placeholder":"No, Has a copy of the assessment been given to the participant? If not please explain.",
-       "className":"form-control",
-       "name":"part_5_copyassessment_no5",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"text",
-       "required":false,
-       "label":"Comments",
-       "placeholder":"Comments, Copy of Assessment",
-       "className":"form-control",
-       "name":"part_5_copyassessment_comments6",
-       "access":false,
-       "subtype":"text"
-    }
- ]';
+            {
+                "type": "heading",
+                "required": false,
+                "label_1": "5.1 Agreement with AT request",
+                "label_2": "",
+                "label_3": "Is the Participant / Nominee in agreement with this AT request? Please describe any issues?",
+                "placeholder": "Full Name",
+                "className": "form-control",
+                "name": "part_5_heading_extra_1",
+                "access": false
+            },
+            {
+                "type": "checkbox-group",
+                "required": false,
+                "label": "Yes, Agreement with AT Request",
+                "toggle": false,
+                "inline": false,
+                "name": "part_5_agreement_yes2",
+                "access": false,
+                "other": false,
+                "values": [
+                    {
+                        "label": "YES/NO",
+                        "value": "option-1",
+                        "selected": true
+                    }
+                ]
+            },
+            {
+                "type": "checkbox-group",
+                "required": false,
+                "label": "No, Agreement with AT Request",
+                "toggle": false,
+                "inline": false,
+                "name": "part_5_agreement_no1",
+                "access": false,
+                "other": false,
+                "values": [
+                    {
+                        "label": "YES/NO",
+                        "value": "option-1",
+                        "selected": true
+                    }
+                ]
+            },
+            {
+                "type": "textarea",
+                "required": false,
+                "label": "Comments",
+                "placeholder": "Enter Comments",
+                "className": "form-control",
+                "name": "part_5_agreement_comments3",
+                "access": false,
+                "subtype": "text"
+            },
+            {
+                "type": "heading",
+                "required": false,
+                "label_1": "",
+                "label_2": "5.1.1 Copy of assessment",
+                "label_3": "Has a copy of the assessment been given to the participant? If not please explain.",
+                "placeholder": "Full Name",
+                "className": "form-control",
+                "name": "part_5_heading_extra_2",
+                "access": false
+            },
+            {
+                "type": "checkbox-group",
+                "required": false,
+                "label": "Yes, The copy of the assessment has been given to the participant? If not please explain.",
+                "toggle": false,
+                "inline": false,
+                "name": "part_5_copyassessment_yes4",
+                "access": false,
+                "other": false,
+                "values": [
+                    {
+                        "label": "YES/NO",
+                        "value": "option-1",
+                        "selected": true
+                    }
+                ]
+            },
+            {
+                "type": "checkbox-group",
+                "required": false,
+                "label": "No, The copy of the assessment has not been given to the participant. If not please explain.",
+                "toggle": false,
+                "inline": false,
+                "name": "part_5_copyassessment_no5",
+                "access": false,
+                "other": false,
+                "values": [
+                    {
+                        "label": "YES/NO",
+                        "value": "option-1",
+                        "selected": true
+                    }
+                ]
+            },
+            {
+                "type": "textarea",
+                "required": false,
+                "label": "Comments",
+                "placeholder": "Comments, Copy of Assessment",
+                "className": "form-control",
+                "name": "part_5_copyassessment_comments6",
+                "access": false,
+                "subtype": "text"
+            }
+        ]';
 
         $form_fields6 = '[
-    {
-       "type":"text",
-       "required":false,
-       "label":"Name",
-       "placeholder":"Assessor_1_Name",
-       "className":"form-control",
-       "name":"part_6_details_of_assistive_technology_assessor1",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"text",
-       "required":false,
-       "label":"NDIS Provider Register Number",
-       "placeholder":"Assessor_1_NDIS Provider Register Number",
-       "className":"form-control",
-       "name":"part_6_details_of_assistive_technology_assessor2",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"text",
-       "required":false,
-       "label":"Phone",
-       "placeholder":"Assessor_1_Phone",
-       "className":"form-control",
-       "name":"part_6_details_of_assistive_technology_assessor3",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"email",
-       "required":false,
-       "label":"Email",
-       "placeholder":"Assessor_1_Email",
-       "className":"form-control",
-       "name":"part_6_details_of_assistive_technology_assessor4",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"text",
-       "required":false,
-       "label":"Signature",
-       "placeholder":"Assessor_1_Signature",
-       "className":"form-control",
-       "name":"part_6_details_of_assistive_technology_assessor5",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"text",
-       "required":false,
-       "label":"Qualification",
-       "placeholder":"Assessor_1_Qualification",
-       "className":"form-control",
-       "name":"part_6_details_of_assistive_technology_assessor6",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"date",
-       "required":false,
-       "label":"Date of Assessment",
-       "placeholder":"Assessor_1_Date of Assessment",
-       "className":"form-control",
-       "name":"part_6_details_of_assistive_technology_assessor7",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"date",
-       "required":false,
-       "label":"Date of Report",
-       "placeholder":"Assessor_1_Date of Report",
-       "className":"form-control",
-       "name":"part_6_details_of_assistive_technology_assessor8",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"text",
-       "required":false,
-       "label":"Name",
-       "placeholder":"Assessor_2_Name",
-       "className":"form-control",
-       "name":"part_6_details_of_assistive_technology_assessor9",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"text",
-       "required":false,
-       "label":"NDIS Provider Register Number",
-       "placeholder":"Assessor_2_NDIS Provider Register Number",
-       "className":"form-control",
-       "name":"part_6_details_of_assistive_technology_assessor10",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"text",
-       "required":false,
-       "label":"Phone",
-       "placeholder":"Assessor_2_Phone",
-       "className":"form-control",
-       "name":"part_6_details_of_assistive_technology_assessor11",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"email",
-       "required":false,
-       "label":"Email",
-       "placeholder":"Assessor_2_Email",
-       "className":"form-control",
-       "name":"part_6_details_of_assistive_technology_assessor12",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"text",
-       "required":false,
-       "label":"Signature",
-       "placeholder":"Assessor_2_Signature",
-       "className":"form-control",
-       "name":"part_6_details_of_assistive_technology_assessor13",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"text",
-       "required":false,
-       "label":"Qualification",
-       "placeholder":"Assessor_2_Qualification",
-       "className":"form-control",
-       "name":"part_6_details_of_assistive_technology_assessor14",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"date",
-       "required":false,
-       "label":"Date of Assessment",
-       "placeholder":"Assessor_2_Date of Assessment",
-       "className":"form-control",
-       "name":"part_6_details_of_assistive_technology_assessor15",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"date",
-       "required":false,
-       "label":"Date of Report",
-       "placeholder":"Assessor_2_Date of Report",
-       "className":"form-control",
-       "name":"part_6_details_of_assistive_technology_assessor16",
-       "access":false,
-       "subtype":"text"
-    }
- ]';
+            {
+                "type":"heading",
+                "required":false,
+                "label_1": "",
+                "label_2":"DECLARATION (indicate all relevant sections that apply)",
+                "label_3": "",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_6_heading_extra_1",
+                "access":false
+             },
+              {
+                 "type":"checkbox-group",
+                 "required":false,
+                 "label":"I/we certify that I/we meet the NDIA expectations of AT assessor provider suitability (including understanding of the current NDIS Act, Rules and Operational Guidelines) to assess the type of assistive technology and associated supports, at the level of complexity required by this participant.",
+                 "toggle":false,
+                 "inline":false,
+                 "name":"part_6_declaration_NDIA_expectation",
+                 "access":false,
+                 "other":false,
+                 "values":[
+                    {
+                       "label":"YES/NO",
+                       "value":"option-1",
+                       "selected":true
+                    }
+                 ]
+              },
+              {
+                 "type":"checkbox-group",
+                 "required":false,
+                 "label":"I/we will provide appropriate evidence to the NDIA and/or Quality and Safe Guards Commission if and as requested.",
+                 "toggle":false,
+                 "inline":false,
+                 "name":"part_6_declaration_appropriate_evidence",
+                 "access":false,
+                 "other":false,
+                 "values":[
+                    {
+                       "label":"YES/NO",
+                       "value":"option-1",
+                       "selected":true
+                    }
+                 ]
+              },
+              {
+                 "type":"checkbox-group",
+                 "required":false,
+                 "label":"I/we understand and acknowledge that the NDIA and participant will rely on my professional advice to select, source and implement this assistive technology.",
+                 "toggle":false,
+                 "inline":false,
+                 "name":"part_6_declaration_NDIA_understanding",
+                 "access":false,
+                 "other":false,
+                 "values":[
+                    {
+                       "label":"YES/NO",
+                       "value":"option-1",
+                       "selected":false
+                    }
+                 ]
+              },
+              {
+                 "type":"checkbox-group",
+                 "required":false,
+                 "label":"This assistive technology has been assessed by the treating multi-disciplinary team and I have completed the AT assessment on behalf of that team.",
+                 "toggle":false,
+                 "inline":false,
+                 "name":"part_6_declaration_accessing_team",
+                 "access":false,
+                 "other":false,
+                 "values":[
+                    {
+                       "label":"YES/NO",
+                       "value":"option-1",
+                       "selected":false
+                    }
+                 ]
+              },
+              {
+                "type":"heading",
+                "required":false,
+                "label_1": "",
+                "label_2":"Assessor 1 Details",
+                "label_3": "",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_6_heading_extra_2",
+                "access":false
+             },
+            {
+                "type": "text",
+                "required": false,
+                "label": "Name",
+                "placeholder": "Name",
+                "className": "form-control",
+                "name": "part_6_details_of_assistive_technology_assessor1",
+                "access": false,
+                "subtype": "text"
+            },
+            {
+                "type": "text",
+                "required": false,
+                "label": "NDIS Provider Register Number",
+                "placeholder": "NDIS Provider Register Number",
+                "className": "form-control",
+                "name": "part_6_details_of_assistive_technology_assessor2",
+                "access": false,
+                "subtype": "text"
+            },
+            {
+                "type": "text",
+                "required": false,
+                "label": "Phone",
+                "placeholder": "Phone",
+                "className": "form-control",
+                "name": "part_6_details_of_assistive_technology_assessor3",
+                "access": false,
+                "subtype": "text"
+            },
+            {
+                "type": "email",
+                "required": false,
+                "label": "Email",
+                "placeholder": "Email",
+                "className": "form-control",
+                "name": "part_6_details_of_assistive_technology_assessor4",
+                "access": false,
+                "subtype": "text"
+            },
+            {
+                "type": "text",
+                "required": false,
+                "label": "Signature",
+                "placeholder": "Signature",
+                "className": "form-control",
+                "name": "part_6_details_of_assistive_technology_assessor5",
+                "access": false,
+                "subtype": "text"
+            },
+            {
+                "type": "text",
+                "required": false,
+                "label": "Qualification",
+                "placeholder": "Qualification",
+                "className": "form-control",
+                "name": "part_6_details_of_assistive_technology_assessor6",
+                "access": false,
+                "subtype": "text"
+            },
+            {
+                "type": "date",
+                "required": false,
+                "label": "Date of Assessment",
+                "placeholder": "Date of Assessment",
+                "className": "form-control",
+                "name": "part_6_details_of_assistive_technology_assessor7",
+                "access": false,
+                "subtype": "text"
+            },
+            {
+                "type": "date",
+                "required": false,
+                "label": "Date of Report",
+                "placeholder": "Date of Report",
+                "className": "form-control",
+                "name": "part_6_details_of_assistive_technology_assessor8",
+                "access": false,
+                "subtype": "text"
+            },
+            {
+                "type":"heading",
+                "required":false,
+                "label_1": "",
+                "label_2":"Assessor 2 Details",
+                "label_3": "",
+                "placeholder":"Full Name",
+                "className":"form-control",
+                "name":"part_6_heading_extra_3",
+                "access":false
+             },
+            {
+                "type": "text",
+                "required": false,
+                "label": "Name",
+                "placeholder": "Name",
+                "className": "form-control",
+                "name": "part_6_details_of_assistive_technology_assessor9",
+                "access": false,
+                "subtype": "text"
+            },
+            {
+                "type": "text",
+                "required": false,
+                "label": "NDIS Provider Register Number",
+                "placeholder": "NDIS Provider Register Number",
+                "className": "form-control",
+                "name": "part_6_details_of_assistive_technology_assessor10",
+                "access": false,
+                "subtype": "text"
+            },
+            {
+                "type": "text",
+                "required": false,
+                "label": "Phone",
+                "placeholder": "Phone",
+                "className": "form-control",
+                "name": "part_6_details_of_assistive_technology_assessor11",
+                "access": false,
+                "subtype": "text"
+            },
+            {
+                "type": "email",
+                "required": false,
+                "label": "Email",
+                "placeholder": "Email",
+                "className": "form-control",
+                "name": "part_6_details_of_assistive_technology_assessor12",
+                "access": false,
+                "subtype": "text"
+            },
+            {
+                "type": "text",
+                "required": false,
+                "label": "Signature",
+                "placeholder": "Signature",
+                "className": "form-control",
+                "name": "part_6_details_of_assistive_technology_assessor13",
+                "access": false,
+                "subtype": "text"
+            },
+            {
+                "type": "text",
+                "required": false,
+                "label": "Qualification",
+                "placeholder": "Qualification",
+                "className": "form-control",
+                "name": "part_6_details_of_assistive_technology_assessor14",
+                "access": false,
+                "subtype": "text"
+            },
+            {
+                "type": "date",
+                "required": false,
+                "label": "Date of Assessment",
+                "placeholder": "Date of Assessment",
+                "className": "form-control",
+                "name": "part_6_details_of_assistive_technology_assessor15",
+                "access": false,
+                "subtype": "text"
+            },
+            {
+                "type": "date",
+                "required": false,
+                "label": "Date of Report",
+                "placeholder": "Date of Report",
+                "className": "form-control",
+                "name": "part_6_details_of_assistive_technology_assessor16",
+                "access": false,
+                "subtype": "text"
+            }
+        ]';
 
 
         $form_fields7 = '[
-    {
-       "type":"text",
-       "required":false,
-       "label":"Yes, I Consent",
-       "placeholder":"Yes, I Consent",
-       "className":"form-control",
-       "name":"part_7_consent_to_collect_and_share_your_information01",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"text",
-       "required":false,
-       "label":"No, I do not Consent",
-       "placeholder":"No, I do not Consent",
-       "className":"form-control",
-       "name":"part_7_consent_to_collect_and_share_your_information02",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"text",
-       "required":false,
-       "label":"Participant signature",
-       "placeholder":"Participant signature",
-       "className":"form-control",
-       "name":"part_7_consent_to_collect_and_share_your_information03",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"text",
-       "required":false,
-       "label":"I understand that I am giving consent to the NDIA to do the things with my information set out in this section.",
-       "placeholder":"I understand that I am giving consent to the NDIA to do the things with my information set out in this section. ",
-       "className":"form-control",
-       "name":"part_7_consent_to_collect_and_share_your_information04",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"text",
-       "required":false,
-       "label":"I understand that I can access the NDIA’s Privacy Notice and Privacy Policy on the NDIA website or by contacting the NDIA.",
-       "placeholder":"I understand that I can access the NDIA’s Privacy Notice and Privacy Policy on the NDIA website or by contacting the NDIA.",
-       "className":"form-control",
-       "name":"part_7_consent_to_collect_and_share_your_information05",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"text",
-       "required":false,
-       "label":"Consent signature",
-       "placeholder":"Consent Signature",
-       "className":"form-control",
-       "name":"part_7_consent_to_collect_and_share_your_information06",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"date",
-       "required":false,
-       "label":"Date",
-       "placeholder":"Date",
-       "className":"form-control",
-       "name":"part_7_consent_to_collect_and_share_your_information07",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"text",
-       "required":false,
-       "label":"Full Name",
-       "placeholder":"Full Name",
-       "className":"form-control",
-       "name":"part_7_consent_to_collect_and_share_your_information08",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"text",
-       "required":false,
-       "label":"signature",
-       "placeholder":"signature",
-       "className":"form-control",
-       "name":"part_7_consent_to_collect_and_share_your_information09",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"date",
-       "required":false,
-       "label":"Date",
-       "placeholder":"Date",
-       "className":"form-control",
-       "name":"part_7_consent_to_collect_and_share_your_information10",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"text",
-       "required":false,
-       "label":"Full name",
-       "placeholder":"Full Name",
-       "className":"form-control",
-       "name":"part_7_consent_to_collect_and_share_your_information11",
-       "access":false,
-       "subtype":"text"
-    },
-    {
-       "type":"text",
-       "required":false,
-       "label":"Relation",
-       "placeholder":"Relation",
-       "className":"form-control",
-       "name":"part_7_consent_to_collect_and_share_your_information12",
-       "access":false,
-       "subtype":"text"
-    }
- ]';
+            {
+                "type": "heading",
+                "required": false,
+                "label_1": "",
+                "label_2": "For the participant to complete",
+                "label_3": "As a participant who requires assistive technology supports, the National Disability Insurance Agency (NDIA) may need to contact your AT assessor and / or AT supplier to discuss information within your assistive technology assessment and quotation(s). This will assist the NDIA with determining whether your request for assistive technology support(s) can be provided to you under the NDIS. \nDo you consent to the NDIA collecting and disclosing your information including from these third parties mentioned above, in relation to your assistive technology assessment and quotation? ",
+                "placeholder": "Full Name",
+                "className": "form-control",
+                "name": "part_7_heading_extra_1",
+                "access": false
+            },
+            {
+                "type": "checkbox-group",
+                "required": false,
+                "label": "Yes, I consent",
+                "toggle": false,
+                "inline": false,
+                "name": "part_7_consent_to_collect_and_share_your_information01",
+                "access": false,
+                "other": false,
+                "values": [
+                    {
+                        "label": "YES/NO",
+                        "value": "option-1",
+                        "selected": true
+                    }
+                ]
+            },
+            {
+                "type": "checkbox-group",
+                "required": false,
+                "label": "No, I do not consent",
+                "toggle": false,
+                "inline": false,
+                "name": "part_7_consent_to_collect_and_share_your_information02",
+                "access": false,
+                "other": false,
+                "values": [
+                    {
+                        "label": "YES/NO",
+                        "value": "option-1",
+                        "selected": true
+                    }
+                ]
+            },
+            {
+                "type": "checkbox-group",
+                "required": false,
+                "label": "Participants Signature",
+                "toggle": false,
+                "inline": false,
+                "name": "part_7_consent_to_collect_and_share_your_information03",
+                "access": false,
+                "other": false,
+                "values": [
+                    {
+                        "label": "YES/NO",
+                        "value": "option-1",
+                        "selected": false
+                    }
+                ]
+            },
+            {
+                "type": "checkbox-group",
+                "required": false,
+                "label": "I understand that I am giving consent to the NDIA to do the things with my information set out in this section. I understand that I can withdraw my consent for the NDIS to do things with my information at any time by letting the NDIA know.",
+                "toggle": false,
+                "inline": false,
+                "name": "part_7_consent_to_collect_and_share_your_information04",
+                "access": false,
+                "other": false,
+                "values": [
+                    {
+                        "label": "YES/NO",
+                        "value": "option-1",
+                        "selected": false
+                    }
+                ]
+            },
+            {
+                "type": "checkbox-group",
+                "required": false,
+                "label": "I understand that I can access the NDIA’s Privacy Notice and Privacy Policy on the NDIA website(https://www.ndis.gov.au/about-us/operational-guidelines/information-handling-operational-guideline/information-handling-operational-guideline-privacy) or by contacting the NDIA (https://www.ndis.gov.au/contact).",
+                "toggle": false,
+                "inline": false,
+                "name": "part_7_consent_to_collect_and_share_your_information05",
+                "access": false,
+                "other": false,
+                "values": [
+                    {
+                        "label": "YES/NO",
+                        "value": "option-1",
+                        "selected": false
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "required": false,
+                "label": "Signature",
+                "placeholder": "Enter Signature",
+                "className": "form-control",
+                "name": "part_7_consent_to_collect_and_share_your_information06",
+                "access": false,
+                "subtype": "text"
+            },
+            {
+                "type": "date",
+                "required": false,
+                "label": "Date",
+                "placeholder": "Enter Date",
+                "className": "form-control",
+                "name": "part_7_consent_to_collect_and_share_your_information07",
+                "access": false,
+                "subtype": "text"
+            },
+            {
+                "type": "text",
+                "required": false,
+                "label": "Full Name",
+                "placeholder": "Enter Full Name",
+                "className": "form-control",
+                "name": "part_7_consent_to_collect_and_share_your_information08",
+                "access": false
+            },
+            {
+                "type": "heading",
+                "required": false,
+                "label_1": "",
+                "label_2": "",
+                "label_3": "If you have signed this Form on behalf of the NDIS participant, please complete the details below. \nNote: It is an offence to provide false or misleading information. \nWe may require you to provide evidence of your authority to sign on behalf of the person.",
+                "placeholder": "Full Name",
+                "className": "form-control",
+                "name": "part_7_heading_extra_2",
+                "access": false
+            },
+            {
+                "type": "text",
+                "required": false,
+                "label": "Signature",
+                "placeholder": "Enter Signature.",
+                "className": "form-control",
+                "name": "part_7_consent_to_collect_and_share_your_information09",
+                "access": false,
+                "subtype": "text"
+            },
+            {
+                "type": "date",
+                "required": false,
+                "label": "Date of Assessment",
+                "placeholder": "Set Date of Assessment",
+                "className": "form-control",
+                "name": "part_7_consent_to_collect_and_share_your_information10",
+                "access": false
+            },
+            {
+                "type": "text",
+                "required": false,
+                "label": "Full Name",
+                "placeholder": "Full Name",
+                "className": "form-control",
+                "name": "part_7_consent_to_collect_and_share_your_information11",
+                "access": false
+            },
+            {
+                "type": "text",
+                "required": false,
+                "label": "Relationship to participant ",
+                "placeholder": "Relationship to participant",
+                "className": "form-control",
+                "name": "part_7_consent_to_collect_and_share_your_information12",
+                "access": false
+            }
+        ]';
 
 
         $form = Form::create([
