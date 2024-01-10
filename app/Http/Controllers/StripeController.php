@@ -21,7 +21,7 @@ class StripeController extends Controller
 
         dd("main");
 
-        $validator = Validator::make($request->all , [
+        $validator = Validator::make($request->all() , [
             'plan_id' => 'required|numeric'
         ]);
 
