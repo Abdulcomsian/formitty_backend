@@ -35,7 +35,7 @@ class StripeController extends Controller
 
         try{
             $paymentIntent = PaymentIntent::create([
-                'amount' => $subscriptionPlan->amount,
+                'amount' => $subscriptionPlan->amount * 100,
                 'currency' => 'usd',
                 'payment_method_types' => ['card'],
             ]);
