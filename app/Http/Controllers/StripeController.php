@@ -19,6 +19,8 @@ class StripeController extends Controller
 
     public function getPaymentIntent(Request $request){
 
+        dd("main");
+
         $validator = Validator::make($request->all , [
             'plan_id' => 'required|numeric'
         ]);
