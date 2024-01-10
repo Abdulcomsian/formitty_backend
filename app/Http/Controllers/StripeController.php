@@ -51,7 +51,7 @@ class StripeController extends Controller
     public function addSubscription(Request $request){
         $validator = Validator::make($request->all() , [
             'plan_id' => 'required|numeric',
-            'payment-method' => 'required|string'
+            'payment_method' => 'required|string'
         ]);
 
         if($validator->fails()){
