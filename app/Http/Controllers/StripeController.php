@@ -33,6 +33,8 @@ class StripeController extends Controller
             return response()->json(['status' => false , 'msg' => 'Something Went Wrong' , 'error' => 'No plan found with this id']);
         }
 
+        dd("here");
+
         try{
             $paymentIntent = PaymentIntent::create([
                 'amount' => $subscriptionPlan->amount,
