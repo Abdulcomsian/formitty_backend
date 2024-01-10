@@ -55,6 +55,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     //subscription route starts here
     Route::get('get-subscription-plans' , [SubscriptionController::class , 'getSubscriptionPlan']);
     Route::post('create-payment-intent' , [StripeController::class , 'getPaymentIntent']);
+    Route::post('create-subscription' , [StripeController::class , 'addSubscription']);
     //subscription route ends here
 
 });

@@ -47,4 +47,45 @@ class StripeController extends Controller
         }
 
     }
+
+    public function addSubscription(Request $request){
+        $validator = Validator::make($request->all() , [
+            'plan_id' => 'required|numeric',
+            'payment-method' => 'required|string'
+        ]);
+
+        if($validator->fails()){
+            return response()->json(['status' => false , 'msg' => 'Something Went Wrong' , 'error' => $validator->getMessageBag()]);
+        }
+
+        $subscriptionPlan =  SubscriptionPlan::where('id' , $request->plan_id)->first();
+        
+        if(!$subscriptionPlan){
+            return response()->json(['status' => false , 'msg' => 'Something Went Wrong' , 'error' => 'No Plan Found This Id']);
+        }
+
+
+        if(!is_null(auth()->user()->lastSubscription->ends_at)){
+            return response()->json(['status' => false , 'msg' => 'Something Went Wrong' , 'error' => 'Already Subscribe To Plan']);
+        }
+
+        try{
+
+           if(!$request->user()->stripe_id){
+                $request->user()->createStripeCustomer();
+           }
+
+           $request->user()->updateDefaultPaymentMethod($request->payment_method);
+
+           $subscription = $request->user()->newSubscription('default' , $subscriptionPlan->plan_id)->create($request->payment_method);
+
+           if($subscription){
+                return response()->json(['status' => true , 'msg' => 'Subscription Added Successfully']);
+           }
+
+        }catch(CardException $e){
+            return response()->json(['status' => false , 'msg' => 'Something Went Wrong' , 'error' => $e->getMessage()]);
+        } 
+
+    }
 }
