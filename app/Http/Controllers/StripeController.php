@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Stripe\Stripe;
-use Stripe\PaymentIntent;
+use Stripe\Stripe; 
 use Stripe\SetupIntent;
 use App\Models\SubscriptionPlan;
 use Illuminate\Support\Facades\Validator;

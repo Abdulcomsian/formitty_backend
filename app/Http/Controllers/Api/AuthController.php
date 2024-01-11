@@ -41,6 +41,7 @@ class AuthController extends ApiController
 
             $success['token'] = $user->createToken('API TOKEN')->plainTextToken;
             $success['name'] = $user->first_name . ' ' . $user->last_name;
+            $success['isSubscribed'] = false;
 
             return $this->successResponse($success, 'User register successfully.', 200);
 
@@ -74,6 +75,7 @@ class AuthController extends ApiController
             $success['name'] = $user->name;
             $success['user_id'] = $user->id;
             $success['email'] = $user->email;
+            $success['isSubscribed'] = $request->user()->subscribed();
             if($user->hasRole('admin') == 'admin')
             {
                 $role = "admin";
