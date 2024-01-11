@@ -76,6 +76,7 @@ class AuthController extends ApiController
             $success['user_id'] = $user->id;
             $success['email'] = $user->email;
             $success['isSubscribed'] = $request->user()->subscribed();
+
             if($user->hasRole('admin') == 'admin')
             {
                 $role = "admin";
