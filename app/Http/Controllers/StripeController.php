@@ -69,9 +69,13 @@ class StripeController extends Controller
             return response()->json(['status' => false , 'msg' => 'Something Went Wrong' , 'error' => 'No Plan Found This Id']);
         }
 
-        if(auth()->user()->lastSubscription && is_null(auth()->user()->lastSubscription->ends_at)){
+        if($request->user()->subscribed()){
             return response()->json(['status' => false , 'msg' => 'Something Went Wrong' , 'error' => 'Already Subscribe To Plan']);
         }
+
+        // if(auth()->user()->lastSubscription && is_null(auth()->user()->lastSubscription->ends_at)){
+        //     return response()->json(['status' => false , 'msg' => 'Something Went Wrong' , 'error' => 'Already Subscribe To Plan']);
+        // }
 
         try{
             
