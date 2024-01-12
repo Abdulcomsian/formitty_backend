@@ -52,10 +52,10 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('update-open-ai-configuration' , [OpenAiConfigurationController::class , 'updateConfigurationKey']);
     Route::get('get-open-ai-configuration' , [OpenAiConfigurationController::class , 'getOpenAiConfiguration']);
 
-    //subscription route starts here
     Route::get('get-subscription-plans' , [SubscriptionController::class , 'getSubscriptionPlan']);
-    Route::post('create-payment-intent' , [StripeController::class , 'getPaymentIntent']);
-    //subscription route ends here
+    Route::post('create-setup-intent' , [StripeController::class , 'getPaymentIntent']);
+    Route::post('create-subscription' , [StripeController::class , 'addSubscription']);
+    Route::post('cancel-subscription' , [StripeController::class , 'cancelSubscription']);
 
 });
    

@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 use Laravel\Cashier\Billable;
+use Laravel\Cashier\Subscription;
 
 class User extends Authenticatable
 {
@@ -52,5 +53,14 @@ class User extends Authenticatable
     public function responses()
     {
         return $this->hasMany(Response::class);
+    }
+
+    public function lastSubscription()
+    {
+        return $this->hasOne(Subscription::class , 'user_id' ,'id')->latestOfMany();
+    }
+
+    public function checkSubscription(){
+        return $this->lastSubscription ?  (is_null($this->lastSubscription->ends_at) ? true : false) : false;
     }
 }
