@@ -68,7 +68,7 @@ class StripeController extends Controller
             return response()->json(['status' => false , 'msg' => 'Something Went Wrong' , 'error' => 'No Plan Found This Id']);
         }
 
-        if($request->user()->subscribed()){
+        if($request->user()->checkSubscription()){
             return response()->json(['status' => false , 'msg' => 'Something Went Wrong' , 'error' => 'Already Subscribe To Plan']);
         }
 
@@ -110,6 +110,8 @@ class StripeController extends Controller
             return response()->json(['error' => $e->getMessage() , 'msg' => 'Something Went Wrong While Canceling Subscription' , 'status' => false]);
         }
     }
+
+
 }
 
 

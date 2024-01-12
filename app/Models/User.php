@@ -59,4 +59,8 @@ class User extends Authenticatable
     {
         return $this->hasOne(Subscription::class , 'user_id' ,'id')->latestOfMany();
     }
+
+    public function checkSubscription(){
+        return $this->lastSubscription ?  (is_null($this->lastSubscription->ends_at) ? true : false) : false;
+    }
 }

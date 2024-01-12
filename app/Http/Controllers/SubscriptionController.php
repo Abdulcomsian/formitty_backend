@@ -8,7 +8,7 @@ use App\Models\SubscriptionPlan;
 class SubscriptionController extends Controller
 {
     public function getSubscriptionPlan(Request $request){
-        if(!$request->user()->subscribed()){
+        if(!$request->user()->checkSubscription()){
             $plans = SubscriptionPlan::orderBy('amount' , 'asc')->get();
             return response()->json(['status' => true , 'plans' => $plans , 'isSubscribed' => false ]);
         }else{
